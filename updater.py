@@ -65,6 +65,71 @@ PHRASES = [
  ('FLW PSN','נקודות הציון הבאות'),('PSN','נ.צ.'),('CLSD','סגור'),('BTN','בין'),
  ('OPS OF','הפעלת'),('HEL','מסוקים'),('FLT','טיסות'),('UP TO','עד'),
  (' AT ',' ב-'),(' WI ',' בתוך '),(' FM ',' מ-'),
+ ('TRIGGER NOTAM','נוטמ טריגר'),
+ ('AIRAC DOM AIP AMDT','עדכון AIP פנים-ארצי (AIRAC) מס׳'),
+ ('AIRAC AIP AMDT','עדכון AIP (AIRAC) מס׳'),
+ ('AIRAC AIP SUP','תוספת AIP (AIRAC) מס׳'),
+ ('AIP SUP','תוספת AIP'),('DOM AIP','ה-AIP הפנים-ארצי'),('ISRAEL AIP','ה-AIP של ישראל'),
+ ('ISRAEL AIRPORTS AUTHORITY','רשות שדות התעופה'),
+ ('AIS/ARO/FMP UNIT','יחידת מודיעין הטיס (AIS/ARO/FMP)'),
+ ('AIS/ARO UNIT','יחידת מודיעין הטיס (AIS/ARO)'),
+ ('AIS UNIT','יחידת מודיעין טיס'),('AIS SER','שירותי מודיעין טיס'),
+ ('AD OPS CENTER','מרכז תפעול השדה'),
+ ('MNM CMB GRADIENT REQUIRED OF','שיפוע נסיקה מזערי נדרש של'),
+ ('MNM CMB GRADIENT REQUIRED','שיפוע נסיקה מזערי נדרש'),
+ ('MNM CMB GRADIENT','שיפוע נסיקה מזערי'),('CMB GRADIENT','שיפוע נסיקה'),
+ ('DUE TO AIR-SPACE RESTRICTIONS','עקב מגבלות מרחב אווירי'),
+ ('AIR-SPACE RESTRICTIONS','מגבלות מרחב אווירי'),('RESTRICTIONS','מגבלות'),
+ ('IF UNABLE','אם לא ניתן —'),('ADZ ATC','יש להודיע לבקרת התעופה'),('EXECUTE','לבצע'),
+ ('COMPLETELY WITHDRAWN','הוסר לחלוטין'),('WITHDRAWN','הוסר'),
+ ('RE-ESTABLISHED','הוקם מחדש'),('ESTABLISHED','הוקם'),('SEPARATED','הופרד'),
+ ('RENAMED TO','שוּנה שמו ל-'),('UPDATED','עודכן'),('ADDED','נוסף'),
+ ('CANCELLED','בוטל'),('SUSPENDED','הושעה'),('RESUMED','חודש'),
+ ('THE FLW INFO CHG','המידע הבא שוּנה:'),('THE FLW INFO','המידע הבא'),
+ ('WILL BE PROVIDED BY','יסופקו ע"י'),
+ ('CHANGES TO THE SUBMITTED FLIGHT PLAN','שינויים בתוכנית טיסה שהוגשה'),
+ ('SHALL BE REPORTED AS SOON AS POSSIBLE TO','יש לדווח בהקדם האפשרי אל'),
+ ('AS SOON AS POSSIBLE','בהקדם האפשרי'),('IN THE EVENT OF','במקרה של'),
+ ('DELAY IN DEPARTURE OF','עיכוב בהמראה של'),('MINUTES OR MORE','דקות או יותר'),
+ ('CONTROLLED VFR FLIGHT','טיסת ראייה מבוקרת'),
+ ('FLIGHT PLAN','תוכנית טיסה'),('DOM FPL','תוכנית טיסה פנים-ארצית'),
+ ('FPL FORM','טופס תוכנית טיסה'),('FPL','תוכנית טיסה'),
+ ('INTERNATIONAL','בינלאומי'),('INTL','בינלאומי'),('DOMESTIC','פנים-ארצי'),('DOM','פנים-ארצי'),
+ ('SPOKEN LANGUAGE','שפת הדיבור'),('DEFINITION','הגדרה'),
+ ('CLOSURE OF','סגירת'),('CONDITIONS FOR','תנאים ל-'),('TRANSITION','מעבר'),
+ ('HOT-AIR BALLOON','כדור פורח'),('CAPTIVE BALLOON','בלון קשור'),
+ ('MAP/CHART','מפה/תרשים'),('CHART','תרשים'),
+ ('PART GEN','חלק GEN'),('PART','חלק'),('PARA','סעיף'),('PAGE','עמוד'),
+ ('TABLE COLUMN','טור בטבלה'),('TABLE','טבלה'),('LINE','שורה'),('APPENDIX','נספח'),
+ ('PHONE NR','טלפון'),('FAX','פקס'),('E-MAIL','דוא"ל'),('TEL','טל׳'),
+ ('CRANES ERECTED AT','מנופים הוצבו ב-'),('CRANE ERECTED AT','מנוף הוצב ב-'),
+ ('CRANE OPERATING','מנוף פועל'),('ERECTED','הוצב'),('CRANE','מנוף'),
+ ('LIT AND DAY MARKED','מואר ומסומן ליום'),('MARKED','מסומן'),('LIT','מואר'),
+ ('DISPLACED THR','סף מסלול מוזז'),('THR','סף מסלול'),('DISPLACED','מוזז'),
+ ('OUT OF SERVICE','מושבת'),('UNSERVICEABLE','לא שמיש'),('U/S','לא שמיש'),
+ ('OPR HR','שעות פעילות'),('OPR','מופעל'),('OPN','פתוח'),
+ ('SID','נוהל יציאה (SID)'),('STAR','נוהל הגעה (STAR)'),
+ ('IFR','טיסת מכשירים (IFR)'),('VFR','טיסת ראייה (VFR)'),
+ ('CVFR','טיסת ראייה מבוקרת (CVFR)'),('CTR','אזור בקרה (CTR)'),
+ ('APCH','גישה'),('GNSS','ניווט לווייני (GNSS)'),('LGT','תאורה'),
+ ('AIRSTRIP','מנחת'),('EMERG','חירום'),('ROAD','כביש'),('MIL','צבאי'),
+ ('DAILY','מדי יום'),('WI','בתוך'),('REF','ראו:'),('NR','מס׳'),
+ ('AVBL ON REQ','זמין לפי בקשה'),('ON REQ','לפי בקשה'),
+ ('ATC','בקרת התעופה'),('ACFT','כלי טיס'),('AD','שדה התעופה'),
+ ('WILL TAKE PLACE AT','תתקיים ב-'),('WILL TAKE PLACE','תתקיים'),
+ ('AND','ו-'),('ONLY','בלבד'),('BTN','בין'),
+ ('CHG AS FLW','שוּנה כדלקמן:'),('CHG TO','שוּנה ל-'),('CHG','שוּנה'),
+ ('AS FLW','כדלקמן:'),('WEF','בתוקף מ-'),('PERM','לצמיתות'),
+ ('PERCENT','אחוז'),('DUE TO','עקב'),('DUE','עקב'),('OBST','מכשולים'),
+ ('ALL','כל'),('FOR','עבור'),('OF','של'),('INTO','לתוך'),
+ ('FREQ','תדרים'),('TO/FM','אל/מ-'),('RTE','נתיב'),('LOCAL','מקומית'),
+ ('ULTRALIGHT ZVULUN BUBBLE','בועת הזעירים זבולון'),('ULTRALIGHT','זעירים'),('BUBBLE','בועה'),
+ ('WILL BE','יהיו'),('PROVIDED','מסופקים'),('SER','שירות'),('SVC','שירות'),
+ (' TO ',' אל '),
+
+ ('FT','רגל'),('MHZ','מגה-הרץ'),('KHZ','קילו-הרץ'),
+ ('JAN','ינואר'),('FEB','פברואר'),('MAR','מרץ'),('APR','אפריל'),('MAY','מאי'),('JUN','יוני'),
+ ('JUL','יולי'),('AUG','אוגוסט'),('SEP','ספטמבר'),('OCT','אוקטובר'),('NOV','נובמבר'),('DEC','דצמבר'),
 ]
 
 def http_get(url):
@@ -123,7 +188,12 @@ def translate(raw, e_text):
                lambda m: fmt_coord(*m.groups()), t)
     t = re.sub(r'N(\d{2})(\d{2})(\d{2}(?:\.\d+)?)E\s?0?(\d{2})(\d{2})(\d{2}(?:\.\d+)?)',
                lambda m: fmt_coord(*m.groups()), t)
-    for en, he in PHRASES: t = t.replace(en, he)
+    import re as _re
+    for en, he in sorted(PHRASES, key=lambda p: -len(p[0])):
+        if _re.match(r'^[A-Za-z]', en) and _re.search(r'[A-Za-z]$', en):
+            t = _re.sub(r'(?<![A-Za-z])' + _re.escape(en) + r'(?![A-Za-z])', he, t)
+        else:
+            t = t.replace(en, he)
     t = re.sub(r'\s+,', ',', t); t = re.sub(r'\s+\.', '.', t); t = re.sub(r'\)\s*$', '', t).strip()
     b = re.search(r'B\)\s*(\d{10})', raw); c = re.search(r'C\)\s*(\d{10})', raw)
     perm = bool(re.search(r'C\)\s*PERM', raw))
