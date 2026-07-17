@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>מפת נוט״מ — כטב״מים ורחפנים</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0b1220">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="נוט״מ">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -164,6 +170,7 @@ footer{padding:22px;color:var(--muted);font-size:12px;text-align:center;border-t
   <div class="topbar">
     <div class="stamp">נתונים נמשכו מאתר רש״ת: <b id="fetchStamp"></b> · <span id="countStamp"></span> · <span id="freshBadge" class="fresh"></span> · <span id="visitBox" style="display:none">👁 כניסות: <b id="visitCount" style="color:var(--cyan)"></b></span></div>
     <div class="actions">
+      <button id="nearBtn">📍 בקרבתי</button>
       <button id="onlyActiveBtn">הצג בתוקף עכשיו בלבד</button>
       <button id="layerBtn2">מפה / לוויין</button>
       <button id="allKmlBtn" class="primary">הורד KML של כל המפה ל-Google Earth</button>
@@ -519,7 +526,12 @@ function renderAll(){
 
   const addSec=t=>{const d=document.createElement("div");d.className="sechead";d.textContent=t;list.appendChild(d);};
   addSec("אזורים במפה — "+mapped.length);
-  mapped.forEach(it=>{
+  let listOrder=mapped;
+  if(userPos){
+    listOrder=[...mapped].map(it=>({it,d:it.parsed.geometry?distKm(userPos,geomCenter(it.parsed.geometry)):9999}))
+      .sort((a,b)=>a.d-b.d).map(x=>(x.it._dist=x.d,x.it));
+  }
+  listOrder.forEach(it=>{
     if(!activeCats.has(it.cat)) return;
     const active=isActiveNow(it.parsed);
     if(onlyActive && !active) return;
@@ -529,7 +541,7 @@ function renderAll(){
       <div class="meta"><span class="dotv ${active?"on":"off"}"></span>
       <span>${active?"בתוקף עכשיו":"לא בתוקף כרגע"}</span>
       ${it.parsed.times.perm?"<span>· קבוע</span>":(it.parsed.times.to?`<span>· עד ${it.parsed.times.to.slice(0,8)}</span>`:"")}
-      ${it.parsed.approx?'<span style="color:var(--amber)">· משוער</span>':""}</div>`;
+      ${it.parsed.approx?'<span style="color:var(--amber)">· משוער</span>':""}${(userPos&&it._dist<9999)?`<span style="color:var(--cyan)">· ${it._dist.toFixed(1)} ק״מ ממך</span>`:""}</div>`;
     div.onclick=()=>selectItem(it.id);
     list.appendChild(div);
   });
@@ -807,6 +819,38 @@ async function countVisit(){
   }catch(e){ /* אם השירות לא זמין — פשוט לא מציגים מונה */ }
 }
 countVisit();
+
+/* ================= בקרבתי — איתור מיקום ================= */
+let userPos=null, userMarker=null;
+function geomCenter(g){
+  if(g.type==="circle"||g.type==="point") return g.center;
+  const pts=g.points; let la=0,ln=0; pts.forEach(c=>{la+=c.lat;ln+=c.lng;});
+  return {lat:la/pts.length,lng:ln/pts.length};
+}
+function distKm(a,b){
+  const R=6371,dLa=(b.lat-a.lat)*Math.PI/180,dLn=(b.lng-a.lng)*Math.PI/180;
+  const x=Math.sin(dLa/2)*Math.sin(dLa/2)+Math.cos(a.lat*Math.PI/180)*Math.cos(b.lat*Math.PI/180)*Math.sin(dLn/2)*Math.sin(dLn/2);
+  return 2*R*Math.asin(Math.sqrt(x));
+}
+document.getElementById("nearBtn").onclick=()=>{
+  if(!navigator.geolocation){showMsg("הדפדפן לא תומך באיתור מיקום.");return;}
+  showMsg("מאתר את מיקומך…");
+  navigator.geolocation.getCurrentPosition(p=>{
+    userPos={lat:p.coords.latitude,lng:p.coords.longitude};
+    if(userMarker){try{map.removeLayer(userMarker)}catch(e){}}
+    userMarker=L.circleMarker([userPos.lat,userPos.lng],{radius:9,color:"#67d8e8",weight:3,fillColor:"#67d8e8",fillOpacity:.85})
+      .addTo(map).bindPopup("📍 המיקום שלך");
+    map.setView([userPos.lat,userPos.lng],11);
+    renderAll();
+    const near=DATA.filter(it=>it.parsed.geometry&&activeCats.has(it.cat)&&distKm(userPos,geomCenter(it.parsed.geometry))<=15);
+    showMsg(near.length
+      ? "נמצאו "+near.length+" נוטמים ברדיוס 15 ק\"מ ממך (בקטגוריות המסומנות).\nהרשימה מוינה לפי מרחק — הקרוב ביותר למעלה."
+      : "אין נוטמים ברדיוס 15 ק\"מ ממך בקטגוריות המסומנות.\nנסה להדליק עוד קטגוריות.");
+  },e=>{showMsg("לא הצלחתי לאתר מיקום.\nודא שאישרת לדפדפן הרשאת מיקום.");},
+  {enableHighAccuracy:true,timeout:12000,maximumAge:60000});
+};
+/* רישום ה-Service Worker — הופך את הדף לאפליקציה מותקנת */
+if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js").catch(()=>{});}
 
 document.getElementById("fetchStamp").textContent=FETCHED_AT;
 refreshFreshBadge();
