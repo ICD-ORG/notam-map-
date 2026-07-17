@@ -68,8 +68,16 @@ PHRASES = [
 ]
 
 def http_get(url):
-    req = urllib.request.Request(url, headers=HDRS)
-    return urllib.request.urlopen(req, timeout=90).read().decode('utf-8', 'ignore')
+    last = None
+    for attempt in range(3):
+        try:
+            req = urllib.request.Request(url, headers=HDRS)
+            return urllib.request.urlopen(req, timeout=90).read().decode('utf-8', 'ignore')
+        except Exception as e:
+            last = e
+            print(f'  משיכת הרשימה נכשלה (ניסיון {attempt+1}/3): {e} — ממתין 20 שניות...')
+            time.sleep(20)
+    raise last
 
 def collect_fields(page):
     fields = {}
@@ -83,14 +91,20 @@ def collect_fields(page):
             fields[name] = vm.group(1) if vm else ''
     return fields
 
-def fetch_detail(fields0, num):
+def fetch_detail(fields0, num, _retry=True):
     f = dict(fields0)
     f.update({'hidMsgNum': num, 'hidMode': 'more', 'hidCurOrHist': 'Current',
               'hidTblClientId': '', 'btnMoreInfo': 'btnMoreInfo'})
     body = urllib.parse.urlencode(f).encode()
     req = urllib.request.Request(LIST_URL, data=body,
         headers={**HDRS, 'Content-Type': 'application/x-www-form-urlencoded'})
-    out = urllib.request.urlopen(req, timeout=90).read().decode('utf-8', 'ignore')
+    try:
+        out = urllib.request.urlopen(req, timeout=90).read().decode('utf-8', 'ignore')
+    except Exception as e:
+        if _retry:
+            time.sleep(8)
+            return fetch_detail(fields0, num, _retry=False)
+        raise
     m = re.search(r"\(([A-Z]\d{4}/\d{2}\s+NOTAM[NRC][\s\S]*?)'\);", out)
     if not m: return None
     txt = m.group(1)
@@ -165,7 +179,10 @@ def main():
             notams.append({'id': nid, 'loc': loc, 'name': name, 'cat': cat,
                            'heb': translate(raw, e_text), 'raw': raw})
             print(f'[{k}/{len(uas)}] {nid} [{cat}] — OK')
-            time.sleep(0.4)
+            time.sleep(0.6)
+            if k % 25 == 0:
+                print('  ...הפסקה קצרה (עדינות מול השרת)...')
+                time.sleep(5)
         except Exception as e:
             print(f'[{k}/{len(uas)}] {nid} — שגיאה: {e}')
 
