@@ -84,6 +84,12 @@ button:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
 .dotv.on{background:var(--green);box-shadow:0 0 6px var(--green)}
 .dotv.off{background:#5b6a84}
 .sechead{padding:8px 14px;background:var(--panel-2);color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.5px}
+.catbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.catbtn{display:flex;align-items:center;gap:7px;padding:7px 14px;border-radius:999px;cursor:pointer;
+  border:1px solid var(--line);background:var(--panel-2);color:var(--muted);font-size:13px;font-weight:700;transition:.15s}
+.catbtn .cdot{width:10px;height:10px;border-radius:50%;flex:none}
+.catbtn.on{color:var(--ink);border-color:currentColor;background:var(--panel)}
+.catbtn .cnt{font-size:11px;opacity:.75}
 .mapbox{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
 #bigmap{height:640px;background:#060a12}
 #tilewarn{display:none;padding:9px 14px;color:var(--amber);font-size:12.5px;border-bottom:1px solid var(--line)}
@@ -135,7 +141,7 @@ footer{padding:22px;color:var(--muted);font-size:12px;text-align:center;border-t
   <div class="wrap">
     <div class="brand">
       <h1>מפת <span>נוט״מ</span> — כטב״מים ורחפנים</h1>
-      <div class="sub">כל אזורי הכטב״מ הפעילים בישראל · פענוח בעברית · מקור: מודיעין טיס רש״ת</div>
+      <div class="sub">כל הנוטמים הפנים-ארציים · פענוח בעברית · ברירת מחדל: כטב״מים — לחצו על הקטגוריות להצגת שכבות נוספות</div>
     </div>
     <div class="org">
       <img src="https://static.wixstatic.com/media/3ae480_a8339612d16542de9e6da2f0f9c98429~mv2.png/v1/fill/w_96,h_96,lg_1/3ae480_a8339612d16542de9e6da2f0f9c98429~mv2.png" alt="לוגו הארגון הישראלי לרחפנים" onerror="this.style.display='none'">
@@ -164,6 +170,8 @@ footer{padding:22px;color:var(--muted);font-size:12px;text-align:center;border-t
       <button id="refreshBtn">עדכון נתונים</button>
     </div>
   </div>
+
+  <div class="catbar" id="catBar"></div>
 
   <div class="layout">
     <div class="side">
@@ -369,6 +377,37 @@ function localTranslate(eText){
   return t.replace(/\s+,/g,",").replace(/\s+\./g,".").replace(/\)\s*$/,"").trim();
 }
 
+/* ================= קטגוריות ================= */
+const CATS={
+ uas:{label:"כטב״מ ורחפנים",color:"#ff2d2d"},
+ pje:{label:"הצנחות",color:"#b16dff"},
+ frng:{label:"ירי ואימונים",color:"#ff8a3b"},
+ act:{label:"פעילות אווירית",color:"#ff6dc0"},
+ obst:{label:"מנופים ומכשולים",color:"#ffd24d"},
+ ad:{label:"שדות תעופה",color:"#5b8cff"},
+ other:{label:"כללי",color:"#9aa8c0"}
+};
+let activeCats=new Set(["uas"]);
+function renderCatBar(){
+  const bar=document.getElementById("catBar"); bar.innerHTML="";
+  const counts={}; DATA.forEach(it=>{counts[it.cat]=(counts[it.cat]||0)+1;});
+  Object.entries(CATS).forEach(([k,c])=>{
+    if(!counts[k]) return;
+    const b=document.createElement("div");
+    b.className="catbtn"+(activeCats.has(k)?" on":"");
+    b.style.color=activeCats.has(k)?c.color:"";
+    b.innerHTML='<span class="cdot" style="background:'+c.color+'"></span>'+c.label+' <span class="cnt">('+counts[k]+')</span>';
+    b.onclick=()=>{ activeCats.has(k)?activeCats.delete(k):activeCats.add(k); renderCatBar(); renderAll(); };
+    bar.appendChild(b);
+  });
+  const all=document.createElement("div");
+  const allOn=Object.keys(CATS).every(k=>!counts[k]||activeCats.has(k));
+  all.className="catbtn"+(allOn?" on":"");
+  all.textContent=allOn?"הצג כטב״מים בלבד":"הצג הכל";
+  all.onclick=()=>{ activeCats=allOn?new Set(["uas"]):new Set(Object.keys(CATS)); renderCatBar(); renderAll(); };
+  bar.appendChild(all);
+}
+
 /* ================= מפה ראשית ================= */
 let map=null, satLayer, osmLayer, usingSat=true, gratDrawn=false;
 const shapes={}; let selectedId=null; let tempLayer=null;
@@ -411,7 +450,7 @@ function popupHtml(item,p){
   if(p.radius) meta.push("רדיוס "+p.radius.label);
   if(p.alt) meta.push(p.alt);
   return `<div class="pp-name">${item.name}</div>
-  <span class="pp-id">${item.id}</span>
+  <span class="pp-id" style="color:${(CATS[item.cat]||CATS.uas).color}">${item.id}</span> <span class="badge" style="color:${(CATS[item.cat]||CATS.uas).color};border-color:currentColor">${(CATS[item.cat]||CATS.uas).label}</span>
   ${p.approx?'<div class="approx-note">⚠ מיקום משוער לפי שורת Q</div>':""}
   <div class="pp-meta">${meta.join(" · ")}</div>
   <div class="pp-heb">${item.heb.replace(/</g,"&lt;")}</div>
@@ -421,9 +460,10 @@ function popupHtml(item,p){
 function drawItem(item){
   const p=item.parsed, geo=p.geometry;
   if(!geo) return null;
+  const col=(CATS[item.cat]||CATS.uas).color;
   const style=p.approx
-    ? {color:"#ff8a3b",weight:2,dashArray:"7 6",fillColor:"#ff8a3b",fillOpacity:.10}
-    : {color:"#ff2d2d",weight:3,fillColor:"#ff2d2d",fillOpacity:.22};
+    ? {color:col,weight:2,dashArray:"7 6",fillColor:col,fillOpacity:.10}
+    : {color:col,weight:3,fillColor:col,fillOpacity:.22};
   let layer;
   if(geo.type==="circle") layer=L.circle([geo.center.lat,geo.center.lng],{radius:geo.radius,...style});
   else layer=L.polygon(geo.points.map(c=>[c.lat,c.lng]),style);
@@ -470,6 +510,7 @@ function renderAll(){
   const drawOrder=[...mapped].sort((a,b)=>areaOf(b.parsed)-areaOf(a.parsed));
   let shown=0;
   drawOrder.forEach(it=>{
+    if(!activeCats.has(it.cat)) return;
     const active=isActiveNow(it.parsed);
     if(onlyActive && !active) return;
     shown++;
@@ -479,11 +520,12 @@ function renderAll(){
   const addSec=t=>{const d=document.createElement("div");d.className="sechead";d.textContent=t;list.appendChild(d);};
   addSec("אזורים במפה — "+mapped.length);
   mapped.forEach(it=>{
+    if(!activeCats.has(it.cat)) return;
     const active=isActiveNow(it.parsed);
     if(onlyActive && !active) return;
     const div=document.createElement("div");
     div.className="item"; div.dataset.id=it.id;
-    div.innerHTML=`<div class="t"><span class="name">${it.name}</span><span class="nid">${it.id}</span></div>
+    div.innerHTML=`<div class="t"><span class="name"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:${(CATS[it.cat]||CATS.uas).color};margin-left:6px"></span>${it.name}</span><span class="nid">${it.id}</span></div>
       <div class="meta"><span class="dotv ${active?"on":"off"}"></span>
       <span>${active?"בתוקף עכשיו":"לא בתוקף כרגע"}</span>
       ${it.parsed.times.perm?"<span>· קבוע</span>":(it.parsed.times.to?`<span>· עד ${it.parsed.times.to.slice(0,8)}</span>`:"")}
@@ -491,9 +533,10 @@ function renderAll(){
     div.onclick=()=>selectItem(it.id);
     list.appendChild(div);
   });
-  if(general.length){
-    addSec("הודעות כלליות (ללא אזור) — "+general.length);
-    general.forEach(it=>{
+  const genShow=general.filter(it=>activeCats.has(it.cat));
+  if(genShow.length){
+    addSec("הודעות כלליות (ללא אזור) — "+genShow.length);
+    genShow.forEach(it=>{
       const div=document.createElement("div");
       div.className="item"; div.dataset.id=it.id;
       div.innerHTML=`<div class="t"><span class="name">${it.name}</span><span class="nid">${it.id}</span></div>
@@ -503,7 +546,7 @@ function renderAll(){
     });
   }
   document.getElementById("sideCount").textContent=shown+" במפה";
-  document.getElementById("countStamp").textContent=`${DATA.length} נוטמי כטב״מ (${mapped.length} עם אזור במפה)`;
+  document.getElementById("countStamp").textContent=`${DATA.length} נוטמים · מוצגים ${shown} במפה`;
 }
 
 /* ================= KML ================= */
@@ -534,16 +577,21 @@ function kmlPlacemark(item){
 <b style="font-size:15px">${item.name}</b> (${item.id})<br/>${p.approx?"⚠ מיקום משוער לפי שורת Q<br/>":""}
 <span style="color:#666">${meta}</span><hr/><b>פענוח בעברית:</b><br/>${heb}<hr/>
 <b>מקור:</b><br/><span style="font-family:monospace;direction:ltr;display:inline-block;text-align:left;font-size:11px">${raw}</span></div>]]></description>
-<styleUrl>#${p.approx?"orange":"red"}</styleUrl>
+<styleUrl>#${item.cat||"uas"}</styleUrl>
 <Polygon><outerBoundaryIs><LinearRing><coordinates>${coordsStr}</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>`;
 }
+function hex2kml(hex,alpha){const r=hex.slice(1,3),g=hex.slice(3,5),b=hex.slice(5,7);return alpha+b+g+r;}
+function kmlStyles(){
+  return Object.entries(CATS).map(([k,c])=>
+    '<Style id="'+k+'"><LineStyle><color>'+hex2kml(c.color,"ff")+'</color><width>3</width></LineStyle><PolyStyle><color>'+hex2kml(c.color,"4d")+'</color></PolyStyle></Style>'
+  ).join("\n");
+}
 function makeAllKML(){
-  const marks=DATA.map(kmlPlacemark).filter(Boolean).join("\n");
+  const marks=DATA.filter(it=>activeCats.has(it.cat)).map(kmlPlacemark).filter(Boolean).join("\n");
   return `<?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2"><Document>
 <name>נוט״מ כטב״מים — ${FETCHED_AT}</name>
-<Style id="red"><LineStyle><color>ff0000ff</color><width>3</width></LineStyle><PolyStyle><color>4d0000ff</color></PolyStyle></Style>
-<Style id="orange"><LineStyle><color>ff3b8aff</color><width>2</width></LineStyle><PolyStyle><color>2e3b8aff</color></PolyStyle></Style>
+${kmlStyles()}
 ${marks}
 </Document></kml>`;
 }
@@ -661,7 +709,7 @@ $("decodeBtn").onclick=async()=>{
 $("showOnMapBtn").onclick=()=>{
   if(!currentParsed||!currentParsed.geometry){showMsg("לא נמצאו קואורדינטות בנוטמ הזה.");return;}
   if(tempLayer){try{map.removeLayer(tempLayer)}catch(e){}}
-  const item={id:currentParsed.id||"NOTAM",name:"נוטמ שהודבק ידנית",heb:currentHebrew,raw:currentParsed.raw,parsed:currentParsed};
+  const item={id:currentParsed.id||"NOTAM",name:"נוטמ שהודבק ידנית",cat:"uas",heb:currentHebrew,raw:currentParsed.raw,parsed:currentParsed};
   tempLayer=drawItem(item);
   showTab("map");
   setTimeout(()=>{map.fitBounds(tempLayer.getBounds().pad(0.6));tempLayer.openPopup();},150);
@@ -691,15 +739,9 @@ $("gmapsBtn").onclick=()=>{
 };
 
 /* ================= אתחול ================= */
-let DATA=NOTAM_DATA.map(it=>({...it,parsed:parseNotam(it.raw)}));
+let DATA=NOTAM_DATA.map(it=>({...it,cat:it.cat||"uas",parsed:parseNotam(it.raw)}));
 let curStamp=FETCHED_AT, curISO=FETCHED_ISO;
 
-function stampIL(iso){
-  try{
-    const d=new Date(iso); if(isNaN(d)) return null;
-    return new Intl.DateTimeFormat("he-IL",{timeZone:"Asia/Jerusalem",day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit"}).format(d)+" (שעון ישראל)";
-  }catch(e){return null;}
-}
 function refreshFreshBadge(){
   const el=document.getElementById("freshBadge");
   const hrs=(Date.now()-Date.parse(curISO))/3600000;
@@ -710,10 +752,11 @@ function refreshFreshBadge(){
   el.className="fresh "+cls; el.textContent=txt;
 }
 function applyData(notams, stampText, stampISO){
-  DATA=notams.map(it=>({...it,parsed:parseNotam(it.raw)}));
+  DATA=notams.map(it=>({...it,cat:it.cat||"uas",parsed:parseNotam(it.raw)}));
   curStamp=stampText||curStamp; curISO=stampISO||curISO;
-  document.getElementById("fetchStamp").textContent=stampIL(curISO)||curStamp;
+  document.getElementById("fetchStamp").textContent=curStamp;
   refreshFreshBadge();
+  renderCatBar();
   renderAll();
 }
 /* ניסיון טעינת נתונים עדכניים מהאתר המארח (כשהקובץ מוטמע ב-icd.org.il) */
@@ -765,9 +808,10 @@ async function countVisit(){
 }
 countVisit();
 
-document.getElementById("fetchStamp").textContent=stampIL(FETCHED_ISO)||FETCHED_AT;
+document.getElementById("fetchStamp").textContent=FETCHED_AT;
 refreshFreshBadge();
 initMap();
+renderCatBar();
 renderAll();
 tryLoadFromSite(true);
 </script>

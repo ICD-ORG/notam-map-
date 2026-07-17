@@ -12,6 +12,23 @@ import re, json, time, urllib.request, urllib.parse, datetime, html as H
 LIST_URL = 'https://brin.iaa.gov.il/aeroinfo/AeroInfo.aspx?msgType=Notam'
 HDRS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)', 'Referer': LIST_URL}
 
+# ===== סיווג לקטגוריות =====
+ICAO_HE = {'LLBG':'נתב"ג','LLSD':'שדה דב','LLHZ':'הרצליה','LLHA':'חיפה','LLRM':'רמון',
+ 'LLES':'עין שמר','LLMG':'מגידו','LLIB':'ראש פינה','LLKS':'קרית שמונה','LLBS':'באר שבע',
+ 'LLEY':'עין יהב','LLMZ':'מצדה','LLYT':'יטבתה','LLGV':'גבעולים','LLFK':'פיק','LLZR':'זוהר'}
+
+def classify(raw, loc):
+    t = raw.upper()
+    if __import__('re').search(r'\bUAS\b|\bUAV\b', t): return 'uas'
+    if __import__('re').search(r'\bPJE\b|PARACHUT', t): return 'pje'
+    if __import__('re').search(r'\bFRNG\b|FIRING', t): return 'frng'
+    if __import__('re').search(r'CRANE|\bOBST\b', t): return 'obst'
+    if __import__('re').search(r'BALLOON|AEROBATIC|MODEL ACFT|\bGLD\b|ULTRALIGHT', t): return 'act'
+    if loc and loc != 'LLLL': return 'ad'
+    if __import__('re').search(r'\bRWY\b|\bTWY\b|\bAPN\b|\bILS\b|\bVOR\b|\bDME\b|\bTWR\b', t): return 'ad'
+    return 'other'
+
+
 PHRASES = [
  ('UAS/UAV ACT WILL TAKE PLACE AT','פעילות כטב"מ/רחפנים תתקיים ב'),
  ('UAS ACT WILL TAKE PLACE AT','פעילות כטב"מ תתקיים ב'),
@@ -126,8 +143,8 @@ def main():
             previews[cur] += ' ' + val
         i += 1
 
-    uas = [k for k, v in previews.items() if re.search(r'\bUAS\b|\bUAV\b', v)]
-    print(f'סה"כ {len(previews)} נוטמים, מהם {len(uas)} כטב"מ. מושך פרטים מלאים...')
+    uas = list(previews.keys())  # כל הנוטמים הפנים-ארציים
+    print(f'סה"כ {len(uas)} נוטמים. מושך פרטים מלאים לכולם...')
 
     fields0 = collect_fields(page)
     notams = []
@@ -141,10 +158,14 @@ def main():
             e_text = eM.group(1).strip() if eM else raw
             nm = re.search(r'AT\s+([A-Z][A-Z0-9\-/ ]{2,40}?)(?:[,\.\n]|$)', e_text)
             name = nm.group(1).strip() if nm else nid
-            notams.append({'id': nid, 'loc': locs.get(nid, ''), 'name': name,
+            loc = locs.get(nid, '')
+            cat = classify(raw, loc)
+            if cat == 'ad' and loc in ICAO_HE:
+                name = ICAO_HE[loc] + ' (' + loc + ')'
+            notams.append({'id': nid, 'loc': loc, 'name': name, 'cat': cat,
                            'heb': translate(raw, e_text), 'raw': raw})
-            print(f'[{k}/{len(uas)}] {nid} — OK')
-            time.sleep(1.0)
+            print(f'[{k}/{len(uas)}] {nid} [{cat}] — OK')
+            time.sleep(0.4)
         except Exception as e:
             print(f'[{k}/{len(uas)}] {nid} — שגיאה: {e}')
 
