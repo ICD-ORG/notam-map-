@@ -86,4 +86,7 @@ if ("serviceWorker" in navigator) {
     if (!r.scope.includes("members")) r.unregister();
   }));
 }
-if (window.caches) { caches.keys().then(ks => ks.forEach(k => { if (k.startsWith("notam"))
+if (window.caches) { caches.keys().then(ks => ks.forEach(k => { if (k.startsWith("notam")) caches.delete(k); })); }
+</script>
+</body>
+</html>
