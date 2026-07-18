@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="הארגון הישראלי לרחפנים — ISRAEL DRONE ORGANIZATION">
 <meta property="og:title" content="מפת נוט״מ — כטב״מים ורחפנים בישראל">
-<meta property="og:description" content="כל הנוטמים על מפה אחת, בעברית, מתעדכן אוטומטית. 3 חודשים חינם לחברים חדשים! הארגון הישראלי לרחפנים · icd.org.il">
+<meta property="og:description" content="כל הנוטמים על מפה אחת, בעברית, מתעדכן אוטומטית. חודש ראשון חינם לחברים חדשים! הארגון הישראלי לרחפנים · icd.org.il">
 <meta property="og:url" content="https://icd-org.github.io/notam-map-/">
 <meta property="og:image" content="https://icd-org.github.io/notam-map-/og-banner.png">
 <meta property="og:image:width" content="1200">
@@ -60,9 +60,9 @@ footer a{color:var(--cyan)}
   <img class="banner" src="og-banner.png" alt="מפת נוט״מ" onerror="this.style.display='none'">
 
   <div class="offer">
-    <div class="big">🎁 3 חודשים ראשונים — חינם לגמרי</div>
+    <div class="big">🎁 חודש ראשון — חינם לגמרי</div>
     <div class="small">לאחר תקופת הניסיון: ₪25 בלבד לשנה · אפשר לבטל בכל רגע · התשלום תומך בפעילות הארגון למען קהילת הרחפנים</div>
-    <a class="cta" href="https://www.icd.org.il" target="_blank" rel="noopener">הצטרפו עכשיו — התחילו בחינם</a>
+    <a class="cta" href="https://www.icd.org.il" target="_blank" rel="noopener">הצטרפו עכשיו — חודש ראשון חינם</a>
     <div class="member">כבר חברים? הכניסה למפה נמצאת ב<a href="https://www.icd.org.il" target="_blank" rel="noopener">אזור החברים באתר הארגון</a></div>
   </div>
 
@@ -81,8 +81,6 @@ footer a{color:var(--cyan)}
 </footer>
 
 <script>
-/* ניקוי גרסאות ישנות: מי שהתקין את המפה כשהייתה חופשית - הדפדפן שלו שמר עותק.
-   מנקים כדי שכולם יעברו דרך דף ההצטרפות. */
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.getRegistrations().then(rs => rs.forEach(r => {
     if (!r.scope.includes("members")) r.unregister();
