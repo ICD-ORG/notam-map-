@@ -1,8 +1,48 @@
 {
- "fetched_at": "19/07/2026 06:21 UTC",
- "fetched_iso": "2026-07-19T06:21:47Z",
- "count": 143,
+ "fetched_at": "19/07/2026 14:31 UTC",
+ "fetched_iso": "2026-07-19T14:31:42Z",
+ "count": 146,
  "notams": [
+  {
+   "id": "A0576/26",
+   "loc": "LLLL",
+   "name": "A0576/26",
+   "cat": "other",
+   "heb": "ATS נתיב J14 סגור בין ZACCI-GIMIK.\nבתוקף: מ-20/07/2026 17:30 UTC עד 21/07/2026 01:00 UTC",
+   "raw": "A0576/26 NOTAMN\nQ) LLLL/QANLC/I /NBO/E /050/060/3236N03518E018\nA) LLLL B) 2607201730 C) 2607210100\nE) ATS RTE J14 CLSD BTN ZACCI-GIMIK.)"
+  },
+  {
+   "id": "A0575/26",
+   "loc": "LLER",
+   "name": "A0575/26",
+   "cat": "ad",
+   "heb": "OCA(H) עבור ILS RWY 19 שוּנה ל- 500(228) עבור כל CAT.\nבתוקף: מ-19/07/2026 11:45 UTC עד 31/08/2026 23:59 UTC",
+   "raw": "A0575/26 NOTAMN\nQ) LLLL/QPOCH/I /NBO/A /000/999/2944N03501E005\nA) LLER B) 2607191145 C) 2608312359\nE) OCA(H) FOR ILS RWY 19 CHG TO 500(228) FOR ALL CAT.)"
+  },
+  {
+   "id": "A0572/26",
+   "loc": "LLER",
+   "name": "A0572/26",
+   "cat": "ad",
+   "heb": "OCA(H) עבור ILS RWY 01 שוּנה ל- 500(248) עבור כל CAT.\nבתוקף: מ-19/07/2026 11:37 UTC עד 31/08/2026 23:59 UTC",
+   "raw": "A0572/26 NOTAMN\nQ) LLLL/QPOCH/I /NBO/A /000/999/2944N03501E005\nA) LLER B) 2607191137 C) 2608312359\nE) OCA(H) FOR ILS RWY 01 CHG TO 500(248) FOR ALL CAT.)"
+  },
+  {
+   "id": "C1529/26",
+   "loc": "LLLL",
+   "name": "MAGEN-SHAUL",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב MAGEN-SHAUL, עד 100מטר מעל הקרקע. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 1,500רגל מעל פני הים 32°31'45\"N 35°16'42\"E 32°30'24\"N 35°16'38\"E 32°30'39\"N 35°20'04\"E 32°31'39\"N 35°19'54\"E 32°31'53\"N 35°19'30\"E 32°31'59\"N 35°19'07\"E מומלצת זהירות.\nבתוקף: מ-01/08/2026 00:01 UTC עד 31/08/2026 20:59 UTC",
+   "raw": "C1529/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/015/3231N03518E002\nA) LLLL B) 2608010001 C) 2608312059\nE) UAS/UAV ACT WILL TAKE PLACE AT MAGEN-SHAUL, UP TO 100M AGL.\nAN AREA BTN THE FLW PSN CLSD FM GND UP TO 1,500FT AMSL\n323145N0351642E 323024N0351638E 323039N0352004E\n323139N0351954E 323153N0351930E 323159N0351907E\nCTN ADZ.\nF) GND G) 1500FT AMSL)"
+  },
+  {
+   "id": "C1528/26",
+   "loc": "LLLL",
+   "name": "BET-HASHITA",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב BET-HASHITA. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 1,700רגל מעל פני הים 32°33'26\"N 35°28'02\"E 32°34'31\"N 35°28'15\"E 32°34'41\"N 35°27'00\"E 32°33'44\"N 35°26'35\"E. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-19/07/2026 08:33 UTC עד 19/07/2026 17:15 UTC",
+   "raw": "C1528/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/017/3234N03527E002\nA) LLLL B) 2607190833 C) 2607191715\nE) UAS/UAV ACT WILL TAKE PLACE AT BET-HASHITA.\nAN AREA BTN FLW PSN CLSD FM GND UP TO 1,700FT AMSL\n323326N0352802E 323431N0352815E 323441N0352700E\n323344N0352635E.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.\nF) GND G) 1700FT AMSL)"
+  },
   {
    "id": "C1526/26",
    "loc": "LLLL",
@@ -140,14 +180,6 @@
    "raw": "C1516/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /035/045/3037N03500E011\nA) LLLL B) 2607200220 C) 2607201320\nD) 0220-0910 1010-1320\nE) CVFR RTE CLSD  ZOFAR-HRGVS-RUHOT.)"
   },
   {
-   "id": "C1515/26",
-   "loc": "LLLL",
-   "name": "C1515/26",
-   "cat": "other",
-   "heb": "טיסת ראייה מבוקרת (CVFR) נתיב סגור ZOFAR-HRGVS-RUHOT.\nבתוקף: מ-19/07/2026 07:40 UTC עד 19/07/2026 14:10 UTC",
-   "raw": "C1515/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /035/045/3037N03500E011\nA) LLLL B) 2607190740 C) 2607191410\nE) CVFR RTE CLSD  ZOFAR-HRGVS-RUHOT.)"
-  },
-  {
    "id": "C1514/26",
    "loc": "LLLL",
    "name": "C1514/26",
@@ -242,14 +274,6 @@
    "cat": "other",
    "heb": "טיסת ראייה מבוקרת (CVFR) ו- מסוקים נתיב סגור ב-1,200רגל, AVBL BIDIRECTIONAL ב-800רגל מעל פני הים בלבד TYONA-SUPER-NTAIM-BOVED-NAGID-YAVNE-ZASHD.\nבתוקף: מ-21/07/2026 09:00 UTC עד 22/07/2026 19:00 UTC\nלו\"ז: 21 0900-1000, 22 1800-1900",
    "raw": "C1504/26 NOTAMN\nQ) LLLL/QARLT/IV/NBO/E /008/012/3155N03446E008\nA) LLLL B) 2607210900 C) 2607221900\nD) 21 0900-1000, 22 1800-1900\nE) CVFR AND HEL RTE CLSD AT 1,200FT,\nAVBL BIDIRECTIONAL AT 800FT AMSL ONLY\nTYONA-SUPER-NTAIM-BOVED-NAGID-YAVNE-ZASHD.)"
-  },
-  {
-   "id": "C1493/26",
-   "loc": "LLIB",
-   "name": "ראש פינה (LLIB)",
-   "cat": "ad",
-   "heb": "שדה התעופה סגור לכל הטיסות, עקב WIP. הפעלת מסוקים AVBL באישור מוקדם מבקרת התעופה. IN CASE של חירום OR MEDEVAC מסוקים AVBL בתוך 15MIN.\nבתוקף: מ-19/07/2026 06:00 UTC עד 19/07/2026 09:00 UTC",
-   "raw": "C1493/26 NOTAMN\nQ) LLLL/QFALT/IV/NBO/A /000/999/3259N03534E005\nA) LLIB B) 2607190600 C) 2607190900\nE) AD CLSD TO ALL FLT, DUE WIP.\nOPS OF HEL AVBL BY PPR FM ATC.\nIN CASE OF EMERG OR MEDEVAC HEL AVBL WI 15MIN.)"
   },
   {
    "id": "C1491/26",
