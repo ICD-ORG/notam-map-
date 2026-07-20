@@ -1,8 +1,32 @@
 {
- "fetched_at": "20/07/2026 06:41 UTC",
- "fetched_iso": "2026-07-20T06:41:32Z",
- "count": 144,
+ "fetched_at": "20/07/2026 15:19 UTC",
+ "fetched_iso": "2026-07-20T15:19:38Z",
+ "count": 142,
  "notams": [
+  {
+   "id": "C1533/26",
+   "loc": "LLLL",
+   "name": "YERUHAM",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב YERUHAM, מהקרקע ועד 250מטר מעל הקרקע. AN AREA מהקרקע ועד 3,000רגל מעל פני הים סגור בין נקודות הציון הבאות 30°58'30\"N 34°55'51\"E 30°58'23\"N 34°56'44\"E 30°58'03\"N 34°57'08\"E 30°57'09\"N 34°56'49\"E 30°56'24\"N 34°56'14\"E 30°56'52\"N 34°54'53\"E. מומלצת זהירות.\nבתוקף: מ-26/07/2026 02:30 UTC עד 30/07/2026 16:30 UTC\nלו\"ז: DAILY 0230-1630",
+   "raw": "C1533/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/030/3057N03456E002\nA) LLLL B) 2607260230 C) 2607301630\nD) DAILY 0230-1630\nE) UAS/UAV ACT WILL TAKE PLACE AT YERUHAM, FM GND UP TO 250M AGL.\nAN AREA FM GND UP TO 3,000FT AMSL CLSD BTN FLW PSN\n305830N0345551E 305823N0345644E 305803N0345708E\n305709N0345649E 305624N0345614E 305652N0345453E.\nCTN ADZ.\nF) GND G) 3000FT AMSL)"
+  },
+  {
+   "id": "C1532/26",
+   "loc": "LLLL",
+   "name": "YERUHAM",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב YERUHAM, מהקרקע ועד 600מטר מעל הקרקע. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 30°58'19\"N 34°56'01\"E סגור מהקרקע ועד 3,700רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-26/07/2026 03:00 UTC עד 30/07/2026 14:30 UTC\nלו\"ז: DAILY 0300-1430",
+   "raw": "C1532/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/037/3058N03456E001\nA) LLLL B) 2607260300 C) 2607301430\nD) DAILY 0300-1430\nE) UAS/UAV ACT WILL TAKE PLACE AT YERUHAM, FM GND UP TO 600M AGL.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 305819N0345601E\nCLSD FM GND UP TO 3,700FT AMSL.\nCTN ADZ.\nF) GND G) 3700FT AMSL)"
+  },
+  {
+   "id": "C1531/26",
+   "loc": "LLIB",
+   "name": "ראש פינה (LLIB)",
+   "cat": "ad",
+   "heb": "שדה התעופה סגור לכל הטיסות, עקב WIP. שדה התעופה NOT AVBL עבור חירום.\nבתוקף: מ-21/07/2026 03:00 UTC עד 22/07/2026 10:30 UTC\nלו\"ז: 21 0300-0830, 22 0300-1030",
+   "raw": "C1531/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3259N03534E005\nA) LLIB B) 2607210300 C) 2607221030\nD) 21 0300-0830, 22 0300-1030\nE) AD CLSD TO ALL FLT, DUE WIP.\nAD NOT AVBL FOR EMERG.)"
+  },
   {
    "id": "A0576/26",
    "loc": "LLLL",
@@ -132,14 +156,6 @@
    "raw": "A0566/26 NOTAMN\nQ) LLLL/QOBCE/IV/M  /AE/000/004/3159N03454E001\nA) LLBG B) 2607190400 C) 2607220800\nD) DAILY 0400-0800\nE) CRANE ERECTED WI LLBG CTR, AT EL-AL JUNCTION.\nAN AREA FM GND UP TO 100M 360FT AMSL CLSD BTN FLW PSN\n315924N0345425E 315922N0345423E 315924N0345419E\n315926N0345421E.\nCTN ADZ.)"
   },
   {
-   "id": "A0562/26",
-   "loc": "LLBG",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "ILS RWY 12 C/S BG תדרים 110.300מגה-הרץ הוסר עבור MAINT.\nבתוקף: מ-20/07/2026 06:00 UTC עד 20/07/2026 10:00 UTC",
-   "raw": "A0562/26 NOTAMN\nQ) LLLL/QISAS/I /NBO/A /000/999/3200N03454E005\nA) LLBG B) 2607200600 C) 2607201000\nE) ILS RWY 12 C/S BG FREQ 110.300MHZ WITHDRAWN FOR MAINT.)"
-  },
-  {
    "id": "C1519/26",
    "loc": "LLEY",
    "name": "C1519/26",
@@ -162,14 +178,6 @@
    "cat": "other",
    "heb": "טיסת ראייה מבוקרת (CVFR) נתיב סגור ZOFAR-HRGVS-RUHOT.\nבתוקף: מ-21/07/2026 02:20 UTC עד 21/07/2026 13:20 UTC\nלו\"ז: 0220-0910 1010-1320",
    "raw": "C1517/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /035/045/3037N03500E011\nA) LLLL B) 2607210220 C) 2607211320\nD) 0220-0910 1010-1320\nE) CVFR RTE CLSD  ZOFAR-HRGVS-RUHOT.)"
-  },
-  {
-   "id": "C1516/26",
-   "loc": "LLLL",
-   "name": "C1516/26",
-   "cat": "other",
-   "heb": "טיסת ראייה מבוקרת (CVFR) נתיב סגור ZOFAR-HRGVS-RUHOT.\nבתוקף: מ-20/07/2026 02:20 UTC עד 20/07/2026 13:20 UTC\nלו\"ז: 0220-0910 1010-1320",
-   "raw": "C1516/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /035/045/3037N03500E011\nA) LLLL B) 2607200220 C) 2607201320\nD) 0220-0910 1010-1320\nE) CVFR RTE CLSD  ZOFAR-HRGVS-RUHOT.)"
   },
   {
    "id": "C1514/26",
@@ -244,14 +252,6 @@
    "raw": "C1507/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/080/3129N03450E005\nA) LLLL B) 2607201130 C) 2607202030\nE) PJE WILL TAKE PLACE AT KELACH.\nAN AREA BTN FLW PSN CLSD TO ALL FLT FM GND UP TO 8,000FT AMSL.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\n313200N0345319E 313159N0344733E 312602N0344730E\n312444N0345024E 312602N0345311E.\nCTN ADZ.\nF) GND G) 8000FT AMSL)"
   },
   {
-   "id": "C1506/26",
-   "loc": "LLIB",
-   "name": "ראש פינה (LLIB)",
-   "cat": "ad",
-   "heb": "שדה התעופה סגור לכל הטיסות, עקב WIP. שדה התעופה NOT AVBL עבור חירום.\nבתוקף: מ-20/07/2026 03:00 UTC עד 22/07/2026 10:30 UTC\nלו\"ז: DAILY 0300-1030",
-   "raw": "C1506/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3259N03534E005\nA) LLIB B) 2607200300 C) 2607221030\nD) DAILY 0300-1030\nE) AD CLSD TO ALL FLT, DUE WIP.\nAD NOT AVBL FOR EMERG.)"
-  },
-  {
    "id": "C1505/26",
    "loc": "LLLL",
    "name": "REVIVIM",
@@ -274,22 +274,6 @@
    "cat": "act",
    "heb": "בלון קשור תתקיים ב- TAYIBE. אזור בתוך 0.2NM רדיוס שמרכזו בנ.צ. 32°14'57\"N 34°59'33\"E סגור מהקרקע ועד 1,500רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-09/07/2026 12:48 UTC עד 21/07/2026 20:59 UTC",
    "raw": "C1491/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/015/3215N03500E001\nA) LLLL B) 2607091248 C) 2607212059\nE) CAPTIVE BALLOON WILL TAKE PLACE AT TAYIBE.\nAN AREA WI 0.2NM RADIUS CENTERED ON PSN 321457N0345933E\nCLSD FM GND UP TO 1,500FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 1500FT AMSL)"
-  },
-  {
-   "id": "A0550/26",
-   "loc": "LLER",
-   "name": "A0550/26",
-   "cat": "ad",
-   "heb": "VOR/DME RAM תדרים 113.850מגה-הרץ הוסר עבור MAINT.\nבתוקף: מ-20/07/2026 07:00 UTC עד 20/07/2026 09:00 UTC",
-   "raw": "A0550/26 NOTAMN\nQ) LLLL/QNMAS/IV/BO /AE/000/999/2945N03501E025\nA) LLER B) 2607200700 C) 2607200900\nE) VOR/DME RAM FREQ 113.850MHZ WITHDRAWN FOR MAINT.)"
-  },
-  {
-   "id": "A0549/26",
-   "loc": "LLER",
-   "name": "A0549/26",
-   "cat": "ad",
-   "heb": "DME של ILS RWY 19 C/S RB תדרים 110.500מגה-הרץ הוסר עבור MAINT.\nבתוקף: מ-20/07/2026 09:00 UTC עד 20/07/2026 12:00 UTC",
-   "raw": "A0549/26 NOTAMN\nQ) LLLL/QIDAS/I /NBO/A /000/999/2944N03501E005\nA) LLER B) 2607200900 C) 2607201200\nE) DME OF ILS RWY 19 C/S RB FREQ 110.500MHZ WITHDRAWN FOR MAINT.)"
   },
   {
    "id": "A0538/26",
