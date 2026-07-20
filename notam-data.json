@@ -1,7 +1,7 @@
 {
- "fetched_at": "19/07/2026 14:31 UTC",
- "fetched_iso": "2026-07-19T14:31:42Z",
- "count": 146,
+ "fetched_at": "20/07/2026 06:41 UTC",
+ "fetched_iso": "2026-07-20T06:41:32Z",
+ "count": 144,
  "notams": [
   {
    "id": "A0576/26",
@@ -34,14 +34,6 @@
    "cat": "uas",
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב MAGEN-SHAUL, עד 100מטר מעל הקרקע. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 1,500רגל מעל פני הים 32°31'45\"N 35°16'42\"E 32°30'24\"N 35°16'38\"E 32°30'39\"N 35°20'04\"E 32°31'39\"N 35°19'54\"E 32°31'53\"N 35°19'30\"E 32°31'59\"N 35°19'07\"E מומלצת זהירות.\nבתוקף: מ-01/08/2026 00:01 UTC עד 31/08/2026 20:59 UTC",
    "raw": "C1529/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/015/3231N03518E002\nA) LLLL B) 2608010001 C) 2608312059\nE) UAS/UAV ACT WILL TAKE PLACE AT MAGEN-SHAUL, UP TO 100M AGL.\nAN AREA BTN THE FLW PSN CLSD FM GND UP TO 1,500FT AMSL\n323145N0351642E 323024N0351638E 323039N0352004E\n323139N0351954E 323153N0351930E 323159N0351907E\nCTN ADZ.\nF) GND G) 1500FT AMSL)"
-  },
-  {
-   "id": "C1528/26",
-   "loc": "LLLL",
-   "name": "BET-HASHITA",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב BET-HASHITA. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 1,700רגל מעל פני הים 32°33'26\"N 35°28'02\"E 32°34'31\"N 35°28'15\"E 32°34'41\"N 35°27'00\"E 32°33'44\"N 35°26'35\"E. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-19/07/2026 08:33 UTC עד 19/07/2026 17:15 UTC",
-   "raw": "C1528/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/017/3234N03527E002\nA) LLLL B) 2607190833 C) 2607191715\nE) UAS/UAV ACT WILL TAKE PLACE AT BET-HASHITA.\nAN AREA BTN FLW PSN CLSD FM GND UP TO 1,700FT AMSL\n323326N0352802E 323431N0352815E 323441N0352700E\n323344N0352635E.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.\nF) GND G) 1700FT AMSL)"
   },
   {
    "id": "C1526/26",
@@ -282,14 +274,6 @@
    "cat": "act",
    "heb": "בלון קשור תתקיים ב- TAYIBE. אזור בתוך 0.2NM רדיוס שמרכזו בנ.צ. 32°14'57\"N 34°59'33\"E סגור מהקרקע ועד 1,500רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-09/07/2026 12:48 UTC עד 21/07/2026 20:59 UTC",
    "raw": "C1491/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/015/3215N03500E001\nA) LLLL B) 2607091248 C) 2607212059\nE) CAPTIVE BALLOON WILL TAKE PLACE AT TAYIBE.\nAN AREA WI 0.2NM RADIUS CENTERED ON PSN 321457N0345933E\nCLSD FM GND UP TO 1,500FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 1500FT AMSL)"
-  },
-  {
-   "id": "C1490/26",
-   "loc": "LLLL",
-   "name": "SHFARAAM",
-   "cat": "act",
-   "heb": "בלון קשור תתקיים ב- SHFARAAM. אזור בתוך 0.2NM רדיוס שמרכזו בנ.צ. 32°48'50\"N 35°10'02\"E סגור מהקרקע ועד 1,900רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-09/07/2026 12:43 UTC עד 19/07/2026 20:59 UTC",
-   "raw": "C1490/26 NOTAMR C1473/26\nQ) LLLL/QWCLW/IV/M  /W /000/019/3249N03510E001\nA) LLLL B) 2607091243 C) 2607192059\nE) CAPTIVE BALLOON WILL TAKE PLACE AT SHFARAAM.\nAN AREA WI 0.2NM RADIUS CENTERED ON PSN 324850N0351002E\nCLSD FM GND UP TO 1,900FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 1900FT AMSL)"
   },
   {
    "id": "A0550/26",
