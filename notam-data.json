@@ -1,7 +1,7 @@
 {
- "fetched_at": "20/07/2026 15:19 UTC",
- "fetched_iso": "2026-07-20T15:19:38Z",
- "count": 142,
+ "fetched_at": "21/07/2026 06:22 UTC",
+ "fetched_iso": "2026-07-21T06:22:05Z",
+ "count": 139,
  "notams": [
   {
    "id": "C1533/26",
@@ -26,14 +26,6 @@
    "cat": "ad",
    "heb": "שדה התעופה סגור לכל הטיסות, עקב WIP. שדה התעופה NOT AVBL עבור חירום.\nבתוקף: מ-21/07/2026 03:00 UTC עד 22/07/2026 10:30 UTC\nלו\"ז: 21 0300-0830, 22 0300-1030",
    "raw": "C1531/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3259N03534E005\nA) LLIB B) 2607210300 C) 2607221030\nD) 21 0300-0830, 22 0300-1030\nE) AD CLSD TO ALL FLT, DUE WIP.\nAD NOT AVBL FOR EMERG.)"
-  },
-  {
-   "id": "A0576/26",
-   "loc": "LLLL",
-   "name": "A0576/26",
-   "cat": "other",
-   "heb": "ATS נתיב J14 סגור בין ZACCI-GIMIK.\nבתוקף: מ-20/07/2026 17:30 UTC עד 21/07/2026 01:00 UTC",
-   "raw": "A0576/26 NOTAMN\nQ) LLLL/QANLC/I /NBO/E /050/060/3236N03518E018\nA) LLLL B) 2607201730 C) 2607210100\nE) ATS RTE J14 CLSD BTN ZACCI-GIMIK.)"
   },
   {
    "id": "A0575/26",
@@ -164,14 +156,6 @@
    "raw": "C1519/26 NOTAMN\nQ) LLLL/QFALT/IV/NBO/A /000/999/3037N03512E005\nA) LLEY B) 2607210300 C) 2607220425\nD) 21 0300-0545 0915-0955 1325-1600, 22 0300-0425\nE) UAS ACT WILL TAKE PLACE WI AIRSTRIP, FM GND UP TO 3,000FT AMSL.\nOPS WILL BE COORD AND APPROVED BY ATC.\nCTN ADZ.)"
   },
   {
-   "id": "C1518/26",
-   "loc": "LLLL",
-   "name": "C1518/26",
-   "cat": "other",
-   "heb": "טיסת ראייה מבוקרת (CVFR) נתיב סגור BMNUH-YAHEL\nבתוקף: מ-20/07/2026 15:15 UTC עד 20/07/2026 22:00 UTC",
-   "raw": "C1518/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /025/030/3012N03507E008\nA) LLLL B) 2607201515 C) 2607202200\nE) CVFR RTE CLSD  BMNUH-YAHEL)"
-  },
-  {
    "id": "C1517/26",
    "loc": "LLLL",
    "name": "C1517/26",
@@ -242,14 +226,6 @@
    "cat": "ad",
    "heb": "שדה התעופה סגור לכל הטיסות כולל מסוקים, עקב WIP. IN CASE של חירום AVBL בתוך 10MIN.\nבתוקף: מ-04/08/2026 05:25 UTC עד 04/08/2026 10:00 UTC\nלו\"ז: 0525-0725 0830-1000",
    "raw": "A0557/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3249N03503E005\nA) LLHA B) 2608040525 C) 2608041000\nD) 0525-0725 0830-1000\nE) AD CLSD TO ALL FLT INCLUDING HEL, DUE WIP.\nIN CASE OF EMERG AVBL WI 10MIN.)"
-  },
-  {
-   "id": "C1507/26",
-   "loc": "LLLL",
-   "name": "KELACH",
-   "cat": "pje",
-   "heb": "PJE תתקיים ב- KELACH. אזור בין נקודות הציון הבאות סגור לכל הטיסות מהקרקע ועד 8,000רגל מעל פני הים. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. 31°32'00\"N 34°53'19\"E 31°31'59\"N 34°47'33\"E 31°26'02\"N 34°47'30\"E 31°24'44\"N 34°50'24\"E 31°26'02\"N 34°53'11\"E. מומלצת זהירות.\nבתוקף: מ-20/07/2026 11:30 UTC עד 20/07/2026 20:30 UTC",
-   "raw": "C1507/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/080/3129N03450E005\nA) LLLL B) 2607201130 C) 2607202030\nE) PJE WILL TAKE PLACE AT KELACH.\nAN AREA BTN FLW PSN CLSD TO ALL FLT FM GND UP TO 8,000FT AMSL.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\n313200N0345319E 313159N0344733E 312602N0344730E\n312444N0345024E 312602N0345311E.\nCTN ADZ.\nF) GND G) 8000FT AMSL)"
   },
   {
    "id": "C1505/26",
