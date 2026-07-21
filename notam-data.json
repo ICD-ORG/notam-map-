@@ -1,8 +1,88 @@
 {
- "fetched_at": "21/07/2026 06:22 UTC",
- "fetched_iso": "2026-07-21T06:22:05Z",
- "count": 139,
+ "fetched_at": "21/07/2026 15:11 UTC",
+ "fetched_iso": "2026-07-21T15:11:35Z",
+ "count": 147,
  "notams": [
+  {
+   "id": "A0577/26",
+   "loc": "LLLL",
+   "name": "A0577/26",
+   "cat": "other",
+   "heb": "ATS נתיב J14 סגור בין ZACCI-GIMIK.\nבתוקף: מ-22/07/2026 15:30 UTC עד 23/07/2026 04:30 UTC",
+   "raw": "A0577/26 NOTAMN\nQ) LLLL/QANLC/I /NBO/E /050/060/3236N03518E018\nA) LLLL B) 2607221530 C) 2607230430\nE) ATS RTE J14 CLSD BTN ZACCI-GIMIK.)"
+  },
+  {
+   "id": "C1542/26",
+   "loc": "LLLL",
+   "name": "C1542/26",
+   "cat": "other",
+   "heb": "אזור בתוך 1.5NM רדיוס שמרכזו בנ.צ. 32°32'56\"N 35°16'45\"E סגור מהקרקע ועד 3,500רגל מעל פני הים לכל הטיסות. מומלצת זהירות.\nבתוקף: מ-22/07/2026 15:30 UTC עד 23/07/2026 04:30 UTC",
+   "raw": "C1542/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/035/3233N03517E002\nA) LLLL B) 2607221530 C) 2607230430\nE) AN AREA WI 1.5NM RADIUS CENTERED ON PSN 323256N0351645E\nCLSD FM GND UP TO 3,500FT AMSL TO ALL FLT.\nCTN ADZ.)"
+  },
+  {
+   "id": "C1541/26",
+   "loc": "LLHZ",
+   "name": "הרצליה (LLHZ)",
+   "cat": "ad",
+   "heb": "THE FLW ELEMENTS PENETRATING RWY STRIP TWY PENETRATING S של RWY 10. FENCE PENETRATING NW של RWY 10. POLES HEIGHT 1.20מטר מעל הקרקע E של RWY 28. מומלצת זהירות.\nבתוקף: מ-21/07/2026 12:44 UTC (קבוע)",
+   "raw": "C1541/26 NOTAMN\nQ) LLLL/QMRLT/IV/NBO/A /000/999/3211N03450E005\nA) LLHZ B) 2607211244 C) PERM\nE) THE FLW ELEMENTS PENETRATING RWY STRIP\nTWY PENETRATING S OF RWY 10.\nFENCE PENETRATING NW OF RWY 10.\nPOLES HEIGHT 1.20M AGL E OF RWY 28.\nCTN ADZ.)"
+  },
+  {
+   "id": "C1540/26",
+   "loc": "LLLL",
+   "name": "KARMEL WI OREN ULTRALIGHT",
+   "cat": "act",
+   "heb": "מסוקים ACT תתקיים ב- KARMEL בתוך OREN בועת זעירים (BOORN) מהקרקע ועד 500רגל מעל הקרקע, 2,500רגל מעל פני הים בין נקודות הציון הבאות 32°45'38\"N 34°59'20\"E 32°44'40\"N 35°01'46\"E 32°44'21\"N 35°04'33\"E 32°39'50\"N 35°05'20\"E 32°39'03\"N 35°00'27\"E. טיסות ריסוס חקלאיות בתוך 15MIN אישור מוקדם מבקרת התעופה מומלצת זהירות.\nבתוקף: מ-24/07/2026 06:00 UTC עד 24/07/2026 09:00 UTC",
+   "raw": "C1540/26 NOTAMN\nQ) LLLL/QAELP/IV/NBO/E /000/025/3243N03502E005\nA) LLLL B) 2607240600 C) 2607240900\nE) HEL ACT WILL TAKE PLACE AT KARMEL WI OREN ULTRALIGHT\nBUBBLE (BOORN) FM GND UP TO 500FT AGL, 2,500FT AMSL\nBTN FLW PSN  324538N0345920E 324440N0350146E\n324421N0350433E 323950N0350520E 323903N0350027E.\nOPS OF AGRICULTURE FLT WI 15MIN PPR FM ATC\nCTN ADZ.)"
+  },
+  {
+   "id": "C1539/26",
+   "loc": "LLLL",
+   "name": "C1539/26",
+   "cat": "uas",
+   "heb": "MINI UAS/UAV בועה CARMEL EAST ו- NORTH סגור.\nבתוקף: מ-24/07/2026 06:00 UTC עד 24/07/2026 09:00 UTC",
+   "raw": "C1539/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/030/3237N03501E006\nA) LLLL B) 2607240600 C) 2607240900\nE) MINI UAS/UAV BUBBLE CARMEL EAST AND NORTH CLSD.)"
+  },
+  {
+   "id": "C1538/26",
+   "loc": "LLLL",
+   "name": "C1538/26",
+   "cat": "pje",
+   "heb": "PJE AIRSPACE METZADA ACT מ-8,000רגל מעל פני הים. מופעל באישור מוקדם מבקרת התעופה בלבד.\nבתוקף: מ-30/07/2026 09:30 UTC עד 31/07/2026 11:00 UTC\nלו\"ז: 30 0930-1700, 31 0600-1100",
+   "raw": "C1538/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/080/3120N03523E003\nA) LLLL B) 2607300930 C) 2607311100\nD) 30 0930-1700, 31 0600-1100\nE) PJE AIRSPACE METZADA ACT FM 8,000FT AMSL.\nOPR BY PPR FM ATC ONLY.\nF) GND G) 8000FT AMSL)"
+  },
+  {
+   "id": "C1537/26",
+   "loc": "LLLL",
+   "name": "ASHALIM WI 0",
+   "cat": "other",
+   "heb": "אזור ב ASHALIM בתוך 0.8NM רדיוס שמרכזו בנ.צ. 30°58'08\"N 34°42'15\"E סגור לכל הטיסות מהקרקע ועד 3,500רגל מעל פני הים. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-22/07/2026 07:00 UTC עד 22/07/2026 12:00 UTC",
+   "raw": "C1537/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/035/3058N03442E001\nA) LLLL B) 2607220700 C) 2607221200\nE) AN AREA AT ASHALIM WI 0.8NM RADIUS CENTERED ON PSN\n305808N0344215E CLSD TO ALL FLT FM GND UP TO 3,500FT AMSL.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.)"
+  },
+  {
+   "id": "C1536/26",
+   "loc": "LLLL",
+   "name": "RETAMIM WI 0",
+   "cat": "other",
+   "heb": "אזור ב RETAMIM בתוך 0.8NM רדיוס שמרכזו בנ.צ. 31°03'13\"N 34°41'18\"E סגור לכל הטיסות מהקרקע ועד 3,300רגל מעל פני הים. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-22/07/2026 09:40 UTC עד 22/07/2026 12:00 UTC",
+   "raw": "C1536/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/033/3103N03441E001\nA) LLLL B) 2607220940 C) 2607221200\nE) AN AREA AT RETAMIM WI 0.8NM RADIUS CENTERED ON PSN\n310313N0344118E CLSD TO ALL FLT FM GND UP TO 3,300FT AMSL.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.)"
+  },
+  {
+   "id": "C1535/26",
+   "loc": "LLLL",
+   "name": "TAYIBE",
+   "cat": "act",
+   "heb": "בלון קשור תתקיים ב- TAYIBE. אזור בתוך 0.2NM רדיוס שמרכזו בנ.צ. 32°14'57\"N 34°59'33\"E סגור מהקרקע ועד 1,500רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-26/07/2026 02:20 UTC עד 27/07/2026 02:20 UTC",
+   "raw": "C1535/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/015/3215N03500E001\nA) LLLL B) 2607260220 C) 2607270220\nE) CAPTIVE BALLOON WILL TAKE PLACE AT TAYIBE.\nAN AREA WI 0.2NM RADIUS CENTERED ON PSN 321457N0345933E\nCLSD FM GND UP TO 1,500FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 1500FT AMSL)"
+  },
+  {
+   "id": "C1534/26",
+   "loc": "LLLL",
+   "name": "SHFARAAM",
+   "cat": "act",
+   "heb": "בלון קשור תתקיים ב- SHFARAAM. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 32°48'50\"N 35°10'02\"E סגור מהקרקע ועד 2,000רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-26/07/2026 02:20 UTC עד 27/07/2026 02:20 UTC",
+   "raw": "C1534/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/020/3249N03510E001\nA) LLLL B) 2607260220 C) 2607270220\nE) CAPTIVE BALLOON WILL TAKE PLACE AT SHFARAAM.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 324850N0351002E\nCLSD FM GND UP TO 2,000FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 2000FT AMSL)"
+  },
   {
    "id": "C1533/26",
    "loc": "LLLL",
@@ -100,14 +180,6 @@
    "raw": "C1521/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/020/3244N03524E003\nA) LLLL B) 2607191000 C) 2607221300\nD) 19 1000-1115 1430-1530, 20-21 DAILY 0630-0745 1700-1800,  22\n0630-0745 1200-1300\nE) AN AREA AT KFAR-TAVOR FM GND UP TO 2,000FT AMSL CLSD\nTO ALL FLT BTN FLW PSN  324154N0352333E\n324245N0352546E 324657N0352348E 324604N0352151E.\nCTN ADZ.)"
   },
   {
-   "id": "C1520/26",
-   "loc": "LLLL",
-   "name": "NEVE-MICHAEL",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ תתקיים ב NEVE-MICHAEL. אזור בין נקודות הציון הבאות מהקרקע ועד 3,500רגל מעל פני הים סגור לכל הטיסות 31°41'07\"N 34°59'19\"E 31°38'46\"N 34°58'57\"E 31°38'24\"N 35°00'11\"E 31°40'28\"N 35°03'07\"E 31°41'31\"N 35°01'34\"E. טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה מומלצת זהירות.\nבתוקף: מ-20/07/2026 07:00 UTC עד 21/07/2026 11:15 UTC\nלו\"ז: DAILY 0700-0800 1015-1115",
-   "raw": "C1520/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/035/3140N03501E003\nA) LLLL B) 2607200700 C) 2607211115\nD) DAILY 0700-0800 1015-1115\nE) UAS ACT WILL TAKE PLACE AT NEVE-MICHAEL.\nAN AREA BTN FLW PSN FM GND UP TO 3,500FT AMSL CLSD TO\nALL FLT  314107N0345919E 313846N0345857E 313824N0350011E\n314028N0350307E 314131N0350134E.\nOPS OF AGRICULTURE FLT AVBL WITH 15MIN PPR FM ATC\nCTN ADZ.\nF) GND G) 3500FT AMSL)"
-  },
-  {
    "id": "A0571/26",
    "loc": "LLBG",
    "name": "A0571/26",
@@ -154,14 +226,6 @@
    "cat": "uas",
    "heb": "פעילות כטב\"מ תתקיים בתוך המנחת, מהקרקע ועד 3,000רגל מעל פני הים. הפעילות תתואם ותאושר ע\"י בקרת התעופה. מומלצת זהירות.\nבתוקף: מ-21/07/2026 03:00 UTC עד 22/07/2026 04:25 UTC\nלו\"ז: 21 0300-0545 0915-0955 1325-1600, 22 0300-0425",
    "raw": "C1519/26 NOTAMN\nQ) LLLL/QFALT/IV/NBO/A /000/999/3037N03512E005\nA) LLEY B) 2607210300 C) 2607220425\nD) 21 0300-0545 0915-0955 1325-1600, 22 0300-0425\nE) UAS ACT WILL TAKE PLACE WI AIRSTRIP, FM GND UP TO 3,000FT AMSL.\nOPS WILL BE COORD AND APPROVED BY ATC.\nCTN ADZ.)"
-  },
-  {
-   "id": "C1517/26",
-   "loc": "LLLL",
-   "name": "C1517/26",
-   "cat": "other",
-   "heb": "טיסת ראייה מבוקרת (CVFR) נתיב סגור ZOFAR-HRGVS-RUHOT.\nבתוקף: מ-21/07/2026 02:20 UTC עד 21/07/2026 13:20 UTC\nלו\"ז: 0220-0910 1010-1320",
-   "raw": "C1517/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /035/045/3037N03500E011\nA) LLLL B) 2607210220 C) 2607211320\nD) 0220-0910 1010-1320\nE) CVFR RTE CLSD  ZOFAR-HRGVS-RUHOT.)"
   },
   {
    "id": "C1514/26",
