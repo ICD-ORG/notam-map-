@@ -1,23 +1,31 @@
 {
- "fetched_at": "21/07/2026 15:11 UTC",
- "fetched_iso": "2026-07-21T15:11:35Z",
- "count": 147,
+ "fetched_at": "22/07/2026 06:20 UTC",
+ "fetched_iso": "2026-07-22T06:20:58Z",
+ "count": 146,
  "notams": [
   {
-   "id": "A0577/26",
+   "id": "C1545/26",
    "loc": "LLLL",
-   "name": "A0577/26",
+   "name": "C1545/26",
    "cat": "other",
-   "heb": "ATS נתיב J14 סגור בין ZACCI-GIMIK.\nבתוקף: מ-22/07/2026 15:30 UTC עד 23/07/2026 04:30 UTC",
-   "raw": "A0577/26 NOTAMN\nQ) LLLL/QANLC/I /NBO/E /050/060/3236N03518E018\nA) LLLL B) 2607221530 C) 2607230430\nE) ATS RTE J14 CLSD BTN ZACCI-GIMIK.)"
+   "heb": "אזור בתוך 1.62NM רדיוס שמרכזו בנ.צ. 31°38'09\"N 34°31'07\"E סגור מהקרקע ועד 2,500רגל מעל פני הים לכל הטיסות, טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה בלבד. מומלצת זהירות.\nבתוקף: מ-22/07/2026 06:00 UTC עד 22/07/2026 09:00 UTC",
+   "raw": "C1545/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/025/3138N03431E002\nA) LLLL B) 2607220600 C) 2607220900\nE) AN AREA WI 1.62NM RADIUS CENTERED ON PSN 313809N0343107E\nCLSD FM GND UP TO 2,500FT AMSL TO ALL FLT,\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC ONLY.\nCTN ADZ.)"
   },
   {
-   "id": "C1542/26",
+   "id": "C1544/26",
    "loc": "LLLL",
-   "name": "C1542/26",
+   "name": "C1544/26",
    "cat": "other",
-   "heb": "אזור בתוך 1.5NM רדיוס שמרכזו בנ.צ. 32°32'56\"N 35°16'45\"E סגור מהקרקע ועד 3,500רגל מעל פני הים לכל הטיסות. מומלצת זהירות.\nבתוקף: מ-22/07/2026 15:30 UTC עד 23/07/2026 04:30 UTC",
-   "raw": "C1542/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/035/3233N03517E002\nA) LLLL B) 2607221530 C) 2607230430\nE) AN AREA WI 1.5NM RADIUS CENTERED ON PSN 323256N0351645E\nCLSD FM GND UP TO 3,500FT AMSL TO ALL FLT.\nCTN ADZ.)"
+   "heb": "אזור בתוך 1.5NM רדיוס שמרכזו בנ.צ. 32°32'56\"N 35°16'45\"E סגור מהקרקע ועד 3,500רגל מעל פני הים לכל הטיסות. מומלצת זהירות.\nבתוקף: מ-22/07/2026 14:30 UTC עד 23/07/2026 04:30 UTC",
+   "raw": "C1544/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/035/3233N03517E002\nA) LLLL B) 2607221430 C) 2607230430\nE) AN AREA WI 1.5NM RADIUS CENTERED ON PSN 323256N0351645E\nCLSD FM GND UP TO 3,500FT AMSL TO ALL FLT.\nCTN ADZ.)"
+  },
+  {
+   "id": "A0579/26",
+   "loc": "LLLL",
+   "name": "A0579/26",
+   "cat": "other",
+   "heb": "ATS נתיב J14 סגור בין ZACCI-GIMIK.\nבתוקף: מ-22/07/2026 14:30 UTC עד 23/07/2026 04:30 UTC",
+   "raw": "A0579/26 NOTAMN\nQ) LLLL/QANLC/I /NBO/E /050/060/3236N03518E018\nA) LLLL B) 2607221430 C) 2607230430\nE) ATS RTE J14 CLSD BTN ZACCI-GIMIK.)"
   },
   {
    "id": "C1541/26",
@@ -220,14 +228,6 @@
    "raw": "A0566/26 NOTAMN\nQ) LLLL/QOBCE/IV/M  /AE/000/004/3159N03454E001\nA) LLBG B) 2607190400 C) 2607220800\nD) DAILY 0400-0800\nE) CRANE ERECTED WI LLBG CTR, AT EL-AL JUNCTION.\nAN AREA FM GND UP TO 100M 360FT AMSL CLSD BTN FLW PSN\n315924N0345425E 315922N0345423E 315924N0345419E\n315926N0345421E.\nCTN ADZ.)"
   },
   {
-   "id": "C1519/26",
-   "loc": "LLEY",
-   "name": "C1519/26",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ תתקיים בתוך המנחת, מהקרקע ועד 3,000רגל מעל פני הים. הפעילות תתואם ותאושר ע\"י בקרת התעופה. מומלצת זהירות.\nבתוקף: מ-21/07/2026 03:00 UTC עד 22/07/2026 04:25 UTC\nלו\"ז: 21 0300-0545 0915-0955 1325-1600, 22 0300-0425",
-   "raw": "C1519/26 NOTAMN\nQ) LLLL/QFALT/IV/NBO/A /000/999/3037N03512E005\nA) LLEY B) 2607210300 C) 2607220425\nD) 21 0300-0545 0915-0955 1325-1600, 22 0300-0425\nE) UAS ACT WILL TAKE PLACE WI AIRSTRIP, FM GND UP TO 3,000FT AMSL.\nOPS WILL BE COORD AND APPROVED BY ATC.\nCTN ADZ.)"
-  },
-  {
    "id": "C1514/26",
    "loc": "LLLL",
    "name": "C1514/26",
@@ -306,14 +306,6 @@
    "cat": "other",
    "heb": "טיסת ראייה מבוקרת (CVFR) ו- מסוקים נתיב סגור ב-1,200רגל, AVBL BIDIRECTIONAL ב-800רגל מעל פני הים בלבד TYONA-SUPER-NTAIM-BOVED-NAGID-YAVNE-ZASHD.\nבתוקף: מ-21/07/2026 09:00 UTC עד 22/07/2026 19:00 UTC\nלו\"ז: 21 0900-1000, 22 1800-1900",
    "raw": "C1504/26 NOTAMN\nQ) LLLL/QARLT/IV/NBO/E /008/012/3155N03446E008\nA) LLLL B) 2607210900 C) 2607221900\nD) 21 0900-1000, 22 1800-1900\nE) CVFR AND HEL RTE CLSD AT 1,200FT,\nAVBL BIDIRECTIONAL AT 800FT AMSL ONLY\nTYONA-SUPER-NTAIM-BOVED-NAGID-YAVNE-ZASHD.)"
-  },
-  {
-   "id": "C1491/26",
-   "loc": "LLLL",
-   "name": "TAYIBE",
-   "cat": "act",
-   "heb": "בלון קשור תתקיים ב- TAYIBE. אזור בתוך 0.2NM רדיוס שמרכזו בנ.צ. 32°14'57\"N 34°59'33\"E סגור מהקרקע ועד 1,500רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-09/07/2026 12:48 UTC עד 21/07/2026 20:59 UTC",
-   "raw": "C1491/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/015/3215N03500E001\nA) LLLL B) 2607091248 C) 2607212059\nE) CAPTIVE BALLOON WILL TAKE PLACE AT TAYIBE.\nAN AREA WI 0.2NM RADIUS CENTERED ON PSN 321457N0345933E\nCLSD FM GND UP TO 1,500FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 1500FT AMSL)"
   },
   {
    "id": "A0538/26",
