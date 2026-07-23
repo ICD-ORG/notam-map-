@@ -257,12 +257,53 @@ def main():
             print(f'[{k}/{len(uas)}] {nid} — שגיאה: {e}')
 
     now = datetime.datetime.now(datetime.timezone.utc)
+    now_iso = now.strftime('%Y-%m-%dT%H:%M:%SZ')
+
+    # ===== מעקב "מה חדש" ו"מה ירד": משווים מול הקובץ הקודם (אם קיים בתיקייה) =====
+    # ריצת גיטהאב תמיד מוריד קודם את המאגר, אז הקובץ הישן זמין כאן על הדיסק לפני שהוא נדרס.
+    PRE_UPGRADE_DATE = '2026-07-01T00:00:00Z'  # תאריך-סמן לנוטמים שהיו קיימים לפני שהמעקב הזה נוסף
+    RETENTION_DAYS = 21                         # כמה זמן להשאיר נוטמ ב"ירדו לאחרונה" לפני שמנקים אותו סופית
+
+    old_by_id, old_removed = {}, []
+    try:
+        with open('notam-data.json', encoding='utf-8') as f:
+            prev = json.load(f)
+        for it in prev.get('notams', []):
+            old_by_id[it['id']] = it
+        old_removed = prev.get('removed', [])
+    except Exception:
+        pass  # ריצה ראשונה, או שאין קובץ קודם — מתחילים נקי
+
+    new_ids = set()
+    for it in notams:
+        new_ids.add(it['id'])
+        prior = old_by_id.get(it['id'])
+        if prior and prior.get('first_seen'):
+            it['first_seen'] = prior['first_seen']       # כבר ראינו אותו — שומרים את התאריך המקורי
+        elif prior:
+            it['first_seen'] = PRE_UPGRADE_DATE           # היה קיים לפני השדרוג, אבל בלי תאריך מתועד
+        else:
+            it['first_seen'] = now_iso                    # נוטמ חדש לגמרי — מתויג מהיום
+
+    # מי שהיה אתמול ברשימה ונעלם היום — עובר ל"ירדו לאחרונה"
+    newly_removed = []
+    for old_id, old_item in old_by_id.items():
+        if old_id not in new_ids:
+            newly_removed.append({
+                'id': old_id, 'name': old_item.get('name', old_id), 'cat': old_item.get('cat', 'other'),
+                'heb': old_item.get('heb', ''), 'removed_at': now_iso
+            })
+    removed = newly_removed + old_removed
+    # ניקוי: משאירים רק את מה שירד ב-21 הימים האחרונים, כדי שהקובץ לא יתנפח לנצח
+    cutoff = now - datetime.timedelta(days=RETENTION_DAYS)
+    removed = [r for r in removed if datetime.datetime.strptime(r['removed_at'], '%Y-%m-%dT%H:%M:%SZ').replace(tzinfo=datetime.timezone.utc) >= cutoff]
+
     out = {'fetched_at': now.strftime('%d/%m/%Y %H:%M UTC'),
-           'fetched_iso': now.strftime('%Y-%m-%dT%H:%M:%SZ'),
-           'count': len(notams), 'notams': notams}
+           'fetched_iso': now_iso,
+           'count': len(notams), 'notams': notams, 'removed': removed}
     with open('notam-data.json', 'w', encoding='utf-8') as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
-    print(f'נשמר notam-data.json עם {len(notams)} נוטמים. העלו את הקובץ לאתר.')
+    print(f'נשמר notam-data.json עם {len(notams)} נוטמים ({len(newly_removed)} ירדו הפעם, {len(removed)} סה\"כ בהיסטוריית הירידות). העלו את הקובץ לאתר.')
 
 if __name__ == '__main__':
     main()
