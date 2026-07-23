@@ -19,15 +19,14 @@ ICAO_HE = {'LLBG':'נתב"ג','LLSD':'שדה דב','LLHZ':'הרצליה','LLHA':
 
 def classify(raw, loc):
     t = raw.upper()
-    if __import__('re').search(r'\bUAS\b|\bUAV\b', t): return 'uas'
-    if __import__('re').search(r'\bPJE\b|PARACHUT', t): return 'pje'
-    if __import__('re').search(r'\bFRNG\b|FIRING', t): return 'frng'
-    if __import__('re').search(r'CRANE|\bOBST\b', t): return 'obst'
-    if __import__('re').search(r'BALLOON|AEROBATIC|MODEL ACFT|\bGLD\b|ULTRALIGHT', t): return 'act'
+    if re.search(r'\bUAS\b|\bUAV\b', t): return 'uas'
+    if re.search(r'\bPJE\b|PARACHUT', t): return 'pje'
+    if re.search(r'\bFRNG\b|FIRING', t): return 'frng'
+    if re.search(r'CRANE|\bOBST\b', t): return 'obst'
+    if re.search(r'BALLOON|AEROBATIC|MODEL ACFT|\bGLD\b|ULTRALIGHT', t): return 'act'
     if loc and loc != 'LLLL': return 'ad'
-    if __import__('re').search(r'\bRWY\b|\bTWY\b|\bAPN\b|\bILS\b|\bVOR\b|\bDME\b|\bTWR\b', t): return 'ad'
+    if re.search(r'\bRWY\b|\bTWY\b|\bAPN\b|\bILS\b|\bVOR\b|\bDME\b|\bTWR\b', t): return 'ad'
     return 'other'
-
 
 PHRASES = [
  ('UAS/UAV ACT WILL TAKE PLACE AT','פעילות כטב"מ/רחפנים תתקיים ב'),
@@ -65,71 +64,6 @@ PHRASES = [
  ('FLW PSN','נקודות הציון הבאות'),('PSN','נ.צ.'),('CLSD','סגור'),('BTN','בין'),
  ('OPS OF','הפעלת'),('HEL','מסוקים'),('FLT','טיסות'),('UP TO','עד'),
  (' AT ',' ב-'),(' WI ',' בתוך '),(' FM ',' מ-'),
- ('TRIGGER NOTAM','נוטמ טריגר'),
- ('AIRAC DOM AIP AMDT','עדכון AIP פנים-ארצי (AIRAC) מס׳'),
- ('AIRAC AIP AMDT','עדכון AIP (AIRAC) מס׳'),
- ('AIRAC AIP SUP','תוספת AIP (AIRAC) מס׳'),
- ('AIP SUP','תוספת AIP'),('DOM AIP','ה-AIP הפנים-ארצי'),('ISRAEL AIP','ה-AIP של ישראל'),
- ('ISRAEL AIRPORTS AUTHORITY','רשות שדות התעופה'),
- ('AIS/ARO/FMP UNIT','יחידת מודיעין הטיס (AIS/ARO/FMP)'),
- ('AIS/ARO UNIT','יחידת מודיעין הטיס (AIS/ARO)'),
- ('AIS UNIT','יחידת מודיעין טיס'),('AIS SER','שירותי מודיעין טיס'),
- ('AD OPS CENTER','מרכז תפעול השדה'),
- ('MNM CMB GRADIENT REQUIRED OF','שיפוע נסיקה מזערי נדרש של'),
- ('MNM CMB GRADIENT REQUIRED','שיפוע נסיקה מזערי נדרש'),
- ('MNM CMB GRADIENT','שיפוע נסיקה מזערי'),('CMB GRADIENT','שיפוע נסיקה'),
- ('DUE TO AIR-SPACE RESTRICTIONS','עקב מגבלות מרחב אווירי'),
- ('AIR-SPACE RESTRICTIONS','מגבלות מרחב אווירי'),('RESTRICTIONS','מגבלות'),
- ('IF UNABLE','אם לא ניתן —'),('ADZ ATC','יש להודיע לבקרת התעופה'),('EXECUTE','לבצע'),
- ('COMPLETELY WITHDRAWN','הוסר לחלוטין'),('WITHDRAWN','הוסר'),
- ('RE-ESTABLISHED','הוקם מחדש'),('ESTABLISHED','הוקם'),('SEPARATED','הופרד'),
- ('RENAMED TO','שוּנה שמו ל-'),('UPDATED','עודכן'),('ADDED','נוסף'),
- ('CANCELLED','בוטל'),('SUSPENDED','הושעה'),('RESUMED','חודש'),
- ('THE FLW INFO CHG','המידע הבא שוּנה:'),('THE FLW INFO','המידע הבא'),
- ('WILL BE PROVIDED BY','יסופקו ע"י'),
- ('CHANGES TO THE SUBMITTED FLIGHT PLAN','שינויים בתוכנית טיסה שהוגשה'),
- ('SHALL BE REPORTED AS SOON AS POSSIBLE TO','יש לדווח בהקדם האפשרי אל'),
- ('AS SOON AS POSSIBLE','בהקדם האפשרי'),('IN THE EVENT OF','במקרה של'),
- ('DELAY IN DEPARTURE OF','עיכוב בהמראה של'),('MINUTES OR MORE','דקות או יותר'),
- ('CONTROLLED VFR FLIGHT','טיסת ראייה מבוקרת'),
- ('FLIGHT PLAN','תוכנית טיסה'),('DOM FPL','תוכנית טיסה פנים-ארצית'),
- ('FPL FORM','טופס תוכנית טיסה'),('FPL','תוכנית טיסה'),
- ('INTERNATIONAL','בינלאומי'),('INTL','בינלאומי'),('DOMESTIC','פנים-ארצי'),('DOM','פנים-ארצי'),
- ('SPOKEN LANGUAGE','שפת הדיבור'),('DEFINITION','הגדרה'),
- ('CLOSURE OF','סגירת'),('CONDITIONS FOR','תנאים ל-'),('TRANSITION','מעבר'),
- ('HOT-AIR BALLOON','כדור פורח'),('CAPTIVE BALLOON','בלון קשור'),
- ('MAP/CHART','מפה/תרשים'),('CHART','תרשים'),
- ('PART GEN','חלק GEN'),('PART','חלק'),('PARA','סעיף'),('PAGE','עמוד'),
- ('TABLE COLUMN','טור בטבלה'),('TABLE','טבלה'),('LINE','שורה'),('APPENDIX','נספח'),
- ('PHONE NR','טלפון'),('FAX','פקס'),('E-MAIL','דוא"ל'),('TEL','טל׳'),
- ('CRANES ERECTED AT','מנופים הוצבו ב-'),('CRANE ERECTED AT','מנוף הוצב ב-'),
- ('CRANE OPERATING','מנוף פועל'),('ERECTED','הוצב'),('CRANE','מנוף'),
- ('LIT AND DAY MARKED','מואר ומסומן ליום'),('MARKED','מסומן'),('LIT','מואר'),
- ('DISPLACED THR','סף מסלול מוזז'),('THR','סף מסלול'),('DISPLACED','מוזז'),
- ('OUT OF SERVICE','מושבת'),('UNSERVICEABLE','לא שמיש'),('U/S','לא שמיש'),
- ('OPR HR','שעות פעילות'),('OPR','מופעל'),('OPN','פתוח'),
- ('SID','נוהל יציאה (SID)'),('STAR','נוהל הגעה (STAR)'),
- ('IFR','טיסת מכשירים (IFR)'),('VFR','טיסת ראייה (VFR)'),
- ('CVFR','טיסת ראייה מבוקרת (CVFR)'),('CTR','אזור בקרה (CTR)'),
- ('APCH','גישה'),('GNSS','ניווט לווייני (GNSS)'),('LGT','תאורה'),
- ('AIRSTRIP','מנחת'),('EMERG','חירום'),('ROAD','כביש'),('MIL','צבאי'),
- ('DAILY','מדי יום'),('WI','בתוך'),('REF','ראו:'),('NR','מס׳'),
- ('AVBL ON REQ','זמין לפי בקשה'),('ON REQ','לפי בקשה'),
- ('ATC','בקרת התעופה'),('ACFT','כלי טיס'),('AD','שדה התעופה'),
- ('WILL TAKE PLACE AT','תתקיים ב-'),('WILL TAKE PLACE','תתקיים'),
- ('AND','ו-'),('ONLY','בלבד'),('BTN','בין'),
- ('CHG AS FLW','שוּנה כדלקמן:'),('CHG TO','שוּנה ל-'),('CHG','שוּנה'),
- ('AS FLW','כדלקמן:'),('WEF','בתוקף מ-'),('PERM','לצמיתות'),
- ('PERCENT','אחוז'),('DUE TO','עקב'),('DUE','עקב'),('OBST','מכשולים'),
- ('ALL','כל'),('FOR','עבור'),('OF','של'),('INTO','לתוך'),
- ('FREQ','תדרים'),('TO/FM','אל/מ-'),('RTE','נתיב'),('LOCAL','מקומית'),
- ('ULTRALIGHT ZVULUN BUBBLE','בועת הזעירים זבולון'),('ULTRALIGHT','זעירים'),('BUBBLE','בועה'),
- ('WILL BE','יהיו'),('PROVIDED','מסופקים'),('SER','שירות'),('SVC','שירות'),
- (' TO ',' אל '),
-
- ('FT','רגל'),('MHZ','מגה-הרץ'),('KHZ','קילו-הרץ'),
- ('JAN','ינואר'),('FEB','פברואר'),('MAR','מרץ'),('APR','אפריל'),('MAY','מאי'),('JUN','יוני'),
- ('JUL','יולי'),('AUG','אוגוסט'),('SEP','ספטמבר'),('OCT','אוקטובר'),('NOV','נובמבר'),('DEC','דצמבר'),
 ]
 
 def http_get(url):
@@ -188,12 +122,7 @@ def translate(raw, e_text):
                lambda m: fmt_coord(*m.groups()), t)
     t = re.sub(r'N(\d{2})(\d{2})(\d{2}(?:\.\d+)?)E\s?0?(\d{2})(\d{2})(\d{2}(?:\.\d+)?)',
                lambda m: fmt_coord(*m.groups()), t)
-    import re as _re
-    for en, he in sorted(PHRASES, key=lambda p: -len(p[0])):
-        if _re.match(r'^[A-Za-z]', en) and _re.search(r'[A-Za-z]$', en):
-            t = _re.sub(r'(?<![A-Za-z])' + _re.escape(en) + r'(?![A-Za-z])', he, t)
-        else:
-            t = t.replace(en, he)
+    for en, he in PHRASES: t = t.replace(en, he)
     t = re.sub(r'\s+,', ',', t); t = re.sub(r'\s+\.', '.', t); t = re.sub(r'\)\s*$', '', t).strip()
     b = re.search(r'B\)\s*(\d{10})', raw); c = re.search(r'C\)\s*(\d{10})', raw)
     perm = bool(re.search(r'C\)\s*PERM', raw))
@@ -260,9 +189,8 @@ def main():
     now_iso = now.strftime('%Y-%m-%dT%H:%M:%SZ')
 
     # ===== מעקב "מה חדש" ו"מה ירד": משווים מול הקובץ הקודם (אם קיים בתיקייה) =====
-    # ריצת גיטהאב תמיד מוריד קודם את המאגר, אז הקובץ הישן זמין כאן על הדיסק לפני שהוא נדרס.
-    PRE_UPGRADE_DATE = '2026-07-01T00:00:00Z'  # תאריך-סמן לנוטמים שהיו קיימים לפני שהמעקב הזה נוסף
-    RETENTION_DAYS = 21                         # כמה זמן להשאיר נוטמ ב"ירדו לאחרונה" לפני שמנקים אותו סופית
+    PRE_UPGRADE_DATE = '2026-07-01T00:00:00Z'
+    RETENTION_DAYS = 21
 
     old_by_id, old_removed = {}, []
     try:
@@ -272,20 +200,19 @@ def main():
             old_by_id[it['id']] = it
         old_removed = prev.get('removed', [])
     except Exception:
-        pass  # ריצה ראשונה, או שאין קובץ קודם — מתחילים נקי
+        pass
 
     new_ids = set()
     for it in notams:
         new_ids.add(it['id'])
         prior = old_by_id.get(it['id'])
         if prior and prior.get('first_seen'):
-            it['first_seen'] = prior['first_seen']       # כבר ראינו אותו — שומרים את התאריך המקורי
+            it['first_seen'] = prior['first_seen']
         elif prior:
-            it['first_seen'] = PRE_UPGRADE_DATE           # היה קיים לפני השדרוג, אבל בלי תאריך מתועד
+            it['first_seen'] = PRE_UPGRADE_DATE
         else:
-            it['first_seen'] = now_iso                    # נוטמ חדש לגמרי — מתויג מהיום
+            it['first_seen'] = now_iso
 
-    # מי שהיה אתמול ברשימה ונעלם היום — עובר ל"ירדו לאחרונה"
     newly_removed = []
     for old_id, old_item in old_by_id.items():
         if old_id not in new_ids:
@@ -294,7 +221,6 @@ def main():
                 'heb': old_item.get('heb', ''), 'removed_at': now_iso
             })
     removed = newly_removed + old_removed
-    # ניקוי: משאירים רק את מה שירד ב-21 הימים האחרונים, כדי שהקובץ לא יתנפח לנצח
     cutoff = now - datetime.timedelta(days=RETENTION_DAYS)
     removed = [r for r in removed if datetime.datetime.strptime(r['removed_at'], '%Y-%m-%dT%H:%M:%SZ').replace(tzinfo=datetime.timezone.utc) >= cutoff]
 
@@ -303,7 +229,7 @@ def main():
            'count': len(notams), 'notams': notams, 'removed': removed}
     with open('notam-data.json', 'w', encoding='utf-8') as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
-    print(f'נשמר notam-data.json עם {len(notams)} נוטמים ({len(newly_removed)} ירדו הפעם, {len(removed)} סה\"כ בהיסטוריית הירידות). העלו את הקובץ לאתר.')
+    print(f'נשמר notam-data.json עם {len(notams)} נוטמים ({len(newly_removed)} ירדו הפעם, {len(removed)} סה"כ בהיסטוריית הירידות). העלו את הקובץ לאתר.')
 
 if __name__ == '__main__':
     main()
