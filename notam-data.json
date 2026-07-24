@@ -1,8 +1,26 @@
 {
- "fetched_at": "24/07/2026 06:17 UTC",
- "fetched_iso": "2026-07-24T06:17:22Z",
- "count": 140,
+ "fetched_at": "24/07/2026 15:02 UTC",
+ "fetched_iso": "2026-07-24T15:02:56Z",
+ "count": 138,
  "notams": [
+  {
+   "id": "C1568/26",
+   "loc": "LLLL",
+   "name": "EIN-ZURIM WI 0",
+   "cat": "other",
+   "heb": "אזור ב EIN-ZURIM בתוך 0.8NM רדיוס שמרכזו בנ.צ. 31°41'30\"N 34°42'19\"E סגור מהקרקע ועד 800רגל מעל פני הים לכל הטיסות. מומלצת זהירות.\nבתוקף: מ-24/07/2026 14:00 UTC עד 24/07/2026 20:00 UTC",
+   "raw": "C1568/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/008/3141N03442E001\nA) LLLL B) 2607241400 C) 2607242000\nE) AN AREA AT EIN-ZURIM WI 0.8NM RADIUS CENTERED ON PSN\n314130N0344219E\nCLSD FM GND UP TO 800FT AMSL TO ALL FLT.\nCTN ADZ.)",
+   "first_seen": "2026-07-24T15:02:56Z"
+  },
+  {
+   "id": "C1566/26",
+   "loc": "LLIB",
+   "name": "ראש פינה (LLIB)",
+   "cat": "ad",
+   "heb": "AD סגור לכל הטיסות, כולל מסוקים OR POLICE טיסות. NOT AVBL FOR EMERG, MEDEVAC טיסות OR AS ALTN.\nבתוקף: מ-25/07/2026 12:00 UTC עד 25/07/2026 16:00 UTC",
+   "raw": "C1566/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3259N03534E005\nA) LLIB B) 2607251200 C) 2607251600\nE) AD CLSD TO ALL FLT, INCLUDING HEL OR POLICE FLT.\nNOT AVBL FOR EMERG, MEDEVAC FLT OR AS ALTN.)",
+   "first_seen": "2026-07-24T15:02:56Z"
+  },
   {
    "id": "C1565/26",
    "loc": "LLMZ",
@@ -94,24 +112,6 @@
    "first_seen": "2026-07-01T00:00:00Z"
   },
   {
-   "id": "C1551/26",
-   "loc": "LLLL",
-   "name": "C1551/26",
-   "cat": "act",
-   "heb": "מסוקים ACT WILL TAKE PLACE בתוך NITZANIM בועת זעירים (BNZNI) מהקרקע ועד 1,000רגל מעל פני הים בין נקודות הציון הבאות 31°46'03\"N 34°36'39\"E 31°45'06\"N 34°39'03\"E 31°41'31\"N 34°36'43\"E 31°42'37\"N 34°34'25\"E. טיסות ריסוס חקלאיות בתוך 15MIN אישור מוקדם מבקרת התעופה מומלצת זהירות.\nבתוקף: מ-24/07/2026 12:00 UTC עד 24/07/2026 14:00 UTC",
-   "raw": "C1551/26 NOTAMN\nQ) LLLL/QAELP/IV/NBO/E /000/010/3144N03437E003\nA) LLLL B) 2607241200 C) 2607241400\nE) HEL ACT WILL TAKE PLACE WI NITZANIM ULTRALIGHT\nBUBBLE (BNZNI) FM GND UP TO 1,000FT AMSL\nBTN FLW PSN  314603N0343639E 314506N0343903E\n314131N0343643E 314237N0343425E.\nOPS OF AGRICULTURE FLT WI 15MIN PPR FM ATC\nCTN ADZ.)",
-   "first_seen": "2026-07-01T00:00:00Z"
-  },
-  {
-   "id": "C1550/26",
-   "loc": "LLLL",
-   "name": "C1550/26",
-   "cat": "act",
-   "heb": "בועת זעירים NITZANIM (BNZNI) סגור.\nבתוקף: מ-24/07/2026 12:00 UTC עד 24/07/2026 14:00 UTC",
-   "raw": "C1550/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/004/3145N03439E006\nA) LLLL B) 2607241200 C) 2607241400\nE) ULTRALIGHT BUBBLE NITZANIM (BNZNI) CLSD.)",
-   "first_seen": "2026-07-01T00:00:00Z"
-  },
-  {
    "id": "C1549/26",
    "loc": "LLLL",
    "name": "REVIVIM",
@@ -163,24 +163,6 @@
    "cat": "ad",
    "heb": "THE FLW ELEMENTS PENETRATING RWY STRIP TWY PENETRATING S OF RWY 10. FENCE PENETRATING NW OF RWY 10. POLES HEIGHT 1.20מטר מעל הקרקע E OF RWY 28. מומלצת זהירות.\nבתוקף: מ-21/07/2026 12:44 UTC (קבוע)",
    "raw": "C1541/26 NOTAMN\nQ) LLLL/QMRLT/IV/NBO/A /000/999/3211N03450E005\nA) LLHZ B) 2607211244 C) PERM\nE) THE FLW ELEMENTS PENETRATING RWY STRIP\nTWY PENETRATING S OF RWY 10.\nFENCE PENETRATING NW OF RWY 10.\nPOLES HEIGHT 1.20M AGL E OF RWY 28.\nCTN ADZ.)",
-   "first_seen": "2026-07-01T00:00:00Z"
-  },
-  {
-   "id": "C1540/26",
-   "loc": "LLLL",
-   "name": "KARMEL WI OREN ULTRALIGHT",
-   "cat": "act",
-   "heb": "מסוקים ACT WILL TAKE PLACE ב-KARMEL בתוך OREN בועת זעירים (BOORN) מהקרקע ועד 500רגל מעל הקרקע, 2,500רגל מעל פני הים בין נקודות הציון הבאות 32°45'38\"N 34°59'20\"E 32°44'40\"N 35°01'46\"E 32°44'21\"N 35°04'33\"E 32°39'50\"N 35°05'20\"E 32°39'03\"N 35°00'27\"E. טיסות ריסוס חקלאיות בתוך 15MIN אישור מוקדם מבקרת התעופה מומלצת זהירות.\nבתוקף: מ-24/07/2026 06:00 UTC עד 24/07/2026 09:00 UTC",
-   "raw": "C1540/26 NOTAMN\nQ) LLLL/QAELP/IV/NBO/E /000/025/3243N03502E005\nA) LLLL B) 2607240600 C) 2607240900\nE) HEL ACT WILL TAKE PLACE AT KARMEL WI OREN ULTRALIGHT\nBUBBLE (BOORN) FM GND UP TO 500FT AGL, 2,500FT AMSL\nBTN FLW PSN  324538N0345920E 324440N0350146E\n324421N0350433E 323950N0350520E 323903N0350027E.\nOPS OF AGRICULTURE FLT WI 15MIN PPR FM ATC\nCTN ADZ.)",
-   "first_seen": "2026-07-01T00:00:00Z"
-  },
-  {
-   "id": "C1539/26",
-   "loc": "LLLL",
-   "name": "C1539/26",
-   "cat": "uas",
-   "heb": "MINI UAS/UAV BUBBLE CARMEL EAST AND NORTH סגור.\nבתוקף: מ-24/07/2026 06:00 UTC עד 24/07/2026 09:00 UTC",
-   "raw": "C1539/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/030/3237N03501E006\nA) LLLL B) 2607240600 C) 2607240900\nE) MINI UAS/UAV BUBBLE CARMEL EAST AND NORTH CLSD.)",
    "first_seen": "2026-07-01T00:00:00Z"
   },
   {
@@ -1265,6 +1247,34 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1551/26",
+   "name": "C1551/26",
+   "cat": "act",
+   "heb": "מסוקים ACT WILL TAKE PLACE בתוך NITZANIM בועת זעירים (BNZNI) מהקרקע ועד 1,000רגל מעל פני הים בין נקודות הציון הבאות 31°46'03\"N 34°36'39\"E 31°45'06\"N 34°39'03\"E 31°41'31\"N 34°36'43\"E 31°42'37\"N 34°34'25\"E. טיסות ריסוס חקלאיות בתוך 15MIN אישור מוקדם מבקרת התעופה מומלצת זהירות.\nבתוקף: מ-24/07/2026 12:00 UTC עד 24/07/2026 14:00 UTC",
+   "removed_at": "2026-07-24T15:02:56Z"
+  },
+  {
+   "id": "C1550/26",
+   "name": "C1550/26",
+   "cat": "act",
+   "heb": "בועת זעירים NITZANIM (BNZNI) סגור.\nבתוקף: מ-24/07/2026 12:00 UTC עד 24/07/2026 14:00 UTC",
+   "removed_at": "2026-07-24T15:02:56Z"
+  },
+  {
+   "id": "C1540/26",
+   "name": "KARMEL WI OREN ULTRALIGHT",
+   "cat": "act",
+   "heb": "מסוקים ACT WILL TAKE PLACE ב-KARMEL בתוך OREN בועת זעירים (BOORN) מהקרקע ועד 500רגל מעל הקרקע, 2,500רגל מעל פני הים בין נקודות הציון הבאות 32°45'38\"N 34°59'20\"E 32°44'40\"N 35°01'46\"E 32°44'21\"N 35°04'33\"E 32°39'50\"N 35°05'20\"E 32°39'03\"N 35°00'27\"E. טיסות ריסוס חקלאיות בתוך 15MIN אישור מוקדם מבקרת התעופה מומלצת זהירות.\nבתוקף: מ-24/07/2026 06:00 UTC עד 24/07/2026 09:00 UTC",
+   "removed_at": "2026-07-24T15:02:56Z"
+  },
+  {
+   "id": "C1539/26",
+   "name": "C1539/26",
+   "cat": "uas",
+   "heb": "MINI UAS/UAV BUBBLE CARMEL EAST AND NORTH סגור.\nבתוקף: מ-24/07/2026 06:00 UTC עד 24/07/2026 09:00 UTC",
+   "removed_at": "2026-07-24T15:02:56Z"
+  },
   {
    "id": "C1525/26",
    "name": "SHFARAAM",
