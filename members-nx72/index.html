@@ -186,19 +186,28 @@ textarea:focus{outline:2px solid var(--amber);outline-offset:-1px;border-color:t
     border-radius:var(--radius);overflow:hidden;animation:cardin .22s ease}
   .mobcard[hidden]{display:none}
   .side{order:3}
+  /* מצב קוביה פתוחה: חצי מסך מפה, חצי מלל */
+  body.mobcard-open .side{display:none}
+  body.mobcard-open #bigmap{height:46vh!important;min-height:220px!important}
+  body.mobcard-open .mobcard{display:flex;flex-direction:column;height:calc(46vh);min-height:240px}
   @keyframes cardin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-  .mobcard-head{display:flex;align-items:center;justify-content:space-between;gap:8px;
+  .mobcard-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex:none;
     padding:10px 14px;background:#18243d;border-bottom:1px solid var(--line)}
-  .mobcard-title{font-weight:800;font-size:14.5px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .mobcard-close{flex:none;width:32px;height:32px;border:none;border-radius:50%;
-    background:var(--red);color:#fff;font-size:17px;font-weight:800;cursor:pointer;line-height:1}
-  .mobcard-body{padding:12px 14px;font-size:13px;line-height:1.75;max-height:38vh;overflow-y:auto;
-    -webkit-overflow-scrolling:touch}
-  .mobcard-body .pp-heb{white-space:pre-wrap;border-top:1px solid var(--line);padding-top:8px;margin-top:6px}
-  .mobcard-body .pp-meta{color:var(--muted);font-size:12px;margin:4px 0 6px}
-  .mobcard-body details{margin-top:8px}
+  .mobcard-title{font-weight:800;font-size:15px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+    flex:1;text-align:center}
+  .mobcard-close{flex:none;width:34px;height:34px;border:none;border-radius:50%;
+    background:var(--red);color:#fff;font-size:18px;font-weight:800;cursor:pointer;line-height:1}
+  .mobcard-body{flex:1;padding:14px 18px;font-size:14px;line-height:1.85;overflow-y:auto;
+    -webkit-overflow-scrolling:touch;direction:rtl;text-align:center;
+    overflow-wrap:break-word;word-break:break-word;max-width:100%}
+  .mobcard-body .pp-heb{white-space:pre-wrap;border-top:1px solid var(--line);padding-top:10px;margin-top:8px;
+    text-align:center}
+  .mobcard-body .pp-meta{color:var(--muted);font-size:12.5px;margin:6px 0 8px;text-align:center}
+  .mobcard-body details{margin-top:10px;text-align:center}
+  .mobcard-body details summary{cursor:pointer;color:var(--cyan)}
   .mobcard-body .pp-raw{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);
-    white-space:pre-wrap;background:var(--panel-2);border-radius:8px;padding:8px;margin-top:6px}
+    white-space:pre-wrap;background:var(--panel-2);border-radius:8px;padding:8px;margin-top:6px;
+    direction:ltr;text-align:left}
 }
 
 footer{padding:22px;color:var(--muted);font-size:12px;text-align:center;border-top:1px solid var(--line);margin-top:24px;line-height:1.8}
@@ -622,12 +631,33 @@ function showMobileCard(item){
   document.getElementById("mobcardTitle").textContent=item.name;
   document.getElementById("mobcardBody").innerHTML=mobcardHtml(item,item.parsed);
   card.hidden=false;
+  document.body.classList.add("mobcard-open");
   document.getElementById("mobcardBody").scrollTop=0;
-  requestAnimationFrame(()=>{ try{card.scrollIntoView({behavior:"smooth",block:"nearest"})}catch(e){} });
+  /* מרכוז על הנוטמ הספציפי — אחרי שהמפה הצטמצמה לחצי מסך */
+  const layer=shapes[item.id];
+  setTimeout(()=>{
+    try{
+      map.invalidateSize();
+      let center, bounds=null;
+      if(layer&&layer.getBounds){ bounds=layer.getBounds(); center=bounds.getCenter(); }
+      else if(layer&&layer.getLatLng){ center=layer.getLatLng(); }
+      if(center){
+        let z=map.getZoom();
+        if(bounds){ z=map.getBoundsZoom(bounds.pad(0.35)); }
+        z=Math.min(13,Math.max(10,z));   /* לא רחוק מדי, לא קרוב מדי */
+        map.setView(center,z,{animate:true});
+      }
+      /* גלילת הדף כך שהמפה תשב בראש המסך והקוביה מתחתיה */
+      const mb=document.querySelector(".mapbox");
+      if(mb) mb.scrollIntoView({behavior:"smooth",block:"start"});
+    }catch(e){}
+  },120);
 }
 function hideMobileCard(){
   const card=document.getElementById("mobcard");
   if(card) card.hidden=true;
+  document.body.classList.remove("mobcard-open");
+  setTimeout(()=>{ try{map.invalidateSize()}catch(e){} },120);
 }
 document.addEventListener("DOMContentLoaded",()=>{
   const btn=document.getElementById("mobcardClose");
@@ -664,8 +694,6 @@ function drawItem(item){
   layer.on("click",()=>{
     if(isMobileView()){
       try{ map.closePopup(); }catch(e){}
-      try{ map.fitBounds(layer.getBounds().pad(0.5),{maxZoom:12,animate:true}); }
-      catch(e){ try{ map.setView(layer.getLatLng(),11,{animate:true}); }catch(e2){} }
       showMobileCard(item);
       selectItem(item.id,false);
     } else {
@@ -681,9 +709,11 @@ function selectItem(id,fly=true){
   document.querySelectorAll(".item").forEach(el=>el.classList.toggle("sel",el.dataset.id===id));
   const item=DATA.find(x=>x.id===id);
   if(item&&shapes[id]){
-    if(fly) map.fitBounds(shapes[id].getBounds().pad(0.6));
     if(isMobileView()){ showMobileCard(item); }
-    else { shapes[id].openPopup(); }
+    else {
+      if(fly) map.fitBounds(shapes[id].getBounds().pad(0.6));
+      shapes[id].openPopup();
+    }
   }
   const el=document.querySelector(`.item[data-id="${CSS.escape(id)}"]`);
   if(el) el.scrollIntoView({block:"nearest"});
