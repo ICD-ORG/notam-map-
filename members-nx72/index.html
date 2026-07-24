@@ -35,6 +35,8 @@
   --radius:14px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
+.leaflet-popup,.leaflet-popup *{box-sizing:content-box}
+.leaflet-popup-content-wrapper,.leaflet-popup-content{box-sizing:border-box}
 html,body{background:var(--bg);color:var(--ink);font-family:'Rubik',system-ui,sans-serif;overflow-x:hidden}
 .wrap,header,main,footer,.topbar,.layout,.catbar{max-width:100%}
 #appRoot{display:flex;flex-direction:column;min-height:100%}
@@ -133,13 +135,16 @@ button:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
 /* פופאפ */
 .leaflet-popup-content-wrapper{background:#131d2e;color:var(--ink);border:1px solid var(--line);border-radius:12px;direction:rtl;text-align:right}
 .leaflet-popup-tip{background:#131d2e}
-.leaflet-popup-content{margin:14px 16px;font-family:'Rubik',sans-serif;font-size:13.5px;line-height:1.75;max-height:340px;overflow-y:auto}
+.leaflet-popup-content{margin:14px 16px!important;font-family:'Rubik',sans-serif;font-size:13.5px;line-height:1.75;max-height:340px;overflow-y:auto;
+  width:min(340px,calc(100vw - 60px))!important;min-width:240px}
+.leaflet-popup-content-wrapper{min-width:0;width:auto}
+.leaflet-popup{margin-bottom:26px}
 .leaflet-popup-close-button{top:6px!important;left:6px!important;right:auto!important;
   width:34px!important;height:34px!important;line-height:34px!important;font-size:22px!important;
   background:var(--red)!important;color:#fff!important;border-radius:50%!important;
   text-align:center!important;box-shadow:0 2px 8px rgba(0,0,0,.4)}
 .leaflet-popup-close-button:hover{background:#ff5c5c!important;color:#fff!important}
-.pp-bigclose{position:sticky;top:-14px;margin:-14px -16px 8px;padding:10px 16px;
+.pp-bigclose{position:sticky;top:-14px;margin:-14px -16px 8px!important;padding:10px 16px;width:auto;
   background:var(--red);color:#fff;font-weight:800;font-size:14px;text-align:center;
   border-radius:12px 12px 0 0;cursor:pointer;z-index:5}
 .pp-id{font-family:'IBM Plex Mono',monospace;color:var(--red);font-weight:700;font-size:14px}
@@ -506,6 +511,21 @@ function initMap(){
   setTimeout(()=>map&&map.invalidateSize(),150);
   setTimeout(()=>map&&map.invalidateSize(),600);
   setTimeout(()=>map&&map.invalidateSize(),1500);
+  map.on("popupopen",function(e){
+    var pop=e.popup;
+    var fix=function(){
+      try{
+        var el=pop.getElement(); if(!el) return;
+        var c=el.querySelector(".leaflet-popup-content");
+        if(c){ var w=Math.min(340,Math.max(240,window.innerWidth-60)); c.style.width=w+"px"; }
+        pop.update();
+      }catch(err){}
+    };
+    fix();
+    setTimeout(fix,60);
+    setTimeout(fix,300);
+    if(document.fonts&&document.fonts.ready){ document.fonts.ready.then(fix); }
+  });
   window.addEventListener("resize",()=>map&&map.invalidateSize());
   window.addEventListener("orientationchange",()=>setTimeout(()=>map&&map.invalidateSize(),300));
 }
@@ -546,7 +566,7 @@ function drawItem(item){
   let layer;
   if(geo.type==="circle") layer=L.circle([geo.center.lat,geo.center.lng],{radius:geo.radius,...style});
   else layer=L.polygon(geo.points.map(c=>[c.lat,c.lng]),style);
-  layer.bindPopup(popupHtml(item,p),{maxWidth:340,autoPanPadding:[20,20]});
+  layer.bindPopup(popupHtml(item,p),{maxWidth:340,minWidth:240,autoPanPadding:[20,20]});
   layer.on("click",()=>selectItem(item.id,false));
   layer.addTo(map);
   return layer;
