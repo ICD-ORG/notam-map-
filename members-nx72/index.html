@@ -179,75 +179,22 @@ footer{padding:22px;color:var(--muted);font-size:12px;text-align:center;border-t
 /* ============ מעטפת אפליקציה לנייד: מפה במסך מלא + מגירת רשימה ============ */
 @media (max-width:760px){
   header{padding:14px 14px 10px}
-  .brand h1{font-size:21px}
-  .brand .sub{display:none} /* חוסך מקום — המידע חוזר בתפריט */
-  .org{font-size:12px;gap:8px}
+  .brand h1{font-size:20px}
   .org img{width:26px;height:26px}
-  .org .phone{display:none}
   .disclaim{font-size:11px;padding:6px 10px;margin-top:6px}
   main{padding:8px}
-  .topbar{display:none} /* מוחלף בסרגל תחתון קבוע */
-  .layout{display:block;position:relative}
-  .side{display:none} /* הרשימה עוברת למגירה התחתונה */
-  .mapbox{border-radius:12px}
-  #bigmap{height:calc(100dvh - 210px);min-height:340px;border-radius:12px}
-
-  /* פס קטגוריות: גלילה אופקית, נצמד מעל המפה */
-  .catbar{position:sticky;top:0;z-index:20;background:var(--bg);padding:8px 2px;margin-bottom:8px;
-    display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px}
+  .topbar{flex-direction:column;align-items:stretch}
+  .topbar .actions{overflow-x:auto;-webkit-overflow-scrolling:touch;flex-wrap:nowrap;padding-bottom:4px}
+  .topbar .actions::-webkit-scrollbar{display:none}
+  .topbar .actions button{flex:none;min-height:40px}
+  .layout{display:flex;flex-direction:column}
+  .side{max-height:280px;order:2}
+  .mapbox{order:1}
+  #bigmap{height:50vh;min-height:300px}
+  .catbar{overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;padding-bottom:4px}
   .catbar::-webkit-scrollbar{display:none}
-  .catbtn{flex:none;min-height:38px;font-size:12.5px;padding:8px 12px}
-
-  /* כפתור מגירה צף: פותח את רשימת הנוטמים כלוח שמחליק מלמטה */
-  #mobileListFab{
-    position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:900;
-    background:var(--amber);color:#1a1204;border:none;border-radius:999px;
-    padding:13px 20px;font-weight:800;font-size:14px;box-shadow:0 6px 20px rgba(0,0,0,.45);
-    display:flex;align-items:center;gap:8px;min-height:48px
-  }
-  #mobileListFab .cnt{background:#1a1204;color:var(--amber);border-radius:999px;padding:2px 9px;font-size:12px}
-
-  /* סרגל פעולות תחתון קבוע: מחליף את ה-topbar שהוסתר */
-  #mobileActionBar{
-    position:fixed;right:0;bottom:0;left:0;z-index:850;
-    background:var(--panel);border-top:1px solid var(--line);
-    display:flex;gap:6px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));
-    overflow-x:auto;-webkit-overflow-scrolling:touch
-  }
-  #mobileActionBar::-webkit-scrollbar{display:none}
-  #mobileActionBar button{flex:none;min-height:42px;font-size:12.5px;white-space:nowrap;padding:9px 14px}
-
-  /* מגירת הרשימה — לוח שמחליק ממטה, ברירת מחדל סגור */
-  #listSheet{
-    position:fixed;inset:0 0 0 0;z-index:950;pointer-events:none
-  }
-  #listSheet .scrim{
-    position:absolute;inset:0;background:rgba(0,0,0,.55);opacity:0;transition:opacity .25s
-  }
-  #listSheet .panel{
-    position:absolute;left:0;right:0;bottom:0;height:78vh;max-height:78vh;
-    background:var(--panel);border-radius:20px 20px 0 0;box-shadow:0 -8px 30px rgba(0,0,0,.5);
-    transform:translateY(100%);transition:transform .28s cubic-bezier(.2,.8,.2,1);
-    display:flex;flex-direction:column;overflow:hidden
-  }
-  #listSheet.open{pointer-events:auto}
-  #listSheet.open .scrim{opacity:1}
-  #listSheet.open .panel{transform:translateY(0)}
-  #listSheet .handle{width:40px;height:5px;background:var(--line);border-radius:99px;margin:10px auto 6px;flex:none}
-  #listSheet .sheet-head{display:flex;justify-content:space-between;align-items:center;padding:2px 16px 10px;
-    border-bottom:1px solid var(--line);flex:none}
-  #listSheet .sheet-head b{font-size:15px;color:var(--amber)}
-  #listSheet .sheet-close{background:var(--panel-2);border:1px solid var(--line);color:var(--ink);
-    border-radius:999px;width:34px;height:34px;font-size:16px;flex:none}
-  #listSheet .side{display:flex !important;flex:1;min-height:0;max-height:none;border:none;border-radius:0;background:transparent}
-  #listSheet .side .head{display:none}
-
-  /* מגדילים אזורי נגיעה בפריטים */
+  .catbtn{flex:none;min-height:38px}
   .item{padding:13px 14px}
-  .catbtn{min-width:auto}
-}
-@media (min-width:761px){
-  #mobileListFab, #mobileActionBar, #listSheet{display:none !important}
 }
 </style>
 </head>
@@ -292,24 +239,6 @@ footer{padding:22px;color:var(--muted);font-size:12px;text-align:center;border-t
   <div class="catbar" id="catBar"></div>
 
   <!-- אלמנטי נייד: כפתור מגירה צף + סרגל פעולות תחתון + מגירת רשימה -->
-  <button id="mobileListFab">📋 רשימת נוטמים <span class="cnt" id="mobileListCount">0</span></button>
-
-  <div id="mobileActionBar">
-    <button id="mNearBtn">📍 בקרבתי</button>
-    <button id="mOnlyActiveBtn">בתוקף עכשיו</button>
-    <button id="mLayerBtn">מפה/לוויין</button>
-    <button id="mRefreshBtn">🔄 עדכון</button>
-    <button id="mKmlBtn">⬇ KML</button>
-  </div>
-
-  <div id="listSheet">
-    <div class="scrim"></div>
-    <div class="panel">
-      <div class="handle"></div>
-      <div class="sheet-head"><b>נוטמים פעילים</b><button class="sheet-close" id="sheetCloseBtn">✕</button></div>
-    </div>
-  </div>
-
   <div class="layout">
     <div class="side">
       <div class="head"><span>נוטמים פעילים</span><span id="sideCount" class="badge"></span></div>
@@ -1069,55 +998,6 @@ try{
   showFatalError("המפה נתקלה בבעיה בטעינה.<br>אם עברת עכשיו הרשמה/תשלום, לפעמים לוקח לWix דקה להכיר בכך — נסו לרענן.<br><small style=\'color:#8fa0ba\'>"+
     (e&&e.message||"")+"</small>");
 }
-try{
-/* MOBILE_JS_START */
-function isMobileView(){ return window.innerWidth <= 760; }
-let sideRelocated = false;
-function relocateSideForViewport(){
-  const side = document.querySelector('.layout > .side');
-  const layout = document.querySelector('.layout');
-  const sheetPanel = document.querySelector('#listSheet .panel');
-  if(!side || !layout || !sheetPanel) return;
-  if(isMobileView() && !sideRelocated){
-    sheetPanel.appendChild(side);
-    sideRelocated = true;
-  } else if(!isMobileView() && sideRelocated){
-    layout.insertBefore(side, layout.firstChild);
-    sideRelocated = false;
-  }
-}
-function openListSheet(){
-  relocateSideForViewport();
-  document.getElementById('listSheet').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeListSheet(){
-  document.getElementById('listSheet').classList.remove('open');
-  document.body.style.overflow='';
-}
-document.getElementById('mobileListFab').onclick=openListSheet;
-document.getElementById('sheetCloseBtn').onclick=closeListSheet;
-document.querySelector('#listSheet .scrim').onclick=closeListSheet;
-document.getElementById('mNearBtn').onclick=()=>{ document.getElementById('nearBtn').click(); };
-document.getElementById('mLayerBtn').onclick=()=>{ document.getElementById('layerBtn2').click(); };
-document.getElementById('mKmlBtn').onclick=()=>{ document.getElementById('allKmlBtn').click(); };
-document.getElementById('mRefreshBtn').onclick=()=>{ document.getElementById('refreshBtn').click(); };
-document.getElementById('mOnlyActiveBtn').onclick=function(){
-  document.getElementById('onlyActiveBtn').click();
-  this.classList.toggle('primary', onlyActive);
-  this.textContent = onlyActive ? '✓ בתוקף עכשיו' : 'בתוקף עכשיו';
-};
-const _origRenderAll = renderAll;
-renderAll = function(){
-  _origRenderAll();
-  const cnt = document.getElementById('sideCount');
-  const badge = document.getElementById('mobileListCount');
-  if(cnt && badge){ const mm = cnt.textContent.match(/\d+/); badge.textContent = mm ? mm[0] : '0'; }
-};
-window.addEventListener('resize', relocateSideForViewport);
-relocateSideForViewport();
-/* MOBILE_JS_END */
-}catch(e){ console.warn("mobile UI init:", e); }
 </script>
 </body>
 </html>
