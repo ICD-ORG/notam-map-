@@ -488,13 +488,16 @@ function isActiveNow(p){
   return true;
 }
 
+function closeCurrentPopup(){
+  try{ if(map){ map.closePopup(); } }catch(e){}
+}
 function popupHtml(item,p){
   const meta=[];
   if(p.times.from) meta.push("מ־"+p.times.from);
   if(p.times.to) meta.push("עד "+p.times.to);
   if(p.radius) meta.push("רדיוס "+p.radius.label);
   if(p.alt) meta.push(p.alt);
-  return `<div class="pp-bigclose" onclick="this.closest('.leaflet-popup')?.querySelector('.leaflet-popup-close-button')?.click()">✕ סגור</div>
+  return `<div class="pp-bigclose" onclick="closeCurrentPopup()">✕ סגור</div>
   <div class="pp-name">${item.name}</div>
   <span class="pp-id" style="color:${(CATS[item.cat]||CATS.uas).color}">${item.id}</span> <span class="badge" style="color:${(CATS[item.cat]||CATS.uas).color};border-color:currentColor">${(CATS[item.cat]||CATS.uas).label}</span>
   ${p.approx?'<div class="approx-note">⚠ מיקום משוער לפי שורת Q</div>':""}
@@ -513,7 +516,7 @@ function drawItem(item){
   let layer;
   if(geo.type==="circle") layer=L.circle([geo.center.lat,geo.center.lng],{radius:geo.radius,...style});
   else layer=L.polygon(geo.points.map(c=>[c.lat,c.lng]),style);
-  layer.bindPopup(popupHtml(item,p),{maxWidth:340,autoPanPadding:[20,20],keepInView:true});
+  layer.bindPopup(popupHtml(item,p),{maxWidth:340,autoPanPadding:[20,20]});
   layer.on("click",()=>selectItem(item.id,false));
   layer.addTo(map);
   return layer;
