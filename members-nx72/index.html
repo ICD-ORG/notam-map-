@@ -35,7 +35,9 @@
   --radius:14px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--bg);color:var(--ink);font-family:'Rubik',system-ui,sans-serif}
+html,body{background:var(--bg);color:var(--ink);font-family:'Rubik',system-ui,sans-serif;max-width:100%;overflow-x:hidden}
+*{max-width:100%}
+#bigmap,.mapbox{max-width:none}
 #appRoot{display:flex;flex-direction:column;min-height:100%}
 #appRoot>main{-webkit-overflow-scrolling:touch}
 .mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
@@ -500,6 +502,13 @@ function initMap(){
   satLayer.on("load",ok).on("tileerror",bad);
   osmLayer.on("load",ok).on("tileerror",bad);
   setTimeout(()=>{if(!tileOK)bad();},2500);
+  /* תיקון: לפעמים Leaflet נוצר לפני שהקונטיינר קיבל את מידותיו הסופיות (במיוחד בנייד) —
+     מכריחים חישוב גודל מחדש בכמה נקודות זמן, וגם בכל שינוי גודל מסך */
+  setTimeout(()=>map&&map.invalidateSize(),150);
+  setTimeout(()=>map&&map.invalidateSize(),600);
+  setTimeout(()=>map&&map.invalidateSize(),1500);
+  window.addEventListener("resize",()=>map&&map.invalidateSize());
+  window.addEventListener("orientationchange",()=>setTimeout(()=>map&&map.invalidateSize(),300));
 }
 
 function isActiveNow(p){
