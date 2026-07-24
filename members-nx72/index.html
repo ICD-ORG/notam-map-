@@ -184,6 +184,23 @@ footer{padding:22px;color:var(--muted);font-size:12px;text-align:center;border-t
 
 /* ============ מעטפת אפליקציה לנייד: מפה במסך מלא + מגירת רשימה ============ */
 @media (max-width:760px){
+  .leaflet-popup-content{
+    width:calc(100vw - 76px)!important;
+    max-width:300px!important;
+    min-width:0!important;
+    margin:11px 13px!important;
+    font-size:12.5px!important;
+    line-height:1.65!important;
+    max-height:min(300px,42vh)!important;
+  }
+  .pp-bigclose{margin:-11px -13px 7px!important;padding:9px 13px;font-size:13px}
+  .pp-name{font-size:14px}
+  .pp-id{font-size:13px}
+  .leaflet-popup-close-button{width:30px!important;height:30px!important;line-height:30px!important;font-size:19px!important}
+}
+@media (max-width:400px){
+  .leaflet-popup-content{font-size:12px!important;max-height:min(260px,38vh)!important}
+}
   header{padding:14px 14px 10px}
   .brand h1{font-size:20px}
   .org img{width:26px;height:26px}
@@ -517,7 +534,12 @@ function initMap(){
       try{
         var el=pop.getElement(); if(!el) return;
         var c=el.querySelector(".leaflet-popup-content");
-        if(c){ var w=Math.min(340,Math.max(240,window.innerWidth-60)); c.style.width=w+"px"; }
+        if(c){
+          var vw=window.innerWidth, w;
+          if(vw<=760){ w=Math.min(300,vw-76); }
+          else { w=Math.min(340,Math.max(240,vw-60)); }
+          c.style.width=Math.max(180,w)+"px";
+        }
         pop.update();
       }catch(err){}
     };
@@ -566,7 +588,7 @@ function drawItem(item){
   let layer;
   if(geo.type==="circle") layer=L.circle([geo.center.lat,geo.center.lng],{radius:geo.radius,...style});
   else layer=L.polygon(geo.points.map(c=>[c.lat,c.lng]),style);
-  layer.bindPopup(popupHtml(item,p),{maxWidth:340,minWidth:240,autoPanPadding:[20,20]});
+  layer.bindPopup(popupHtml(item,p),{maxWidth:340,minWidth:180,autoPanPadding:[16,16]});
   layer.on("click",()=>selectItem(item.id,false));
   layer.addTo(map);
   return layer;
