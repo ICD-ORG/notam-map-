@@ -37,7 +37,11 @@
 *{box-sizing:border-box;margin:0;padding:0}
 .leaflet-popup,.leaflet-popup *{box-sizing:content-box}
 .leaflet-popup-content-wrapper,.leaflet-popup-content{box-sizing:border-box}
-html,body{background:var(--bg);color:var(--ink);font-family:'Rubik',system-ui,sans-serif;overflow-x:hidden}
+html,body{background:var(--bg);color:var(--ink);font-family:'Rubik',system-ui,sans-serif;overflow-x:hidden;
+  max-width:100vw;scrollbar-width:thin;scrollbar-color:#2a3a58 transparent}
+body::-webkit-scrollbar{width:5px}
+body::-webkit-scrollbar-thumb{background:#2a3a58;border-radius:99px}
+body::-webkit-scrollbar-track{background:transparent}
 .wrap,header,main,footer,.topbar,.layout,.catbar{max-width:100%}
 #appRoot{display:flex;flex-direction:column;min-height:100%}
 #appRoot>main{-webkit-overflow-scrolling:touch}
@@ -188,8 +192,9 @@ textarea:focus{outline:2px solid var(--amber);outline-offset:-1px;border-color:t
   .side{order:3}
   /* מצב קוביה פתוחה: חצי מסך מפה, חצי מלל */
   body.mobcard-open .side{display:none}
-  body.mobcard-open #bigmap{height:46vh!important;min-height:220px!important}
-  body.mobcard-open .mobcard{display:flex;flex-direction:column;height:calc(46vh);min-height:240px}
+  body.mobcard-open #bigmap{height:min(46vh,380px)!important;min-height:220px!important}
+  body.mobcard-open .mobcard{display:flex;flex-direction:column;height:min(46vh,400px);min-height:240px;
+    max-width:100%;box-sizing:border-box}
   @keyframes cardin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
   .mobcard-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex:none;
     padding:10px 14px;background:#18243d;border-bottom:1px solid var(--line)}
@@ -197,11 +202,11 @@ textarea:focus{outline:2px solid var(--amber);outline-offset:-1px;border-color:t
     flex:1;text-align:center}
   .mobcard-close{flex:none;width:34px;height:34px;border:none;border-radius:50%;
     background:var(--red);color:#fff;font-size:18px;font-weight:800;cursor:pointer;line-height:1}
-  .mobcard-body{flex:1;padding:14px 18px;font-size:14px;line-height:1.85;overflow-y:auto;
+  .mobcard-body{flex:1;padding:14px 16px;font-size:14px;line-height:1.85;overflow-y:auto;overflow-x:hidden;
     -webkit-overflow-scrolling:touch;direction:rtl;text-align:center;
-    overflow-wrap:break-word;word-break:break-word;max-width:100%}
-  .mobcard-body .pp-heb{white-space:pre-wrap;border-top:1px solid var(--line);padding-top:10px;margin-top:8px;
-    text-align:center}
+    overflow-wrap:anywhere;word-break:break-word;max-width:100%;box-sizing:border-box}
+  .mobcard-body .pp-heb{white-space:pre-line;border-top:1px solid var(--line);padding-top:10px;margin-top:8px;
+    text-align:center;overflow-wrap:anywhere}
   .mobcard-body .pp-meta{color:var(--muted);font-size:12.5px;margin:6px 0 8px;text-align:center}
   .mobcard-body details{margin-top:10px;text-align:center}
   .mobcard-body details summary{cursor:pointer;color:var(--cyan)}
@@ -244,7 +249,7 @@ footer{padding:22px;color:var(--muted);font-size:12px;text-align:center;border-t
   .layout{display:flex;flex-direction:column}
   .side{max-height:280px;order:3}
   .mapbox{order:1}
-  #bigmap{height:50vh;min-height:300px}
+  #bigmap{height:min(50vh,420px);min-height:300px}
   .catbar{overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;padding-bottom:4px}
   .catbar::-webkit-scrollbar{display:none}
   .catbtn{flex:none;min-height:38px}
