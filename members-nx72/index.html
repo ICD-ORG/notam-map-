@@ -2,7 +2,7 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, shrink-to-fit=no">
 <title>מפת נוט״מ — כטב״מים ורחפנים</title>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0b1220">
@@ -37,12 +37,14 @@
 *{box-sizing:border-box;margin:0;padding:0}
 .leaflet-popup,.leaflet-popup *{box-sizing:content-box}
 .leaflet-popup-content-wrapper,.leaflet-popup-content{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 html,body{background:var(--bg);color:var(--ink);font-family:'Rubik',system-ui,sans-serif;overflow-x:hidden;
-  max-width:100vw;scrollbar-width:thin;scrollbar-color:#2a3a58 transparent}
+  max-width:100%;scrollbar-width:thin;scrollbar-color:#2a3a58 transparent}
 body::-webkit-scrollbar{width:5px}
 body::-webkit-scrollbar-thumb{background:#2a3a58;border-radius:99px}
 body::-webkit-scrollbar-track{background:transparent}
 .wrap,header,main,footer,.topbar,.layout,.catbar{max-width:100%}
+.layout>*,.mapbox,.side,.mobcard,.topbar>*{min-width:0}
 #appRoot{display:flex;flex-direction:column;min-height:100%}
 #appRoot>main{-webkit-overflow-scrolling:touch}
 .mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
