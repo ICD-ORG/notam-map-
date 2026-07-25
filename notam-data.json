@@ -1,25 +1,34 @@
 {
- "fetched_at": "24/07/2026 15:02 UTC",
- "fetched_iso": "2026-07-24T15:02:56Z",
- "count": 138,
+ "fetched_at": "25/07/2026 14:44 UTC",
+ "fetched_iso": "2026-07-25T14:44:44Z",
+ "count": 136,
  "notams": [
   {
-   "id": "C1568/26",
+   "id": "C1571/26",
    "loc": "LLLL",
-   "name": "EIN-ZURIM WI 0",
+   "name": "C1571/26",
    "cat": "other",
-   "heb": "אזור ב EIN-ZURIM בתוך 0.8NM רדיוס שמרכזו בנ.צ. 31°41'30\"N 34°42'19\"E סגור מהקרקע ועד 800רגל מעל פני הים לכל הטיסות. מומלצת זהירות.\nבתוקף: מ-24/07/2026 14:00 UTC עד 24/07/2026 20:00 UTC",
-   "raw": "C1568/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/008/3141N03442E001\nA) LLLL B) 2607241400 C) 2607242000\nE) AN AREA AT EIN-ZURIM WI 0.8NM RADIUS CENTERED ON PSN\n314130N0344219E\nCLSD FM GND UP TO 800FT AMSL TO ALL FLT.\nCTN ADZ.)",
-   "first_seen": "2026-07-24T15:02:56Z"
+   "heb": "אזור ב OLESH בתוך 1NM רדיוס שמרכזו בנ.צ. 32°20'38\"N 34°58'13\"E סגור מהקרקע ועד 3000רגל מעל פני הים, לכל הטיסות כולל AGRICULTURE. מומלצת זהירות.)\nבתוקף: מ-25/07/2026 12:00 UTC עד 26/07/2026 01:00 UTC",
+   "raw": "C1571/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/030/3221N03458E001\nA) LLLL B) 2607251200 C) 2607260100\nE) AN AREA AT OLESH WI 1NM RADIUS CENTERED ON PSN 322038N0345813E\nCLSD FM GND UP TO 3000FT AMSL, TO ALL FLT INCLUDING AGRICULTURE.\nCTN ADZ.))",
+   "first_seen": "2026-07-25T14:44:44Z"
   },
   {
-   "id": "C1566/26",
-   "loc": "LLIB",
-   "name": "ראש פינה (LLIB)",
-   "cat": "ad",
-   "heb": "AD סגור לכל הטיסות, כולל מסוקים OR POLICE טיסות. NOT AVBL FOR EMERG, MEDEVAC טיסות OR AS ALTN.\nבתוקף: מ-25/07/2026 12:00 UTC עד 25/07/2026 16:00 UTC",
-   "raw": "C1566/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3259N03534E005\nA) LLIB B) 2607251200 C) 2607251600\nE) AD CLSD TO ALL FLT, INCLUDING HEL OR POLICE FLT.\nNOT AVBL FOR EMERG, MEDEVAC FLT OR AS ALTN.)",
-   "first_seen": "2026-07-24T15:02:56Z"
+   "id": "A0585/26",
+   "loc": "LLLL",
+   "name": "A0585/26",
+   "cat": "other",
+   "heb": "ATS RTE J14 סגור בין NAT-ZACCI.\nבתוקף: מ-25/07/2026 12:00 UTC עד 26/07/2026 01:00 UTC",
+   "raw": "A0585/26 NOTAMN\nQ) LLLL/QANLC/I /NBO/E /040/070/3222N03501E004\nA) LLLL B) 2607251200 C) 2607260100\nE) ATS RTE J14 CLSD BTN NAT-ZACCI.)",
+   "first_seen": "2026-07-25T14:44:44Z"
+  },
+  {
+   "id": "C1570/26",
+   "loc": "LLLL",
+   "name": "C1570/26",
+   "cat": "other",
+   "heb": "AN AREA NEAR OLESH סגור מ-בין 3000FT-5000רגל מעל פני הים בין נקודות הציון הבאות 32°20'38\"N 34°58'56\"E 32°20'14\"N 34°58'35\"E 32°17'24\"N 35°03'12\"E 32°17'55\"N 35°03'31\"E. מומלצת זהירות.\nבתוקף: מ-25/07/2026 12:00 UTC עד 26/07/2026 01:00 UTC",
+   "raw": "C1570/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /030/050/3219N03501E003\nA) LLLL B) 2607251200 C) 2607260100\nE) AN AREA NEAR OLESH CLSD FM BTN 3000FT-5000FT\nAMSL BTN FLW PSN  322038N0345856E\n322014N0345835E 321724N0350312E 321755N0350331E.\nCTN ADZ.)",
+   "first_seen": "2026-07-25T14:44:44Z"
   },
   {
    "id": "C1565/26",
@@ -91,24 +100,6 @@
    "cat": "act",
    "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-HACHULA-LAKE, מהקרקע ועד 400מטר מעל הקרקע. LIT AND DAY MARKED. אזור בתוך 0.54NM רדיוס שמרכזו בנ.צ. 33°06'22\"N 35°34'54\"E סגור מהקרקע ועד 1,800רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-26/07/2026 03:30 UTC עד 01/08/2026 02:00 UTC\nלו\"ז: DAILY 0330-1400 1700-0200",
    "raw": "C1555/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/018/3306N03535E001\nA) LLLL B) 2607260330 C) 2608010200\nD) DAILY 0330-1400 1700-0200\nE) CAPTIVE BALLOON WILL TAKE PLACE AT HACHULA-LAKE,\nFM GND UP TO 400M AGL. LIT AND DAY MARKED.\nAN AREA WI 0.54NM RADIUS CENTERED ON PSN 330622N0353454E\nCLSD FM GND UP TO 1,800FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 1800FT AMSL)",
-   "first_seen": "2026-07-01T00:00:00Z"
-  },
-  {
-   "id": "A0583/26",
-   "loc": "LLBG",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "RWY 08/26 AND 12/30 סגור DUE WIP. RWY 21 AVBL FOR LDG ONLY.\nבתוקף: מ-24/07/2026 15:00 UTC עד 24/07/2026 16:00 UTC",
-   "raw": "A0583/26 NOTAMN\nQ) LLLL/QMRLT/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2607241500 C) 2607241600\nE) RWY 08/26 AND 12/30 CLSD DUE WIP.\nRWY 21 AVBL FOR LDG ONLY.)",
-   "first_seen": "2026-07-01T00:00:00Z"
-  },
-  {
-   "id": "A0584/26",
-   "loc": "LLBG",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "AD סגור DUE WIP.\nבתוקף: מ-24/07/2026 16:00 UTC עד 24/07/2026 20:00 UTC",
-   "raw": "A0584/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2607241600 C) 2607242000\nE) AD CLSD DUE WIP.)",
    "first_seen": "2026-07-01T00:00:00Z"
   },
   {
@@ -487,15 +478,6 @@
    "cat": "obst",
    "heb": "CRANE ERECTED בתוך LLBG CTR, ב-EL-AL JUNCTION. אזור מ GND עד 100M 360רגל מעל פני הים סגור בין נקודות הציון הבאות 31°59'24\"N 34°54'25\"E 31°59'22\"N 34°54'23\"E 31°59'24\"N 34°54'19\"E 31°59'26\"N 34°54'21\"E. מומלצת זהירות.\nבתוקף: מ-16/08/2026 04:00 UTC עד 18/08/2026 08:00 UTC\nלו\"ז: DAILY 0400-0800",
    "raw": "A0527/26 NOTAMN\nQ) LLLL/QOBCE/IV/M  /AE/000/004/3159N03454E001\nA) LLBG B) 2608160400 C) 2608180800\nD) DAILY 0400-0800\nE) CRANE ERECTED WI LLBG CTR, AT EL-AL JUNCTION.\nAN AREA FM GND UP TO 100M 360FT AMSL CLSD BTN FLW PSN\n315924N0345425E 315922N0345423E 315924N0345419E\n315926N0345421E.\nCTN ADZ.)",
-   "first_seen": "2026-07-01T00:00:00Z"
-  },
-  {
-   "id": "C1434/26",
-   "loc": "LLLL",
-   "name": "KFAR-HAMACABIYA WI LLBG CTR",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב KFAR-HAMACABIYA בתוך LLBG CTR, מהקרקע ועד 100מטר מעל הקרקע, בין נקודות הציון הבאות 32°03'11\"N 34°49'07\"E 32°03'25\"N 34°49'14\"E 32°03'39\"N 34°49'32\"E 32°03'37\"N 34°49'53\"E 32°03'28\"N 34°50'04\"E 32°03'15\"N 34°50'05\"E 32°03'03\"N 34°49'59\"E 32°02'55\"N 34°49'50\"E 32°02'53\"N 34°49'37\"E 32°02'58\"N 34°49'17\"E מומלצת זהירות.\nבתוקף: מ-01/07/2026 00:01 UTC עד 24/07/2026 20:59 UTC",
-   "raw": "C1434/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/009/3203N03450E001\nA) LLLL B) 2607010001 C) 2607242059\nE) UAS/UAV ACT WILL TAKE PLACE AT KFAR-HAMACABIYA WI LLBG CTR,\nFM GND UP TO 100M AGL, BTN FLW PSN  320311N0344907E\n320325N0344914E 320339N0344932E 320337N0344953E\n320328N0345004E 320315N0345005E 320303N0344959E\n320255N0344950E 320253N0344937E 320258N0344917E\nCTN ADZ.\nF) GND G) 830FT AMSL)",
    "first_seen": "2026-07-01T00:00:00Z"
   },
   {
@@ -1247,6 +1229,41 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1568/26",
+   "name": "EIN-ZURIM WI 0",
+   "cat": "other",
+   "heb": "אזור ב EIN-ZURIM בתוך 0.8NM רדיוס שמרכזו בנ.צ. 31°41'30\"N 34°42'19\"E סגור מהקרקע ועד 800רגל מעל פני הים לכל הטיסות. מומלצת זהירות.\nבתוקף: מ-24/07/2026 14:00 UTC עד 24/07/2026 20:00 UTC",
+   "removed_at": "2026-07-25T14:44:44Z"
+  },
+  {
+   "id": "C1566/26",
+   "name": "ראש פינה (LLIB)",
+   "cat": "ad",
+   "heb": "AD סגור לכל הטיסות, כולל מסוקים OR POLICE טיסות. NOT AVBL FOR EMERG, MEDEVAC טיסות OR AS ALTN.\nבתוקף: מ-25/07/2026 12:00 UTC עד 25/07/2026 16:00 UTC",
+   "removed_at": "2026-07-25T14:44:44Z"
+  },
+  {
+   "id": "A0583/26",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "RWY 08/26 AND 12/30 סגור DUE WIP. RWY 21 AVBL FOR LDG ONLY.\nבתוקף: מ-24/07/2026 15:00 UTC עד 24/07/2026 16:00 UTC",
+   "removed_at": "2026-07-25T14:44:44Z"
+  },
+  {
+   "id": "A0584/26",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "AD סגור DUE WIP.\nבתוקף: מ-24/07/2026 16:00 UTC עד 24/07/2026 20:00 UTC",
+   "removed_at": "2026-07-25T14:44:44Z"
+  },
+  {
+   "id": "C1434/26",
+   "name": "KFAR-HAMACABIYA WI LLBG CTR",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב KFAR-HAMACABIYA בתוך LLBG CTR, מהקרקע ועד 100מטר מעל הקרקע, בין נקודות הציון הבאות 32°03'11\"N 34°49'07\"E 32°03'25\"N 34°49'14\"E 32°03'39\"N 34°49'32\"E 32°03'37\"N 34°49'53\"E 32°03'28\"N 34°50'04\"E 32°03'15\"N 34°50'05\"E 32°03'03\"N 34°49'59\"E 32°02'55\"N 34°49'50\"E 32°02'53\"N 34°49'37\"E 32°02'58\"N 34°49'17\"E מומלצת זהירות.\nבתוקף: מ-01/07/2026 00:01 UTC עד 24/07/2026 20:59 UTC",
+   "removed_at": "2026-07-25T14:44:44Z"
+  },
   {
    "id": "C1551/26",
    "name": "C1551/26",
