@@ -186,36 +186,40 @@ textarea:focus{outline:2px solid var(--amber);outline-offset:-1px;border-color:t
 @keyframes pulse{50%{opacity:.45}}
 .err{color:var(--red);margin-top:10px;font-size:13.5px;display:none}
 
-/* ===== קוביית מידע לנייד (בין המפה לרשימה) ===== */
-.mobcard{display:none}
+/* ===== קוביית מידע — מתחת למפה, מחשב ונייד ===== */
+.mobcard{display:block;background:var(--panel);border:1px solid var(--amber);
+  border-radius:var(--radius);overflow:hidden;animation:cardin .22s ease;margin-top:10px}
+.mobcard[hidden]{display:none}
+@keyframes cardin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.mobcard-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex:none;
+  padding:10px 14px;background:#18243d;border-bottom:1px solid var(--line)}
+.mobcard-title{font-weight:800;font-size:15px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  flex:1;text-align:center}
+.mobcard-close{flex:none;width:34px;height:34px;border:none;border-radius:50%;
+  background:var(--red);color:#fff;font-size:18px;font-weight:800;cursor:pointer;line-height:1}
+.mobcard-body{padding:14px 18px;font-size:14px;line-height:1.85;overflow-y:auto;overflow-x:hidden;
+  -webkit-overflow-scrolling:touch;direction:rtl;text-align:center;
+  overflow-wrap:anywhere;word-break:break-word;max-width:100%;box-sizing:border-box;max-height:300px}
+.mobcard-body .pp-heb{white-space:pre-line;border-top:1px solid var(--line);padding-top:10px;margin-top:8px;
+  text-align:center;overflow-wrap:anywhere}
+.mobcard-body .pp-meta{color:var(--muted);font-size:12.5px;margin:6px 0 8px;text-align:center}
+.mobcard-body details{margin-top:10px;text-align:center}
+.mobcard-body details summary{cursor:pointer;color:var(--cyan)}
+.mobcard-body .pp-raw{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);
+  white-space:pre-wrap;background:var(--panel-2);border-radius:8px;padding:8px;margin-top:6px;
+  direction:ltr;text-align:left}
+/* תווית מספר נוטמ במרכז הפוליגון הפתוח */
+.notam-lbl{background:transparent;border:none}
+.notam-lbl span{display:inline-block;background:#0b1220;color:var(--amber);border:1.5px solid var(--amber);
+  border-radius:999px;padding:3px 10px;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;
+  white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.55);transform:translate(-50%,-50%);pointer-events:none}
 @media (max-width:760px){
-  .mobcard{display:block;order:2;background:var(--panel);border:1px solid var(--amber);
-    border-radius:var(--radius);overflow:hidden;animation:cardin .22s ease}
-  .mobcard[hidden]{display:none}
-  .side{order:3}
-  /* מצב קוביה פתוחה: חצי מסך מפה, חצי מלל */
   body.mobcard-open .side{display:none}
   body.mobcard-open #bigmap{height:min(46vh,380px)!important;min-height:220px!important}
   body.mobcard-open .mobcard{display:flex;flex-direction:column;height:min(46vh,400px);min-height:240px;
     max-width:100%;box-sizing:border-box}
-  @keyframes cardin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-  .mobcard-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex:none;
-    padding:10px 14px;background:#18243d;border-bottom:1px solid var(--line)}
-  .mobcard-title{font-weight:800;font-size:15px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-    flex:1;text-align:center}
-  .mobcard-close{flex:none;width:34px;height:34px;border:none;border-radius:50%;
-    background:var(--red);color:#fff;font-size:18px;font-weight:800;cursor:pointer;line-height:1}
-  .mobcard-body{flex:1;padding:14px 16px;font-size:14px;line-height:1.85;overflow-y:auto;overflow-x:hidden;
-    -webkit-overflow-scrolling:touch;direction:rtl;text-align:center;
-    overflow-wrap:anywhere;word-break:break-word;max-width:100%;box-sizing:border-box}
-  .mobcard-body .pp-heb{white-space:pre-line;border-top:1px solid var(--line);padding-top:10px;margin-top:8px;
-    text-align:center;overflow-wrap:anywhere}
-  .mobcard-body .pp-meta{color:var(--muted);font-size:12.5px;margin:6px 0 8px;text-align:center}
-  .mobcard-body details{margin-top:10px;text-align:center}
-  .mobcard-body details summary{cursor:pointer;color:var(--cyan)}
-  .mobcard-body .pp-raw{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);
-    white-space:pre-wrap;background:var(--panel-2);border-radius:8px;padding:8px;margin-top:6px;
-    direction:ltr;text-align:left}
+  body.mobcard-open .mobcard .mobcard-body{flex:1;max-height:none}
+  .mobcard-body{padding:12px 16px;font-size:13.5px}
 }
 
 footer{padding:22px;color:var(--muted);font-size:12px;text-align:center;border-top:1px solid var(--line);margin-top:24px;line-height:1.8}
@@ -240,6 +244,7 @@ footer{padding:22px;color:var(--muted);font-size:12px;text-align:center;border-t
 @media (max-width:400px){
   .leaflet-popup-content{font-size:12px!important;max-height:min(260px,38vh)!important}
 }
+@media (max-width:760px){
   header{padding:14px 14px 10px}
   .brand h1{font-size:20px}
   .org img{width:26px;height:26px}
@@ -310,13 +315,13 @@ footer{padding:22px;color:var(--muted);font-size:12px;text-align:center;border-t
     <div class="mapbox">
       <div id="tilewarn">שכבת הלוויין חסומה בתצוגה הזו — האזורים מוצגים בשרטוט וקטורי על רשת קואורדינטות. הורד את הקובץ ופתח ב-Chrome לתצוגת לוויין מלאה.</div>
       <div id="bigmap"></div>
-    </div>
-    <div id="mobcard" class="mobcard" hidden>
-      <div class="mobcard-head">
-        <span class="mobcard-title" id="mobcardTitle"></span>
-        <button class="mobcard-close" id="mobcardClose" aria-label="סגור">✕</button>
+      <div id="mobcard" class="mobcard" hidden>
+        <div class="mobcard-head">
+          <span class="mobcard-title" id="mobcardTitle"></span>
+          <button class="mobcard-close" id="mobcardClose" aria-label="סגור">✕</button>
+        </div>
+        <div class="mobcard-body" id="mobcardBody"></div>
       </div>
-      <div class="mobcard-body" id="mobcardBody"></div>
     </div>
   </div>
 </div>
@@ -597,10 +602,11 @@ function initMap(){
   });
   window.addEventListener("resize",()=>map&&map.invalidateSize());
   try{
-    window.matchMedia("(max-width:760px)").addEventListener("change",()=>{
-      hideMobileCard();
-      try{ map.closePopup(); }catch(e){}
-      if(typeof renderAll==="function") renderAll();
+    window.matchMedia("(max-width:760px)").addEventListener("change",e=>{
+      const card=document.getElementById("mobcard");
+      const open=card&&!card.hidden;
+      document.body.classList.toggle("mobcard-open",open&&e.matches);
+      setTimeout(()=>{ try{map.invalidateSize()}catch(err){} },150);
     });
   }catch(e){}
   window.addEventListener("orientationchange",()=>setTimeout(()=>map&&map.invalidateSize(),300));
@@ -618,8 +624,27 @@ function closeCurrentPopup(){
   try{ if(map){ map.closePopup(); } }catch(e){}
 }
 
-/* ===== נייד: קוביית מידע במקום פופאפ ===== */
+/* ===== קוביית מידע מתחת למפה — מחשב ונייד ===== */
 function isMobileView(){ return window.matchMedia("(max-width:760px)").matches; }
+
+let notamLabel=null;
+function removeNotamLabel(){
+  try{ if(notamLabel){ map.removeLayer(notamLabel); notamLabel=null; } }catch(e){}
+}
+function addNotamLabel(item){
+  removeNotamLabel();
+  try{
+    const layer=shapes[item.id]; if(!layer) return;
+    let center=null;
+    if(layer.getBounds) center=layer.getBounds().getCenter();
+    else if(layer.getLatLng) center=layer.getLatLng();
+    if(!center) return;
+    notamLabel=L.marker(center,{
+      icon:L.divIcon({className:"notam-lbl",html:"<span>"+item.id+"</span>",iconSize:[0,0]}),
+      interactive:false,keyboard:false
+    }).addTo(map);
+  }catch(e){}
+}
 
 function mobcardHtml(item,p){
   const meta=[];
@@ -640,9 +665,10 @@ function showMobileCard(item){
   document.getElementById("mobcardTitle").textContent=item.name;
   document.getElementById("mobcardBody").innerHTML=mobcardHtml(item,item.parsed);
   card.hidden=false;
-  document.body.classList.add("mobcard-open");
+  if(isMobileView()) document.body.classList.add("mobcard-open");
   document.getElementById("mobcardBody").scrollTop=0;
-  /* מרכוז על הנוטמ הספציפי — אחרי שהמפה הצטמצמה לחצי מסך */
+  addNotamLabel(item);
+  /* מרכוז על הנוטמ הספציפי — אחרי שהפריסה התייצבה */
   const layer=shapes[item.id];
   setTimeout(()=>{
     try{
@@ -656,9 +682,10 @@ function showMobileCard(item){
         z=Math.min(13,Math.max(10,z));   /* לא רחוק מדי, לא קרוב מדי */
         map.setView(center,z,{animate:true});
       }
-      /* גלילת הדף כך שהמפה תשב בראש המסך והקוביה מתחתיה */
-      const mb=document.querySelector(".mapbox");
-      if(mb) mb.scrollIntoView({behavior:"smooth",block:"start"});
+      if(isMobileView()){
+        const mb=document.querySelector(".mapbox");
+        if(mb) mb.scrollIntoView({behavior:"smooth",block:"start"});
+      }
     }catch(e){}
   },120);
 }
@@ -666,6 +693,7 @@ function hideMobileCard(){
   const card=document.getElementById("mobcard");
   if(card) card.hidden=true;
   document.body.classList.remove("mobcard-open");
+  removeNotamLabel();
   setTimeout(()=>{ try{map.invalidateSize()}catch(e){} },120);
 }
 document.addEventListener("DOMContentLoaded",()=>{
@@ -697,17 +725,10 @@ function drawItem(item){
   let layer;
   if(geo.type==="circle") layer=L.circle([geo.center.lat,geo.center.lng],{radius:geo.radius,...style});
   else layer=L.polygon(geo.points.map(c=>[c.lat,c.lng]),style);
-  if(!isMobileView()){
-    layer.bindPopup(popupHtml(item,p),{maxWidth:340,minWidth:180,autoPanPadding:[16,16]});
-  }
   layer.on("click",()=>{
-    if(isMobileView()){
-      try{ map.closePopup(); }catch(e){}
-      showMobileCard(item);
-      selectItem(item.id,false);
-    } else {
-      selectItem(item.id,false);
-    }
+    try{ map.closePopup(); }catch(e){}
+    showMobileCard(item);
+    selectItem(item.id,false);
   });
   layer.addTo(map);
   return layer;
@@ -718,11 +739,7 @@ function selectItem(id,fly=true){
   document.querySelectorAll(".item").forEach(el=>el.classList.toggle("sel",el.dataset.id===id));
   const item=DATA.find(x=>x.id===id);
   if(item&&shapes[id]){
-    if(isMobileView()){ showMobileCard(item); }
-    else {
-      if(fly) map.fitBounds(shapes[id].getBounds().pad(0.6));
-      shapes[id].openPopup();
-    }
+    showMobileCard(item);
   }
   const el=document.querySelector(`.item[data-id="${CSS.escape(id)}"]`);
   if(el) el.scrollIntoView({block:"nearest"});
