@@ -1,34 +1,25 @@
 {
- "fetched_at": "25/07/2026 14:44 UTC",
- "fetched_iso": "2026-07-25T14:44:44Z",
- "count": 136,
+ "fetched_at": "26/07/2026 06:29 UTC",
+ "fetched_iso": "2026-07-26T06:29:41Z",
+ "count": 134,
  "notams": [
   {
-   "id": "C1571/26",
-   "loc": "LLLL",
-   "name": "C1571/26",
-   "cat": "other",
-   "heb": "אזור ב OLESH בתוך 1NM רדיוס שמרכזו בנ.צ. 32°20'38\"N 34°58'13\"E סגור מהקרקע ועד 3000רגל מעל פני הים, לכל הטיסות כולל AGRICULTURE. מומלצת זהירות.)\nבתוקף: מ-25/07/2026 12:00 UTC עד 26/07/2026 01:00 UTC",
-   "raw": "C1571/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/030/3221N03458E001\nA) LLLL B) 2607251200 C) 2607260100\nE) AN AREA AT OLESH WI 1NM RADIUS CENTERED ON PSN 322038N0345813E\nCLSD FM GND UP TO 3000FT AMSL, TO ALL FLT INCLUDING AGRICULTURE.\nCTN ADZ.))",
-   "first_seen": "2026-07-25T14:44:44Z"
+   "id": "C1574/26",
+   "loc": "LLHZ",
+   "name": "הרצליה (LLHZ)",
+   "cat": "ad",
+   "heb": "TWR FREQ TEMPO CHG TO 125.600MHZ, CLEARANCE (CPT) FREQ CHG TO 118.550MHZ.\nבתוקף: מ-26/07/2026 05:48 UTC עד 31/08/2026 20:59 UTC",
+   "raw": "C1574/26 NOTAMR C0813/26\nQ) LLLL/QCACF/IV/BO /AE/000/999/3211N03450E005\nA) LLHZ B) 2607260548 C) 2608312059\nE) TWR FREQ TEMPO CHG TO 125.600MHZ,\nCLEARANCE (CPT) FREQ CHG TO 118.550MHZ.)",
+   "first_seen": "2026-07-26T06:29:41Z"
   },
   {
-   "id": "A0585/26",
+   "id": "C1573/26",
    "loc": "LLLL",
-   "name": "A0585/26",
+   "name": "OLESH WI 0",
    "cat": "other",
-   "heb": "ATS RTE J14 סגור בין NAT-ZACCI.\nבתוקף: מ-25/07/2026 12:00 UTC עד 26/07/2026 01:00 UTC",
-   "raw": "A0585/26 NOTAMN\nQ) LLLL/QANLC/I /NBO/E /040/070/3222N03501E004\nA) LLLL B) 2607251200 C) 2607260100\nE) ATS RTE J14 CLSD BTN NAT-ZACCI.)",
-   "first_seen": "2026-07-25T14:44:44Z"
-  },
-  {
-   "id": "C1570/26",
-   "loc": "LLLL",
-   "name": "C1570/26",
-   "cat": "other",
-   "heb": "AN AREA NEAR OLESH סגור מ-בין 3000FT-5000רגל מעל פני הים בין נקודות הציון הבאות 32°20'38\"N 34°58'56\"E 32°20'14\"N 34°58'35\"E 32°17'24\"N 35°03'12\"E 32°17'55\"N 35°03'31\"E. מומלצת זהירות.\nבתוקף: מ-25/07/2026 12:00 UTC עד 26/07/2026 01:00 UTC",
-   "raw": "C1570/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /030/050/3219N03501E003\nA) LLLL B) 2607251200 C) 2607260100\nE) AN AREA NEAR OLESH CLSD FM BTN 3000FT-5000FT\nAMSL BTN FLW PSN  322038N0345856E\n322014N0345835E 321724N0350312E 321755N0350331E.\nCTN ADZ.)",
-   "first_seen": "2026-07-25T14:44:44Z"
+   "heb": "אזור ב OLESH בתוך 0.8NM רדיוס שמרכזו בנ.צ. 32°20'30\"N 34°59'14\"E סגור מהקרקע ועד 3,000רגל מעל פני הים, לכל הטיסות כולל AGRICULTURE. מומלצת זהירות.\nבתוקף: מ-26/07/2026 04:28 UTC עד 26/07/2026 20:59 UTC",
+   "raw": "C1573/26 NOTAMR C1572/26\nQ) LLLL/QAELC/IV/NBO/E /000/030/3220N03459E001\nA) LLLL B) 2607260428 C) 2607262059\nE) AN AREA AT OLESH WI 0.8NM RADIUS CENTERED ON PSN 322030N0345914E\nCLSD FM GND UP TO 3,000FT AMSL, TO ALL FLT INCLUDING AGRICULTURE.\nCTN ADZ.)",
+   "first_seen": "2026-07-26T06:29:41Z"
   },
   {
    "id": "C1565/26",
@@ -985,15 +976,6 @@
    "first_seen": "2026-07-01T00:00:00Z"
   },
   {
-   "id": "C0813/26",
-   "loc": "LLHZ",
-   "name": "הרצליה (LLHZ)",
-   "cat": "ad",
-   "heb": "TWR FREQ TEMPO CHG TO 125.600MHZ.\nבתוקף: מ-22/04/2026 13:49 UTC עד 31/07/2026 20:59 UTC",
-   "raw": "C0813/26 NOTAMN\nQ) LLLL/QCACF/IV/BO /AE/000/999/3211N03450E005\nA) LLHZ B) 2604221349 C) 2607312059\nE) TWR FREQ TEMPO CHG TO 125.600MHZ.)",
-   "first_seen": "2026-07-01T00:00:00Z"
-  },
-  {
    "id": "A0340/26",
    "loc": "LLHA",
    "name": "חיפה (LLHA)",
@@ -1229,6 +1211,34 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1571/26",
+   "name": "C1571/26",
+   "cat": "other",
+   "heb": "אזור ב OLESH בתוך 1NM רדיוס שמרכזו בנ.צ. 32°20'38\"N 34°58'13\"E סגור מהקרקע ועד 3000רגל מעל פני הים, לכל הטיסות כולל AGRICULTURE. מומלצת זהירות.)\nבתוקף: מ-25/07/2026 12:00 UTC עד 26/07/2026 01:00 UTC",
+   "removed_at": "2026-07-26T06:29:41Z"
+  },
+  {
+   "id": "A0585/26",
+   "name": "A0585/26",
+   "cat": "other",
+   "heb": "ATS RTE J14 סגור בין NAT-ZACCI.\nבתוקף: מ-25/07/2026 12:00 UTC עד 26/07/2026 01:00 UTC",
+   "removed_at": "2026-07-26T06:29:41Z"
+  },
+  {
+   "id": "C1570/26",
+   "name": "C1570/26",
+   "cat": "other",
+   "heb": "AN AREA NEAR OLESH סגור מ-בין 3000FT-5000רגל מעל פני הים בין נקודות הציון הבאות 32°20'38\"N 34°58'56\"E 32°20'14\"N 34°58'35\"E 32°17'24\"N 35°03'12\"E 32°17'55\"N 35°03'31\"E. מומלצת זהירות.\nבתוקף: מ-25/07/2026 12:00 UTC עד 26/07/2026 01:00 UTC",
+   "removed_at": "2026-07-26T06:29:41Z"
+  },
+  {
+   "id": "C0813/26",
+   "name": "הרצליה (LLHZ)",
+   "cat": "ad",
+   "heb": "TWR FREQ TEMPO CHG TO 125.600MHZ.\nבתוקף: מ-22/04/2026 13:49 UTC עד 31/07/2026 20:59 UTC",
+   "removed_at": "2026-07-26T06:29:41Z"
+  },
   {
    "id": "C1568/26",
    "name": "EIN-ZURIM WI 0",
