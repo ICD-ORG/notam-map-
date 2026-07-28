@@ -1,7 +1,7 @@
 {
- "fetched_at": "27/07/2026 15:49 UTC",
- "fetched_iso": "2026-07-27T15:49:37Z",
- "count": 140,
+ "fetched_at": "28/07/2026 06:17 UTC",
+ "fetched_iso": "2026-07-28T06:17:19Z",
+ "count": 138,
  "notams": [
   {
    "id": "C1600/26",
@@ -19,15 +19,6 @@
    "cat": "other",
    "heb": "אזור ב GVULOT בתוך 1.2NM רדיוס שמרכזו בנ.צ. 31°13'45\"N 34°25'33\"E סגור מהקרקע ועד 1,200רגל מעל פני הים לכל הטיסות, טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-28/07/2026 15:00 UTC עד 28/07/2026 19:00 UTC",
    "raw": "C1599/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/012/3114N03426E002\nA) LLLL B) 2607281500 C) 2607281900\nE) AN AREA AT GVULOT WI 1.2NM RADIUS CENTERED ON PSN\n311345N0342533E CLSD FM GND UP TO 1,200FT AMSL TO ALL FLT,\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.)",
-   "first_seen": "2026-07-27T15:49:37Z"
-  },
-  {
-   "id": "C1598/26",
-   "loc": "LLLL",
-   "name": "OLESH WI 0",
-   "cat": "other",
-   "heb": "אזור ב OLESH בתוך 0.8NM רדיוס שמרכזו בנ.צ. 32°20'30\"N 34°59'14\"E סגור מהקרקע ועד 3,000רגל מעל פני הים, לכל הטיסות כולל AGRICULTURE. מומלצת זהירות.\nבתוקף: מ-28/07/2026 03:30 UTC עד 28/07/2026 12:30 UTC",
-   "raw": "C1598/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/030/3220N03459E001\nA) LLLL B) 2607280330 C) 2607281230\nE) AN AREA AT OLESH WI 0.8NM RADIUS CENTERED ON PSN 322030N0345914E\nCLSD FM GND UP TO 3,000FT AMSL, TO ALL FLT INCLUDING AGRICULTURE.\nCTN ADZ.)",
    "first_seen": "2026-07-27T15:49:37Z"
   },
   {
@@ -65,15 +56,6 @@
    "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-MEI-AMI. אזור בתוך 0.2NM רדיוס שמרכזו בנ.צ. 32°30'15\"N 35°09'02\"E סגור מהקרקע ועד 2,800רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-28/07/2026 02:30 UTC עד 02/08/2026 02:30 UTC",
    "raw": "C1594/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/028/3230N03509E001\nA) LLLL B) 2607280230 C) 2608020230\nE) CAPTIVE BALLOON WILL TAKE PLACE AT MEI-AMI.\nAN AREA WI 0.2NM RADIUS CENTERED ON PSN 323015N0350902E\nCLSD FM GND UP TO 2,800FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 2800FT AMSL)",
    "first_seen": "2026-07-27T15:49:37Z"
-  },
-  {
-   "id": "A0593/26",
-   "loc": "LLLL",
-   "name": "A0593/26",
-   "cat": "other",
-   "heb": "ATS RTE J14 סגור בין NAT-MEGID.\nבתוקף: מ-26/07/2026 16:49 UTC עד 28/07/2026 04:00 UTC",
-   "raw": "A0593/26 NOTAMR A0591/26\nQ) LLLL/QANLC/I /NBO/E /040/070/3227N03507E011\nA) LLLL B) 2607261649 C) 2607280400\nE) ATS RTE J14 CLSD BTN NAT-MEGID.)",
-   "first_seen": "2026-07-27T06:59:14Z"
   },
   {
    "id": "A0592/26",
@@ -1265,6 +1247,20 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1598/26",
+   "name": "OLESH WI 0",
+   "cat": "other",
+   "heb": "אזור ב OLESH בתוך 0.8NM רדיוס שמרכזו בנ.צ. 32°20'30\"N 34°59'14\"E סגור מהקרקע ועד 3,000רגל מעל פני הים, לכל הטיסות כולל AGRICULTURE. מומלצת זהירות.\nבתוקף: מ-28/07/2026 03:30 UTC עד 28/07/2026 12:30 UTC",
+   "removed_at": "2026-07-28T06:17:19Z"
+  },
+  {
+   "id": "A0593/26",
+   "name": "A0593/26",
+   "cat": "other",
+   "heb": "ATS RTE J14 סגור בין NAT-MEGID.\nבתוקף: מ-26/07/2026 16:49 UTC עד 28/07/2026 04:00 UTC",
+   "removed_at": "2026-07-28T06:17:19Z"
+  },
   {
    "id": "C1593/26",
    "name": "OLESH WI 0",
