@@ -1,7 +1,7 @@
 {
- "fetched_at": "28/07/2026 15:29 UTC",
- "fetched_iso": "2026-07-28T15:29:03Z",
- "count": 141,
+ "fetched_at": "29/07/2026 06:23 UTC",
+ "fetched_iso": "2026-07-29T06:23:06Z",
+ "count": 139,
  "notams": [
   {
    "id": "C1611/26",
@@ -118,15 +118,6 @@
    "cat": "ad",
    "heb": "AD סגור לכל הטיסות כולל מסוקים, DUE EMERG DRILL. IN CASE OF EMERG OR MEDEVAC מסוקים AVBL בתוך 10MIN.\nבתוקף: מ-11/08/2026 15:00 UTC עד 11/08/2026 20:59 UTC",
    "raw": "C1600/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3259N03534E005\nA) LLIB B) 2608111500 C) 2608112059\nE) AD CLSD TO ALL FLT INCLUDING HEL, DUE EMERG DRILL.\nIN CASE OF EMERG OR MEDEVAC HEL AVBL WI 10MIN.)",
-   "first_seen": "2026-07-27T15:49:37Z"
-  },
-  {
-   "id": "C1599/26",
-   "loc": "LLLL",
-   "name": "GVULOT WI 1",
-   "cat": "other",
-   "heb": "אזור ב GVULOT בתוך 1.2NM רדיוס שמרכזו בנ.צ. 31°13'45\"N 34°25'33\"E סגור מהקרקע ועד 1,200רגל מעל פני הים לכל הטיסות, טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-28/07/2026 15:00 UTC עד 28/07/2026 19:00 UTC",
-   "raw": "C1599/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/012/3114N03426E002\nA) LLLL B) 2607281500 C) 2607281900\nE) AN AREA AT GVULOT WI 1.2NM RADIUS CENTERED ON PSN\n311345N0342533E CLSD FM GND UP TO 1,200FT AMSL TO ALL FLT,\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.)",
    "first_seen": "2026-07-27T15:49:37Z"
   },
   {
@@ -406,15 +397,6 @@
    "cat": "act",
    "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-HACHULA-LAKE, מהקרקע ועד 400מטר מעל הקרקע. LIT AND DAY MARKED. אזור בתוך 0.54NM רדיוס שמרכזו בנ.צ. 33°06'22\"N 35°34'54\"E סגור מהקרקע ועד 1,800רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-26/07/2026 03:30 UTC עד 01/08/2026 02:00 UTC\nלו\"ז: DAILY 0330-1400 1700-0200",
    "raw": "C1555/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/018/3306N03535E001\nA) LLLL B) 2607260330 C) 2608010200\nD) DAILY 0330-1400 1700-0200\nE) CAPTIVE BALLOON WILL TAKE PLACE AT HACHULA-LAKE,\nFM GND UP TO 400M AGL. LIT AND DAY MARKED.\nAN AREA WI 0.54NM RADIUS CENTERED ON PSN 330622N0353454E\nCLSD FM GND UP TO 1,800FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 1800FT AMSL)",
-   "first_seen": "2026-07-01T00:00:00Z"
-  },
-  {
-   "id": "C1549/26",
-   "loc": "LLLL",
-   "name": "REVIVIM",
-   "cat": "pje",
-   "heb": "PJE WILL TAKE PLACE ב-REVIVIM. אזור מ GND UP 2,400רגל מעל פני הים סגור בין נקודות הציון הבאות 31°07'12\"N 34°45'50\"E 31°05'11\"N 34°39'20\"E 31°04'55\"N 34°36'55\"E 30°59'31\"N 34°38'15\"E 31°00'35\"N 34°44'09\"E 31°03'59\"N 34°47'20\"E 31°07'12\"N 34°45'50\"E. טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה מומלצת זהירות.\nבתוקף: מ-27/07/2026 06:00 UTC עד 28/07/2026 18:50 UTC\nלו\"ז: 27 0600-0650 0715-0805 0830-0910 1330-1420 1440-1520 1540-1620,",
-   "raw": "C1549/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/024/3103N03442E006\nA) LLLL B) 2607270600 C) 2607281850\nD) 27 0600-0650 0715-0805 0830-0910 1330-1420 1440-1520 1540-1620,\n28 0600-0650 0730-0850 0910-0950 1010-1050 1600-1650 1710-1750\n1810-1850\nE) PJE WILL TAKE PLACE AT REVIVIM.\nAN AREA FM GND UP 2,400FT AMSL CLSD BTN FLW PSN\n310712N0344550E 310511N0343920E 310455N0343655E\n305931N0343815E 310035N0344409E 310359N0344720E\n310712N0344550E.\nOPS OF AGRICULTURE FLT AVBL WITH 15MIN PPR FM ATC\nCTN ADZ.\nF) GND G) 2400FT AMSL)",
    "first_seen": "2026-07-01T00:00:00Z"
   },
   {
@@ -1274,6 +1256,20 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1599/26",
+   "name": "GVULOT WI 1",
+   "cat": "other",
+   "heb": "אזור ב GVULOT בתוך 1.2NM רדיוס שמרכזו בנ.צ. 31°13'45\"N 34°25'33\"E סגור מהקרקע ועד 1,200רגל מעל פני הים לכל הטיסות, טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-28/07/2026 15:00 UTC עד 28/07/2026 19:00 UTC",
+   "removed_at": "2026-07-29T06:23:06Z"
+  },
+  {
+   "id": "C1549/26",
+   "name": "REVIVIM",
+   "cat": "pje",
+   "heb": "PJE WILL TAKE PLACE ב-REVIVIM. אזור מ GND UP 2,400רגל מעל פני הים סגור בין נקודות הציון הבאות 31°07'12\"N 34°45'50\"E 31°05'11\"N 34°39'20\"E 31°04'55\"N 34°36'55\"E 30°59'31\"N 34°38'15\"E 31°00'35\"N 34°44'09\"E 31°03'59\"N 34°47'20\"E 31°07'12\"N 34°45'50\"E. טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה מומלצת זהירות.\nבתוקף: מ-27/07/2026 06:00 UTC עד 28/07/2026 18:50 UTC\nלו\"ז: 27 0600-0650 0715-0805 0830-0910 1330-1420 1440-1520 1540-1620,",
+   "removed_at": "2026-07-29T06:23:06Z"
+  },
   {
    "id": "C1565/26",
    "name": "מצדה (LLMZ)",
