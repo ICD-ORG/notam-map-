@@ -1,8 +1,35 @@
 {
- "fetched_at": "29/07/2026 15:18 UTC",
- "fetched_iso": "2026-07-29T15:18:11Z",
+ "fetched_at": "30/07/2026 06:16 UTC",
+ "fetched_iso": "2026-07-30T06:16:18Z",
  "count": 152,
  "notams": [
+  {
+   "id": "C1630/26",
+   "loc": "LLLL",
+   "name": "TAANACHIM AND GADISH",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ תתקיים ב TAANACHIM AND GADISH. AN AREA סגור מהקרקע ועד 100מטר מעל הקרקע 560רגל מעל פני הים בין נקודות הציון הבאות 32°33'33\"N 35°17'19\"E 32°32'19\"N 35°17'47\"E 32°32'21\"N 35°17'59\"E 32°32'07\"N 35°18'03\"E 32°32'01\"N 35°17'22\"E 32°32'54\"N 35°16'40\"E 32°33'13\"N 35°16'37\"E 32°33'17\"N 35°15'58\"E 32°33'35\"N 35°15'58\"E. אזור בתוך 400M רדיוס שמרכזו בנ.צ. 32°33'09\"N 35°14'47\"E סגור מהקרקע ועד 100מטר מעל הקרקע, 560רגל מעל פני הים. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-01/08/2026 00:01 UTC עד 31/08/2026 20:59 UTC",
+   "raw": "C1630/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/006/3233N03517E002\nA) LLLL B) 2608010001 C) 2608312059\nE) UAS ACT WILL TAKE PLACE AT TAANACHIM AND GADISH.\nAN AREA CLSD FM GND UP TO 100M AGL 560FT AMSL BTN FLW PSN\n323333N0351719E 323219N0351747E 323221N0351759E\n323207N0351803E 323201N0351722E 323254N0351640E\n323313N0351637E 323317N0351558E 323335N0351558E.\nAN AREA WI 400M RADIUS CENTERED ON PSN 323309N0351447E\nCLSD FM GND UP TO 100M AGL, 560FT AMSL.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.\nF) GND G) 560FT AMSL)",
+   "first_seen": "2026-07-30T06:16:18Z"
+  },
+  {
+   "id": "C1629/26",
+   "loc": "LLLL",
+   "name": "C1629/26",
+   "cat": "other",
+   "heb": "אזור ב DANGER AREA 618 סגור מ-בין מהקרקע ועד 1,700רגל מעל פני הים בין נקודות הציון הבאות 30°56'59\"N 34°42'00\"E 30°56'32\"N 34°41'44\"E 30°56'19\"N 34°42'34\"E 30°56'44\"N 34°42'53\"E. מומלצת זהירות.\nבתוקף: מ-02/08/2026 04:30 UTC עד 06/08/2026 16:30 UTC\nלו\"ז: DAILY 0430-1630",
+   "raw": "C1629/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/017/3057N03442E001\nA) LLLL B) 2608020430 C) 2608061630\nD) DAILY 0430-1630\nE) AN AREA AT DANGER AREA 618 CLSD FM BTN FM GND UP TO 1,700FT\nAMSL BTN FLW PSN  305659N0344200E 305632N0344144E\n305619N0344234E 305644N0344253E.\nCTN ADZ.)",
+   "first_seen": "2026-07-30T06:16:18Z"
+  },
+  {
+   "id": "C1628/26",
+   "loc": "LLLL",
+   "name": "OLESH BTN 3",
+   "cat": "other",
+   "heb": "אזור ב OLESH בין 3,000-5,000רגל מעל פני הים סגור לכל הטיסות כולל טיסות ריסוס חקלאיות בין נקודות הציון הבאות 32°20'29\"N 34°59'58\"E 32°20'36\"N 34°59'38\"E 32°20'19\"N 34°59'18\"E 32°20'00\"N 34°59'39\"E מומלצת זהירות.\nבתוקף: מ-30/07/2026 05:30 UTC עד 30/07/2026 14:00 UTC\nלו\"ז: 0530-0700 1230-1400",
+   "raw": "C1628/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /030/050/3220N03500E001\nA) LLLL B) 2607300530 C) 2607301400\nD) 0530-0700 1230-1400\nE) AN AREA AT OLESH BTN 3,000-5,000FT AMSL CLSD TO ALL FLT\nINCLUDING AGRICULTURE FLT BTN FLW PSN 322029N0345958E\n322036N0345938E 322019N0345918E 322000N0345939E\nCTN ADZ.)",
+   "first_seen": "2026-07-30T06:16:18Z"
+  },
   {
    "id": "C1627/26",
    "loc": "LLLL",
@@ -139,15 +166,6 @@
    "first_seen": "2026-07-29T15:18:11Z"
   },
   {
-   "id": "C1611/26",
-   "loc": "LLLL",
-   "name": "C1611/26",
-   "cat": "other",
-   "heb": "אזור בתוך 1.5NM רדיוס שמרכזו בנ.צ. 31°40'42\"N 34°59'36\"E סגור מהקרקע ועד 4,500 רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-29/07/2026 06:30 UTC עד 29/07/2026 16:00 UTC",
-   "raw": "C1611/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/045/3141N03500E002\nA) LLLL B) 2607290630 C) 2607291600\nE) AN AREA WI 1.5NM RADIUS CENTERED ON PSN 314042N0345936E\nCLSD FM GND UP TO 4,500 FT AMSL TO ALL FLT\nINCLUDING AGRICULTURE FLT.\nCTN ADZ.)",
-   "first_seen": "2026-07-28T15:29:03Z"
-  },
-  {
    "id": "C1610/26",
    "loc": "LLLL",
    "name": "C1610/26",
@@ -217,15 +235,6 @@
    "cat": "uas",
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב ZIV-HOSPITAL/TZFAT. בתוך 0.4KM רדיוס שמרכזו בנ.צ. 32°57'15\"N 35°29'34\"E מהקרקע ועד 30מטר מעל הקרקע, 2,200רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-28/07/2026 10:41 UTC עד 31/08/2026 20:59 UTC",
    "raw": "C1608/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/022/3257N03530E001\nA) LLLL B) 2607281041 C) 2608312059\nE) UAS/UAV ACT WILL TAKE PLACE AT ZIV-HOSPITAL/TZFAT.\nWI 0.4KM RADIUS CENTERED ON PSN 325715N0352934E\nFM GND UP TO 30M AGL, 2,200FT AMSL.\nCTN ADZ.\nF) GND G) 2200FT AMSL)",
-   "first_seen": "2026-07-28T15:29:03Z"
-  },
-  {
-   "id": "C1606/26",
-   "loc": "LLLL",
-   "name": "AVITAL JUNCTION",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב AVITAL JUNCTION, בתוך 2.9NM רדיוס שמרכזו בנ.צ. 33°03'26\"N 35°46'49\"E מהקרקע ועד 8600רגל מעל פני הים. טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-29/07/2026 14:00 UTC עד 30/07/2026 02:00 UTC",
-   "raw": "C1606/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/086/3303N03546E003\nA) LLLL B) 2607291400 C) 2607300200\nE) UAS/UAV ACT WILL TAKE PLACE AT AVITAL JUNCTION,\nWI 2.9NM RADIUS CENTERED ON PSN 330326N0354649E\nFM GND UP TO 8600FT AMSL.\nOPS OF AGRICULTURE FLT AVBL WITH 15MIN PPR FM ATC.\nCTN ADZ.\nF) GND G) 8600FT AMSL)",
    "first_seen": "2026-07-28T15:29:03Z"
   },
   {
@@ -461,15 +470,6 @@
    "heb": "TWR FREQ TEMPO CHG TO 125.600MHZ, CLEARANCE (CPT) FREQ CHG TO 118.550MHZ.\nבתוקף: מ-26/07/2026 05:48 UTC עד 31/08/2026 20:59 UTC",
    "raw": "C1574/26 NOTAMR C0813/26\nQ) LLLL/QCACF/IV/BO /AE/000/999/3211N03450E005\nA) LLHZ B) 2607260548 C) 2608312059\nE) TWR FREQ TEMPO CHG TO 125.600MHZ,\nCLEARANCE (CPT) FREQ CHG TO 118.550MHZ.)",
    "first_seen": "2026-07-26T06:29:41Z"
-  },
-  {
-   "id": "C1563/26",
-   "loc": "LLLL",
-   "name": "BAT-YAM",
-   "cat": "uas",
-   "heb": "UAS/UAV AIR-SHOW WILL TAKE PLACE ב-BAT-YAM. אזור בתוך 0.3KM רדיוס שמרכזו בנ.צ. 32°00'50\"N 34°44'17\"E סגור מהקרקע ועד 50מטר מעל הקרקע 300רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-29/07/2026 18:00 UTC עד 29/07/2026 20:00 UTC",
-   "raw": "C1563/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/003/3201N03444E001\nA) LLLL B) 2607291800 C) 2607292000\nE) UAS/UAV AIR-SHOW WILL TAKE PLACE AT BAT-YAM.\nAN AREA WI 0.3KM RADIUS CENTERED ON PSN 320050N0344417E\nCLSD FM GND UP TO 50M AGL 300FT AMSL.\nCTN ADZ.\nF) GND G) 300FT AMSL)",
-   "first_seen": "2026-07-01T00:00:00Z"
   },
   {
    "id": "C1562/26",
@@ -1373,6 +1373,27 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1611/26",
+   "name": "C1611/26",
+   "cat": "other",
+   "heb": "אזור בתוך 1.5NM רדיוס שמרכזו בנ.צ. 31°40'42\"N 34°59'36\"E סגור מהקרקע ועד 4,500 רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-29/07/2026 06:30 UTC עד 29/07/2026 16:00 UTC",
+   "removed_at": "2026-07-30T06:16:18Z"
+  },
+  {
+   "id": "C1606/26",
+   "name": "AVITAL JUNCTION",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב AVITAL JUNCTION, בתוך 2.9NM רדיוס שמרכזו בנ.צ. 33°03'26\"N 35°46'49\"E מהקרקע ועד 8600רגל מעל פני הים. טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-29/07/2026 14:00 UTC עד 30/07/2026 02:00 UTC",
+   "removed_at": "2026-07-30T06:16:18Z"
+  },
+  {
+   "id": "C1563/26",
+   "name": "BAT-YAM",
+   "cat": "uas",
+   "heb": "UAS/UAV AIR-SHOW WILL TAKE PLACE ב-BAT-YAM. אזור בתוך 0.3KM רדיוס שמרכזו בנ.צ. 32°00'50\"N 34°44'17\"E סגור מהקרקע ועד 50מטר מעל הקרקע 300רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-29/07/2026 18:00 UTC עד 29/07/2026 20:00 UTC",
+   "removed_at": "2026-07-30T06:16:18Z"
+  },
   {
    "id": "A0587/26",
    "name": "A0587/26",
