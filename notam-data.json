@@ -1,8 +1,35 @@
 {
- "fetched_at": "30/07/2026 15:20 UTC",
- "fetched_iso": "2026-07-30T15:20:29Z",
+ "fetched_at": "31/07/2026 06:39 UTC",
+ "fetched_iso": "2026-07-31T06:39:42Z",
  "count": 154,
  "notams": [
+  {
+   "id": "C1635/26",
+   "loc": "LLLL",
+   "name": "SHFARAAM",
+   "cat": "act",
+   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-SHFARAAM. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 32°48'50\"N 35°10'02\"E סגור מהקרקע ועד 2,000רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-01/08/2026 02:30 UTC עד 09/08/2026 02:35 UTC",
+   "raw": "C1635/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/020/3249N03510E003\nA) LLLL B) 2608010230 C) 2608090235\nE) CAPTIVE BALLOON WILL TAKE PLACE AT SHFARAAM.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 324850N0351002E\nCLSD FM GND UP TO 2,000FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 2000FT AMSL)",
+   "first_seen": "2026-07-31T06:39:42Z"
+  },
+  {
+   "id": "A0608/26",
+   "loc": "LLLL",
+   "name": "A0608/26",
+   "cat": "other",
+   "heb": "ATS RTE J14 סגור בין NAT-MEGID.\nבתוקף: מ-31/07/2026 20:30 UTC עד 02/08/2026 04:00 UTC",
+   "raw": "A0608/26 NOTAMN\nQ) LLLL/QANLC/I /NBO/E /040/070/3227N03507E011\nA) LLLL B) 2607312030 C) 2608020400\nE) ATS RTE J14 CLSD BTN NAT-MEGID.)",
+   "first_seen": "2026-07-31T06:39:42Z"
+  },
+  {
+   "id": "C1634/26",
+   "loc": "LLLL",
+   "name": "OLESH WI 0",
+   "cat": "other",
+   "heb": "אזור ב OLESH בתוך 0.8NM רדיוס שמרכזו בנ.צ. 32°20'30\"N 34°59'14\"E סגור מהקרקע ועד 3000רגל מעל פני הים, לכל הטיסות כולל AGRICULTURE. מומלצת זהירות.)\nבתוקף: מ-31/07/2026 20:30 UTC עד 01/08/2026 05:00 UTC\nלו\"ז: DAILY 2030-0500",
+   "raw": "C1634/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/030/3221N03459E001\nA) LLLL B) 2607312030 C) 2608010500\nD) DAILY 2030-0500\nE) AN AREA AT OLESH WI 0.8NM RADIUS CENTERED ON PSN 322030N0345914E\nCLSD FM GND UP TO 3000FT AMSL, TO ALL FLT INCLUDING AGRICULTURE.\nCTN ADZ.))",
+   "first_seen": "2026-07-31T06:39:42Z"
+  },
   {
    "id": "C1632/26",
    "loc": "LLLL",
@@ -517,15 +544,6 @@
    "first_seen": "2026-07-01T00:00:00Z"
   },
   {
-   "id": "C1561/26",
-   "loc": "LLLL",
-   "name": "CARMEL-NORTH WI 0",
-   "cat": "other",
-   "heb": "אזור ב CARMEL-NORTH בתוך 0.5NM רדיוס שמרכזו בנ.צ. 32°39'31\"N 35°00'44\"E סגור מהקרקע ועד 1,000רגל מעל פני הים לכל הטיסות, טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-26/07/2026 06:30 UTC עד 30/07/2026 18:30 UTC\nלו\"ז: DAILY 0630-0830 1000-1300 1600-1830",
-   "raw": "C1561/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/010/3239N03501E001\nA) LLLL B) 2607260630 C) 2607301830\nD) DAILY 0630-0830 1000-1300 1600-1830\nE) AN AREA AT CARMEL-NORTH WI 0.5NM RADIUS CENTERED ON PSN\n323931N0350044E CLSD FM GND UP TO 1,000FT AMSL TO ALL FLT,\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.)",
-   "first_seen": "2026-07-01T00:00:00Z"
-  },
-  {
    "id": "C1558/26",
    "loc": "LLLL",
    "name": "RAMAT-BEKA WI LLP14",
@@ -553,15 +571,6 @@
    "first_seen": "2026-07-01T00:00:00Z"
   },
   {
-   "id": "C1547/26",
-   "loc": "LLLL",
-   "name": "C1547/26",
-   "cat": "other",
-   "heb": "אזור בתוך 0.8NM רדיוס שמרכזו בנ.צ. 32°31'31\"N 35°03'43\"E סגור מהקרקע ועד 1,000רגל מעל פני הים לכל הטיסות, טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה ONLY. מומלצת זהירות.\nבתוקף: מ-26/07/2026 05:00 UTC עד 30/07/2026 16:00 UTC\nלו\"ז: DAILY 0500-1600",
-   "raw": "C1547/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/010/3231N03503E001\nA) LLLL B) 2607260500 C) 2607301600\nD) DAILY 0500-1600\nE) AN AREA WI 0.8NM RADIUS CENTERED ON PSN 323131N0350343E\nCLSD FM GND UP TO 1,000FT AMSL TO ALL FLT,\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC ONLY.\nCTN ADZ.)",
-   "first_seen": "2026-07-01T00:00:00Z"
-  },
-  {
    "id": "C1546/26",
    "loc": "LLLL",
    "name": "SHFARAAM",
@@ -577,15 +586,6 @@
    "cat": "ad",
    "heb": "THE FLW ELEMENTS PENETRATING RWY STRIP TWY PENETRATING S OF RWY 10. FENCE PENETRATING NW OF RWY 10. POLES HEIGHT 1.20מטר מעל הקרקע E OF RWY 28. מומלצת זהירות.\nבתוקף: מ-21/07/2026 12:44 UTC (קבוע)",
    "raw": "C1541/26 NOTAMN\nQ) LLLL/QMRLT/IV/NBO/A /000/999/3211N03450E005\nA) LLHZ B) 2607211244 C) PERM\nE) THE FLW ELEMENTS PENETRATING RWY STRIP\nTWY PENETRATING S OF RWY 10.\nFENCE PENETRATING NW OF RWY 10.\nPOLES HEIGHT 1.20M AGL E OF RWY 28.\nCTN ADZ.)",
-   "first_seen": "2026-07-01T00:00:00Z"
-  },
-  {
-   "id": "C1533/26",
-   "loc": "LLLL",
-   "name": "YERUHAM",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב YERUHAM, מהקרקע ועד 250מטר מעל הקרקע. אזור מ GND עד 3,000רגל מעל פני הים סגור בין נקודות הציון הבאות 30°58'30\"N 34°55'51\"E 30°58'23\"N 34°56'44\"E 30°58'03\"N 34°57'08\"E 30°57'09\"N 34°56'49\"E 30°56'24\"N 34°56'14\"E 30°56'52\"N 34°54'53\"E. מומלצת זהירות.\nבתוקף: מ-26/07/2026 02:30 UTC עד 30/07/2026 16:30 UTC\nלו\"ז: DAILY 0230-1630",
-   "raw": "C1533/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/030/3057N03456E002\nA) LLLL B) 2607260230 C) 2607301630\nD) DAILY 0230-1630\nE) UAS/UAV ACT WILL TAKE PLACE AT YERUHAM, FM GND UP TO 250M AGL.\nAN AREA FM GND UP TO 3,000FT AMSL CLSD BTN FLW PSN\n305830N0345551E 305823N0345644E 305803N0345708E\n305709N0345649E 305624N0345614E 305652N0345453E.\nCTN ADZ.\nF) GND G) 3000FT AMSL)",
    "first_seen": "2026-07-01T00:00:00Z"
   },
   {
@@ -1391,6 +1391,27 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1561/26",
+   "name": "CARMEL-NORTH WI 0",
+   "cat": "other",
+   "heb": "אזור ב CARMEL-NORTH בתוך 0.5NM רדיוס שמרכזו בנ.צ. 32°39'31\"N 35°00'44\"E סגור מהקרקע ועד 1,000רגל מעל פני הים לכל הטיסות, טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-26/07/2026 06:30 UTC עד 30/07/2026 18:30 UTC\nלו\"ז: DAILY 0630-0830 1000-1300 1600-1830",
+   "removed_at": "2026-07-31T06:39:42Z"
+  },
+  {
+   "id": "C1547/26",
+   "name": "C1547/26",
+   "cat": "other",
+   "heb": "אזור בתוך 0.8NM רדיוס שמרכזו בנ.צ. 32°31'31\"N 35°03'43\"E סגור מהקרקע ועד 1,000רגל מעל פני הים לכל הטיסות, טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה ONLY. מומלצת זהירות.\nבתוקף: מ-26/07/2026 05:00 UTC עד 30/07/2026 16:00 UTC\nלו\"ז: DAILY 0500-1600",
+   "removed_at": "2026-07-31T06:39:42Z"
+  },
+  {
+   "id": "C1533/26",
+   "name": "YERUHAM",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב YERUHAM, מהקרקע ועד 250מטר מעל הקרקע. אזור מ GND עד 3,000רגל מעל פני הים סגור בין נקודות הציון הבאות 30°58'30\"N 34°55'51\"E 30°58'23\"N 34°56'44\"E 30°58'03\"N 34°57'08\"E 30°57'09\"N 34°56'49\"E 30°56'24\"N 34°56'14\"E 30°56'52\"N 34°54'53\"E. מומלצת זהירות.\nבתוקף: מ-26/07/2026 02:30 UTC עד 30/07/2026 16:30 UTC\nלו\"ז: DAILY 0230-1630",
+   "removed_at": "2026-07-31T06:39:42Z"
+  },
   {
    "id": "C1628/26",
    "name": "OLESH BTN 3",
