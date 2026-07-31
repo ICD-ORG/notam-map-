@@ -1,7 +1,7 @@
 {
- "fetched_at": "31/07/2026 06:39 UTC",
- "fetched_iso": "2026-07-31T06:39:42Z",
- "count": 154,
+ "fetched_at": "31/07/2026 15:29 UTC",
+ "fetched_iso": "2026-07-31T15:29:35Z",
+ "count": 152,
  "notams": [
   {
    "id": "C1635/26",
@@ -227,15 +227,6 @@
    "heb": "פעילות כטב\"מ תתקיים ב ADERET. אזור בין נקודות הציון הבאות מהקרקע ועד 3,500רגל מעל פני הים סגור לכל הטיסות 31°41'07\"N 34°59'19\"E 31°38'46\"N 34°58'57\"E 31°38'24\"N 35°00'11\"E 31°40'28\"N 35°03'07\"E 31°41'31\"N 35°01'34\"E. מומלצת זהירות.\nבתוקף: מ-03/08/2026 07:00 UTC עד 04/08/2026 11:15 UTC\nלו\"ז: DAILY 0700-0800 1015-1115",
    "raw": "C1612/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/035/3140N03501E003\nA) LLLL B) 2608030700 C) 2608041115\nD) DAILY 0700-0800 1015-1115\nE) UAS ACT WILL TAKE PLACE AT ADERET.\nAN AREA BTN FLW PSN FM GND UP TO 3,500FT AMSL CLSD TO\nALL FLT  314107N0345919E 313846N0345857E 313824N0350011E\n314028N0350307E 314131N0350134E.\nCTN ADZ.\nF) GND G) 3500FT AMSL)",
    "first_seen": "2026-07-29T15:18:11Z"
-  },
-  {
-   "id": "C1610/26",
-   "loc": "LLLL",
-   "name": "C1610/26",
-   "cat": "pje",
-   "heb": "PJE AIRSPACE METZADA ACT מ-8,000רגל מעל פני הים. OPR באישור מוקדם מבקרת התעופה ONLY.\nבתוקף: מ-30/07/2026 09:30 UTC עד 31/07/2026 11:00 UTC\nלו\"ז: 30 0930-1700, 31 0600-1100",
-   "raw": "C1610/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/080/3120N03523E003\nA) LLLL B) 2607300930 C) 2607311100\nD) 30 0930-1700, 31 0600-1100\nE) PJE AIRSPACE METZADA ACT FM 8,000FT AMSL.\nOPR BY PPR FM ATC ONLY.\nF) GND G) 8000FT AMSL)",
-   "first_seen": "2026-07-28T15:29:03Z"
   },
   {
    "id": "A0599/26",
@@ -976,15 +967,6 @@
    "first_seen": "2026-07-01T00:00:00Z"
   },
   {
-   "id": "C1313/26",
-   "loc": "LLLL",
-   "name": "EITANIM-HOSPITAL",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב EITANIM-HOSPITAL. אזור בתוך 500M רדיוס שמרכזו בנ.צ. 31°46'43\"N 35°05'39\"E מהקרקע ועד 100מטר מעל הקרקע, 2,800רגל מעל פני הים סגור לכל הטיסות כולל טיסות ריסוס חקלאיות. חציית הסגירה באישור מוקדם מהגורמים הבאים ALON KLOSS 052-9459432, HATEM SAAD 052-5582412, 04-9523999. מומלצת זהירות.\nבתוקף: מ-17/06/2026 12:35 UTC עד 31/07/2026 15:00 UTC\nלו\"ז: DAILY 0500-1500",
-   "raw": "C1313/26 NOTAMR C1312/26\nQ) LLLL/QWULW/IV/BO /W /000/028/3147N03506E001\nA) LLLL B) 2606171235 C) 2607311500\nD) DAILY 0500-1500\nE) UAS/UAV ACT WILL TAKE PLACE AT EITANIM-HOSPITAL.\nAN AREA WI 500M RADIUS CENTERED ON PSN 314643N0350539E\nFM GND UP TO 100M AGL, 2,800FT AMSL CLSD TO ALL FLT\nINCLUDING AGRICULTURE FLT.\nXNG CLOSURE BY PPR FM FLW\nALON KLOSS 052-9459432, HATEM SAAD 052-5582412, 04-9523999.\nCTN ADZ.\nF) GND G) 2800FT AMSL)",
-   "first_seen": "2026-07-01T00:00:00Z"
-  },
-  {
    "id": "C1284/26",
    "loc": "LLLL",
    "name": "NESHER WI LLHA CTR",
@@ -1391,6 +1373,20 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1610/26",
+   "name": "C1610/26",
+   "cat": "pje",
+   "heb": "PJE AIRSPACE METZADA ACT מ-8,000רגל מעל פני הים. OPR באישור מוקדם מבקרת התעופה ONLY.\nבתוקף: מ-30/07/2026 09:30 UTC עד 31/07/2026 11:00 UTC\nלו\"ז: 30 0930-1700, 31 0600-1100",
+   "removed_at": "2026-07-31T15:29:35Z"
+  },
+  {
+   "id": "C1313/26",
+   "name": "EITANIM-HOSPITAL",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב EITANIM-HOSPITAL. אזור בתוך 500M רדיוס שמרכזו בנ.צ. 31°46'43\"N 35°05'39\"E מהקרקע ועד 100מטר מעל הקרקע, 2,800רגל מעל פני הים סגור לכל הטיסות כולל טיסות ריסוס חקלאיות. חציית הסגירה באישור מוקדם מהגורמים הבאים ALON KLOSS 052-9459432, HATEM SAAD 052-5582412, 04-9523999. מומלצת זהירות.\nבתוקף: מ-17/06/2026 12:35 UTC עד 31/07/2026 15:00 UTC\nלו\"ז: DAILY 0500-1500",
+   "removed_at": "2026-07-31T15:29:35Z"
+  },
   {
    "id": "C1561/26",
    "name": "CARMEL-NORTH WI 0",
