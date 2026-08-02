@@ -1,8 +1,62 @@
 {
- "fetched_at": "01/08/2026 14:34 UTC",
- "fetched_iso": "2026-08-01T14:34:53Z",
- "count": 135,
+ "fetched_at": "02/08/2026 14:44 UTC",
+ "fetched_iso": "2026-08-02T14:44:31Z",
+ "count": 138,
  "notams": [
+  {
+   "id": "C1644/26",
+   "loc": "LLLL",
+   "name": "C1644/26",
+   "cat": "other",
+   "heb": "CVFR RTE סגור TYONA-SUPER.\nבתוקף: מ-04/08/2026 18:30 UTC עד 04/08/2026 20:30 UTC",
+   "raw": "C1644/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /008/012/3159N03444E002\nA) LLLL B) 2608041830 C) 2608042030\nE) CVFR RTE CLSD  TYONA-SUPER.)",
+   "first_seen": "2026-08-02T14:44:31Z"
+  },
+  {
+   "id": "C1643/26",
+   "loc": "LLLL",
+   "name": "RISHON LEZION",
+   "cat": "uas",
+   "heb": "UAS/UAV AIR-SHOW WILL TAKE PLACE ב-RISHON LEZION. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 315950E0344404E סגור מהקרקע ועד 50מטר מעל הקרקע 300רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-04/08/2026 18:30 UTC עד 04/08/2026 20:30 UTC",
+   "raw": "C1643/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/003/3159N03444E001\nA) LLLL B) 2608041830 C) 2608042030\nE) UAS/UAV AIR-SHOW WILL TAKE PLACE AT RISHON LEZION.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN\n315950E0344404E CLSD FM GND UP TO 50M AGL 300FT AMSL.\nCTN ADZ.\nF) GND G) 300FT AMSL)",
+   "first_seen": "2026-08-02T14:44:31Z"
+  },
+  {
+   "id": "C1642/26",
+   "loc": "LLLL",
+   "name": "YERUHAM",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב YERUHAM, מהקרקע ועד 600מטר מעל הקרקע. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 30°58'19\"N 34°56'01\"E סגור מהקרקע ועד 3,700רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-09/08/2026 03:00 UTC עד 13/08/2026 14:30 UTC\nלו\"ז: DAILY 0300-1430",
+   "raw": "C1642/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/037/3058N03456E001\nA) LLLL B) 2608090300 C) 2608131430\nD) DAILY 0300-1430\nE) UAS/UAV ACT WILL TAKE PLACE AT YERUHAM, FM GND UP TO 600M AGL.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 305819N0345601E\nCLSD FM GND UP TO 3,700FT AMSL.\nCTN ADZ.\nF) GND G) 3700FT AMSL)",
+   "first_seen": "2026-08-02T14:44:31Z"
+  },
+  {
+   "id": "C1641/26",
+   "loc": "LLLL",
+   "name": "C1641/26",
+   "cat": "pje",
+   "heb": "PJE AIRSPACE TEIMAN ACT מ-11,000רגל מעל פני הים. IN CASE OF EMERG CLEAR THE AIRSPACE בתוך 5MIN. מומלצת זהירות.\nבתוקף: מ-07/08/2026 09:00 UTC עד 07/08/2026 11:00 UTC",
+   "raw": "C1641/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/110/3117N03443E004\nA) LLLL B) 2608070900 C) 2608071100\nE) PJE AIRSPACE TEIMAN ACT FM 11,000FT AMSL.\nIN CASE OF EMERG CLEAR THE AIRSPACE WI 5MIN.\nCTN ADZ.\nF) GND G) 11000FT AMSL)",
+   "first_seen": "2026-08-02T14:44:31Z"
+  },
+  {
+   "id": "C1640/26",
+   "loc": "LLLL",
+   "name": "C1640/26",
+   "cat": "pje",
+   "heb": "PJE AIRSPACE METZADA ACT מ-8,000רגל מעל פני הים. OPR באישור מוקדם מבקרת התעופה ONLY.\nבתוקף: מ-06/08/2026 09:30 UTC עד 07/08/2026 11:00 UTC\nלו\"ז: 06 0930-1700, 07 0600-1100",
+   "raw": "C1640/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/080/3120N03523E003\nA) LLLL B) 2608060930 C) 2608071100\nD) 06 0930-1700, 07 0600-1100\nE) PJE AIRSPACE METZADA ACT FM 8,000FT AMSL.\nOPR BY PPR FM ATC ONLY.\nF) GND G) 8000FT AMSL)",
+   "first_seen": "2026-08-02T14:44:31Z"
+  },
+  {
+   "id": "C1639/26",
+   "loc": "LLIB",
+   "name": "ראש פינה (LLIB)",
+   "cat": "ad",
+   "heb": "AD סגור לכל הטיסות כולל מסוקים, DUE WIP. IN CASE OF EMERG AVBL בתוך 10MIN.\nבתוקף: מ-03/08/2026 06:00 UTC עד 03/08/2026 07:00 UTC",
+   "raw": "C1639/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3259N03534E005\nA) LLIB B) 2608030600 C) 2608030700\nE) AD CLSD TO ALL FLT INCLUDING HEL, DUE WIP.\nIN CASE OF EMERG AVBL WI 10MIN.)",
+   "first_seen": "2026-08-02T14:44:31Z"
+  },
   {
    "id": "C1635/26",
    "loc": "LLLL",
@@ -10,15 +64,6 @@
    "cat": "act",
    "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-SHFARAAM. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 32°48'50\"N 35°10'02\"E סגור מהקרקע ועד 2,000רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-01/08/2026 02:30 UTC עד 09/08/2026 02:35 UTC",
    "raw": "C1635/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/020/3249N03510E003\nA) LLLL B) 2608010230 C) 2608090235\nE) CAPTIVE BALLOON WILL TAKE PLACE AT SHFARAAM.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 324850N0351002E\nCLSD FM GND UP TO 2,000FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 2000FT AMSL)",
-   "first_seen": "2026-07-31T06:39:42Z"
-  },
-  {
-   "id": "A0608/26",
-   "loc": "LLLL",
-   "name": "A0608/26",
-   "cat": "other",
-   "heb": "ATS RTE J14 סגור בין NAT-MEGID.\nבתוקף: מ-31/07/2026 20:30 UTC עד 02/08/2026 04:00 UTC",
-   "raw": "A0608/26 NOTAMN\nQ) LLLL/QANLC/I /NBO/E /040/070/3227N03507E011\nA) LLLL B) 2607312030 C) 2608020400\nE) ATS RTE J14 CLSD BTN NAT-MEGID.)",
    "first_seen": "2026-07-31T06:39:42Z"
   },
   {
@@ -163,15 +208,6 @@
    "cat": "other",
    "heb": "CVFR RTE סגור YAמסוקים-BMNUH-ZOFAR-HAZVA-ARAVA-ZOHAR-MMORR-LLMZ-ZUKIM. MMORR-ARRAD-LLMZ. ARRAD-HATRU-ZOHAR. TARAD-ARRAD.\nבתוקף: מ-04/08/2026 16:50 UTC עד 04/08/2026 18:10 UTC",
    "raw": "C1620/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /025/040/3051N03515E054\nA) LLLL B) 2608041650 C) 2608041810\nE) CVFR RTE CLSD\nYAHEL-BMNUH-ZOFAR-HAZVA-ARAVA-ZOHAR-MMORR-LLMZ-ZUKIM.\nMMORR-ARRAD-LLMZ.\nARRAD-HATRU-ZOHAR.\nTARAD-ARRAD.)",
-   "first_seen": "2026-07-29T15:18:11Z"
-  },
-  {
-   "id": "C1617/26",
-   "loc": "LLLL",
-   "name": "C1617/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור OVDAT-BOKER.\nבתוקף: מ-02/08/2026 08:50 UTC עד 02/08/2026 12:45 UTC\nלו\"ז: 0850-0930 1200-1245",
-   "raw": "C1617/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /035/040/3050N03447E003\nA) LLLL B) 2608020850 C) 2608021245\nD) 0850-0930 1200-1245\nE) CVFR RTE CLSD  OVDAT-BOKER.)",
    "first_seen": "2026-07-29T15:18:11Z"
   },
   {
@@ -334,15 +370,6 @@
    "cat": "uas",
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב DALIA/TZAFIT, בתוך בועת זעירים GOVRIN SOUTH (BGOVS) עד 100מטר מעל הקרקע. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 1,400רגל מעל פני הים 31°43'53\"N 34°50'38\"E 31°43'39\"N 34°50'10\"E 31°42'21\"N 34°49'25\"E 31°41'50\"N 34°50'23\"E 31°42'22\"N 34°51'18\"E 31°43'23\"N 34°51'23\"E. מומלצת זהירות.\nבתוקף: מ-01/08/2026 00:01 UTC עד 31/08/2026 20:59 UTC",
    "raw": "C1595/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/014/3143N03450E002\nA) LLLL B) 2608010001 C) 2608312059\nE) UAS/UAV ACT WILL TAKE PLACE AT DALIA/TZAFIT, WI ULTRALIGHT\nBUBBLE GOVRIN SOUTH (BGOVS) UP TO 100M AGL.\nAN AREA BTN THE FLW PSN CLSD FM GND UP TO 1,400FT AMSL\n314353N0345038E 314339N0345010E 314221N0344925E\n314150N0345023E 314222N0345118E 314323N0345123E.\nCTN ADZ.\nF) GND G) 1400FT AMSL)",
-   "first_seen": "2026-07-27T15:49:37Z"
-  },
-  {
-   "id": "C1594/26",
-   "loc": "LLLL",
-   "name": "MEI-AMI",
-   "cat": "act",
-   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-MEI-AMI. אזור בתוך 0.2NM רדיוס שמרכזו בנ.צ. 32°30'15\"N 35°09'02\"E סגור מהקרקע ועד 2,800רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-28/07/2026 02:30 UTC עד 02/08/2026 02:30 UTC",
-   "raw": "C1594/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/028/3230N03509E001\nA) LLLL B) 2607280230 C) 2608020230\nE) CAPTIVE BALLOON WILL TAKE PLACE AT MEI-AMI.\nAN AREA WI 0.2NM RADIUS CENTERED ON PSN 323015N0350902E\nCLSD FM GND UP TO 2,800FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 2800FT AMSL)",
    "first_seen": "2026-07-27T15:49:37Z"
   },
   {
@@ -1220,6 +1247,27 @@
   }
  ],
  "removed": [
+  {
+   "id": "A0608/26",
+   "name": "A0608/26",
+   "cat": "other",
+   "heb": "ATS RTE J14 סגור בין NAT-MEGID.\nבתוקף: מ-31/07/2026 20:30 UTC עד 02/08/2026 04:00 UTC",
+   "removed_at": "2026-08-02T14:44:31Z"
+  },
+  {
+   "id": "C1617/26",
+   "name": "C1617/26",
+   "cat": "other",
+   "heb": "CVFR RTE סגור OVDAT-BOKER.\nבתוקף: מ-02/08/2026 08:50 UTC עד 02/08/2026 12:45 UTC\nלו\"ז: 0850-0930 1200-1245",
+   "removed_at": "2026-08-02T14:44:31Z"
+  },
+  {
+   "id": "C1594/26",
+   "name": "MEI-AMI",
+   "cat": "act",
+   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-MEI-AMI. אזור בתוך 0.2NM רדיוס שמרכזו בנ.צ. 32°30'15\"N 35°09'02\"E סגור מהקרקע ועד 2,800רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-28/07/2026 02:30 UTC עד 02/08/2026 02:30 UTC",
+   "removed_at": "2026-08-02T14:44:31Z"
+  },
   {
    "id": "C1634/26",
    "name": "OLESH WI 0",
