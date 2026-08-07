@@ -1,7 +1,7 @@
 {
- "fetched_at": "06/08/2026 15:20 UTC",
- "fetched_iso": "2026-08-06T15:20:01Z",
- "count": 126,
+ "fetched_at": "07/08/2026 05:23 UTC",
+ "fetched_iso": "2026-08-07T05:23:03Z",
+ "count": 117,
  "notams": [
   {
    "id": "C1704/26",
@@ -229,51 +229,6 @@
    "first_seen": "2026-08-03T15:51:58Z"
   },
   {
-   "id": "A0627/26",
-   "loc": "LLLL",
-   "name": "AD WI AMMAN FIR",
-   "cat": "other",
-   "heb": "OVERFLIGHT בין 11,000FT-FL600 TEMPO CHG, טיסות SHALL FLY AS FLW מ-AMMAN FIR TO NICOSIA FIR, FOR טיסות DEP מ-AD בתוך AMMAN FIR, טיסות צבאיות TALMI-L53-GOBRI-J10-NAT-H14-MERVA. מ-S ALONG J10 TO NICOSIA FIR SIVAK-J10-GOBRI-J10-NAT-H14-MERVA. מ-NICOSIA FIR TO AMMAN FIR, FOR טיסות ARR ב-AD בתוך AMMAN FIR, טיסות צבאיות KONFO-Z91-VETEK-Z91-NAT-Z91-SALAM. מ-NICOSIA FIR TO S VIA J10 KONFO-Z91-VETEK-Z91-NAT-J10-TOMAL.\nבתוקף: מ-05/08/2026 14:20 UTC עד 06/08/2026 16:30 UTC\nלו\"ז: DAILY 1420-1630",
-   "raw": "A0627/26 NOTAMN\nQ) LLLL/QANCH/I /NBO/E /050/600/3209N03451E043\nA) LLLL B) 2608051420 C) 2608061630\nD) DAILY 1420-1630\nE) OVERFLIGHT BTN 11,000FT-FL600 TEMPO CHG, FLT SHALL FLY AS FLW\nFM AMMAN FIR TO NICOSIA FIR, FOR FLT DEP FM AD WI AMMAN FIR,\nMIL FLT\nTALMI-L53-GOBRI-J10-NAT-H14-MERVA.\nFM S ALONG J10 TO NICOSIA FIR\nSIVAK-J10-GOBRI-J10-NAT-H14-MERVA.\nFM NICOSIA FIR TO AMMAN FIR, FOR FLT ARR AT AD WI AMMAN FIR,\nMIL FLT\nKONFO-Z91-VETEK-Z91-NAT-Z91-SALAM.\nFM NICOSIA FIR TO S VIA J10\nKONFO-Z91-VETEK-Z91-NAT-J10-TOMAL.)",
-   "first_seen": "2026-08-03T15:51:58Z"
-  },
-  {
-   "id": "A0628/26",
-   "loc": "LLLL",
-   "name": "A0628/26",
-   "cat": "other",
-   "heb": "LLR01 DEACTIVATED, XNG MERVA AVBL.\nבתוקף: מ-05/08/2026 14:20 UTC עד 06/08/2026 16:30 UTC\nלו\"ז: DAILY 1420-1630",
-   "raw": "A0628/26 NOTAMN\nQ) LLLL/QRRCD/IV/BO /W /070/400/3247N03441E022\nA) LLLL B) 2608051420 C) 2608061630\nD) DAILY 1420-1630\nE) LLR01 DEACTIVATED, XNG MERVA AVBL.\nF) 7000FT AMSL G) 40000FT AMSL)",
-   "first_seen": "2026-08-03T15:51:58Z"
-  },
-  {
-   "id": "A0626/26",
-   "loc": "LLLL",
-   "name": "AVBL BTN 6",
-   "cat": "other",
-   "heb": "ATS RTE H14 NAT-MERVA AVBL בין 5,000-16,000FT QNH. ATS RTE J10 GOBRI-NAT AVBL בין 6,000-16,000FT QNH. ATS RTE Z91 KONFO-VETEK-NAT-SALAM בין 11,000-16,000FT QNH.\nבתוקף: מ-05/08/2026 14:20 UTC עד 06/08/2026 16:30 UTC\nלו\"ז: DAILY 1420-1630",
-   "raw": "A0626/26 NOTAMN\nQ) LLLL/QANLT/I /NBO/E /050/600/3211N03449E040\nA) LLLL B) 2608051420 C) 2608061630\nD) DAILY 1420-1630\nE) ATS RTE H14 NAT-MERVA AVBL BTN 5,000-16,000FT QNH.\nATS RTE J10 GOBRI-NAT AVBL BTN 6,000-16,000FT QNH.\nATS RTE Z91 KONFO-VETEK-NAT-SALAM BTN 11,000-16,000FT QNH.)",
-   "first_seen": "2026-08-03T15:51:58Z"
-  },
-  {
-   "id": "A0625/26",
-   "loc": "LLLL",
-   "name": "A0625/26",
-   "cat": "other",
-   "heb": "ATS RTE W13 סגור בין TAPUZ-JILET-DAFNA.\nבתוקף: מ-05/08/2026 14:20 UTC עד 06/08/2026 16:30 UTC\nלו\"ז: DAILY 1420-1630",
-   "raw": "A0625/26 NOTAMN\nQ) LLLL/QANLC/I /NBO/E /120/600/3217N03423E018\nA) LLLL B) 2608051420 C) 2608061630\nD) DAILY 1420-1630\nE) ATS RTE W13 CLSD BTN TAPUZ-JILET-DAFNA.)",
-   "first_seen": "2026-08-03T15:51:58Z"
-  },
-  {
-   "id": "A0623/26",
-   "loc": "LLLL",
-   "name": "A0623/26",
-   "cat": "other",
-   "heb": "ATS RTE סגור L53 בין ABIMI-SUVAS AND N134 בין VOLFO-SALAM.\nבתוקף: מ-05/08/2026 14:20 UTC עד 06/08/2026 16:30 UTC\nלו\"ז: DAILY 1420-1630",
-   "raw": "A0623/26 NOTAMN\nQ) LLLL/QANLC/I /NBO/E /050/600/3203N03445E041\nA) LLLL B) 2608051420 C) 2608061630\nD) DAILY 1420-1630\nE) ATS RTE CLSD  L53 BTN ABIMI-SUVAS AND N134 BTN VOLFO-SALAM.)",
-   "first_seen": "2026-08-03T15:51:58Z"
-  },
-  {
    "id": "A0622/26",
    "loc": "LLLL",
    "name": "A0622/26",
@@ -382,39 +337,12 @@
    "first_seen": "2026-07-31T06:39:42Z"
   },
   {
-   "id": "C1632/26",
-   "loc": "LLLL",
-   "name": "C1632/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור DEROR-SHARO-ZYAAR. PELEG-SHARO.\nבתוקף: מ-06/08/2026 19:00 UTC עד 07/08/2026 02:30 UTC",
-   "raw": "C1632/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /015/020/3220N03454E005\nA) LLLL B) 2608061900 C) 2608070230\nE) CVFR RTE CLSD\nDEROR-SHARO-ZYAAR.\nPELEG-SHARO.)",
-   "first_seen": "2026-07-30T15:20:29Z"
-  },
-  {
-   "id": "C1633/26",
-   "loc": "LLLL",
-   "name": "C1633/26",
-   "cat": "other",
-   "heb": "LLHZ אזור אימונים NR 8, 9, 12, 13 סגור.\nבתוקף: מ-06/08/2026 19:00 UTC עד 07/08/2026 02:30 UTC",
-   "raw": "C1633/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/030/3220N03454E008\nA) LLLL B) 2608061900 C) 2608070230\nE) LLHZ TRG AREA NR 8, 9, 12, 13 CLSD.)",
-   "first_seen": "2026-07-30T15:20:29Z"
-  },
-  {
    "id": "C1630/26",
    "loc": "LLLL",
    "name": "TAANACHIM AND GADISH",
    "cat": "uas",
    "heb": "פעילות כטב\"מ תתקיים ב TAANACHIM AND GADISH. AN AREA סגור מהקרקע ועד 100מטר מעל הקרקע 560רגל מעל פני הים בין נקודות הציון הבאות 32°33'33\"N 35°17'19\"E 32°32'19\"N 35°17'47\"E 32°32'21\"N 35°17'59\"E 32°32'07\"N 35°18'03\"E 32°32'01\"N 35°17'22\"E 32°32'54\"N 35°16'40\"E 32°33'13\"N 35°16'37\"E 32°33'17\"N 35°15'58\"E 32°33'35\"N 35°15'58\"E. אזור בתוך 400M רדיוס שמרכזו בנ.צ. 32°33'09\"N 35°14'47\"E סגור מהקרקע ועד 100מטר מעל הקרקע, 560רגל מעל פני הים. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-01/08/2026 00:01 UTC עד 31/08/2026 20:59 UTC",
    "raw": "C1630/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/006/3233N03517E002\nA) LLLL B) 2608010001 C) 2608312059\nE) UAS ACT WILL TAKE PLACE AT TAANACHIM AND GADISH.\nAN AREA CLSD FM GND UP TO 100M AGL 560FT AMSL BTN FLW PSN\n323333N0351719E 323219N0351747E 323221N0351759E\n323207N0351803E 323201N0351722E 323254N0351640E\n323313N0351637E 323317N0351558E 323335N0351558E.\nAN AREA WI 400M RADIUS CENTERED ON PSN 323309N0351447E\nCLSD FM GND UP TO 100M AGL, 560FT AMSL.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.\nF) GND G) 560FT AMSL)",
-   "first_seen": "2026-07-30T06:16:18Z"
-  },
-  {
-   "id": "C1629/26",
-   "loc": "LLLL",
-   "name": "C1629/26",
-   "cat": "other",
-   "heb": "אזור ב DANGER AREA 618 סגור מ-בין מהקרקע ועד 1,700רגל מעל פני הים בין נקודות הציון הבאות 30°56'59\"N 34°42'00\"E 30°56'32\"N 34°41'44\"E 30°56'19\"N 34°42'34\"E 30°56'44\"N 34°42'53\"E. מומלצת זהירות.\nבתוקף: מ-02/08/2026 04:30 UTC עד 06/08/2026 16:30 UTC\nלו\"ז: DAILY 0430-1630",
-   "raw": "C1629/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/017/3057N03442E001\nA) LLLL B) 2608020430 C) 2608061630\nD) DAILY 0430-1630\nE) AN AREA AT DANGER AREA 618 CLSD FM BTN FM GND UP TO 1,700FT\nAMSL BTN FLW PSN  305659N0344200E 305632N0344144E\n305619N0344234E 305644N0344253E.\nCTN ADZ.)",
    "first_seen": "2026-07-30T06:16:18Z"
   },
   {
@@ -433,15 +361,6 @@
    "cat": "uas",
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב KESARYA עד 100מטר מעל הקרקע, אזור בתוך 0.8NM רדיוס שמרכזו בנ.צ. 32°29'41\"N 34°54'39\"E סגור מהקרקע ועד 500רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-01/08/2026 19:00 UTC עד 31/08/2026 02:30 UTC\nלו\"ז: DAILY 1900-0230",
    "raw": "C1616/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/005/3230N03455E001\nA) LLLL B) 2608011900 C) 2608310230\nD) DAILY 1900-0230\nE) UAS/UAV ACT WILL TAKE PLACE AT KESARYA UP TO 100M AGL,\nAN AREA WI 0.8NM RADIUS CENTERED ON PSN 322941N0345439E\nCLSD FM GND UP TO 500FT AMSL.\nCTN ADZ.\nF) GND G) 500FT AMSL)",
-   "first_seen": "2026-07-29T15:18:11Z"
-  },
-  {
-   "id": "C1614/26",
-   "loc": "LLLL",
-   "name": "ARRAH WI 1",
-   "cat": "other",
-   "heb": "אזור ב ARRAH בתוך 1.35NM רדיוס שמרכזו בנ.צ. 32°31'31\"N 35°03'43\"E סגור מהקרקע ועד 1,000רגל מעל פני הים לכל הטיסות. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-06/08/2026 14:00 UTC עד 06/08/2026 18:00 UTC",
-   "raw": "C1614/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/010/3232N03504E002\nA) LLLL B) 2608061400 C) 2608061800\nE) AN AREA AT ARRAH WI 1.35NM RADIUS CENTERED ON PSN\n323131N0350343E CLSD FM GND UP TO 1,000FT AMSL TO ALL FLT.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.)",
    "first_seen": "2026-07-29T15:18:11Z"
   },
   {
@@ -1139,6 +1058,69 @@
   }
  ],
  "removed": [
+  {
+   "id": "A0627/26",
+   "name": "AD WI AMMAN FIR",
+   "cat": "other",
+   "heb": "OVERFLIGHT בין 11,000FT-FL600 TEMPO CHG, טיסות SHALL FLY AS FLW מ-AMMAN FIR TO NICOSIA FIR, FOR טיסות DEP מ-AD בתוך AMMAN FIR, טיסות צבאיות TALMI-L53-GOBRI-J10-NAT-H14-MERVA. מ-S ALONG J10 TO NICOSIA FIR SIVAK-J10-GOBRI-J10-NAT-H14-MERVA. מ-NICOSIA FIR TO AMMAN FIR, FOR טיסות ARR ב-AD בתוך AMMAN FIR, טיסות צבאיות KONFO-Z91-VETEK-Z91-NAT-Z91-SALAM. מ-NICOSIA FIR TO S VIA J10 KONFO-Z91-VETEK-Z91-NAT-J10-TOMAL.\nבתוקף: מ-05/08/2026 14:20 UTC עד 06/08/2026 16:30 UTC\nלו\"ז: DAILY 1420-1630",
+   "removed_at": "2026-08-07T05:23:03Z"
+  },
+  {
+   "id": "A0628/26",
+   "name": "A0628/26",
+   "cat": "other",
+   "heb": "LLR01 DEACTIVATED, XNG MERVA AVBL.\nבתוקף: מ-05/08/2026 14:20 UTC עד 06/08/2026 16:30 UTC\nלו\"ז: DAILY 1420-1630",
+   "removed_at": "2026-08-07T05:23:03Z"
+  },
+  {
+   "id": "A0626/26",
+   "name": "AVBL BTN 6",
+   "cat": "other",
+   "heb": "ATS RTE H14 NAT-MERVA AVBL בין 5,000-16,000FT QNH. ATS RTE J10 GOBRI-NAT AVBL בין 6,000-16,000FT QNH. ATS RTE Z91 KONFO-VETEK-NAT-SALAM בין 11,000-16,000FT QNH.\nבתוקף: מ-05/08/2026 14:20 UTC עד 06/08/2026 16:30 UTC\nלו\"ז: DAILY 1420-1630",
+   "removed_at": "2026-08-07T05:23:03Z"
+  },
+  {
+   "id": "A0625/26",
+   "name": "A0625/26",
+   "cat": "other",
+   "heb": "ATS RTE W13 סגור בין TAPUZ-JILET-DAFNA.\nבתוקף: מ-05/08/2026 14:20 UTC עד 06/08/2026 16:30 UTC\nלו\"ז: DAILY 1420-1630",
+   "removed_at": "2026-08-07T05:23:03Z"
+  },
+  {
+   "id": "A0623/26",
+   "name": "A0623/26",
+   "cat": "other",
+   "heb": "ATS RTE סגור L53 בין ABIMI-SUVAS AND N134 בין VOLFO-SALAM.\nבתוקף: מ-05/08/2026 14:20 UTC עד 06/08/2026 16:30 UTC\nלו\"ז: DAILY 1420-1630",
+   "removed_at": "2026-08-07T05:23:03Z"
+  },
+  {
+   "id": "C1632/26",
+   "name": "C1632/26",
+   "cat": "other",
+   "heb": "CVFR RTE סגור DEROR-SHARO-ZYAAR. PELEG-SHARO.\nבתוקף: מ-06/08/2026 19:00 UTC עד 07/08/2026 02:30 UTC",
+   "removed_at": "2026-08-07T05:23:03Z"
+  },
+  {
+   "id": "C1633/26",
+   "name": "C1633/26",
+   "cat": "other",
+   "heb": "LLHZ אזור אימונים NR 8, 9, 12, 13 סגור.\nבתוקף: מ-06/08/2026 19:00 UTC עד 07/08/2026 02:30 UTC",
+   "removed_at": "2026-08-07T05:23:03Z"
+  },
+  {
+   "id": "C1629/26",
+   "name": "C1629/26",
+   "cat": "other",
+   "heb": "אזור ב DANGER AREA 618 סגור מ-בין מהקרקע ועד 1,700רגל מעל פני הים בין נקודות הציון הבאות 30°56'59\"N 34°42'00\"E 30°56'32\"N 34°41'44\"E 30°56'19\"N 34°42'34\"E 30°56'44\"N 34°42'53\"E. מומלצת זהירות.\nבתוקף: מ-02/08/2026 04:30 UTC עד 06/08/2026 16:30 UTC\nלו\"ז: DAILY 0430-1630",
+   "removed_at": "2026-08-07T05:23:03Z"
+  },
+  {
+   "id": "C1614/26",
+   "name": "ARRAH WI 1",
+   "cat": "other",
+   "heb": "אזור ב ARRAH בתוך 1.35NM רדיוס שמרכזו בנ.צ. 32°31'31\"N 35°03'43\"E סגור מהקרקע ועד 1,000רגל מעל פני הים לכל הטיסות. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-06/08/2026 14:00 UTC עד 06/08/2026 18:00 UTC",
+   "removed_at": "2026-08-07T05:23:03Z"
+  },
   {
    "id": "A0621/26",
    "name": "A0621/26",
