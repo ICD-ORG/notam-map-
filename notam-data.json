@@ -1,8 +1,44 @@
 {
- "fetched_at": "09/08/2026 04:54 UTC",
- "fetched_iso": "2026-08-09T04:54:30Z",
- "count": 115,
+ "fetched_at": "09/08/2026 13:57 UTC",
+ "fetched_iso": "2026-08-09T13:57:24Z",
+ "count": 118,
  "notams": [
+  {
+   "id": "C1710/26",
+   "loc": "LLLL",
+   "name": "GOLAN-HEIGHTS FM GND UP TO 5",
+   "cat": "other",
+   "heb": "אזור ב GOLAN-HEIGHTS מהקרקע ועד 5,500רגל מעל פני הים בין נקודות הציון הבאות 33°01'45\"N 35°41'47\"E 32°58'53\"N 35°43'05\"E 32°59'55\"N 35°47'55\"E 33°03'28\"N 35°46'02\"E סגור לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-13/08/2026 03:00 UTC עד 13/08/2026 13:00 UTC",
+   "raw": "C1710/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/055/3301N03545E003\nA) LLLL B) 2608130300 C) 2608131300\nE) AN AREA AT GOLAN-HEIGHTS FM GND UP TO 5,500FT AMSL BTN\nFLW PSN  330145N0354147E 325853N0354305E\n325955N0354755E 330328N0354602E CLSD TO ALL FLT\nINCLUDING AGRICULTURE FLT.\nCTN ADZ.)",
+   "first_seen": "2026-08-09T13:57:24Z"
+  },
+  {
+   "id": "C1709/26",
+   "loc": "LLLL",
+   "name": "ISFIYAH",
+   "cat": "other",
+   "heb": "FIREFIGHTING ACT WILL TAKE PLACE ב-ISFIYAH. אזור בתוך 2NM רדיוס שמרכזו בנ.צ. 32°44'15\"N 35°03'11\"E סגור לכל הטיסות כולל טיסות ריסוס חקלאיות, מהקרקע ועד 3,000רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-12/08/2026 12:45 UTC עד 12/08/2026 13:20 UTC",
+   "raw": "C1709/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/030/3244N03503E002\nA) LLLL B) 2608121245 C) 2608121320\nE) FIREFIGHTING ACT WILL TAKE PLACE AT ISFIYAH.\nAN AREA WI 2NM RADIUS CENTERED ON PSN 324415N0350311E\nCLSD TO ALL FLT INCLUDING AGRICULTURE FLT, FM GND\nUP TO 3,000FT AMSL.\nCTN ADZ.)",
+   "first_seen": "2026-08-09T13:57:24Z"
+  },
+  {
+   "id": "C1708/26",
+   "loc": "LLLL",
+   "name": "MEI-AMI",
+   "cat": "act",
+   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-MEI-AMI. אזור בתוך 0.2NM רדיוס שמרכזו בנ.צ. 32°30'15\"N 35°09'02\"E סגור מהקרקע ועד 2,800רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-16/08/2026 02:40 UTC עד 18/08/2026 02:40 UTC",
+   "raw": "C1708/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/028/3230N03509E002\nA) LLLL B) 2608160240 C) 2608180240\nE) CAPTIVE BALLOON WILL TAKE PLACE AT MEI-AMI.\nAN AREA WI 0.2NM RADIUS CENTERED ON PSN 323015N0350902E\nCLSD FM GND UP TO 2,800FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 2800FT AMSL)",
+   "first_seen": "2026-08-09T13:57:24Z"
+  },
+  {
+   "id": "C1706/26",
+   "loc": "LLIB",
+   "name": "ראש פינה (LLIB)",
+   "cat": "ad",
+   "heb": "CIRCUIT EXER אסור, DUE FLYPAST בתוך CTR.\nבתוקף: מ-14/08/2026 04:00 UTC עד 14/08/2026 09:30 UTC",
+   "raw": "C1706/26 NOTAMN\nQ) LLLL/QACLP/IV/NBO/AE/000/060/3257N03534E007\nA) LLIB B) 2608140400 C) 2608140930\nE) CIRCUIT EXER PROHIBITED, DUE FLYPAST WI CTR.)",
+   "first_seen": "2026-08-09T13:57:24Z"
+  },
   {
    "id": "C1705/26",
    "loc": "LLIB",
@@ -398,15 +434,6 @@
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב ZIV-HOSPITAL/TZFAT. בתוך 0.4KM רדיוס שמרכזו בנ.צ. 32°57'15\"N 35°29'34\"E מהקרקע ועד 30מטר מעל הקרקע, 2,200רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-28/07/2026 10:41 UTC עד 31/08/2026 20:59 UTC",
    "raw": "C1608/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/022/3257N03530E001\nA) LLLL B) 2607281041 C) 2608312059\nE) UAS/UAV ACT WILL TAKE PLACE AT ZIV-HOSPITAL/TZFAT.\nWI 0.4KM RADIUS CENTERED ON PSN 325715N0352934E\nFM GND UP TO 30M AGL, 2,200FT AMSL.\nCTN ADZ.\nF) GND G) 2200FT AMSL)",
    "first_seen": "2026-07-28T15:29:03Z"
-  },
-  {
-   "id": "C1600/26",
-   "loc": "LLIB",
-   "name": "ראש פינה (LLIB)",
-   "cat": "ad",
-   "heb": "AD סגור לכל הטיסות כולל מסוקים, DUE EMERG DRILL. IN CASE OF EMERG OR MEDEVAC מסוקים AVBL בתוך 10MIN.\nבתוקף: מ-11/08/2026 15:00 UTC עד 11/08/2026 20:59 UTC",
-   "raw": "C1600/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3259N03534E005\nA) LLIB B) 2608111500 C) 2608112059\nE) AD CLSD TO ALL FLT INCLUDING HEL, DUE EMERG DRILL.\nIN CASE OF EMERG OR MEDEVAC HEL AVBL WI 10MIN.)",
-   "first_seen": "2026-07-27T15:49:37Z"
   },
   {
    "id": "C1596/26",
@@ -1040,6 +1067,13 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1600/26",
+   "name": "ראש פינה (LLIB)",
+   "cat": "ad",
+   "heb": "AD סגור לכל הטיסות כולל מסוקים, DUE EMERG DRILL. IN CASE OF EMERG OR MEDEVAC מסוקים AVBL בתוך 10MIN.\nבתוקף: מ-11/08/2026 15:00 UTC עד 11/08/2026 20:59 UTC",
+   "removed_at": "2026-08-09T13:57:24Z"
+  },
   {
    "id": "C1635/26",
    "name": "SHFARAAM",
