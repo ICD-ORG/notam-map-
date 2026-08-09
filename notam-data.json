@@ -1,8 +1,17 @@
 {
- "fetched_at": "08/08/2026 13:53 UTC",
- "fetched_iso": "2026-08-08T13:53:03Z",
+ "fetched_at": "09/08/2026 04:54 UTC",
+ "fetched_iso": "2026-08-09T04:54:30Z",
  "count": 115,
  "notams": [
+  {
+   "id": "C1705/26",
+   "loc": "LLIB",
+   "name": "ראש פינה (LLIB)",
+   "cat": "ad",
+   "heb": "AD סגור לכל הטיסות, DUE WIP. הפעלת מסוקים AVBL באישור מוקדם מבקרת התעופה. IN CASE OF EMERG OR MEDEVAC מסוקים AVBL בתוך 10MIN.\nבתוקף: מ-16/08/2026 06:00 UTC עד 16/08/2026 09:00 UTC",
+   "raw": "C1705/26 NOTAMN\nQ) LLLL/QFALT/IV/NBO/A /000/999/3259N03534E005\nA) LLIB B) 2608160600 C) 2608160900\nE) AD CLSD TO ALL FLT, DUE WIP.\nOPS OF HEL AVBL BY PPR FM ATC.\nIN CASE OF EMERG OR MEDEVAC HEL AVBL WI 10MIN.)",
+   "first_seen": "2026-08-09T04:54:30Z"
+  },
   {
    "id": "C1704/26",
    "loc": "LLLL",
@@ -308,15 +317,6 @@
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב YERUHAM, מהקרקע ועד 600מטר מעל הקרקע. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 30°58'19\"N 34°56'01\"E סגור מהקרקע ועד 3,700רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-09/08/2026 03:00 UTC עד 13/08/2026 14:30 UTC\nלו\"ז: DAILY 0300-1430",
    "raw": "C1642/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/037/3058N03456E001\nA) LLLL B) 2608090300 C) 2608131430\nD) DAILY 0300-1430\nE) UAS/UAV ACT WILL TAKE PLACE AT YERUHAM, FM GND UP TO 600M AGL.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 305819N0345601E\nCLSD FM GND UP TO 3,700FT AMSL.\nCTN ADZ.\nF) GND G) 3700FT AMSL)",
    "first_seen": "2026-08-02T14:44:31Z"
-  },
-  {
-   "id": "C1635/26",
-   "loc": "LLLL",
-   "name": "SHFARAAM",
-   "cat": "act",
-   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-SHFARAAM. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 32°48'50\"N 35°10'02\"E סגור מהקרקע ועד 2,000רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-01/08/2026 02:30 UTC עד 09/08/2026 02:35 UTC",
-   "raw": "C1635/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/020/3249N03510E003\nA) LLLL B) 2608010230 C) 2608090235\nE) CAPTIVE BALLOON WILL TAKE PLACE AT SHFARAAM.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 324850N0351002E\nCLSD FM GND UP TO 2,000FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 2000FT AMSL)",
-   "first_seen": "2026-07-31T06:39:42Z"
   },
   {
    "id": "C1630/26",
@@ -1040,6 +1040,13 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1635/26",
+   "name": "SHFARAAM",
+   "cat": "act",
+   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-SHFARAAM. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 32°48'50\"N 35°10'02\"E סגור מהקרקע ועד 2,000רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-01/08/2026 02:30 UTC עד 09/08/2026 02:35 UTC",
+   "removed_at": "2026-08-09T04:54:30Z"
+  },
   {
    "id": "C1641/26",
    "name": "C1641/26",
