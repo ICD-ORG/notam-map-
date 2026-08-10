@@ -1,8 +1,71 @@
 {
- "fetched_at": "10/08/2026 05:14 UTC",
- "fetched_iso": "2026-08-10T05:14:16Z",
- "count": 115,
+ "fetched_at": "10/08/2026 14:26 UTC",
+ "fetched_iso": "2026-08-10T14:26:20Z",
+ "count": 119,
  "notams": [
+  {
+   "id": "C1722/26",
+   "loc": "LLLL",
+   "name": "ADERET",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ תתקיים ב ADERET. אזור בין נקודות הציון הבאות מהקרקע ועד 3,500רגל מעל פני הים סגור לכל הטיסות כולל טיסות ריסוס חקלאיות 31°41'07\"N 34°59'19\"E 31°38'46\"N 34°58'57\"E 31°38'04\"N 35°01'16\"E 31°40'03\"N 35°03'43\"E 31°41'31\"N 35°01'34\"E. מומלצת זהירות.\nבתוקף: מ-11/08/2026 07:00 UTC עד 11/08/2026 11:15 UTC\nלו\"ז: 0700-0800 1015-1115",
+   "raw": "C1722/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/035/3140N03501E003\nA) LLLL B) 2608110700 C) 2608111115\nD) 0700-0800 1015-1115\nE) UAS ACT WILL TAKE PLACE AT ADERET.\nAN AREA BTN FLW PSN FM GND UP TO 3,500FT AMSL CLSD TO\nALL FLT INCLUDING AGRICULTURE FLT  314107N0345919E\n313846N0345857E 313804N0350116E 314003N0350343E\n314131N0350134E.\nCTN ADZ.\nF) GND G) 3500FT AMSL)",
+   "first_seen": "2026-08-10T14:26:20Z"
+  },
+  {
+   "id": "C1721/26",
+   "loc": "LLLL",
+   "name": "OLESH WI 1",
+   "cat": "other",
+   "heb": "אזור ב OLESH בתוך 1.5NM רדיוס שמרכזו בנ.צ. 32°20'25\"N 34°59'39\"E סגור מהקרקע ועד 3,000רגל מעל פני הים, לכל הטיסות כולל AGRICULTURE. מומלצת זהירות.\nבתוקף: מ-11/08/2026 14:30 UTC עד 11/08/2026 22:30 UTC",
+   "raw": "C1721/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/030/3220N03500E002\nA) LLLL B) 2608111430 C) 2608112230\nE) AN AREA AT OLESH WI 1.5NM RADIUS CENTERED ON PSN 322025N0345939E\nCLSD FM GND UP TO 3,000FT AMSL, TO ALL FLT INCLUDING AGRICULTURE.\nCTN ADZ.)",
+   "first_seen": "2026-08-10T14:26:20Z"
+  },
+  {
+   "id": "C1720/26",
+   "loc": "LLLL",
+   "name": "REHOVOT",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב REHOVOT. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 600רגל מעל פני הים 31°52'23\"N 34°50'08\"E 31°52'35\"N 34°50'15\"E 31°52'51\"N 34°49'46\"E 31°52'33\"N 34°49'31\"E. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-11/08/2026 06:00 UTC עד 13/08/2026 15:00 UTC\nלו\"ז: DAILY 0600-0900 1200-1500",
+   "raw": "C1720/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/006/3153N03450E001\nA) LLLL B) 2608110600 C) 2608131500\nD) DAILY 0600-0900 1200-1500\nE) UAS/UAV ACT WILL TAKE PLACE AT REHOVOT.\nAN AREA BTN FLW PSN CLSD FM GND UP TO 600FT AMSL\n315223N0345008E 315235N0345015E 315251N0344946E\n315233N0344931E.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.\nF) GND G) 600FT AMSL)",
+   "first_seen": "2026-08-10T14:26:20Z"
+  },
+  {
+   "id": "C1719/26",
+   "loc": "LLLL",
+   "name": "HACHULA-LAKE",
+   "cat": "act",
+   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-HACHULA-LAKE, מהקרקע ועד 400מטר מעל הקרקע. LIT AND DAY MARKED. אזור בתוך 0.54NM רדיוס שמרכזו בנ.צ. 33°06'22\"N 35°34'54\"E סגור מהקרקע ועד 1,800רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-16/08/2026 03:30 UTC עד 23/08/2026 02:00 UTC\nלו\"ז: DAILY 0330-1400 1700-0200",
+   "raw": "C1719/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/018/3306N03535E001\nA) LLLL B) 2608160330 C) 2608230200\nD) DAILY 0330-1400 1700-0200\nE) CAPTIVE BALLOON WILL TAKE PLACE AT HACHULA-LAKE,\nFM GND UP TO 400M AGL. LIT AND DAY MARKED.\nAN AREA WI 0.54NM RADIUS CENTERED ON PSN 330622N0353454E\nCLSD FM GND UP TO 1,800FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 1800FT AMSL)",
+   "first_seen": "2026-08-10T14:26:20Z"
+  },
+  {
+   "id": "C1718/26",
+   "loc": "LLLL",
+   "name": "YERUHAM",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב YERUHAM, מהקרקע ועד 600מטר מעל הקרקע. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 30°58'19\"N 34°56'01\"E סגור מהקרקע ועד 3,700רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-16/08/2026 03:00 UTC עד 20/08/2026 14:30 UTC\nלו\"ז: DAILY 0300-1430",
+   "raw": "C1718/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/037/3058N03456E001\nA) LLLL B) 2608160300 C) 2608201430\nD) DAILY 0300-1430\nE) UAS/UAV ACT WILL TAKE PLACE AT YERUHAM, FM GND UP TO 600M AGL.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 305819N0345601E\nCLSD FM GND UP TO 3,700FT AMSL.\nCTN ADZ.\nF) GND G) 3700FT AMSL)",
+   "first_seen": "2026-08-10T14:26:20Z"
+  },
+  {
+   "id": "C1717/26",
+   "loc": "LLIB",
+   "name": "ראש פינה (LLIB)",
+   "cat": "ad",
+   "heb": "CTR סגור לכל הטיסות, כולל טיסות ריסוס חקלאיות, למעט PARTICIPATING ACFT IN FLYPAST.\nבתוקף: מ-14/08/2026 04:00 UTC עד 14/08/2026 09:30 UTC",
+   "raw": "C1717/26 NOTAMN\nQ) LLLL/QACLC/IV/NBO/AE/000/060/3257N03534E007\nA) LLIB B) 2608140400 C) 2608140930\nE) CTR CLSD TO ALL FLT, INCLUDING AGRICULTURE FLT,\nEXC PARTICIPATING ACFT IN FLYPAST.)",
+   "first_seen": "2026-08-10T14:26:20Z"
+  },
+  {
+   "id": "C1714/26",
+   "loc": "LLLL",
+   "name": "LLBS TRG AREA GIMEL1 GIMEL2",
+   "cat": "pje",
+   "heb": "PJE WILL TAKE PLACE ב-LLBS אזור אימונים GIMEL1 GIMEL2 מ-11,000רגל מעל פני הים. טיסות ריסוס חקלאיות אסור. מומלצת זהירות.\nבתוקף: מ-10/08/2026 17:00 UTC עד 10/08/2026 21:00 UTC",
+   "raw": "C1714/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/110/3121N03448E007\nA) LLLL B) 2608101700 C) 2608102100\nE) PJE WILL TAKE PLACE AT LLBS TRG AREA GIMEL1 GIMEL2\nFM 11,000FT AMSL.\nOPS OF AGRICULTURE FLT PROHIBITED.\nCTN ADZ.\nF) SFC G) 11000FT AMSL)",
+   "first_seen": "2026-08-10T14:26:20Z"
+  },
   {
    "id": "C1711/26",
    "loc": "LLLL",
@@ -40,15 +103,6 @@
    "first_seen": "2026-08-09T13:57:24Z"
   },
   {
-   "id": "C1706/26",
-   "loc": "LLIB",
-   "name": "ראש פינה (LLIB)",
-   "cat": "ad",
-   "heb": "CIRCUIT EXER אסור, DUE FLYPAST בתוך CTR.\nבתוקף: מ-14/08/2026 04:00 UTC עד 14/08/2026 09:30 UTC",
-   "raw": "C1706/26 NOTAMN\nQ) LLLL/QACLP/IV/NBO/AE/000/060/3257N03534E007\nA) LLIB B) 2608140400 C) 2608140930\nE) CIRCUIT EXER PROHIBITED, DUE FLYPAST WI CTR.)",
-   "first_seen": "2026-08-09T13:57:24Z"
-  },
-  {
    "id": "C1705/26",
    "loc": "LLIB",
    "name": "ראש פינה (LLIB)",
@@ -82,24 +136,6 @@
    "cat": "other",
    "heb": "אזור ב TLALIM בתוך 0.3NM רדיוס שמרכזו בנ.צ. 30°58'43\"N 34°45'25\"E סגור לכל הטיסות מהקרקע ועד 1,900רגל מעל פני הים. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-09/08/2026 10:00 UTC עד 12/08/2026 23:00 UTC\nלו\"ז: 09 1000-1500 1600-2100, 10 0600-0900 1000-1500 1600-2100, 11",
    "raw": "C1702/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/019/3059N03445E001\nA) LLLL B) 2608091000 C) 2608122300\nD) 09 1000-1500 1600-2100, 10 0600-0900 1000-1500 1600-2100, 11\n0600-0900 1000-1500 1600-2300, 12 0600-0900 1000-1500 1600-2300\nE) AN AREA AT TLALIM WI 0.3NM RADIUS CENTERED ON PSN\n305843N0344525E CLSD TO ALL FLT FM GND UP TO 1,900FT AMSL.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.)",
-   "first_seen": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "A0642/26",
-   "loc": "LLBG",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "ILS RWY 30 C/S BD FREQ 111.900MHZ WITHDRAWN FOR MAINT.\nבתוקף: מ-10/08/2026 06:00 UTC עד 10/08/2026 11:00 UTC",
-   "raw": "A0642/26 NOTAMN\nQ) LLLL/QISAS/I /NBO/A /000/999/3201N03452E005\nA) LLBG B) 2608100600 C) 2608101100\nE) ILS RWY 30 C/S BD FREQ 111.900MHZ WITHDRAWN FOR MAINT.)",
-   "first_seen": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "A0641/26",
-   "loc": "LLBG",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "RWY 12/30 סגור למעט RWY INT DUE WIP.\nבתוקף: מ-10/08/2026 06:00 UTC עד 10/08/2026 10:00 UTC",
-   "raw": "A0641/26 NOTAMN\nQ) LLLL/QMRLC/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2608100600 C) 2608101000\nE) RWY 12/30 CLSD EXC RWY INT DUE WIP.)",
    "first_seen": "2026-08-06T15:20:01Z"
   },
   {
@@ -1040,6 +1076,27 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1706/26",
+   "name": "ראש פינה (LLIB)",
+   "cat": "ad",
+   "heb": "CIRCUIT EXER אסור, DUE FLYPAST בתוך CTR.\nבתוקף: מ-14/08/2026 04:00 UTC עד 14/08/2026 09:30 UTC",
+   "removed_at": "2026-08-10T14:26:20Z"
+  },
+  {
+   "id": "A0642/26",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "ILS RWY 30 C/S BD FREQ 111.900MHZ WITHDRAWN FOR MAINT.\nבתוקף: מ-10/08/2026 06:00 UTC עד 10/08/2026 11:00 UTC",
+   "removed_at": "2026-08-10T14:26:20Z"
+  },
+  {
+   "id": "A0641/26",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "RWY 12/30 סגור למעט RWY INT DUE WIP.\nבתוקף: מ-10/08/2026 06:00 UTC עד 10/08/2026 10:00 UTC",
+   "removed_at": "2026-08-10T14:26:20Z"
+  },
   {
    "id": "C1701/26",
    "name": "KFAR-TAVOR WI 1",
