@@ -1,7 +1,7 @@
 {
- "fetched_at": "10/08/2026 14:26 UTC",
- "fetched_iso": "2026-08-10T14:26:20Z",
- "count": 119,
+ "fetched_at": "11/08/2026 04:57 UTC",
+ "fetched_iso": "2026-08-11T04:57:41Z",
+ "count": 114,
  "notams": [
   {
    "id": "C1722/26",
@@ -56,24 +56,6 @@
    "heb": "CTR סגור לכל הטיסות, כולל טיסות ריסוס חקלאיות, למעט PARTICIPATING ACFT IN FLYPAST.\nבתוקף: מ-14/08/2026 04:00 UTC עד 14/08/2026 09:30 UTC",
    "raw": "C1717/26 NOTAMN\nQ) LLLL/QACLC/IV/NBO/AE/000/060/3257N03534E007\nA) LLIB B) 2608140400 C) 2608140930\nE) CTR CLSD TO ALL FLT, INCLUDING AGRICULTURE FLT,\nEXC PARTICIPATING ACFT IN FLYPAST.)",
    "first_seen": "2026-08-10T14:26:20Z"
-  },
-  {
-   "id": "C1714/26",
-   "loc": "LLLL",
-   "name": "LLBS TRG AREA GIMEL1 GIMEL2",
-   "cat": "pje",
-   "heb": "PJE WILL TAKE PLACE ב-LLBS אזור אימונים GIMEL1 GIMEL2 מ-11,000רגל מעל פני הים. טיסות ריסוס חקלאיות אסור. מומלצת זהירות.\nבתוקף: מ-10/08/2026 17:00 UTC עד 10/08/2026 21:00 UTC",
-   "raw": "C1714/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/110/3121N03448E007\nA) LLLL B) 2608101700 C) 2608102100\nE) PJE WILL TAKE PLACE AT LLBS TRG AREA GIMEL1 GIMEL2\nFM 11,000FT AMSL.\nOPS OF AGRICULTURE FLT PROHIBITED.\nCTN ADZ.\nF) SFC G) 11000FT AMSL)",
-   "first_seen": "2026-08-10T14:26:20Z"
-  },
-  {
-   "id": "C1711/26",
-   "loc": "LLLL",
-   "name": "DALYA BTN FLW PSN CLSD FM GND UP TO 2",
-   "cat": "other",
-   "heb": "אזור ב DALYA בין נקודות הציון הבאות סגור מהקרקע ועד 2,000רגל מעל פני הים לכל הטיסות, כולל טיסות ריסוס חקלאיות 32°36'08\"N 35°04'21\"E 32°34'34\"N 35°02'16\"E 32°33'15\"N 35°03'46\"E 32°34'49\"N 35°05'48\"E. מומלצת זהירות.\nבתוקף: מ-10/08/2026 13:50 UTC עד 10/08/2026 14:20 UTC\nלו\"ז: 1350-1420",
-   "raw": "C1711/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/020/3235N03504E002\nA) LLLL B) 2608101350 C) 2608101420\nD) 1350-1420\nE) AN AREA AT DALYA BTN FLW PSN CLSD FM GND UP TO 2,000FT\nAMSL TO ALL FLT, INCLUDING AGRICULTURE FLT\n323608N0350421E 323434N0350216E 323315N0350346E\n323449N0350548E.\nCTN ADZ.)",
-   "first_seen": "2026-08-10T05:14:16Z"
   },
   {
    "id": "C1710/26",
@@ -175,30 +157,12 @@
    "first_seen": "2026-08-06T15:20:01Z"
   },
   {
-   "id": "C1685/26",
-   "loc": "LLLL",
-   "name": "C1685/26",
-   "cat": "pje",
-   "heb": "PJE AIRSPACE HOF-HATMARIM סגור.\nבתוקף: מ-10/08/2026 09:20 UTC עד 10/08/2026 17:00 UTC\nלו\"ז: 0920-1000 1230-1320 1600-1700",
-   "raw": "C1685/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/140/3255N03504E002\nA) LLLL B) 2608100920 C) 2608101700\nD) 0920-1000 1230-1320 1600-1700\nE) PJE AIRSPACE HOF-HATMARIM CLSD.\nF) GND G) 14000FT AMSL)",
-   "first_seen": "2026-08-06T15:20:01Z"
-  },
-  {
    "id": "C1683/26",
    "loc": "LLLL",
    "name": "C1683/26",
    "cat": "other",
    "heb": "CVFR RTE סגור EVLYM-AHIUD-AAKKO-SMRAT.\nבתוקף: מ-11/08/2026 06:50 UTC עד 11/08/2026 10:50 UTC\nלו\"ז: 0650-0740 1000-1050",
    "raw": "C1683/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /015/020/3253N03507E005\nA) LLLL B) 2608110650 C) 2608111050\nD) 0650-0740 1000-1050\nE) CVFR RTE CLSD  EVLYM-AHIUD-AAKKO-SMRAT.)",
-   "first_seen": "2026-08-06T06:19:07Z"
-  },
-  {
-   "id": "C1682/26",
-   "loc": "LLLL",
-   "name": "C1682/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור EVLYM-AHIUD-AAKKO-SMRAT.\nבתוקף: מ-10/08/2026 09:20 UTC עד 10/08/2026 17:00 UTC\nלו\"ז: 0920-1000 1230-1320 1600-1700",
-   "raw": "C1682/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /015/020/3253N03507E005\nA) LLLL B) 2608100920 C) 2608101700\nD) 0920-1000 1230-1320 1600-1700\nE) CVFR RTE CLSD  EVLYM-AHIUD-AAKKO-SMRAT.)",
    "first_seen": "2026-08-06T06:19:07Z"
   },
   {
@@ -253,15 +217,6 @@
    "cat": "act",
    "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-TAYIBE. אזור בתוך 0.2NM רדיוס שמרכזו בנ.צ. 32°14'57\"N 34°59'33\"E סגור מהקרקע ועד 1,500רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-05/08/2026 00:01 UTC עד 12/08/2026 20:59 UTC",
    "raw": "C1673/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/015/3215N03459E001\nA) LLLL B) 2608050001 C) 2608122059\nE) CAPTIVE BALLOON WILL TAKE PLACE AT TAYIBE.\nAN AREA WI 0.2NM RADIUS CENTERED ON PSN 321457N0345933E\nCLSD FM GND UP TO 1,500FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 1500FT AMSL)",
-   "first_seen": "2026-08-05T15:24:40Z"
-  },
-  {
-   "id": "C1670/26",
-   "loc": "LLLL",
-   "name": "KELACH",
-   "cat": "pje",
-   "heb": "PJE WILL TAKE PLACE ב-KELACH. אזור מ GND עד 8,000רגל מעל פני הים סגור לכל הטיסות בין נקודות הציון הבאות 31°32'00\"N 34°53'19\"E 31°31'59\"N 34°47'33\"E 31°26'02\"N 34°47'30\"E 31°24'44\"N 34°50'24\"E 31°26'02\"N 34°53'11\"E. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-10/08/2026 12:00 UTC עד 10/08/2026 20:59 UTC",
-   "raw": "C1670/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/080/3129N03450E005\nA) LLLL B) 2608101200 C) 2608102059\nE) PJE WILL TAKE PLACE AT KELACH.\nAN AREA FM GND UP TO 8,000FT AMSL CLSD TO ALL FLT BTN FLW PSN\n313200N0345319E 313159N0344733E 312602N0344730E\n312444N0345024E 312602N0345311E.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.\nF) GND G) 8000FT AMSL)",
    "first_seen": "2026-08-05T15:24:40Z"
   },
   {
@@ -1076,6 +1031,41 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1714/26",
+   "name": "LLBS TRG AREA GIMEL1 GIMEL2",
+   "cat": "pje",
+   "heb": "PJE WILL TAKE PLACE ב-LLBS אזור אימונים GIMEL1 GIMEL2 מ-11,000רגל מעל פני הים. טיסות ריסוס חקלאיות אסור. מומלצת זהירות.\nבתוקף: מ-10/08/2026 17:00 UTC עד 10/08/2026 21:00 UTC",
+   "removed_at": "2026-08-11T04:57:41Z"
+  },
+  {
+   "id": "C1711/26",
+   "name": "DALYA BTN FLW PSN CLSD FM GND UP TO 2",
+   "cat": "other",
+   "heb": "אזור ב DALYA בין נקודות הציון הבאות סגור מהקרקע ועד 2,000רגל מעל פני הים לכל הטיסות, כולל טיסות ריסוס חקלאיות 32°36'08\"N 35°04'21\"E 32°34'34\"N 35°02'16\"E 32°33'15\"N 35°03'46\"E 32°34'49\"N 35°05'48\"E. מומלצת זהירות.\nבתוקף: מ-10/08/2026 13:50 UTC עד 10/08/2026 14:20 UTC\nלו\"ז: 1350-1420",
+   "removed_at": "2026-08-11T04:57:41Z"
+  },
+  {
+   "id": "C1685/26",
+   "name": "C1685/26",
+   "cat": "pje",
+   "heb": "PJE AIRSPACE HOF-HATMARIM סגור.\nבתוקף: מ-10/08/2026 09:20 UTC עד 10/08/2026 17:00 UTC\nלו\"ז: 0920-1000 1230-1320 1600-1700",
+   "removed_at": "2026-08-11T04:57:41Z"
+  },
+  {
+   "id": "C1682/26",
+   "name": "C1682/26",
+   "cat": "other",
+   "heb": "CVFR RTE סגור EVLYM-AHIUD-AAKKO-SMRAT.\nבתוקף: מ-10/08/2026 09:20 UTC עד 10/08/2026 17:00 UTC\nלו\"ז: 0920-1000 1230-1320 1600-1700",
+   "removed_at": "2026-08-11T04:57:41Z"
+  },
+  {
+   "id": "C1670/26",
+   "name": "KELACH",
+   "cat": "pje",
+   "heb": "PJE WILL TAKE PLACE ב-KELACH. אזור מ GND עד 8,000רגל מעל פני הים סגור לכל הטיסות בין נקודות הציון הבאות 31°32'00\"N 34°53'19\"E 31°31'59\"N 34°47'33\"E 31°26'02\"N 34°47'30\"E 31°24'44\"N 34°50'24\"E 31°26'02\"N 34°53'11\"E. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-10/08/2026 12:00 UTC עד 10/08/2026 20:59 UTC",
+   "removed_at": "2026-08-11T04:57:41Z"
+  },
   {
    "id": "C1706/26",
    "name": "ראש פינה (LLIB)",
