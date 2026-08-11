@@ -1,16 +1,88 @@
 {
- "fetched_at": "11/08/2026 04:57 UTC",
- "fetched_iso": "2026-08-11T04:57:41Z",
- "count": 114,
+ "fetched_at": "11/08/2026 14:25 UTC",
+ "fetched_iso": "2026-08-11T14:25:35Z",
+ "count": 119,
  "notams": [
   {
-   "id": "C1722/26",
+   "id": "C1726/26",
+   "loc": "LLLL",
+   "name": "REVIVIM",
+   "cat": "pje",
+   "heb": "PJE WILL TAKE PLACE ב-REVIVIM. אזור מ GND UP 2,400רגל מעל פני הים סגור בין נקודות הציון הבאות 31°07'12\"N 34°45'50\"E 31°05'11\"N 34°39'20\"E 31°04'55\"N 34°36'55\"E 30°59'31\"N 34°38'15\"E 31°00'35\"N 34°44'09\"E 31°03'59\"N 34°47'20\"E 31°07'12\"N 34°45'50\"E. טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה מומלצת זהירות.\nבתוקף: מ-17/08/2026 05:30 UTC עד 20/08/2026 07:30 UTC\nלו\"ז: 17 0530-0730 1730-1900, 18 1220-1400 1430-1600, 20 0530-0730",
+   "raw": "C1726/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/024/3103N03442E006\nA) LLLL B) 2608170530 C) 2608200730\nD) 17 0530-0730 1730-1900, 18 1220-1400 1430-1600, 20 0530-0730\nE) PJE WILL TAKE PLACE AT REVIVIM.\nAN AREA FM GND UP 2,400FT AMSL CLSD BTN FLW PSN\n310712N0344550E 310511N0343920E 310455N0343655E\n305931N0343815E 310035N0344409E 310359N0344720E\n310712N0344550E.\nOPS OF AGRICULTURE FLT AVBL WITH 15MIN PPR FM ATC\nCTN ADZ.\nF) GND G) 2400FT AMSL)",
+   "first_seen": "2026-08-11T14:25:35Z"
+  },
+  {
+   "id": "C1725/26",
+   "loc": "LLLL",
+   "name": "C1725/26",
+   "cat": "other",
+   "heb": "CVFR AND מסוקים RTE סגור ב-1,200FT, AVBL BIDIRECTIONAL ב-800רגל מעל פני הים ONLY TYONA-SUPER-NTAIM-BOVED-NAGID-YAVNE-ZASHD.\nבתוקף: מ-17/08/2026 17:30 UTC עד 20/08/2026 10:00 UTC\nלו\"ז: 17 1730-1900, 18 0900-1030, 20 0900-1000",
+   "raw": "C1725/26 NOTAMN\nQ) LLLL/QARLT/IV/NBO/E /008/012/3155N03446E008\nA) LLLL B) 2608171730 C) 2608201000\nD) 17 1730-1900, 18 0900-1030, 20 0900-1000\nE) CVFR AND HEL RTE CLSD AT 1,200FT,\nAVBL BIDIRECTIONAL AT 800FT AMSL ONLY\nTYONA-SUPER-NTAIM-BOVED-NAGID-YAVNE-ZASHD.)",
+   "first_seen": "2026-08-11T14:25:35Z"
+  },
+  {
+   "id": "C1724/26",
    "loc": "LLLL",
    "name": "ADERET",
    "cat": "uas",
-   "heb": "פעילות כטב\"מ תתקיים ב ADERET. אזור בין נקודות הציון הבאות מהקרקע ועד 3,500רגל מעל פני הים סגור לכל הטיסות כולל טיסות ריסוס חקלאיות 31°41'07\"N 34°59'19\"E 31°38'46\"N 34°58'57\"E 31°38'04\"N 35°01'16\"E 31°40'03\"N 35°03'43\"E 31°41'31\"N 35°01'34\"E. מומלצת זהירות.\nבתוקף: מ-11/08/2026 07:00 UTC עד 11/08/2026 11:15 UTC\nלו\"ז: 0700-0800 1015-1115",
-   "raw": "C1722/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/035/3140N03501E003\nA) LLLL B) 2608110700 C) 2608111115\nD) 0700-0800 1015-1115\nE) UAS ACT WILL TAKE PLACE AT ADERET.\nAN AREA BTN FLW PSN FM GND UP TO 3,500FT AMSL CLSD TO\nALL FLT INCLUDING AGRICULTURE FLT  314107N0345919E\n313846N0345857E 313804N0350116E 314003N0350343E\n314131N0350134E.\nCTN ADZ.\nF) GND G) 3500FT AMSL)",
-   "first_seen": "2026-08-10T14:26:20Z"
+   "heb": "פעילות כטב\"מ תתקיים ב ADERET. אזור בין נקודות הציון הבאות מהקרקע ועד 3,500רגל מעל פני הים סגור לכל הטיסות כולל טיסות ריסוס חקלאיות 31°41'07\"N 34°59'19\"E 31°38'46\"N 34°58'57\"E 31°38'04\"N 35°01'16\"E 31°40'03\"N 35°03'43\"E 31°41'31\"N 35°01'34\"E. מומלצת זהירות.\nבתוקף: מ-12/08/2026 07:00 UTC עד 12/08/2026 11:15 UTC\nלו\"ז: 0700-0800 1015-1115",
+   "raw": "C1724/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/035/3140N03501E003\nA) LLLL B) 2608120700 C) 2608121115\nD) 0700-0800 1015-1115\nE) UAS ACT WILL TAKE PLACE AT ADERET.\nAN AREA BTN FLW PSN FM GND UP TO 3,500FT AMSL CLSD TO\nALL FLT INCLUDING AGRICULTURE FLT  314107N0345919E\n313846N0345857E 313804N0350116E 314003N0350343E\n314131N0350134E.\nCTN ADZ.\nF) GND G) 3500FT AMSL)",
+   "first_seen": "2026-08-11T14:25:35Z"
+  },
+  {
+   "id": "C1723/26",
+   "loc": "LLLL",
+   "name": "RAHAT",
+   "cat": "act",
+   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-RAHAT, עד 1,700רגל מעל פני הים. אזור בתוך 0.4NM רדיוס שמרכזו בנ.צ. 31°22'52\"N 34°45'41\"E סגור מהקרקע ועד 2,200רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות\nבתוקף: מ-12/08/2026 02:40 UTC עד 23/08/2026 02:40 UTC\nלו\"ז: 12 0240-2359, 13 0001-0415 1215-1640, 14-15 DAILY 1650-0240,",
+   "raw": "C1723/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/022/3123N03446E001\nA) LLLL B) 2608120240 C) 2608230240\nD) 12 0240-2359, 13 0001-0415 1215-1640, 14-15 DAILY 1650-0240,\n16-17 DAILY 0240-1650, 18-20 DAILY 0240-0420 1215-1650,  21-23 DAILY\n1650-0240\nE) CAPTIVE BALLOON WILL TAKE PLACE AT RAHAT, UP TO 1,700FT AMSL.\nAN AREA WI 0.4NM RADIUS CENTERED ON PSN 312252N0344541E\nCLSD FM GND UP TO 2,200FT AMSL TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ\nF) GND G) 2200FT AMSL)",
+   "first_seen": "2026-08-11T14:25:35Z"
+  },
+  {
+   "id": "A0647/26",
+   "loc": "LLHA",
+   "name": "חיפה (LLHA)",
+   "cat": "ad",
+   "heb": "AD סגור לכל הטיסות כולל מסוקים, DUE WIP. IN CASE OF EMERG AVBL בתוך 10MIN.\nבתוקף: מ-12/08/2026 19:00 UTC עד 13/08/2026 03:00 UTC",
+   "raw": "A0647/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3249N03503E005\nA) LLHA B) 2608121900 C) 2608130300\nE) AD CLSD TO ALL FLT INCLUDING HEL, DUE WIP.\nIN CASE OF EMERG AVBL WI 10MIN.)",
+   "first_seen": "2026-08-11T14:25:35Z"
+  },
+  {
+   "id": "A0646/26",
+   "loc": "LLLL",
+   "name": "FREQ 112",
+   "cat": "ad",
+   "heb": "VOR/DME NAT FREQ 112.400MHZ WITHDRAWN FOR MAINT.\nבתוקף: מ-25/08/2026 07:00 UTC עד 25/08/2026 12:00 UTC",
+   "raw": "A0646/26 NOTAMN\nQ) LLLL/QNMAS/IV/BO /E /000/999/3220N03458E025\nA) LLLL B) 2608250700 C) 2608251200\nE) VOR/DME NAT FREQ 112.400MHZ WITHDRAWN FOR MAINT.)",
+   "first_seen": "2026-08-11T14:25:35Z"
+  },
+  {
+   "id": "A0645/26",
+   "loc": "LLER",
+   "name": "A0645/26",
+   "cat": "ad",
+   "heb": "ILS RWY 19 C/S RB FREQ 110.500MHZ WITHDRAWN FOR MAINT.\nבתוקף: מ-20/08/2026 06:00 UTC עד 20/08/2026 09:00 UTC",
+   "raw": "A0645/26 NOTAMN\nQ) LLLL/QISAS/I /NBO/A /000/999/2943N03501E005\nA) LLER B) 2608200600 C) 2608200900\nE) ILS RWY 19 C/S RB FREQ 110.500MHZ WITHDRAWN FOR MAINT.)",
+   "first_seen": "2026-08-11T14:25:35Z"
+  },
+  {
+   "id": "A0644/26",
+   "loc": "LLER",
+   "name": "A0644/26",
+   "cat": "ad",
+   "heb": "ILS RWY 19 C/S RB FREQ 110.500MHZ WITHDRAWN FOR MAINT.\nבתוקף: מ-19/08/2026 11:00 UTC עד 19/08/2026 14:00 UTC",
+   "raw": "A0644/26 NOTAMN\nQ) LLLL/QISAS/I /NBO/A /000/999/2943N03501E005\nA) LLER B) 2608191100 C) 2608191400\nE) ILS RWY 19 C/S RB FREQ 110.500MHZ WITHDRAWN FOR MAINT.)",
+   "first_seen": "2026-08-11T14:25:35Z"
+  },
+  {
+   "id": "A0643/26",
+   "loc": "LLER",
+   "name": "A0643/26",
+   "cat": "ad",
+   "heb": "ILS RWY 01 C/S RC FREQ 108.700MHZ WITHDRAWN FOR MAINT.\nבתוקף: מ-19/08/2026 07:00 UTC עד 19/08/2026 11:00 UTC",
+   "raw": "A0643/26 NOTAMN\nQ) LLLL/QISAS/I /NBO/A /000/999/2945N03501E005\nA) LLER B) 2608190700 C) 2608191100\nE) ILS RWY 01 C/S RC FREQ 108.700MHZ WITHDRAWN FOR MAINT.)",
+   "first_seen": "2026-08-11T14:25:35Z"
   },
   {
    "id": "C1721/26",
@@ -121,15 +193,6 @@
    "first_seen": "2026-08-06T15:20:01Z"
   },
   {
-   "id": "A0639/26",
-   "loc": "LLBG",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "RWY 03/21 סגור למעט RWY INT, RESA 03 DUE WIP.\nבתוקף: מ-11/08/2026 06:00 UTC עד 11/08/2026 10:00 UTC",
-   "raw": "A0639/26 NOTAMN\nQ) LLLL/QMRLC/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2608110600 C) 2608111000\nE) RWY 03/21 CLSD EXC RWY INT, RESA 03 DUE WIP.)",
-   "first_seen": "2026-08-06T15:20:01Z"
-  },
-  {
    "id": "C1699/26",
    "loc": "LLLL",
    "name": "C1699/26",
@@ -146,24 +209,6 @@
    "heb": "2 OBST נ.צ. 32°59'08\"N 35°34'10\"E HGT 2מטר מעל הקרקע AND 1מטר מעל הקרקע. מומלצת זהירות.\nבתוקף: מ-06/08/2026 06:45 UTC (קבוע)",
    "raw": "C1698/26 NOTAMR C0458/26\nQ) LLLL/QOBCE/IV/M  /AE/000/010/3259N03534E005\nA) LLIB B) 2608060645 C) PERM\nE) 2 OBST PSN 325907.85N0353409.91E HGT 2M AGL AND 1M AGL.\nCTN ADZ.)",
    "first_seen": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "C1686/26",
-   "loc": "LLLL",
-   "name": "C1686/26",
-   "cat": "pje",
-   "heb": "PJE AIRSPACE HOF-HATMARIM סגור.\nבתוקף: מ-11/08/2026 06:50 UTC עד 11/08/2026 10:50 UTC\nלו\"ז: 0650-0740 1000-1050",
-   "raw": "C1686/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/140/3255N03504E002\nA) LLLL B) 2608110650 C) 2608111050\nD) 0650-0740 1000-1050\nE) PJE AIRSPACE HOF-HATMARIM CLSD.\nF) GND G) 14000FT AMSL)",
-   "first_seen": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "C1683/26",
-   "loc": "LLLL",
-   "name": "C1683/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור EVLYM-AHIUD-AAKKO-SMRAT.\nבתוקף: מ-11/08/2026 06:50 UTC עד 11/08/2026 10:50 UTC\nלו\"ז: 0650-0740 1000-1050",
-   "raw": "C1683/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /015/020/3253N03507E005\nA) LLLL B) 2608110650 C) 2608111050\nD) 0650-0740 1000-1050\nE) CVFR RTE CLSD  EVLYM-AHIUD-AAKKO-SMRAT.)",
-   "first_seen": "2026-08-06T06:19:07Z"
   },
   {
    "id": "C1680/26",
@@ -1031,6 +1076,34 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1722/26",
+   "name": "ADERET",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ תתקיים ב ADERET. אזור בין נקודות הציון הבאות מהקרקע ועד 3,500רגל מעל פני הים סגור לכל הטיסות כולל טיסות ריסוס חקלאיות 31°41'07\"N 34°59'19\"E 31°38'46\"N 34°58'57\"E 31°38'04\"N 35°01'16\"E 31°40'03\"N 35°03'43\"E 31°41'31\"N 35°01'34\"E. מומלצת זהירות.\nבתוקף: מ-11/08/2026 07:00 UTC עד 11/08/2026 11:15 UTC\nלו\"ז: 0700-0800 1015-1115",
+   "removed_at": "2026-08-11T14:25:35Z"
+  },
+  {
+   "id": "A0639/26",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "RWY 03/21 סגור למעט RWY INT, RESA 03 DUE WIP.\nבתוקף: מ-11/08/2026 06:00 UTC עד 11/08/2026 10:00 UTC",
+   "removed_at": "2026-08-11T14:25:35Z"
+  },
+  {
+   "id": "C1686/26",
+   "name": "C1686/26",
+   "cat": "pje",
+   "heb": "PJE AIRSPACE HOF-HATMARIM סגור.\nבתוקף: מ-11/08/2026 06:50 UTC עד 11/08/2026 10:50 UTC\nלו\"ז: 0650-0740 1000-1050",
+   "removed_at": "2026-08-11T14:25:35Z"
+  },
+  {
+   "id": "C1683/26",
+   "name": "C1683/26",
+   "cat": "other",
+   "heb": "CVFR RTE סגור EVLYM-AHIUD-AAKKO-SMRAT.\nבתוקף: מ-11/08/2026 06:50 UTC עד 11/08/2026 10:50 UTC\nלו\"ז: 0650-0740 1000-1050",
+   "removed_at": "2026-08-11T14:25:35Z"
+  },
   {
    "id": "C1714/26",
    "name": "LLBS TRG AREA GIMEL1 GIMEL2",
