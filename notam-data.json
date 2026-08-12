@@ -1,8 +1,44 @@
 {
- "fetched_at": "12/08/2026 05:21 UTC",
- "fetched_iso": "2026-08-12T05:21:44Z",
+ "fetched_at": "12/08/2026 14:26 UTC",
+ "fetched_iso": "2026-08-12T14:26:41Z",
  "count": 119,
  "notams": [
+  {
+   "id": "C1731/26",
+   "loc": "LLRS",
+   "name": "C1731/26",
+   "cat": "ad",
+   "heb": "AIRSTRIP AVBL FOR PPR טיסות מ-AIRSTRIP OPR ONLY.\nבתוקף: מ-14/08/2026 02:45 UTC עד 14/08/2026 04:00 UTC",
+   "raw": "C1731/26 NOTAMN\nQ) LLLL/QFALT/IV/NBO/A /000/999/3158N03445E005\nA) LLRS B) 2608140245 C) 2608140400\nE) AIRSTRIP AVBL FOR PPR FLT FM AIRSTRIP OPR ONLY.)",
+   "first_seen": "2026-08-12T14:26:41Z"
+  },
+  {
+   "id": "C1730/26",
+   "loc": "LLLL",
+   "name": "ARRAH WI 1",
+   "cat": "other",
+   "heb": "אזור ב ARRAH בתוך 1.5NM רדיוס שמרכזו בנ.צ. 32°31'31\"N 35°03'43\"E סגור מהקרקע ועד 1,000רגל מעל פני הים לכל הטיסות. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-16/08/2026 05:00 UTC עד 20/08/2026 16:00 UTC\nלו\"ז: DAILY 0500-1600",
+   "raw": "C1730/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/010/3232N03504E002\nA) LLLL B) 2608160500 C) 2608201600\nD) DAILY 0500-1600\nE) AN AREA AT ARRAH WI 1.5NM RADIUS CENTERED ON PSN\n323131N0350343E CLSD FM GND UP TO 1,000FT AMSL TO ALL FLT.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.)",
+   "first_seen": "2026-08-12T14:26:41Z"
+  },
+  {
+   "id": "C1729/26",
+   "loc": "LLLL",
+   "name": "YERUHAM",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב YERUHAM, מהקרקע ועד 300מטר מעל הקרקע. אזור בין נקודות הציון הבאות 30°58'40\"N 34°56'29\"E 30°58'40\"N 34°56'43\"E 30°58'20\"N 34°56'43\"E 30°58'20\"N 34°56'29\"E סגור מהקרקע ועד 2,500רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-18/08/2026 06:00 UTC עד 19/08/2026 14:00 UTC\nלו\"ז: DAILY 0600-1400",
+   "raw": "C1729/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/025/3059N03457E001\nA) LLLL B) 2608180600 C) 2608191400\nD) DAILY 0600-1400\nE) UAS/UAV ACT WILL TAKE PLACE AT YERUHAM, FM GND UP TO 300M AGL.\nAN AREA BTN FLW PSN 305840N0345629E 305840N0345643E\n305820N0345643E 305820N0345629E CLSD FM GND UP TO 2,500FT AMSL.\nCTN ADZ.\nF) GND G) 2500FT AMSL)",
+   "first_seen": "2026-08-12T14:26:41Z"
+  },
+  {
+   "id": "C1727/26",
+   "loc": "LLLL",
+   "name": "HACHULA-LAKE",
+   "cat": "act",
+   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-HACHULA-LAKE, מהקרקע ועד 400מטר מעל הקרקע. LIT AND DAY MARKED. אזור בתוך 0.54NM רדיוס שמרכזו בנ.צ. 33°06'46\"N 35°34'14\"E סגור מהקרקע ועד 2,200רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. IN CASE OF EMERG LOWERED בתוך 10MIN. מומלצת זהירות.\nבתוקף: מ-16/08/2026 02:00 UTC עד 22/08/2026 14:00 UTC\nלו\"ז: DAILY 0200-1400",
+   "raw": "C1727/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/022/3307N03534E001\nA) LLLL B) 2608160200 C) 2608221400\nD) DAILY 0200-1400\nE) CAPTIVE BALLOON WILL TAKE PLACE AT HACHULA-LAKE,\nFM GND UP TO 400M AGL. LIT AND DAY MARKED.\nAN AREA WI 0.54NM RADIUS CENTERED ON PSN 330646N0353414E\nCLSD FM GND UP TO 2,200FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nIN CASE OF EMERG LOWERED WI 10MIN.\nCTN ADZ.\nF) GND G) 2200FT AMSL)",
+   "first_seen": "2026-08-12T14:26:41Z"
+  },
   {
    "id": "A0657/26",
    "loc": "LLBG",
@@ -55,15 +91,6 @@
    "cat": "other",
    "heb": "CVFR AND מסוקים RTE סגור ב-1,200FT, AVBL BIDIRECTIONAL ב-800רגל מעל פני הים ONLY TYONA-SUPER-NTAIM-BOVED-NAGID-YAVNE-ZASHD.\nבתוקף: מ-17/08/2026 17:30 UTC עד 20/08/2026 10:00 UTC\nלו\"ז: 17 1730-1900, 18 0900-1030, 20 0900-1000",
    "raw": "C1725/26 NOTAMN\nQ) LLLL/QARLT/IV/NBO/E /008/012/3155N03446E008\nA) LLLL B) 2608171730 C) 2608201000\nD) 17 1730-1900, 18 0900-1030, 20 0900-1000\nE) CVFR AND HEL RTE CLSD AT 1,200FT,\nAVBL BIDIRECTIONAL AT 800FT AMSL ONLY\nTYONA-SUPER-NTAIM-BOVED-NAGID-YAVNE-ZASHD.)",
-   "first_seen": "2026-08-11T14:25:35Z"
-  },
-  {
-   "id": "C1724/26",
-   "loc": "LLLL",
-   "name": "ADERET",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ תתקיים ב ADERET. אזור בין נקודות הציון הבאות מהקרקע ועד 3,500רגל מעל פני הים סגור לכל הטיסות כולל טיסות ריסוס חקלאיות 31°41'07\"N 34°59'19\"E 31°38'46\"N 34°58'57\"E 31°38'04\"N 35°01'16\"E 31°40'03\"N 35°03'43\"E 31°41'31\"N 35°01'34\"E. מומלצת זהירות.\nבתוקף: מ-12/08/2026 07:00 UTC עד 12/08/2026 11:15 UTC\nלו\"ז: 0700-0800 1015-1115",
-   "raw": "C1724/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/035/3140N03501E003\nA) LLLL B) 2608120700 C) 2608121115\nD) 0700-0800 1015-1115\nE) UAS ACT WILL TAKE PLACE AT ADERET.\nAN AREA BTN FLW PSN FM GND UP TO 3,500FT AMSL CLSD TO\nALL FLT INCLUDING AGRICULTURE FLT  314107N0345919E\n313846N0345857E 313804N0350116E 314003N0350343E\n314131N0350134E.\nCTN ADZ.\nF) GND G) 3500FT AMSL)",
    "first_seen": "2026-08-11T14:25:35Z"
   },
   {
@@ -166,15 +193,6 @@
    "first_seen": "2026-08-09T13:57:24Z"
   },
   {
-   "id": "C1709/26",
-   "loc": "LLLL",
-   "name": "ISFIYAH",
-   "cat": "other",
-   "heb": "FIREFIGHTING ACT WILL TAKE PLACE ב-ISFIYAH. אזור בתוך 2NM רדיוס שמרכזו בנ.צ. 32°44'15\"N 35°03'11\"E סגור לכל הטיסות כולל טיסות ריסוס חקלאיות, מהקרקע ועד 3,000רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-12/08/2026 12:45 UTC עד 12/08/2026 13:20 UTC",
-   "raw": "C1709/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/030/3244N03503E002\nA) LLLL B) 2608121245 C) 2608121320\nE) FIREFIGHTING ACT WILL TAKE PLACE AT ISFIYAH.\nAN AREA WI 2NM RADIUS CENTERED ON PSN 324415N0350311E\nCLSD TO ALL FLT INCLUDING AGRICULTURE FLT, FM GND\nUP TO 3,000FT AMSL.\nCTN ADZ.)",
-   "first_seen": "2026-08-09T13:57:24Z"
-  },
-  {
    "id": "C1708/26",
    "loc": "LLLL",
    "name": "MEI-AMI",
@@ -199,15 +217,6 @@
    "cat": "other",
    "heb": "CVFR AND מסוקים RTE סגור ב-1,200FT, AVBL BIDIRECTIONAL ב-800רגל מעל פני הים ONLY TYONA-SUPER-NTAIM-BOVED-NAGID-YAVNE-ZASHD.\nבתוקף: מ-12/08/2026 09:00 UTC עד 12/08/2026 19:00 UTC\nלו\"ז: 0900-1000 1730-1900",
    "raw": "C1704/26 NOTAMN\nQ) LLLL/QARLT/IV/NBO/E /008/012/3155N03446E008\nA) LLLL B) 2608120900 C) 2608121900\nD) 0900-1000 1730-1900\nE) CVFR AND HEL RTE CLSD AT 1,200FT,\nAVBL BIDIRECTIONAL AT 800FT AMSL ONLY\nTYONA-SUPER-NTAIM-BOVED-NAGID-YAVNE-ZASHD.)",
-   "first_seen": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "C1703/26",
-   "loc": "LLLL",
-   "name": "C1703/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור EVLYM-AHIUD-AAKKO-SMRAT.\nבתוקף: מ-12/08/2026 06:00 UTC עד 12/08/2026 10:00 UTC\nלו\"ז: 0600-0645 0920-1000",
-   "raw": "C1703/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /015/020/3253N03507E005\nA) LLLL B) 2608120600 C) 2608121000\nD) 0600-0645 0920-1000\nE) CVFR RTE CLSD  EVLYM-AHIUD-AAKKO-SMRAT.)",
    "first_seen": "2026-08-06T15:20:01Z"
   },
   {
@@ -550,15 +559,6 @@
    "cat": "act",
    "heb": "בועת זעירים סגור HAHULA (BHULA), KARMIEL (BKRML).\nבתוקף: מ-26/07/2026 15:18 UTC עד 31/08/2026 20:59 UTC",
    "raw": "C1584/26 NOTAMR C1393/26\nQ) LLLL/QAELC/IV/NBO/E /000/040/3304N03523E018\nA) LLLL B) 2607261518 C) 2608312059\nE) ULTRALIGHT BUBBLE CLSD  HAHULA (BHULA), KARMIEL (BKRML).)",
-   "first_seen": "2026-07-27T06:59:14Z"
-  },
-  {
-   "id": "C1582/26",
-   "loc": "LLLL",
-   "name": "C1582/26",
-   "cat": "act",
-   "heb": "בועת זעירים סגור CHARIF (BHARF), TZNIFIM (BZNIF).\nבתוקף: מ-26/07/2026 15:16 UTC עד 31/08/2026 20:59 UTC",
-   "raw": "C1582/26 NOTAMR C1391/26\nQ) LLLL/QAELC/IV/NBO/E /000/040/3020N03450E020\nA) LLLL B) 2607261516 C) 2608312059\nE) ULTRALIGHT BUBBLE CLSD  CHARIF (BHARF), TZNIFIM (BZNIF).)",
    "first_seen": "2026-07-27T06:59:14Z"
   },
   {
@@ -1076,6 +1076,34 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1724/26",
+   "name": "ADERET",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ תתקיים ב ADERET. אזור בין נקודות הציון הבאות מהקרקע ועד 3,500רגל מעל פני הים סגור לכל הטיסות כולל טיסות ריסוס חקלאיות 31°41'07\"N 34°59'19\"E 31°38'46\"N 34°58'57\"E 31°38'04\"N 35°01'16\"E 31°40'03\"N 35°03'43\"E 31°41'31\"N 35°01'34\"E. מומלצת זהירות.\nבתוקף: מ-12/08/2026 07:00 UTC עד 12/08/2026 11:15 UTC\nלו\"ז: 0700-0800 1015-1115",
+   "removed_at": "2026-08-12T14:26:41Z"
+  },
+  {
+   "id": "C1709/26",
+   "name": "ISFIYAH",
+   "cat": "other",
+   "heb": "FIREFIGHTING ACT WILL TAKE PLACE ב-ISFIYAH. אזור בתוך 2NM רדיוס שמרכזו בנ.צ. 32°44'15\"N 35°03'11\"E סגור לכל הטיסות כולל טיסות ריסוס חקלאיות, מהקרקע ועד 3,000רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-12/08/2026 12:45 UTC עד 12/08/2026 13:20 UTC",
+   "removed_at": "2026-08-12T14:26:41Z"
+  },
+  {
+   "id": "C1703/26",
+   "name": "C1703/26",
+   "cat": "other",
+   "heb": "CVFR RTE סגור EVLYM-AHIUD-AAKKO-SMRAT.\nבתוקף: מ-12/08/2026 06:00 UTC עד 12/08/2026 10:00 UTC\nלו\"ז: 0600-0645 0920-1000",
+   "removed_at": "2026-08-12T14:26:41Z"
+  },
+  {
+   "id": "C1582/26",
+   "name": "C1582/26",
+   "cat": "act",
+   "heb": "בועת זעירים סגור CHARIF (BHARF), TZNIFIM (BZNIF).\nבתוקף: מ-26/07/2026 15:16 UTC עד 31/08/2026 20:59 UTC",
+   "removed_at": "2026-08-12T14:26:41Z"
+  },
   {
    "id": "C1721/26",
    "name": "OLESH WI 1",
