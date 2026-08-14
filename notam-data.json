@@ -1,7 +1,7 @@
 {
- "fetched_at": "14/08/2026 05:24 UTC",
- "fetched_iso": "2026-08-14T05:24:31Z",
- "count": 134,
+ "fetched_at": "14/08/2026 14:22 UTC",
+ "fetched_iso": "2026-08-14T14:22:25Z",
+ "count": 131,
  "notams": [
   {
    "id": "C1760/26",
@@ -391,15 +391,6 @@
    "first_seen": "2026-08-10T14:26:20Z"
   },
   {
-   "id": "C1717/26",
-   "loc": "LLIB",
-   "name": "ראש פינה (LLIB)",
-   "cat": "ad",
-   "heb": "CTR סגור לכל הטיסות, כולל טיסות ריסוס חקלאיות, למעט PARTICIPATING ACFT IN FLYPAST.\nבתוקף: מ-14/08/2026 04:00 UTC עד 14/08/2026 09:30 UTC",
-   "raw": "C1717/26 NOTAMN\nQ) LLLL/QACLC/IV/NBO/AE/000/060/3257N03534E007\nA) LLIB B) 2608140400 C) 2608140930\nE) CTR CLSD TO ALL FLT, INCLUDING AGRICULTURE FLT,\nEXC PARTICIPATING ACFT IN FLYPAST.)",
-   "first_seen": "2026-08-10T14:26:20Z"
-  },
-  {
    "id": "C1708/26",
    "loc": "LLLL",
    "name": "MEI-AMI",
@@ -409,15 +400,6 @@
    "first_seen": "2026-08-09T13:57:24Z"
   },
   {
-   "id": "C1699/26",
-   "loc": "LLLL",
-   "name": "C1699/26",
-   "cat": "pje",
-   "heb": "PJE AIRSPACE METZADA ACT מ-8,000רגל מעל פני הים. OPR באישור מוקדם מבקרת התעופה ONLY.\nבתוקף: מ-13/08/2026 09:30 UTC עד 14/08/2026 11:00 UTC\nלו\"ז: 13 0930-1700, 14 0600-1100",
-   "raw": "C1699/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/080/3120N03523E003\nA) LLLL B) 2608130930 C) 2608141100\nD) 13 0930-1700, 14 0600-1100\nE) PJE AIRSPACE METZADA ACT FM 8,000FT AMSL.\nOPR BY PPR FM ATC ONLY.\nF) GND G) 8000FT AMSL)",
-   "first_seen": "2026-08-06T15:20:01Z"
-  },
-  {
    "id": "C1698/26",
    "loc": "LLIB",
    "name": "C1698/26",
@@ -425,15 +407,6 @@
    "heb": "2 OBST נ.צ. 32°59'08\"N 35°34'10\"E HGT 2מטר מעל הקרקע AND 1מטר מעל הקרקע. מומלצת זהירות.\nבתוקף: מ-06/08/2026 06:45 UTC (קבוע)",
    "raw": "C1698/26 NOTAMR C0458/26\nQ) LLLL/QOBCE/IV/M  /AE/000/010/3259N03534E005\nA) LLIB B) 2608060645 C) PERM\nE) 2 OBST PSN 325907.85N0353409.91E HGT 2M AGL AND 1M AGL.\nCTN ADZ.)",
    "first_seen": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "C1680/26",
-   "loc": "LLLL",
-   "name": "ESHKOL",
-   "cat": "other",
-   "heb": "AIR DISPLAY WILL TAKE PLACE ב-ESHKOL. אזור בתוך 5KM רדיוס שמרכזו בנ.צ. 31°18'28\"N 34°29'34\"E סגור מהקרקע ועד 3,000רגל מעל פני הים, למעט PARTICIPATING ACFT. EXER CTN.\nבתוקף: מ-14/08/2026 03:00 UTC עד 14/08/2026 05:30 UTC",
-   "raw": "C1680/26 NOTAMN\nQ) LLLL/QWALW/IV/M  /W /000/030/3118N03430E003\nA) LLLL B) 2608140300 C) 2608140530\nE) AIR DISPLAY WILL TAKE PLACE AT ESHKOL.\nAN AREA WI 5KM RADIUS CENTERED ON PSN 311828N0342934E\nCLSD FM GND UP TO 3,000FT AMSL, EXC PARTICIPATING ACFT.\nEXER CTN.\nF) GND G) 3000FT AMSL)",
-   "first_seen": "2026-08-05T15:24:40Z"
   },
   {
    "id": "C1679/26",
@@ -1211,6 +1184,27 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1717/26",
+   "name": "ראש פינה (LLIB)",
+   "cat": "ad",
+   "heb": "CTR סגור לכל הטיסות, כולל טיסות ריסוס חקלאיות, למעט PARTICIPATING ACFT IN FLYPAST.\nבתוקף: מ-14/08/2026 04:00 UTC עד 14/08/2026 09:30 UTC",
+   "removed_at": "2026-08-14T14:22:25Z"
+  },
+  {
+   "id": "C1699/26",
+   "name": "C1699/26",
+   "cat": "pje",
+   "heb": "PJE AIRSPACE METZADA ACT מ-8,000רגל מעל פני הים. OPR באישור מוקדם מבקרת התעופה ONLY.\nבתוקף: מ-13/08/2026 09:30 UTC עד 14/08/2026 11:00 UTC\nלו\"ז: 13 0930-1700, 14 0600-1100",
+   "removed_at": "2026-08-14T14:22:25Z"
+  },
+  {
+   "id": "C1680/26",
+   "name": "ESHKOL",
+   "cat": "other",
+   "heb": "AIR DISPLAY WILL TAKE PLACE ב-ESHKOL. אזור בתוך 5KM רדיוס שמרכזו בנ.צ. 31°18'28\"N 34°29'34\"E סגור מהקרקע ועד 3,000רגל מעל פני הים, למעט PARTICIPATING ACFT. EXER CTN.\nבתוקף: מ-14/08/2026 03:00 UTC עד 14/08/2026 05:30 UTC",
+   "removed_at": "2026-08-14T14:22:25Z"
+  },
   {
    "id": "C1731/26",
    "name": "C1731/26",
@@ -2624,20 +2618,6 @@
    "cat": "uas",
    "heb": "MINI UAS/UAV BUBBLE CARMEL EAST AND NORTH סגור.\nבתוקף: מ-24/07/2026 06:00 UTC עד 24/07/2026 09:00 UTC",
    "removed_at": "2026-07-24T15:02:56Z"
-  },
-  {
-   "id": "C1525/26",
-   "name": "SHFARAAM",
-   "cat": "act",
-   "heb": "בלון קשור תתקיים ב- SHFARAAM. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 32°48'50\"N 35°10'02\"E סגור מהקרקע ועד 2,000רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-19/07/2026 02:20 UTC עד 24/07/2026 02:20 UTC",
-   "removed_at": "2026-07-24T06:17:22Z"
-  },
-  {
-   "id": "C1514/26",
-   "name": "C1514/26",
-   "cat": "pje",
-   "heb": "PJE AIRSPACE METZADA ACT מ-8,000רגל מעל פני הים. מופעל באישור מוקדם מבקרת התעופה בלבד.\nבתוקף: מ-23/07/2026 09:30 UTC עד 24/07/2026 11:00 UTC\nלו\"ז: 23 0930-1710, 24 0600-1100",
-   "removed_at": "2026-07-24T06:17:22Z"
   }
  ]
 }
