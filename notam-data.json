@@ -1,8 +1,53 @@
 {
- "fetched_at": "13/08/2026 14:28 UTC",
- "fetched_iso": "2026-08-13T14:28:28Z",
+ "fetched_at": "14/08/2026 05:24 UTC",
+ "fetched_iso": "2026-08-14T05:24:31Z",
  "count": 134,
  "notams": [
+  {
+   "id": "C1760/26",
+   "loc": "LLLL",
+   "name": "TLALIM WI 0",
+   "cat": "other",
+   "heb": "אזור ב TLALIM בתוך 0.3NM רדיוס שמרכזו בנ.צ. 30°58'43\"N 34°45'25\"E סגור לכל הטיסות מהקרקע ועד 1,900רגל מעל פני הים. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-16/08/2026 08:00 UTC עד 20/08/2026 10:00 UTC\nלו\"ז: 16 0800-1500 1600-2059, 17 0600-0900 1000-1500 1600-2059, 18-19",
+   "raw": "C1760/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/019/3059N03445E001\nA) LLLL B) 2608160800 C) 2608201000\nD) 16 0800-1500 1600-2059, 17 0600-0900 1000-1500 1600-2059, 18-19\nDAILY 0600-0900 1000-1500 1600-2200, 20 0600-1000\nE) AN AREA AT TLALIM WI 0.3NM RADIUS CENTERED ON PSN\n305843N0344525E CLSD TO ALL FLT FM GND UP TO 1,900FT AMSL.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.)",
+   "first_seen": "2026-08-14T05:24:31Z"
+  },
+  {
+   "id": "C1759/26",
+   "loc": "LLIB",
+   "name": "ראש פינה (LLIB)",
+   "cat": "ad",
+   "heb": "AD סגור לכל הטיסות, DUE WIP. הפעלת מסוקים AVBL באישור מוקדם מבקרת התעופה. IN CASE OF EMERG OR MEDEVAC מסוקים AVBL בתוך 10MIN.\nבתוקף: מ-16/08/2026 03:00 UTC עד 16/08/2026 09:00 UTC",
+   "raw": "C1759/26 NOTAMN\nQ) LLLL/QFALT/IV/NBO/A /000/999/3259N03534E005\nA) LLIB B) 2608160300 C) 2608160900\nE) AD CLSD TO ALL FLT, DUE WIP.\nOPS OF HEL AVBL BY PPR FM ATC.\nIN CASE OF EMERG OR MEDEVAC HEL AVBL WI 10MIN.)",
+   "first_seen": "2026-08-14T05:24:31Z"
+  },
+  {
+   "id": "C1757/26",
+   "loc": "LLLL",
+   "name": "C1757/26",
+   "cat": "act",
+   "heb": "LLMG אזור אימונים AND בועת זעירים NR B-WEST (BMGWB) LTD TO MAX 1,600רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-19/08/2026 07:15 UTC עד 19/08/2026 10:50 UTC\nלו\"ז: 0715-0750 1030-1050",
+   "raw": "C1757/26 NOTAMN\nQ) LLLL/QAELP/IV/NBO/E /000/020/3237N03523E005\nA) LLLL B) 2608190715 C) 2608191050\nD) 0715-0750 1030-1050\nE) LLMG TRG AREA AND ULTRALIGHT BUBBLE NR B-WEST (BMGWB)\nLTD TO MAX 1,600FT AMSL.\nCTN ADZ.)",
+   "first_seen": "2026-08-14T05:24:31Z"
+  },
+  {
+   "id": "C1756/26",
+   "loc": "LLLL",
+   "name": "C1756/26",
+   "cat": "act",
+   "heb": "ULTRALIGHT AND מסוקים RTE סגור EIRON-ARRAA-ZMGID-NIRYA-MRHVA-TAVOR. TFC WILL BE DIVERTED VIA FRDIS-HASID.\nבתוקף: מ-19/08/2026 07:15 UTC עד 19/08/2026 10:50 UTC\nלו\"ז: 0715-0740 1030-1050",
+   "raw": "C1756/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /010/020/3235N03513E013\nA) LLLL B) 2608190715 C) 2608191050\nD) 0715-0740 1030-1050\nE) ULTRALIGHT AND HEL RTE CLSD\nEIRON-ARRAA-ZMGID-NIRYA-MRHVA-TAVOR.\nTFC WILL BE DIVERTED VIA FRDIS-HASID.)",
+   "first_seen": "2026-08-14T05:24:31Z"
+  },
+  {
+   "id": "C1755/26",
+   "loc": "LLLL",
+   "name": "C1755/26",
+   "cat": "ad",
+   "heb": "CVFR RTE סגור DUE ILS ACT בתוך LLRD EIRON-ZMGID-AFULA-TAVOR. AFULA-EITAN.\nבתוקף: מ-19/08/2026 07:15 UTC עד 19/08/2026 10:50 UTC\nלו\"ז: 0715-0740 1030-1050",
+   "raw": "C1755/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /025/030/3235N03513E013\nA) LLLL B) 2608190715 C) 2608191050\nD) 0715-0740 1030-1050\nE) CVFR RTE CLSD DUE ILS ACT WI LLRD\nEIRON-ZMGID-AFULA-TAVOR.\nAFULA-EITAN.)",
+   "first_seen": "2026-08-14T05:24:31Z"
+  },
   {
    "id": "C1754/26",
    "loc": "LLMG",
@@ -202,15 +247,6 @@
    "first_seen": "2026-08-13T14:28:28Z"
   },
   {
-   "id": "C1731/26",
-   "loc": "LLRS",
-   "name": "C1731/26",
-   "cat": "ad",
-   "heb": "AIRSTRIP AVBL FOR PPR טיסות מ-AIRSTRIP OPR ONLY.\nבתוקף: מ-14/08/2026 02:45 UTC עד 14/08/2026 04:00 UTC",
-   "raw": "C1731/26 NOTAMN\nQ) LLLL/QFALT/IV/NBO/A /000/999/3158N03445E005\nA) LLRS B) 2608140245 C) 2608140400\nE) AIRSTRIP AVBL FOR PPR FLT FM AIRSTRIP OPR ONLY.)",
-   "first_seen": "2026-08-12T14:26:41Z"
-  },
-  {
    "id": "C1730/26",
    "loc": "LLLL",
    "name": "ARRAH WI 1",
@@ -337,15 +373,6 @@
    "first_seen": "2026-08-11T14:25:35Z"
   },
   {
-   "id": "C1720/26",
-   "loc": "LLLL",
-   "name": "REHOVOT",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב REHOVOT. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 600רגל מעל פני הים 31°52'23\"N 34°50'08\"E 31°52'35\"N 34°50'15\"E 31°52'51\"N 34°49'46\"E 31°52'33\"N 34°49'31\"E. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-11/08/2026 06:00 UTC עד 13/08/2026 15:00 UTC\nלו\"ז: DAILY 0600-0900 1200-1500",
-   "raw": "C1720/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/006/3153N03450E001\nA) LLLL B) 2608110600 C) 2608131500\nD) DAILY 0600-0900 1200-1500\nE) UAS/UAV ACT WILL TAKE PLACE AT REHOVOT.\nAN AREA BTN FLW PSN CLSD FM GND UP TO 600FT AMSL\n315223N0345008E 315235N0345015E 315251N0344946E\n315233N0344931E.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.\nF) GND G) 600FT AMSL)",
-   "first_seen": "2026-08-10T14:26:20Z"
-  },
-  {
    "id": "C1719/26",
    "loc": "LLLL",
    "name": "HACHULA-LAKE",
@@ -380,15 +407,6 @@
    "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-MEI-AMI. אזור בתוך 0.2NM רדיוס שמרכזו בנ.צ. 32°30'15\"N 35°09'02\"E סגור מהקרקע ועד 2,800רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-16/08/2026 02:40 UTC עד 18/08/2026 02:40 UTC",
    "raw": "C1708/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/028/3230N03509E002\nA) LLLL B) 2608160240 C) 2608180240\nE) CAPTIVE BALLOON WILL TAKE PLACE AT MEI-AMI.\nAN AREA WI 0.2NM RADIUS CENTERED ON PSN 323015N0350902E\nCLSD FM GND UP TO 2,800FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 2800FT AMSL)",
    "first_seen": "2026-08-09T13:57:24Z"
-  },
-  {
-   "id": "C1705/26",
-   "loc": "LLIB",
-   "name": "ראש פינה (LLIB)",
-   "cat": "ad",
-   "heb": "AD סגור לכל הטיסות, DUE WIP. הפעלת מסוקים AVBL באישור מוקדם מבקרת התעופה. IN CASE OF EMERG OR MEDEVAC מסוקים AVBL בתוך 10MIN.\nבתוקף: מ-16/08/2026 06:00 UTC עד 16/08/2026 09:00 UTC",
-   "raw": "C1705/26 NOTAMN\nQ) LLLL/QFALT/IV/NBO/A /000/999/3259N03534E005\nA) LLIB B) 2608160600 C) 2608160900\nE) AD CLSD TO ALL FLT, DUE WIP.\nOPS OF HEL AVBL BY PPR FM ATC.\nIN CASE OF EMERG OR MEDEVAC HEL AVBL WI 10MIN.)",
-   "first_seen": "2026-08-09T04:54:30Z"
   },
   {
    "id": "C1699/26",
@@ -442,15 +460,6 @@
    "cat": "other",
    "heb": "TRIGGER NOTAM - NIL AIRAC AIP AMDT WEF 03 SEP 2026.\nבתוקף: מ-03/09/2026 00:01 UTC עד 16/09/2026 23:59 UTC",
    "raw": "A0630/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /E /000/999/3123N03515E999\nA) LLLL B) 2609030001 C) 2609162359\nE) TRIGGER NOTAM - NIL AIRAC AIP AMDT WEF 03 SEP 2026.)",
-   "first_seen": "2026-08-05T15:24:40Z"
-  },
-  {
-   "id": "C1669/26",
-   "loc": "LLLL",
-   "name": "TZEELIM WI 0",
-   "cat": "other",
-   "heb": "אזור ב TZEELIM בתוך 0.4NM רדיוס שמרכזו בנ.צ. 31°11'08\"N 34°34'46\"E סגור לכל הטיסות מהקרקע ועד 1,000רגל מעל פני הים. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-09/08/2026 02:30 UTC עד 14/08/2026 02:30 UTC",
-   "raw": "C1669/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/010/3111N03435E001\nA) LLLL B) 2608090230 C) 2608140230\nE) AN AREA AT TZEELIM WI 0.4NM RADIUS CENTERED ON PSN\n311108N0343446E CLSD TO ALL FLT FM GND UP TO 1,000FT AMSL.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.)",
    "first_seen": "2026-08-05T15:24:40Z"
   },
   {
@@ -515,15 +524,6 @@
    "heb": "CHECKLIST YEAR=2026 0003 0004 0005 0006 0009 0010 0013 0014 0017 0032 0035 0037 0090 0162 0232 0431 0458 0953 1244 1281 1361 1458 1459 1460 1461 1462 1463 1464 1465 1466 1467 1529 1541 1556 1558 1562 1574 1575 1576 1577 1578 1579 1580 1581 1582 1583 1584 1587 1588 1589 1590 1591 1592 1595 1596 1597 1600 1602 1603 1608 1612 1614 1616 1618 1619 1620 1621 1622 1623 1624 1625 1626 1629 1630 1632 1633 1635 1637 1639 1640 1641 1642 1643 1644 1645 1646 LATEST PUBLICATIONS AIP AIRAC AMDT IFR 002/2025 EFFECTIVE DATE 02 OCT 25 AIP AIRAC SUP IFR 004/2026 EFFECTIVE DATE 14 MAY 26 AIC IFR A001/2026 EFFECTIVE DATE 05 FEB 26 AIC CHECKLIST AIP IFR A001/2026 AIP VFR 006/2025 001/2026 AIP MIL NIL SUP CHECKLIST AIP IFR 002/2026 003/2026 004/2026 AIP VFR 001/2026 002/2026 003/2026 AIP MIL NIL\nבתוקף: מ-03/08/2026 05:59 UTC עד 03/09/2026 05:59 UTC",
    "raw": "C1647/26 NOTAMR C1468/26\nQ) LLLL/QKKKK/K /K  /K /000/999/3124N03520E999\nA) LLLL B) 2608030559 C) 2609030559EST\nE) CHECKLIST\nYEAR=2026 0003 0004 0005 0006 0009 0010 0013 0014 0017 0032 0035 0037\n0090 0162 0232 0431 0458 0953 1244 1281 1361 1458 1459 1460\n1461 1462 1463 1464 1465 1466 1467 1529 1541 1556 1558 1562\n1574 1575 1576 1577 1578 1579 1580 1581 1582 1583 1584 1587\n1588 1589 1590 1591 1592 1595 1596 1597 1600 1602 1603 1608\n1612 1614 1616 1618 1619 1620 1621 1622 1623 1624 1625 1626\n1629 1630 1632 1633 1635 1637 1639 1640 1641 1642 1643 1644\n1645 1646\nLATEST PUBLICATIONS\nAIP AIRAC AMDT IFR 002/2025 EFFECTIVE DATE 02 OCT 25\nAIP AIRAC SUP IFR 004/2026 EFFECTIVE DATE 14 MAY 26\nAIC IFR A001/2026 EFFECTIVE DATE 05 FEB 26\nAIC CHECKLIST\nAIP IFR\nA001/2026\nAIP VFR\n006/2025 001/2026\nAIP MIL\nNIL\nSUP CHECKLIST\nAIP IFR\n002/2026 003/2026 004/2026\nAIP VFR\n001/2026 002/2026 003/2026\nAIP MIL\nNIL)",
    "first_seen": "2026-08-03T06:53:00Z"
-  },
-  {
-   "id": "C1642/26",
-   "loc": "LLLL",
-   "name": "YERUHAM",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב YERUHAM, מהקרקע ועד 600מטר מעל הקרקע. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 30°58'19\"N 34°56'01\"E סגור מהקרקע ועד 3,700רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-09/08/2026 03:00 UTC עד 13/08/2026 14:30 UTC\nלו\"ז: DAILY 0300-1430",
-   "raw": "C1642/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/037/3058N03456E001\nA) LLLL B) 2608090300 C) 2608131430\nD) DAILY 0300-1430\nE) UAS/UAV ACT WILL TAKE PLACE AT YERUHAM, FM GND UP TO 600M AGL.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 305819N0345601E\nCLSD FM GND UP TO 3,700FT AMSL.\nCTN ADZ.\nF) GND G) 3700FT AMSL)",
-   "first_seen": "2026-08-02T14:44:31Z"
   },
   {
    "id": "C1630/26",
@@ -1211,6 +1211,41 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1731/26",
+   "name": "C1731/26",
+   "cat": "ad",
+   "heb": "AIRSTRIP AVBL FOR PPR טיסות מ-AIRSTRIP OPR ONLY.\nבתוקף: מ-14/08/2026 02:45 UTC עד 14/08/2026 04:00 UTC",
+   "removed_at": "2026-08-14T05:24:31Z"
+  },
+  {
+   "id": "C1720/26",
+   "name": "REHOVOT",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב REHOVOT. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 600רגל מעל פני הים 31°52'23\"N 34°50'08\"E 31°52'35\"N 34°50'15\"E 31°52'51\"N 34°49'46\"E 31°52'33\"N 34°49'31\"E. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-11/08/2026 06:00 UTC עד 13/08/2026 15:00 UTC\nלו\"ז: DAILY 0600-0900 1200-1500",
+   "removed_at": "2026-08-14T05:24:31Z"
+  },
+  {
+   "id": "C1705/26",
+   "name": "ראש פינה (LLIB)",
+   "cat": "ad",
+   "heb": "AD סגור לכל הטיסות, DUE WIP. הפעלת מסוקים AVBL באישור מוקדם מבקרת התעופה. IN CASE OF EMERG OR MEDEVAC מסוקים AVBL בתוך 10MIN.\nבתוקף: מ-16/08/2026 06:00 UTC עד 16/08/2026 09:00 UTC",
+   "removed_at": "2026-08-14T05:24:31Z"
+  },
+  {
+   "id": "C1669/26",
+   "name": "TZEELIM WI 0",
+   "cat": "other",
+   "heb": "אזור ב TZEELIM בתוך 0.4NM רדיוס שמרכזו בנ.צ. 31°11'08\"N 34°34'46\"E סגור לכל הטיסות מהקרקע ועד 1,000רגל מעל פני הים. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-09/08/2026 02:30 UTC עד 14/08/2026 02:30 UTC",
+   "removed_at": "2026-08-14T05:24:31Z"
+  },
+  {
+   "id": "C1642/26",
+   "name": "YERUHAM",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב YERUHAM, מהקרקע ועד 600מטר מעל הקרקע. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 30°58'19\"N 34°56'01\"E סגור מהקרקע ועד 3,700רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-09/08/2026 03:00 UTC עד 13/08/2026 14:30 UTC\nלו\"ז: DAILY 0300-1430",
+   "removed_at": "2026-08-14T05:24:31Z"
+  },
   {
    "id": "C1732/26",
    "name": "C1732/26",
