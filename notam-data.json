@@ -1,8 +1,17 @@
 {
- "fetched_at": "16/08/2026 04:17 UTC",
- "fetched_iso": "2026-08-16T04:17:41Z",
- "count": 131,
+ "fetched_at": "16/08/2026 13:39 UTC",
+ "fetched_iso": "2026-08-16T13:39:24Z",
+ "count": 128,
  "notams": [
+  {
+   "id": "A0658/26",
+   "loc": "LLLL",
+   "name": "A0658/26",
+   "cat": "other",
+   "heb": "ATS RTE J14 סגור בין NAT-MEGID.\nבתוקף: מ-17/08/2026 06:00 UTC עד 17/08/2026 13:00 UTC",
+   "raw": "A0658/26 NOTAMN\nQ) LLLL/QANLC/I /NBO/E /040/070/3227N03507E011\nA) LLLL B) 2608170600 C) 2608171300\nE) ATS RTE J14 CLSD BTN NAT-MEGID.)",
+   "first_seen": "2026-08-16T13:39:24Z"
+  },
   {
    "id": "C1760/26",
    "loc": "LLLL",
@@ -10,15 +19,6 @@
    "cat": "other",
    "heb": "אזור ב TLALIM בתוך 0.3NM רדיוס שמרכזו בנ.צ. 30°58'43\"N 34°45'25\"E סגור לכל הטיסות מהקרקע ועד 1,900רגל מעל פני הים. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-16/08/2026 08:00 UTC עד 20/08/2026 10:00 UTC\nלו\"ז: 16 0800-1500 1600-2059, 17 0600-0900 1000-1500 1600-2059, 18-19",
    "raw": "C1760/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/019/3059N03445E001\nA) LLLL B) 2608160800 C) 2608201000\nD) 16 0800-1500 1600-2059, 17 0600-0900 1000-1500 1600-2059, 18-19\nDAILY 0600-0900 1000-1500 1600-2200, 20 0600-1000\nE) AN AREA AT TLALIM WI 0.3NM RADIUS CENTERED ON PSN\n305843N0344525E CLSD TO ALL FLT FM GND UP TO 1,900FT AMSL.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.)",
-   "first_seen": "2026-08-14T05:24:31Z"
-  },
-  {
-   "id": "C1759/26",
-   "loc": "LLIB",
-   "name": "ראש פינה (LLIB)",
-   "cat": "ad",
-   "heb": "AD סגור לכל הטיסות, DUE WIP. הפעלת מסוקים AVBL באישור מוקדם מבקרת התעופה. IN CASE OF EMERG OR MEDEVAC מסוקים AVBL בתוך 10MIN.\nבתוקף: מ-16/08/2026 03:00 UTC עד 16/08/2026 09:00 UTC",
-   "raw": "C1759/26 NOTAMN\nQ) LLLL/QFALT/IV/NBO/A /000/999/3259N03534E005\nA) LLIB B) 2608160300 C) 2608160900\nE) AD CLSD TO ALL FLT, DUE WIP.\nOPS OF HEL AVBL BY PPR FM ATC.\nIN CASE OF EMERG OR MEDEVAC HEL AVBL WI 10MIN.)",
    "first_seen": "2026-08-14T05:24:31Z"
   },
   {
@@ -166,15 +166,6 @@
    "first_seen": "2026-08-13T14:28:28Z"
   },
   {
-   "id": "C1739/26",
-   "loc": "LLLL",
-   "name": "C1739/26",
-   "cat": "act",
-   "heb": "ZVULUN בועת זעירים NORTH (BZVUL) AND SOUTH (BZVUE) סגור לכל הטיסות.\nבתוקף: מ-16/08/2026 09:20 UTC עד 16/08/2026 13:20 UTC\nלו\"ז: 0920-1000 1230-1320",
-   "raw": "C1739/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/040/3254N03507E006\nA) LLLL B) 2608160920 C) 2608161320\nD) 0920-1000 1230-1320\nE) ZVULUN ULTRALIGHT BUBBLE NORTH (BZVUL) AND SOUTH (BZVUE)\nCLSD TO ALL FLT.)",
-   "first_seen": "2026-08-13T14:28:28Z"
-  },
-  {
    "id": "C1740/26",
    "loc": "LLLL",
    "name": "C1740/26",
@@ -211,15 +202,6 @@
    "first_seen": "2026-08-13T14:28:28Z"
   },
   {
-   "id": "C1736/26",
-   "loc": "LLSO",
-   "name": "C1736/26",
-   "cat": "ad",
-   "heb": "AIRSTRIP סגור לכל הטיסות כולל טיסות ריסוס חקלאיות.\nבתוקף: מ-16/08/2026 09:20 UTC עד 16/08/2026 13:20 UTC\nלו\"ז: 0920-1000 1230-1320",
-   "raw": "C1736/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3257N03506E005\nA) LLSO B) 2608160920 C) 2608161320\nD) 0920-1000 1230-1320\nE) AIRSTRIP CLSD TO ALL FLT INCLUDING AGRICULTURE FLT.)",
-   "first_seen": "2026-08-13T14:28:28Z"
-  },
-  {
    "id": "C1734/26",
    "loc": "LLLL",
    "name": "C1734/26",
@@ -235,15 +217,6 @@
    "cat": "other",
    "heb": "CVFR RTE סגור EVLYM-AHIUD-AAKKO-SMRAT.\nבתוקף: מ-18/08/2026 09:20 UTC עד 18/08/2026 17:30 UTC\nלו\"ז: 0920-1000 1230-1345 1630-1730",
    "raw": "C1735/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /015/020/3253N03507E005\nA) LLLL B) 2608180920 C) 2608181730\nD) 0920-1000 1230-1345 1630-1730\nE) CVFR RTE CLSD  EVLYM-AHIUD-AAKKO-SMRAT.)",
-   "first_seen": "2026-08-13T14:28:28Z"
-  },
-  {
-   "id": "C1733/26",
-   "loc": "LLLL",
-   "name": "C1733/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור EVLYM-AHIUD-AAKKO-SMRAT.\nבתוקף: מ-16/08/2026 09:20 UTC עד 16/08/2026 13:20 UTC\nלו\"ז: 0920-1000 1230-1320",
-   "raw": "C1733/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /015/020/3253N03507E005\nA) LLLL B) 2608160920 C) 2608161320\nD) 0920-1000 1230-1320\nE) CVFR RTE CLSD  EVLYM-AHIUD-AAKKO-SMRAT.)",
    "first_seen": "2026-08-13T14:28:28Z"
   },
   {
@@ -1184,6 +1157,34 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1759/26",
+   "name": "ראש פינה (LLIB)",
+   "cat": "ad",
+   "heb": "AD סגור לכל הטיסות, DUE WIP. הפעלת מסוקים AVBL באישור מוקדם מבקרת התעופה. IN CASE OF EMERG OR MEDEVAC מסוקים AVBL בתוך 10MIN.\nבתוקף: מ-16/08/2026 03:00 UTC עד 16/08/2026 09:00 UTC",
+   "removed_at": "2026-08-16T13:39:24Z"
+  },
+  {
+   "id": "C1739/26",
+   "name": "C1739/26",
+   "cat": "act",
+   "heb": "ZVULUN בועת זעירים NORTH (BZVUL) AND SOUTH (BZVUE) סגור לכל הטיסות.\nבתוקף: מ-16/08/2026 09:20 UTC עד 16/08/2026 13:20 UTC\nלו\"ז: 0920-1000 1230-1320",
+   "removed_at": "2026-08-16T13:39:24Z"
+  },
+  {
+   "id": "C1736/26",
+   "name": "C1736/26",
+   "cat": "ad",
+   "heb": "AIRSTRIP סגור לכל הטיסות כולל טיסות ריסוס חקלאיות.\nבתוקף: מ-16/08/2026 09:20 UTC עד 16/08/2026 13:20 UTC\nלו\"ז: 0920-1000 1230-1320",
+   "removed_at": "2026-08-16T13:39:24Z"
+  },
+  {
+   "id": "C1733/26",
+   "name": "C1733/26",
+   "cat": "other",
+   "heb": "CVFR RTE סגור EVLYM-AHIUD-AAKKO-SMRAT.\nבתוקף: מ-16/08/2026 09:20 UTC עד 16/08/2026 13:20 UTC\nלו\"ז: 0920-1000 1230-1320",
+   "removed_at": "2026-08-16T13:39:24Z"
+  },
   {
    "id": "C1717/26",
    "name": "ראש פינה (LLIB)",
@@ -2527,34 +2528,6 @@
    "cat": "ad",
    "heb": "VOR/DME BSA FREQ 114.300MHZ WITHDRAWN FOR MAINT.\nבתוקף: מ-26/07/2026 06:00 UTC עד 26/07/2026 10:00 UTC",
    "removed_at": "2026-07-26T14:44:45Z"
-  },
-  {
-   "id": "C1571/26",
-   "name": "C1571/26",
-   "cat": "other",
-   "heb": "אזור ב OLESH בתוך 1NM רדיוס שמרכזו בנ.צ. 32°20'38\"N 34°58'13\"E סגור מהקרקע ועד 3000רגל מעל פני הים, לכל הטיסות כולל AGRICULTURE. מומלצת זהירות.)\nבתוקף: מ-25/07/2026 12:00 UTC עד 26/07/2026 01:00 UTC",
-   "removed_at": "2026-07-26T06:29:41Z"
-  },
-  {
-   "id": "A0585/26",
-   "name": "A0585/26",
-   "cat": "other",
-   "heb": "ATS RTE J14 סגור בין NAT-ZACCI.\nבתוקף: מ-25/07/2026 12:00 UTC עד 26/07/2026 01:00 UTC",
-   "removed_at": "2026-07-26T06:29:41Z"
-  },
-  {
-   "id": "C1570/26",
-   "name": "C1570/26",
-   "cat": "other",
-   "heb": "AN AREA NEAR OLESH סגור מ-בין 3000FT-5000רגל מעל פני הים בין נקודות הציון הבאות 32°20'38\"N 34°58'56\"E 32°20'14\"N 34°58'35\"E 32°17'24\"N 35°03'12\"E 32°17'55\"N 35°03'31\"E. מומלצת זהירות.\nבתוקף: מ-25/07/2026 12:00 UTC עד 26/07/2026 01:00 UTC",
-   "removed_at": "2026-07-26T06:29:41Z"
-  },
-  {
-   "id": "C0813/26",
-   "name": "הרצליה (LLHZ)",
-   "cat": "ad",
-   "heb": "TWR FREQ TEMPO CHG TO 125.600MHZ.\nבתוקף: מ-22/04/2026 13:49 UTC עד 31/07/2026 20:59 UTC",
-   "removed_at": "2026-07-26T06:29:41Z"
   }
  ]
 }
