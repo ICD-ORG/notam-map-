@@ -1,17 +1,8 @@
 {
- "fetched_at": "16/08/2026 13:39 UTC",
- "fetched_iso": "2026-08-16T13:39:24Z",
- "count": 128,
+ "fetched_at": "17/08/2026 04:26 UTC",
+ "fetched_iso": "2026-08-17T04:26:51Z",
+ "count": 127,
  "notams": [
-  {
-   "id": "A0658/26",
-   "loc": "LLLL",
-   "name": "A0658/26",
-   "cat": "other",
-   "heb": "ATS RTE J14 סגור בין NAT-MEGID.\nבתוקף: מ-17/08/2026 06:00 UTC עד 17/08/2026 13:00 UTC",
-   "raw": "A0658/26 NOTAMN\nQ) LLLL/QANLC/I /NBO/E /040/070/3227N03507E011\nA) LLLL B) 2608170600 C) 2608171300\nE) ATS RTE J14 CLSD BTN NAT-MEGID.)",
-   "first_seen": "2026-08-16T13:39:24Z"
-  },
   {
    "id": "C1760/26",
    "loc": "LLLL",
@@ -1157,6 +1148,13 @@
   }
  ],
  "removed": [
+  {
+   "id": "A0658/26",
+   "name": "A0658/26",
+   "cat": "other",
+   "heb": "ATS RTE J14 סגור בין NAT-MEGID.\nבתוקף: מ-17/08/2026 06:00 UTC עד 17/08/2026 13:00 UTC",
+   "removed_at": "2026-08-17T04:26:51Z"
+  },
   {
    "id": "C1759/26",
    "name": "ראש פינה (LLIB)",
@@ -2521,13 +2519,6 @@
    "cat": "uas",
    "heb": "אזור מ SYRIA BOUNDRAY TO 6KM WB סגור TO ALL טיסות פנים-ארציות, למעט POLICE, FIREFIGHTING, MEDEVAC טיסות OR UAS/UAV טיסות FOR EMERG, SECURITY, MEDEVAC PURPOSES ONLY. ALL EMERG APPROVED טיסות SHALL COORD WITH ATC AND MABBAH.\nבתוקף: מ-28/06/2026 08:02 UTC עד 31/07/2026 20:59 UTC",
    "removed_at": "2026-07-27T06:59:14Z"
-  },
-  {
-   "id": "A0533/26",
-   "name": "A0533/26",
-   "cat": "ad",
-   "heb": "VOR/DME BSA FREQ 114.300MHZ WITHDRAWN FOR MAINT.\nבתוקף: מ-26/07/2026 06:00 UTC עד 26/07/2026 10:00 UTC",
-   "removed_at": "2026-07-26T14:44:45Z"
   }
  ]
 }
