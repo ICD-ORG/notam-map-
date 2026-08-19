@@ -1,8 +1,17 @@
 {
- "fetched_at": "18/08/2026 13:48 UTC",
- "fetched_iso": "2026-08-18T13:48:39Z",
- "count": 125,
+ "fetched_at": "19/08/2026 04:17 UTC",
+ "fetched_iso": "2026-08-19T04:17:00Z",
+ "count": 121,
  "notams": [
+  {
+   "id": "A0671/26",
+   "loc": "LLLL",
+   "name": "A0671/26",
+   "cat": "other",
+   "heb": "ATS RTE J14 סגור בין NAT-MEGID.\nבתוקף: מ-19/08/2026 06:00 UTC עד 19/08/2026 13:00 UTC",
+   "raw": "A0671/26 NOTAMN\nQ) LLLL/QANLC/I /NBO/E /040/070/3227N03507E011\nA) LLLL B) 2608190600 C) 2608191300\nE) ATS RTE J14 CLSD BTN NAT-MEGID.)",
+   "first_seen": "2026-08-19T04:17:00Z"
+  },
   {
    "id": "C1771/26",
    "loc": "LLLL",
@@ -217,51 +226,6 @@
    "cat": "other",
    "heb": "CVFR RTE סגור EVLYM-AHIUD-AAKKO-SMRAT.\nבתוקף: מ-19/08/2026 06:50 UTC עד 19/08/2026 10:50 UTC\nלו\"ז: 0650-0740 1000-1050",
    "raw": "C1750/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /015/020/3253N03507E005\nA) LLLL B) 2608190650 C) 2608191050\nD) 0650-0740 1000-1050\nE) CVFR RTE CLSD  EVLYM-AHIUD-AAKKO-SMRAT.)",
-   "first_seen": "2026-08-13T14:28:28Z"
-  },
-  {
-   "id": "C1747/26",
-   "loc": "LLLL",
-   "name": "C1747/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור ZOFAR-HRGVS.\nבתוקף: מ-18/08/2026 16:50 UTC עד 18/08/2026 18:10 UTC",
-   "raw": "C1747/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /035/045/3035N03504E007\nA) LLLL B) 2608181650 C) 2608181810\nE) CVFR RTE CLSD  ZOFAR-HRGVS.)",
-   "first_seen": "2026-08-13T14:28:28Z"
-  },
-  {
-   "id": "C1742/26",
-   "loc": "LLLL",
-   "name": "C1742/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור YAמסוקים-BMNUH-ZOFAR-HAZVA-ARAVA-ZOHAR-MMORR-LLMZ-ZUKIM. MMORR-ARRAD-LLMZ. ARRAD-HATRU-ZOHAR. TARAD-ARRAD.\nבתוקף: מ-18/08/2026 16:50 UTC עד 18/08/2026 18:10 UTC",
-   "raw": "C1742/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /025/040/3051N03515E054\nA) LLLL B) 2608181650 C) 2608181810\nE) CVFR RTE CLSD\nYAHEL-BMNUH-ZOFAR-HAZVA-ARAVA-ZOHAR-MMORR-LLMZ-ZUKIM.\nMMORR-ARRAD-LLMZ.\nARRAD-HATRU-ZOHAR.\nTARAD-ARRAD.)",
-   "first_seen": "2026-08-13T14:28:28Z"
-  },
-  {
-   "id": "C1741/26",
-   "loc": "LLLL",
-   "name": "C1741/26",
-   "cat": "act",
-   "heb": "ZVULUN בועת זעירים NORTH (BZVUL) AND SOUTH (BZVUE) סגור לכל הטיסות.\nבתוקף: מ-18/08/2026 09:20 UTC עד 18/08/2026 17:30 UTC\nלו\"ז: 0920-1000 1230-1345 1630-1730",
-   "raw": "C1741/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/040/3254N03507E006\nA) LLLL B) 2608180920 C) 2608181730\nD) 0920-1000 1230-1345 1630-1730\nE) ZVULUN ULTRALIGHT BUBBLE NORTH (BZVUL) AND SOUTH (BZVUE)\nCLSD TO ALL FLT.)",
-   "first_seen": "2026-08-13T14:28:28Z"
-  },
-  {
-   "id": "C1738/26",
-   "loc": "LLSO",
-   "name": "C1738/26",
-   "cat": "ad",
-   "heb": "AIRSTRIP סגור לכל הטיסות כולל טיסות ריסוס חקלאיות.\nבתוקף: מ-18/08/2026 09:20 UTC עד 18/08/2026 17:30 UTC\nלו\"ז: 0920-1000 1230-1320 1630-1730",
-   "raw": "C1738/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3257N03506E005\nA) LLSO B) 2608180920 C) 2608181730\nD) 0920-1000 1230-1320 1630-1730\nE) AIRSTRIP CLSD TO ALL FLT INCLUDING AGRICULTURE FLT.)",
-   "first_seen": "2026-08-13T14:28:28Z"
-  },
-  {
-   "id": "C1735/26",
-   "loc": "LLLL",
-   "name": "C1735/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור EVLYM-AHIUD-AAKKO-SMRAT.\nבתוקף: מ-18/08/2026 09:20 UTC עד 18/08/2026 17:30 UTC\nלו\"ז: 0920-1000 1230-1345 1630-1730",
-   "raw": "C1735/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /015/020/3253N03507E005\nA) LLLL B) 2608180920 C) 2608181730\nD) 0920-1000 1230-1345 1630-1730\nE) CVFR RTE CLSD  EVLYM-AHIUD-AAKKO-SMRAT.)",
    "first_seen": "2026-08-13T14:28:28Z"
   },
   {
@@ -1130,6 +1094,41 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1747/26",
+   "name": "C1747/26",
+   "cat": "other",
+   "heb": "CVFR RTE סגור ZOFAR-HRGVS.\nבתוקף: מ-18/08/2026 16:50 UTC עד 18/08/2026 18:10 UTC",
+   "removed_at": "2026-08-19T04:17:00Z"
+  },
+  {
+   "id": "C1742/26",
+   "name": "C1742/26",
+   "cat": "other",
+   "heb": "CVFR RTE סגור YAמסוקים-BMNUH-ZOFAR-HAZVA-ARAVA-ZOHAR-MMORR-LLMZ-ZUKIM. MMORR-ARRAD-LLMZ. ARRAD-HATRU-ZOHAR. TARAD-ARRAD.\nבתוקף: מ-18/08/2026 16:50 UTC עד 18/08/2026 18:10 UTC",
+   "removed_at": "2026-08-19T04:17:00Z"
+  },
+  {
+   "id": "C1741/26",
+   "name": "C1741/26",
+   "cat": "act",
+   "heb": "ZVULUN בועת זעירים NORTH (BZVUL) AND SOUTH (BZVUE) סגור לכל הטיסות.\nבתוקף: מ-18/08/2026 09:20 UTC עד 18/08/2026 17:30 UTC\nלו\"ז: 0920-1000 1230-1345 1630-1730",
+   "removed_at": "2026-08-19T04:17:00Z"
+  },
+  {
+   "id": "C1738/26",
+   "name": "C1738/26",
+   "cat": "ad",
+   "heb": "AIRSTRIP סגור לכל הטיסות כולל טיסות ריסוס חקלאיות.\nבתוקף: מ-18/08/2026 09:20 UTC עד 18/08/2026 17:30 UTC\nלו\"ז: 0920-1000 1230-1320 1630-1730",
+   "removed_at": "2026-08-19T04:17:00Z"
+  },
+  {
+   "id": "C1735/26",
+   "name": "C1735/26",
+   "cat": "other",
+   "heb": "CVFR RTE סגור EVLYM-AHIUD-AAKKO-SMRAT.\nבתוקף: מ-18/08/2026 09:20 UTC עד 18/08/2026 17:30 UTC\nלו\"ז: 0920-1000 1230-1345 1630-1730",
+   "removed_at": "2026-08-19T04:17:00Z"
+  },
   {
    "id": "C1768/26",
    "name": "C1768/26",
@@ -2382,69 +2381,6 @@
    "cat": "pje",
    "heb": "PJE WILL TAKE PLACE ב-REVIVIM. אזור מ GND UP 2,400רגל מעל פני הים סגור בין נקודות הציון הבאות 31°07'12\"N 34°45'50\"E 31°05'11\"N 34°39'20\"E 31°04'55\"N 34°36'55\"E 30°59'31\"N 34°38'15\"E 31°00'35\"N 34°44'09\"E 31°03'59\"N 34°47'20\"E 31°07'12\"N 34°45'50\"E. טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה מומלצת זהירות.\nבתוקף: מ-27/07/2026 06:00 UTC עד 28/07/2026 18:50 UTC\nלו\"ז: 27 0600-0650 0715-0805 0830-0910 1330-1420 1440-1520 1540-1620,",
    "removed_at": "2026-07-29T06:23:06Z"
-  },
-  {
-   "id": "C1565/26",
-   "name": "מצדה (LLMZ)",
-   "cat": "ad",
-   "heb": "AIRSTRIP סגור לכל הטיסות.\nבתוקף: מ-24/07/2026 05:42 UTC עד 31/08/2026 20:59 UTC",
-   "removed_at": "2026-07-28T15:29:03Z"
-  },
-  {
-   "id": "C1557/26",
-   "name": "NEVE-MICHAEL",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ תתקיים ב NEVE-MICHAEL. אזור בין נקודות הציון הבאות מהקרקע ועד 3,500רגל מעל פני הים סגור לכל הטיסות 31°41'07\"N 34°59'19\"E 31°38'46\"N 34°58'57\"E 31°38'24\"N 35°00'11\"E 31°40'28\"N 35°03'07\"E 31°41'31\"N 35°01'34\"E. טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה מומלצת זהירות.\nבתוקף: מ-27/07/2026 07:00 UTC עד 28/07/2026 11:15 UTC\nלו\"ז: DAILY 0700-0800 1015-1115",
-   "removed_at": "2026-07-28T15:29:03Z"
-  },
-  {
-   "id": "A0581/26",
-   "name": "A0581/26",
-   "cat": "ad",
-   "heb": "DME OF ILS RWY 01 C/S RC FREQ 108.700MHZ WITHDRAWN FOR MAINT.\nבתוקף: מ-28/07/2026 07:00 UTC עד 28/07/2026 11:00 UTC",
-   "removed_at": "2026-07-28T15:29:03Z"
-  },
-  {
-   "id": "C1538/26",
-   "name": "C1538/26",
-   "cat": "pje",
-   "heb": "PJE AIRSPACE METZADA ACT מ-8,000רגל מעל פני הים. OPR באישור מוקדם מבקרת התעופה ONLY.\nבתוקף: מ-30/07/2026 09:30 UTC עד 31/07/2026 11:00 UTC\nלו\"ז: 30 0930-1700, 31 0600-1100",
-   "removed_at": "2026-07-28T15:29:03Z"
-  },
-  {
-   "id": "A0511/26",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "RESTRICTIONS OF LDG 4 ENGINE ACFT בתוך LLBG TEMPO WITHDRAWN.\nבתוקף: מ-28/06/2026 11:50 UTC עד 31/07/2026 23:59 UTC",
-   "removed_at": "2026-07-28T15:29:03Z"
-  },
-  {
-   "id": "A0508/26",
-   "name": "A0508/26",
-   "cat": "other",
-   "heb": "POSS INTRP TO AIRBORNE GNSS EQPT בתוך TEL-AVIV FIR.\nבתוקף: מ-28/06/2026 11:48 UTC עד 31/07/2026 23:59 UTC",
-   "removed_at": "2026-07-28T15:29:03Z"
-  },
-  {
-   "id": "A0510/26",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "NIGHT RESTRICTIONS בין 0140-0500LMT (2240-0200UTC) TEMPO WITHDRAWN.\nבתוקף: מ-28/06/2026 11:50 UTC עד 31/07/2026 23:59 UTC",
-   "removed_at": "2026-07-28T15:29:03Z"
-  },
-  {
-   "id": "A0506/26",
-   "name": "AD WITHIN AMMAN FIR",
-   "cat": "other",
-   "heb": "ATS RTE L53 בין TALMI-TAPUZ AND N134 בין VOLFO-SALAM AVBL H24 בין 11,000-16,000FT FOR TFC WITH ARR/DEP ב-AD WITHIN AMMAN FIR, LLER, LLNV, LLOV AND LLRM ONLY, AVBL H24 ABV 17,000FT FOR MIL TFC ONLY.\nבתוקף: מ-28/06/2026 11:47 UTC עד 31/07/2026 23:59 UTC",
-   "removed_at": "2026-07-28T15:29:03Z"
-  },
-  {
-   "id": "A0507/26",
-   "name": "A0507/26",
-   "cat": "other",
-   "heb": "MAX ALT ALONG ATS RTE J10 בין NURIT-SIVAK 18,000רגל מעל פני הים.\nבתוקף: מ-28/06/2026 11:48 UTC עד 31/07/2026 23:59 UTC",
-   "removed_at": "2026-07-28T15:29:03Z"
   }
  ]
 }
