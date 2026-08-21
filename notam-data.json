@@ -1,7 +1,7 @@
 {
- "fetched_at": "20/08/2026 13:52 UTC",
- "fetched_iso": "2026-08-20T13:52:32Z",
- "count": 95,
+ "fetched_at": "21/08/2026 04:15 UTC",
+ "fetched_iso": "2026-08-21T04:15:27Z",
+ "count": 92,
  "notams": [
   {
    "id": "C1780/26",
@@ -10,15 +10,6 @@
    "cat": "act",
    "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-RAHAT, עד 1,700רגל מעל פני הים. אזור בתוך 0.4NM רדיוס שמרכזו בנ.צ. 31°22'52\"N 34°45'41\"E סגור מהקרקע ועד 2,200רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות\nבתוקף: מ-23/08/2026 02:45 UTC עד 31/08/2026 20:59 UTC",
    "raw": "C1780/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/022/3123N03446E001\nA) LLLL B) 2608230245 C) 2608312059\nE) CAPTIVE BALLOON WILL TAKE PLACE AT RAHAT, UP TO 1,700FT AMSL.\nAN AREA WI 0.4NM RADIUS CENTERED ON PSN 312252N0344541E\nCLSD FM GND UP TO 2,200FT AMSL TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ\nF) GND G) 2200FT AMSL)",
-   "first_seen": "2026-08-20T13:52:32Z"
-  },
-  {
-   "id": "A0675/26",
-   "loc": "LLBG",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "DLA EXP DUE AD CAPACITY. LDG OF CARGO OR GA טיסות אסור למעט PPR טיסות מ-AD OPS CENTER.\nבתוקף: מ-20/08/2026 12:37 UTC עד 20/08/2026 23:59 UTC",
-   "raw": "A0675/26 NOTAMR A0674/26\nQ) LLLL/QFALT/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2608201237 C) 2608202359\nE) DLA EXP DUE AD CAPACITY.\nLDG OF CARGO OR GA FLT PROHIBITED\nEXC PPR FLT FM AD OPS CENTER.)",
    "first_seen": "2026-08-20T13:52:32Z"
   },
   {
@@ -175,15 +166,6 @@
    "first_seen": "2026-08-17T13:47:03Z"
   },
   {
-   "id": "C1730/26",
-   "loc": "LLLL",
-   "name": "ARRAH WI 1",
-   "cat": "other",
-   "heb": "אזור ב ARRAH בתוך 1.5NM רדיוס שמרכזו בנ.צ. 32°31'31\"N 35°03'43\"E סגור מהקרקע ועד 1,000רגל מעל פני הים לכל הטיסות. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-16/08/2026 05:00 UTC עד 20/08/2026 16:00 UTC\nלו\"ז: DAILY 0500-1600",
-   "raw": "C1730/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/010/3232N03504E002\nA) LLLL B) 2608160500 C) 2608201600\nD) DAILY 0500-1600\nE) AN AREA AT ARRAH WI 1.5NM RADIUS CENTERED ON PSN\n323131N0350343E CLSD FM GND UP TO 1,000FT AMSL TO ALL FLT.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.)",
-   "first_seen": "2026-08-12T14:26:41Z"
-  },
-  {
    "id": "C1727/26",
    "loc": "LLLL",
    "name": "HACHULA-LAKE",
@@ -235,15 +217,6 @@
    "cat": "act",
    "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-HACHULA-LAKE, מהקרקע ועד 400מטר מעל הקרקע. LIT AND DAY MARKED. אזור בתוך 0.54NM רדיוס שמרכזו בנ.צ. 33°06'22\"N 35°34'54\"E סגור מהקרקע ועד 1,800רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-16/08/2026 03:30 UTC עד 23/08/2026 02:00 UTC\nלו\"ז: DAILY 0330-1400 1700-0200",
    "raw": "C1719/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/018/3306N03535E001\nA) LLLL B) 2608160330 C) 2608230200\nD) DAILY 0330-1400 1700-0200\nE) CAPTIVE BALLOON WILL TAKE PLACE AT HACHULA-LAKE,\nFM GND UP TO 400M AGL. LIT AND DAY MARKED.\nAN AREA WI 0.54NM RADIUS CENTERED ON PSN 330622N0353454E\nCLSD FM GND UP TO 1,800FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 1800FT AMSL)",
-   "first_seen": "2026-08-10T14:26:20Z"
-  },
-  {
-   "id": "C1718/26",
-   "loc": "LLLL",
-   "name": "YERUHAM",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב YERUHAM, מהקרקע ועד 600מטר מעל הקרקע. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 30°58'19\"N 34°56'01\"E סגור מהקרקע ועד 3,700רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-16/08/2026 03:00 UTC עד 20/08/2026 14:30 UTC\nלו\"ז: DAILY 0300-1430",
-   "raw": "C1718/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/037/3058N03456E001\nA) LLLL B) 2608160300 C) 2608201430\nD) DAILY 0300-1430\nE) UAS/UAV ACT WILL TAKE PLACE AT YERUHAM, FM GND UP TO 600M AGL.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 305819N0345601E\nCLSD FM GND UP TO 3,700FT AMSL.\nCTN ADZ.\nF) GND G) 3700FT AMSL)",
    "first_seen": "2026-08-10T14:26:20Z"
   },
   {
@@ -860,6 +833,27 @@
   }
  ],
  "removed": [
+  {
+   "id": "A0675/26",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "DLA EXP DUE AD CAPACITY. LDG OF CARGO OR GA טיסות אסור למעט PPR טיסות מ-AD OPS CENTER.\nבתוקף: מ-20/08/2026 12:37 UTC עד 20/08/2026 23:59 UTC",
+   "removed_at": "2026-08-21T04:15:27Z"
+  },
+  {
+   "id": "C1730/26",
+   "name": "ARRAH WI 1",
+   "cat": "other",
+   "heb": "אזור ב ARRAH בתוך 1.5NM רדיוס שמרכזו בנ.צ. 32°31'31\"N 35°03'43\"E סגור מהקרקע ועד 1,000רגל מעל פני הים לכל הטיסות. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-16/08/2026 05:00 UTC עד 20/08/2026 16:00 UTC\nלו\"ז: DAILY 0500-1600",
+   "removed_at": "2026-08-21T04:15:27Z"
+  },
+  {
+   "id": "C1718/26",
+   "name": "YERUHAM",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב YERUHAM, מהקרקע ועד 600מטר מעל הקרקע. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 30°58'19\"N 34°56'01\"E סגור מהקרקע ועד 3,700רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-16/08/2026 03:00 UTC עד 20/08/2026 14:30 UTC\nלו\"ז: DAILY 0300-1430",
+   "removed_at": "2026-08-21T04:15:27Z"
+  },
   {
    "id": "C1763/26",
    "name": "BET-HASHITA",
@@ -2308,41 +2302,6 @@
    "cat": "uas",
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב YERUHAM, מהקרקע ועד 250מטר מעל הקרקע. אזור מ GND עד 3,000רגל מעל פני הים סגור בין נקודות הציון הבאות 30°58'30\"N 34°55'51\"E 30°58'23\"N 34°56'44\"E 30°58'03\"N 34°57'08\"E 30°57'09\"N 34°56'49\"E 30°56'24\"N 34°56'14\"E 30°56'52\"N 34°54'53\"E. מומלצת זהירות.\nבתוקף: מ-26/07/2026 02:30 UTC עד 30/07/2026 16:30 UTC\nלו\"ז: DAILY 0230-1630",
    "removed_at": "2026-07-31T06:39:42Z"
-  },
-  {
-   "id": "C1628/26",
-   "name": "OLESH BTN 3",
-   "cat": "other",
-   "heb": "אזור ב OLESH בין 3,000-5,000רגל מעל פני הים סגור לכל הטיסות כולל טיסות ריסוס חקלאיות בין נקודות הציון הבאות 32°20'29\"N 34°59'58\"E 32°20'36\"N 34°59'38\"E 32°20'19\"N 34°59'18\"E 32°20'00\"N 34°59'39\"E מומלצת זהירות.\nבתוקף: מ-30/07/2026 05:30 UTC עד 30/07/2026 14:00 UTC\nלו\"ז: 0530-0700 1230-1400",
-   "removed_at": "2026-07-30T15:20:29Z"
-  },
-  {
-   "id": "C1627/26",
-   "name": "OLESH WI 0",
-   "cat": "other",
-   "heb": "אזור ב OLESH בתוך 0.4NM רדיוס שמרכזו בנ.צ. 32°20'30\"N 34°59'14\"E סגור מהקרקע ועד 3,000רגל מעל פני הים, לכל הטיסות כולל AGRICULTURE. מומלצת זהירות.\nבתוקף: מ-30/07/2026 05:30 UTC עד 30/07/2026 14:00 UTC\nלו\"ז: 0530-0630 1300-1400",
-   "removed_at": "2026-07-30T15:20:29Z"
-  },
-  {
-   "id": "A0601/26",
-   "name": "A0601/26",
-   "cat": "other",
-   "heb": "ATS RTE J14 סגור בין NAT-ZACCI.\nבתוקף: מ-30/07/2026 05:30 UTC עד 30/07/2026 14:00 UTC\nלו\"ז: DAILY 0530-0700 1230-1400",
-   "removed_at": "2026-07-30T15:20:29Z"
-  },
-  {
-   "id": "C1532/26",
-   "name": "YERUHAM",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב YERUHAM, מהקרקע ועד 600מטר מעל הקרקע. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 30°58'19\"N 34°56'01\"E סגור מהקרקע ועד 3,700רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-26/07/2026 03:00 UTC עד 30/07/2026 14:30 UTC\nלו\"ז: DAILY 0300-1430",
-   "removed_at": "2026-07-30T15:20:29Z"
-  },
-  {
-   "id": "C1412/26",
-   "name": "RAMAT-BEKA WI LLP14",
-   "cat": "frng",
-   "heb": "FRNG WILL TAKE PLACE ב-RAMAT-BEKA בתוך LLP14. אזור בין נקודות הציון הבאות 31°05'42\"N 34°53'14\"E 31°05'41\"N 34°53'52\"E 31°05'09\"N 34°53'51\"E 31°04'53\"N 34°53'13\"E סגור מהקרקע ועד 12,000רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-01/07/2026 05:00 UTC עד 30/07/2026 15:00 UTC\nלו\"ז: SUN-THU 0500-1500",
-   "removed_at": "2026-07-30T15:20:29Z"
   }
  ]
 }
