@@ -1,7 +1,7 @@
 {
- "fetched_at": "22/08/2026 13:35 UTC",
- "fetched_iso": "2026-08-22T13:35:43Z",
- "count": 90,
+ "fetched_at": "23/08/2026 04:14 UTC",
+ "fetched_iso": "2026-08-23T04:14:23Z",
+ "count": 85,
  "notams": [
   {
    "id": "C1780/26",
@@ -10,15 +10,6 @@
    "cat": "act",
    "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-RAHAT, עד 1,700רגל מעל פני הים. אזור בתוך 0.4NM רדיוס שמרכזו בנ.צ. 31°22'52\"N 34°45'41\"E סגור מהקרקע ועד 2,200רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות\nבתוקף: מ-23/08/2026 02:45 UTC עד 31/08/2026 20:59 UTC",
    "raw": "C1780/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/022/3123N03446E001\nA) LLLL B) 2608230245 C) 2608312059\nE) CAPTIVE BALLOON WILL TAKE PLACE AT RAHAT, UP TO 1,700FT AMSL.\nAN AREA WI 0.4NM RADIUS CENTERED ON PSN 312252N0344541E\nCLSD FM GND UP TO 2,200FT AMSL TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ\nF) GND G) 2200FT AMSL)",
-   "first_seen": "2026-08-20T13:52:32Z"
-  },
-  {
-   "id": "C1779/26",
-   "loc": "LLLL",
-   "name": "PEKIIN",
-   "cat": "uas",
-   "heb": "UAS/UAV AIR-SHOW WILL TAKE PLACE ב-PEKIIN. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 32°59'18\"N 35°18'58\"E סגור מהקרקע ועד 50מטר מעל הקרקע 1,800רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-22/08/2026 17:30 UTC עד 22/08/2026 20:00 UTC",
-   "raw": "C1779/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/018/3259N03519E001\nA) LLLL B) 2608221730 C) 2608222000\nE) UAS/UAV AIR-SHOW WILL TAKE PLACE AT PEKIIN.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 325918N0351858E\nCLSD FM GND UP TO 50M AGL 1,800FT AMSL.\nCTN ADZ.\nF) GND G) 1800FT AMSL)",
    "first_seen": "2026-08-20T13:52:32Z"
   },
   {
@@ -121,15 +112,6 @@
    "first_seen": "2026-08-17T13:47:03Z"
   },
   {
-   "id": "C1765/26",
-   "loc": "LLLL",
-   "name": "BAT-YAM",
-   "cat": "uas",
-   "heb": "UAS/UAV AIR-SHOW WILL TAKE PLACE ב-BAT-YAM. אזור בתוך 0.3KM רדיוס שמרכזו בנ.צ. 32°00'55\"N 34°44'14\"E סגור מהקרקע ועד 50מטר מעל הקרקע 300רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-22/08/2026 18:00 UTC עד 22/08/2026 20:30 UTC",
-   "raw": "C1765/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/003/3201N03444E001\nA) LLLL B) 2608221800 C) 2608222030\nE) UAS/UAV AIR-SHOW WILL TAKE PLACE AT BAT-YAM.\nAN AREA WI 0.3KM RADIUS CENTERED ON PSN 320055N0344414E\nCLSD FM GND UP TO 50M AGL 300FT AMSL.\nCTN ADZ.\nF) GND G) 300FT AMSL)",
-   "first_seen": "2026-08-17T13:47:03Z"
-  },
-  {
    "id": "C1764/26",
    "loc": "LLLL",
    "name": "YERUHAM",
@@ -146,15 +128,6 @@
    "heb": "CIRCUIT EXER אסור, למעט טיסותCK. TFC EXP DLA.\nבתוקף: מ-24/08/2026 15:30 UTC עד 24/08/2026 17:00 UTC",
    "raw": "A0660/26 NOTAMN\nQ) LLLL/QACLP/IV/NBO/AE/000/030/3251N03503E007\nA) LLHA B) 2608241530 C) 2608241700\nE) CIRCUIT EXER PROHIBITED, EXC FLTCK.\nTFC EXP DLA.)",
    "first_seen": "2026-08-17T13:47:03Z"
-  },
-  {
-   "id": "C1727/26",
-   "loc": "LLLL",
-   "name": "HACHULA-LAKE",
-   "cat": "act",
-   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-HACHULA-LAKE, מהקרקע ועד 400מטר מעל הקרקע. LIT AND DAY MARKED. אזור בתוך 0.54NM רדיוס שמרכזו בנ.צ. 33°06'46\"N 35°34'14\"E סגור מהקרקע ועד 2,200רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. IN CASE OF EMERG LOWERED בתוך 10MIN. מומלצת זהירות.\nבתוקף: מ-16/08/2026 02:00 UTC עד 22/08/2026 14:00 UTC\nלו\"ז: DAILY 0200-1400",
-   "raw": "C1727/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/022/3307N03534E001\nA) LLLL B) 2608160200 C) 2608221400\nD) DAILY 0200-1400\nE) CAPTIVE BALLOON WILL TAKE PLACE AT HACHULA-LAKE,\nFM GND UP TO 400M AGL. LIT AND DAY MARKED.\nAN AREA WI 0.54NM RADIUS CENTERED ON PSN 330646N0353414E\nCLSD FM GND UP TO 2,200FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nIN CASE OF EMERG LOWERED WI 10MIN.\nCTN ADZ.\nF) GND G) 2200FT AMSL)",
-   "first_seen": "2026-08-12T14:26:41Z"
   },
   {
    "id": "A0657/26",
@@ -175,15 +148,6 @@
    "first_seen": "2026-08-12T05:21:44Z"
   },
   {
-   "id": "C1723/26",
-   "loc": "LLLL",
-   "name": "RAHAT",
-   "cat": "act",
-   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-RAHAT, עד 1,700רגל מעל פני הים. אזור בתוך 0.4NM רדיוס שמרכזו בנ.צ. 31°22'52\"N 34°45'41\"E סגור מהקרקע ועד 2,200רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות\nבתוקף: מ-12/08/2026 02:40 UTC עד 23/08/2026 02:40 UTC\nלו\"ז: 12 0240-2359, 13 0001-0415 1215-1640, 14-15 DAILY 1650-0240,",
-   "raw": "C1723/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/022/3123N03446E001\nA) LLLL B) 2608120240 C) 2608230240\nD) 12 0240-2359, 13 0001-0415 1215-1640, 14-15 DAILY 1650-0240,\n16-17 DAILY 0240-1650, 18-20 DAILY 0240-0420 1215-1650,  21-23 DAILY\n1650-0240\nE) CAPTIVE BALLOON WILL TAKE PLACE AT RAHAT, UP TO 1,700FT AMSL.\nAN AREA WI 0.4NM RADIUS CENTERED ON PSN 312252N0344541E\nCLSD FM GND UP TO 2,200FT AMSL TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ\nF) GND G) 2200FT AMSL)",
-   "first_seen": "2026-08-11T14:25:35Z"
-  },
-  {
    "id": "A0646/26",
    "loc": "LLLL",
    "name": "FREQ 112",
@@ -191,15 +155,6 @@
    "heb": "VOR/DME NAT FREQ 112.400MHZ WITHDRAWN FOR MAINT.\nבתוקף: מ-25/08/2026 07:00 UTC עד 25/08/2026 12:00 UTC",
    "raw": "A0646/26 NOTAMN\nQ) LLLL/QNMAS/IV/BO /E /000/999/3220N03458E025\nA) LLLL B) 2608250700 C) 2608251200\nE) VOR/DME NAT FREQ 112.400MHZ WITHDRAWN FOR MAINT.)",
    "first_seen": "2026-08-11T14:25:35Z"
-  },
-  {
-   "id": "C1719/26",
-   "loc": "LLLL",
-   "name": "HACHULA-LAKE",
-   "cat": "act",
-   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-HACHULA-LAKE, מהקרקע ועד 400מטר מעל הקרקע. LIT AND DAY MARKED. אזור בתוך 0.54NM רדיוס שמרכזו בנ.צ. 33°06'22\"N 35°34'54\"E סגור מהקרקע ועד 1,800רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-16/08/2026 03:30 UTC עד 23/08/2026 02:00 UTC\nלו\"ז: DAILY 0330-1400 1700-0200",
-   "raw": "C1719/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/018/3306N03535E001\nA) LLLL B) 2608160330 C) 2608230200\nD) DAILY 0330-1400 1700-0200\nE) CAPTIVE BALLOON WILL TAKE PLACE AT HACHULA-LAKE,\nFM GND UP TO 400M AGL. LIT AND DAY MARKED.\nAN AREA WI 0.54NM RADIUS CENTERED ON PSN 330622N0353454E\nCLSD FM GND UP TO 1,800FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 1800FT AMSL)",
-   "first_seen": "2026-08-10T14:26:20Z"
   },
   {
    "id": "C1698/26",
@@ -815,6 +770,41 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1779/26",
+   "name": "PEKIIN",
+   "cat": "uas",
+   "heb": "UAS/UAV AIR-SHOW WILL TAKE PLACE ב-PEKIIN. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 32°59'18\"N 35°18'58\"E סגור מהקרקע ועד 50מטר מעל הקרקע 1,800רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-22/08/2026 17:30 UTC עד 22/08/2026 20:00 UTC",
+   "removed_at": "2026-08-23T04:14:23Z"
+  },
+  {
+   "id": "C1765/26",
+   "name": "BAT-YAM",
+   "cat": "uas",
+   "heb": "UAS/UAV AIR-SHOW WILL TAKE PLACE ב-BAT-YAM. אזור בתוך 0.3KM רדיוס שמרכזו בנ.צ. 32°00'55\"N 34°44'14\"E סגור מהקרקע ועד 50מטר מעל הקרקע 300רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-22/08/2026 18:00 UTC עד 22/08/2026 20:30 UTC",
+   "removed_at": "2026-08-23T04:14:23Z"
+  },
+  {
+   "id": "C1727/26",
+   "name": "HACHULA-LAKE",
+   "cat": "act",
+   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-HACHULA-LAKE, מהקרקע ועד 400מטר מעל הקרקע. LIT AND DAY MARKED. אזור בתוך 0.54NM רדיוס שמרכזו בנ.צ. 33°06'46\"N 35°34'14\"E סגור מהקרקע ועד 2,200רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. IN CASE OF EMERG LOWERED בתוך 10MIN. מומלצת זהירות.\nבתוקף: מ-16/08/2026 02:00 UTC עד 22/08/2026 14:00 UTC\nלו\"ז: DAILY 0200-1400",
+   "removed_at": "2026-08-23T04:14:23Z"
+  },
+  {
+   "id": "C1723/26",
+   "name": "RAHAT",
+   "cat": "act",
+   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-RAHAT, עד 1,700רגל מעל פני הים. אזור בתוך 0.4NM רדיוס שמרכזו בנ.צ. 31°22'52\"N 34°45'41\"E סגור מהקרקע ועד 2,200רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות\nבתוקף: מ-12/08/2026 02:40 UTC עד 23/08/2026 02:40 UTC\nלו\"ז: 12 0240-2359, 13 0001-0415 1215-1640, 14-15 DAILY 1650-0240,",
+   "removed_at": "2026-08-23T04:14:23Z"
+  },
+  {
+   "id": "C1719/26",
+   "name": "HACHULA-LAKE",
+   "cat": "act",
+   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-HACHULA-LAKE, מהקרקע ועד 400מטר מעל הקרקע. LIT AND DAY MARKED. אזור בתוך 0.54NM רדיוס שמרכזו בנ.צ. 33°06'22\"N 35°34'54\"E סגור מהקרקע ועד 1,800רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-16/08/2026 03:30 UTC עד 23/08/2026 02:00 UTC\nלו\"ז: DAILY 0330-1400 1700-0200",
+   "removed_at": "2026-08-23T04:14:23Z"
+  },
   {
    "id": "C1762/26",
    "name": "C1762/26",
