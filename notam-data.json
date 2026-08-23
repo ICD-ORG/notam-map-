@@ -1,8 +1,53 @@
 {
- "fetched_at": "23/08/2026 04:14 UTC",
- "fetched_iso": "2026-08-23T04:14:23Z",
- "count": 85,
+ "fetched_at": "23/08/2026 13:36 UTC",
+ "fetched_iso": "2026-08-23T13:36:53Z",
+ "count": 88,
  "notams": [
+  {
+   "id": "C1785/26",
+   "loc": "LLLL",
+   "name": "C1785/26",
+   "cat": "other",
+   "heb": "מסוקים RTE סגור KTORA-SIZFN-SITIM-ZZHOR. BMNUH-ZZHOR-MESAR-RUHOT. ZOFAR-HRGVS-RUHOT-KNFHA-RAMLY-MIDRS. LLEY-NNAHS-MIDRS. NNAHS-RAMLY.\nבתוקף: מ-07/09/2026 03:00 UTC עד 08/09/2026 06:30 UTC\nלו\"ז: 07 0300-0630 1630-1900, 08 0330-0630",
+   "raw": "C1785/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /018/035/3025N03455E028\nA) LLLL B) 2609070300 C) 2609080630\nD) 07 0300-0630 1630-1900, 08 0330-0630\nE) HEL RTE CLSD\nKTORA-SIZFN-SITIM-ZZHOR.\nBMNUH-ZZHOR-MESAR-RUHOT.\nZOFAR-HRGVS-RUHOT-KNFHA-RAMLY-MIDRS.\nLLEY-NNAHS-MIDRS.\nNNAHS-RAMLY.)",
+   "first_seen": "2026-08-23T13:36:53Z"
+  },
+  {
+   "id": "C1784/26",
+   "loc": "LLLL",
+   "name": "C1784/26",
+   "cat": "other",
+   "heb": "CVFR RTE סגור SIZFN-SITIM-ZZHOR. SIZFN-YAמסוקים. BMNUH-ZZHOR-MESAR-RUHOT. ZOFAR-HRGVS-RUHOT-OVDAT-BOKER.\nבתוקף: מ-07/09/2026 03:00 UTC עד 08/09/2026 06:30 UTC\nלו\"ז: 07 0300-0630 1630-1900, 08 0330-0630",
+   "raw": "C1784/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /025/045/3028N03454E027\nA) LLLL B) 2609070300 C) 2609080630\nD) 07 0300-0630 1630-1900, 08 0330-0630\nE) CVFR RTE CLSD\nSIZFN-SITIM-ZZHOR.\nSIZFN-YAHEL.\nBMNUH-ZZHOR-MESAR-RUHOT.\nZOFAR-HRGVS-RUHOT-OVDAT-BOKER.)",
+   "first_seen": "2026-08-23T13:36:53Z"
+  },
+  {
+   "id": "C1783/26",
+   "loc": "LLLL",
+   "name": "C1783/26",
+   "cat": "other",
+   "heb": "מסוקים RTE סגור KTORA-YAמסוקים-BMNUH-ZOFAR-HAZVA-ARAVA-ZOHAR.\nבתוקף: מ-07/09/2026 03:00 UTC עד 08/09/2026 06:30 UTC\nלו\"ז: 07 0300-0630 1630-1900, 08 0330-0630",
+   "raw": "C1783/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /025/040/3034N03512E037\nA) LLLL B) 2609070300 C) 2609080630\nD) 07 0300-0630 1630-1900, 08 0330-0630\nE) HEL RTE CLSD\nKTORA-YAHEL-BMNUH-ZOFAR-HAZVA-ARAVA-ZOHAR.)",
+   "first_seen": "2026-08-23T13:36:53Z"
+  },
+  {
+   "id": "C1782/26",
+   "loc": "LLLL",
+   "name": "C1782/26",
+   "cat": "other",
+   "heb": "CVFR RTE סגור KTORA-YAמסוקים-BMNUH-ZOFAR-HAZVA-ARAVA-ZOHAR.\nבתוקף: מ-07/09/2026 03:00 UTC עד 08/09/2026 06:30 UTC\nלו\"ז: 07 0300-0630 1630-1900, 08 0330-0630",
+   "raw": "C1782/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /025/040/3034N03512E037\nA) LLLL B) 2609070300 C) 2609080630\nD) 07 0300-0630 1630-1900, 08 0330-0630\nE) CVFR RTE CLSD\nKTORA-YAHEL-BMNUH-ZOFAR-HAZVA-ARAVA-ZOHAR.)",
+   "first_seen": "2026-08-23T13:36:53Z"
+  },
+  {
+   "id": "C1781/26",
+   "loc": "LLIB",
+   "name": "ראש פינה (LLIB)",
+   "cat": "ad",
+   "heb": "AD סגור לכל הטיסות, DUE WIP. הפעלת מסוקים AVBL באישור מוקדם מבקרת התעופה. IN CASE OF EMERG OR MEDEVAC מסוקים AVBL בתוך 10MIN.\nבתוקף: מ-17/09/2026 06:00 UTC עד 17/09/2026 09:00 UTC",
+   "raw": "C1781/26 NOTAMN\nQ) LLLL/QFALT/IV/NBO/A /000/999/3259N03534E005\nA) LLIB B) 2609170600 C) 2609170900\nE) AD CLSD TO ALL FLT, DUE WIP.\nOPS OF HEL AVBL BY PPR FM ATC.\nIN CASE OF EMERG OR MEDEVAC HEL AVBL WI 10MIN.)",
+   "first_seen": "2026-08-23T13:36:53Z"
+  },
   {
    "id": "C1780/26",
    "loc": "LLLL",
@@ -92,24 +137,6 @@
    "heb": "AD סגור לכל הטיסות כולל מסוקים, DUE WIP. IN CASE OF EMERG AVBL בתוך 10MIN.\nבתוקף: מ-01/09/2026 05:25 UTC עד 01/09/2026 10:00 UTC\nלו\"ז: 0525-0725 0830-1000",
    "raw": "A0663/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3249N03503E005\nA) LLHA B) 2609010525 C) 2609011000\nD) 0525-0725 0830-1000\nE) AD CLSD TO ALL FLT INCLUDING HEL, DUE WIP.\nIN CASE OF EMERG AVBL WI 10MIN.)",
    "first_seen": "2026-08-18T13:48:39Z"
-  },
-  {
-   "id": "C1770/26",
-   "loc": "LLLL",
-   "name": "C1770/26",
-   "cat": "act",
-   "heb": "ULTRALIGHT RTE סגור DUE FIREFIGHTING ACT ZHRYA-GEFFN-NAHEM.\nבתוקף: מ-23/08/2026 08:20 UTC עד 23/08/2026 09:30 UTC",
-   "raw": "C1770/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /012/015/3144N03453E004\nA) LLLL B) 2608230820 C) 2608230930\nE) ULTRALIGHT RTE CLSD DUE FIREFIGHTING ACT\nZHRYA-GEFFN-NAHEM.)",
-   "first_seen": "2026-08-17T13:47:03Z"
-  },
-  {
-   "id": "C1769/26",
-   "loc": "LLLL",
-   "name": "TIROSH",
-   "cat": "other",
-   "heb": "FIREFIGHTING ACT WILL TAKE PLACE ב-TIROSH. אזור בתוך 2NM רדיוס שמרכזו בנ.צ. 31°45'02\"N 34°52'08\"E סגור לכל הטיסות כולל טיסות ריסוס חקלאיות, מהקרקע ועד 2,000רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-23/08/2026 08:20 UTC עד 23/08/2026 09:30 UTC",
-   "raw": "C1769/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/020/3145N03452E002\nA) LLLL B) 2608230820 C) 2608230930\nE) FIREFIGHTING ACT WILL TAKE PLACE AT TIROSH.\nAN AREA WI 2NM RADIUS CENTERED ON PSN 314502N0345208E\nCLSD TO ALL FLT INCLUDING AGRICULTURE FLT, FM GND\nUP TO 2,000FT AMSL.\nCTN ADZ.)",
-   "first_seen": "2026-08-17T13:47:03Z"
   },
   {
    "id": "C1764/26",
@@ -770,6 +797,20 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1770/26",
+   "name": "C1770/26",
+   "cat": "act",
+   "heb": "ULTRALIGHT RTE סגור DUE FIREFIGHTING ACT ZHRYA-GEFFN-NAHEM.\nבתוקף: מ-23/08/2026 08:20 UTC עד 23/08/2026 09:30 UTC",
+   "removed_at": "2026-08-23T13:36:53Z"
+  },
+  {
+   "id": "C1769/26",
+   "name": "TIROSH",
+   "cat": "other",
+   "heb": "FIREFIGHTING ACT WILL TAKE PLACE ב-TIROSH. אזור בתוך 2NM רדיוס שמרכזו בנ.צ. 31°45'02\"N 34°52'08\"E סגור לכל הטיסות כולל טיסות ריסוס חקלאיות, מהקרקע ועד 2,000רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-23/08/2026 08:20 UTC עד 23/08/2026 09:30 UTC",
+   "removed_at": "2026-08-23T13:36:53Z"
+  },
   {
    "id": "C1779/26",
    "name": "PEKIIN",
