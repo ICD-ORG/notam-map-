@@ -1,7 +1,7 @@
 {
- "fetched_at": "23/08/2026 13:36 UTC",
- "fetched_iso": "2026-08-23T13:36:53Z",
- "count": 88,
+ "fetched_at": "24/08/2026 04:27 UTC",
+ "fetched_iso": "2026-08-24T04:27:34Z",
+ "count": 87,
  "notams": [
   {
    "id": "C1785/26",
@@ -64,15 +64,6 @@
    "cat": "uas",
    "heb": "פעילות כטב\"מ תתקיים ב JULIS. אזור מ GND עד 500רגל מעל פני הים סגור לכל הטיסות בין נקודות הציון הבאות 31°41'22\"N 34°40'41\"E 31°40'12\"N 34°40'40\"E 31°40'18\"N 34°39'58\"E 31°41'18\"N 34°40'06\"E 31°41'18\"N 34°40'24\"E. טיסות ריסוס חקלאיות בתוך 15MIN אישור מוקדם מבקרת התעופה. מומלצת זהירות.\nבתוקף: מ-23/08/2026 06:00 UTC עד 27/08/2026 13:00 UTC\nלו\"ז: DAILY 0600-1300",
    "raw": "C1777/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/005/3141N03440E001\nA) LLLL B) 2608230600 C) 2608271300\nD) DAILY 0600-1300\nE) UAS ACT WILL TAKE PLACE AT JULIS.\nAN AREA FM GND UP TO 500FT AMSL CLSD TO ALL FLT\nBTN FLW PSN  314122N0344041E 314012N0344040E\n314018N0343958E 314118N0344006E 314118N0344024E.\nOPS OF AGRICULTURE FLT WI 15MIN PPR FM ATC.\nCTN ADZ.\nF) GND G) 500FT AMSL)",
-   "first_seen": "2026-08-20T13:52:32Z"
-  },
-  {
-   "id": "C1775/26",
-   "loc": "LLLL",
-   "name": "SHAVEI-ZION",
-   "cat": "obst",
-   "heb": "OBST ERECTED ב-SHAVEI-ZION, בתוך ZVULUN-N (BZVUN) בועת זעירים. אזור בתוך 1.6NM רדיוס שמרכזו בנ.צ. 32°58'22\"N 35°04'44\"E סגור מהקרקע ועד 600רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-20/08/2026 05:00 UTC עד 23/08/2026 16:45 UTC",
-   "raw": "C1775/26 NOTAMN\nQ) LLLL/QOBCE/IV/M  /E /000/006/3258N03505E002\nA) LLLL B) 2608200500 C) 2608231645\nE) OBST ERECTED AT SHAVEI-ZION, WI ZVULUN-N (BZVUN) ULTRALIGHT\nBUBBLE.\nAN AREA WI 1.6NM RADIUS CENTERED ON PSN 325822N0350444E\nCLSD FM GND UP TO 600FT AMSL.\nCTN ADZ.)",
    "first_seen": "2026-08-20T13:52:32Z"
   },
   {
@@ -797,6 +788,13 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1775/26",
+   "name": "SHAVEI-ZION",
+   "cat": "obst",
+   "heb": "OBST ERECTED ב-SHAVEI-ZION, בתוך ZVULUN-N (BZVUN) בועת זעירים. אזור בתוך 1.6NM רדיוס שמרכזו בנ.צ. 32°58'22\"N 35°04'44\"E סגור מהקרקע ועד 600רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-20/08/2026 05:00 UTC עד 23/08/2026 16:45 UTC",
+   "removed_at": "2026-08-24T04:27:34Z"
+  },
   {
    "id": "C1770/26",
    "name": "C1770/26",
@@ -2154,27 +2152,6 @@
    "cat": "other",
    "heb": "CHECKLIST YEAR=2026 0003 0004 0005 0006 0009 0010 0013 0014 0017 0032 0035 0037 0090 0162 0232 0431 0458 0813 0953 1116 1171 1244 1281 1284 1313 1328 1345 1348 1358 1359 1361 1382 1383 1384 1385 1386 1387 1388 1389 1390 1391 1392 1393 1394 1395 1396 1397 1398 1399 1405 1408 1409 1412 1413 1415 1417 1420 1421 1422 1423 1424 1425 1426 1428 1432 1434 1436 1441 1443 1444 1445 1446 1447 1450 1451 1453 1454 1455 1457 1458 1459 1460 1461 1462 1463 1464 1465 1466 1467 LATEST PUBLICATIONS AIP AIRAC AMDT IFR 002/2025 EFFECTIVE DATE 02 OCT 25 AIP AIRAC SUP IFR 004/2026 EFFECTIVE DATE 14 MAY 26 AIC IFR A001/2026 EFFECTIVE DATE 05 FEB 26 AIC CHECKLIST AIP IFR A001/2026 AIP VFR 004/2025 006/2025 AIP MIL NIL SUP CHECKLIST AIP IFR 002/2026 003/2026 004/2026 AIP VFR 001/2026 002/2026 003/2026 AIP MIL NIL\nבתוקף: מ-05/07/2026 10:54 UTC עד 05/08/2026 10:54 UTC",
    "removed_at": "2026-08-03T06:53:00Z"
-  },
-  {
-   "id": "A0608/26",
-   "name": "A0608/26",
-   "cat": "other",
-   "heb": "ATS RTE J14 סגור בין NAT-MEGID.\nבתוקף: מ-31/07/2026 20:30 UTC עד 02/08/2026 04:00 UTC",
-   "removed_at": "2026-08-02T14:44:31Z"
-  },
-  {
-   "id": "C1617/26",
-   "name": "C1617/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור OVDAT-BOKER.\nבתוקף: מ-02/08/2026 08:50 UTC עד 02/08/2026 12:45 UTC\nלו\"ז: 0850-0930 1200-1245",
-   "removed_at": "2026-08-02T14:44:31Z"
-  },
-  {
-   "id": "C1594/26",
-   "name": "MEI-AMI",
-   "cat": "act",
-   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-MEI-AMI. אזור בתוך 0.2NM רדיוס שמרכזו בנ.צ. 32°30'15\"N 35°09'02\"E סגור מהקרקע ועד 2,800רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-28/07/2026 02:30 UTC עד 02/08/2026 02:30 UTC",
-   "removed_at": "2026-08-02T14:44:31Z"
   }
  ]
 }
