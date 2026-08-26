@@ -1,8 +1,98 @@
 {
- "fetched_at": "26/08/2026 04:17 UTC",
- "fetched_iso": "2026-08-26T04:17:03Z",
- "count": 95,
+ "fetched_at": "26/08/2026 13:59 UTC",
+ "fetched_iso": "2026-08-26T13:59:38Z",
+ "count": 99,
  "notams": [
+  {
+   "id": "C1805/26",
+   "loc": "LLLL",
+   "name": "GVULOT FM GND UP TO 3",
+   "cat": "other",
+   "heb": "אזור ב GVULOT מהקרקע ועד 3,300רגל מעל פני הים סגור לכל הטיסות בין נקודות הציון הבאות 31°04'48\"N 34°41'24\"E31°10'26\"N 34°34'19\"E 31°08'24\"N 34°32'12\"E31°02'47\"N 34°39'11\"E. טיסות ריסוס חקלאיות בתוך 15MIN אישור מוקדם מבקרת התעופה. מומלצת זהירות.\nבתוקף: מ-26/08/2026 15:00 UTC עד 26/08/2026 20:59 UTC",
+   "raw": "C1805/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/033/3107N03437E005\nA) LLLL B) 2608261500 C) 2608262059\nE) AN AREA AT GVULOT FM GND UP TO 3,300FT AMSL CLSD TO ALL FLT\nBTN FLW PSN  310448N0344124E311026N0343419E\n310824N0343212E310247N0343911E.\nOPS OF AGRICULTURE FLT WI 15MIN PPR FM ATC.\nCTN ADZ.)",
+   "first_seen": "2026-08-26T13:59:38Z"
+  },
+  {
+   "id": "C1804/26",
+   "loc": "LLLL",
+   "name": "C1804/26",
+   "cat": "pje",
+   "heb": "PJE AIRSPACE TEIMAN ACT מ-11,000רגל מעל פני הים. IN CASE OF EMERG CLEAR THE AIRSPACE בתוך 5MIN. מומלצת זהירות.\nבתוקף: מ-28/08/2026 05:00 UTC עד 28/08/2026 11:00 UTC",
+   "raw": "C1804/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/110/3117N03443E004\nA) LLLL B) 2608280500 C) 2608281100\nE) PJE AIRSPACE TEIMAN ACT FM 11,000FT AMSL.\nIN CASE OF EMERG CLEAR THE AIRSPACE WI 5MIN.\nCTN ADZ.\nF) GND G) 11000FT AMSL)",
+   "first_seen": "2026-08-26T13:59:38Z"
+  },
+  {
+   "id": "A0690/26",
+   "loc": "LLLL",
+   "name": "A0690/26",
+   "cat": "other",
+   "heb": "ATS RTE J14 סגור בין NAT-MEGID.\nבתוקף: מ-27/08/2026 06:30 UTC עד 27/08/2026 12:00 UTC",
+   "raw": "A0690/26 NOTAMN\nQ) LLLL/QANLC/I /NBO/E /040/070/3227N03507E011\nA) LLLL B) 2608270630 C) 2608271200\nE) ATS RTE J14 CLSD BTN NAT-MEGID.)",
+   "first_seen": "2026-08-26T13:59:38Z"
+  },
+  {
+   "id": "C1803/26",
+   "loc": "LLLL",
+   "name": "RAHAT",
+   "cat": "act",
+   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-RAHAT, עד 1,700רגל מעל פני הים. אזור בתוך 0.4NM רדיוס שמרכזו בנ.צ. 31°22'52\"N 34°45'41\"E סגור מהקרקע ועד 2,200רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות\nבתוקף: מ-31/08/2026 00:01 UTC עד 07/09/2026 20:59 UTC\nלו\"ז: AUG 31 0001-0430 0650-0910 0950-2359, SEP 01-05 DAILY 0001-0430",
+   "raw": "C1803/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/022/3123N03446E001\nA) LLLL B) 2608310001 C) 2609072059\nD) AUG 31 0001-0430 0650-0910 0950-2359, SEP 01-05 DAILY 0001-0430\n0650-0910 0950-2359, 06-07 DAILY 0001-2059\nE) CAPTIVE BALLOON WILL TAKE PLACE AT RAHAT, UP TO 1,700FT AMSL.\nAN AREA WI 0.4NM RADIUS CENTERED ON PSN 312252N0344541E\nCLSD FM GND UP TO 2,200FT AMSL TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ\nF) GND G) 2200FT AMSL)",
+   "first_seen": "2026-08-26T13:59:38Z"
+  },
+  {
+   "id": "C1802/26",
+   "loc": "LLLL",
+   "name": "GVULOT FM GND UP TO 2",
+   "cat": "other",
+   "heb": "אזור ב GVULOT מהקרקע ועד 2,800רגל מעל פני הים סגור לכל הטיסות בין נקודות הציון הבאות 31°11'48\"N 34°25'30\"E 31°11'42\"N 34°26'17\"E 31°05'28\"N 34°25'17\"E 31°05'34\"N 34°24'24\"E טיסות ריסוס חקלאיות בתוך 15MIN אישור מוקדם מבקרת התעופה. מומלצת זהירות.\nבתוקף: מ-30/08/2026 05:00 UTC עד 03/09/2026 19:00 UTC\nלו\"ז: DAILY 0500-1900",
+   "raw": "C1802/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/028/3109N03425E004\nA) LLLL B) 2608300500 C) 2609031900\nD) DAILY 0500-1900\nE) AN AREA AT GVULOT FM GND UP TO 2,800FT AMSL CLSD TO ALL FLT\nBTN FLW PSN  311148N0342530E 311142N0342617E\n310528N0342517E 310534N0342424E\nOPS OF AGRICULTURE FLT WI 15MIN PPR FM ATC.\nCTN ADZ.)",
+   "first_seen": "2026-08-26T13:59:38Z"
+  },
+  {
+   "id": "A0689/26",
+   "loc": "LLLL",
+   "name": "A0689/26",
+   "cat": "other",
+   "heb": "ATS RTE Q30 סגור בין BEXOM-NURIT.\nבתוקף: מ-26/08/2026 09:57 UTC עד 31/10/2026 23:59 UTC",
+   "raw": "A0689/26 NOTAMR A0592/26\nQ) LLLL/QANLC/I /NBO/E /050/370/3056N03502E053\nA) LLLL B) 2608260957 C) 2610312359\nE) ATS RTE Q30 CLSD BTN BEXOM-NURIT.)",
+   "first_seen": "2026-08-26T13:59:38Z"
+  },
+  {
+   "id": "A0686/26",
+   "loc": "LLLL",
+   "name": "AD WITHIN AMMAN FIR",
+   "cat": "other",
+   "heb": "ATS RTE L53 בין TALMI-TAPUZ AND N134 בין VOLFO-SALAM AVBL H24 בין 11,000-16,000FT FOR TFC WITH ARR/DEP ב-AD WITHIN AMMAN FIR, LLER, LLNV, LLOV AND LLRM ONLY, AVBL H24 ABV 17,000FT FOR MIL TFC ONLY.\nבתוקף: מ-26/08/2026 09:46 UTC עד 31/10/2026 23:59 UTC",
+   "raw": "A0686/26 NOTAMR A0613/26\nQ) LLLL/QANLT/I /NBO/E /050/600/3205N03450E039\nA) LLLL B) 2608260946 C) 2610312359\nE) ATS RTE L53 BTN TALMI-TAPUZ AND N134 BTN VOLFO-SALAM\nAVBL H24 BTN 11,000-16,000FT FOR TFC WITH ARR/DEP AT\nAD WITHIN AMMAN FIR, LLER, LLNV, LLOV AND LLRM ONLY,\nAVBL H24 ABV 17,000FT FOR MIL TFC ONLY.)",
+   "first_seen": "2026-08-26T13:59:38Z"
+  },
+  {
+   "id": "A0687/26",
+   "loc": "LLLL",
+   "name": "A0687/26",
+   "cat": "other",
+   "heb": "MAX ALT ALONG ATS RTE J10 בין NURIT-SIVAK 18,000רגל מעל פני הים.\nבתוקף: מ-26/08/2026 09:47 UTC עד 31/10/2026 23:59 UTC",
+   "raw": "A0687/26 NOTAMR A0595/26\nQ) LLLL/QANLT/I /NBO/E /040/370/3053N03516E052\nA) LLLL B) 2608260947 C) 2610312359\nE) MAX ALT ALONG ATS RTE J10 BTN NURIT-SIVAK 18,000FT AMSL.)",
+   "first_seen": "2026-08-26T13:59:38Z"
+  },
+  {
+   "id": "A0688/26",
+   "loc": "LLLL",
+   "name": "A0688/26",
+   "cat": "other",
+   "heb": "POSS INTRP TO AIRBORNE GNSS EQPT בתוך TEL-AVIV FIR.\nבתוקף: מ-26/08/2026 09:47 UTC עד 31/10/2026 23:59 UTC",
+   "raw": "A0688/26 NOTAMR A0596/26\nQ) LLLL/QGWAU/IV/NBO/E /000/999/3125N03521E117\nA) LLLL B) 2608260947 C) 2610312359\nE) POSS INTRP TO AIRBORNE GNSS EQPT WI TEL-AVIV FIR.)",
+   "first_seen": "2026-08-26T13:59:38Z"
+  },
+  {
+   "id": "A0685/26",
+   "loc": "LLHA",
+   "name": "חיפה (LLHA)",
+   "cat": "ad",
+   "heb": "NEW FREQ INSTL FOR CLEARANCE BFR TAXI (CPT) 127.800MHZ. DEP טיסות SHALL CTC TWR ON CPT FREQ BFR STARTING UP ENGINE.\nבתוקף: מ-26/08/2026 04:39 UTC עד 30/11/2026 21:59 UTC",
+   "raw": "A0685/26 NOTAMR A0680/26\nQ) LLLL/QCACS/IV/BO /AE/000/999/3249N03503E005\nA) LLHA B) 2608260439 C) 2611302159\nE) NEW FREQ INSTL FOR CLEARANCE BFR TAXI (CPT) 127.800MHZ.\nDEP FLT SHALL CTC TWR ON CPT FREQ BFR STARTING UP ENGINE.)",
+   "first_seen": "2026-08-26T13:59:38Z"
+  },
   {
    "id": "A0684/26",
    "loc": "LLBG",
@@ -49,30 +139,12 @@
    "first_seen": "2026-08-25T13:54:59Z"
   },
   {
-   "id": "A0680/26",
-   "loc": "LLHA",
-   "name": "חיפה (LLHA)",
-   "cat": "ad",
-   "heb": "NEW FREQ INSTL FOR CLEARANCE BFR TAXI (CPT) 121.800MHZ. DEP טיסות SHALL CTC TWR ON CPT FREQ BFR STARTING UP ENGINE.\nבתוקף: מ-25/08/2026 10:26 UTC עד 30/11/2026 21:59 UTC",
-   "raw": "A0680/26 NOTAMR A0678/26\nQ) LLLL/QCACS/IV/BO /AE/000/999/3249N03503E005\nA) LLHA B) 2608251026 C) 2611302159\nE) NEW FREQ INSTL FOR CLEARANCE BFR TAXI (CPT) 121.800MHZ.\nDEP FLT SHALL CTC TWR ON CPT FREQ BFR STARTING UP ENGINE.)",
-   "first_seen": "2026-08-25T13:54:59Z"
-  },
-  {
    "id": "C1795/26",
    "loc": "LLLL",
    "name": "MAGEN-SHAUL",
    "cat": "uas",
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב MAGEN-SHAUL, עד 100מטר מעל הקרקע. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 1,500רגל מעל פני הים 32°31'45\"N 35°16'42\"E 32°30'24\"N 35°16'38\"E 32°30'39\"N 35°20'04\"E 32°31'39\"N 35°19'54\"E 32°31'53\"N 35°19'30\"E 32°31'59\"N 35°19'07\"E מומלצת זהירות.\nבתוקף: מ-01/09/2026 00:01 UTC עד 30/09/2026 20:59 UTC",
    "raw": "C1795/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/015/3231N03518E002\nA) LLLL B) 2609010001 C) 2609302059\nE) UAS/UAV ACT WILL TAKE PLACE AT MAGEN-SHAUL, UP TO 100M AGL.\nAN AREA BTN THE FLW PSN CLSD FM GND UP TO 1,500FT AMSL\n323145N0351642E 323024N0351638E 323039N0352004E\n323139N0351954E 323153N0351930E 323159N0351907E\nCTN ADZ.\nF) GND G) 1500FT AMSL)",
-   "first_seen": "2026-08-25T13:54:59Z"
-  },
-  {
-   "id": "C1794/26",
-   "loc": "LLLL",
-   "name": "YARKA WI 0",
-   "cat": "other",
-   "heb": "אזור ב YARKA בתוך 0.5NM רדיוס שמרכזו בנ.צ. 32°57'24\"N 35°11'54\"E סגור מהקרקע ועד 1,600רגל מעל פני הים לכל הטיסות, טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-26/08/2026 08:00 UTC עד 26/08/2026 13:00 UTC",
-   "raw": "C1794/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/016/3257N03512E001\nA) LLLL B) 2608260800 C) 2608261300\nE) AN AREA AT YARKA WI 0.5NM RADIUS CENTERED ON PSN 325724N0351154E\nCLSD FM GND UP TO 1,600FT AMSL TO ALL FLT,\nOPS OF AGRICULTURE FLT AVBL WITH 15MIN PPR FM ATC.\nCTN ADZ.)",
    "first_seen": "2026-08-25T13:54:59Z"
   },
   {
@@ -310,15 +382,6 @@
    "first_seen": "2026-08-03T15:51:58Z"
   },
   {
-   "id": "A0613/26",
-   "loc": "LLLL",
-   "name": "AD WITHIN AMMAN FIR",
-   "cat": "other",
-   "heb": "ATS RTE L53 בין TALMI-TAPUZ AND N134 בין VOLFO-SALAM AVBL H24 בין 11,000-16,000FT FOR TFC WITH ARR/DEP ב-AD WITHIN AMMAN FIR, LLER, LLNV, LLOV AND LLRM ONLY, AVBL H24 ABV 17,000FT FOR MIL TFC ONLY.\nבתוקף: מ-06/08/2026 16:30 UTC עד 31/08/2026 23:59 UTC",
-   "raw": "A0613/26 NOTAMN\nQ) LLLL/QANLT/I /NBO/E /050/600/3205N03450E039\nA) LLLL B) 2608061630 C) 2608312359\nE) ATS RTE L53 BTN TALMI-TAPUZ AND N134 BTN VOLFO-SALAM\nAVBL H24 BTN 11,000-16,000FT FOR TFC WITH ARR/DEP AT\nAD WITHIN AMMAN FIR, LLER, LLNV, LLOV AND LLRM ONLY,\nAVBL H24 ABV 17,000FT FOR MIL TFC ONLY.)",
-   "first_seen": "2026-08-03T15:51:58Z"
-  },
-  {
    "id": "A0612/26",
    "loc": "LLLL",
    "name": "AD WITHIN AMMAN FIR",
@@ -373,24 +436,6 @@
    "first_seen": "2026-07-29T15:18:11Z"
   },
   {
-   "id": "A0596/26",
-   "loc": "LLLL",
-   "name": "A0596/26",
-   "cat": "other",
-   "heb": "POSS INTRP TO AIRBORNE GNSS EQPT בתוך TEL-AVIV FIR.\nבתוקף: מ-28/07/2026 10:45 UTC עד 31/08/2026 23:59 UTC",
-   "raw": "A0596/26 NOTAMR A0508/26\nQ) LLLL/QGWAU/IV/NBO/E /000/999/3125N03521E117\nA) LLLL B) 2607281045 C) 2608312359\nE) POSS INTRP TO AIRBORNE GNSS EQPT WI TEL-AVIV FIR.)",
-   "first_seen": "2026-07-28T15:29:03Z"
-  },
-  {
-   "id": "A0595/26",
-   "loc": "LLLL",
-   "name": "A0595/26",
-   "cat": "other",
-   "heb": "MAX ALT ALONG ATS RTE J10 בין NURIT-SIVAK 18,000רגל מעל פני הים.\nבתוקף: מ-28/07/2026 10:44 UTC עד 31/08/2026 23:59 UTC",
-   "raw": "A0595/26 NOTAMR A0507/26\nQ) LLLL/QANLT/I /NBO/E /040/370/3053N03516E052\nA) LLLL B) 2607281044 C) 2608312359\nE) MAX ALT ALONG ATS RTE J10 BTN NURIT-SIVAK 18,000FT AMSL.)",
-   "first_seen": "2026-07-28T15:29:03Z"
-  },
-  {
    "id": "C1608/26",
    "loc": "LLLL",
    "name": "ZIV-HOSPITAL/TZFAT",
@@ -416,15 +461,6 @@
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב DALIA/TZAFIT, בתוך בועת זעירים GOVRIN SOUTH (BGOVS) עד 100מטר מעל הקרקע. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 1,400רגל מעל פני הים 31°43'53\"N 34°50'38\"E 31°43'39\"N 34°50'10\"E 31°42'21\"N 34°49'25\"E 31°41'50\"N 34°50'23\"E 31°42'22\"N 34°51'18\"E 31°43'23\"N 34°51'23\"E. מומלצת זהירות.\nבתוקף: מ-01/08/2026 00:01 UTC עד 31/08/2026 20:59 UTC",
    "raw": "C1595/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/014/3143N03450E002\nA) LLLL B) 2608010001 C) 2608312059\nE) UAS/UAV ACT WILL TAKE PLACE AT DALIA/TZAFIT, WI ULTRALIGHT\nBUBBLE GOVRIN SOUTH (BGOVS) UP TO 100M AGL.\nAN AREA BTN THE FLW PSN CLSD FM GND UP TO 1,400FT AMSL\n314353N0345038E 314339N0345010E 314221N0344925E\n314150N0345023E 314222N0345118E 314323N0345123E.\nCTN ADZ.\nF) GND G) 1400FT AMSL)",
    "first_seen": "2026-07-27T15:49:37Z"
-  },
-  {
-   "id": "A0592/26",
-   "loc": "LLLL",
-   "name": "A0592/26",
-   "cat": "other",
-   "heb": "ATS RTE Q30 סגור בין BEXOM-NURIT.\nבתוקף: מ-26/07/2026 16:24 UTC עד 31/08/2026 20:59 UTC",
-   "raw": "A0592/26 NOTAMR A0505/26\nQ) LLLL/QANLC/I /NBO/E /050/370/3056N03502E053\nA) LLLL B) 2607261624 C) 2608312059\nE) ATS RTE Q30 CLSD BTN BEXOM-NURIT.)",
-   "first_seen": "2026-07-27T06:59:14Z"
   },
   {
    "id": "C1592/26",
@@ -860,6 +896,48 @@
   }
  ],
  "removed": [
+  {
+   "id": "A0680/26",
+   "name": "חיפה (LLHA)",
+   "cat": "ad",
+   "heb": "NEW FREQ INSTL FOR CLEARANCE BFR TAXI (CPT) 121.800MHZ. DEP טיסות SHALL CTC TWR ON CPT FREQ BFR STARTING UP ENGINE.\nבתוקף: מ-25/08/2026 10:26 UTC עד 30/11/2026 21:59 UTC",
+   "removed_at": "2026-08-26T13:59:38Z"
+  },
+  {
+   "id": "C1794/26",
+   "name": "YARKA WI 0",
+   "cat": "other",
+   "heb": "אזור ב YARKA בתוך 0.5NM רדיוס שמרכזו בנ.צ. 32°57'24\"N 35°11'54\"E סגור מהקרקע ועד 1,600רגל מעל פני הים לכל הטיסות, טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-26/08/2026 08:00 UTC עד 26/08/2026 13:00 UTC",
+   "removed_at": "2026-08-26T13:59:38Z"
+  },
+  {
+   "id": "A0613/26",
+   "name": "AD WITHIN AMMAN FIR",
+   "cat": "other",
+   "heb": "ATS RTE L53 בין TALMI-TAPUZ AND N134 בין VOLFO-SALAM AVBL H24 בין 11,000-16,000FT FOR TFC WITH ARR/DEP ב-AD WITHIN AMMAN FIR, LLER, LLNV, LLOV AND LLRM ONLY, AVBL H24 ABV 17,000FT FOR MIL TFC ONLY.\nבתוקף: מ-06/08/2026 16:30 UTC עד 31/08/2026 23:59 UTC",
+   "removed_at": "2026-08-26T13:59:38Z"
+  },
+  {
+   "id": "A0596/26",
+   "name": "A0596/26",
+   "cat": "other",
+   "heb": "POSS INTRP TO AIRBORNE GNSS EQPT בתוך TEL-AVIV FIR.\nבתוקף: מ-28/07/2026 10:45 UTC עד 31/08/2026 23:59 UTC",
+   "removed_at": "2026-08-26T13:59:38Z"
+  },
+  {
+   "id": "A0595/26",
+   "name": "A0595/26",
+   "cat": "other",
+   "heb": "MAX ALT ALONG ATS RTE J10 בין NURIT-SIVAK 18,000רגל מעל פני הים.\nבתוקף: מ-28/07/2026 10:44 UTC עד 31/08/2026 23:59 UTC",
+   "removed_at": "2026-08-26T13:59:38Z"
+  },
+  {
+   "id": "A0592/26",
+   "name": "A0592/26",
+   "cat": "other",
+   "heb": "ATS RTE Q30 סגור בין BEXOM-NURIT.\nבתוקף: מ-26/07/2026 16:24 UTC עד 31/08/2026 20:59 UTC",
+   "removed_at": "2026-08-26T13:59:38Z"
+  },
   {
    "id": "C1793/26",
    "name": "C1793/26",
