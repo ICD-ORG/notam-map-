@@ -1,8 +1,17 @@
 {
- "fetched_at": "27/08/2026 14:39 UTC",
- "fetched_iso": "2026-08-27T14:39:17Z",
+ "fetched_at": "27/08/2026 22:56 UTC",
+ "fetched_iso": "2026-08-27T22:56:37Z",
  "count": 113,
  "notams": [
+  {
+   "id": "C1820/26",
+   "loc": "LLLL",
+   "name": "MITZPE-AVIV",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ תתקיים ב MITZPE-AVIV. אזור מ GND עד 1,500רגל מעל פני הים סגור לכל הטיסות כולל טיסות ריסוס חקלאיות, בין נקודות הציון הבאות 32°51'05\"N 35°13'08\"E 32°50'13\"N 35°13'37\"E 32°49'52\"N 35°12'22\"E 32°49'57\"N 35°11'38\"E 32°50'51\"N 35°11'33\"E. מומלצת זהירות.\nבתוקף: מ-28/08/2026 07:00 UTC עד 28/08/2026 12:00 UTC",
+   "raw": "C1820/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/015/3250N03513E002\nA) LLLL B) 2608280700 C) 2608281200\nE) UAS ACT WILL TAKE PLACE AT MITZPE-AVIV.\nAN AREA FM GND UP TO 1,500FT AMSL CLSD TO ALL FLT\nINCLUDING AGRICULTURE FLT, BTN FLW PSN  325105N0351308E\n325013N0351337E 324952N0351222E 324957N0351138E\n325051N0351133E.\nCTN ADZ.\nF) GND G) 1500FT AMSL)",
+   "first_seen": "2026-08-27T22:56:37Z"
+  },
   {
    "id": "A0698/26",
    "loc": "LLHA",
@@ -416,15 +425,6 @@
    "heb": "AIRSTRIP סגור לכל הטיסות.\nבתוקף: מ-19/08/2026 10:49 UTC עד 31/08/2026 20:59 UTC",
    "raw": "C1772/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3313N03536E005\nA) LLKS B) 2608191049 C) 2608312059\nE) AIRSTRIP CLSD TO ALL FLT.)",
    "first_seen": "2026-08-19T13:50:16Z"
-  },
-  {
-   "id": "C1771/26",
-   "loc": "LLLL",
-   "name": "KELACH",
-   "cat": "pje",
-   "heb": "PJE WILL TAKE PLACE ב-KELACH. אזור מ GND עד 8,000רגל מעל פני הים סגור לכל הטיסות בין נקודות הציון הבאות 31°32'00\"N 34°53'19\"E 31°31'59\"N 34°47'33\"E 31°26'02\"N 34°47'30\"E 31°24'44\"N 34°50'24\"E 31°26'02\"N 34°53'11\"E. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-24/08/2026 04:00 UTC עד 27/08/2026 20:59 UTC",
-   "raw": "C1771/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/080/3129N03450E005\nA) LLLL B) 2608240400 C) 2608272059\nE) PJE WILL TAKE PLACE AT KELACH.\nAN AREA FM GND UP TO 8,000FT AMSL CLSD TO ALL FLT BTN FLW PSN\n313200N0345319E 313159N0344733E 312602N0344730E\n312444N0345024E 312602N0345311E.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.\nF) GND G) 8000FT AMSL)",
-   "first_seen": "2026-08-18T13:48:39Z"
   },
   {
    "id": "A0668/26",
@@ -1022,6 +1022,13 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1771/26",
+   "name": "KELACH",
+   "cat": "pje",
+   "heb": "PJE WILL TAKE PLACE ב-KELACH. אזור מ GND עד 8,000רגל מעל פני הים סגור לכל הטיסות בין נקודות הציון הבאות 31°32'00\"N 34°53'19\"E 31°31'59\"N 34°47'33\"E 31°26'02\"N 34°47'30\"E 31°24'44\"N 34°50'24\"E 31°26'02\"N 34°53'11\"E. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-24/08/2026 04:00 UTC עד 27/08/2026 20:59 UTC",
+   "removed_at": "2026-08-27T22:56:37Z"
+  },
   {
    "id": "C1805/26",
    "name": "GVULOT FM GND UP TO 3",
@@ -2078,146 +2085,6 @@
    "cat": "other",
    "heb": "אזור ב ARRAH בתוך 1.35NM רדיוס שמרכזו בנ.צ. 32°31'31\"N 35°03'43\"E סגור מהקרקע ועד 1,000רגל מעל פני הים לכל הטיסות. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-06/08/2026 14:00 UTC עד 06/08/2026 18:00 UTC",
    "removed_at": "2026-08-07T05:23:03Z"
-  },
-  {
-   "id": "A0621/26",
-   "name": "A0621/26",
-   "cat": "other",
-   "heb": "ATS RTE W13 AVBL H24 בין TAPUZ-JILET-DAFNA בין 12,000FT-FL325. AND בין TAPUZ-JILET-DAFNA CDR1 בין FL330-FL600, AS FLW SUN 2100(2000) - MON 0500(0400) MON 2100(2000) - TUE 0500(0400) TUE 2100(2000) - WED 0500(0400) WED 2100(2000) - THU 0500(0400) THU 1500(1400) - SUN 0600(0500) HOL-1 1500(1400) - HOL+1 0600(0500) TIME IN BRACKETS ARE SUMMER SAVING, ALL TIMES UTC. ISRAEL AIP, PART ENR 3.1, PAGE ENR 3.1-30, CHART ENR 6-1 REF.\nבתוקף: מ-05/08/2026 16:30 UTC עד 06/08/2026 14:20 UTC",
-   "removed_at": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "A0615/26",
-   "name": "A0615/26",
-   "cat": "other",
-   "heb": "LLR01 ACTIVATED H24, XNG MERVA NOT AVBL למעט BY ATC. TFC TO/FM LLHA AVBL VIA MERVA BIDIRECTIONAL ב-5,000רגל מעל פני הים. ISRAEL AIP, PART ENR 5.1, PAGE ENR 5.1-3, PARA 2, CHART ENR 6-1 REF.\nבתוקף: מ-05/08/2026 16:30 UTC עד 06/08/2026 14:20 UTC",
-   "removed_at": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "C1597/26",
-   "name": "YERUHAM",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב YERUHAM, מהקרקע ועד 600מטר מעל הקרקע. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 30°58'19\"N 34°56'01\"E סגור מהקרקע ועד 3,700רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-02/08/2026 03:00 UTC עד 06/08/2026 14:30 UTC\nלו\"ז: DAILY 0300-1430",
-   "removed_at": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "A0589/26",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "DUE REDUCED CAPACITY ב-AD LDG CARGO טיסות בין 0001-0500LMT אסור.\nבתוקף: מ-02/08/2026 21:00 UTC עד 31/08/2026 02:00 UTC\nלו\"ז: DAILY 2100-0200",
-   "removed_at": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "A0570/26",
-   "name": "A0570/26",
-   "cat": "obst",
-   "heb": "RWY 12 סגור FOR TKOF ONLY, למעט RWY INT DUE CRANE.\nבתוקף: מ-06/08/2026 04:00 UTC עד 06/08/2026 09:00 UTC",
-   "removed_at": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "A0560/26",
-   "name": "EL-AL JUNCTION",
-   "cat": "obst",
-   "heb": "CRANE ERECTED בתוך LLBG CTR, ב-EL-AL JUNCTION. אזור מ GND עד 100M 360רגל מעל פני הים סגור בין נקודות הציון הבאות 31°59'24\"N 34°54'25\"E 31°59'22\"N 34°54'23\"E 31°59'24\"N 34°54'19\"E 31°59'26\"N 34°54'21\"E. מומלצת זהירות.\nבתוקף: מ-06/08/2026 04:00 UTC עד 06/08/2026 09:00 UTC",
-   "removed_at": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "A0471/26",
-   "name": "חיפה (LLHA)",
-   "cat": "ad",
-   "heb": "הפעלת ACFT TYPE C130/C13J אסור, למעט BY PPR מ-AD ADMINISTRATION OR IN CASE OF EMERG.\nבתוקף: מ-11/06/2026 14:00 UTC עד 31/08/2026 20:59 UTC",
-   "removed_at": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "C0953/26",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "LLBG AIS/ARO/FMP UNIT RE-ESTABLISHED AND SEPARATED מ-AD OPS CENTER, WEF 01 MAY 2026, THE FLW INFO CHG PART A-12, PAGE 1 PARA 1.C.1) COMPLETELY WITHDRAWN. PARA 1.C.4) AIS/ARO/FMP PHONE NR 03-9756215/6/7. PARA 1.C.2) WITHDRAWN. DOM AIP, PART A-12, PAGE 1, PARA 1. REF.\nבתוקף: מ-03/05/2026 10:50 UTC (קבוע)",
-   "removed_at": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "C0458/26",
-   "name": "C0458/26",
-   "cat": "obst",
-   "heb": "OBST ERECTED בתוך LLIB AD נ.צ. 32°59'06\"N 35°34'07\"E HGT 10מטר מעל הקרקע, 50.5M מ-CL, 167M SW OF THR RWY 15. LIT AND DAY MARKED. AND 2 OBST נ.צ. 32°59'08\"N 35°34'10\"E HGT 2מטר מעל הקרקע AND 1מטר מעל הקרקע. מומלצת זהירות.\nבתוקף: מ-15/02/2026 10:07 UTC (קבוע)",
-   "removed_at": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "C0232/26",
-   "name": "C0232/26",
-   "cat": "ad",
-   "heb": "CTL TWR PHONE NR CHG AS FLW PRI 076-863-8322. SRI 076-863-8323. WHATSAPP 03-9432929.\nבתוקף: מ-21/01/2026 11:43 UTC (קבוע)",
-   "removed_at": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "C0162/26",
-   "name": "C0162/26",
-   "cat": "uas",
-   "heb": "MIL ATC PHONE NR TEMPO CHG AS FLW HAGAV LOW-LEVEL 08-6502307. HAGAV FOR UAS/UAV 08-6502308 (ROKAK).\nבתוקף: מ-14/01/2026 13:07 UTC (קבוע)",
-   "removed_at": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "C0090/26",
-   "name": "C0090/26",
-   "cat": "uas",
-   "heb": "הפעלת UAS בתוך אזור אימונים/UAS BUBBLE OR בתוך CLOSURE DESIGNATED AS LOCAL FLIGHT AND EXEMPTED OF SUBMISSION FPL. OPR OF UAS SHALL GET APPROVAL מ-ATC BFR TKOF. DOM AIP, PART A-11, PAGE 2, PARA 2.F. AND PART B-09, PAGE 6, PARA 6.D. REF.\nבתוקף: מ-07/01/2026 16:05 UTC (קבוע)",
-   "removed_at": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "C0035/26",
-   "name": "C0035/26",
-   "cat": "act",
-   "heb": "AEROBATICS טיסות בתוך LLHZ אזור אימונים NR 12 אסור. DOM AIP, PART AD, PAGE LLHZ 14, PARA 24.D. REF.\nבתוקף: מ-01/01/2026 14:49 UTC (קבוע)",
-   "removed_at": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "C0017/26",
-   "name": "C0017/26",
-   "cat": "ad",
-   "heb": "MIL אזור אימונים ATC FREQ CHG TO 129.050MHZ. DOM AIP, PART A-07, PAGE 4, PARA 12. REF.\nבתוקף: מ-01/01/2026 08:58 UTC (קבוע)",
-   "removed_at": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "C0014/26",
-   "name": "פיק (LLFK)",
-   "cat": "ad",
-   "heb": "AIRSTRIP OPR CHG TO HAREL ZEIRA 050-9254449. DOM AIP, PART AIRSTRIP, PAGE LLFK-1, PARA 4.B. REF.\nבתוקף: מ-01/01/2026 08:47 UTC (קבוע)",
-   "removed_at": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "C0013/26",
-   "name": "מצדה (LLMZ)",
-   "cat": "ad",
-   "heb": "OPS HR ON FRI/HOL EVE AND SAT/HOL CHG TO 0800-1700LMT. DOM AIP, PART AIRSTRIP, PAGE LLMZ-1, PARA 6 REF.\nבתוקף: מ-01/01/2026 08:33 UTC (קבוע)",
-   "removed_at": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "C0009/26",
-   "name": "C0009/26",
-   "cat": "other",
-   "heb": "LLD42 DEAD SEA-DRONE POLIGON CHG AS FLW 31°06'11\"N 35°23'13\"E 31°03'58\"N 35°23'29\"E 31°02'44\"N 35°21'46\"E 31°02'00\"N 35°21'09\"E 31°01'21\"N 35°21'09\"E 31°00'07\"N 35°20'40\"E 30°59'48\"N 35°20'55\"E 30°59'40\"N 35°21'16\"E 30°58'05\"N 35°21'21\"E 30°57'47\"N 35°21'18\"E 30°57'38\"N 35°21'24\"E 30°57'27\"N 35°21'51\"E 30°57'44\"N 35°24'55\"E 30°58'00\"N 35°25'14\"E 31°02'41\"N 35°25'39\"E 31°04'41\"N 35°26'56\"E 31°05'26\"N 35°26'47\"E 31°06'42\"N 35°24'30\"E 31°06'47\"N 35°23'35\"E 31°06'37\"N 35°23'16\"E. מומלצת זהירות. DOM AIP, PART A-17, PAGE 10, PARA 3.12, PAGE 19, TABLE, CHART A. REF.\nבתוקף: מ-01/01/2026 06:38 UTC (קבוע)",
-   "removed_at": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "C0006/26",
-   "name": "C0006/26",
-   "cat": "pje",
-   "heb": "בועת זעירים ZVULUN NORTH (BZVUE) AVBL FOR ULTRALIGHT ACFT AND POWERED PARACHUTE ACCORDING CONDITIONS OF AIC 05/25. ON SUN-THU בין SR-0900LMT מהקרקע ועד 500רגל מעל פני הים. ON FRI מ-0600LMT-SS, HOL EVE מ-1400LMT-SS, ON SAT/HOL בין SR-SS, AVBL מהקרקע ועד 4,000רגל מעל פני הים. DOM AIP, PART B-08, CHART A. AIC 06/25 WEF 23 NOV 2025 REF.\nבתוקף: מ-01/01/2026 06:31 UTC (קבוע)",
-   "removed_at": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "C0004/26",
-   "name": "C0004/26",
-   "cat": "other",
-   "heb": "LLD44 REESTABLISHED בין נקודות הציון הבאות מהקרקע ועד 2,000רגל מעל פני הים טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. 32°39'10\"N 35°10'40\"E 32°39'36\"N 35°09'10\"E 32°39'23\"N 35°07'57\"E 32°37'11\"N 35°05'40\"E 32°36'03\"N 35°05'41\"E 32°34'56\"N 35°10'04\"E 32°35'52\"N 35°10'37\"E. מומלצת זהירות. DOM AIP, PART A-17, PAGE 10, PARA 3.12/13, PAGE 19, TABLE., CHART A. REF.\nבתוקף: מ-01/01/2026 06:28 UTC (קבוע)",
-   "removed_at": "2026-08-06T15:20:01Z"
-  },
-  {
-   "id": "C0003/26",
-   "name": "C0003/26",
-   "cat": "other",
-   "heb": "LLD41 ESTABLISHED בין 2,000-8,000רגל מעל פני הים בתוך נקודות הציון הבאות טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. 32°37'14\"N 35°05'17\"E 32°36'49\"N 35°05'05\"E 32°36'08\"N 35°04'10\"E 32°34'21\"N 35°04'11\"E 32°33'15\"N 35°08'32\"E 32°35'02\"N 35°09'11\"E 32°36'01\"N 35°05'34\"E 32°37'13\"N 35°05'31\"E. מומלצת זהירות. DOM AIP, PART A-17, PAGE 10, PARA 3.12/13, PAGE 19, TABLE., CHART A. REF.\nבתוקף: מ-01/01/2026 06:27 UTC (קבוע)",
-   "removed_at": "2026-08-06T15:20:01Z"
   }
  ]
 }
