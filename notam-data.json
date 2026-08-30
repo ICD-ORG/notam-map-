@@ -1,8 +1,17 @@
 {
- "fetched_at": "29/08/2026 17:06 UTC",
- "fetched_iso": "2026-08-29T17:06:14Z",
- "count": 111,
+ "fetched_at": "30/08/2026 09:31 UTC",
+ "fetched_iso": "2026-08-30T09:31:41Z",
+ "count": 112,
  "notams": [
+  {
+   "id": "A0699/26",
+   "loc": "LLBG",
+   "name": "EL-AL JUNCTION",
+   "cat": "obst",
+   "heb": "DUE CRANE ב-EL-AL JUNCTION, RWY 12 סגור FOR TKOF, RWY 30 סגור FOR LDG.\nבתוקף: מ-31/08/2026 20:00 UTC עד 01/09/2026 01:00 UTC",
+   "raw": "A0699/26 NOTAMN\nQ) LLLL/QMRLT/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2608312000 C) 2609010100\nE) DUE CRANE AT EL-AL JUNCTION, RWY 12 CLSD FOR TKOF,\nRWY 30 CLSD FOR LDG.)",
+   "first_seen": "2026-08-30T09:31:41Z"
+  },
   {
    "id": "C1821/26",
    "loc": "LLLL",
@@ -2004,13 +2013,6 @@
    "cat": "ad",
    "heb": "AD סגור לכל הטיסות כולל מסוקים, DUE EMERG DRILL. IN CASE OF EMERG OR MEDEVAC מסוקים AVBL בתוך 10MIN.\nבתוקף: מ-11/08/2026 15:00 UTC עד 11/08/2026 20:59 UTC",
    "removed_at": "2026-08-09T13:57:24Z"
-  },
-  {
-   "id": "C1635/26",
-   "name": "SHFARAAM",
-   "cat": "act",
-   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-SHFARAAM. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 32°48'50\"N 35°10'02\"E סגור מהקרקע ועד 2,000רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-01/08/2026 02:30 UTC עד 09/08/2026 02:35 UTC",
-   "removed_at": "2026-08-09T04:54:30Z"
   }
  ]
 }
