@@ -1,8 +1,98 @@
 {
- "fetched_at": "30/08/2026 17:18 UTC",
- "fetched_iso": "2026-08-30T17:18:56Z",
- "count": 117,
+ "fetched_at": "31/08/2026 10:09 UTC",
+ "fetched_iso": "2026-08-31T10:09:07Z",
+ "count": 119,
  "notams": [
+  {
+   "id": "A0710/26",
+   "loc": "LLLL",
+   "name": "A0710/26",
+   "cat": "other",
+   "heb": "TEL AVIV CTL FLW FREQ TEMPO NOT AVBL 123.050MHZ, 132.050MHZ, 135.625MHZ.\nבתוקף: מ-31/08/2026 09:45 UTC עד 30/11/2026 23:59 UTC",
+   "raw": "A0710/26 NOTAMN\nQ) LLLL/QCAAS/IV/BO /E /000/999/3232N03453E060\nA) LLLL B) 2608310945 C) 2611302359\nE) TEL AVIV CTL FLW FREQ TEMPO NOT AVBL\n123.050MHZ, 132.050MHZ, 135.625MHZ.)",
+   "first_seen": "2026-08-31T10:09:07Z"
+  },
+  {
+   "id": "A0709/26",
+   "loc": "LLER",
+   "name": "A0709/26",
+   "cat": "ad",
+   "heb": "AD סגור לכל הטיסות כולל מסוקים, DUE WIP. IN CASE OF EMERG OR MEDEVAC מסוקים AVBL בתוך 10MIN.\nבתוקף: מ-08/09/2026 15:35 UTC עד 09/09/2026 18:15 UTC\nלו\"ז: 08 1535-1815, 09 1335-1445 1535-1815",
+   "raw": "A0709/26 NOTAMN\nQ) LLLL/QFALT/IV/NBO/A /000/999/2944N03501E005\nA) LLER B) 2609081535 C) 2609091815\nD) 08 1535-1815, 09 1335-1445 1535-1815\nE) AD CLSD TO ALL FLT INCLUDING HEL, DUE WIP.\nIN CASE OF EMERG OR MEDEVAC HEL AVBL WI 10MIN.)",
+   "first_seen": "2026-08-31T10:09:07Z"
+  },
+  {
+   "id": "C1848/26",
+   "loc": "LLLL",
+   "name": "GEULIM WI 1",
+   "cat": "act",
+   "heb": "אזור ב GEULIM בתוך 1.1NM רדיוס שמרכזו בנ.צ. 32°17'23\"N 34°57'23\"E סגור מהקרקע ועד 1,500רגל מעל פני הים לכל הטיסות. LLHZ TRG AERA NR 9 סגור בועת זעירים SHARON DAROM(BSARS) סגור בין ROAD NR 4 57 6 AND N OF TIRAH טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-31/08/2026 11:00 UTC עד 31/08/2026 13:00 UTC",
+   "raw": "C1848/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/015/3216N03456E004\nA) LLLL B) 2608311100 C) 2608311300\nE) AN AREA AT GEULIM WI 1.1NM RADIUS CENTERED ON PSN\n321723N0345723E CLSD FM GND UP TO 1,500FT AMSL TO ALL FLT.\nLLHZ TRG AERA NR 9 CLSD\nULTRALIGHT BUBBLE SHARON DAROM(BSARS) CLSD BTN ROAD\nNR 4 57 6 AND N OF TIRAH\nOPS OF AGRICULTURE FLT AVBL WITH 15MIN PPR FM ATC.\nCTN ADZ.)",
+   "first_seen": "2026-08-31T10:09:07Z"
+  },
+  {
+   "id": "A0708/26",
+   "loc": "LLBG",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "OCA(H) FOR ILS RWY 30 CHG TO 500(370) FOR ALL CAT.\nבתוקף: מ-31/08/2026 06:32 UTC עד 30/09/2026 23:59 UTC",
+   "raw": "A0708/26 NOTAMR A0501/26\nQ) LLLL/QPOCH/I /NBO/A /000/999/3201N03452E005\nA) LLBG B) 2608310632 C) 2609302359\nE) OCA(H) FOR ILS RWY 30 CHG TO 500(370) FOR ALL CAT.)",
+   "first_seen": "2026-08-31T10:09:07Z"
+  },
+  {
+   "id": "A0703/26",
+   "loc": "LLBG",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "OCA(H) FOR ILS RWY 12 CHG TO 500(397) FOR ALL CAT.\nבתוקף: מ-31/08/2026 06:28 UTC עד 30/09/2026 23:59 UTC",
+   "raw": "A0703/26 NOTAMR A0498/26\nQ) LLLL/QPOCH/I /NBO/A /000/999/3200N03454E005\nA) LLBG B) 2608310628 C) 2609302359\nE) OCA(H) FOR ILS RWY 12 CHG TO 500(397) FOR ALL CAT.)",
+   "first_seen": "2026-08-31T10:09:07Z"
+  },
+  {
+   "id": "A0704/26",
+   "loc": "LLBG",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "OCA(H) FOR ILS RWY 21 CHG TO 500(366) FOR ALL CAT.\nבתוקף: מ-31/08/2026 06:29 UTC עד 30/09/2026 23:59 UTC",
+   "raw": "A0704/26 NOTAMR A0499/26\nQ) LLLL/QPOCH/I /NBO/A /000/999/3200N03453E005\nA) LLBG B) 2608310629 C) 2609302359\nE) OCA(H) FOR ILS RWY 21 CHG TO 500(366) FOR ALL CAT.)",
+   "first_seen": "2026-08-31T10:09:07Z"
+  },
+  {
+   "id": "A0705/26",
+   "loc": "LLBG",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "OCA(H) FOR ILS RWY 26 CHG TO 500(376) FOR ALL CAT.\nבתוקף: מ-31/08/2026 06:29 UTC עד 30/09/2026 23:59 UTC",
+   "raw": "A0705/26 NOTAMR A0500/26\nQ) LLLL/QPOCH/I /NBO/A /000/999/3201N03451E005\nA) LLBG B) 2608310629 C) 2609302359\nE) OCA(H) FOR ILS RWY 26 CHG TO 500(376) FOR ALL CAT.)",
+   "first_seen": "2026-08-31T10:09:07Z"
+  },
+  {
+   "id": "A0706/26",
+   "loc": "LLER",
+   "name": "A0706/26",
+   "cat": "ad",
+   "heb": "OCA(H) FOR ILS RWY 01 CHG TO 500(248) FOR ALL CAT.\nבתוקף: מ-31/08/2026 06:29 UTC עד 30/09/2026 23:59 UTC",
+   "raw": "A0706/26 NOTAMR A0572/26\nQ) LLLL/QPOCH/I /NBO/A /000/999/2944N03501E005\nA) LLER B) 2608310629 C) 2609302359\nE) OCA(H) FOR ILS RWY 01 CHG TO 500(248) FOR ALL CAT.)",
+   "first_seen": "2026-08-31T10:09:07Z"
+  },
+  {
+   "id": "A0707/26",
+   "loc": "LLER",
+   "name": "A0707/26",
+   "cat": "ad",
+   "heb": "OCA(H) FOR ILS RWY 19 CHG TO 500(228) FOR ALL CAT.\nבתוקף: מ-31/08/2026 06:30 UTC עד 30/09/2026 23:59 UTC",
+   "raw": "A0707/26 NOTAMR A0575/26\nQ) LLLL/QPOCH/I /NBO/A /000/999/2944N03501E005\nA) LLER B) 2608310630 C) 2609302359\nE) OCA(H) FOR ILS RWY 19 CHG TO 500(228) FOR ALL CAT.)",
+   "first_seen": "2026-08-31T10:09:07Z"
+  },
+  {
+   "id": "A0702/26",
+   "loc": "LLBG",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "OCA(H) FOR ILS RWY 08 CHG TO 500(403) FOR ALL CAT.\nבתוקף: מ-31/08/2026 06:28 UTC עד 30/09/2026 23:59 UTC",
+   "raw": "A0702/26 NOTAMR A0497/26\nQ) LLLL/QPOCH/I /NBO/A /000/999/3201N03454E005\nA) LLBG B) 2608310628 C) 2609302359\nE) OCA(H) FOR ILS RWY 08 CHG TO 500(403) FOR ALL CAT.)",
+   "first_seen": "2026-08-31T10:09:07Z"
+  },
   {
    "id": "C1846/26",
    "loc": "LLLL",
@@ -751,15 +841,6 @@
    "first_seen": "2026-07-29T15:18:11Z"
   },
   {
-   "id": "C1616/26",
-   "loc": "LLLL",
-   "name": "KESARYA UP TO 100M AGL",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב KESARYA עד 100מטר מעל הקרקע, אזור בתוך 0.8NM רדיוס שמרכזו בנ.צ. 32°29'41\"N 34°54'39\"E סגור מהקרקע ועד 500רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-01/08/2026 19:00 UTC עד 31/08/2026 02:30 UTC\nלו\"ז: DAILY 1900-0230",
-   "raw": "C1616/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/005/3230N03455E001\nA) LLLL B) 2608011900 C) 2608310230\nD) DAILY 1900-0230\nE) UAS/UAV ACT WILL TAKE PLACE AT KESARYA UP TO 100M AGL,\nAN AREA WI 0.8NM RADIUS CENTERED ON PSN 322941N0345439E\nCLSD FM GND UP TO 500FT AMSL.\nCTN ADZ.\nF) GND G) 500FT AMSL)",
-   "first_seen": "2026-07-29T15:18:11Z"
-  },
-  {
    "id": "C1608/26",
    "loc": "LLLL",
    "name": "ZIV-HOSPITAL/TZFAT",
@@ -832,24 +913,6 @@
    "first_seen": "2026-07-01T00:00:00Z"
   },
   {
-   "id": "A0575/26",
-   "loc": "LLER",
-   "name": "A0575/26",
-   "cat": "ad",
-   "heb": "OCA(H) FOR ILS RWY 19 CHG TO 500(228) FOR ALL CAT.\nבתוקף: מ-19/07/2026 11:45 UTC עד 31/08/2026 23:59 UTC",
-   "raw": "A0575/26 NOTAMN\nQ) LLLL/QPOCH/I /NBO/A /000/999/2944N03501E005\nA) LLER B) 2607191145 C) 2608312359\nE) OCA(H) FOR ILS RWY 19 CHG TO 500(228) FOR ALL CAT.)",
-   "first_seen": "2026-07-01T00:00:00Z"
-  },
-  {
-   "id": "A0572/26",
-   "loc": "LLER",
-   "name": "A0572/26",
-   "cat": "ad",
-   "heb": "OCA(H) FOR ILS RWY 01 CHG TO 500(248) FOR ALL CAT.\nבתוקף: מ-19/07/2026 11:37 UTC עד 31/08/2026 23:59 UTC",
-   "raw": "A0572/26 NOTAMN\nQ) LLLL/QPOCH/I /NBO/A /000/999/2944N03501E005\nA) LLER B) 2607191137 C) 2608312359\nE) OCA(H) FOR ILS RWY 01 CHG TO 500(248) FOR ALL CAT.)",
-   "first_seen": "2026-07-01T00:00:00Z"
-  },
-  {
    "id": "C1529/26",
    "loc": "LLLL",
    "name": "MAGEN-SHAUL",
@@ -865,51 +928,6 @@
    "cat": "uas",
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב ASHDOD, מהקרקע ועד 100מטר מעל הקרקע. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 950רגל מעל פני הים 31°51'19\"N 34°41'22\"E 31°51'27\"N 34°40'37\"E 31°51'23\"N 34°40'07\"E 31°51'32\"N 34°39'31\"E 31°50'55\"N 34°39'17\"E 31°50'38\"N 34°40'13\"E 31°50'35\"N 34°41'20\"E. מומלצת זהירות.\nבתוקף: מ-01/07/2026 00:01 UTC עד 31/12/2026 21:59 UTC",
    "raw": "C1361/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/010/3151N03440E002\nA) LLLL B) 2607010001 C) 2612312159\nE) UAS/UAV ACT WILL TAKE PLACE AT ASHDOD, FM GND UP TO 100M AGL.\nAN AREA BTN FLW PSN CLSD FM GND UP TO 950FT AMSL\n315119N0344122E 315127N0344037E 315123N0344007E\n315132N0343931E 315055N0343917E 315038N0344013E\n315035N0344120E.\nCTN ADZ.\nF) GND G) 950FT AMSL)",
-   "first_seen": "2026-07-01T00:00:00Z"
-  },
-  {
-   "id": "A0500/26",
-   "loc": "LLBG",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "OCA(H) FOR ILS RWY 26 CHG TO 500(376) FOR ALL CAT.\nבתוקף: מ-24/06/2026 16:41 UTC עד 31/08/2026 23:59 UTC",
-   "raw": "A0500/26 NOTAMN\nQ) LLLL/QPOCH/I /NBO/A /000/999/3201N03451E005\nA) LLBG B) 2606241641 C) 2608312359\nE) OCA(H) FOR ILS RWY 26 CHG TO 500(376) FOR ALL CAT.)",
-   "first_seen": "2026-07-01T00:00:00Z"
-  },
-  {
-   "id": "A0501/26",
-   "loc": "LLBG",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "OCA(H) FOR ILS RWY 30 CHG TO 500(370) FOR ALL CAT.\nבתוקף: מ-24/06/2026 16:42 UTC עד 31/08/2026 23:59 UTC",
-   "raw": "A0501/26 NOTAMN\nQ) LLLL/QPOCH/I /NBO/A /000/999/3201N03452E005\nA) LLBG B) 2606241642 C) 2608312359\nE) OCA(H) FOR ILS RWY 30 CHG TO 500(370) FOR ALL CAT.)",
-   "first_seen": "2026-07-01T00:00:00Z"
-  },
-  {
-   "id": "A0497/26",
-   "loc": "LLBG",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "OCA(H) FOR ILS RWY 08 CHG TO 500(403) FOR ALL CAT.\nבתוקף: מ-24/06/2026 16:39 UTC עד 31/08/2026 23:59 UTC",
-   "raw": "A0497/26 NOTAMN\nQ) LLLL/QPOCH/I /NBO/A /000/999/3201N03454E005\nA) LLBG B) 2606241639 C) 2608312359\nE) OCA(H) FOR ILS RWY 08 CHG TO 500(403) FOR ALL CAT.)",
-   "first_seen": "2026-07-01T00:00:00Z"
-  },
-  {
-   "id": "A0498/26",
-   "loc": "LLBG",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "OCA(H) FOR ILS RWY 12 CHG TO 500(397) FOR ALL CAT.\nבתוקף: מ-24/06/2026 16:40 UTC עד 31/08/2026 23:59 UTC",
-   "raw": "A0498/26 NOTAMN\nQ) LLLL/QPOCH/I /NBO/A /000/999/3200N03454E005\nA) LLBG B) 2606241640 C) 2608312359\nE) OCA(H) FOR ILS RWY 12 CHG TO 500(397) FOR ALL CAT.)",
-   "first_seen": "2026-07-01T00:00:00Z"
-  },
-  {
-   "id": "A0499/26",
-   "loc": "LLBG",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "OCA(H) FOR ILS RWY 21 CHG TO 500(366) FOR ALL CAT.\nבתוקף: מ-24/06/2026 16:40 UTC עד 31/08/2026 23:59 UTC",
-   "raw": "A0499/26 NOTAMN\nQ) LLLL/QPOCH/I /NBO/A /000/999/3200N03453E005\nA) LLBG B) 2606241640 C) 2608312359\nE) OCA(H) FOR ILS RWY 21 CHG TO 500(366) FOR ALL CAT.)",
    "first_seen": "2026-07-01T00:00:00Z"
   },
   {
@@ -1058,6 +1076,62 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1616/26",
+   "name": "KESARYA UP TO 100M AGL",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב KESARYA עד 100מטר מעל הקרקע, אזור בתוך 0.8NM רדיוס שמרכזו בנ.צ. 32°29'41\"N 34°54'39\"E סגור מהקרקע ועד 500רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-01/08/2026 19:00 UTC עד 31/08/2026 02:30 UTC\nלו\"ז: DAILY 1900-0230",
+   "removed_at": "2026-08-31T10:09:07Z"
+  },
+  {
+   "id": "A0575/26",
+   "name": "A0575/26",
+   "cat": "ad",
+   "heb": "OCA(H) FOR ILS RWY 19 CHG TO 500(228) FOR ALL CAT.\nבתוקף: מ-19/07/2026 11:45 UTC עד 31/08/2026 23:59 UTC",
+   "removed_at": "2026-08-31T10:09:07Z"
+  },
+  {
+   "id": "A0572/26",
+   "name": "A0572/26",
+   "cat": "ad",
+   "heb": "OCA(H) FOR ILS RWY 01 CHG TO 500(248) FOR ALL CAT.\nבתוקף: מ-19/07/2026 11:37 UTC עד 31/08/2026 23:59 UTC",
+   "removed_at": "2026-08-31T10:09:07Z"
+  },
+  {
+   "id": "A0500/26",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "OCA(H) FOR ILS RWY 26 CHG TO 500(376) FOR ALL CAT.\nבתוקף: מ-24/06/2026 16:41 UTC עד 31/08/2026 23:59 UTC",
+   "removed_at": "2026-08-31T10:09:07Z"
+  },
+  {
+   "id": "A0501/26",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "OCA(H) FOR ILS RWY 30 CHG TO 500(370) FOR ALL CAT.\nבתוקף: מ-24/06/2026 16:42 UTC עד 31/08/2026 23:59 UTC",
+   "removed_at": "2026-08-31T10:09:07Z"
+  },
+  {
+   "id": "A0497/26",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "OCA(H) FOR ILS RWY 08 CHG TO 500(403) FOR ALL CAT.\nבתוקף: מ-24/06/2026 16:39 UTC עד 31/08/2026 23:59 UTC",
+   "removed_at": "2026-08-31T10:09:07Z"
+  },
+  {
+   "id": "A0498/26",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "OCA(H) FOR ILS RWY 12 CHG TO 500(397) FOR ALL CAT.\nבתוקף: מ-24/06/2026 16:40 UTC עד 31/08/2026 23:59 UTC",
+   "removed_at": "2026-08-31T10:09:07Z"
+  },
+  {
+   "id": "A0499/26",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "OCA(H) FOR ILS RWY 21 CHG TO 500(366) FOR ALL CAT.\nבתוקף: מ-24/06/2026 16:40 UTC עד 31/08/2026 23:59 UTC",
+   "removed_at": "2026-08-31T10:09:07Z"
+  },
   {
    "id": "C1821/26",
    "name": "GEULIM WI 1",
@@ -2163,34 +2237,6 @@
    "cat": "ad",
    "heb": "RWY 12/30 סגור למעט RWY INT DUE WIP.\nבתוקף: מ-10/08/2026 06:00 UTC עד 10/08/2026 10:00 UTC",
    "removed_at": "2026-08-10T14:26:20Z"
-  },
-  {
-   "id": "C1701/26",
-   "name": "KFAR-TAVOR WI 1",
-   "cat": "other",
-   "heb": "אזור ב KFAR-TAVOR בתוך 1.1NM רדיוס שמרכזו בנ.צ. 32°42'41\"N 35°24'29\"E סגור מהקרקע ועד 1,500רגל מעל פני הים לכל הטיסות, טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-09/08/2026 14:00 UTC עד 09/08/2026 18:30 UTC\nלו\"ז: 1400-1430 1800-1830",
-   "removed_at": "2026-08-10T05:14:16Z"
-  },
-  {
-   "id": "C1684/26",
-   "name": "C1684/26",
-   "cat": "pje",
-   "heb": "PJE AIRSPACE HOF-HATMARIM סגור.\nבתוקף: מ-09/08/2026 10:00 UTC עד 09/08/2026 14:10 UTC\nלו\"ז: 1000-1050 1320-1410",
-   "removed_at": "2026-08-10T05:14:16Z"
-  },
-  {
-   "id": "C1681/26",
-   "name": "C1681/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור EVLYM-AHIUD-AAKKO-SMRAT.\nבתוקף: מ-09/08/2026 10:00 UTC עד 09/08/2026 14:10 UTC\nלו\"ז: 1000-1050 1320-1410",
-   "removed_at": "2026-08-10T05:14:16Z"
-  },
-  {
-   "id": "C1677/26",
-   "name": "TEIMAN",
-   "cat": "pje",
-   "heb": "PJE WILL TAKE PLACE ב-TEIMAN. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 11,000רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות 31°19'26\"N 34°41'28\"E 31°20'47\"N 34°42'43\"E 31°22'53\"N 34°43'19\"E 31°24'16\"N 34°44'31\"E 31°24'28\"N 34°45'04\"E 31°26'15\"N 34°45'54\"E 31°25'25\"N 34°46'44\"E 31°24'56\"N 34°46'59\"E 31°20'42\"N 34°47'13\"E 31°19'38\"N 34°46'53\"E 31°17'07\"N 34°47'10\"E 31°15'58\"N 34°46'21\"E 31°14'51\"N 34°44'57\"E 31°19'26\"N 34°41'28\"E. מומלצת זהירות.\nבתוקף: מ-10/08/2026 17:00 UTC עד 10/08/2026 20:59 UTC",
-   "removed_at": "2026-08-10T05:14:16Z"
   }
  ]
 }
