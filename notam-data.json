@@ -1,16 +1,43 @@
 {
- "fetched_at": "01/09/2026 08:57 UTC",
- "fetched_iso": "2026-09-01T08:57:32Z",
+ "fetched_at": "01/09/2026 17:17 UTC",
+ "fetched_iso": "2026-09-01T17:17:15Z",
  "count": 106,
  "notams": [
   {
-   "id": "A0713/26",
+   "id": "C1852/26",
    "loc": "LLLL",
-   "name": "A0713/26",
+   "name": "GOLANI-JUNCTION",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ תתקיים ב GOLANI-JUNCTION. אזור בתוך 1NM רדיוס שמרכזו בנ.צ. 32°45'50\"N 35°23'04\"E סגור לכל הטיסות מהקרקע ועד 2,000רגל מעל פני הים. טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-02/09/2026 02:50 UTC עד 02/09/2026 04:00 UTC",
+   "raw": "C1852/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/020/3246N03523E001\nA) LLLL B) 2609020250 C) 2609020400\nE) UAS ACT WILL TAKE PLACE AT GOLANI-JUNCTION.\nAN AREA WI 1NM RADIUS CENTERED ON PSN 324550N0352304E\nCLSD TO ALL FLT FM GND UP TO 2,000FT AMSL.\nOPS OF AGRICULTURE FLT AVBL WITH 15MIN PPR FM ATC.\nCTN ADZ.\nF) GND G) 2000FT AMSL)",
+   "first_seen": "2026-09-01T17:17:15Z"
+  },
+  {
+   "id": "A0716/26",
+   "loc": "LLLL",
+   "name": "A0716/26",
    "cat": "other",
-   "heb": "ATS RTE J14 סגור בין MEGID-BARZI.\nבתוקף: מ-01/09/2026 12:00 UTC עד 01/09/2026 14:00 UTC",
-   "raw": "A0713/26 NOTAMN\nQ) LLLL/QANLC/I /NBO/E /040/060/3242N03524E012\nA) LLLL B) 2609011200 C) 2609011400\nE) ATS RTE J14 CLSD BTN MEGID-BARZI.)",
-   "first_seen": "2026-09-01T08:57:32Z"
+   "heb": "ATS RTE J14 סגור בין MEGID-BARZI.\nבתוקף: מ-02/09/2026 02:50 UTC עד 02/09/2026 03:00 UTC",
+   "raw": "A0716/26 NOTAMN\nQ) LLLL/QANLC/I /NBO/E /040/060/3242N03524E012\nA) LLLL B) 2609020250 C) 2609020300\nE) ATS RTE J14 CLSD BTN MEGID-BARZI.)",
+   "first_seen": "2026-09-01T17:17:15Z"
+  },
+  {
+   "id": "A0715/26",
+   "loc": "LLER",
+   "name": "A0715/26",
+   "cat": "ad",
+   "heb": "VOR/DME RAM FREQ 113.850MHZ WITHDRAWN FOR MAINT.\nבתוקף: מ-08/09/2026 07:00 UTC עד 08/09/2026 08:00 UTC",
+   "raw": "A0715/26 NOTAMN\nQ) LLLL/QNMAS/IV/BO /AE/000/999/2945N03501E025\nA) LLER B) 2609080700 C) 2609080800\nE) VOR/DME RAM FREQ 113.850MHZ WITHDRAWN FOR MAINT.)",
+   "first_seen": "2026-09-01T17:17:15Z"
+  },
+  {
+   "id": "C1851/26",
+   "loc": "LLLL",
+   "name": "BET-HASHITA",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב BET-HASHITA. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 1,700רגל מעל פני הים 32°33'26\"N 35°28'02\"E 32°34'31\"N 35°28'15\"E 32°34'41\"N 35°27'00\"E 32°33'44\"N 35°26'35\"E. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-03/09/2026 02:30 UTC עד 03/09/2026 10:00 UTC\nלו\"ז: 0230-1000",
+   "raw": "C1851/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/017/3234N03527E002\nA) LLLL B) 2609030230 C) 2609031000\nD) 0230-1000\nE) UAS/UAV ACT WILL TAKE PLACE AT BET-HASHITA.\nAN AREA BTN FLW PSN CLSD FM GND UP TO 1,700FT AMSL\n323326N0352802E 323431N0352815E 323441N0352700E\n323344N0352635E.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.\nF) GND G) 1700FT AMSL)",
+   "first_seen": "2026-09-01T17:17:15Z"
   },
   {
    "id": "C1850/26",
@@ -20,15 +47,6 @@
    "heb": "אזור ב KFAR-TAVOR בתוך 1.1NM רדיוס שמרכזו בנ.צ. 32°42'41\"N 35°24'29\"E סגור מהקרקע ועד 2,000רגל מעל פני הים לכל הטיסות, טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-02/09/2026 06:30 UTC עד 02/09/2026 14:00 UTC\nלו\"ז: 0630-0745 1300-1400",
    "raw": "C1850/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/020/3242N03524E001\nA) LLLL B) 2609020630 C) 2609021400\nD) 0630-0745 1300-1400\nE) AN AREA AT KFAR-TAVOR WI 1.1NM RADIUS CENTERED ON\nPSN 324241N0352429E CLSD FM GND UP TO 2,000FT AMSL\nTO ALL FLT, OPS OF AGRICULTURE FLT AVBL WITH 15MIN\nPPR FM ATC.\nCTN ADZ.)",
    "first_seen": "2026-09-01T08:57:32Z"
-  },
-  {
-   "id": "C1849/26",
-   "loc": "LLLL",
-   "name": "KFAR-TAVOR WI 1",
-   "cat": "other",
-   "heb": "אזור ב KFAR-TAVOR בתוך 1.1NM רדיוס שמרכזו בנ.צ. 32°42'41\"N 35°24'29\"E סגור מהקרקע ועד 2,000רגל מעל פני הים לכל הטיסות, טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-01/09/2026 11:00 UTC עד 01/09/2026 13:00 UTC",
-   "raw": "C1849/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/020/3243N03524E001\nA) LLLL B) 2609011100 C) 2609011300\nE) AN AREA AT KFAR-TAVOR WI 1.1NM RADIUS CENTERED ON\nPSN 324241N0352429E CLSD FM GND UP TO 2,000FT AMSL\nTO ALL FLT, OPS OF AGRICULTURE FLT AVBL WITH 15MIN\nPPR FM ATC.\nCTN ADZ.)",
-   "first_seen": "2026-08-31T19:31:01Z"
   },
   {
    "id": "A0710/26",
@@ -289,15 +307,6 @@
    "cat": "uas",
    "heb": "אזור מ LEBANON BOUNDRAY TO 8KM SB סגור TO ALL טיסות פנים-ארציות, למעט POLICE, FIREFIGHTING, MEDEVAC טיסות OR UAS/UAV טיסות FOR EMERG, SECURITY, MEDEVAC PURPOSES ONLY. ALL EMERG APPROVED טיסות SHALL COORD WITH ATC AND MABBAH.\nבתוקף: מ-30/08/2026 12:26 UTC עד 31/10/2026 21:59 UTC",
    "raw": "C1827/26 NOTAMR C1577/26\nQ) LLLL/QAELC/IV/NBO/E /000/999/3308N03526E019\nA) LLLL B) 2608301226 C) 2610312159\nE) AN AREA FM LEBANON BOUNDRAY TO 8KM SB CLSD TO ALL DOM FLT,\nEXC POLICE, FIREFIGHTING, MEDEVAC FLT OR UAS/UAV FLT FOR\nEMERG, SECURITY, MEDEVAC PURPOSES ONLY.\nALL EMERG APPROVED FLT SHALL COORD WITH ATC AND MABBAH.)",
-   "first_seen": "2026-08-30T17:18:56Z"
-  },
-  {
-   "id": "C1824/26",
-   "loc": "LLLL",
-   "name": "C1824/26",
-   "cat": "other",
-   "heb": "אזור בתוך 1.3NM רדיוס שמרכזו בנ.צ. 32°57'32\"N 35°18'57\"E סגור מהקרקע ועד 4,550רגל מעל פני הים לכל הטיסות, טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה ONLY. מומלצת זהירות.\nבתוקף: מ-01/09/2026 06:00 UTC עד 01/09/2026 16:30 UTC",
-   "raw": "C1824/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/046/3257N03519E002\nA) LLLL B) 2609010600 C) 2609011630\nE) AN AREA WI 1.3NM RADIUS CENTERED ON PSN 325732N0351857E\nCLSD FM GND UP TO 4,550FT AMSL TO ALL FLT,\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC ONLY.\nCTN ADZ.)",
    "first_seen": "2026-08-30T17:18:56Z"
   },
   {
@@ -706,15 +715,6 @@
    "first_seen": "2026-08-18T13:48:39Z"
   },
   {
-   "id": "A0663/26",
-   "loc": "LLHA",
-   "name": "חיפה (LLHA)",
-   "cat": "ad",
-   "heb": "AD סגור לכל הטיסות כולל מסוקים, DUE WIP. IN CASE OF EMERG AVBL בתוך 10MIN.\nבתוקף: מ-01/09/2026 05:25 UTC עד 01/09/2026 10:00 UTC\nלו\"ז: 0525-0725 0830-1000",
-   "raw": "A0663/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3249N03503E005\nA) LLHA B) 2609010525 C) 2609011000\nD) 0525-0725 0830-1000\nE) AD CLSD TO ALL FLT INCLUDING HEL, DUE WIP.\nIN CASE OF EMERG AVBL WI 10MIN.)",
-   "first_seen": "2026-08-18T13:48:39Z"
-  },
-  {
    "id": "C1698/26",
    "loc": "LLIB",
    "name": "C1698/26",
@@ -959,6 +959,34 @@
   }
  ],
  "removed": [
+  {
+   "id": "A0713/26",
+   "name": "A0713/26",
+   "cat": "other",
+   "heb": "ATS RTE J14 סגור בין MEGID-BARZI.\nבתוקף: מ-01/09/2026 12:00 UTC עד 01/09/2026 14:00 UTC",
+   "removed_at": "2026-09-01T17:17:15Z"
+  },
+  {
+   "id": "C1849/26",
+   "name": "KFAR-TAVOR WI 1",
+   "cat": "other",
+   "heb": "אזור ב KFAR-TAVOR בתוך 1.1NM רדיוס שמרכזו בנ.צ. 32°42'41\"N 35°24'29\"E סגור מהקרקע ועד 2,000רגל מעל פני הים לכל הטיסות, טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-01/09/2026 11:00 UTC עד 01/09/2026 13:00 UTC",
+   "removed_at": "2026-09-01T17:17:15Z"
+  },
+  {
+   "id": "C1824/26",
+   "name": "C1824/26",
+   "cat": "other",
+   "heb": "אזור בתוך 1.3NM רדיוס שמרכזו בנ.צ. 32°57'32\"N 35°18'57\"E סגור מהקרקע ועד 4,550רגל מעל פני הים לכל הטיסות, טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה ONLY. מומלצת זהירות.\nבתוקף: מ-01/09/2026 06:00 UTC עד 01/09/2026 16:30 UTC",
+   "removed_at": "2026-09-01T17:17:15Z"
+  },
+  {
+   "id": "A0663/26",
+   "name": "חיפה (LLHA)",
+   "cat": "ad",
+   "heb": "AD סגור לכל הטיסות כולל מסוקים, DUE WIP. IN CASE OF EMERG AVBL בתוך 10MIN.\nבתוקף: מ-01/09/2026 05:25 UTC עד 01/09/2026 10:00 UTC\nלו\"ז: 0525-0725 0830-1000",
+   "removed_at": "2026-09-01T17:17:15Z"
+  },
   {
    "id": "A0711/26",
    "name": "EL-AL JUNCTION",
@@ -2162,34 +2190,6 @@
    "cat": "obst",
    "heb": "CRANE ERECTED בתוך LLBG CTR, ב-EL-AL JUNCTION. אזור מ GND עד 100M 360רגל מעל פני הים סגור בין נקודות הציון הבאות 31°59'24\"N 34°54'25\"E 31°59'22\"N 34°54'23\"E 31°59'24\"N 34°54'19\"E 31°59'26\"N 34°54'21\"E. מומלצת זהירות.\nבתוקף: מ-16/08/2026 04:00 UTC עד 18/08/2026 08:00 UTC\nלו\"ז: DAILY 0400-0800",
    "removed_at": "2026-08-12T05:21:44Z"
-  },
-  {
-   "id": "C1722/26",
-   "name": "ADERET",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ תתקיים ב ADERET. אזור בין נקודות הציון הבאות מהקרקע ועד 3,500רגל מעל פני הים סגור לכל הטיסות כולל טיסות ריסוס חקלאיות 31°41'07\"N 34°59'19\"E 31°38'46\"N 34°58'57\"E 31°38'04\"N 35°01'16\"E 31°40'03\"N 35°03'43\"E 31°41'31\"N 35°01'34\"E. מומלצת זהירות.\nבתוקף: מ-11/08/2026 07:00 UTC עד 11/08/2026 11:15 UTC\nלו\"ז: 0700-0800 1015-1115",
-   "removed_at": "2026-08-11T14:25:35Z"
-  },
-  {
-   "id": "A0639/26",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "RWY 03/21 סגור למעט RWY INT, RESA 03 DUE WIP.\nבתוקף: מ-11/08/2026 06:00 UTC עד 11/08/2026 10:00 UTC",
-   "removed_at": "2026-08-11T14:25:35Z"
-  },
-  {
-   "id": "C1686/26",
-   "name": "C1686/26",
-   "cat": "pje",
-   "heb": "PJE AIRSPACE HOF-HATMARIM סגור.\nבתוקף: מ-11/08/2026 06:50 UTC עד 11/08/2026 10:50 UTC\nלו\"ז: 0650-0740 1000-1050",
-   "removed_at": "2026-08-11T14:25:35Z"
-  },
-  {
-   "id": "C1683/26",
-   "name": "C1683/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור EVLYM-AHIUD-AAKKO-SMRAT.\nבתוקף: מ-11/08/2026 06:50 UTC עד 11/08/2026 10:50 UTC\nלו\"ז: 0650-0740 1000-1050",
-   "removed_at": "2026-08-11T14:25:35Z"
   }
  ]
 }
