@@ -1,25 +1,43 @@
 {
- "fetched_at": "01/09/2026 17:17 UTC",
- "fetched_iso": "2026-09-01T17:17:15Z",
- "count": 106,
+ "fetched_at": "02/09/2026 08:12 UTC",
+ "fetched_iso": "2026-09-02T08:12:16Z",
+ "count": 108,
  "notams": [
   {
-   "id": "C1852/26",
+   "id": "C1854/26",
    "loc": "LLLL",
-   "name": "GOLANI-JUNCTION",
+   "name": "YERUHAM",
    "cat": "uas",
-   "heb": "פעילות כטב\"מ תתקיים ב GOLANI-JUNCTION. אזור בתוך 1NM רדיוס שמרכזו בנ.צ. 32°45'50\"N 35°23'04\"E סגור לכל הטיסות מהקרקע ועד 2,000רגל מעל פני הים. טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-02/09/2026 02:50 UTC עד 02/09/2026 04:00 UTC",
-   "raw": "C1852/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/020/3246N03523E001\nA) LLLL B) 2609020250 C) 2609020400\nE) UAS ACT WILL TAKE PLACE AT GOLANI-JUNCTION.\nAN AREA WI 1NM RADIUS CENTERED ON PSN 324550N0352304E\nCLSD TO ALL FLT FM GND UP TO 2,000FT AMSL.\nOPS OF AGRICULTURE FLT AVBL WITH 15MIN PPR FM ATC.\nCTN ADZ.\nF) GND G) 2000FT AMSL)",
-   "first_seen": "2026-09-01T17:17:15Z"
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב YERUHAM, מהקרקע ועד 250מטר מעל הקרקע. אזור בין נקודות הציון הבאות 30°58'30\"N 34°55'51\"E 30°58'23\"N 34°56'44\"E 30°58'03\"N 34°57'08\"E 30°57'09\"N 34°56'49\"E 30°56'24\"N 34°56'14\"E 30°56'52\"N 34°54'53\"E סגור מהקרקע ועד 2,800רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-06/09/2026 03:00 UTC עד 08/09/2026 16:20 UTC\nלו\"ז: DAILY 0300-1620",
+   "raw": "C1854/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/028/3057N03456E002\nA) LLLL B) 2609060300 C) 2609081620\nD) DAILY 0300-1620\nE) UAS/UAV ACT WILL TAKE PLACE AT YERUHAM, FM GND UP TO 250M AGL.\nAN AREA BTN FLW PSN 305830N0345551E 305823N0345644E\n305803N0345708E 305709N0345649E 305624N0345614E\n305652N0345453E CLSD FM GND UP TO 2,800FT AMSL.\nCTN ADZ.\nF) GND G) 2800FT AMSL)",
+   "first_seen": "2026-09-02T08:12:16Z"
   },
   {
-   "id": "A0716/26",
+   "id": "A0718/26",
    "loc": "LLLL",
-   "name": "A0716/26",
+   "name": "A0718/26",
    "cat": "other",
-   "heb": "ATS RTE J14 סגור בין MEGID-BARZI.\nבתוקף: מ-02/09/2026 02:50 UTC עד 02/09/2026 03:00 UTC",
-   "raw": "A0716/26 NOTAMN\nQ) LLLL/QANLC/I /NBO/E /040/060/3242N03524E012\nA) LLLL B) 2609020250 C) 2609020300\nE) ATS RTE J14 CLSD BTN MEGID-BARZI.)",
-   "first_seen": "2026-09-01T17:17:15Z"
+   "heb": "TRIGGER NOTAM - NIL AIRAC AIP AMDT WEF 01 OCT 2026.\nבתוקף: מ-01/10/2026 00:01 UTC עד 14/10/2026 23:59 UTC",
+   "raw": "A0718/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /E /000/999/3123N03515E999\nA) LLLL B) 2610010001 C) 2610142359\nE) TRIGGER NOTAM - NIL AIRAC AIP AMDT WEF 01 OCT 2026.)",
+   "first_seen": "2026-09-02T08:12:16Z"
+  },
+  {
+   "id": "C1853/26",
+   "loc": "LLLL",
+   "name": "C1853/26",
+   "cat": "other",
+   "heb": "TRIGGER NOTAM - NIL AIRAC DOM AIP AMDT WEF 01 OCT 2026.\nבתוקף: מ-01/10/2026 00:01 UTC עד 14/10/2026 23:59 UTC",
+   "raw": "C1853/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /E /000/999/3211N03515E015\nA) LLLL B) 2610010001 C) 2610142359\nE) TRIGGER NOTAM - NIL AIRAC DOM AIP AMDT WEF 01 OCT 2026.)",
+   "first_seen": "2026-09-02T08:12:16Z"
+  },
+  {
+   "id": "A0717/26",
+   "loc": "LLBG",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "RWY 08/26 סגור למעט RWY INT, DUE WIP.\nבתוקף: מ-02/09/2026 06:40 UTC עד 02/09/2026 10:00 UTC",
+   "raw": "A0717/26 NOTAMN\nQ) LLLL/QMRLC/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2609020640 C) 2609021000\nE) RWY 08/26 CLSD EXC RWY INT, DUE WIP.)",
+   "first_seen": "2026-09-02T08:12:16Z"
   },
   {
    "id": "A0715/26",
@@ -959,6 +977,20 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1852/26",
+   "name": "GOLANI-JUNCTION",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ תתקיים ב GOLANI-JUNCTION. אזור בתוך 1NM רדיוס שמרכזו בנ.צ. 32°45'50\"N 35°23'04\"E סגור לכל הטיסות מהקרקע ועד 2,000רגל מעל פני הים. טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-02/09/2026 02:50 UTC עד 02/09/2026 04:00 UTC",
+   "removed_at": "2026-09-02T08:12:16Z"
+  },
+  {
+   "id": "A0716/26",
+   "name": "A0716/26",
+   "cat": "other",
+   "heb": "ATS RTE J14 סגור בין MEGID-BARZI.\nבתוקף: מ-02/09/2026 02:50 UTC עד 02/09/2026 03:00 UTC",
+   "removed_at": "2026-09-02T08:12:16Z"
+  },
   {
    "id": "A0713/26",
    "name": "A0713/26",
@@ -2162,34 +2194,6 @@
    "cat": "act",
    "heb": "בועת זעירים סגור CHARIF (BHARF), TZNIFIM (BZNIF).\nבתוקף: מ-26/07/2026 15:16 UTC עד 31/08/2026 20:59 UTC",
    "removed_at": "2026-08-12T14:26:41Z"
-  },
-  {
-   "id": "C1721/26",
-   "name": "OLESH WI 1",
-   "cat": "other",
-   "heb": "אזור ב OLESH בתוך 1.5NM רדיוס שמרכזו בנ.צ. 32°20'25\"N 34°59'39\"E סגור מהקרקע ועד 3,000רגל מעל פני הים, לכל הטיסות כולל AGRICULTURE. מומלצת זהירות.\nבתוקף: מ-11/08/2026 14:30 UTC עד 11/08/2026 22:30 UTC",
-   "removed_at": "2026-08-12T05:21:44Z"
-  },
-  {
-   "id": "C1654/26",
-   "name": "YERUHAM",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב YERUHAM, מהקרקע ועד 250מטר מעל הקרקע. אזור בין נקודות הציון הבאות 30°58'30\"N 34°55'51\"E 30°58'23\"N 34°56'44\"E 30°58'03\"N 34°57'08\"E 30°57'09\"N 34°56'49\"E 30°56'24\"N 34°56'14\"E 30°56'52\"N 34°54'53\"E סגור מהקרקע ועד 2,800רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-06/08/2026 02:30 UTC עד 11/08/2026 16:30 UTC\nלו\"ז: DAILY 0230-1630",
-   "removed_at": "2026-08-12T05:21:44Z"
-  },
-  {
-   "id": "A0531/26",
-   "name": "A0531/26",
-   "cat": "obst",
-   "heb": "RWY 12 סגור FOR TKOF ONLY, למעט RWY INT DUE CRANE.\nבתוקף: מ-16/08/2026 04:00 UTC עד 18/08/2026 08:00 UTC\nלו\"ז: DAILY 0400-0800",
-   "removed_at": "2026-08-12T05:21:44Z"
-  },
-  {
-   "id": "A0527/26",
-   "name": "EL-AL JUNCTION",
-   "cat": "obst",
-   "heb": "CRANE ERECTED בתוך LLBG CTR, ב-EL-AL JUNCTION. אזור מ GND עד 100M 360רגל מעל פני הים סגור בין נקודות הציון הבאות 31°59'24\"N 34°54'25\"E 31°59'22\"N 34°54'23\"E 31°59'24\"N 34°54'19\"E 31°59'26\"N 34°54'21\"E. מומלצת זהירות.\nבתוקף: מ-16/08/2026 04:00 UTC עד 18/08/2026 08:00 UTC\nלו\"ז: DAILY 0400-0800",
-   "removed_at": "2026-08-12T05:21:44Z"
   }
  ]
 }
