@@ -1,17 +1,8 @@
 {
- "fetched_at": "04/09/2026 16:52 UTC",
- "fetched_iso": "2026-09-04T16:52:28Z",
- "count": 111,
+ "fetched_at": "05/09/2026 07:55 UTC",
+ "fetched_iso": "2026-09-05T07:55:45Z",
+ "count": 110,
  "notams": [
-  {
-   "id": "A0727/26",
-   "loc": "LLBG",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "AD סגור DUE WIP.\nבתוקף: מ-04/09/2026 15:50 UTC עד 04/09/2026 19:55 UTC",
-   "raw": "A0727/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2609041550 C) 2609041955\nE) AD CLSD DUE WIP.)",
-   "first_seen": "2026-09-04T16:52:28Z"
-  },
   {
    "id": "C1874/26",
    "loc": "LLLL",
@@ -1004,6 +995,13 @@
   }
  ],
  "removed": [
+  {
+   "id": "A0727/26",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "AD סגור DUE WIP.\nבתוקף: מ-04/09/2026 15:50 UTC עד 04/09/2026 19:55 UTC",
+   "removed_at": "2026-09-05T07:55:45Z"
+  },
   {
    "id": "C1846/26",
    "name": "C1846/26",
