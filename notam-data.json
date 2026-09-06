@@ -1,8 +1,35 @@
 {
- "fetched_at": "06/09/2026 08:28 UTC",
- "fetched_iso": "2026-09-06T08:28:35Z",
- "count": 110,
+ "fetched_at": "06/09/2026 16:05 UTC",
+ "fetched_iso": "2026-09-06T16:05:35Z",
+ "count": 113,
  "notams": [
+  {
+   "id": "C1881/26",
+   "loc": "LLHZ",
+   "name": "C1881/26",
+   "cat": "act",
+   "heb": "CTR סגור לכל הטיסות, למעט PARTICIPATING ACFT IN FLYPAST AND AEROBATICS טיסות.\nבתוקף: מ-10/09/2026 15:00 UTC עד 10/09/2026 15:20 UTC",
+   "raw": "C1881/26 NOTAMN\nQ) LLLL/QACLP/IV/NBO/AE/000/020/3211N03451E004\nA) LLHZ B) 2609101500 C) 2609101520\nE) CTR CLSD TO ALL FLT, EXC PARTICIPATING ACFT IN FLYPAST\nAND AEROBATICS FLT.)",
+   "first_seen": "2026-09-06T16:05:35Z"
+  },
+  {
+   "id": "A0731/26",
+   "loc": "LLER",
+   "name": "A0731/26",
+   "cat": "ad",
+   "heb": "CTR/CTA סגור לכל הטיסות, למעט AIR FORCE ACT. מומלצת זהירות.\nבתוקף: מ-07/09/2026 03:55 UTC עד 07/09/2026 04:10 UTC",
+   "raw": "A0731/26 NOTAMN\nQ) LLLL/QACLP/IV/NBO/AE/000/999/2944N03458E018\nA) LLER B) 2609070355 C) 2609070410\nE) CTR/CTA CLSD TO ALL FLT, EXC AIR FORCE ACT.\nCTN ADZ.)",
+   "first_seen": "2026-09-06T16:05:35Z"
+  },
+  {
+   "id": "C1880/26",
+   "loc": "LLLL",
+   "name": "ADERET",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ תתקיים ב ADERET. אזור בין נקודות הציון הבאות מהקרקע ועד 3,500רגל מעל פני הים סגור לכל הטיסות כולל טיסות ריסוס חקלאיות 31°41'07\"N 34°59'19\"E 31°38'46\"N 34°58'57\"E 31°38'04\"N 35°01'16\"E 31°39'31\"N 35°03'42\"E 31°41'31\"N 35°01'34\"E. מומלצת זהירות.\nבתוקף: מ-08/09/2026 06:00 UTC עד 09/09/2026 11:30 UTC\nלו\"ז: 0600-0800 0900-1130",
+   "raw": "C1880/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/035/3140N03501E003\nA) LLLL B) 2609080600 C) 2609091130\nD) 0600-0800 0900-1130\nE) UAS ACT WILL TAKE PLACE AT ADERET.\nAN AREA BTN FLW PSN FM GND UP TO 3,500FT AMSL CLSD TO\nALL FLT INCLUDING AGRICULTURE FLT  314107N0345919E\n313846N0345857E 313804N0350116E 313931N0350342E\n314131N0350134E.\nCTN ADZ.\nF) GND G) 3500FT AMSL)",
+   "first_seen": "2026-09-06T16:05:35Z"
+  },
   {
    "id": "A0728/26",
    "loc": "LLHA",
@@ -2233,34 +2260,6 @@
    "cat": "other",
    "heb": "ATS RTE J14 סגור בין NAT-MEGID.\nבתוקף: מ-17/08/2026 06:00 UTC עד 17/08/2026 13:00 UTC",
    "removed_at": "2026-08-17T04:26:51Z"
-  },
-  {
-   "id": "C1759/26",
-   "name": "ראש פינה (LLIB)",
-   "cat": "ad",
-   "heb": "AD סגור לכל הטיסות, DUE WIP. הפעלת מסוקים AVBL באישור מוקדם מבקרת התעופה. IN CASE OF EMERG OR MEDEVAC מסוקים AVBL בתוך 10MIN.\nבתוקף: מ-16/08/2026 03:00 UTC עד 16/08/2026 09:00 UTC",
-   "removed_at": "2026-08-16T13:39:24Z"
-  },
-  {
-   "id": "C1739/26",
-   "name": "C1739/26",
-   "cat": "act",
-   "heb": "ZVULUN בועת זעירים NORTH (BZVUL) AND SOUTH (BZVUE) סגור לכל הטיסות.\nבתוקף: מ-16/08/2026 09:20 UTC עד 16/08/2026 13:20 UTC\nלו\"ז: 0920-1000 1230-1320",
-   "removed_at": "2026-08-16T13:39:24Z"
-  },
-  {
-   "id": "C1736/26",
-   "name": "C1736/26",
-   "cat": "ad",
-   "heb": "AIRSTRIP סגור לכל הטיסות כולל טיסות ריסוס חקלאיות.\nבתוקף: מ-16/08/2026 09:20 UTC עד 16/08/2026 13:20 UTC\nלו\"ז: 0920-1000 1230-1320",
-   "removed_at": "2026-08-16T13:39:24Z"
-  },
-  {
-   "id": "C1733/26",
-   "name": "C1733/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור EVLYM-AHIUD-AAKKO-SMRAT.\nבתוקף: מ-16/08/2026 09:20 UTC עד 16/08/2026 13:20 UTC\nלו\"ז: 0920-1000 1230-1320",
-   "removed_at": "2026-08-16T13:39:24Z"
   }
  ]
 }
