@@ -1,8 +1,26 @@
 {
- "fetched_at": "06/09/2026 16:05 UTC",
- "fetched_iso": "2026-09-06T16:05:35Z",
- "count": 113,
+ "fetched_at": "07/09/2026 08:41 UTC",
+ "fetched_iso": "2026-09-07T08:41:33Z",
+ "count": 111,
  "notams": [
+  {
+   "id": "C1885/26",
+   "loc": "LLLL",
+   "name": "C1885/26",
+   "cat": "other",
+   "heb": "אזור בתוך 0.54NM רדיוס שמרכזו בנ.צ. 32°24'37\"N 35°02'10\"E סגור מהקרקע ועד 1,000רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-07/09/2026 09:30 UTC עד 07/09/2026 15:00 UTC",
+   "raw": "C1885/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/010/3224N03502E001\nA) LLLL B) 2609070930 C) 2609071500\nE) AN AREA WI 0.54NM RADIUS CENTERED ON PSN 322437N0350210E\nCLSD FM GND UP TO 1,000FT AMSL TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.)",
+   "first_seen": "2026-09-07T08:41:33Z"
+  },
+  {
+   "id": "C1884/26",
+   "loc": "LLLL",
+   "name": "C1884/26",
+   "cat": "act",
+   "heb": "THE RESTRICTIONS OF OPR AEROBATICS טיסות בתוך LLHZ אזור אימונים NR 12 COMPLETELY WITHDRAW. DOM AIP, PART AD, PAGE LLHZ 14, PARA 24.D. REF.\nבתוקף: מ-07/09/2026 07:27 UTC (קבוע)",
+   "raw": "C1884/26 NOTAMN\nQ) LLLL/QAECH/IV/NBO/E /000/030/3223N03453E004\nA) LLLL B) 2609070727 C) PERM\nE) THE RESTRICTIONS OF OPR AEROBATICS FLT WI LLHZ TRG AREA NR 12\nCOMPLETELY WITHDRAW.\nDOM AIP, PART AD, PAGE LLHZ 14, PARA 24.D. REF.)",
+   "first_seen": "2026-09-07T08:41:33Z"
+  },
   {
    "id": "C1881/26",
    "loc": "LLHZ",
@@ -10,15 +28,6 @@
    "cat": "act",
    "heb": "CTR סגור לכל הטיסות, למעט PARTICIPATING ACFT IN FLYPAST AND AEROBATICS טיסות.\nבתוקף: מ-10/09/2026 15:00 UTC עד 10/09/2026 15:20 UTC",
    "raw": "C1881/26 NOTAMN\nQ) LLLL/QACLP/IV/NBO/AE/000/020/3211N03451E004\nA) LLHZ B) 2609101500 C) 2609101520\nE) CTR CLSD TO ALL FLT, EXC PARTICIPATING ACFT IN FLYPAST\nAND AEROBATICS FLT.)",
-   "first_seen": "2026-09-06T16:05:35Z"
-  },
-  {
-   "id": "A0731/26",
-   "loc": "LLER",
-   "name": "A0731/26",
-   "cat": "ad",
-   "heb": "CTR/CTA סגור לכל הטיסות, למעט AIR FORCE ACT. מומלצת זהירות.\nבתוקף: מ-07/09/2026 03:55 UTC עד 07/09/2026 04:10 UTC",
-   "raw": "A0731/26 NOTAMN\nQ) LLLL/QACLP/IV/NBO/AE/000/999/2944N03458E018\nA) LLER B) 2609070355 C) 2609070410\nE) CTR/CTA CLSD TO ALL FLT, EXC AIR FORCE ACT.\nCTN ADZ.)",
    "first_seen": "2026-09-06T16:05:35Z"
   },
   {
@@ -154,33 +163,6 @@
    "cat": "other",
    "heb": "CVFR RTE סגור EVLYM-AHIUD-AAKKO-SMRAT.\nבתוקף: מ-07/09/2026 06:00 UTC עד 07/09/2026 10:00 UTC\nלו\"ז: 0600-0645 0920-1000",
    "raw": "C1866/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /015/020/3253N03507E005\nA) LLLL B) 2609070600 C) 2609071000\nD) 0600-0645 0920-1000\nE) CVFR RTE CLSD  EVLYM-AHIUD-AAKKO-SMRAT.)",
-   "first_seen": "2026-09-03T17:02:40Z"
-  },
-  {
-   "id": "C1864/26",
-   "loc": "LLEY",
-   "name": "עין יהב (LLEY)",
-   "cat": "ad",
-   "heb": "AIRSTRIP סגור לכל הטיסות.\nבתוקף: מ-06/09/2026 16:20 UTC עד 06/09/2026 18:00 UTC",
-   "raw": "C1864/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3037N03512E005\nA) LLEY B) 2609061620 C) 2609061800\nE) AIRSTRIP CLSD TO ALL FLT.)",
-   "first_seen": "2026-09-03T17:02:40Z"
-  },
-  {
-   "id": "C1865/26",
-   "loc": "LLLL",
-   "name": "C1865/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור ZOFAR-HRGVS.\nבתוקף: מ-06/09/2026 16:20 UTC עד 06/09/2026 18:00 UTC",
-   "raw": "C1865/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /035/045/3035N03504E007\nA) LLLL B) 2609061620 C) 2609061800\nE) CVFR RTE CLSD  ZOFAR-HRGVS.)",
-   "first_seen": "2026-09-03T17:02:40Z"
-  },
-  {
-   "id": "C1863/26",
-   "loc": "LLLL",
-   "name": "C1863/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור KTORA-YAמסוקים-BMNUH-ZOFAR-ARAVA-ZOHAR-MMORR-LLMZ-ZUKIM. MMORR-ARRAD-LLMZ. ARRAD-HATRU-ZOHAR. TARAD-ARRAD.\nבתוקף: מ-06/09/2026 16:20 UTC עד 06/09/2026 18:00 UTC",
-   "raw": "C1863/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /025/040/3051N03515E054\nA) LLLL B) 2609061620 C) 2609061800\nE) CVFR RTE CLSD\nKTORA-YAHEL-BMNUH-ZOFAR-ARAVA-ZOHAR-MMORR-LLMZ-ZUKIM.\nMMORR-ARRAD-LLMZ.\nARRAD-HATRU-ZOHAR.\nTARAD-ARRAD.)",
    "first_seen": "2026-09-03T17:02:40Z"
   },
   {
@@ -1022,6 +1004,34 @@
   }
  ],
  "removed": [
+  {
+   "id": "A0731/26",
+   "name": "A0731/26",
+   "cat": "ad",
+   "heb": "CTR/CTA סגור לכל הטיסות, למעט AIR FORCE ACT. מומלצת זהירות.\nבתוקף: מ-07/09/2026 03:55 UTC עד 07/09/2026 04:10 UTC",
+   "removed_at": "2026-09-07T08:41:33Z"
+  },
+  {
+   "id": "C1864/26",
+   "name": "עין יהב (LLEY)",
+   "cat": "ad",
+   "heb": "AIRSTRIP סגור לכל הטיסות.\nבתוקף: מ-06/09/2026 16:20 UTC עד 06/09/2026 18:00 UTC",
+   "removed_at": "2026-09-07T08:41:33Z"
+  },
+  {
+   "id": "C1865/26",
+   "name": "C1865/26",
+   "cat": "other",
+   "heb": "CVFR RTE סגור ZOFAR-HRGVS.\nבתוקף: מ-06/09/2026 16:20 UTC עד 06/09/2026 18:00 UTC",
+   "removed_at": "2026-09-07T08:41:33Z"
+  },
+  {
+   "id": "C1863/26",
+   "name": "C1863/26",
+   "cat": "other",
+   "heb": "CVFR RTE סגור KTORA-YAמסוקים-BMNUH-ZOFAR-ARAVA-ZOHAR-MMORR-LLMZ-ZUKIM. MMORR-ARRAD-LLMZ. ARRAD-HATRU-ZOHAR. TARAD-ARRAD.\nבתוקף: מ-06/09/2026 16:20 UTC עד 06/09/2026 18:00 UTC",
+   "removed_at": "2026-09-07T08:41:33Z"
+  },
   {
    "id": "C1878/26",
    "name": "OLESH WI 1",
@@ -2253,13 +2263,6 @@
    "cat": "other",
    "heb": "CVFR RTE סגור EVLYM-AHIUD-AAKKO-SMRAT.\nבתוקף: מ-17/08/2026 06:00 UTC עד 17/08/2026 10:00 UTC\nלו\"ז: 0600-0645 0920-1000",
    "removed_at": "2026-08-17T13:47:03Z"
-  },
-  {
-   "id": "A0658/26",
-   "name": "A0658/26",
-   "cat": "other",
-   "heb": "ATS RTE J14 סגור בין NAT-MEGID.\nבתוקף: מ-17/08/2026 06:00 UTC עד 17/08/2026 13:00 UTC",
-   "removed_at": "2026-08-17T04:26:51Z"
   }
  ]
 }
