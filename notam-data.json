@@ -1,8 +1,26 @@
 {
- "fetched_at": "07/09/2026 18:13 UTC",
- "fetched_iso": "2026-09-07T18:13:38Z",
- "count": 111,
+ "fetched_at": "08/09/2026 08:24 UTC",
+ "fetched_iso": "2026-09-08T08:24:25Z",
+ "count": 107,
  "notams": [
+  {
+   "id": "C1896/26",
+   "loc": "LLLL",
+   "name": "C1896/26",
+   "cat": "pje",
+   "heb": "PJE AIRSPACE TEIMAN ACT מ-11,000רגל מעל פני הים. IN CASE OF EMERG CLEAR THE AIRSPACE בתוך 5MIN. מומלצת זהירות.\nבתוקף: מ-11/09/2026 05:00 UTC עד 11/09/2026 11:00 UTC",
+   "raw": "C1896/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/110/3117N03443E004\nA) LLLL B) 2609110500 C) 2609111100\nE) PJE AIRSPACE TEIMAN ACT FM 11,000FT AMSL.\nIN CASE OF EMERG CLEAR THE AIRSPACE WI 5MIN.\nCTN ADZ.\nF) GND G) 11000FT AMSL)",
+   "first_seen": "2026-09-08T08:24:25Z"
+  },
+  {
+   "id": "C1895/26",
+   "loc": "LLLL",
+   "name": "YERUHAM",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב YERUHAM, מהקרקע ועד 250מטר מעל הקרקע. אזור בין נקודות הציון הבאות 30°58'30\"N 34°55'51\"E 30°58'23\"N 34°56'44\"E 30°58'03\"N 34°57'08\"E 30°57'09\"N 34°56'49\"E 30°56'24\"N 34°56'14\"E 30°56'52\"N 34°54'53\"E סגור מהקרקע ועד 2,800רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-15/09/2026 03:00 UTC עד 17/09/2026 16:10 UTC\nלו\"ז: DAILY 0300-1610",
+   "raw": "C1895/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/028/3057N03456E002\nA) LLLL B) 2609150300 C) 2609171610\nD) DAILY 0300-1610\nE) UAS/UAV ACT WILL TAKE PLACE AT YERUHAM, FM GND UP TO 250M AGL.\nAN AREA BTN FLW PSN 305830N0345551E 305823N0345644E\n305803N0345708E 305709N0345649E 305624N0345614E\n305652N0345453E CLSD FM GND UP TO 2,800FT AMSL.\nCTN ADZ.\nF) GND G) 2800FT AMSL)",
+   "first_seen": "2026-09-08T08:24:25Z"
+  },
   {
    "id": "C1894/26",
    "loc": "LLLL",
@@ -263,15 +281,6 @@
    "heb": "TRIGGER NOTAM - NIL AIRAC DOM AIP AMDT WEF 01 OCT 2026.\nבתוקף: מ-01/10/2026 00:01 UTC עד 14/10/2026 23:59 UTC",
    "raw": "C1853/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /E /000/999/3211N03515E015\nA) LLLL B) 2610010001 C) 2610142359\nE) TRIGGER NOTAM - NIL AIRAC DOM AIP AMDT WEF 01 OCT 2026.)",
    "first_seen": "2026-09-02T08:12:16Z"
-  },
-  {
-   "id": "A0715/26",
-   "loc": "LLER",
-   "name": "A0715/26",
-   "cat": "ad",
-   "heb": "VOR/DME RAM FREQ 113.850MHZ WITHDRAWN FOR MAINT.\nבתוקף: מ-08/09/2026 07:00 UTC עד 08/09/2026 08:00 UTC",
-   "raw": "A0715/26 NOTAMN\nQ) LLLL/QNMAS/IV/BO /AE/000/999/2945N03501E025\nA) LLER B) 2609080700 C) 2609080800\nE) VOR/DME RAM FREQ 113.850MHZ WITHDRAWN FOR MAINT.)",
-   "first_seen": "2026-09-01T17:17:15Z"
   },
   {
    "id": "A0710/26",
@@ -607,15 +616,6 @@
    "first_seen": "2026-08-27T14:39:17Z"
   },
   {
-   "id": "C1803/26",
-   "loc": "LLLL",
-   "name": "RAHAT",
-   "cat": "act",
-   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-RAHAT, עד 1,700רגל מעל פני הים. אזור בתוך 0.4NM רדיוס שמרכזו בנ.צ. 31°22'52\"N 34°45'41\"E סגור מהקרקע ועד 2,200רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות\nבתוקף: מ-31/08/2026 00:01 UTC עד 07/09/2026 20:59 UTC\nלו\"ז: AUG 31 0001-0430 0650-0910 0950-2359, SEP 01-05 DAILY 0001-0430",
-   "raw": "C1803/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/022/3123N03446E001\nA) LLLL B) 2608310001 C) 2609072059\nD) AUG 31 0001-0430 0650-0910 0950-2359, SEP 01-05 DAILY 0001-0430\n0650-0910 0950-2359, 06-07 DAILY 0001-2059\nE) CAPTIVE BALLOON WILL TAKE PLACE AT RAHAT, UP TO 1,700FT AMSL.\nAN AREA WI 0.4NM RADIUS CENTERED ON PSN 312252N0344541E\nCLSD FM GND UP TO 2,200FT AMSL TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ\nF) GND G) 2200FT AMSL)",
-   "first_seen": "2026-08-26T13:59:38Z"
-  },
-  {
    "id": "A0689/26",
    "loc": "LLLL",
    "name": "A0689/26",
@@ -713,42 +713,6 @@
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב DALIA/TZAFIT, בתוך בועת זעירים GOVRIN SOUTH (BGOVS) עד 100מטר מעל הקרקע. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 1,400רגל מעל פני הים 31°43'53\"N 34°50'38\"E 31°43'39\"N 34°50'10\"E 31°42'21\"N 34°49'25\"E 31°41'50\"N 34°50'23\"E 31°42'22\"N 34°51'18\"E 31°43'23\"N 34°51'23\"E. מומלצת זהירות.\nבתוקף: מ-01/09/2026 00:01 UTC עד 30/09/2026 20:59 UTC",
    "raw": "C1788/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/014/3143N03450E002\nA) LLLL B) 2609010001 C) 2609302059\nE) UAS/UAV ACT WILL TAKE PLACE AT DALIA/TZAFIT, WI ULTRALIGHT\nBUBBLE GOVRIN SOUTH (BGOVS) UP TO 100M AGL.\nAN AREA BTN THE FLW PSN CLSD FM GND UP TO 1,400FT AMSL\n314353N0345038E 314339N0345010E 314221N0344925E\n314150N0345023E 314222N0345118E 314323N0345123E.\nCTN ADZ.\nF) GND G) 1400FT AMSL)",
    "first_seen": "2026-08-24T13:56:01Z"
-  },
-  {
-   "id": "C1785/26",
-   "loc": "LLLL",
-   "name": "C1785/26",
-   "cat": "other",
-   "heb": "מסוקים RTE סגור KTORA-SIZFN-SITIM-ZZHOR. BMNUH-ZZHOR-MESAR-RUHOT. ZOFAR-HRGVS-RUHOT-KNFHA-RAMLY-MIDRS. LLEY-NNAHS-MIDRS. NNAHS-RAMLY.\nבתוקף: מ-07/09/2026 03:00 UTC עד 08/09/2026 06:30 UTC\nלו\"ז: 07 0300-0630 1630-1900, 08 0330-0630",
-   "raw": "C1785/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /018/035/3025N03455E028\nA) LLLL B) 2609070300 C) 2609080630\nD) 07 0300-0630 1630-1900, 08 0330-0630\nE) HEL RTE CLSD\nKTORA-SIZFN-SITIM-ZZHOR.\nBMNUH-ZZHOR-MESAR-RUHOT.\nZOFAR-HRGVS-RUHOT-KNFHA-RAMLY-MIDRS.\nLLEY-NNAHS-MIDRS.\nNNAHS-RAMLY.)",
-   "first_seen": "2026-08-23T13:36:53Z"
-  },
-  {
-   "id": "C1784/26",
-   "loc": "LLLL",
-   "name": "C1784/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור SIZFN-SITIM-ZZHOR. SIZFN-YAמסוקים. BMNUH-ZZHOR-MESAR-RUHOT. ZOFAR-HRGVS-RUHOT-OVDAT-BOKER.\nבתוקף: מ-07/09/2026 03:00 UTC עד 08/09/2026 06:30 UTC\nלו\"ז: 07 0300-0630 1630-1900, 08 0330-0630",
-   "raw": "C1784/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /025/045/3028N03454E027\nA) LLLL B) 2609070300 C) 2609080630\nD) 07 0300-0630 1630-1900, 08 0330-0630\nE) CVFR RTE CLSD\nSIZFN-SITIM-ZZHOR.\nSIZFN-YAHEL.\nBMNUH-ZZHOR-MESAR-RUHOT.\nZOFAR-HRGVS-RUHOT-OVDAT-BOKER.)",
-   "first_seen": "2026-08-23T13:36:53Z"
-  },
-  {
-   "id": "C1783/26",
-   "loc": "LLLL",
-   "name": "C1783/26",
-   "cat": "other",
-   "heb": "מסוקים RTE סגור KTORA-YAמסוקים-BMNUH-ZOFAR-HAZVA-ARAVA-ZOHAR.\nבתוקף: מ-07/09/2026 03:00 UTC עד 08/09/2026 06:30 UTC\nלו\"ז: 07 0300-0630 1630-1900, 08 0330-0630",
-   "raw": "C1783/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /025/040/3034N03512E037\nA) LLLL B) 2609070300 C) 2609080630\nD) 07 0300-0630 1630-1900, 08 0330-0630\nE) HEL RTE CLSD\nKTORA-YAHEL-BMNUH-ZOFAR-HAZVA-ARAVA-ZOHAR.)",
-   "first_seen": "2026-08-23T13:36:53Z"
-  },
-  {
-   "id": "C1782/26",
-   "loc": "LLLL",
-   "name": "C1782/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור KTORA-YAמסוקים-BMNUH-ZOFAR-HAZVA-ARAVA-ZOHAR.\nבתוקף: מ-07/09/2026 03:00 UTC עד 08/09/2026 06:30 UTC\nלו\"ז: 07 0300-0630 1630-1900, 08 0330-0630",
-   "raw": "C1782/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /025/040/3034N03512E037\nA) LLLL B) 2609070300 C) 2609080630\nD) 07 0300-0630 1630-1900, 08 0330-0630\nE) CVFR RTE CLSD\nKTORA-YAHEL-BMNUH-ZOFAR-HAZVA-ARAVA-ZOHAR.)",
-   "first_seen": "2026-08-23T13:36:53Z"
   },
   {
    "id": "C1781/26",
@@ -1004,6 +968,48 @@
   }
  ],
  "removed": [
+  {
+   "id": "A0715/26",
+   "name": "A0715/26",
+   "cat": "ad",
+   "heb": "VOR/DME RAM FREQ 113.850MHZ WITHDRAWN FOR MAINT.\nבתוקף: מ-08/09/2026 07:00 UTC עד 08/09/2026 08:00 UTC",
+   "removed_at": "2026-09-08T08:24:25Z"
+  },
+  {
+   "id": "C1803/26",
+   "name": "RAHAT",
+   "cat": "act",
+   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-RAHAT, עד 1,700רגל מעל פני הים. אזור בתוך 0.4NM רדיוס שמרכזו בנ.צ. 31°22'52\"N 34°45'41\"E סגור מהקרקע ועד 2,200רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות\nבתוקף: מ-31/08/2026 00:01 UTC עד 07/09/2026 20:59 UTC\nלו\"ז: AUG 31 0001-0430 0650-0910 0950-2359, SEP 01-05 DAILY 0001-0430",
+   "removed_at": "2026-09-08T08:24:25Z"
+  },
+  {
+   "id": "C1785/26",
+   "name": "C1785/26",
+   "cat": "other",
+   "heb": "מסוקים RTE סגור KTORA-SIZFN-SITIM-ZZHOR. BMNUH-ZZHOR-MESAR-RUHOT. ZOFAR-HRGVS-RUHOT-KNFHA-RAMLY-MIDRS. LLEY-NNAHS-MIDRS. NNAHS-RAMLY.\nבתוקף: מ-07/09/2026 03:00 UTC עד 08/09/2026 06:30 UTC\nלו\"ז: 07 0300-0630 1630-1900, 08 0330-0630",
+   "removed_at": "2026-09-08T08:24:25Z"
+  },
+  {
+   "id": "C1784/26",
+   "name": "C1784/26",
+   "cat": "other",
+   "heb": "CVFR RTE סגור SIZFN-SITIM-ZZHOR. SIZFN-YAמסוקים. BMNUH-ZZHOR-MESAR-RUHOT. ZOFAR-HRGVS-RUHOT-OVDAT-BOKER.\nבתוקף: מ-07/09/2026 03:00 UTC עד 08/09/2026 06:30 UTC\nלו\"ז: 07 0300-0630 1630-1900, 08 0330-0630",
+   "removed_at": "2026-09-08T08:24:25Z"
+  },
+  {
+   "id": "C1783/26",
+   "name": "C1783/26",
+   "cat": "other",
+   "heb": "מסוקים RTE סגור KTORA-YAמסוקים-BMNUH-ZOFAR-HAZVA-ARAVA-ZOHAR.\nבתוקף: מ-07/09/2026 03:00 UTC עד 08/09/2026 06:30 UTC\nלו\"ז: 07 0300-0630 1630-1900, 08 0330-0630",
+   "removed_at": "2026-09-08T08:24:25Z"
+  },
+  {
+   "id": "C1782/26",
+   "name": "C1782/26",
+   "cat": "other",
+   "heb": "CVFR RTE סגור KTORA-YAמסוקים-BMNUH-ZOFAR-HAZVA-ARAVA-ZOHAR.\nבתוקף: מ-07/09/2026 03:00 UTC עד 08/09/2026 06:30 UTC\nלו\"ז: 07 0300-0630 1630-1900, 08 0330-0630",
+   "removed_at": "2026-09-08T08:24:25Z"
+  },
   {
    "id": "C1885/26",
    "name": "C1885/26",
@@ -2284,13 +2290,6 @@
    "cat": "obst",
    "heb": "CRANE ERECTED בתוך LLBG CTR, ב-EL-AL JUNCTION. אזור מ GND עד 100M 360רגל מעל פני הים סגור בין נקודות הציון הבאות 31°59'24\"N 34°54'25\"E 31°59'22\"N 34°54'23\"E 31°59'24\"N 34°54'19\"E 31°59'26\"N 34°54'21\"E. מומלצת זהירות.\nבתוקף: מ-19/08/2026 04:00 UTC עד 19/08/2026 09:00 UTC",
    "removed_at": "2026-08-18T13:48:39Z"
-  },
-  {
-   "id": "C1708/26",
-   "name": "MEI-AMI",
-   "cat": "act",
-   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-MEI-AMI. אזור בתוך 0.2NM רדיוס שמרכזו בנ.צ. 32°30'15\"N 35°09'02\"E סגור מהקרקע ועד 2,800רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-16/08/2026 02:40 UTC עד 18/08/2026 02:40 UTC",
-   "removed_at": "2026-08-18T04:16:49Z"
   }
  ]
 }
