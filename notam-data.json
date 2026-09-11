@@ -1,7 +1,7 @@
 {
- "fetched_at": "11/09/2026 08:21 UTC",
- "fetched_iso": "2026-09-11T08:21:39Z",
- "count": 116,
+ "fetched_at": "11/09/2026 17:02 UTC",
+ "fetched_iso": "2026-09-11T17:02:41Z",
+ "count": 115,
  "notams": [
   {
    "id": "C1925/26",
@@ -290,15 +290,6 @@
    "heb": "PJE AIRSPACE METZADA ACT מ-8,000רגל מעל פני הים. OPR באישור מוקדם מבקרת התעופה ONLY.\nבתוקף: מ-17/09/2026 09:30 UTC עד 18/09/2026 11:00 UTC\nלו\"ז: 17 0930-1608, 18 0600-1100",
    "raw": "C1897/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/080/3120N03523E003\nA) LLLL B) 2609170930 C) 2609181100\nD) 17 0930-1608, 18 0600-1100\nE) PJE AIRSPACE METZADA ACT FM 8,000FT AMSL.\nOPR BY PPR FM ATC ONLY.\nF) GND G) 8000FT AMSL)",
    "first_seen": "2026-09-08T17:11:55Z"
-  },
-  {
-   "id": "C1896/26",
-   "loc": "LLLL",
-   "name": "C1896/26",
-   "cat": "pje",
-   "heb": "PJE AIRSPACE TEIMAN ACT מ-11,000רגל מעל פני הים. IN CASE OF EMERG CLEAR THE AIRSPACE בתוך 5MIN. מומלצת זהירות.\nבתוקף: מ-11/09/2026 05:00 UTC עד 11/09/2026 11:00 UTC",
-   "raw": "C1896/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/110/3117N03443E004\nA) LLLL B) 2609110500 C) 2609111100\nE) PJE AIRSPACE TEIMAN ACT FM 11,000FT AMSL.\nIN CASE OF EMERG CLEAR THE AIRSPACE WI 5MIN.\nCTN ADZ.\nF) GND G) 11000FT AMSL)",
-   "first_seen": "2026-09-08T08:24:25Z"
   },
   {
    "id": "C1895/26",
@@ -1049,6 +1040,13 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1896/26",
+   "name": "C1896/26",
+   "cat": "pje",
+   "heb": "PJE AIRSPACE TEIMAN ACT מ-11,000רגל מעל פני הים. IN CASE OF EMERG CLEAR THE AIRSPACE בתוך 5MIN. מומלצת זהירות.\nבתוקף: מ-11/09/2026 05:00 UTC עד 11/09/2026 11:00 UTC",
+   "removed_at": "2026-09-11T17:02:41Z"
+  },
   {
    "id": "C1862/26",
    "name": "RAHAT",
@@ -2175,20 +2173,6 @@
    "cat": "act",
    "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-HACHULA-LAKE, מהקרקע ועד 400מטר מעל הקרקע. LIT AND DAY MARKED. אזור בתוך 0.54NM רדיוס שמרכזו בנ.צ. 33°06'22\"N 35°34'54\"E סגור מהקרקע ועד 1,800רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-16/08/2026 03:30 UTC עד 23/08/2026 02:00 UTC\nלו\"ז: DAILY 0330-1400 1700-0200",
    "removed_at": "2026-08-23T04:14:23Z"
-  },
-  {
-   "id": "C1762/26",
-   "name": "C1762/26",
-   "cat": "pje",
-   "heb": "PJE AIRSPACE TEIMAN ACT מ-11,000רגל מעל פני הים. IN CASE OF EMERG CLEAR THE AIRSPACE בתוך 5MIN. מומלצת זהירות.\nבתוקף: מ-21/08/2026 05:00 UTC עד 21/08/2026 11:00 UTC",
-   "removed_at": "2026-08-21T13:49:00Z"
-  },
-  {
-   "id": "C1761/26",
-   "name": "C1761/26",
-   "cat": "pje",
-   "heb": "PJE AIRSPACE METZADA ACT מ-8,000רגל מעל פני הים. OPR באישור מוקדם מבקרת התעופה ONLY.\nבתוקף: מ-20/08/2026 09:30 UTC עד 21/08/2026 11:00 UTC\nלו\"ז: 20 0930-1645, 21 0600-1100",
-   "removed_at": "2026-08-21T13:49:00Z"
   }
  ]
 }
