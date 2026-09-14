@@ -1,7 +1,7 @@
 {
- "fetched_at": "13/09/2026 16:58 UTC",
- "fetched_iso": "2026-09-13T16:58:02Z",
- "count": 113,
+ "fetched_at": "14/09/2026 09:19 UTC",
+ "fetched_iso": "2026-09-14T09:19:40Z",
+ "count": 112,
  "notams": [
   {
    "id": "C1925/26",
@@ -227,15 +227,6 @@
    "heb": "ATS RTE J14 AVBL בין ZACCI-GIMIK BIDIRECTIONAL ב-6,000רגל מעל פני הים ONLY.\nבתוקף: מ-15/09/2026 07:15 UTC עד 15/09/2026 10:50 UTC\nלו\"ז: 0715-0735 1030-1050",
    "raw": "A0736/26 NOTAMN\nQ) LLLL/QANLT/I /NBO/E /050/060/3236N03518E018\nA) LLLL B) 2609150715 C) 2609151050\nD) 0715-0735 1030-1050\nE) ATS RTE J14 AVBL BTN ZACCI-GIMIK BIDIRECTIONAL AT\n6,000FT AMSL ONLY.)",
    "first_seen": "2026-09-10T08:28:38Z"
-  },
-  {
-   "id": "C1906/26",
-   "loc": "LLLL",
-   "name": "C1906/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור FRDIS-BOREN.\nבתוקף: מ-14/09/2026 14:30 UTC עד 14/09/2026 20:55 UTC\nלו\"ז: 1430-1600 1800-2055",
-   "raw": "C1906/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /015/020/3239N03458E005\nA) LLLL B) 2609141430 C) 2609142055\nD) 1430-1600 1800-2055\nE) CVFR RTE CLSD  FRDIS-BOREN.)",
-   "first_seen": "2026-09-09T17:08:52Z"
   },
   {
    "id": "C1905/26",
@@ -1022,6 +1013,13 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1906/26",
+   "name": "C1906/26",
+   "cat": "other",
+   "heb": "CVFR RTE סגור FRDIS-BOREN.\nבתוקף: מ-14/09/2026 14:30 UTC עד 14/09/2026 20:55 UTC\nלו\"ז: 1430-1600 1800-2055",
+   "removed_at": "2026-09-14T09:19:40Z"
+  },
   {
    "id": "C1874/26",
    "name": "HACHULA-LAKE",
@@ -2113,13 +2111,6 @@
    "cat": "obst",
    "heb": "CRANE ERECTED ב-SHOAH בתוך LLBG CTR. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 31°59'07\"N 34°56'01\"E סגור מהקרקע ועד 134M 440רגל מעל פני הים. 31°59'07\"N 34°56'07\"E סגור מהקרקע ועד 140M 460רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-17/08/2026 03:00 UTC עד 24/08/2026 10:00 UTC\nלו\"ז: 17 24 DAILY 0300-1000",
    "removed_at": "2026-08-24T13:56:01Z"
-  },
-  {
-   "id": "C1775/26",
-   "name": "SHAVEI-ZION",
-   "cat": "obst",
-   "heb": "OBST ERECTED ב-SHAVEI-ZION, בתוך ZVULUN-N (BZVUN) בועת זעירים. אזור בתוך 1.6NM רדיוס שמרכזו בנ.צ. 32°58'22\"N 35°04'44\"E סגור מהקרקע ועד 600רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-20/08/2026 05:00 UTC עד 23/08/2026 16:45 UTC",
-   "removed_at": "2026-08-24T04:27:34Z"
   }
  ]
 }
