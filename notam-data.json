@@ -1,8 +1,26 @@
 {
- "fetched_at": "14/09/2026 18:28 UTC",
- "fetched_iso": "2026-09-14T18:28:23Z",
+ "fetched_at": "15/09/2026 09:00 UTC",
+ "fetched_iso": "2026-09-15T09:00:37Z",
  "count": 114,
  "notams": [
+  {
+   "id": "C1938/26",
+   "loc": "LLHZ",
+   "name": "הרצליה (LLHZ)",
+   "cat": "ad",
+   "heb": "AD סגור לכל הטיסות כולל מסוקים, DUE EMERG DRILL. AD NOT AVBL FOR LDG IN EMERG. TAX, RUN-UP, REFUEL OR ANY AVIATION ACT אסור. CLOSURE EXP TO BE EXTENDED.\nבתוקף: מ-08/10/2026 10:30 UTC עד 08/10/2026 13:30 UTC",
+   "raw": "C1938/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3211N03450E005\nA) LLHZ B) 2610081030 C) 2610081330\nE) AD CLSD TO ALL FLT INCLUDING HEL, DUE EMERG DRILL.\nAD NOT AVBL FOR LDG IN EMERG.\nTAX, RUN-UP, REFUEL OR ANY AVIATION ACT PROHIBITED.\nCLOSURE EXP TO BE EXTENDED.)",
+   "first_seen": "2026-09-15T09:00:37Z"
+  },
+  {
+   "id": "C1937/26",
+   "loc": "LLHZ",
+   "name": "הרצליה (LLHZ)",
+   "cat": "ad",
+   "heb": "CTR סגור לכל הטיסות, DUE EMERG DRILL. CLOSURE EXP TO BE EXTENDED.\nבתוקף: מ-08/10/2026 10:30 UTC עד 08/10/2026 13:30 UTC",
+   "raw": "C1937/26 NOTAMN\nQ) LLLL/QACLC/IV/NBO/AE/000/020/3211N03451E004\nA) LLHZ B) 2610081030 C) 2610081330\nE) CTR CLSD TO ALL FLT, DUE EMERG DRILL.\nCLOSURE EXP TO BE EXTENDED.)",
+   "first_seen": "2026-09-15T09:00:37Z"
+  },
   {
    "id": "C1936/26",
    "loc": "LLLL",
@@ -643,24 +661,6 @@
    "first_seen": "2026-08-30T17:18:56Z"
   },
   {
-   "id": "A0696/26",
-   "loc": "LLBG",
-   "name": "A0696/26",
-   "cat": "obst",
-   "heb": "RWY 12 סגור FOR TKOF ONLY, למעט RWY INT DUE CRANE.\nבתוקף: מ-02/09/2026 04:00 UTC עד 15/09/2026 08:00 UTC\nלו\"ז: SUN-THU 0400-0800",
-   "raw": "A0696/26 NOTAMN\nQ) LLLL/QMRLT/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2609020400 C) 2609150800\nD) SUN-THU 0400-0800\nE) RWY 12 CLSD FOR TKOF ONLY, EXC RWY INT DUE CRANE.)",
-   "first_seen": "2026-08-27T14:39:17Z"
-  },
-  {
-   "id": "A0695/26",
-   "loc": "LLBG",
-   "name": "EL-AL JUNCTION",
-   "cat": "obst",
-   "heb": "CRANE ERECTED בתוך LLBG CTR, ב-EL-AL JUNCTION. אזור מ GND עד 100M 360רגל מעל פני הים סגור בין נקודות הציון הבאות 31°59'24\"N 34°54'25\"E 31°59'22\"N 34°54'23\"E 31°59'24\"N 34°54'19\"E 31°59'26\"N 34°54'21\"E. מומלצת זהירות.\nבתוקף: מ-02/09/2026 04:00 UTC עד 15/09/2026 08:00 UTC\nלו\"ז: SUN-THU 0400-0800",
-   "raw": "A0695/26 NOTAMN\nQ) LLLL/QOBCE/IV/M  /AE/000/004/3159N03454E001\nA) LLBG B) 2609020400 C) 2609150800\nD) SUN-THU 0400-0800\nE) CRANE ERECTED WI LLBG CTR, AT EL-AL JUNCTION.\nAN AREA FM GND UP TO 100M 360FT AMSL CLSD BTN FLW PSN\n315924N0345425E 315922N0345423E 315924N0345419E\n315926N0345421E.\nCTN ADZ.)",
-   "first_seen": "2026-08-27T14:39:17Z"
-  },
-  {
    "id": "A0694/26",
    "loc": "LLNV",
    "name": "A0694/26",
@@ -1031,6 +1031,20 @@
   }
  ],
  "removed": [
+  {
+   "id": "A0696/26",
+   "name": "A0696/26",
+   "cat": "obst",
+   "heb": "RWY 12 סגור FOR TKOF ONLY, למעט RWY INT DUE CRANE.\nבתוקף: מ-02/09/2026 04:00 UTC עד 15/09/2026 08:00 UTC\nלו\"ז: SUN-THU 0400-0800",
+   "removed_at": "2026-09-15T09:00:37Z"
+  },
+  {
+   "id": "A0695/26",
+   "name": "EL-AL JUNCTION",
+   "cat": "obst",
+   "heb": "CRANE ERECTED בתוך LLBG CTR, ב-EL-AL JUNCTION. אזור מ GND עד 100M 360רגל מעל פני הים סגור בין נקודות הציון הבאות 31°59'24\"N 34°54'25\"E 31°59'22\"N 34°54'23\"E 31°59'24\"N 34°54'19\"E 31°59'26\"N 34°54'21\"E. מומלצת זהירות.\nבתוקף: מ-02/09/2026 04:00 UTC עד 15/09/2026 08:00 UTC\nלו\"ז: SUN-THU 0400-0800",
+   "removed_at": "2026-09-15T09:00:37Z"
+  },
   {
    "id": "A0748/26",
    "name": "TERMINAL 1",
@@ -2150,13 +2164,6 @@
    "cat": "ad",
    "heb": "VOR/DME NAT FREQ 112.400MHZ WITHDRAWN FOR MAINT.\nבתוקף: מ-25/08/2026 07:00 UTC עד 25/08/2026 12:00 UTC",
    "removed_at": "2026-08-25T13:54:59Z"
-  },
-  {
-   "id": "A0660/26",
-   "name": "חיפה (LLHA)",
-   "cat": "ad",
-   "heb": "CIRCUIT EXER אסור, למעט טיסותCK. TFC EXP DLA.\nבתוקף: מ-24/08/2026 15:30 UTC עד 24/08/2026 17:00 UTC",
-   "removed_at": "2026-08-25T04:14:13Z"
   }
  ]
 }
