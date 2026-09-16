@@ -1,8 +1,26 @@
 {
- "fetched_at": "15/09/2026 17:34 UTC",
- "fetched_iso": "2026-09-15T17:34:58Z",
- "count": 115,
+ "fetched_at": "16/09/2026 08:55 UTC",
+ "fetched_iso": "2026-09-16T08:55:02Z",
+ "count": 113,
  "notams": [
+  {
+   "id": "C1955/26",
+   "loc": "LLLL",
+   "name": "TEL-NOF",
+   "cat": "pje",
+   "heb": "PJE WILL TAKE PLACE ב-TEL-NOF. אזור בתוך 3NM רדיוס שמרכזו בנ.צ. 31°49'07\"N 34°49'29\"E סגור מהקרקע ועד 8,500רגל מעל פני הים לכל הטיסות. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-16/09/2026 13:45 UTC עד 16/09/2026 14:30 UTC",
+   "raw": "C1955/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/130/3150N03449E007\nA) LLLL B) 2609161345 C) 2609161430\nE) PJE WILL TAKE PLACE AT TEL-NOF.\nAN AREA WI 3NM RADIUS CENTERED ON PSN 314907N0344929E\nCLSD FM GND UP TO 8,500FT AMSL TO ALL FLT.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.\nF) GND G) 13000FT AMSL)",
+   "first_seen": "2026-09-16T08:55:02Z"
+  },
+  {
+   "id": "C1953/26",
+   "loc": "LLLL",
+   "name": "YERUHAM",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב YERUHAM, מהקרקע ועד 600מטר מעל הקרקע. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 30°58'19\"N 34°56'01\"E סגור מהקרקע ועד 3,700רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-22/09/2026 03:00 UTC עד 24/09/2026 14:30 UTC\nלו\"ז: DAILY 0300-1430",
+   "raw": "C1953/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/037/3058N03456E001\nA) LLLL B) 2609220300 C) 2609241430\nD) DAILY 0300-1430\nE) UAS/UAV ACT WILL TAKE PLACE AT YERUHAM, FM GND UP TO 600M AGL.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 305819N0345601E\nCLSD FM GND UP TO 3,700FT AMSL.\nCTN ADZ.\nF) GND G) 3700FT AMSL)",
+   "first_seen": "2026-09-16T08:55:02Z"
+  },
   {
    "id": "C1951/26",
    "loc": "LLLL",
@@ -85,15 +103,6 @@
    "first_seen": "2026-09-15T17:34:58Z"
   },
   {
-   "id": "C1943/26",
-   "loc": "LLLL",
-   "name": "GEZER POWER PLANT CLSD FM GND UP TO 1",
-   "cat": "other",
-   "heb": "אזור בתוך 1KM רדיוס שמרכזו בנ.צ. 31°54'55\"N 34°55'00\"E ב-GEZER POWER PLANT סגור מהקרקע ועד 1,200רגל מעל פני הים, DUE TO GAS EMISSION. מומלצת זהירות.\nבתוקף: מ-15/09/2026 16:00 UTC עד 15/09/2026 19:00 UTC",
-   "raw": "C1943/26 NOTAMN\nQ) LLLL/QWSLW/IV/M  /W /000/012/3155N03455E001\nA) LLLL B) 2609151600 C) 2609151900\nE) AN AREA WI 1KM RADIUS CENTERED ON PSN 315455N0345500E\nAT GEZER POWER PLANT CLSD FM GND UP TO 1,200FT AMSL,\nDUE TO GAS EMISSION.\nCTN ADZ.\nF) GND G) 1200FT AMSL)",
-   "first_seen": "2026-09-15T17:34:58Z"
-  },
-  {
    "id": "C1942/26",
    "loc": "LLBG",
    "name": "נתב\"ג (LLBG)",
@@ -163,24 +172,6 @@
    "cat": "obst",
    "heb": "RWY 21 סגור FOR LDG, DUE CRANE ON FINAL 21. IN CASE OF EMERG LOWERED בתוך 30MIN.\nבתוקף: מ-22/09/2026 17:00 UTC עד 23/06/2029 01:30 UTC",
    "raw": "A0750/26 NOTAMN\nQ) LLLL/QMRLC/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2609221700 C) 2906230130\nE) RWY 21 CLSD FOR LDG, DUE CRANE ON FINAL 21.\nIN CASE OF EMERG LOWERED WI 30MIN.)",
-   "first_seen": "2026-09-14T18:28:23Z"
-  },
-  {
-   "id": "C1928/26",
-   "loc": "LLLL",
-   "name": "C1928/26",
-   "cat": "act",
-   "heb": "בועת זעירים A-WEST (BMGWA) סגור.\nבתוקף: מ-15/09/2026 14:00 UTC עד 16/09/2026 06:30 UTC\nלו\"ז: 15 1400-1445, 16 0600-0630",
-   "raw": "C1928/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/020/3242N03521E006\nA) LLLL B) 2609151400 C) 2609160630\nD) 15 1400-1445, 16 0600-0630\nE) ULTRALIGHT BUBBLE A-WEST (BMGWA) CLSD.)",
-   "first_seen": "2026-09-14T18:28:23Z"
-  },
-  {
-   "id": "C1927/26",
-   "loc": "LLLL",
-   "name": "KFAR-TAVOR WI 1",
-   "cat": "other",
-   "heb": "אזור ב KFAR-TAVOR בתוך 1.1NM רדיוס שמרכזו בנ.צ. 32°42'41\"N 35°24'29\"E סגור מהקרקע ועד 2,000רגל מעל פני הים לכל הטיסות, טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-15/09/2026 14:00 UTC עד 16/09/2026 06:30 UTC\nלו\"ז: 15 1400-1445, 16 0600-0630",
-   "raw": "C1927/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/020/3243N03524E001\nA) LLLL B) 2609151400 C) 2609160630\nD) 15 1400-1445, 16 0600-0630\nE) AN AREA AT KFAR-TAVOR WI 1.1NM RADIUS CENTERED ON\nPSN 324241N0352429E CLSD FM GND UP TO 2,000FT AMSL\nTO ALL FLT, OPS OF AGRICULTURE FLT AVBL WITH 15MIN\nPPR FM ATC.\nCTN ADZ.)",
    "first_seen": "2026-09-14T18:28:23Z"
   },
   {
@@ -289,15 +280,6 @@
    "cat": "ad",
    "heb": "AD סגור DUE WIP.\nבתוקף: מ-20/11/2026 16:00 UTC עד 20/11/2026 21:00 UTC",
    "raw": "A0738/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2611201600 C) 2611202100\nE) AD CLSD DUE WIP.)",
-   "first_seen": "2026-09-10T08:28:38Z"
-  },
-  {
-   "id": "C1907/26",
-   "loc": "LLLL",
-   "name": "C1907/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור ZOFAR-HRGVS.\nבתוקף: מ-15/09/2026 16:15 UTC עד 15/09/2026 17:45 UTC",
-   "raw": "C1907/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /035/045/3035N03504E007\nA) LLLL B) 2609151615 C) 2609151745\nE) CVFR RTE CLSD  ZOFAR-HRGVS.)",
    "first_seen": "2026-09-10T08:28:38Z"
   },
   {
@@ -1040,6 +1022,34 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1943/26",
+   "name": "GEZER POWER PLANT CLSD FM GND UP TO 1",
+   "cat": "other",
+   "heb": "אזור בתוך 1KM רדיוס שמרכזו בנ.צ. 31°54'55\"N 34°55'00\"E ב-GEZER POWER PLANT סגור מהקרקע ועד 1,200רגל מעל פני הים, DUE TO GAS EMISSION. מומלצת זהירות.\nבתוקף: מ-15/09/2026 16:00 UTC עד 15/09/2026 19:00 UTC",
+   "removed_at": "2026-09-16T08:55:02Z"
+  },
+  {
+   "id": "C1928/26",
+   "name": "C1928/26",
+   "cat": "act",
+   "heb": "בועת זעירים A-WEST (BMGWA) סגור.\nבתוקף: מ-15/09/2026 14:00 UTC עד 16/09/2026 06:30 UTC\nלו\"ז: 15 1400-1445, 16 0600-0630",
+   "removed_at": "2026-09-16T08:55:02Z"
+  },
+  {
+   "id": "C1927/26",
+   "name": "KFAR-TAVOR WI 1",
+   "cat": "other",
+   "heb": "אזור ב KFAR-TAVOR בתוך 1.1NM רדיוס שמרכזו בנ.צ. 32°42'41\"N 35°24'29\"E סגור מהקרקע ועד 2,000רגל מעל פני הים לכל הטיסות, טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-15/09/2026 14:00 UTC עד 16/09/2026 06:30 UTC\nלו\"ז: 15 1400-1445, 16 0600-0630",
+   "removed_at": "2026-09-16T08:55:02Z"
+  },
+  {
+   "id": "C1907/26",
+   "name": "C1907/26",
+   "cat": "other",
+   "heb": "CVFR RTE סגור ZOFAR-HRGVS.\nבתוקף: מ-15/09/2026 16:15 UTC עד 15/09/2026 17:45 UTC",
+   "removed_at": "2026-09-16T08:55:02Z"
+  },
   {
    "id": "C1936/26",
    "name": "C1936/26",
