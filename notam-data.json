@@ -1,16 +1,16 @@
 {
- "fetched_at": "16/09/2026 17:37 UTC",
- "fetched_iso": "2026-09-16T17:37:44Z",
- "count": 125,
+ "fetched_at": "17/09/2026 08:57 UTC",
+ "fetched_iso": "2026-09-17T08:57:45Z",
+ "count": 119,
  "notams": [
   {
-   "id": "C1967/26",
+   "id": "C1969/26",
    "loc": "LLLL",
-   "name": "JDEIDA",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ תתקיים ב JDEIDA. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 1,200רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות 32°55'19\"N 35°08'44\"E 32°55'24\"N 35°08'01\"E 32°55'58\"N 35°07'54\"E 32°55'59\"N 35°08'52\"E. מומלצת זהירות.\nבתוקף: מ-17/09/2026 05:00 UTC עד 17/09/2026 08:00 UTC",
-   "raw": "C1967/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/012/3256N03508E001\nA) LLLL B) 2609170500 C) 2609170800\nE) UAS ACT WILL TAKE PLACE AT JDEIDA.\nAN AREA BTN FLW PSN CLSD FM GND UP TO 1,200FT AMSL\nTO ALL FLT INCLUDING AGRICULTURE FLT  325519N0350844E\n325524N0350801E 325558N0350754E 325559N0350852E.\nCTN ADZ.\nF) GND G) 1200FT AMSL)",
-   "first_seen": "2026-09-16T17:37:44Z"
+   "name": "NAZARETH",
+   "cat": "act",
+   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-NAZARETH. אזור בתוך 0.4NM רדיוס שמרכזו בנ.צ. 32°42'12\"N 35°19'02\"E סגור מהקרקע ועד 2,700רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-17/09/2026 06:21 UTC עד 23/09/2026 03:00 UTC",
+   "raw": "C1969/26 NOTAMR C1923/26\nQ) LLLL/QWCLW/IV/M  /W /000/027/3242N03519E001\nA) LLLL B) 2609170621 C) 2609230300\nE) CAPTIVE BALLOON WILL TAKE PLACE AT NAZARETH.\nAN AREA WI 0.4NM RADIUS CENTERED ON PSN 324212N0351902E\nCLSD FM GND UP TO 2,700FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 2700FT AMSL)",
+   "first_seen": "2026-09-17T08:57:45Z"
   },
   {
    "id": "C1966/26",
@@ -19,15 +19,6 @@
    "cat": "uas",
    "heb": "פעילות כטב\"מ תתקיים ב TIBERIA. אזור בתוך 0.5NM רדיוס שמרכזו בנ.צ. 32°47'53\"N 35°31'05\"E סגור מהקרקע ועד 1,000רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-17/09/2026 07:00 UTC עד 17/09/2026 11:00 UTC",
    "raw": "C1966/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/010/3248N03531E001\nA) LLLL B) 2609170700 C) 2609171100\nE) UAS ACT WILL TAKE PLACE AT TIBERIA.\nAN AREA WI 0.5NM RADIUS CENTERED ON PSN 324753N0353105E\nCLSD FM GND UP TO 1,000FT AMSL TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 1000FT AMSL)",
-   "first_seen": "2026-09-16T17:37:44Z"
-  },
-  {
-   "id": "C1965/26",
-   "loc": "LLLL",
-   "name": "OLESH WI 0",
-   "cat": "ad",
-   "heb": "אזור ב OLESH בתוך 0.8NM רדיוס שמרכזו בנ.צ. 32°20'17\"N 34°59'21\"E סגור מהקרקע ועד 3,000רגל מעל פני הים לכל הטיסות. HASHARON-DAROM BUBBLE (BSARS) סגור E OF NAT VOR. LLHZ אזור אימונים NR 13 סגור E OF NAT VOR. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-17/09/2026 06:30 UTC עד 17/09/2026 16:00 UTC",
-   "raw": "C1965/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/030/3220N03459E001\nA) LLLL B) 2609170630 C) 2609171600\nE) AN AREA AT OLESH WI 0.8NM RADIUS CENTERED ON PSN 322017N0345921E\nCLSD FM GND UP TO 3,000FT AMSL TO ALL FLT.\nHASHARON-DAROM BUBBLE (BSARS) CLSD E OF NAT VOR.\nLLHZ TRG AREA NR 13 CLSD E OF NAT VOR.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.)",
    "first_seen": "2026-09-16T17:37:44Z"
   },
   {
@@ -238,15 +229,6 @@
    "first_seen": "2026-09-15T17:34:58Z"
   },
   {
-   "id": "C1945/26",
-   "loc": "LLLL",
-   "name": "AFULA",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ תתקיים ב AFULA. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 900רגל מעל פני הים 32°37'39\"N 35°18'28\"E 32°37'39\"N 35°17'21\"E 32°36'47\"N 35°17'44\"E 32°36'41\"N 35°19'01\"E 32°37'17\"N 35°19'24\"E. מומלצת זהירות.\nבתוקף: מ-16/09/2026 07:45 UTC עד 16/09/2026 18:00 UTC",
-   "raw": "C1945/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/009/3237N03518E002\nA) LLLL B) 2609160745 C) 2609161800\nE) UAS ACT WILL TAKE PLACE AT AFULA.\nAN AREA BTN FLW PSN CLSD FM GND UP TO 900FT AMSL\n323739N0351828E 323739N0351721E 323647N0351744E\n323641N0351901E 323717N0351924E.\nCTN ADZ.\nF) GND G) 900FT AMSL)",
-   "first_seen": "2026-09-15T17:34:58Z"
-  },
-  {
    "id": "C1944/26",
    "loc": "LLLL",
    "name": "C1944/26",
@@ -262,15 +244,6 @@
    "cat": "other",
    "heb": "CVFR RTE סגור ZOFAR-HRGVS-RUHOT.\nבתוקף: מ-17/09/2026 06:00 UTC עד 17/09/2026 13:20 UTC\nלו\"ז: 0600-1000 1145-1320",
    "raw": "C1941/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /035/045/3037N03500E011\nA) LLLL B) 2609170600 C) 2609171320\nD) 0600-1000 1145-1320\nE) CVFR RTE CLSD  ZOFAR-HRGVS-RUHOT.)",
-   "first_seen": "2026-09-15T17:34:58Z"
-  },
-  {
-   "id": "C1940/26",
-   "loc": "LLLL",
-   "name": "C1940/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור ZOFAR-HRGVS-RUHOT.\nבתוקף: מ-16/09/2026 06:50 UTC עד 16/09/2026 19:20 UTC\nלו\"ז: 0650-0915 1050-1410 1630-1745 1850-1920",
-   "raw": "C1940/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /035/045/3037N03500E011\nA) LLLL B) 2609160650 C) 2609161920\nD) 0650-0915 1050-1410 1630-1745 1850-1920\nE) CVFR RTE CLSD  ZOFAR-HRGVS-RUHOT.)",
    "first_seen": "2026-09-15T17:34:58Z"
   },
   {
@@ -316,15 +289,6 @@
    "cat": "uas",
    "heb": "MINI UAS/UAV BUBBLE CARMEL NORTH סגור. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-14/09/2026 03:00 UTC עד 17/09/2026 16:15 UTC\nלו\"ז: 14 16 0300-1420, 15 17 0300-1615",
    "raw": "C1924/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/030/3237N03501E005\nA) LLLL B) 2609140300 C) 2609171615\nD) 14 16 0300-1420, 15 17 0300-1615\nE) MINI UAS/UAV BUBBLE CARMEL NORTH CLSD.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.)",
-   "first_seen": "2026-09-10T17:00:50Z"
-  },
-  {
-   "id": "C1923/26",
-   "loc": "LLLL",
-   "name": "NAZARETH",
-   "cat": "act",
-   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-NAZARETH. אזור בתוך 0.4NM רדיוס שמרכזו בנ.צ. 32°42'12\"N 35°19'02\"E סגור מהקרקע ועד 2,700רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-15/09/2026 06:00 UTC עד 22/09/2026 06:00 UTC",
-   "raw": "C1923/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/027/3242N03519E001\nA) LLLL B) 2609150600 C) 2609220600\nE) CAPTIVE BALLOON WILL TAKE PLACE AT NAZARETH.\nAN AREA WI 0.4NM RADIUS CENTERED ON PSN 324212N0351902E\nCLSD FM GND UP TO 2,700FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 2700FT AMSL)",
    "first_seen": "2026-09-10T17:00:50Z"
   },
   {
@@ -931,24 +895,6 @@
    "first_seen": "2026-08-06T15:20:01Z"
   },
   {
-   "id": "C1678/26",
-   "loc": "LLLL",
-   "name": "C1678/26",
-   "cat": "other",
-   "heb": "TRIGGER NOTAM - NIL AIRAC DOM AIP AMDT WEF 03 SEP 2026.\nבתוקף: מ-03/09/2026 00:01 UTC עד 16/09/2026 23:59 UTC",
-   "raw": "C1678/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /E /000/999/3211N03515E015\nA) LLLL B) 2609030001 C) 2609162359\nE) TRIGGER NOTAM - NIL AIRAC DOM AIP AMDT WEF 03 SEP 2026.)",
-   "first_seen": "2026-08-05T15:24:40Z"
-  },
-  {
-   "id": "A0630/26",
-   "loc": "LLLL",
-   "name": "A0630/26",
-   "cat": "other",
-   "heb": "TRIGGER NOTAM - NIL AIRAC AIP AMDT WEF 03 SEP 2026.\nבתוקף: מ-03/09/2026 00:01 UTC עד 16/09/2026 23:59 UTC",
-   "raw": "A0630/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /E /000/999/3123N03515E999\nA) LLLL B) 2609030001 C) 2609162359\nE) TRIGGER NOTAM - NIL AIRAC AIP AMDT WEF 03 SEP 2026.)",
-   "first_seen": "2026-08-05T15:24:40Z"
-  },
-  {
    "id": "C1656/26",
    "loc": "LLIB",
    "name": "ראש פינה (LLIB)",
@@ -1130,6 +1076,55 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1967/26",
+   "name": "JDEIDA",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ תתקיים ב JDEIDA. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 1,200רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות 32°55'19\"N 35°08'44\"E 32°55'24\"N 35°08'01\"E 32°55'58\"N 35°07'54\"E 32°55'59\"N 35°08'52\"E. מומלצת זהירות.\nבתוקף: מ-17/09/2026 05:00 UTC עד 17/09/2026 08:00 UTC",
+   "removed_at": "2026-09-17T08:57:45Z"
+  },
+  {
+   "id": "C1965/26",
+   "name": "OLESH WI 0",
+   "cat": "ad",
+   "heb": "אזור ב OLESH בתוך 0.8NM רדיוס שמרכזו בנ.צ. 32°20'17\"N 34°59'21\"E סגור מהקרקע ועד 3,000רגל מעל פני הים לכל הטיסות. HASHARON-DAROM BUBBLE (BSARS) סגור E OF NAT VOR. LLHZ אזור אימונים NR 13 סגור E OF NAT VOR. טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-17/09/2026 06:30 UTC עד 17/09/2026 16:00 UTC",
+   "removed_at": "2026-09-17T08:57:45Z"
+  },
+  {
+   "id": "C1945/26",
+   "name": "AFULA",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ תתקיים ב AFULA. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 900רגל מעל פני הים 32°37'39\"N 35°18'28\"E 32°37'39\"N 35°17'21\"E 32°36'47\"N 35°17'44\"E 32°36'41\"N 35°19'01\"E 32°37'17\"N 35°19'24\"E. מומלצת זהירות.\nבתוקף: מ-16/09/2026 07:45 UTC עד 16/09/2026 18:00 UTC",
+   "removed_at": "2026-09-17T08:57:45Z"
+  },
+  {
+   "id": "C1940/26",
+   "name": "C1940/26",
+   "cat": "other",
+   "heb": "CVFR RTE סגור ZOFAR-HRGVS-RUHOT.\nבתוקף: מ-16/09/2026 06:50 UTC עד 16/09/2026 19:20 UTC\nלו\"ז: 0650-0915 1050-1410 1630-1745 1850-1920",
+   "removed_at": "2026-09-17T08:57:45Z"
+  },
+  {
+   "id": "C1923/26",
+   "name": "NAZARETH",
+   "cat": "act",
+   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-NAZARETH. אזור בתוך 0.4NM רדיוס שמרכזו בנ.צ. 32°42'12\"N 35°19'02\"E סגור מהקרקע ועד 2,700רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-15/09/2026 06:00 UTC עד 22/09/2026 06:00 UTC",
+   "removed_at": "2026-09-17T08:57:45Z"
+  },
+  {
+   "id": "C1678/26",
+   "name": "C1678/26",
+   "cat": "other",
+   "heb": "TRIGGER NOTAM - NIL AIRAC DOM AIP AMDT WEF 03 SEP 2026.\nבתוקף: מ-03/09/2026 00:01 UTC עד 16/09/2026 23:59 UTC",
+   "removed_at": "2026-09-17T08:57:45Z"
+  },
+  {
+   "id": "A0630/26",
+   "name": "A0630/26",
+   "cat": "other",
+   "heb": "TRIGGER NOTAM - NIL AIRAC AIP AMDT WEF 03 SEP 2026.\nבתוקף: מ-03/09/2026 00:01 UTC עד 16/09/2026 23:59 UTC",
+   "removed_at": "2026-09-17T08:57:45Z"
+  },
   {
    "id": "C1955/26",
    "name": "TEL-NOF",
