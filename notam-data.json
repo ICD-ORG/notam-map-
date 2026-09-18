@@ -1,7 +1,7 @@
 {
- "fetched_at": "18/09/2026 08:35 UTC",
- "fetched_iso": "2026-09-18T08:35:04Z",
- "count": 120,
+ "fetched_at": "18/09/2026 17:03 UTC",
+ "fetched_iso": "2026-09-18T17:03:42Z",
+ "count": 119,
  "notams": [
   {
    "id": "C1982/26",
@@ -415,15 +415,6 @@
    "cat": "ad",
    "heb": "TWR FREQ TEMPO CHG TO 125.600MHZ, CLEARANCE (CPT) FREQ CHG TO 118.550MHZ.\nבתוקף: מ-02/09/2026 12:38 UTC עד 31/12/2026 21:59 UTC",
    "raw": "C1858/26 NOTAMN\nQ) LLLL/QCACF/IV/BO /AE/000/999/3211N03450E005\nA) LLHZ B) 2609021238 C) 2612312159\nE) TWR FREQ TEMPO CHG TO 125.600MHZ,\nCLEARANCE (CPT) FREQ CHG TO 118.550MHZ.)",
-   "first_seen": "2026-09-08T17:11:55Z"
-  },
-  {
-   "id": "C1897/26",
-   "loc": "LLLL",
-   "name": "C1897/26",
-   "cat": "pje",
-   "heb": "PJE AIRSPACE METZADA ACT מ-8,000רגל מעל פני הים. OPR באישור מוקדם מבקרת התעופה ONLY.\nבתוקף: מ-17/09/2026 09:30 UTC עד 18/09/2026 11:00 UTC\nלו\"ז: 17 0930-1608, 18 0600-1100",
-   "raw": "C1897/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/080/3120N03523E003\nA) LLLL B) 2609170930 C) 2609181100\nD) 17 0930-1608, 18 0600-1100\nE) PJE AIRSPACE METZADA ACT FM 8,000FT AMSL.\nOPR BY PPR FM ATC ONLY.\nF) GND G) 8000FT AMSL)",
    "first_seen": "2026-09-08T17:11:55Z"
   },
   {
@@ -1085,6 +1076,13 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1897/26",
+   "name": "C1897/26",
+   "cat": "pje",
+   "heb": "PJE AIRSPACE METZADA ACT מ-8,000רגל מעל פני הים. OPR באישור מוקדם מבקרת התעופה ONLY.\nבתוקף: מ-17/09/2026 09:30 UTC עד 18/09/2026 11:00 UTC\nלו\"ז: 17 0930-1608, 18 0600-1100",
+   "removed_at": "2026-09-18T17:03:42Z"
+  },
   {
    "id": "C1974/26",
    "name": "C1974/26",
@@ -2407,27 +2405,6 @@
    "cat": "other",
    "heb": "LLER אזור אימונים HAR BERECH סגור לכל הטיסות.\nבתוקף: מ-10/06/2026 05:37 UTC עד 10/09/2026 23:59 UTC",
    "removed_at": "2026-08-30T17:18:56Z"
-  },
-  {
-   "id": "C1820/26",
-   "name": "MITZPE-AVIV",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ תתקיים ב MITZPE-AVIV. אזור מ GND עד 1,500רגל מעל פני הים סגור לכל הטיסות כולל טיסות ריסוס חקלאיות, בין נקודות הציון הבאות 32°51'05\"N 35°13'08\"E 32°50'13\"N 35°13'37\"E 32°49'52\"N 35°12'22\"E 32°49'57\"N 35°11'38\"E 32°50'51\"N 35°11'33\"E. מומלצת זהירות.\nבתוקף: מ-28/08/2026 07:00 UTC עד 28/08/2026 12:00 UTC",
-   "removed_at": "2026-08-28T15:41:57Z"
-  },
-  {
-   "id": "C1804/26",
-   "name": "C1804/26",
-   "cat": "pje",
-   "heb": "PJE AIRSPACE TEIMAN ACT מ-11,000רגל מעל פני הים. IN CASE OF EMERG CLEAR THE AIRSPACE בתוך 5MIN. מומלצת זהירות.\nבתוקף: מ-28/08/2026 05:00 UTC עד 28/08/2026 11:00 UTC",
-   "removed_at": "2026-08-28T15:41:57Z"
-  },
-  {
-   "id": "C1787/26",
-   "name": "C1787/26",
-   "cat": "pje",
-   "heb": "PJE AIRSPACE METZADA ACT מ-8,000רגל מעל פני הים. OPR באישור מוקדם מבקרת התעופה ONLY.\nבתוקף: מ-27/08/2026 09:30 UTC עד 28/08/2026 11:00 UTC\nלו\"ז: 27 0930-1640, 28 0600-1100",
-   "removed_at": "2026-08-28T15:41:57Z"
   }
  ]
 }
