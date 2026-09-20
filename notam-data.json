@@ -1,7 +1,7 @@
 {
- "fetched_at": "20/09/2026 08:54 UTC",
- "fetched_iso": "2026-09-20T08:54:31Z",
- "count": 119,
+ "fetched_at": "20/09/2026 16:48 UTC",
+ "fetched_iso": "2026-09-20T16:48:10Z",
+ "count": 118,
  "notams": [
   {
    "id": "C1982/26",
@@ -64,15 +64,6 @@
    "cat": "ad",
    "heb": "AIRSTRIP סגור לכל הטיסות, ON SEP 20 בין 0600-1500LMT הפעלת מסוקים BY PPR מ-AIRSTRIP OPR.\nבתוקף: מ-20/09/2026 03:00 UTC עד 21/09/2026 21:59 UTC",
    "raw": "C1976/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3158N03445E005\nA) LLRS B) 2609200300 C) 2609212159\nE) AIRSTRIP CLSD TO ALL FLT, ON SEP 20 BTN 0600-1500LMT\nOPS OF HEL BY PPR FM AIRSTRIP OPR.)",
-   "first_seen": "2026-09-17T17:38:03Z"
-  },
-  {
-   "id": "C1975/26",
-   "loc": "LLLL",
-   "name": "C1975/26",
-   "cat": "act",
-   "heb": "ULTRALIGHT RTE סגור SHARG-HORON-REUTE-LAPID-MCZVA-YARHV-MEYAL.\nבתוקף: מ-20/09/2026 10:00 UTC עד 20/09/2026 12:00 UTC",
-   "raw": "C1975/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /005/018/3201N03501E013\nA) LLLL B) 2609201000 C) 2609201200\nE) ULTRALIGHT RTE CLSD  SHARG-HORON-REUTE-LAPID-MCZVA-YARHV-MEYAL.)",
    "first_seen": "2026-09-17T17:38:03Z"
   },
   {
@@ -1076,6 +1067,13 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1975/26",
+   "name": "C1975/26",
+   "cat": "act",
+   "heb": "ULTRALIGHT RTE סגור SHARG-HORON-REUTE-LAPID-MCZVA-YARHV-MEYAL.\nבתוקף: מ-20/09/2026 10:00 UTC עד 20/09/2026 12:00 UTC",
+   "removed_at": "2026-09-20T16:48:10Z"
+  },
   {
    "id": "C1897/26",
    "name": "C1897/26",
