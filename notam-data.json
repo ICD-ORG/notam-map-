@@ -1,8 +1,26 @@
 {
- "fetched_at": "21/09/2026 18:36 UTC",
- "fetched_iso": "2026-09-21T18:36:51Z",
- "count": 118,
+ "fetched_at": "22/09/2026 08:52 UTC",
+ "fetched_iso": "2026-09-22T08:52:07Z",
+ "count": 116,
  "notams": [
+  {
+   "id": "C1984/26",
+   "loc": "LLLL",
+   "name": "C1984/26",
+   "cat": "other",
+   "heb": "אזור בין נקודות הציון הבאות סגור לכל הטיסות, כולל טיסות ריסוס חקלאיות מהקרקע ועד 1,200רגל מעל פני הים 32°55'23\"N 35°08'19\"E 32°55'54\"N 35°08'52\"E 32°56'02\"N 35°08'09\"E. מומלצת זהירות.)\nבתוקף: מ-22/09/2026 08:11 UTC עד 22/09/2026 11:00 UTC",
+   "raw": "C1984/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/012/3256N03508E001\nA) LLLL B) 2609220811 C) 2609221100\nE) AN AREA BTN FLW PSN CLSD TO ALL FLT,\nINCLUDING AGRICULTURE FLT FM GND UP TO 1,200FT AMSL\n325523N0350819E 325554N0350852E 325602N0350809E.\nCTN ADZ.))",
+   "first_seen": "2026-09-22T08:52:07Z"
+  },
+  {
+   "id": "C1983/26",
+   "loc": "LLLL",
+   "name": "EMEK HEFER",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב EMEK HEFER, מהקרקע ועד 30מטר מעל הקרקע. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 950רגל מעל פני הים 32°24'07\"N 34°53'54\"E 32°24'07\"N 34°53'57\"E 32°24'05\"N 34°53'57\"E 32°24'05\"N 34°53'55\"E. מומלצת זהירות.\nבתוקף: מ-22/09/2026 07:37 UTC עד 15/10/2026 20:59 UTC",
+   "raw": "C1983/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/010/3224N03454E001\nA) LLLL B) 2609220737 C) 2610152059\nE) UAS/UAV ACT WILL TAKE PLACE AT EMEK HEFER, FM GND UP TO 30M AGL.\nAN AREA BTN FLW PSN CLSD FM GND UP TO 950FT AMSL\n322407N0345354E 322407N0345357E 322405N0345357E\n322405N0345355E.\nCTN ADZ.\nF) GND G) 950FT AMSL)",
+   "first_seen": "2026-09-22T08:52:07Z"
+  },
   {
    "id": "C1982/26",
    "loc": "LLLL",
@@ -58,15 +76,6 @@
    "first_seen": "2026-09-17T17:38:03Z"
   },
   {
-   "id": "C1976/26",
-   "loc": "LLRS",
-   "name": "C1976/26",
-   "cat": "ad",
-   "heb": "AIRSTRIP סגור לכל הטיסות, ON SEP 20 בין 0600-1500LMT הפעלת מסוקים BY PPR מ-AIRSTRIP OPR.\nבתוקף: מ-20/09/2026 03:00 UTC עד 21/09/2026 21:59 UTC",
-   "raw": "C1976/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3158N03445E005\nA) LLRS B) 2609200300 C) 2609212159\nE) AIRSTRIP CLSD TO ALL FLT, ON SEP 20 BTN 0600-1500LMT\nOPS OF HEL BY PPR FM AIRSTRIP OPR.)",
-   "first_seen": "2026-09-17T17:38:03Z"
-  },
-  {
    "id": "A0768/26",
    "loc": "LLBG",
    "name": "נתב\"ג (LLBG)",
@@ -109,15 +118,6 @@
    "cat": "other",
    "heb": "ATS RTE L53 סגור בין ABIMI-BGN. TFC WITH DEP מ-AD WITHIN AMMAN FIR SHALL FILE H24 TALMI DCT TAPUZ בין 11,000-16,000FT. TFC WITH DEP מ-LLER, LLNV, LLOV AND LLRM ONLY SHALL FILE H24 GOBRI DCT TAPUZ בין 11,000-16,000FT. טיסות צבאיות OVERFLYING מ-AMMAN FIR TO NICOSIA FIR SHALL FILE H24 TALMI DCT TAPUZ ABV 17,000FT. טיסות צבאיות OVERFLYING מ-LLER, LLNV, LLOV AND LLRM TO NICOSIA FIR SHALL FILE H24 GOBRI DCT TAPUZ ABV 17,000FT.\nבתוקף: מ-22/09/2026 00:01 UTC עד 31/12/2026 23:59 UTC",
    "raw": "A0764/26 NOTAMN\nQ) LLLL/QANLT/I /NBO/E /050/600/3156N03501E027\nA) LLLL B) 2609220001 C) 2612312359\nE) ATS RTE L53 CLSD BTN ABIMI-BGN.\nTFC WITH DEP FM AD WITHIN AMMAN FIR SHALL FILE H24\nTALMI DCT TAPUZ BTN 11,000-16,000FT.\nTFC WITH DEP FM LLER, LLNV, LLOV AND LLRM ONLY SHALL\nFILE H24 GOBRI DCT TAPUZ BTN 11,000-16,000FT.\nMIL FLT OVERFLYING FM AMMAN FIR TO NICOSIA FIR SHALL\nFILE H24 TALMI DCT TAPUZ ABV 17,000FT.\nMIL FLT OVERFLYING FM LLER, LLNV, LLOV AND LLRM TO NICOSIA\nFIR SHALL FILE H24 GOBRI DCT TAPUZ ABV 17,000FT.)",
-   "first_seen": "2026-09-17T17:38:03Z"
-  },
-  {
-   "id": "A0763/26",
-   "loc": "LLLL",
-   "name": "A0763/26",
-   "cat": "other",
-   "heb": "ATS RTE L53 בין TALMI-TAPUZ AVBL H24 בין 11,000-16,000FT FOR TFC WITH DEP מ-AD WITHIN AMMAN FIR, LLER, LLNV, LLOV AND LLRM ONLY, AVBL H24 ABV 17,000FT FOR MIL TFC ONLY.\nבתוקף: מ-17/09/2026 12:21 UTC עד 21/09/2026 23:59 UTC",
-   "raw": "A0763/26 NOTAMN\nQ) LLLL/QANLT/I /NBO/E /050/600/3156N03501E027\nA) LLLL B) 2609171221 C) 2609212359\nE) ATS RTE L53 BTN TALMI-TAPUZ AVBL H24 BTN 11,000-16,000FT\nFOR TFC WITH DEP FM AD WITHIN AMMAN FIR, LLER, LLNV,\nLLOV AND LLRM ONLY, AVBL H24 ABV 17,000FT FOR MIL TFC ONLY.)",
    "first_seen": "2026-09-17T17:38:03Z"
   },
   {
@@ -508,30 +508,12 @@
    "first_seen": "2026-08-31T10:09:07Z"
   },
   {
-   "id": "A0708/26",
-   "loc": "LLBG",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "OCA(H) FOR ILS RWY 30 CHG TO 500(370) FOR ALL CAT.\nבתוקף: מ-31/08/2026 06:32 UTC עד 30/09/2026 23:59 UTC",
-   "raw": "A0708/26 NOTAMR A0501/26\nQ) LLLL/QPOCH/I /NBO/A /000/999/3201N03452E005\nA) LLBG B) 2608310632 C) 2609302359\nE) OCA(H) FOR ILS RWY 30 CHG TO 500(370) FOR ALL CAT.)",
-   "first_seen": "2026-08-31T10:09:07Z"
-  },
-  {
    "id": "A0703/26",
    "loc": "LLBG",
    "name": "נתב\"ג (LLBG)",
    "cat": "ad",
    "heb": "OCA(H) FOR ILS RWY 12 CHG TO 500(397) FOR ALL CAT.\nבתוקף: מ-31/08/2026 06:28 UTC עד 30/09/2026 23:59 UTC",
    "raw": "A0703/26 NOTAMR A0498/26\nQ) LLLL/QPOCH/I /NBO/A /000/999/3200N03454E005\nA) LLBG B) 2608310628 C) 2609302359\nE) OCA(H) FOR ILS RWY 12 CHG TO 500(397) FOR ALL CAT.)",
-   "first_seen": "2026-08-31T10:09:07Z"
-  },
-  {
-   "id": "A0704/26",
-   "loc": "LLBG",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "OCA(H) FOR ILS RWY 21 CHG TO 500(366) FOR ALL CAT.\nבתוקף: מ-31/08/2026 06:29 UTC עד 30/09/2026 23:59 UTC",
-   "raw": "A0704/26 NOTAMR A0499/26\nQ) LLLL/QPOCH/I /NBO/A /000/999/3200N03453E005\nA) LLBG B) 2608310629 C) 2609302359\nE) OCA(H) FOR ILS RWY 21 CHG TO 500(366) FOR ALL CAT.)",
    "first_seen": "2026-08-31T10:09:07Z"
   },
   {
@@ -1067,6 +1049,34 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1976/26",
+   "name": "C1976/26",
+   "cat": "ad",
+   "heb": "AIRSTRIP סגור לכל הטיסות, ON SEP 20 בין 0600-1500LMT הפעלת מסוקים BY PPR מ-AIRSTRIP OPR.\nבתוקף: מ-20/09/2026 03:00 UTC עד 21/09/2026 21:59 UTC",
+   "removed_at": "2026-09-22T08:52:07Z"
+  },
+  {
+   "id": "A0763/26",
+   "name": "A0763/26",
+   "cat": "other",
+   "heb": "ATS RTE L53 בין TALMI-TAPUZ AVBL H24 בין 11,000-16,000FT FOR TFC WITH DEP מ-AD WITHIN AMMAN FIR, LLER, LLNV, LLOV AND LLRM ONLY, AVBL H24 ABV 17,000FT FOR MIL TFC ONLY.\nבתוקף: מ-17/09/2026 12:21 UTC עד 21/09/2026 23:59 UTC",
+   "removed_at": "2026-09-22T08:52:07Z"
+  },
+  {
+   "id": "A0708/26",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "OCA(H) FOR ILS RWY 30 CHG TO 500(370) FOR ALL CAT.\nבתוקף: מ-31/08/2026 06:32 UTC עד 30/09/2026 23:59 UTC",
+   "removed_at": "2026-09-22T08:52:07Z"
+  },
+  {
+   "id": "A0704/26",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "OCA(H) FOR ILS RWY 21 CHG TO 500(366) FOR ALL CAT.\nבתוקף: מ-31/08/2026 06:29 UTC עד 30/09/2026 23:59 UTC",
+   "removed_at": "2026-09-22T08:52:07Z"
+  },
   {
    "id": "C1975/26",
    "name": "C1975/26",
@@ -2179,34 +2189,6 @@
    "cat": "ad",
    "heb": "ACFT STAND A1 סגור, DUE WIP.\nבתוקף: מ-12/05/2026 06:01 UTC עד 31/08/2026 20:59 UTC",
    "removed_at": "2026-09-01T08:57:32Z"
-  },
-  {
-   "id": "C1848/26",
-   "name": "GEULIM WI 1",
-   "cat": "act",
-   "heb": "אזור ב GEULIM בתוך 1.1NM רדיוס שמרכזו בנ.צ. 32°17'23\"N 34°57'23\"E סגור מהקרקע ועד 1,500רגל מעל פני הים לכל הטיסות. LLHZ TRG AERA NR 9 סגור בועת זעירים SHARON DAROM(BSARS) סגור בין ROAD NR 4 57 6 AND N OF TIRAH טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-31/08/2026 11:00 UTC עד 31/08/2026 13:00 UTC",
-   "removed_at": "2026-08-31T19:31:01Z"
-  },
-  {
-   "id": "C1819/26",
-   "name": "ADERET",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ תתקיים ב ADERET. אזור בין נקודות הציון הבאות מהקרקע ועד 3,500רגל מעל פני הים סגור לכל הטיסות כולל טיסות ריסוס חקלאיות 31°41'07\"N 34°59'19\"E 31°38'46\"N 34°58'57\"E 31°38'04\"N 35°01'16\"E 31°39'31\"N 35°03'42\"E 31°41'31\"N 35°01'34\"E. מומלצת זהירות.\nבתוקף: מ-31/08/2026 06:00 UTC עד 31/08/2026 11:30 UTC\nלו\"ז: 0600-0730 0900-1130",
-   "removed_at": "2026-08-31T19:31:01Z"
-  },
-  {
-   "id": "C1679/26",
-   "name": "EITANIM-HOSPITAL",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב EITANIM-HOSPITAL. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 31°46'43\"N 35°05'39\"E סגור מהקרקע ועד 100מטר מעל הקרקע, 2,800רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-06/08/2026 07:00 UTC עד 31/08/2026 15:00 UTC\nלו\"ז: DAILY 0700-1500",
-   "removed_at": "2026-08-31T19:31:01Z"
-  },
-  {
-   "id": "C1558/26",
-   "name": "RAMAT-BEKA WI LLP14",
-   "cat": "frng",
-   "heb": "FRNG WILL TAKE PLACE ב-RAMAT-BEKA בתוך LLP14. אזור בין נקודות הציון הבאות 31°05'42\"N 34°53'14\"E 31°05'41\"N 34°53'52\"E 31°05'09\"N 34°53'51\"E 31°04'53\"N 34°53'13\"E סגור מהקרקע ועד 12,000רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-02/08/2026 05:00 UTC עד 31/08/2026 15:00 UTC\nלו\"ז: SUN-THU 0500-1500",
-   "removed_at": "2026-08-31T19:31:01Z"
   }
  ]
 }
