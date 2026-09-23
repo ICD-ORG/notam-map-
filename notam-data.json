@@ -1,25 +1,97 @@
 {
- "fetched_at": "22/09/2026 17:37 UTC",
- "fetched_iso": "2026-09-22T17:37:34Z",
- "count": 116,
+ "fetched_at": "23/09/2026 08:54 UTC",
+ "fetched_iso": "2026-09-23T08:54:15Z",
+ "count": 122,
  "notams": [
   {
-   "id": "C1988/26",
+   "id": "C2000/26",
+   "loc": "LLLL",
+   "name": "C2000/26",
+   "cat": "pje",
+   "heb": "PJE AIRSPACE TEIMAN ACT מ-11,000רגל מעל פני הים. IN CASE OF EMERG CLEAR THE AIRSPACE בתוך 5MIN. מומלצת זהירות.\nבתוקף: מ-25/09/2026 05:00 UTC עד 25/09/2026 11:00 UTC",
+   "raw": "C2000/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/110/3117N03443E004\nA) LLLL B) 2609250500 C) 2609251100\nE) PJE AIRSPACE TEIMAN ACT FM 11,000FT AMSL.\nIN CASE OF EMERG CLEAR THE AIRSPACE WI 5MIN.\nCTN ADZ.\nF) GND G) 11000FT AMSL)",
+   "first_seen": "2026-09-23T08:54:15Z"
+  },
+  {
+   "id": "C1999/26",
+   "loc": "LLLL",
+   "name": "C1999/26",
+   "cat": "pje",
+   "heb": "PJE AIRSPACE METZADA ACT מ-8,000רגל מעל פני הים. OPR באישור מוקדם מבקרת התעופה ONLY.\nבתוקף: מ-27/09/2026 06:00 UTC עד 01/10/2026 15:00 UTC\nלו\"ז: DAILY 0600-1500",
+   "raw": "C1999/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/080/3120N03523E003\nA) LLLL B) 2609270600 C) 2610011500\nD) DAILY 0600-1500\nE) PJE AIRSPACE METZADA ACT FM 8,000FT AMSL.\nOPR BY PPR FM ATC ONLY.\nF) GND G) 8000FT AMSL)",
+   "first_seen": "2026-09-23T08:54:15Z"
+  },
+  {
+   "id": "C1998/26",
+   "loc": "LLLL",
+   "name": "C1998/26",
+   "cat": "pje",
+   "heb": "PJE AIRSPACE METZADA ACT מ-8,000רגל מעל פני הים. OPR באישור מוקדם מבקרת התעופה ONLY.\nבתוקף: מ-02/10/2026 06:00 UTC עד 02/10/2026 11:00 UTC",
+   "raw": "C1998/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/080/3120N03523E003\nA) LLLL B) 2610020600 C) 2610021100\nE) PJE AIRSPACE METZADA ACT FM 8,000FT AMSL.\nOPR BY PPR FM ATC ONLY.\nF) GND G) 8000FT AMSL)",
+   "first_seen": "2026-09-23T08:54:15Z"
+  },
+  {
+   "id": "C1997/26",
+   "loc": "LLIB",
+   "name": "ראש פינה (LLIB)",
+   "cat": "ad",
+   "heb": "VOR APCH PROC NOT AVBL.\nבתוקף: מ-24/09/2026 08:30 UTC עד 24/09/2026 10:30 UTC",
+   "raw": "C1997/26 NOTAMN\nQ) LLLL/QPAAU/I /NBO/A /000/999/3259N03534E005\nA) LLIB B) 2609240830 C) 2609241030\nE) VOR APCH PROC NOT AVBL.)",
+   "first_seen": "2026-09-23T08:54:15Z"
+  },
+  {
+   "id": "C1996/26",
+   "loc": "LLLL",
+   "name": "C1996/26",
+   "cat": "act",
+   "heb": "CVFR ULTRALIGHT AND מסוקים RTE סגור AYLON-LTRUN-SHARG. NCSHN-LTRUN. ESTOL-LTRUN. BSEMS-LTRUN.)\nבתוקף: מ-23/09/2026 07:30 UTC עד 23/09/2026 18:00 UTC\nלו\"ז: 0730-0745, 1230-1400, 1600-1800",
+   "raw": "C1996/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /000/023/3149N03458E004\nA) LLLL B) 2609230730 C) 2609231800\nD) 0730-0745, 1230-1400, 1600-1800\nE) CVFR ULTRALIGHT AND HEL RTE CLSD\nAYLON-LTRUN-SHARG.\nNCSHN-LTRUN.\nESTOL-LTRUN.\nBSEMS-LTRUN.))",
+   "first_seen": "2026-09-23T08:54:15Z"
+  },
+  {
+   "id": "C1995/26",
+   "loc": "LLLL",
+   "name": "LATRUN BTN FLW PSN CLSD FM GND",
+   "cat": "other",
+   "heb": "אזור ב LATRUN בין נקודות הציון הבאות סגור מהקרקע ועד 2,20רגל מעל פני הים, למעט BY-ATC (PLUTO CTL) 31°51'07\"N 34°59'40\"E 31°49'31\"N 34°59'35\"E 314°93'10\"N 34°57'36\"E 31°51'08\"N 34°57'40\"E 31°51'07\"N 34°59'40\"E טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.)\nבתוקף: מ-23/09/2026 07:30 UTC עד 23/09/2026 18:00 UTC\nלו\"ז: 0730-0745, 1230-1400, 1600-1800",
+   "raw": "C1995/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/022/3150N03459E002\nA) LLLL B) 2609230730 C) 2609231800\nD) 0730-0745, 1230-1400, 1600-1800\nE) AN AREA AT LATRUN BTN FLW PSN CLSD FM GND\nUP TO 2,20FT AMSL, EXC BY-ATC (PLUTO CTL)\n315107N0345940E 314931N0345935E 3149310N0345736E\n315108N0345740E 315107N0345940E\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.))",
+   "first_seen": "2026-09-23T08:54:15Z"
+  },
+  {
+   "id": "C1993/26",
+   "loc": "LLIB",
+   "name": "ראש פינה (LLIB)",
+   "cat": "ad",
+   "heb": "CTR AVBL עד MAX 3,700רגל מעל פני הים. XNG CTR AVBL ב-MAX 3,700רגל מעל פני הים.\nבתוקף: מ-24/09/2026 08:30 UTC עד 24/09/2026 10:30 UTC",
+   "raw": "C1993/26 NOTAMN\nQ) LLLL/QACLP/IV/NBO/AE/000/060/3257N03534E007\nA) LLIB B) 2609240830 C) 2609241030\nE) CTR AVBL UP TO MAX 3,700FT AMSL.\nXNG CTR AVBL AT MAX 3,700FT AMSL.)",
+   "first_seen": "2026-09-23T08:54:15Z"
+  },
+  {
+   "id": "C1991/26",
+   "loc": "LLLL",
+   "name": "C1991/26",
+   "cat": "pje",
+   "heb": "PJE AIRSPACE MAHANAYIM סגור.\nבתוקף: מ-24/09/2026 08:30 UTC עד 24/09/2026 10:30 UTC",
+   "raw": "C1991/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/110/3259N03535E002\nA) LLLL B) 2609240830 C) 2609241030\nE) PJE AIRSPACE MAHANAYIM CLSD.\nF) GND G) 11000FT AMSL)",
+   "first_seen": "2026-09-23T08:54:15Z"
+  },
+  {
+   "id": "C1990/26",
    "loc": "LLLL",
    "name": "NAZARETH",
    "cat": "act",
-   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-NAZARETH. אזור בתוך 0.4NM רדיוס שמרכזו בנ.צ. 32°42'12\"N 35°19'02\"E סגור מהקרקע ועד 2,700רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-23/09/2026 21:00 UTC עד 25/09/2026 03:07 UTC",
-   "raw": "C1988/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/027/3242N03519E001\nA) LLLL B) 2609232100 C) 2609250307\nE) CAPTIVE BALLOON WILL TAKE PLACE AT NAZARETH.\nAN AREA WI 0.4NM RADIUS CENTERED ON PSN 324212N0351902E\nCLSD FM GND UP TO 2,700FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 2700FT AMSL)",
-   "first_seen": "2026-09-22T17:37:34Z"
+   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-NAZARETH. אזור בתוך 0.4NM רדיוס שמרכזו בנ.צ. 32°42'12\"N 35°19'02\"E סגור מהקרקע ועד 2,700רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-23/09/2026 06:23 UTC עד 25/09/2026 06:00 UTC",
+   "raw": "C1990/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/027/3242N03519E001\nA) LLLL B) 2609230623 C) 2609250600\nE) CAPTIVE BALLOON WILL TAKE PLACE AT NAZARETH.\nAN AREA WI 0.4NM RADIUS CENTERED ON PSN 324212N0351902E\nCLSD FM GND UP TO 2,700FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 2700FT AMSL)",
+   "first_seen": "2026-09-23T08:54:15Z"
   },
   {
-   "id": "A0772/26",
-   "loc": "LLBG",
-   "name": "A0772/26",
-   "cat": "obst",
-   "heb": "RWY 21 סגור FOR LDG, DUE CRANE ON FINAL 21. IN CASE OF EMERG LOWERED בתוך 30MIN.\nבתוקף: מ-22/09/2026 17:00 UTC עד 23/09/2026 01:30 UTC",
-   "raw": "A0772/26 NOTAMN\nQ) LLLL/QMRLC/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2609221700 C) 2609230130\nE) RWY 21 CLSD FOR LDG, DUE CRANE ON FINAL 21.\nIN CASE OF EMERG LOWERED WI 30MIN.)",
-   "first_seen": "2026-09-22T17:37:34Z"
+   "id": "A0773/26",
+   "loc": "LLLL",
+   "name": "A0773/26",
+   "cat": "other",
+   "heb": "ATS RTE J14 סגור בין BARZI-ROP.\nבתוקף: מ-24/09/2026 08:30 UTC עד 24/09/2026 10:30 UTC",
+   "raw": "A0773/26 NOTAMN\nQ) LLLL/QANLC/I /NBO/E /040/050/3255N03533E005\nA) LLLL B) 2609240830 C) 2609241030\nE) ATS RTE J14 CLSD BTN BARZI-ROP.)",
+   "first_seen": "2026-09-23T08:54:15Z"
   },
   {
    "id": "C1987/26",
@@ -175,15 +247,6 @@
    "first_seen": "2026-09-17T17:38:03Z"
   },
   {
-   "id": "C1969/26",
-   "loc": "LLLL",
-   "name": "NAZARETH",
-   "cat": "act",
-   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-NAZARETH. אזור בתוך 0.4NM רדיוס שמרכזו בנ.צ. 32°42'12\"N 35°19'02\"E סגור מהקרקע ועד 2,700רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-17/09/2026 06:21 UTC עד 23/09/2026 03:00 UTC",
-   "raw": "C1969/26 NOTAMR C1923/26\nQ) LLLL/QWCLW/IV/M  /W /000/027/3242N03519E001\nA) LLLL B) 2609170621 C) 2609230300\nE) CAPTIVE BALLOON WILL TAKE PLACE AT NAZARETH.\nAN AREA WI 0.4NM RADIUS CENTERED ON PSN 324212N0351902E\nCLSD FM GND UP TO 2,700FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 2700FT AMSL)",
-   "first_seen": "2026-09-17T08:57:45Z"
-  },
-  {
    "id": "A0760/26",
    "loc": "LLER",
    "name": "A0760/26",
@@ -280,15 +343,6 @@
    "cat": "uas",
    "heb": "פעילות כטב\"מ תתקיים ב KELCH/LACHISH. אזור מ GND עד 2,500רגל מעל פני הים סגור לכל הטיסות בין נקודות הציון הבאות 31°32'26\"N 34°48'01\"E 31°32'25\"N 34°54'09\"E 31°31'44\"N 34°54'09\"E 31°31'29\"N 34°52'46\"E 31°31'29\"N 34°51'26\"E 31°31'25\"N 34°48'43\"E טיסות ריסוס חקלאיות בתוך 15MIN אישור מוקדם מבקרת התעופה. מומלצת זהירות.\nבתוקף: מ-22/09/2026 05:00 UTC עד 24/09/2026 15:00 UTC\nלו\"ז: DAILY 0500-1500",
    "raw": "C1951/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/025/3132N03451E003\nA) LLLL B) 2609220500 C) 2609241500\nD) DAILY 0500-1500\nE) UAS ACT WILL TAKE PLACE AT KELCH/LACHISH.\nAN AREA FM GND UP TO 2,500FT AMSL CLSD TO ALL FLT\nBTN FLW PSN  313226N0344801E 313225N0345409E\n313144N0345409E 313129N0345246E 313129N0345126E\n313125N0344843E\nOPS OF AGRICULTURE FLT WI 15MIN PPR FM ATC.\nCTN ADZ.\nF) GND G) 2500FT AMSL)",
-   "first_seen": "2026-09-15T17:34:58Z"
-  },
-  {
-   "id": "C1950/26",
-   "loc": "LLLL",
-   "name": "TAANACHIM",
-   "cat": "act",
-   "heb": "AEROBATICS טיסות WILL TAKE PLACE ב-TAANACHIM, בין 500-4,000רגל מעל פני הים, בתוך THE נקודות הציון הבאות, ACFT TYPE/DR107, REG/4X-OMR 32°33'34\"N 35°16'15\"E 32°31'55\"N 35°16'09\"E 32°31'56\"N 35°18'04\"E 32°33'34\"N 35°18'07\"E. מומלצת זהירות.\nבתוקף: מ-23/09/2026 05:00 UTC עד 23/09/2026 06:30 UTC",
-   "raw": "C1950/26 NOTAMN\nQ) LLLL/QWBLW/IV/M  /W /005/040/3233N03517E002\nA) LLLL B) 2609230500 C) 2609230630\nE) AEROBATICS FLT WILL TAKE PLACE AT TAANACHIM,\nBTN 500-4,000FT AMSL, WI THE FLW PSN, ACFT TYPE/DR107,\nREG/4X-OMR  323334N0351615E 323155N0351609E\n323156N0351804E 323334N0351807E.\nCTN ADZ.\nF) 500FT AMSL G) 4000FT AMSL)",
    "first_seen": "2026-09-15T17:34:58Z"
   },
   {
@@ -1049,6 +1103,34 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1988/26",
+   "name": "NAZARETH",
+   "cat": "act",
+   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-NAZARETH. אזור בתוך 0.4NM רדיוס שמרכזו בנ.צ. 32°42'12\"N 35°19'02\"E סגור מהקרקע ועד 2,700רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-23/09/2026 21:00 UTC עד 25/09/2026 03:07 UTC",
+   "removed_at": "2026-09-23T08:54:15Z"
+  },
+  {
+   "id": "A0772/26",
+   "name": "A0772/26",
+   "cat": "obst",
+   "heb": "RWY 21 סגור FOR LDG, DUE CRANE ON FINAL 21. IN CASE OF EMERG LOWERED בתוך 30MIN.\nבתוקף: מ-22/09/2026 17:00 UTC עד 23/09/2026 01:30 UTC",
+   "removed_at": "2026-09-23T08:54:15Z"
+  },
+  {
+   "id": "C1969/26",
+   "name": "NAZARETH",
+   "cat": "act",
+   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-NAZARETH. אזור בתוך 0.4NM רדיוס שמרכזו בנ.צ. 32°42'12\"N 35°19'02\"E סגור מהקרקע ועד 2,700רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-17/09/2026 06:21 UTC עד 23/09/2026 03:00 UTC",
+   "removed_at": "2026-09-23T08:54:15Z"
+  },
+  {
+   "id": "C1950/26",
+   "name": "TAANACHIM",
+   "cat": "act",
+   "heb": "AEROBATICS טיסות WILL TAKE PLACE ב-TAANACHIM, בין 500-4,000רגל מעל פני הים, בתוך THE נקודות הציון הבאות, ACFT TYPE/DR107, REG/4X-OMR 32°33'34\"N 35°16'15\"E 32°31'55\"N 35°16'09\"E 32°31'56\"N 35°18'04\"E 32°33'34\"N 35°18'07\"E. מומלצת זהירות.\nבתוקף: מ-23/09/2026 05:00 UTC עד 23/09/2026 06:30 UTC",
+   "removed_at": "2026-09-23T08:54:15Z"
+  },
   {
    "id": "C1984/26",
    "name": "C1984/26",
@@ -2084,20 +2166,6 @@
    "cat": "ad",
    "heb": "AIRSTRIP LTD TO MAX 400רגל מעל פני הים DUE ILS ACT בתוך LLRD. מומלצת זהירות.\nבתוקף: מ-02/09/2026 09:40 UTC עד 02/09/2026 10:05 UTC",
    "removed_at": "2026-09-02T17:06:44Z"
-  },
-  {
-   "id": "C1852/26",
-   "name": "GOLANI-JUNCTION",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ תתקיים ב GOLANI-JUNCTION. אזור בתוך 1NM רדיוס שמרכזו בנ.צ. 32°45'50\"N 35°23'04\"E סגור לכל הטיסות מהקרקע ועד 2,000רגל מעל פני הים. טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-02/09/2026 02:50 UTC עד 02/09/2026 04:00 UTC",
-   "removed_at": "2026-09-02T08:12:16Z"
-  },
-  {
-   "id": "A0716/26",
-   "name": "A0716/26",
-   "cat": "other",
-   "heb": "ATS RTE J14 סגור בין MEGID-BARZI.\nבתוקף: מ-02/09/2026 02:50 UTC עד 02/09/2026 03:00 UTC",
-   "removed_at": "2026-09-02T08:12:16Z"
   }
  ]
 }
