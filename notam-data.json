@@ -1,8 +1,44 @@
 {
- "fetched_at": "23/09/2026 17:51 UTC",
- "fetched_iso": "2026-09-23T17:51:04Z",
- "count": 134,
+ "fetched_at": "24/09/2026 08:49 UTC",
+ "fetched_iso": "2026-09-24T08:49:26Z",
+ "count": 132,
  "notams": [
+  {
+   "id": "A0777/26",
+   "loc": "LLHA",
+   "name": "חיפה (LLHA)",
+   "cat": "ad",
+   "heb": "CIRCUIT EXER אסור, למעט ACFT ATR C/S HFA. LDG אסור למעט PPR טיסות מ-AD MANAGEMENT OR מ-ATC. EXP DLA FOR DEP טיסות.\nבתוקף: מ-12/10/2026 14:00 UTC עד 12/10/2026 16:30 UTC",
+   "raw": "A0777/26 NOTAMN\nQ) LLLL/QACLP/IV/NBO/AE/000/030/3251N03503E007\nA) LLHA B) 2610121400 C) 2610121630\nE) CIRCUIT EXER PROHIBITED, EXC ACFT ATR C/S HFA.\nLDG PROHIBITED EXC PPR FLT FM AD MANAGEMENT OR FM ATC.\nEXP DLA FOR DEP FLT.)",
+   "first_seen": "2026-09-24T08:49:26Z"
+  },
+  {
+   "id": "A0776/26",
+   "loc": "LLBG",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "RWY 08/26 סגור למעט RWY INT, DUE WIP.\nבתוקף: מ-30/09/2026 04:00 UTC עד 30/09/2026 11:00 UTC",
+   "raw": "A0776/26 NOTAMN\nQ) LLLL/QMRLC/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2609300400 C) 2609301100\nE) RWY 08/26 CLSD EXC RWY INT, DUE WIP.)",
+   "first_seen": "2026-09-24T08:49:26Z"
+  },
+  {
+   "id": "A0775/26",
+   "loc": "LLBG",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "RWY 03/21 סגור למעט RWY INT DUE WIP.\nבתוקף: מ-29/09/2026 04:00 UTC עד 29/09/2026 11:00 UTC",
+   "raw": "A0775/26 NOTAMN\nQ) LLLL/QMRLC/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2609290400 C) 2609291100\nE) RWY 03/21 CLSD EXC RWY INT DUE WIP.)",
+   "first_seen": "2026-09-24T08:49:26Z"
+  },
+  {
+   "id": "A0774/26",
+   "loc": "LLBG",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "RWY 12/30 סגור למעט RWY INT DUE WIP.\nבתוקף: מ-28/09/2026 04:00 UTC עד 28/09/2026 11:00 UTC",
+   "raw": "A0774/26 NOTAMN\nQ) LLLL/QMRLC/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2609280400 C) 2609281100\nE) RWY 12/30 CLSD EXC RWY INT DUE WIP.)",
+   "first_seen": "2026-09-24T08:49:26Z"
+  },
   {
    "id": "C2017/26",
    "loc": "LLLL",
@@ -184,24 +220,6 @@
    "first_seen": "2026-09-23T08:54:15Z"
   },
   {
-   "id": "C1996/26",
-   "loc": "LLLL",
-   "name": "C1996/26",
-   "cat": "act",
-   "heb": "CVFR ULTRALIGHT AND מסוקים RTE סגור AYLON-LTRUN-SHARG. NCSHN-LTRUN. ESTOL-LTRUN. BSEMS-LTRUN.)\nבתוקף: מ-23/09/2026 07:30 UTC עד 23/09/2026 18:00 UTC\nלו\"ז: 0730-0745, 1230-1400, 1600-1800",
-   "raw": "C1996/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /000/023/3149N03458E004\nA) LLLL B) 2609230730 C) 2609231800\nD) 0730-0745, 1230-1400, 1600-1800\nE) CVFR ULTRALIGHT AND HEL RTE CLSD\nAYLON-LTRUN-SHARG.\nNCSHN-LTRUN.\nESTOL-LTRUN.\nBSEMS-LTRUN.))",
-   "first_seen": "2026-09-23T08:54:15Z"
-  },
-  {
-   "id": "C1995/26",
-   "loc": "LLLL",
-   "name": "LATRUN BTN FLW PSN CLSD FM GND",
-   "cat": "other",
-   "heb": "אזור ב LATRUN בין נקודות הציון הבאות סגור מהקרקע ועד 2,20רגל מעל פני הים, למעט BY-ATC (PLUTO CTL) 31°51'07\"N 34°59'40\"E 31°49'31\"N 34°59'35\"E 314°93'10\"N 34°57'36\"E 31°51'08\"N 34°57'40\"E 31°51'07\"N 34°59'40\"E טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.)\nבתוקף: מ-23/09/2026 07:30 UTC עד 23/09/2026 18:00 UTC\nלו\"ז: 0730-0745, 1230-1400, 1600-1800",
-   "raw": "C1995/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/022/3150N03459E002\nA) LLLL B) 2609230730 C) 2609231800\nD) 0730-0745, 1230-1400, 1600-1800\nE) AN AREA AT LATRUN BTN FLW PSN CLSD FM GND\nUP TO 2,20FT AMSL, EXC BY-ATC (PLUTO CTL)\n315107N0345940E 314931N0345935E 3149310N0345736E\n315108N0345740E 315107N0345940E\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.))",
-   "first_seen": "2026-09-23T08:54:15Z"
-  },
-  {
    "id": "C1993/26",
    "loc": "LLIB",
    "name": "ראש פינה (LLIB)",
@@ -280,42 +298,6 @@
    "cat": "other",
    "heb": "CVFR RTE סגור ZOFAR-HRGVS-RUHOT.\nבתוקף: מ-24/09/2026 16:30 UTC עד 24/09/2026 22:00 UTC",
    "raw": "C1981/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /035/045/3037N03500E011\nA) LLLL B) 2609241630 C) 2609242200\nE) CVFR RTE CLSD  ZOFAR-HRGVS-RUHOT.)",
-   "first_seen": "2026-09-17T17:38:03Z"
-  },
-  {
-   "id": "C1979/26",
-   "loc": "LLLL",
-   "name": "C1979/26",
-   "cat": "act",
-   "heb": "ULTRALIGHT AND מסוקים RTE סגור EIRON-ARRAA-ZMGID-NIRYA-MRHVA-TAVOR. TFC WILL BE DIVERTED VIA FRDIS-HASID.\nבתוקף: מ-24/09/2026 07:35 UTC עד 24/09/2026 08:00 UTC",
-   "raw": "C1979/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /010/020/3235N03513E013\nA) LLLL B) 2609240735 C) 2609240800\nE) ULTRALIGHT AND HEL RTE CLSD\nEIRON-ARRAA-ZMGID-NIRYA-MRHVA-TAVOR.\nTFC WILL BE DIVERTED VIA FRDIS-HASID.)",
-   "first_seen": "2026-09-17T17:38:03Z"
-  },
-  {
-   "id": "C1980/26",
-   "loc": "LLLL",
-   "name": "C1980/26",
-   "cat": "act",
-   "heb": "LLMG אזור אימונים AND בועת זעירים NR B-WEST (BMGWB) LTD TO MAX 1,600רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-24/09/2026 07:35 UTC עד 24/09/2026 08:00 UTC",
-   "raw": "C1980/26 NOTAMN\nQ) LLLL/QAELP/IV/NBO/E /000/020/3237N03523E005\nA) LLLL B) 2609240735 C) 2609240800\nE) LLMG TRG AREA AND ULTRALIGHT BUBBLE NR B-WEST (BMGWB)\nLTD TO MAX 1,600FT AMSL.\nCTN ADZ.)",
-   "first_seen": "2026-09-17T17:38:03Z"
-  },
-  {
-   "id": "C1978/26",
-   "loc": "LLLL",
-   "name": "C1978/26",
-   "cat": "ad",
-   "heb": "CVFR RTE סגור DUE ILS ACT בתוך LLRD EIRON-ZMGID-AFULA-TAVOR. AFULA-EITAN.\nבתוקף: מ-24/09/2026 07:35 UTC עד 24/09/2026 08:00 UTC",
-   "raw": "C1978/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /025/030/3235N03513E013\nA) LLLL B) 2609240735 C) 2609240800\nE) CVFR RTE CLSD DUE ILS ACT WI LLRD\nEIRON-ZMGID-AFULA-TAVOR.\nAFULA-EITAN.)",
-   "first_seen": "2026-09-17T17:38:03Z"
-  },
-  {
-   "id": "C1977/26",
-   "loc": "LLMG",
-   "name": "מגידו (LLMG)",
-   "cat": "ad",
-   "heb": "AIRSTRIP LTD TO MAX 400רגל מעל פני הים DUE ILS ACT בתוך LLRD מומלצת זהירות.\nבתוקף: מ-24/09/2026 07:35 UTC עד 24/09/2026 08:00 UTC",
-   "raw": "C1977/26 NOTAMN\nQ) LLLL/QFALT/IV/NBO/A /000/999/3236N03514E001\nA) LLMG B) 2609240735 C) 2609240800\nE) AIRSTRIP LTD TO MAX 400FT AMSL DUE ILS ACT WI LLRD\nCTN ADZ.)",
    "first_seen": "2026-09-17T17:38:03Z"
   },
   {
@@ -1211,6 +1193,48 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1996/26",
+   "name": "C1996/26",
+   "cat": "act",
+   "heb": "CVFR ULTRALIGHT AND מסוקים RTE סגור AYLON-LTRUN-SHARG. NCSHN-LTRUN. ESTOL-LTRUN. BSEMS-LTRUN.)\nבתוקף: מ-23/09/2026 07:30 UTC עד 23/09/2026 18:00 UTC\nלו\"ז: 0730-0745, 1230-1400, 1600-1800",
+   "removed_at": "2026-09-24T08:49:26Z"
+  },
+  {
+   "id": "C1995/26",
+   "name": "LATRUN BTN FLW PSN CLSD FM GND",
+   "cat": "other",
+   "heb": "אזור ב LATRUN בין נקודות הציון הבאות סגור מהקרקע ועד 2,20רגל מעל פני הים, למעט BY-ATC (PLUTO CTL) 31°51'07\"N 34°59'40\"E 31°49'31\"N 34°59'35\"E 314°93'10\"N 34°57'36\"E 31°51'08\"N 34°57'40\"E 31°51'07\"N 34°59'40\"E טיסות ריסוס באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.)\nבתוקף: מ-23/09/2026 07:30 UTC עד 23/09/2026 18:00 UTC\nלו\"ז: 0730-0745, 1230-1400, 1600-1800",
+   "removed_at": "2026-09-24T08:49:26Z"
+  },
+  {
+   "id": "C1979/26",
+   "name": "C1979/26",
+   "cat": "act",
+   "heb": "ULTRALIGHT AND מסוקים RTE סגור EIRON-ARRAA-ZMGID-NIRYA-MRHVA-TAVOR. TFC WILL BE DIVERTED VIA FRDIS-HASID.\nבתוקף: מ-24/09/2026 07:35 UTC עד 24/09/2026 08:00 UTC",
+   "removed_at": "2026-09-24T08:49:26Z"
+  },
+  {
+   "id": "C1980/26",
+   "name": "C1980/26",
+   "cat": "act",
+   "heb": "LLMG אזור אימונים AND בועת זעירים NR B-WEST (BMGWB) LTD TO MAX 1,600רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-24/09/2026 07:35 UTC עד 24/09/2026 08:00 UTC",
+   "removed_at": "2026-09-24T08:49:26Z"
+  },
+  {
+   "id": "C1978/26",
+   "name": "C1978/26",
+   "cat": "ad",
+   "heb": "CVFR RTE סגור DUE ILS ACT בתוך LLRD EIRON-ZMGID-AFULA-TAVOR. AFULA-EITAN.\nבתוקף: מ-24/09/2026 07:35 UTC עד 24/09/2026 08:00 UTC",
+   "removed_at": "2026-09-24T08:49:26Z"
+  },
+  {
+   "id": "C1977/26",
+   "name": "מגידו (LLMG)",
+   "cat": "ad",
+   "heb": "AIRSTRIP LTD TO MAX 400רגל מעל פני הים DUE ILS ACT בתוך LLRD מומלצת זהירות.\nבתוקף: מ-24/09/2026 07:35 UTC עד 24/09/2026 08:00 UTC",
+   "removed_at": "2026-09-24T08:49:26Z"
+  },
   {
    "id": "C1985/26",
    "name": "ADERET",
@@ -2190,41 +2214,6 @@
    "cat": "uas",
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב YERUHAM, מהקרקע ועד 600מטר מעל הקרקע. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 30°58'19\"N 34°56'01\"E סגור מהקרקע ועד 3,700רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-30/08/2026 03:00 UTC עד 03/09/2026 14:30 UTC\nלו\"ז: DAILY 0300-1430",
    "removed_at": "2026-09-03T17:02:40Z"
-  },
-  {
-   "id": "C1812/26",
-   "name": "C1812/26",
-   "cat": "ad",
-   "heb": "CVFR RTE סגור DUE ILS ACT בתוך LLRD EIRON-ZMGID-AFULA-TAVOR. AFULA-EITAN.\nבתוקף: מ-03/09/2026 06:30 UTC עד 03/09/2026 07:40 UTC",
-   "removed_at": "2026-09-03T08:21:15Z"
-  },
-  {
-   "id": "C1813/26",
-   "name": "C1813/26",
-   "cat": "act",
-   "heb": "ULTRALIGHT AND מסוקים RTE סגור EIRON-ARRAA-ZMGID-NIRYA-MRHVA-TAVOR. TFC WILL BE DIVERTED VIA FRDIS-HASID.\nבתוקף: מ-03/09/2026 06:30 UTC עד 03/09/2026 07:40 UTC",
-   "removed_at": "2026-09-03T08:21:15Z"
-  },
-  {
-   "id": "C1811/26",
-   "name": "מגידו (LLMG)",
-   "cat": "ad",
-   "heb": "AIRSTRIP LTD TO MAX 900רגל מעל פני הים DUE ILS ACT בתוך LLRD. מומלצת זהירות.\nבתוקף: מ-03/09/2026 06:30 UTC עד 03/09/2026 07:40 UTC",
-   "removed_at": "2026-09-03T08:21:15Z"
-  },
-  {
-   "id": "A0610/26",
-   "name": "A0610/26",
-   "cat": "other",
-   "heb": "CHECKLIST YEAR=2025 0886 YEAR=2026 0001 0056 0116 0117 0127 0156 0281 0353 0354 0358 0359 0388 0409 0433 0434 0457 0467 0471 0475 0497 0498 0499 0500 0501 0526 0527 0530 0531 0534 0535 0536 0537 0557 0560 0561 0570 0571 0572 0575 0589 0592 0594 0595 0596 0598 0599 0600 0602 0603 0604 0605 0606 LATEST PUBLICATIONS AIP AIRAC AMDT IFR 002/2025 EFFECTIVE DATE 02 OCT 25 AIP AIRAC SUP IFR 004/2026 EFFECTIVE DATE 14 MAY 26 AIC IFR A001/2026 EFFECTIVE DATE 05 FEB 26 AIC CHECKLIST AIP IFR A001/2026 AIP VFR 006/2025 001/2026 AIP MIL NIL SUP CHECKLIST AIP IFR 002/2026 003/2026 004/2026 AIP VFR 001/2026 002/2026 003/2026 AIP MIL NIL\nבתוקף: מ-03/08/2026 05:58 UTC עד 03/09/2026 05:58 UTC",
-   "removed_at": "2026-09-03T08:21:15Z"
-  },
-  {
-   "id": "C1647/26",
-   "name": "C1647/26",
-   "cat": "other",
-   "heb": "CHECKLIST YEAR=2026 0003 0004 0005 0006 0009 0010 0013 0014 0017 0032 0035 0037 0090 0162 0232 0431 0458 0953 1244 1281 1361 1458 1459 1460 1461 1462 1463 1464 1465 1466 1467 1529 1541 1556 1558 1562 1574 1575 1576 1577 1578 1579 1580 1581 1582 1583 1584 1587 1588 1589 1590 1591 1592 1595 1596 1597 1600 1602 1603 1608 1612 1614 1616 1618 1619 1620 1621 1622 1623 1624 1625 1626 1629 1630 1632 1633 1635 1637 1639 1640 1641 1642 1643 1644 1645 1646 LATEST PUBLICATIONS AIP AIRAC AMDT IFR 002/2025 EFFECTIVE DATE 02 OCT 25 AIP AIRAC SUP IFR 004/2026 EFFECTIVE DATE 14 MAY 26 AIC IFR A001/2026 EFFECTIVE DATE 05 FEB 26 AIC CHECKLIST AIP IFR A001/2026 AIP VFR 006/2025 001/2026 AIP MIL NIL SUP CHECKLIST AIP IFR 002/2026 003/2026 004/2026 AIP VFR 001/2026 002/2026 003/2026 AIP MIL NIL\nבתוקף: מ-03/08/2026 05:59 UTC עד 03/09/2026 05:59 UTC",
-   "removed_at": "2026-09-03T08:21:15Z"
   }
  ]
 }
