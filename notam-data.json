@@ -1,16 +1,16 @@
 {
- "fetched_at": "25/09/2026 09:10 UTC",
- "fetched_iso": "2026-09-25T09:10:18Z",
- "count": 133,
+ "fetched_at": "25/09/2026 17:54 UTC",
+ "fetched_iso": "2026-09-25T17:54:19Z",
+ "count": 132,
  "notams": [
   {
-   "id": "C2042/26",
+   "id": "C2043/26",
    "loc": "LLLL",
-   "name": "C2042/26",
-   "cat": "uas",
-   "heb": "UAS ACT WILL TAKE PLACE S OF LLMG. אזור בתוך 1.5NM רדיוס שמרכזו בנ.צ. 32°32'56\"N 35°16'45\"E סגור מהקרקע ועד 3,500רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-25/09/2026 05:30 UTC עד 25/09/2026 13:00 UTC",
-   "raw": "C2042/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/035/3233N03517E002\nA) LLLL B) 2609250530 C) 2609251300\nE) UAS ACT WILL TAKE PLACE S OF LLMG.\nAN AREA WI 1.5NM RADIUS CENTERED ON PSN 323256N0351645E\nCLSD FM GND UP TO 3,500FT AMSL TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 3500FT AMSL)",
-   "first_seen": "2026-09-25T09:10:18Z"
+   "name": "C2043/26",
+   "cat": "act",
+   "heb": "ULTRALIGHT WEEKEND RTE סגור TYONA-SHFAM. TYONA-SHEFC-SOREK.\nבתוקף: מ-27/09/2026 03:00 UTC עד 28/09/2026 15:50 UTC\nלו\"ז: DAILY 0300-1550",
+   "raw": "C2043/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /000/004/3204N03445E010\nA) LLLL B) 2609270300 C) 2609281550\nD) DAILY 0300-1550\nE) ULTRALIGHT WEEKEND RTE CLSD\nTYONA-SHFAM.\nTYONA-SHEFC-SOREK.)",
+   "first_seen": "2026-09-25T17:54:19Z"
   },
   {
    "id": "C2040/26",
@@ -344,15 +344,6 @@
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב YERUHAM, מהקרקע ועד 250מטר מעל הקרקע. אזור בין נקודות הציון הבאות 30°58'30\"N 34°55'51\"E 30°58'23\"N 34°56'44\"E 30°58'03\"N 34°57'08\"E 30°57'09\"N 34°56'49\"E 30°56'24\"N 34°56'14\"E 30°56'52\"N 34°54'53\"E סגור מהקרקע ועד 2,800רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-27/09/2026 03:10 UTC עד 01/10/2026 16:10 UTC\nלו\"ז: DAILY 0310-1610",
    "raw": "C2002/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/028/3057N03456E002\nA) LLLL B) 2609270310 C) 2610011610\nD) DAILY 0310-1610\nE) UAS/UAV ACT WILL TAKE PLACE AT YERUHAM, FM GND UP TO 250M AGL.\nAN AREA BTN FLW PSN 305830N0345551E 305823N0345644E\n305803N0345708E 305709N0345649E 305624N0345614E\n305652N0345453E CLSD FM GND UP TO 2,800FT AMSL.\nCTN ADZ.\nF) GND G) 2800FT AMSL)",
    "first_seen": "2026-09-23T17:51:04Z"
-  },
-  {
-   "id": "C2000/26",
-   "loc": "LLLL",
-   "name": "C2000/26",
-   "cat": "pje",
-   "heb": "PJE AIRSPACE TEIMAN ACT מ-11,000רגל מעל פני הים. IN CASE OF EMERG CLEAR THE AIRSPACE בתוך 5MIN. מומלצת זהירות.\nבתוקף: מ-25/09/2026 05:00 UTC עד 25/09/2026 11:00 UTC",
-   "raw": "C2000/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/110/3117N03443E004\nA) LLLL B) 2609250500 C) 2609251100\nE) PJE AIRSPACE TEIMAN ACT FM 11,000FT AMSL.\nIN CASE OF EMERG CLEAR THE AIRSPACE WI 5MIN.\nCTN ADZ.\nF) GND G) 11000FT AMSL)",
-   "first_seen": "2026-09-23T08:54:15Z"
   },
   {
    "id": "C1999/26",
@@ -1202,6 +1193,20 @@
   }
  ],
  "removed": [
+  {
+   "id": "C2042/26",
+   "name": "C2042/26",
+   "cat": "uas",
+   "heb": "UAS ACT WILL TAKE PLACE S OF LLMG. אזור בתוך 1.5NM רדיוס שמרכזו בנ.צ. 32°32'56\"N 35°16'45\"E סגור מהקרקע ועד 3,500רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-25/09/2026 05:30 UTC עד 25/09/2026 13:00 UTC",
+   "removed_at": "2026-09-25T17:54:19Z"
+  },
+  {
+   "id": "C2000/26",
+   "name": "C2000/26",
+   "cat": "pje",
+   "heb": "PJE AIRSPACE TEIMAN ACT מ-11,000רגל מעל פני הים. IN CASE OF EMERG CLEAR THE AIRSPACE בתוך 5MIN. מומלצת זהירות.\nבתוקף: מ-25/09/2026 05:00 UTC עד 25/09/2026 11:00 UTC",
+   "removed_at": "2026-09-25T17:54:19Z"
+  },
   {
    "id": "C2025/26",
    "name": "C2025/26",
@@ -2349,20 +2354,6 @@
    "cat": "ad",
    "heb": "AD סגור DUE WIP.\nבתוקף: מ-04/09/2026 15:50 UTC עד 04/09/2026 19:55 UTC",
    "removed_at": "2026-09-05T07:55:45Z"
-  },
-  {
-   "id": "C1846/26",
-   "name": "C1846/26",
-   "cat": "pje",
-   "heb": "PJE AIRSPACE METZADA ACT מ-8,000רגל מעל פני הים. OPR באישור מוקדם מבקרת התעופה ONLY.\nבתוקף: מ-03/09/2026 10:05 UTC עד 04/09/2026 11:00 UTC\nלו\"ז: 03 1005-1630, 04 0600-1100",
-   "removed_at": "2026-09-04T16:52:28Z"
-  },
-  {
-   "id": "A0353/26",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "AD סגור DUE WIP.\nבתוקף: מ-04/09/2026 15:00 UTC עד 04/09/2026 19:55 UTC",
-   "removed_at": "2026-09-04T16:52:28Z"
   }
  ]
 }
