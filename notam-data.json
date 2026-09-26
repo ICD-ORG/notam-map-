@@ -1,16 +1,16 @@
 {
- "fetched_at": "26/09/2026 08:56 UTC",
- "fetched_iso": "2026-09-26T08:56:15Z",
- "count": 132,
+ "fetched_at": "26/09/2026 16:59 UTC",
+ "fetched_iso": "2026-09-26T16:59:18Z",
+ "count": 131,
  "notams": [
   {
-   "id": "C2044/26",
-   "loc": "LLMZ",
-   "name": "מצדה (LLMZ)",
+   "id": "C2045/26",
+   "loc": "LLHD",
+   "name": "C2045/26",
    "cat": "ad",
-   "heb": "AIRSTRIP סגור לכל הטיסותS.\nבתוקף: מ-26/09/2026 05:00 UTC עד 26/09/2026 14:00 UTC",
-   "raw": "C2044/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3120N03523E005\nA) LLMZ B) 2609260500 C) 2609261400\nE) AIRSTRIP CLSD TO ALL FLTS.)",
-   "first_seen": "2026-09-26T08:56:15Z"
+   "heb": "ROOF מסוקיםIPAD סגור, מסוקים SHALL LAND ON GROUND מסוקיםIPAD ONLY.)\nבתוקף: מ-27/09/2026 05:00 UTC עד 30/09/2026 13:00 UTC",
+   "raw": "C2045/26 NOTAMN\nQ) LLLL/QFHLC/IV/NBO/A /000/999/3146N03509E005\nA) LLHD B) 2609270500 C) 2609301300\nE) ROOF HELIPAD CLSD, HEL SHALL LAND ON GROUND HELIPAD ONLY.))",
+   "first_seen": "2026-09-26T16:59:18Z"
   },
   {
    "id": "C2043/26",
@@ -1039,15 +1039,6 @@
    "first_seen": "2026-08-03T15:51:58Z"
   },
   {
-   "id": "A0612/26",
-   "loc": "LLLL",
-   "name": "AD WITHIN AMMAN FIR",
-   "cat": "other",
-   "heb": "ATS RTE L53 בין TALMI-TAPUZ AND N134 בין VOLFO-SALAM AVBL H24 בין 11,000-16,000FT FOR TFC WITH ARR/DEP ב-AD WITHIN AMMAN FIR, LLER, LLNV, LLOV AND LLRM ONLY, AVBL H24 ABV 17,000FT FOR MIL TFC ONLY.\nבתוקף: מ-05/08/2026 16:30 UTC עד 06/08/2028 14:20 UTC",
-   "raw": "A0612/26 NOTAMN\nQ) LLLL/QANLT/I /NBO/E /050/600/3205N03450E039\nA) LLLL B) 2608051630 C) 2808061420\nE) ATS RTE L53 BTN TALMI-TAPUZ AND N134 BTN VOLFO-SALAM\nAVBL H24 BTN 11,000-16,000FT FOR TFC WITH ARR/DEP AT\nAD WITHIN AMMAN FIR, LLER, LLNV, LLOV AND LLRM ONLY,\nAVBL H24 ABV 17,000FT FOR MIL TFC ONLY.)",
-   "first_seen": "2026-08-03T15:51:58Z"
-  },
-  {
    "id": "C1556/26",
    "loc": "LLLL",
    "name": "LOD TRAIN",
@@ -1193,6 +1184,20 @@
   }
  ],
  "removed": [
+  {
+   "id": "C2044/26",
+   "name": "מצדה (LLMZ)",
+   "cat": "ad",
+   "heb": "AIRSTRIP סגור לכל הטיסותS.\nבתוקף: מ-26/09/2026 05:00 UTC עד 26/09/2026 14:00 UTC",
+   "removed_at": "2026-09-26T16:59:18Z"
+  },
+  {
+   "id": "A0612/26",
+   "name": "AD WITHIN AMMAN FIR",
+   "cat": "other",
+   "heb": "ATS RTE L53 בין TALMI-TAPUZ AND N134 בין VOLFO-SALAM AVBL H24 בין 11,000-16,000FT FOR TFC WITH ARR/DEP ב-AD WITHIN AMMAN FIR, LLER, LLNV, LLOV AND LLRM ONLY, AVBL H24 ABV 17,000FT FOR MIL TFC ONLY.\nבתוקף: מ-05/08/2026 16:30 UTC עד 06/08/2028 14:20 UTC",
+   "removed_at": "2026-09-26T16:59:18Z"
+  },
   {
    "id": "C1986/26",
    "name": "ASHELIM/SDE-BOKER",
