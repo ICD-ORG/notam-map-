@@ -1,8 +1,17 @@
 {
- "fetched_at": "25/09/2026 17:54 UTC",
- "fetched_iso": "2026-09-25T17:54:19Z",
+ "fetched_at": "26/09/2026 08:56 UTC",
+ "fetched_iso": "2026-09-26T08:56:15Z",
  "count": 132,
  "notams": [
+  {
+   "id": "C2044/26",
+   "loc": "LLMZ",
+   "name": "מצדה (LLMZ)",
+   "cat": "ad",
+   "heb": "AIRSTRIP סגור לכל הטיסותS.\nבתוקף: מ-26/09/2026 05:00 UTC עד 26/09/2026 14:00 UTC",
+   "raw": "C2044/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3120N03523E005\nA) LLMZ B) 2609260500 C) 2609261400\nE) AIRSTRIP CLSD TO ALL FLTS.)",
+   "first_seen": "2026-09-26T08:56:15Z"
+  },
   {
    "id": "C2043/26",
    "loc": "LLLL",
@@ -370,15 +379,6 @@
    "cat": "act",
    "heb": "HOT-AIR BALLOON WILL TAKE PLACE ב-ASמסוקיםIM/SDE-BOKER. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 2,500רגל מעל פני הים 30°58'55\"N 34°44'02\"E 30°56'46\"N 34°46'42\"E 30°54'21\"N 34°46'31\"E 30°52'53\"N 34°37'51\"E 30°56'36\"N 34°35'45\"E. מומלצת זהירות.\nבתוקף: מ-28/09/2026 03:00 UTC עד 28/09/2026 05:00 UTC",
    "raw": "C1987/26 NOTAMN\nQ) LLLL/QWLLW/IV/NBO/W /000/025/3056N03441E006\nA) LLLL B) 2609280300 C) 2609280500\nE) HOT-AIR BALLOON WILL TAKE PLACE AT ASHELIM/SDE-BOKER.\nAN AREA BTN THE FLW PSN CLSD FM GND UP TO 2,500FT AMSL\n305855N0344402E 305646N0344642E 305421N0344631E\n305253N0343751E 305636N0343545E.\nCTN ADZ.\nF) GND G) 2500FT AMSL)",
-   "first_seen": "2026-09-22T17:37:34Z"
-  },
-  {
-   "id": "C1986/26",
-   "loc": "LLLL",
-   "name": "ASHELIM/SDE-BOKER",
-   "cat": "act",
-   "heb": "HOT-AIR BALLOON WILL TAKE PLACE ב-ASמסוקיםIM/SDE-BOKER. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 2,500רגל מעל פני הים 30°58'55\"N 34°44'02\"E 30°56'46\"N 34°46'42\"E 30°54'21\"N 34°46'31\"E 30°52'53\"N 34°37'51\"E 30°56'36\"N 34°35'45\"E. מומלצת זהירות.\nבתוקף: מ-26/09/2026 03:00 UTC עד 26/09/2026 05:00 UTC",
-   "raw": "C1986/26 NOTAMN\nQ) LLLL/QWLLW/IV/NBO/W /000/025/3056N03441E006\nA) LLLL B) 2609260300 C) 2609260500\nE) HOT-AIR BALLOON WILL TAKE PLACE AT ASHELIM/SDE-BOKER.\nAN AREA BTN THE FLW PSN CLSD FM GND UP TO 2,500FT AMSL\n305855N0344402E 305646N0344642E 305421N0344631E\n305253N0343751E 305636N0343545E.\nCTN ADZ.\nF) GND G) 2500FT AMSL)",
    "first_seen": "2026-09-22T17:37:34Z"
   },
   {
@@ -1193,6 +1193,13 @@
   }
  ],
  "removed": [
+  {
+   "id": "C1986/26",
+   "name": "ASHELIM/SDE-BOKER",
+   "cat": "act",
+   "heb": "HOT-AIR BALLOON WILL TAKE PLACE ב-ASמסוקיםIM/SDE-BOKER. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 2,500רגל מעל פני הים 30°58'55\"N 34°44'02\"E 30°56'46\"N 34°46'42\"E 30°54'21\"N 34°46'31\"E 30°52'53\"N 34°37'51\"E 30°56'36\"N 34°35'45\"E. מומלצת זהירות.\nבתוקף: מ-26/09/2026 03:00 UTC עד 26/09/2026 05:00 UTC",
+   "removed_at": "2026-09-26T08:56:15Z"
+  },
   {
    "id": "C2042/26",
    "name": "C2042/26",
@@ -2347,13 +2354,6 @@
    "cat": "other",
    "heb": "אזור בתוך 0.6NM רדיוס שמרכזו בנ.צ. 323704N0350226 ב-HAGIT POWER PLANT, סגור מהקרקע ועד 1,000רגל מעל פני הים, DUE TO GAS EMISSION. מומלצת זהירות.\nבתוקף: מ-05/09/2026 19:00 UTC עד 05/09/2026 23:00 UTC",
    "removed_at": "2026-09-06T08:28:35Z"
-  },
-  {
-   "id": "A0727/26",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "AD סגור DUE WIP.\nבתוקף: מ-04/09/2026 15:50 UTC עד 04/09/2026 19:55 UTC",
-   "removed_at": "2026-09-05T07:55:45Z"
   }
  ]
 }
