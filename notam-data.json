@@ -1,8 +1,26 @@
 {
- "fetched_at": "26/09/2026 16:59 UTC",
- "fetched_iso": "2026-09-26T16:59:18Z",
- "count": 131,
+ "fetched_at": "27/09/2026 09:38 UTC",
+ "fetched_iso": "2026-09-27T09:38:10Z",
+ "count": 133,
  "notams": [
+  {
+   "id": "C2047/26",
+   "loc": "LLLL",
+   "name": "ADERET",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ תתקיים ב ADERET. אזור בין נקודות הציון הבאות מהקרקע ועד 3,500רגל מעל פני הים סגור לכל הטיסות כולל טיסות ריסוס חקלאיות 31°41'07\"N 34°59'19\"E 31°38'46\"N 34°58'57\"E 31°38'04\"N 35°01'16\"E 31°39'31\"N 35°03'42\"E 31°41'31\"N 35°01'34\"E. מומלצת זהירות.\nבתוקף: מ-28/09/2026 06:30 UTC עד 30/09/2026 11:30 UTC\nלו\"ז: SEP 28 0630-0800 0900-1130, SEP 30 0630-0800 0900-1130",
+   "raw": "C2047/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/035/3140N03501E003\nA) LLLL B) 2609280630 C) 2609301130\nD) SEP 28 0630-0800 0900-1130, SEP 30 0630-0800 0900-1130\nE) UAS ACT WILL TAKE PLACE AT ADERET.\nAN AREA BTN FLW PSN FM GND UP TO 3,500FT AMSL CLSD TO\nALL FLT INCLUDING AGRICULTURE FLT  314107N0345919E\n313846N0345857E 313804N0350116E 313931N0350342E\n314131N0350134E.\nCTN ADZ.\nF) GND G) 3500FT AMSL)",
+   "first_seen": "2026-09-27T09:38:10Z"
+  },
+  {
+   "id": "C2046/26",
+   "loc": "LLLL",
+   "name": "C2046/26",
+   "cat": "act",
+   "heb": "GLD S OF LLBG TMA אסור.\nבתוקף: מ-27/09/2026 03:00 UTC עד 28/09/2026 15:50 UTC\nלו\"ז: DAILY 0300-1550",
+   "raw": "C2046/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/999/3043N03431E080\nA) LLLL B) 2609270300 C) 2609281550\nD) DAILY 0300-1550\nE) GLD S OF LLBG TMA PROHIBITED.)",
+   "first_seen": "2026-09-27T09:38:10Z"
+  },
   {
    "id": "C2045/26",
    "loc": "LLHD",
@@ -2331,34 +2349,6 @@
    "cat": "other",
    "heb": "CVFR RTE סגור KTORA-YAמסוקים-BMNUH-ZOFAR-ARAVA-ZOHAR-MMORR-LLMZ-ZUKIM. MMORR-ARRAD-LLMZ. ARRAD-HATRU-ZOHAR. TARAD-ARRAD.\nבתוקף: מ-06/09/2026 16:20 UTC עד 06/09/2026 18:00 UTC",
    "removed_at": "2026-09-07T08:41:33Z"
-  },
-  {
-   "id": "C1878/26",
-   "name": "OLESH WI 1",
-   "cat": "other",
-   "heb": "אזור ב OLESH בתוך 1.5NM רדיוס שמרכזו בנ.צ. 32°20'25\"N 34°59'39\"E סגור מהקרקע ועד 3,000רגל מעל פני הים, לכל הטיסות כולל AGRICULTURE. מומלצת זהירות.\nבתוקף: מ-06/09/2026 05:30 UTC עד 06/09/2026 14:30 UTC",
-   "removed_at": "2026-09-06T08:28:35Z"
-  },
-  {
-   "id": "A0729/26",
-   "name": "A0729/26",
-   "cat": "other",
-   "heb": "THE FLW ATS ROUTS LIMITED TO MIN 5,000 FT J14 בין NAT-ZACCI, J11 בין NAT-KANER.\nבתוקף: מ-06/09/2026 05:30 UTC עד 06/09/2026 14:30 UTC",
-   "removed_at": "2026-09-06T08:28:35Z"
-  },
-  {
-   "id": "C1876/26",
-   "name": "NATZERET WI 2",
-   "cat": "other",
-   "heb": "אזור ב NATZERET בתוך 2.0NM רדיוס שמרכזו בנ.צ. 32°43'01\"N 35°18'02\"E סגור מהקרקע ועד 2,700רגל מעל פני הים לכל הטיסות, EFECTING MEGIDO A WEST, NETOFA ULTRA LIGHT BUBBELS. טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-05/09/2026 15:30 UTC עד 05/09/2026 17:00 UTC",
-   "removed_at": "2026-09-06T08:28:35Z"
-  },
-  {
-   "id": "C1786/26",
-   "name": "HAGIT POWER PLANT",
-   "cat": "other",
-   "heb": "אזור בתוך 0.6NM רדיוס שמרכזו בנ.צ. 323704N0350226 ב-HAGIT POWER PLANT, סגור מהקרקע ועד 1,000רגל מעל פני הים, DUE TO GAS EMISSION. מומלצת זהירות.\nבתוקף: מ-05/09/2026 19:00 UTC עד 05/09/2026 23:00 UTC",
-   "removed_at": "2026-09-06T08:28:35Z"
   }
  ]
 }
