@@ -1,8 +1,26 @@
 {
- "fetched_at": "29/09/2026 10:11 UTC",
- "fetched_iso": "2026-09-29T10:11:48Z",
+ "fetched_at": "29/09/2026 18:35 UTC",
+ "fetched_iso": "2026-09-29T18:35:06Z",
  "count": 130,
  "notams": [
+  {
+   "id": "C2056/26",
+   "loc": "LLLL",
+   "name": "YERUHAM",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב YERUHAM, מהקרקע ועד 600מטר מעל הקרקע. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 30°58'19\"N 34°56'01\"E סגור מהקרקע ועד 3,700רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-04/10/2026 03:00 UTC עד 08/10/2026 14:30 UTC\nלו\"ז: DAILY 0300-1430",
+   "raw": "C2056/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/037/3058N03456E001\nA) LLLL B) 2610040300 C) 2610081430\nD) DAILY 0300-1430\nE) UAS/UAV ACT WILL TAKE PLACE AT YERUHAM, FM GND UP TO 600M AGL.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 305819N0345601E\nCLSD FM GND UP TO 3,700FT AMSL.\nCTN ADZ.\nF) GND G) 3700FT AMSL)",
+   "first_seen": "2026-09-29T18:35:06Z"
+  },
+  {
+   "id": "C2055/26",
+   "loc": "LLLL",
+   "name": "TAMRAH",
+   "cat": "act",
+   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-TAMRAH. אזור בתוך 0.3NM רדיוס שמרכזו בנ.צ. 32°48'50\"N 35°10'02\"E סגור מהקרקע ועד 1,800רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-03/10/2026 21:00 UTC עד 11/10/2026 20:59 UTC",
+   "raw": "C2055/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/018/3249N03510E001\nA) LLLL B) 2610032100 C) 2610112059\nE) CAPTIVE BALLOON WILL TAKE PLACE AT TAMRAH.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 324850N0351002E\nCLSD FM GND UP TO 1,800FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 1800FT AMSL)",
+   "first_seen": "2026-09-29T18:35:06Z"
+  },
   {
    "id": "C2054/26",
    "loc": "LLLL",
@@ -211,15 +229,6 @@
    "first_seen": "2026-09-24T17:53:21Z"
   },
   {
-   "id": "C2020/26",
-   "loc": "LLIC",
-   "name": "C2020/26",
-   "cat": "ad",
-   "heb": "ICHILOV מסוקיםIPAD סגור.\nבתוקף: מ-04/10/2026 00:01 UTC עד 18/10/2026 20:59 UTC",
-   "raw": "C2020/26 NOTAMN\nQ) LLLL/QFHLC/IV/NBO/A /000/999/3205N03447E005\nA) LLIC B) 2610040001 C) 2610182059\nE) ICHILOV HELIPAD CLSD.)",
-   "first_seen": "2026-09-24T17:53:21Z"
-  },
-  {
    "id": "A0777/26",
    "loc": "LLHA",
    "name": "חיפה (LLHA)",
@@ -235,15 +244,6 @@
    "cat": "ad",
    "heb": "RWY 08/26 סגור למעט RWY INT, DUE WIP.\nבתוקף: מ-30/09/2026 04:00 UTC עד 30/09/2026 11:00 UTC",
    "raw": "A0776/26 NOTAMN\nQ) LLLL/QMRLC/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2609300400 C) 2609301100\nE) RWY 08/26 CLSD EXC RWY INT, DUE WIP.)",
-   "first_seen": "2026-09-24T08:49:26Z"
-  },
-  {
-   "id": "A0775/26",
-   "loc": "LLBG",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "RWY 03/21 סגור למעט RWY INT DUE WIP.\nבתוקף: מ-29/09/2026 04:00 UTC עד 29/09/2026 11:00 UTC",
-   "raw": "A0775/26 NOTAMN\nQ) LLLL/QMRLC/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2609290400 C) 2609291100\nE) RWY 03/21 CLSD EXC RWY INT DUE WIP.)",
    "first_seen": "2026-09-24T08:49:26Z"
   },
   {
@@ -1175,6 +1175,20 @@
   }
  ],
  "removed": [
+  {
+   "id": "C2020/26",
+   "name": "C2020/26",
+   "cat": "ad",
+   "heb": "ICHILOV מסוקיםIPAD סגור.\nבתוקף: מ-04/10/2026 00:01 UTC עד 18/10/2026 20:59 UTC",
+   "removed_at": "2026-09-29T18:35:06Z"
+  },
+  {
+   "id": "A0775/26",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "RWY 03/21 סגור למעט RWY INT DUE WIP.\nבתוקף: מ-29/09/2026 04:00 UTC עד 29/09/2026 11:00 UTC",
+   "removed_at": "2026-09-29T18:35:06Z"
+  },
   {
    "id": "C2049/26",
    "name": "C2049/26",
@@ -2203,41 +2217,6 @@
    "cat": "ad",
    "heb": "AD סגור לכל הטיסות כולל מסוקים, DUE WIP. IN CASE OF EMERG OR MEDEVAC מסוקים AVBL בתוך 10MIN.\nבתוקף: מ-08/09/2026 15:35 UTC עד 09/09/2026 18:15 UTC\nלו\"ז: 08 1535-1815, 09 1335-1445 1535-1815",
    "removed_at": "2026-09-09T08:26:16Z"
-  },
-  {
-   "id": "C1894/26",
-   "name": "ADERET",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ תתקיים ב ADERET. אזור בין נקודות הציון הבאות מהקרקע ועד 3,500רגל מעל פני הים סגור לכל הטיסות כולל טיסות ריסוס חקלאיות 31°41'07\"N 34°59'19\"E 31°38'46\"N 34°58'57\"E 31°38'04\"N 35°01'16\"E 31°39'31\"N 35°03'42\"E 31°41'31\"N 35°01'34\"E. מומלצת זהירות.\nבתוקף: מ-08/09/2026 06:00 UTC עד 08/09/2026 11:30 UTC\nלו\"ז: 0600-0800 0900-1130",
-   "removed_at": "2026-09-08T17:11:55Z"
-  },
-  {
-   "id": "A0724/26",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "RWY 03/21 סגור למעט RWY INT 03/30 DUE WIP.\nבתוקף: מ-08/09/2026 05:00 UTC עד 08/09/2026 10:00 UTC",
-   "removed_at": "2026-09-08T17:11:55Z"
-  },
-  {
-   "id": "A0723/26",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "ILS 21 C/S BN FREQ 109.700MHZ WITHDRAWN FOR MAINT.\nבתוקף: מ-08/09/2026 06:00 UTC עד 08/09/2026 10:00 UTC",
-   "removed_at": "2026-09-08T17:11:55Z"
-  },
-  {
-   "id": "C1867/26",
-   "name": "C1867/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור EVLYM-AHIUD-AAKKO-SMRAT.\nבתוקף: מ-08/09/2026 09:20 UTC עד 08/09/2026 16:45 UTC\nלו\"ז: 0920-1000 1230-1320 1600-1645",
-   "removed_at": "2026-09-08T17:11:55Z"
-  },
-  {
-   "id": "C1854/26",
-   "name": "YERUHAM",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב YERUHAM, מהקרקע ועד 250מטר מעל הקרקע. אזור בין נקודות הציון הבאות 30°58'30\"N 34°55'51\"E 30°58'23\"N 34°56'44\"E 30°58'03\"N 34°57'08\"E 30°57'09\"N 34°56'49\"E 30°56'24\"N 34°56'14\"E 30°56'52\"N 34°54'53\"E סגור מהקרקע ועד 2,800רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-06/09/2026 03:00 UTC עד 08/09/2026 16:20 UTC\nלו\"ז: DAILY 0300-1620",
-   "removed_at": "2026-09-08T17:11:55Z"
   }
  ]
 }
