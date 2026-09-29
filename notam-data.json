@@ -1,8 +1,17 @@
 {
- "fetched_at": "28/09/2026 20:08 UTC",
- "fetched_iso": "2026-09-28T20:08:07Z",
- "count": 129,
+ "fetched_at": "29/09/2026 10:11 UTC",
+ "fetched_iso": "2026-09-29T10:11:48Z",
+ "count": 130,
  "notams": [
+  {
+   "id": "C2054/26",
+   "loc": "LLLL",
+   "name": "OLESH WI 1",
+   "cat": "ad",
+   "heb": "אזור ב OLESH בתוך 1.5NM רדיוס שמרכזו בנ.צ. 32°20'17\"N 34°59'21\"E סגור מהקרקע ועד 3,000רגל מעל פני הים לכל הטיסות. HASHARON-DAROM BUBBLE (BSARS) סגור E OF NAT VOR. LLHZ אזור אימונים NR 13 סגור E OF NAT VOR. מומלצת זהירות.\nבתוקף: מ-30/09/2026 06:30 UTC עד 30/09/2026 22:00 UTC",
+   "raw": "C2054/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/030/3220N03459E002\nA) LLLL B) 2609300630 C) 2609302200\nE) AN AREA AT OLESH WI 1.5NM RADIUS CENTERED ON PSN 322017N0345921E\nCLSD FM GND UP TO 3,000FT AMSL TO ALL FLT.\nHASHARON-DAROM BUBBLE (BSARS) CLSD E OF NAT VOR.\nLLHZ TRG AREA NR 13 CLSD E OF NAT VOR.\nCTN ADZ.)",
+   "first_seen": "2026-09-29T10:11:48Z"
+  },
   {
    "id": "C2052/26",
    "loc": "LLLL",
@@ -2229,48 +2238,6 @@
    "cat": "uas",
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב YERUHAM, מהקרקע ועד 250מטר מעל הקרקע. אזור בין נקודות הציון הבאות 30°58'30\"N 34°55'51\"E 30°58'23\"N 34°56'44\"E 30°58'03\"N 34°57'08\"E 30°57'09\"N 34°56'49\"E 30°56'24\"N 34°56'14\"E 30°56'52\"N 34°54'53\"E סגור מהקרקע ועד 2,800רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-06/09/2026 03:00 UTC עד 08/09/2026 16:20 UTC\nלו\"ז: DAILY 0300-1620",
    "removed_at": "2026-09-08T17:11:55Z"
-  },
-  {
-   "id": "A0715/26",
-   "name": "A0715/26",
-   "cat": "ad",
-   "heb": "VOR/DME RAM FREQ 113.850MHZ WITHDRAWN FOR MAINT.\nבתוקף: מ-08/09/2026 07:00 UTC עד 08/09/2026 08:00 UTC",
-   "removed_at": "2026-09-08T08:24:25Z"
-  },
-  {
-   "id": "C1803/26",
-   "name": "RAHAT",
-   "cat": "act",
-   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-RAHAT, עד 1,700רגל מעל פני הים. אזור בתוך 0.4NM רדיוס שמרכזו בנ.צ. 31°22'52\"N 34°45'41\"E סגור מהקרקע ועד 2,200רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות\nבתוקף: מ-31/08/2026 00:01 UTC עד 07/09/2026 20:59 UTC\nלו\"ז: AUG 31 0001-0430 0650-0910 0950-2359, SEP 01-05 DAILY 0001-0430",
-   "removed_at": "2026-09-08T08:24:25Z"
-  },
-  {
-   "id": "C1785/26",
-   "name": "C1785/26",
-   "cat": "other",
-   "heb": "מסוקים RTE סגור KTORA-SIZFN-SITIM-ZZHOR. BMNUH-ZZHOR-MESAR-RUHOT. ZOFAR-HRGVS-RUHOT-KNFHA-RAMLY-MIDRS. LLEY-NNAHS-MIDRS. NNAHS-RAMLY.\nבתוקף: מ-07/09/2026 03:00 UTC עד 08/09/2026 06:30 UTC\nלו\"ז: 07 0300-0630 1630-1900, 08 0330-0630",
-   "removed_at": "2026-09-08T08:24:25Z"
-  },
-  {
-   "id": "C1784/26",
-   "name": "C1784/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור SIZFN-SITIM-ZZHOR. SIZFN-YAמסוקים. BMNUH-ZZHOR-MESAR-RUHOT. ZOFAR-HRGVS-RUHOT-OVDAT-BOKER.\nבתוקף: מ-07/09/2026 03:00 UTC עד 08/09/2026 06:30 UTC\nלו\"ז: 07 0300-0630 1630-1900, 08 0330-0630",
-   "removed_at": "2026-09-08T08:24:25Z"
-  },
-  {
-   "id": "C1783/26",
-   "name": "C1783/26",
-   "cat": "other",
-   "heb": "מסוקים RTE סגור KTORA-YAמסוקים-BMNUH-ZOFAR-HAZVA-ARAVA-ZOHAR.\nבתוקף: מ-07/09/2026 03:00 UTC עד 08/09/2026 06:30 UTC\nלו\"ז: 07 0300-0630 1630-1900, 08 0330-0630",
-   "removed_at": "2026-09-08T08:24:25Z"
-  },
-  {
-   "id": "C1782/26",
-   "name": "C1782/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור KTORA-YAמסוקים-BMNUH-ZOFAR-HAZVA-ARAVA-ZOHAR.\nבתוקף: מ-07/09/2026 03:00 UTC עד 08/09/2026 06:30 UTC\nלו\"ז: 07 0300-0630 1630-1900, 08 0330-0630",
-   "removed_at": "2026-09-08T08:24:25Z"
   }
  ]
 }
