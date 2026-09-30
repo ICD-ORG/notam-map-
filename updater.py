@@ -7,7 +7,8 @@ updater.py — תוכנית ב': מחולל notam-data.json מאתר רש"ת
 פלט:  notam-data.json (להעלאה לאתר לצד notam-map.html)
 תזמון אוטומטי: Windows Task Scheduler / cron, פעם ביום.
 """
-import re, json, time, urllib.request, urllib.parse, datetime, html as H
+import re, json, sys, time, urllib.request, urllib.parse, datetime, html as H
+from notam_translate import translate, make_name
 
 LIST_URL = 'https://brin.iaa.gov.il/aeroinfo/AeroInfo.aspx?msgType=Notam'
 HDRS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)', 'Referer': LIST_URL}
@@ -27,44 +28,6 @@ def classify(raw, loc):
     if loc and loc != 'LLLL': return 'ad'
     if re.search(r'\bRWY\b|\bTWY\b|\bAPN\b|\bILS\b|\bVOR\b|\bDME\b|\bTWR\b', t): return 'ad'
     return 'other'
-
-PHRASES = [
- ('UAS/UAV ACT WILL TAKE PLACE AT','פעילות כטב"מ/רחפנים תתקיים ב'),
- ('UAS ACT WILL TAKE PLACE AT','פעילות כטב"מ תתקיים ב'),
- ('UAS ACT WILL TAKE PLACE WI AIRSTRIP','פעילות כטב"מ תתקיים בתוך המנחת'),
- ('AN AREA BTN THE FLW PSNS','אזור בין נקודות הציון הבאות'),
- ('AN AREA BTN THE FLW PSN','אזור בין נקודות הציון הבאות'),
- ('AN AREA BTN FLW PSN','אזור בין נקודות הציון הבאות'),
- ('CLSD BTN FLW PSN','סגור בין נקודות הציון הבאות'),
- ('BTN FLW PSN','בין נקודות הציון הבאות'),
- ('RADIUS CENTERED ON PSN','רדיוס שמרכזו בנ.צ.'),
- ('CENTERED ON PSN','שמרכזו בנ.צ.'),
- ('AN AREA AT','אזור ב'),('AN AREA WI','אזור בתוך'),('AN AREA FM','אזור מ'),
- ('CLSD TO ALL FLT INCLUDING AGRICULTURE FLT','סגור לכל הטיסות כולל טיסות ריסוס חקלאיות'),
- ('CLSD TO ALL FLT INCLUDING','סגור לכל הטיסות כולל'),
- ('CLSD TO ALL FLT','סגור לכל הטיסות'),
- ('TO ALL FLT','לכל הטיסות'),
- ('CLSD FM GND UP TO','סגור מהקרקע ועד'),
- ('FM GND UP TO','מהקרקע ועד'),('FM GND UP','מהקרקע ועד'),
- ('OPS WILL BE COORD AND APPROVED BY ATC','הפעילות תתואם ותאושר ע"י בקרת התעופה'),
- ('OPS OF AGRICULTURE FLT AVBL WITH 15MIN PPR FM ATC','טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק\' מהבקרה'),
- ('OPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC','טיסות ריסוס באישור מוקדם של 15 דק\' מהבקרה'),
- ('OPS OF AGRICULTURE FLT','טיסות ריסוס חקלאיות'),
- ('AGRICULTURE FLT','טיסות ריסוס חקלאיות'),
- ('OPS AVBL WITH PPR FM ATC ONLY','הפעלה באישור מוקדם מהבקרה בלבד'),
- ('BY PPR FM ATC','באישור מוקדם מבקרת התעופה'),
- ('PPR FM ATC','אישור מוקדם מבקרת התעופה'),
- ('XNG CLOSURE BY PPR FM FLW','חציית הסגירה באישור מוקדם מהגורמים הבאים'),
- ('CTN ADZ','מומלצת זהירות'),
- ('FT AMSL','רגל מעל פני הים'),('FT AGL','רגל מעל הקרקע'),('M AGL','מטר מעל הקרקע'),
- ('NM RADIUS','מייל ימי רדיוס'),('KM RADIUS','ק"מ רדיוס'),('M RADIUS','מטר רדיוס'),
- ('ULTRALIGHT BUBBLE','בועת זעירים'),('MODEL ACFT','טיסנים'),('TRG AREA','אזור אימונים'),
- ('DOM FLT','טיסות פנים-ארציות'),('MIL FLT','טיסות צבאיות'),
- ('PROHIBITED','אסור'),('EXC','למעט'),('INCLUDING','כולל'),
- ('FLW PSN','נקודות הציון הבאות'),('PSN','נ.צ.'),('CLSD','סגור'),('BTN','בין'),
- ('OPS OF','הפעלת'),('HEL','מסוקים'),('FLT','טיסות'),('UP TO','עד'),
- (' AT ',' ב-'),(' WI ',' בתוך '),(' FM ',' מ-'),
-]
 
 def http_get(url):
     last = None
@@ -113,26 +76,6 @@ def fetch_detail(fields0, num, _retry=True):
     txt = re.sub(r'[ \t]+\n', '\n', txt)
     return txt.strip()
 
-def fmt_coord(a, b, c, d, e, f):
-    return f"{int(a)}°{int(b):02d}'{round(float(c)):02d}\"N {int(d)}°{int(e):02d}'{round(float(f)):02d}\"E"
-
-def translate(raw, e_text):
-    t = ' ' + re.sub(r'\s+', ' ', e_text).strip() + ' '
-    t = re.sub(r'(\d{2})(\d{2})(\d{2}(?:\.\d+)?)N\s?0?(\d{2})(\d{2})(\d{2}(?:\.\d+)?)E',
-               lambda m: fmt_coord(*m.groups()), t)
-    t = re.sub(r'N(\d{2})(\d{2})(\d{2}(?:\.\d+)?)E\s?0?(\d{2})(\d{2})(\d{2}(?:\.\d+)?)',
-               lambda m: fmt_coord(*m.groups()), t)
-    for en, he in PHRASES: t = t.replace(en, he)
-    t = re.sub(r'\s+,', ',', t); t = re.sub(r'\s+\.', '.', t); t = re.sub(r'\)\s*$', '', t).strip()
-    b = re.search(r'B\)\s*(\d{10})', raw); c = re.search(r'C\)\s*(\d{10})', raw)
-    perm = bool(re.search(r'C\)\s*PERM', raw))
-    fmt = lambda s: f"{s[4:6]}/{s[2:4]}/20{s[0:2]} {s[6:8]}:{s[8:10]} UTC"
-    if b:
-        t += '\nבתוקף: מ-' + fmt(b.group(1)) + (' (קבוע)' if perm else (' עד ' + fmt(c.group(1)) if c else ''))
-    d = re.search(r'D\)\s*([^\n]*)', raw)
-    if d: t += '\nלו"ז: ' + d.group(1).strip()
-    return t
-
 def main():
     print('מושך רשימת נוטמים...')
     page = http_get(LIST_URL)
@@ -169,14 +112,14 @@ def main():
             if not raw: print(f'[{k}/{len(uas)}] {nid} — אין פירוט'); continue
             eM = re.search(r'E\)\s*([\s\S]*?)(?=\n[FG]\)|$)', raw)
             e_text = eM.group(1).strip() if eM else raw
-            nm = re.search(r'AT\s+([A-Z][A-Z0-9\-/ ]{2,40}?)(?:[,\.\n]|$)', e_text)
-            name = nm.group(1).strip() if nm else nid
             loc = locs.get(nid, '')
             cat = classify(raw, loc)
+            heb = translate(raw, e_text)
+            name = make_name(raw, e_text, nid, heb)
             if cat == 'ad' and loc in ICAO_HE:
                 name = ICAO_HE[loc] + ' (' + loc + ')'
             notams.append({'id': nid, 'loc': loc, 'name': name, 'cat': cat,
-                           'heb': translate(raw, e_text), 'raw': raw})
+                           'heb': heb, 'raw': raw})
             print(f'[{k}/{len(uas)}] {nid} [{cat}] — OK')
             time.sleep(0.6)
             if k % 25 == 0:
@@ -231,5 +174,24 @@ def main():
         json.dump(out, f, ensure_ascii=False, indent=1)
     print(f'נשמר notam-data.json עם {len(notams)} נוטמים ({len(newly_removed)} ירדו הפעם, {len(removed)} סה"כ בהיסטוריית הירידות). העלו את הקובץ לאתר.')
 
+def retranslate():
+    """תרגום מחדש של notam-data.json מהנוטמ המקורי (raw) — בלי גישה לרש"ת."""
+    with open('notam-data.json', encoding='utf-8') as f:
+        d = json.load(f)
+    for it in d.get('notams', []) + d.get('removed', []):
+        raw = it.get('raw')
+        if not raw: continue
+        eM = re.search(r'E\)\s*([\s\S]*?)(?=\n[FG]\)|$)', raw)
+        e_text = eM.group(1).strip() if eM else raw
+        it['heb'] = translate(raw, e_text)
+        name = make_name(raw, e_text, it['id'], it['heb'])
+        if it.get('cat') == 'ad' and it.get('loc') in ICAO_HE:
+            name = ICAO_HE[it['loc']] + ' (' + it['loc'] + ')'
+        it['name'] = name
+    with open('notam-data.json', 'w', encoding='utf-8') as f:
+        json.dump(d, f, ensure_ascii=False, indent=1)
+    print('תורגמו מחדש', len(d.get('notams', [])), 'נוטמים')
+
 if __name__ == '__main__':
-    main()
+    if '--retranslate' in sys.argv: retranslate()
+    else: main()

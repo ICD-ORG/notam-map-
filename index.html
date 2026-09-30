@@ -526,17 +526,38 @@ function parseNotam(raw){
   return {id:id?id[1]:null,eText,coords,radius,times,alt,geometry,approx,schedule:dM?dM[1].trim():null,raw};
 }
 function fmtCoordHe(c){
-  const f=v=>{const d=Math.floor(v),mm=Math.floor((v-d)*60),ss=Math.round(((v-d)*60-mm)*60);return `${d}°${String(mm).padStart(2,"0")}'${String(ss).padStart(2,"0")}"`;};
+  const f=v=>{const T=Math.round(v*3600),d=Math.floor(T/3600),mm=Math.floor((T%3600)/60),ss=T%60;return `${d}°${String(mm).padStart(2,"0")}'${String(ss).padStart(2,"0")}"`;};
   return f(c.lat)+"N "+f(c.lng)+"E";
 }
+let TRANS_RX=null;
+function buildTransRx(){
+  const esc=x=>x.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+  TRANS_RX=PHRASES.map(p=>[p[0].trim(),p[1]]).sort((a,b)=>b[0].length-a[0].length)
+    .map(([en,he])=>[new RegExp("(^|[^A-Z0-9/])"+esc(en).replace(/ /g,"\\s+")+"(?![A-Z0-9])","g"),he]);
+}
+/* המילון המשותף (translate-dict.json) — אותו מילון שבו משתמש העדכון האוטומטי */
+try{
+  fetch("translate-dict.json").then(r=>r.json()).then(d=>{ if(Array.isArray(d)&&d.length>50){ PHRASES.length=0; d.forEach(p=>PHRASES.push(p)); TRANS_RX=null; } }).catch(()=>{});
+}catch(e){}
+const EN_WORDS=new Set("FOR AND THE OF WITH WILL BE IS ARE ON IN FROM SHALL NOT NO ALL ANY PILOT GET APPROVAL ACT AREA AIRSPACE RELEVANT WHEN WHILE DURING AFTER BEFORE DUE REQ REQUIRED AVBL ONLY ALSO CONTACT PLS PLEASE INFO AIRPORT AIRFIELD".split(" "));
 function localTranslate(eText){
+  if(!TRANS_RX) buildTransRx();
   let t=" "+eText.replace(/\s+/g," ").trim()+" ";
   parseCoords(t).slice().reverse().forEach(c=>{t=t.replace(c.raw,fmtCoordHe(c));});
-  for(const [en,he] of PHRASES) t=t.split(en).join(he);
-  return t.replace(/\s+,/g,",").replace(/\s+\./g,".").replace(/\)\s*$/,"").trim();
+  t=t.replace(/RADIUS (\d[\d.]*)\s?NM/g,"ברדיוס $1 מייל ימי").replace(/RADIUS (\d[\d.]*)\s?KM/g,"ברדיוס $1 ק\"מ").replace(/RADIUS (\d[\d.]*)\s?M\b/g,"ברדיוס $1 מטר")
+   .replace(/(\d[\d,.]*)\s?NM RADIUS/g,"ברדיוס $1 מייל ימי").replace(/(\d[\d,.]*)\s?KM RADIUS/g,"ברדיוס $1 ק\"מ").replace(/(\d[\d,.]*)\s?M RADIUS/g,"ברדיוס $1 מטר")
+   .replace(/(\d[\d,]*)\s?FT AMSL/g,"$1 רגל מעל פני הים").replace(/(\d[\d,]*)\s?FT AGL/g,"$1 רגל מעל הקרקע")
+   .replace(/(\d[\d,]*)\s?M AGL/g,"$1 מטר מעל הקרקע").replace(/(\d[\d,]*)\s?M AMSL/g,"$1 מטר מעל פני הים")
+   .replace(/(\d)\s?FT\b/g,"$1 רגל").replace(/(\d[\d.]*)\s?NM\b/g,"$1 מייל ימי").replace(/(\d[\d.]*)\s?KM\b/g,"$1 ק\"מ")
+   .replace(/(\d) ENGINE ACFT/g,"כלי טיס בעלי $1 מנועים");
+  for(const [rx,he] of TRANS_RX) t=t.replace(rx,(m,a)=>a+he);
+  t=t.replace(/(\d)\s?MIN\b/g,"$1 דקות").replace(/(ב-|מ-|ל-) +/g,"$1");
+  t=t.replace(/\s+,/g,",").replace(/\s+\./g,".").replace(/\)\s*$/,"").replace(/\s{2,}/g," ").trim();
+  const left=(t.replace(/\([^)]*\)/g," ").match(/[A-Za-z]{2,}/g)||[]).filter(w=>EN_WORDS.has(w.toUpperCase()));
+  if(left.length) t+="\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.";
+  return t;
 }
 
-/* ================= קטגוריות ================= */
 const CATS={
  uas:{label:"כטב״מ ורחפנים",color:"#ff2d2d"},
  pje:{label:"הצנחות",color:"#b16dff"},

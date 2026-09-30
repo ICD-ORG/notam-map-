@@ -16,7 +16,7 @@ self.addEventListener("fetch", e => {
   const url = new URL(e.request.url);
 
   // נתונים: קודם רשת (הכי טרי), ואם אין קליטה - מהמטמון
-  if (url.pathname.endsWith("notam-data.json") || url.pathname.includes("/data/") || url.pathname.endsWith("pmt-layer.js") || e.request.mode === "navigate") {
+  if (url.pathname.endsWith("notam-data.json") || url.pathname.includes("/data/") || url.pathname.endsWith("pmt-layer.js") || url.pathname.endsWith("translate-dict.json") || e.request.mode === "navigate") {
     e.respondWith(
       fetch(e.request).then(r => {
         const cp = r.clone();
