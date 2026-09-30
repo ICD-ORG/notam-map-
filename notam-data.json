@@ -1,7 +1,7 @@
 {
- "fetched_at": "29/09/2026 18:35 UTC",
- "fetched_iso": "2026-09-29T18:35:06Z",
- "count": 130,
+ "fetched_at": "30/09/2026 10:05 UTC",
+ "fetched_iso": "2026-09-30T10:05:04Z",
+ "count": 128,
  "notams": [
   {
    "id": "C2056/26",
@@ -73,24 +73,6 @@
    "cat": "pje",
    "heb": "PJE AIRSPACE TEIMAN סגור.\nבתוקף: מ-05/10/2026 04:30 UTC עד 06/10/2026 12:00 UTC\nלו\"ז: DAILY 0430-1200",
    "raw": "C2039/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/110/3117N03443E004\nA) LLLL B) 2610050430 C) 2610061200\nD) DAILY 0430-1200\nE) PJE AIRSPACE TEIMAN CLSD.\nF) GND G) 11000FT AMSL)",
-   "first_seen": "2026-09-25T09:10:18Z"
-  },
-  {
-   "id": "C2038/26",
-   "loc": "LLLL",
-   "name": "C2038/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור NOAAM-GOVRN-ZHRYA.\nבתוקף: מ-29/09/2026 16:30 UTC עד 29/09/2026 19:00 UTC",
-   "raw": "C2038/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /025/030/3137N03452E007\nA) LLLL B) 2609291630 C) 2609291900\nE) CVFR RTE CLSD  NOAAM-GOVRN-ZHRYA.)",
-   "first_seen": "2026-09-25T09:10:18Z"
-  },
-  {
-   "id": "C2037/26",
-   "loc": "LLLL",
-   "name": "C2037/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור ZOFAR-HRGVS-RUHOT.\nבתוקף: מ-29/09/2026 17:00 UTC עד 29/09/2026 22:00 UTC",
-   "raw": "C2037/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /035/045/3037N03500E011\nA) LLLL B) 2609291700 C) 2609292200\nE) CVFR RTE CLSD  ZOFAR-HRGVS-RUHOT.)",
    "first_seen": "2026-09-25T09:10:18Z"
   },
   {
@@ -1176,6 +1158,20 @@
  ],
  "removed": [
   {
+   "id": "C2038/26",
+   "name": "C2038/26",
+   "cat": "other",
+   "heb": "CVFR RTE סגור NOAAM-GOVRN-ZHRYA.\nבתוקף: מ-29/09/2026 16:30 UTC עד 29/09/2026 19:00 UTC",
+   "removed_at": "2026-09-30T10:05:04Z"
+  },
+  {
+   "id": "C2037/26",
+   "name": "C2037/26",
+   "cat": "other",
+   "heb": "CVFR RTE סגור ZOFAR-HRGVS-RUHOT.\nבתוקף: מ-29/09/2026 17:00 UTC עד 29/09/2026 22:00 UTC",
+   "removed_at": "2026-09-30T10:05:04Z"
+  },
+  {
    "id": "C2020/26",
    "name": "C2020/26",
    "cat": "ad",
@@ -2196,27 +2192,6 @@
    "cat": "pje",
    "heb": "PJE WILL TAKE PLACE ב-REVIVIM. אזור מ GND UP 2,400רגל מעל פני הים סגור בין נקודות הציון הבאות 31°07'12\"N 34°45'50\"E 31°05'11\"N 34°39'20\"E 31°04'55\"N 34°36'55\"E 30°59'31\"N 34°38'15\"E 31°00'35\"N 34°44'09\"E 31°03'59\"N 34°47'20\"E 31°07'12\"N 34°45'50\"E. טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה מומלצת זהירות.\nבתוקף: מ-07/09/2026 05:30 UTC עד 09/09/2026 09:30 UTC\nלו\"ז: DAILY 0530-0930",
    "removed_at": "2026-09-09T17:08:52Z"
-  },
-  {
-   "id": "A0732/26",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "TWY N סגור בין K1-L, כולל TWY INT L/N.\nבתוקף: מ-08/09/2026 16:00 UTC עד 09/09/2026 02:00 UTC",
-   "removed_at": "2026-09-09T08:26:16Z"
-  },
-  {
-   "id": "C1861/26",
-   "name": "MISHMAR-DAVID",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ תתקיים ב MISHMAR-DAVID. אזור בתוך 0.2NM רדיוס שמרכזו בנ.צ. 31°49'01\"N 34°53'51\"E סגור לכל הטיסות מהקרקע ועד 1,500רגל מעל פני הים. טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-08/09/2026 14:30 UTC עד 08/09/2026 17:30 UTC",
-   "removed_at": "2026-09-09T08:26:16Z"
-  },
-  {
-   "id": "A0709/26",
-   "name": "A0709/26",
-   "cat": "ad",
-   "heb": "AD סגור לכל הטיסות כולל מסוקים, DUE WIP. IN CASE OF EMERG OR MEDEVAC מסוקים AVBL בתוך 10MIN.\nבתוקף: מ-08/09/2026 15:35 UTC עד 09/09/2026 18:15 UTC\nלו\"ז: 08 1535-1815, 09 1335-1445 1535-1815",
-   "removed_at": "2026-09-09T08:26:16Z"
   }
  ]
 }
