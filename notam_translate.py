@@ -61,11 +61,40 @@ def translate(raw, e_text):
     return t
 
 _STOP = r'(?=\s+(?:WI|UP|FM|AGL|AMSL|RADIUS|CTR|AREA|CLSD|BTN|PROHIBITED|EXC|DRG|NGT|ACT)\b|[,\.\n]|$)'
+# שמות מקומות שמופיעים באנגלית בשדה AT — מוצגים בעברית (בסוגריים השם המקורי); אם אין התאמה נשאר השם הלועזי כפי שהוא
+PLACE_HE = {
+    'ADERET': 'עדרת', 'AFULA': 'עפולה', 'ASHDOD': 'אשדוד', 'ASHELIM/SDE-BOKER': 'אשלים/שדה בוקר',
+    'BACH-GOLANI': 'בה"ד גולני', 'BARTAAH': 'ברטעה', 'CARMEL NORTH': 'כרמל צפון', 'DALIA/TZAFIT': 'דליה/צפית',
+    'EITANIM-HOSPITAL': 'בית חולים איתנים', 'EL-AL JUNCTION': 'צומת אל על', 'EMEK HEFER': 'עמק חפר',
+    'GAZA-STRIP': 'רצועת עזה', 'GEZER POWER PLANT': 'תחנת הכוח גזר', 'GOLANI-INTERCHANGE': 'מחלף גולני',
+    'HACHULA-LAKE': 'אגמון החולה', 'JDEIDA': "ג'דיידה", 'JULIS': "ג'ולס", 'KELCH/LACHISH': 'כלח/לכיש',
+    'KESARYA': 'קיסריה', 'KFAR-TAVOR': 'כפר תבור', 'KIRYAT SHMONA': 'קריית שמונה', 'KOHAV-MICHAL': 'כוכב מיכאל',
+    'LATRUN': 'לטרון', 'MACCABIM': 'מכבים', 'MAGAL': 'מגל', 'MAGEN-SHAUL': 'מגן שאול', 'NAURA': 'נעורה',
+    'NAZARETH': 'נצרת', 'NESHER': 'נשר', 'OLESH': 'עולש', 'OR-AKIVA INDUSTRY': 'אזור התעשייה אור עקיבא',
+    'PARK-REEM': 'פארק רעים', 'TAANACHIM': 'תענכים', 'TAANACHIM AND GADISH': 'תענכים וגדיש', 'TAMRAH': 'תמרה',
+    'TEL-NOF': 'תל נוף', 'TIBERIA': 'טבריה', 'YAHUD/IAI INDUSTRY': 'יהוד / התעשייה האווירית', 'YERUHAM': 'ירוחם',
+    'TERMINAL 1': 'טרמינל 1',
+}
+# מילים שמסמנות שהשם נגמר והתחיל תיאור ההגבלה (גזירה של "GEZER POWER PLANT CLSD FM GND…")
+_NAME_END = re.compile(r'\s+(?:WI|UP|FM|AGL|AMSL|RADIUS|CTR|AREA|CLSD|BTN|FLW|PSN|PROHIBITED|EXC|DRG|NGT|ACT|ACTIVATED|AVBL|REQ|U/S)\b.*$')
+
+def _cut_words(text, n=48):
+    """חיתוך בגבול מילה (לא באמצע מילה/מספר), עם … רק כשבאמת נחתך."""
+    if len(text) <= n: return text
+    cut = text[:n].rsplit(' ', 1)[0].rstrip(' ,:-/(')
+    return cut + '…'
+
 def make_name(raw, e_text, nid, heb=''):
+    if re.search(r'\bCHECKLIST\b', e_text):
+        return 'רשימת נוט"מים בתוקף (CHECKLIST)'
+    if re.search(r'\bTRIGGER NOTAM\b', e_text):
+        return 'נוט"ם מנהלי (TRIGGER NOTAM)'
     nm = re.search(r'\bAT\s+([A-Z][A-Z0-9\-/ ]{1,40}?)' + _STOP, e_text)
     if nm and nm.group(1).strip() not in ('GND', 'NIGHT', 'DAY'):
-        return nm.group(1).strip()
+        name = _NAME_END.sub('', nm.group(1).strip()).strip()
+        he = PLACE_HE.get(name)
+        return he + ' (' + name + ')' if he else name
     first = re.split(r'[\.\n,:]|\s-\s', heb.split('\nבתוקף')[0])[0]
     first = re.sub(r'\d+°\d+\'\d+"N \d+°\d+\'\d+"E', '', first).strip(' ,:')
     first = re.sub(r'\s{2,}', ' ', first)
-    return (first[:48].rstrip() + ('…' if len(first) > 48 else '')) if first else nid
+    return _cut_words(first) if first else nid
