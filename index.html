@@ -398,6 +398,7 @@ footer{padding:22px;color:var(--muted);font-size:12px;text-align:center;border-t
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>L.Popup.prototype.options.autoPan=false;</script>
 <script>
 /* ================= נתונים מוטמעים (נמשכו מאתר רש״ת) ================= */
 const FETCHED_AT = "16/07/2026 08:04 UTC";
@@ -698,7 +699,7 @@ function mobcardHtml(item,p){
   <details><summary>הצג נוטמ מקורי</summary><div class="pp-raw">${item.raw.replace(/</g,"&lt;")}</div></details>`;
 }
 
-function showMobileCard(item){
+function showMobileCard(item,focusLL){
   const card=document.getElementById("mobcard");
   if(!card) return;
   document.getElementById("mobcardTitle").textContent=item.name;
@@ -715,7 +716,9 @@ function showMobileCard(item){
       let center, bounds=null;
       if(layer&&layer.getBounds){ bounds=layer.getBounds(); center=bounds.getCenter(); }
       else if(layer&&layer.getLatLng){ center=layer.getLatLng(); }
-      if(center){
+      if(focusLL){            /* לחיצה על הצורה במפה — מתמקדים בנקודה שנלחצה */
+        map.setView(focusLL,Math.min(13,Math.max(map.getZoom(),11)),{animate:true});
+      }else if(center){
         let z=map.getZoom();
         if(bounds){ z=map.getBoundsZoom(bounds.pad(0.35)); }
         z=Math.min(13,Math.max(10,z));   /* לא רחוק מדי, לא קרוב מדי */
@@ -776,9 +779,9 @@ function drawItem(item){
   let layer;
   if(geo.type==="circle") layer=L.circle([geo.center.lat,geo.center.lng],{radius:geo.radius,...style});
   else layer=L.polygon(geo.points.map(c=>[c.lat,c.lng]),style);
-  layer.on("click",()=>{
+  layer.on("click",(ev)=>{
     try{ map.closePopup(); }catch(e){}
-    showMobileCard(item);
+    showMobileCard(item,ev&&ev.latlng);
     selectItem(item.id,false);
   });
   layer.addTo(map);
@@ -789,7 +792,7 @@ function selectItem(id,fly=true){
   selectedId=id;
   document.querySelectorAll(".item").forEach(el=>el.classList.toggle("sel",el.dataset.id===id));
   const item=DATA.find(x=>x.id===id);
-  if(item&&shapes[id]){
+  if(item&&shapes[id]&&fly!==false){   /* בלחיצה על הצורה במפה הכרטיס כבר נפתח ומתמקד בנקודה */
     showMobileCard(item);
   }
   const el=document.querySelector(`.item[data-id="${CSS.escape(id)}"]`);

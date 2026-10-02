@@ -609,7 +609,17 @@ const NO_COORDS=[
 ];
  
 /* ===== map ===== */
+L.Popup.prototype.options.autoPan=false; /* ההתמקדות בנקודה שנלחצה נעשית ידנית (למטה), לא ע"י הזזה אוטומטית של Leaflet */
 const map=L.map('map',{zoomControl:true, preferCanvas:true}).setView([31.6,35.0],8);
+/* לחיצה על אזור במפה: המפה מתמקדת בנקודה שנלחצה (עם מקום לחלון המידע), בלי לקפוץ למקום אחר */
+let skipFocus=false;
+map.on('popupopen',e=>{
+  if(skipFocus){ skipFocus=false; return; }
+  const ll=e.popup.getLatLng(); if(!ll) return;
+  const z=Math.max(map.getZoom(),11), el=e.popup.getElement(), h=(el?el.offsetHeight:220)+30;
+  map.setView(map.unproject(map.project(ll,z).subtract([0,h/2]),z),z,{animate:true});
+  if(window.innerWidth<=760 && typeof setPanel==='function') setPanel(true);
+});
 const osm=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19, attribution:'© OpenStreetMap'});
 const sat=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:19, attribution:'Esri World Imagery'});
 osm.addTo(map);
@@ -763,7 +773,7 @@ function renderList(filter){
         if(!map.hasLayer(groups[a.cat])) groups[a.cat].addTo(map);
         const b=e.layer.getBounds?e.layer.getBounds():L.latLngBounds([e.layer.getLatLng()]);
         map.fitBounds(b.pad(0.6));
-        e.layer.openPopup();
+        skipFocus=true; e.layer.openPopup();
         if(window.innerWidth<=760){ setPanel(true); }
       };
       wrap.appendChild(it);

@@ -99,6 +99,12 @@
     });
   }
   map.on("moveend zoomend",update);
+  /* לחיצה על אזור/נקודה: מתמקדים בנקודה שנלחצה, עם מקום לחלון המידע */
+  map.on("popupopen",e=>{
+    const ll=e.popup.getLatLng(); if(!ll) return;
+    const z=Math.max(map.getZoom(),11), el=e.popup.getElement(), h=(el?el.offsetHeight:220)+30;
+    map.setView(map.unproject(map.project(ll,z).subtract([0,h/2]),z),z,{animate:true});
+  });
 
   /* ---- כפתורי סינון: מתווספים לסרגל הקטגוריות הקיים ---- */
   function pmtBar(){
