@@ -87,6 +87,9 @@
   #lock-layers{width:100%; margin:4px 0 2px; padding:5px 0; background:var(--panel2);
     border:1px solid var(--line); border-radius:5px; color:var(--dim); font-size:12px;
     cursor:pointer; text-align:center; direction:rtl}
+  /* כפתור הנעילה והמונה מוצגים רק כשהבורר פתוח */
+  .leaflet-control-layers:not(.leaflet-control-layers-expanded) #lock-layers,
+  .leaflet-control-layers:not(.leaflet-control-layers-expanded) #layers-counter{display:none}
   #lock-layers.locked{color:#f0c060; border-color:#7a6020; background:#1e1608}
   #lock-layers:hover{color:var(--text); border-color:#4d7db3}
   .leaflet-bar a{background:var(--panel); color:var(--text); border-bottom:1px solid var(--line)}
@@ -99,9 +102,20 @@
   #icd-logo{position:absolute; bottom:12px; left:12px; z-index:1000; opacity:0.55; transition:opacity .2s}
   #icd-logo:hover{opacity:1}
   #icd-logo img{width:56px; height:auto; display:block; filter:drop-shadow(0 1px 4px #000a)}
+/* כפתורי העזר לא מכסים את בקרי המפה (זום / בורר שכבות) */
+  #decoderBtn{left:62px!important; top:10px!important}
+  #nearBtn{left:62px!important; top:52px!important}
 @media (max-width: 760px){
-    #side{width:min(88vw,330px); max-height:70vh}
+    /* בטלפון: המקרא הוא מגירה תחתונה והמפה נשארת גלויה */
+    #side{top:auto!important; left:0!important; right:0!important; bottom:0; width:100%!important;
+      max-height:52vh; border-radius:14px 14px 0 0}
+    #side header{cursor:default}
     #resizer{display:none}
+    #togglebtn{top:auto; bottom:18px; right:14px; padding:11px 16px; font-size:14px; box-shadow:0 4px 14px rgba(0,0,0,.5)}
+    #decoderBtn{left:auto!important; right:14px!important; top:14px!important; padding:10px 12px!important}
+    #nearBtn{left:auto!important; right:14px!important; top:60px!important; padding:10px 12px!important}
+    .leaflet-control-layers{max-width:72vw}
+    #icd-logo{display:none}
   }
 </style>
 </head>
@@ -793,7 +807,7 @@ function setPanel(hidden){
 }
 tbtn.onclick=()=>setPanel(false);
 document.getElementById('closeside').onclick=()=>setPanel(true);
-setPanel(false);
+setPanel(window.matchMedia('(max-width:760px)').matches); /* בטלפון המקרא מתחיל סגור — המפה גלויה */
  
 /* ---- גרירת מיקום החלונית (מהכותרת) ---- */
 const hdrEl=sideEl.querySelector('header');
@@ -869,7 +883,7 @@ document.getElementById('expandall').onclick=()=>{
     const r=await fetch('https://api.countapi.xyz/hit/icd-a17-map/visits');
     const d=await r.json();
     document.getElementById('vc-n').textContent=d.value.toLocaleString('he-IL');
-  }catch(e){ document.getElementById('visit-counter').style.display='none'; }
+  }catch(e){ const vc=document.getElementById('layers-counter'); if(vc) vc.style.display='none'; }
 })();
  
  
