@@ -1,5 +1,5 @@
 /* Service Worker — מפת נוט"מ: עבודה גם ללא רשת */
-const CACHE = "notam-v2";
+const CACHE = "notam-v3";
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(["./", "./manifest.json", "./pmt-layer.js"])));
@@ -15,23 +15,12 @@ self.addEventListener("fetch", e => {
   if (e.request.method !== "GET") return;
   const url = new URL(e.request.url);
 
-  // נתונים: קודם רשת (הכי טרי), ואם אין קליטה - מהמטמון
-  if (url.pathname.endsWith("notam-data.json") || url.pathname.includes("/data/") || url.pathname.endsWith("pmt-layer.js") || url.pathname.endsWith("translate-dict.json") || e.request.mode === "navigate") {
-    e.respondWith(
-      fetch(e.request).then(r => {
-        const cp = r.clone();
-        caches.open(CACHE).then(c => c.put(e.request, cp));
-        return r;
-      }).catch(() => caches.match(e.request).then(r => r || caches.match("./")))
-    );
-    return;
-  }
-  // שאר הקבצים: קודם מטמון, השלמה מהרשת
+  // קודם רשת (תמיד הגרסה העדכנית), ואם אין קליטה — מהמטמון
+  if (url.origin !== location.origin) return;
   e.respondWith(
-    caches.match(e.request).then(r => r || fetch(e.request).then(res => {
-      const cp = res.clone();
-      caches.open(CACHE).then(c => c.put(e.request, cp));
-      return res;
-    }))
+    fetch(e.request).then(r => {
+      if (r && r.ok) { const cp = r.clone(); caches.open(CACHE).then(c => c.put(e.request, cp)); }
+      return r;
+    }).catch(() => caches.match(e.request).then(r => r || caches.match("./")))
   );
 });
