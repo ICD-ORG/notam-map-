@@ -87,6 +87,9 @@
   #lock-layers{width:100%; margin:4px 0 2px; padding:5px 0; background:var(--panel2);
     border:1px solid var(--line); border-radius:5px; color:var(--dim); font-size:12px;
     cursor:pointer; text-align:center; direction:rtl}
+  /* כפתור הנעילה והמונה מוצגים רק כשהבורר פתוח */
+  .leaflet-control-layers:not(.leaflet-control-layers-expanded) #lock-layers,
+  .leaflet-control-layers:not(.leaflet-control-layers-expanded) #layers-counter{display:none}
   #lock-layers.locked{color:#f0c060; border-color:#7a6020; background:#1e1608}
   #lock-layers:hover{color:var(--text); border-color:#4d7db3}
   .leaflet-bar a{background:var(--panel); color:var(--text); border-bottom:1px solid var(--line)}
@@ -99,9 +102,20 @@
   #icd-logo{position:absolute; bottom:12px; left:12px; z-index:1000; opacity:0.55; transition:opacity .2s}
   #icd-logo:hover{opacity:1}
   #icd-logo img{width:56px; height:auto; display:block; filter:drop-shadow(0 1px 4px #000a)}
+/* כפתורי העזר לא מכסים את בקרי המפה (זום / בורר שכבות) */
+  #decoderBtn{left:62px!important; top:10px!important}
+  #nearBtn{left:62px!important; top:52px!important}
 @media (max-width: 760px){
-    #side{width:min(88vw,330px); max-height:70vh}
+    /* בטלפון: המקרא הוא מגירה תחתונה והמפה נשארת גלויה */
+    #side{top:auto!important; left:0!important; right:0!important; bottom:0; width:100%!important;
+      max-height:52vh; border-radius:14px 14px 0 0}
+    #side header{cursor:default}
     #resizer{display:none}
+    #togglebtn{top:auto; bottom:18px; right:14px; padding:11px 16px; font-size:14px; box-shadow:0 4px 14px rgba(0,0,0,.5)}
+    #decoderBtn{left:auto!important; right:14px!important; top:14px!important; padding:10px 12px!important}
+    #nearBtn{left:auto!important; right:14px!important; top:60px!important; padding:10px 12px!important}
+    .leaflet-control-layers{max-width:72vw}
+    #icd-logo{display:none}
   }
 </style>
 </head>
@@ -287,7 +301,7 @@ const AREAS=[
  [D(30,50,28.29),D(34,45,23.22)],[D(30,49,30.28),D(34,45,22.22)],[D(30,49,0.28),D(34,45,52.22)],[D(30,49,22.39),D(34,46,51.27)],
  [D(30,49,5.00),D(34,48,36.53)],[D(30,49,6.06),D(34,50,46.32)],[D(30,49,12.93),D(34,50,59.77)],[D(30,49,22.30),D(34,50,59.70)],
  [D(30,51,15.45),D(34,49,48.72)],[D(30,51,48.45),D(34,49,48.21)],[D(30,52,12.52),D(34,49,11.48)],[D(30,52,16.52),D(34,48,48.48)],
- [D(30,51,16.29),D(34,46,39.22)]]}},
+ [D(30,51,16.29),D(34,46,39.22)],[D(30,49,2.33),D(34,50,11.06)]]}},
 {code:"LLP171", name:"יהודה ושומרון — מקטע צפוני", cat:"X", alt:"GND – 6,000 ft AMSL (לכלי טיס מאוישים)", note:"סעיף 1(יז): האיסור אינו חל על כטב\"מ וטיסן, בתנאי שתואמה הפעילות מול הגורם הצבאי הרלוונטי לפי פרק א'-11(3)(ב)(2)(ה). ללא תיאום — האיסור בתוקף.", g:{k:"poly", pts:[
  [D(32,13,46.68),D(35,26,50.54)],[D(32,3,57.08),D(35,22,52.42)],[D(32,9,26.15),D(35,10,2.42)],[D(32,13,56.15),D(34,59,57.50)],
  [D(32,15,12.81),D(35,2,13.01)],[D(32,17,31.85),D(34,59,33.52)],[D(32,20,18.86),D(34,59,55.77)],[D(32,22,7.10),D(35,1,54.94)],
@@ -365,8 +379,8 @@ const AREAS=[
 {code:"LLR802", name:"מטווח 80 — צפון מזרחי", cat:"R", alt:"GND – 11,000 ft AMSL", note:"בקשת תכנית טיסה — 7 ימי עבודה מראש לחה\"א.", g:{k:"poly", pts:[
  [D(30,20,33.59),D(34,57,2.33)],[D(30,29,41.60),D(34,56,0.33)],[D(30,26,47.60),D(35,3,0.35)],[D(30,21,17.59),D(35,3,0.35)]]}},
 {code:"LLR803", name:"מטווח 80 — צפון מערבי", cat:"R", alt:"GND – 11,000 ft AMSL", note:"בקשת תכנית טיסה — 7 ימי עבודה מראש לחה\"א.", g:{k:"poly", pts:[
- [D(30,33,42.60),D(34,53,12.32)],[D(30,29,1.60),D(34,42,2.29)],[D(30,33,42.61),D(34,39,28.30)],
- [D(30,31,43.60),D(34,35,27.09)],[D(30,25,20.59),D(34,37,27.37)]]}},
+ [D(30,33,42.60),D(34,53,12.32)],[D(30,29,1.60),D(34,42,2.29)],[D(30,33,42.61),D(34,39,30.28)],
+ [D(30,31,43.60),D(34,35,9.27)],[D(30,25,20.59),D(34,37,37.27)]]}},
 {code:"LLR900", name:"שטח אש 900", cat:"R", alt:"בכל גובה (GND – UNL)", g:{k:"poly", pts:[
  [D(32,24,20.385),D(35,26,25.565)],[D(32,24,44.942),D(35,27,12.927)],[D(32,21,43.206),D(35,30,31.494)],[D(32,19,48.556),D(35,30,27.146)],
  [D(32,19,57.323),D(35,32,7.940)],[D(32,12,33.380),D(35,32,47.679)],[D(32,9,39.719),D(35,30,35.865)],[D(32,4,51.363),D(35,29,25.272)],
@@ -609,6 +623,8 @@ const CATS={
  B:{label:"מגבלות קרבה לגבול (סעיף 4)", color:"#cf5fa6", badge:"גבול"},
  X:{label:"מוחרג לכטב\"מ בתיאום צבאי — יו\"ש ויריחו", color:"#5f8291", badge:"מוחרג"},
  O:{label:"בלונים מעוגנים — מכשולים (נספח ד')", color:"#7d8da0", badge:"מכשול"},
+ NR:{label:"שמורות טבע — רט\"ג (נספח ה')", color:"#3ddc84", badge:"שמורת טבע"},
+ NP:{label:"גנים לאומיים — רט\"ג (נספח ה')", color:"#4da3ff", badge:"גן לאומי"},
  /* ---- נוטמ (NOTAM) — שכבה חיה ---- */
  NT_uas: {label:"נוט\"מ — כטב\"מ ורחפנים", color:"#ff2d2d", badge:"NOTAM"},
  NT_pje: {label:"נוט\"מ — הצנחות",         color:"#b16dff", badge:"NOTAM"},
@@ -625,6 +641,7 @@ function buildGeom(a){
   let layer=null;
   if(a.g.k==="circle"){ layer=L.circle(a.g.c,{radius:a.g.r,...st}); }
   else if(a.g.k==="poly"){ layer=L.polygon(a.g.pts,st); }
+  else if(a.g.k==="multi"){ layer=L.polygon(a.g.rings.map(r=>[r]),st); }
   else if(a.g.k==="capsule"){ layer=L.polygon(capsule(a.g.a,a.g.b,a.g.r),st); }
   else if(a.g.k==="strip"){ layer=L.polygon(stripPoly(a.g.line,a.g.w,a.g.side),st); }
   else if(a.g.k==="line"){ layer=L.polyline(a.g.pts,{color:a.lineColor||CATS[a.cat].color, weight:3.5, dashArray:"7 6"}); }
@@ -650,7 +667,7 @@ function popupHtml(a){
   ${a.g.k==="circle"?`<div class="pp-row"><span class="k">רדיוס:</span><span class="v">${a.g.r>=1000?(a.g.r/1000).toFixed(a.g.r%1000?2:0)+" km":a.g.r+" m"}</span></div>
   <div class="pp-row"><span class="k">מרכז:</span><span class="v">${a.g.c[0].toFixed(4)}N ${a.g.c[1].toFixed(4)}E</span></div>`:""}
   ${a.note?`<div class="pp-note">${a.note}</div>`:`<div class="pp-note">לא פורסם גורם תיאום ייעודי בפרק. בקשה לטיסה חורגת: אגף פיקוח אווירי רת"א — caai-charigot@mot.gov.il</div>`}
-  <div class="pp-note">מקור: פמ"ת א'-17, עדכון 1/26 · תיחום מקורב, לידיעה בלבד</div>`;
+  <div class="pp-note">${a.src==="inpa"?'מקור: פמ"ת א\'-17 נספח ה\', עדכון 1/26 · גבולות: רשות הטבע והגנים (קובץ מ-11/01/2026), לידיעה בלבד':'מקור: פמ"ת א\'-17, עדכון 1/26 · תיחום מקורב, לידיעה בלבד'}</div>`;
 }
 const layersByCode={};
 AREAS.forEach(a=>{
@@ -683,6 +700,7 @@ AIRPORTS.forEach((ap,ai)=>{
   mk.addTo(groups.A);
 });
 groups.P.addTo(map); groups.R.addTo(map); groups.D.addTo(map); groups.U.addTo(map); groups.A.addTo(map); groups.B.addTo(map);
+groups.NR.addTo(map); groups.NP.addTo(map);
 groups.NT_uas.addTo(map); groups.NT_pje.addTo(map); groups.NT_frng.addTo(map); groups.NT_act.addTo(map); groups.NT_obst.addTo(map); groups.NT_ad.addTo(map); groups.NT_other.addTo(map);
 // שכבת המוחרגים (X) והבלונים (O) כבויות כברירת מחדל
  
@@ -715,7 +733,8 @@ const obs=new MutationObserver(()=>{
 obs.observe(lcDiv,{attributes:true,attributeFilter:['class']});
  
 /* ===== sidebar ===== */
-const ORDER=["P","R","D","U","A","B","X","O","NT_uas","NT_pje","NT_frng","NT_act","NT_obst","NT_ad","NT_other"];
+const ORDER=["P","R","D","U","A","B","X","O","NR","NP","NT_uas","NT_pje","NT_frng","NT_act","NT_obst","NT_ad","NT_other"];
+let INPA_UNMAPPED=[]; /* נטען בהמשך מ-data/inpa-zones.json */
 const groupsEl=document.getElementById('groups');
 function renderList(filter){
   groupsEl.innerHTML="";
@@ -724,7 +743,8 @@ function renderList(filter){
     if(!items.length && filter) return;
     const g=document.createElement('div'); g.className='grp'+((filter||k==='P')?' open':'');
     const btn=document.createElement('button');
-    btn.innerHTML=`<span class="swatch" style="background:${CATS[k].color}"></span><span style="color:${CATS[k].color}">${CATS[k].label}</span><span class="cnt">${items.length}</span>`;
+    btn.innerHTML=`<span class="swatch" style="background:${CATS[k].color}"></span><span style="color:${CATS[k].color}">${CATS[k].label}</span><span class="cnt">${items.length}</span><span class="vis" data-k="${k}" title="הצג / הסתר שכבה" style="margin-inline-start:8px;cursor:pointer;font-size:15px;opacity:${map.hasLayer(groups[k])?1:.3}">👁</span>`;
+    btn.querySelector('.vis').onclick=ev=>{ ev.stopPropagation(); if(map.hasLayer(groups[k])) map.removeLayer(groups[k]); else groups[k].addTo(map); };
     btn.onclick=()=>g.classList.toggle('open');
     g.appendChild(btn);
     const wrap=document.createElement('div'); wrap.className='items';
@@ -752,6 +772,11 @@ function renderList(filter){
       const nb=document.createElement('div'); nb.className='noteblock';
       nb.innerHTML="<b>ללא שרטוט</b> (קואורדינטות ב-ENR 5.1 בלבד): "+NO_COORDS.map(n=>`<span style="direction:ltr;font-family:Consolas,monospace">${n[0]}</span>`).join(", ")+
       "<br>שטחי אש פעילים א'–ה' 06:00–21:00 (ערב חג עד 14:00) או לפי NOTAM.";
+      wrap.appendChild(nb);
+    }
+    if(k==='NR'&&INPA_UNMAPPED.length){
+      const nb=document.createElement('div'); nb.className='noteblock';
+      nb.innerHTML="<b>ללא גבולות במפה</b> ("+INPA_UNMAPPED.length+" אתרים ברשימת הפמ\"ת שאין להם גבולות בקבצי רט\"ג — בעיקר אתרי קינון והאכלה): "+INPA_UNMAPPED.map(u=>`<span style="direction:ltr;font-family:Consolas,monospace">${u.id.replace('LLP','')}</span> ${u.name}`).join(" · ");
       wrap.appendChild(nb);
     }
     if(k==='U'){
@@ -785,6 +810,32 @@ function renderList(filter){
 }
 renderList();
 document.getElementById('q').addEventListener('input',e=>renderList(e.target.value.trim().toLowerCase()||null));
+/* סנכרון עינית ההצגה במקרא עם בורר השכבות */
+function syncVis(){ document.querySelectorAll('#groups .vis').forEach(el=>{ const k=el.dataset.k; if(groups[k]) el.style.opacity=map.hasLayer(groups[k])?1:.3; }); }
+map.on('overlayadd overlayremove',syncVis);
+/* ---- שמורות טבע וגנים לאומיים (נספח ה' + גבולות רט"ג) — נטענות בנפרד כי הקובץ גדול ---- */
+const INPA_RULES={
+ NR:'שמורת טבע: גובה מזערי להטסה 300 רגל מעפ"ש ו-150 מ\' מגבול השמורה (הקו המקווקו). אסור נחיתה והמראה. רבי להב (רחפנים): מותר רק למפעיל מורשה ובמסגרת הכללים של רט"ג. ',
+ NP:'גן לאומי: גובה מזערי להטסה 500 רגל מעפ"ש. אסור נחיתה והמראה; אסור להטיס רבי להב (רחפנים) בגנים לאומיים. '
+};
+fetch('../data/inpa-zones.json?v=20261002').then(r=>r.json()).then(d=>{
+  INPA_UNMAPPED=d.unmapped||[];
+  d.sites.forEach(site=>{
+    const cat=site.kind==='P'?'NP':'NR';
+    const a={code:site.id, name:site.name, cat, src:'inpa',
+      alt:'עד '+Number(site.max).toLocaleString('en-US')+' רגל מעפ"ש (מהקרקע)',
+      note:INPA_RULES[cat]+(site.note?'<br>'+site.note+'. ':'')+(site.nb?'<br><i>'+site.nb+'</i> ':'')+'<br>חריגים: <a href="https://www.parks.org.il/article/tisa/" target="_blank" rel="noopener" style="color:#7fc0ff">טופס בקשה לחריגה (רט"ג)</a>',
+      g:{k:'multi', rings:site.rings}};
+    AREAS.push(a);
+    const layer=buildGeom(a); layer.bindPopup(popupHtml(a),{maxWidth:290});
+    layer.on('mouseover',function(){this.setStyle({weight:3, fillOpacity:0.38});});
+    layer.on('mouseout',function(){this.setStyle({weight:1.6, fillOpacity:0.22});});
+    layer.addTo(groups[cat]);
+    if(site.buf) L.polygon(site.buf.map(r=>[r]),{color:CATS[cat].color, weight:1.4, dashArray:'5 5', fill:false, interactive:false}).addTo(groups[cat]);
+    layersByCode[a.code]={layer, area:a};
+  });
+  renderList(document.getElementById('q').value.trim().toLowerCase()||null);
+}).catch(()=>{ const nb=document.createElement('div'); nb.className='noteblock'; nb.textContent='שכבות רט"ג לא נטענו — נסו לרענן.'; groupsEl.appendChild(nb); });
 /* ---- חלונית מקרא צפה: פתיחה/סגירה ---- */
 const sideEl=document.getElementById('side'), tbtn=document.getElementById('togglebtn');
 function setPanel(hidden){
@@ -793,7 +844,7 @@ function setPanel(hidden){
 }
 tbtn.onclick=()=>setPanel(false);
 document.getElementById('closeside').onclick=()=>setPanel(true);
-setPanel(false);
+setPanel(window.matchMedia('(max-width:760px)').matches); /* בטלפון המקרא מתחיל סגור — המפה גלויה */
  
 /* ---- גרירת מיקום החלונית (מהכותרת) ---- */
 const hdrEl=sideEl.querySelector('header');
@@ -869,7 +920,7 @@ document.getElementById('expandall').onclick=()=>{
     const r=await fetch('https://api.countapi.xyz/hit/icd-a17-map/visits');
     const d=await r.json();
     document.getElementById('vc-n').textContent=d.value.toLocaleString('he-IL');
-  }catch(e){ document.getElementById('visit-counter').style.display='none'; }
+  }catch(e){ const vc=document.getElementById('layers-counter'); if(vc) vc.style.display='none'; }
 })();
  
  

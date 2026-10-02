@@ -13,6 +13,7 @@
     NR:{label:"שמורות טבע (רט״ג)",color:"#3ddc84"},
     NP:{label:"גנים לאומיים (רט״ג)",color:"#4da3ff"}
   };
+  const VERSION="02.10.2026";
   const on=new Set(Object.keys(KEYS));
   const items=[];           // {key,z,bounds,center,dot,poly,buf,rings,bufRings,html}
   const counts={};
@@ -132,10 +133,18 @@
     f.insertBefore(d,f.firstChild);
   }
 
-  Promise.all([fetch("data/pmt-zones.json").then(r=>r.json()),fetch("data/inpa-zones.json").then(r=>r.json())]).then(([pmt,inpa])=>{
+  Promise.all([fetch("data/pmt-zones.json?v=20261002").then(r=>r.json()),fetch("data/inpa-zones.json?v=20261002").then(r=>r.json())]).then(([pmt,inpa])=>{
     pmt.zones.forEach(z=>{z.src="pmt";z.edition=pmt.edition;add(z.cat,z);});
     inpa.sites.forEach(z=>{z.src="inpa";z.edition=inpa.edition;z.id=z.id;add(z.kind==="P"?"NP":"NR",z);});
     ready=true; update(); unmappedBox(pmt,inpa);
     if(typeof renderCatBar==="function") renderCatBar();
-  }).catch(()=>{});
+    const sub=document.querySelector(".brand .sub");
+    if(sub) sub.appendChild(document.createTextNode(" · גרסת שכבות פמ״ת "+VERSION));
+  }).catch(err=>{
+    /* מציג את התקלה במקום להיכשל בשקט — כדי שאפשר יהיה לראות מה קרה בטלפון */
+    const bar=document.getElementById("catBar");
+    const box=document.createElement("div"); box.className="pmt-sep"; box.style.color="var(--amber)";
+    box.textContent="⚠ שכבות הפמ״ת לא נטענו ("+((err&&err.message)||"שגיאה")+"). נסו לרענן; אם זה חוזר — שלחו צילום מסך.";
+    (bar&&bar.parentNode?bar.parentNode:document.body).insertBefore(box,bar||null);
+  });
 })();

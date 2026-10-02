@@ -1217,7 +1217,12 @@ document.getElementById("nearBtn").onclick=()=>{
   {enableHighAccuracy:true,timeout:12000,maximumAge:60000});
 };
 /* רישום ה-Service Worker — הופך את הדף לאפליקציה מותקנת */
-if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js").catch(()=>{});}
+if("serviceWorker" in navigator){
+  /* מעדכן את האפליקציה המותקנת: בדיקת גרסה חדשה בכל כניסה, ורענון חד-פעמי כשמגיעה גרסה חדשה */
+  navigator.serviceWorker.register("sw.js").then(reg=>{ try{reg.update();}catch(e){} }).catch(()=>{});
+  const hadSW=!!navigator.serviceWorker.controller; let swReloaded=false;
+  navigator.serviceWorker.addEventListener("controllerchange",()=>{ if(!hadSW||swReloaded) return; swReloaded=true; location.reload(); });
+}
 
 /* מצב מנהל: גישה ישירה לכתובת הזו (ללא Wix) עוקפת תמיד את התשלום —
    זו כבר "הדלת האחורית" הקיימת. מוסיפים תזכורת חזותית כשמזהים גישה ישירה. */
@@ -1239,6 +1244,6 @@ try{
     (e&&e.message||"")+"</small>");
 }
 </script>
-<script src="pmt-layer.js"></script>
+<script src="pmt-layer.js?v=20261002"></script>
 </body>
 </html>
