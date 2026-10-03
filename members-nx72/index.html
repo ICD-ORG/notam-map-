@@ -174,7 +174,7 @@
   .dec-head{display:flex; justify-content:space-between; align-items:center; margin:-20px -20px 14px; padding:16px 20px 8px; position:sticky; top:-20px; background:var(--panel); z-index:2}
   .fold-row{display:flex; align-items:center; gap:8px; margin:6px 14px 2px; flex-wrap:wrap}
   .lbl{min-width:0; text-align:right}
-  .vis{margin-inline-start:8px; cursor:pointer; font-size:15px}
+  .vis{margin-inline-start:8px; cursor:pointer; font-size:15px; flex:none}
   .rbtn{margin-top:6px; padding:7px 14px; min-height:36px; border:0; border-radius:7px; background:#a8c6e8; color:#0e1b2a; font-weight:700; cursor:pointer}
   /* הודעת טעינה / שגיאה של נתוני הנוט"מים — גלויה גם כשהמקרא סגור. מוגדרת לפני ה-media queries כדי שכללי הטלפון (bottom) לא יידרסו */
   #ntBanner{position:absolute; left:50%; bottom:46px; bottom:calc(46px + env(safe-area-inset-bottom,0px)); transform:translateX(-50%); z-index:998; display:flex; align-items:center; gap:10px; width:max-content; max-width:calc(100% - 24px); padding:8px 14px; border-radius:10px;
@@ -194,11 +194,16 @@
   }
 /* ---- מקרא קומפקטי (טלפון / גובה נמוך): שורות הקבוצות צפופות כדי שכל 17 הקטגוריות ייראו בשתי גלילות לכל היותר ---- */
 @media (max-width:760px), (max-height:520px){
-    #groups{padding:2px 8px 8px}
-    .grp{margin:2px 6px}
+    #groups{padding:2px 8px 4px}
+    .grp{margin:1px 6px}
     .grp>button{padding:0 6px; gap:6px}
+    #search{padding:4px 14px 2px}
     .fold-row{margin:2px 14px 0}
     #apxRow{margin:2px 14px 0; padding:0 4px}
+  }
+/* מקלדת שמקטינה את חלון הנראות (דפדפנים בלי interactive-widget): בזמן הקלדה בחיפוש מסתירים את הכותרת והשורות שמעל הרשימה — תוצאות החיפוש נשארות גלויות */
+@media (max-width:760px) and (orientation:portrait) and (max-height:520px){
+    #side.searching header, #side.searching .fold-row, #side.searching #apxRow{display:none}
   }
 /* ---- טלפון ---- */
 @media (max-width:760px){
@@ -211,7 +216,7 @@
    בלרוחב (גובה ≤420) נשארת חלונית צד */
 @media (max-width:760px) and (min-height:421px), (max-width:760px) and (orientation:portrait){
     #side{top:auto!important; left:0!important; right:0!important; bottom:0; width:100%!important;
-      max-height:78vh; max-height:78dvh; border-radius:14px 14px 0 0; padding-bottom:env(safe-area-inset-bottom)}
+      max-height:80vh; max-height:80dvh; border-radius:14px 14px 0 0; padding-bottom:env(safe-area-inset-bottom)}
     #resizer{display:none}
     #togglebtn{top:auto; bottom:calc(18px + env(safe-area-inset-bottom)); right:calc(14px + env(safe-area-inset-right)); padding:11px 16px; font-size:14px; box-shadow:0 4px 14px rgba(0,0,0,.5)}
     #decoderBtn{left:auto!important; right:calc(14px + env(safe-area-inset-right))!important; top:calc(14px + env(safe-area-inset-top))!important; padding:10px 12px!important}
@@ -1441,6 +1446,7 @@ renderList();
 /* מעבר בין טלפון למחשב (סיבוב מסך/שינוי גודל חלון): סדר ותוויות המקרא מתעדכנים */
 (function(){ const f=()=>renderList(curFilter()); if(compactMQ.addEventListener) compactMQ.addEventListener('change',f); else if(compactMQ.addListener) compactMQ.addListener(f); })();
 document.getElementById('q').addEventListener('input',e=>{ renderList(e.target.value.trim().toLowerCase()||null); ntRenderList(); });
+(function(){ const q=document.getElementById('q'), sd=document.getElementById('side'); q.addEventListener('focus',()=>sd.classList.add('searching')); q.addEventListener('blur',()=>sd.classList.remove('searching')); })();
 /* קבוצות הנוט"מים במקרא (מונה + פריטים) מתעדכנות כשרשימת הנוט"מים הפעילים משתנה */
 let ntGroupsSig='';
 function refreshNtGroups(){
@@ -1576,7 +1582,7 @@ function clampPanel(){
   const w=Math.min(parseFloat(st.width)||sideEl.offsetWidth||330, vw-16);
   if(st.width) st.width=w+'px';
   if(st.left){ st.left=Math.max(8,Math.min(vw-8-w,parseFloat(st.left)||0))+'px'; }
-  if(st.top){ st.top=Math.max(8,Math.min(vh-50,parseFloat(st.top)||0))+'px'; }
+  if(st.top){ const ph=Math.min(sideEl.offsetHeight||vh-28,vh-16); st.top=Math.max(8,Math.min(vh-8-ph,parseFloat(st.top)||0))+'px'; }
   InfoCard.place();
 }
 window.addEventListener('resize',clampPanel);

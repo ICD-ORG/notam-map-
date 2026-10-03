@@ -177,9 +177,10 @@ button:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
 .pp-raw{direction:ltr;text-align:left;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a9bcd8;white-space:pre-wrap;background:#0a101c;border-radius:8px;padding:8px;margin-top:8px}
 details summary{cursor:pointer;color:var(--cyan);font-size:12.5px;margin-top:8px}
 .approx-note{color:var(--amber);font-size:12px}
-/* שם בריחוף (מחשב בלבד). בדף RTL ל-.leaflet-tooltip אין left/top, והמיקום הסטטי הוא בקצה הימני — Leaflet מוסיף translate על זה, והטולטיפ נזרק שמאלה ברוחבו */
+/* שם בריחוף (מחשב בלבד): אלמנט בתוך מכל המפה (pmt-layer.js), ממוקם ב-transform מהפינה השמאלית-עליונה. בדף RTL ל-.leaflet-tooltip אין left/top והמיקום הסטטי הוא בקצה הימני —
+   בלי left/top:0 כל הזזה נזרקת שמאלה ברוחב הטולטיפ (וזה מה שהיה ב-Leaflet עצמו) */
 .leaflet-tooltip{left:0;top:0}
-.hover-tip{background:#0b1220;color:var(--ink);border:1px solid var(--amber);border-radius:8px;padding:5px 9px;
+.hover-tip{z-index:650;opacity:.97;background:#0b1220;color:var(--ink);border:1px solid var(--amber);border-radius:8px;padding:5px 9px;
   font:600 12.5px/1.4 'Rubik',sans-serif;direction:rtl;box-shadow:0 2px 10px rgba(0,0,0,.55)}
 .hover-tip.leaflet-tooltip-top:before{border-top-color:var(--amber)}
 .hover-tip.leaflet-tooltip-bottom:before{border-bottom-color:var(--amber)}

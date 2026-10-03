@@ -520,41 +520,43 @@
   map.on("movestart dragstart",()=>{ zoomClick=null; });
 
   /* ---- שם בריחוף (מחשב בלבד): מאזין אחד על מכל המפה (DOM — Leaflet מחנק mousemove של הקנבס ל-32ms ובולע את האירוע האחרון),
-     throttle ~100ms, דילוג כשהעכבר זז <3px, וטולטיפ יחיד לאזור העליון בנקודה ---- */
+     throttle ~100ms, דילוג כשהעכבר זז <3px, וטולטיפ יחיד לאזור העליון בנקודה. הטולטיפ הוא אלמנט קל בתוך מכל המפה (עם המחלקות של
+     tooltip של Leaflet — חץ וצבעים), ממוקם ב-transform: חלון Leaflet בתוך ה-pane גרם לעבודת Commit/צביעה כבדה בכל תזוזה (פי ~2.6 עיבוד ראשי) ---- */
   if(CAN_HOVER){
-    const tip=L.tooltip({direction:"top",offset:[0,-10],opacity:.97,className:"hover-tip"});
     const box=map.getContainer();
-    let last=0,tmr=0,pend=null,lastKey="",lx=-99,ly=-99;
-    const hide=()=>{ if(map.hasLayer(tip)) map.removeLayer(tip); lastKey=""; lx=ly=-99; box.classList.remove("hit"); };
+    const tipEl=document.createElement("div"); tipEl.className="leaflet-tooltip hover-tip leaflet-tooltip-top"; tipEl.setAttribute("role","tooltip");
+    let last=0,tmr=0,pend=null,lastKey="",lx=-99,ly=-99,tw=0,th=0,shown=false;
+    const hide=()=>{ if(shown){ tipEl.remove(); shown=false; } lastKey=""; lx=ly=-99; box.classList.remove("hit"); };
     const stop=()=>{ clearTimeout(tmr); tmr=0; pend=null; hide(); };   // מנקים גם טיימר ממתין — אחרת הטולטיפ נתקע מעל הכרטיס/הפקדים
     const overUi=t=>!!(t&&t.closest&&t.closest(".infocard,.leaflet-control"));
-    /* כיוון הטולטיפ לפי המקום שנשאר: מעל העכבר; מתחתיו אם אין מקום למעלה; ובקצה שמאל/ימין — לצד העכבר (לא נחתך) */
+    /* מקום הטולטיפ לפי המקום שנשאר: מעל העכבר; מתחתיו אם אין מקום למעלה; ובקצה שמאל/ימין — לצד העכבר (לא נחתך). x,y — פינה שמאלית-עליונה במכל */
     function aim(cp){
-      const el=tip.getElement(); if(!el) return;
-      const sz=map.getSize(), tw=el.offsetWidth||150, th=el.offsetHeight||28, G=10, M=4;
-      let dir="top", off=[0,-G];
-      if(cp.y-G-th<M&&cp.y+G+th<=sz.y-M){ dir="bottom"; off=[0,G]; }
+      const sz=map.getSize(), G=10, M=4;
+      let dir="top", x=cp.x-tw/2, y=cp.y-th-G;
+      if(cp.y-G-th<M&&cp.y+G+th<=sz.y-M){ dir="bottom"; y=cp.y+G; }
       if(cp.x-tw/2<M||cp.x+tw/2>sz.x-M){
-        if(cp.x+G+tw<=sz.x-M){ dir="right"; off=[G,0]; }
-        else if(cp.x-G-tw>=M){ dir="left"; off=[-G,0]; }
+        if(cp.x+G+tw<=sz.x-M){ dir="right"; x=cp.x+G; y=cp.y-th/2; }
+        else if(cp.x-G-tw>=M){ dir="left"; x=cp.x-G-tw; y=cp.y-th/2; }
       }
-      tip.options.direction=dir; tip.options.offset=L.point(off[0],off[1]);
+      const cn="leaflet-tooltip hover-tip leaflet-tooltip-"+dir; if(tipEl.className!==cn) tipEl.className=cn;
+      tipEl.style.transform="translate("+Math.round(x)+"px,"+Math.round(y)+"px)";
     }
     const run=ev=>{
       if(map._animatingZoom||(map.dragging&&map.dragging.moving())) return hide();
       if(overUi(ev.target)) return hide();
-      const ll=map.mouseEventToLatLng(ev);
+      const ll=map.mouseEventToLatLng(ev), cp=map.mouseEventToContainerPoint(ev);
       const a=InfoCard.anchor();   // ליד עוגן הכרטיס הפתוח לא מציגים טולטיפ (הכרטיס כבר מציג את אותו מידע)
-      if(a&&map.latLngToContainerPoint(a).distanceTo(map.latLngToContainerPoint(ll))<30) return hide();
+      if(a&&map.latLngToContainerPoint(a).distanceTo(cp)<30) return hide();
       const list=collect(ll,false);
       if(!list.length) return hide();
       const top=list[0], key=top.id+"|"+list.length;
-      if(key!==lastKey){
+      if(key!==lastKey||!shown){
         lastKey=key;
-        tip.setContent('<b style="color:'+top.color+'">'+esc(top.name)+'</b> · <span class="mono">'+esc(top.id)+'</span>'+(list.length>1?' <span class="tip-more" dir="ltr">+'+(list.length-1)+'</span>':''));
+        tipEl.innerHTML='<b style="color:'+top.color+'">'+esc(top.name)+'</b> · <span class="mono">'+esc(top.id)+'</span>'+(list.length>1?' <span class="tip-more" dir="ltr">+'+(list.length-1)+'</span>':'');
+        if(!shown){ box.appendChild(tipEl); shown=true; }
+        tw=tipEl.offsetWidth; th=tipEl.offsetHeight;   // מדידה אחת בלבד, רק כשהתוכן משתנה
       }
-      tip.setLatLng(ll); if(!map.hasLayer(tip)) tip.addTo(map);
-      aim(map.mouseEventToContainerPoint(ev)); tip.setLatLng(ll);
+      aim(cp);
       box.classList.add("hit");
     };
     const fire=()=>{
