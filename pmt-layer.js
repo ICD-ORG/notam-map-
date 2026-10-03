@@ -33,8 +33,8 @@
         "overflow-wrap:anywhere;scrollbar-width:thin;scrollbar-color:#3a4d73 transparent}"+
       ".infocard .ic-body::-webkit-scrollbar{width:6px}.infocard .ic-body::-webkit-scrollbar-thumb{background:#3a4d73;border-radius:99px}"+
       /* רמז גלילה: הצללה + "↓ עוד N" בתחתית הגוף כשיש עוד מה לראות (לא חוסם הקשות) */
-      ".infocard .ic-more{display:none;position:absolute;left:0;right:0;bottom:0;height:36px;align-items:flex-end;justify-content:center;padding-bottom:6px;box-sizing:border-box;"+
-        "pointer-events:none;background:linear-gradient(to bottom,rgba(18,28,46,0),var(--panel,#121c2e) 78%);color:var(--amber,#ffb84d);font-size:12px;font-weight:800}"+
+      ".infocard .ic-more{display:none;position:absolute;left:0;right:0;bottom:0;height:38px;align-items:flex-end;justify-content:center;padding-bottom:6px;box-sizing:border-box;"+
+        "pointer-events:none;background:linear-gradient(to bottom,rgba(18,28,46,0),var(--panel,#121c2e) 58%);color:var(--amber,#ffb84d);font-size:12px;font-weight:800}"+
       ".infocard .ic-more.on{display:flex}"+
       ".ic-pin-wrap{background:transparent;border:0;pointer-events:none}"+
       ".ic-pin{width:22px;height:22px;box-sizing:border-box;border-radius:50%;background:#ff3b30;border:3px solid #fff;box-shadow:0 0 0 2px rgba(0,0,0,.5),0 2px 10px rgba(0,0,0,.7)}";
@@ -44,7 +44,7 @@
     function hint(){
       if(!hintEl||!bodyEl) return;
       const b=bodyEl, over=b.scrollHeight-b.clientHeight;
-      if(!el.classList.contains("on")||over<=2||b.scrollTop>=over-2){ hintEl.classList.remove("on"); return; }
+      if(!el.classList.contains("on")||over<=3||b.scrollTop>=over-3){ hintEl.classList.remove("on"); return; }
       const bb=b.getBoundingClientRect().bottom; let n=0;
       b.querySelectorAll(".stk>.stk-it").forEach(d=>{ if(d.getBoundingClientRect().top>=bb-6) n++; });
       hintEl.textContent=n?"↓ "+(n===1?"עוד אזור אחד":"עוד "+n+" אזורים"):"↓ גללו לעוד";
@@ -67,8 +67,8 @@
         if((b.scrollTop<=0&&ev.deltaY<0)||(b.scrollTop+b.clientHeight>=b.scrollHeight-1&&ev.deltaY>0)) ev.preventDefault();
       },{passive:false});
       bodyEl.addEventListener("scroll",hint,{passive:true});
-      /* פתיחה/כיווץ של פריט: הכותרת שנלחצה נשארת באותו מקום על המסך. כרטיס מעוגן למעלה גדל כלפי מטה; כרטיס מעוגן לתחתית לא גדל
-         (לא "בורח" כלפי מעלה) — התוכן נפתח בתוך אזור הגלילה, ואם הוא נחתך מעט מגללים כדי שייראה */
+      /* פתיחה/כיווץ של פריט: הכותרת שנלחצה נשארת באותו מקום על המסך (לא "קופצת"). כרטיס מעוגן למעלה גדל כלפי מטה; כרטיס מעוגן לתחתית לא גדל
+         כלפי מעלה על חשבון הכותרת — התוכן נפתח מתחתיה בתוך אזור הגלילה (רמז "↓ גללו" מופיע כשהוא חורג) */
       bodyEl.addEventListener("click",ev=>{
         const sm=ev.target.closest&&ev.target.closest("summary"); if(!sm||!bodyEl.contains(sm)) return;
         const d=sm.parentNode; if(!d||d.tagName!=="DETAILS") return;
@@ -76,13 +76,8 @@
         const y0=sm.getBoundingClientRect().top;
         d.open=!d.open;
         if(cur&&cur.top) place({measure:true,keep:true,lock:true});
-        let dy=sm.getBoundingClientRect().top-y0;
+        const dy=sm.getBoundingClientRect().top-y0;
         if(Math.abs(dy)>.5) bodyEl.scrollTop+=dy;
-        if(d.open){
-          const br=bodyEl.getBoundingClientRect(), sr=sm.getBoundingClientRect(), dr=d.getBoundingClientRect();
-          const need=Math.min(dr.bottom-sr.bottom,96), seen=Math.min(dr.bottom,br.bottom)-sr.bottom;
-          if(seen<need){ const sh=Math.min(need-seen,sr.top-br.top-4); if(sh>0) bodyEl.scrollTop+=sh; }
-        }
         hint();
       });
       if(!keyBound){ keyBound=true; document.addEventListener("keydown",ev=>{ if(ev.key==="Escape") hide(); }); }
@@ -214,13 +209,13 @@
 
   /* ======================= שכבות פמ"ת / רט"ג ======================= */
   const KEYS={
-    LLP:{label:"אסורים (LLP)",short:"LLP אסורים",color:"#ff3b30"},
-    LLR:{label:"מוגבלים (LLR)",short:"LLR מוגבלים",color:"#ff9500"},
-    LLD:{label:"מסוכנים (LLD)",short:"LLD מסוכנים",color:"#2ec4b6"},
-    LLU:{label:"אסורים לכטב״מ (LLU)",short:"LLU כטב״מ",color:"#e8eefc"},
-    OBS:{label:"בלונים מעוגנים",short:"בלונים",color:"#c9a227"},
-    NR:{label:"שמורות טבע (רט״ג)",short:"שמורות טבע",color:"#3ddc84"},
-    NP:{label:"גנים לאומיים (רט״ג)",short:"גנים לאומיים",color:"#4da3ff"}
+    LLP:{label:"אסורים (LLP)",short:"LLP אסורים",row:"אסורים",color:"#ff3b30"},
+    LLR:{label:"מוגבלים (LLR)",short:"LLR מוגבלים",row:"מוגבלים",color:"#ff9500"},
+    LLD:{label:"מסוכנים (LLD)",short:"LLD מסוכנים",row:"מסוכנים",color:"#2ec4b6"},
+    LLU:{label:"אסורים לכטב״מ (LLU)",short:"LLU כטב״מ",row:"אסורים לכטב״מ",color:"#e8eefc"},
+    OBS:{label:"בלונים מעוגנים",short:"בלונים",row:"בלון מעוגן",color:"#c9a227"},
+    NR:{label:"שמורות טבע (רט״ג)",short:"שמורות טבע",row:"שמורת טבע",color:"#3ddc84"},
+    NP:{label:"גנים לאומיים (רט״ג)",short:"גנים לאומיים",row:"גן לאומי",color:"#4da3ff"}
   };
   const VERSION="02.10.2026";
   const on=new Set(Object.keys(KEYS));
@@ -432,7 +427,7 @@
   /* דירוג בתוך קבוצה: 0 = נקודה שנלחצה (נקודת האתר בקרבת האצבע/העכבר, הקרובה ראשונה) · 1 = האזור מכיל את הנקודה (קטן לפני גדול) · 2 = קרוב בלבד */
   const cmp=(a,b)=>(a.group-b.group)||(a.rank-b.rank)||(a.rank===1?a.area-b.area:a.dist-b.dist);
   function collect(ll,touch,focus){
-    const R=touch?16:10, z=map.getZoom(), S=256*Math.pow(2,z), cx=mx(ll.lng), cy=my(ll.lat), px=cx*S, py=cy*S, tu=R/S, out=[];
+    const R=touch?16:10, BT=touch?5:3, z=map.getZoom(), S=256*Math.pow(2,z), cx=mx(ll.lng), cy=my(ll.lat), px=cx*S, py=cy*S, tu=R/S, out=[];
     items.forEach(it=>{
       if(!on.has(it.key)) return;
       const ext=it.ext/mpp(z,it.center.lat);
@@ -445,14 +440,15 @@
         inside=ringsInside(it.P,px,py,S);
         if(!inside){
           dEdge=ringsDist(it.P,px,py,S,R);
-          if(it.bufRings&&z>=11&&ext>=PX_POLY){ if(!it.PB) it.PB=prep(it.bufRings); inBuf=ringsInside(it.PB,px,py,S); }
+          /* רצועת 150 מ': בתוך קו החיץ, או עד BT פיקסלים ממנו (הקו המקווקו דק, וקואורדינטות העכבר שלמות — לחיצה "על הקו" נחשבת) */
+          if(it.bufRings&&z>=11&&ext>=PX_POLY){ if(!it.PB) it.PB=prep(it.bufRings); inBuf=ringsInside(it.PB,px,py,S)||ringsDist(it.PB,px,py,S,BT)<=BT; }
         }
       }
       const dNear=Math.min(dEdge,dDot);
       if(!(inside||inBuf||dNear<=R)) return;
       /* כלל "בקרבת הנקודה" (זהה בשתי המפות): כל אתר, גדול או קטן, שהנקודה בתוך R פיקסלים מגבולו ולא בתוכו */
       const near=!inside&&!inBuf;
-      out.push({id:it.d.id,name:it.d.name,key:it.key,color:it.col,tag:KEYS[it.key].label,group:0,area:it.area,near,inBuf,approx:false,
+      out.push({id:it.d.id,name:it.d.name,key:it.key,color:it.col,tag:KEYS[it.key].label,rtag:KEYS[it.key].row,group:0,area:it.area,near,inBuf,approx:false,
         rank:dDot<=R?0:(inside||inBuf)?1:2,dist:near?dNear:dDot,body:()=>bodyHtml(it)});
     });
     if(typeof window.notamStackEntries==="function") window.notamStackEntries(map.latLngToLayerPoint(ll),R).forEach(e=>out.push(e));
@@ -461,8 +457,8 @@
     if(focus){ const i=out.findIndex(e=>e.id===focus); if(i>0) out.unshift(out.splice(i,1)[0]); }
     return out;
   }
-  function badges(e){
-    return '<span class="badge" style="color:'+e.color+';border-color:currentColor">'+esc(e.tag)+'</span>'+
+  function badges(e,row){
+    return '<span class="badge" style="color:'+e.color+';border-color:currentColor">'+esc(row&&e.rtag||e.tag)+'</span>'+
       (e.approx?' <span class="badge appr">מיקום משוער</span>':'')+
       (e.near?' <span class="badge appr">בקרבת הנקודה</span>':'')+
       (e.inBuf?' <span class="badge appr">ברצועת 150 מ׳ מהגבול</span>':'');
@@ -476,7 +472,7 @@
     }
     return '<div class="stk">'+list.map(e=>{
       const sel=!!focus&&e.id===focus;
-      return '<details class="stk-it'+(sel?' foc':'')+'"><summary><span class="stk-nm">'+esc(e.name)+'</span><span class="pp-id" style="color:'+e.color+'">'+esc(e.id)+'</span>'+badges(e)+
+      return '<details class="stk-it'+(sel?' foc':'')+'"><summary><span class="stk-nm">'+esc(e.name)+'</span><span class="pp-id" style="color:'+e.color+'">'+esc(e.id)+'</span>'+badges(e,true)+
         (sel?' <span class="badge sel">נבחר</span>':'')+'</summary><div class="stk-b">'+e.body()+'</div></details>';
     }).join("")+'</div>';
   }

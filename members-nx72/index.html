@@ -123,8 +123,8 @@
   .hb{padding:0 0 8px}
   .ntrow{min-height:40px}
   .ntraw{cursor:pointer; color:#7fb3d8; font-size:11px; min-height:32px; display:flex; align-items:center}
-  /* tooltip בריחוף (מחשב בלבד) */
-  .hover-tip{background:var(--panel); color:var(--text); border:1px solid var(--line); border-radius:6px; padding:4px 9px; font-size:12px; box-shadow:0 4px 14px rgba(0,0,0,.5); direction:rtl}
+  /* tooltip בריחוף (מחשב בלבד). left/top:0 — בדף RTL אלמנט absolute בלי left נדחף שמאלה ברוחבו */
+  .hover-tip{left:0; top:0; background:var(--panel); color:var(--text); border:1px solid var(--line); border-radius:6px; padding:4px 9px; font-size:12px; box-shadow:0 4px 14px rgba(0,0,0,.5); direction:rtl}
   .hover-tip.leaflet-tooltip-top:before{border-top-color:var(--line)}
   .hover-tip.leaflet-tooltip-bottom:before{border-bottom-color:var(--line)}
   .hover-tip.leaflet-tooltip-left:before{border-left-color:var(--line)}
@@ -872,7 +872,8 @@ const InfoCard=(function(){
   /* מלבנים אסורים (מקרא צף, פקדי Leaflet, כפתורי עזר) — קואורדינטות יחסית למכל המפה */
   function forbidden(){
     const out=[], c=map.getContainer().getBoundingClientRect();
-    ((st&&st.forbid)?st.forbid():[]).forEach(n=>{
+    const fn=(st&&st.forbid)||(typeof cardForbid==='function'?cardForbid:null);      // בלי כרטיס פתוח (tooltip): ברירת המחדל
+    (fn?fn():[]).forEach(n=>{
       if(!n) return; const cs=getComputedStyle(n); if(cs.display==='none'||cs.visibility==='hidden') return;
       const r=n.getBoundingClientRect(); if(r.width>0&&r.height>0) out.push({l:r.left-c.left,t:r.top-c.top,r:r.right-c.left,b:r.bottom-c.top});
     });
@@ -1313,6 +1314,7 @@ let INPA_UNMAPPED=[]; /* נטען בהמשך מ-data/inpa-zones.json */
 const groupsEl=document.getElementById('groups');
 const HE_COLLATOR=new Intl.Collator('he');
 const loadSt={nt:'idle', inpa:'idle'};   // מצב טעינה: נוט"מים / שכבות רט"ג (idle · loading · ok · err)
+let swDone=false;                         // ה-Service Worker נרשם פעם אחת, אחרי שטעינת הנתונים הראשונית הסתיימה
 const openState=compactMQ.matches?{}:{P:true};   /* מצב פתיחה של קבוצות המקרא — נשמר בין רינדורים (חיפוש / טעינת רט"ג). בטלפון הכול מקופל כברירת מחדל: כל 17 הקטגוריות (עם העין והמונה) נראות בשתי גלילות לכל היותר */
 /* ---- בחירה מרשימה/מקרא ("הצג במפה"): כאן מותר לזוז/לקרב — זו פעולה מכוונת. הכרטיס נפתח רק אחרי שהתזוזה הסתיימה ובתנאי שהנקודה גלויה ---- */
 const visRect=el=>{ if(!el) return null; const cs=getComputedStyle(el); if(cs.display==='none'||cs.visibility==='hidden') return null; const r=el.getBoundingClientRect(); return r.width&&r.height?r:null; };
@@ -1475,6 +1477,7 @@ function setLoad(key,state){
   loadSt[key]=state;
   if(key==='inpa') syncInpaErr();
   if(state==='loading') setTimeout(refreshBanner,250); else refreshBanner();
+  swWhenIdle();
 }
 let inpaLoaded=false, inpaBusy=false;
 /* הודעת שגיאה + "נסה שוב" בתוך המקרא: בלוק אחד בלבד, מתווסף מחדש בכל רינדור של הרשימה כל עוד הטעינה נכשלת (renderList מרוקן את #groups) */
@@ -2041,12 +2044,21 @@ function ntLocalTranslate(eText){
  
  
  
-if('serviceWorker' in navigator){
-  /* ה-SW עושה skipWaiting + claim ורשת-קודם, ולכן אין צורך בבאנר "גרסה חדשה" (שהיה מכסה את הפקדים) */
+/* רישום ה-Service Worker: רק אחרי שהטעינה הראשונית של הנתונים (נוט"מים + רט"ג) הסתיימה (או אחרי 20 שניות). ה-precache של ה-SW מוריד קבצים,
+   ואם הוא רץ במקביל לדף הוא מתחרה בו על הרשת — ביקור ראשון בקו איטי היה איטי פי ~1.8. ה-SW עושה skipWaiting + claim ורשת-קודם,
+   ולכן אין צורך בבאנר "גרסה חדשה" (שהיה מכסה את הפקדים) */
+function registerSW(){
+  if(swDone||!('serviceWorker' in navigator)) return;
+  swDone=true;
   navigator.serviceWorker.register('./sw.js').then(reg=>{
     reg.update().catch(()=>{});      // בדיקת עדכון בכל כניסה (באופליין נכשלת בשקט)
   }).catch(()=>{});
 }
+function swWhenIdle(){
+  const done=s=>s!=='idle'&&s!=='loading';
+  if(!swDone&&done(loadSt.nt)&&done(loadSt.inpa)) registerSW();
+}
+setTimeout(registerSW,20000);
  
 </script>
 </body>
