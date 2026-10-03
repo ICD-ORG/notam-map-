@@ -35,8 +35,6 @@
   --radius:14px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-.leaflet-popup,.leaflet-popup *{box-sizing:content-box}
-.leaflet-popup-content-wrapper,.leaflet-popup-content{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 html,body{background:var(--bg);color:var(--ink);font-family:'Rubik',system-ui,sans-serif;overflow-x:hidden;
   max-width:100%;scrollbar-width:thin;scrollbar-color:#2a3a58 transparent}
@@ -114,7 +112,7 @@ button:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
 .item .t{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .item .name{font-weight:600;font-size:14px}
 .item .nid{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--cyan)}
-.item .meta{color:var(--muted);font-size:12px;margin-top:3px;display:flex;gap:8px;align-items:center}
+.item .meta{color:var(--muted);font-size:12px;margin-top:3px;display:flex;flex-wrap:wrap;gap:2px 8px;align-items:center}
 .dotv{width:8px;height:8px;border-radius:50%;flex:none}
 .dotv.on{background:var(--green);box-shadow:0 0 6px var(--green)}
 .dotv.off{background:#5b6a84}
@@ -135,6 +133,11 @@ button:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
 .sheet-head{display:none}
 .actions .ic,.actions .sh{display:none}
 .pmt-sep{flex:1 1 100%;color:var(--muted);font-size:12px;margin-top:6px}
+.pmt-sep .sep-short{display:none}
+.pmt-sep button{padding:3px 10px;font-size:12px;margin-inline-start:6px}
+.loadmsg{padding:18px 14px;color:var(--muted);font-size:13.5px;line-height:1.7;text-align:center}
+.loadmsg.bad{color:var(--amber)}
+.loadmsg button{margin-top:10px}
 .catbtn{display:flex;align-items:center;gap:7px;padding:7px 14px;border-radius:999px;cursor:pointer;
   border:1px solid var(--line);background:var(--panel-2);color:var(--muted);font-size:13px;font-weight:700;transition:.15s}
 .catbtn .cdot{width:10px;height:10px;border-radius:50%;flex:none}
@@ -145,32 +148,11 @@ button:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
 #tilewarn{display:none;padding:9px 14px;color:var(--amber);font-size:12.5px;border-bottom:1px solid var(--line)}
 .gratlbl{color:#5e79a3;font-size:10px;white-space:nowrap;font-family:'IBM Plex Mono',monospace}
 
-/* פופאפ — חלון "מה יש כאן" חופשי: רוחב וגובה נקבעים ב-JS (maxWidth/maxHeight), גלילה פנימית עם רמז */
-.leaflet-popup-content-wrapper{background:#131d2e;color:var(--ink);border:1px solid var(--line);border-radius:12px;direction:rtl;text-align:right;min-width:0;width:auto}
-.leaflet-popup-tip{background:#131d2e}
-.leaflet-popup-content{margin:12px 14px!important;font-family:'Rubik',sans-serif;font-size:13.5px;line-height:1.6;overflow-wrap:anywhere;
-  scrollbar-width:thin;scrollbar-color:#3a4d73 transparent;overscroll-behavior:contain}
-.leaflet-popup-content::-webkit-scrollbar{width:6px}
-.leaflet-popup-content::-webkit-scrollbar-thumb{background:#3a4d73;border-radius:99px}
-.leaflet-popup-scrolled{border:0!important;
-  background:linear-gradient(#131d2e 30%,rgba(19,29,46,0)) top/100% 26px no-repeat local,
-    linear-gradient(rgba(19,29,46,0),#131d2e 70%) bottom/100% 26px no-repeat local,
-    radial-gradient(farthest-side at 50% 0,rgba(0,0,0,.6),transparent) top/100% 10px no-repeat scroll,
-    radial-gradient(farthest-side at 50% 100%,rgba(0,0,0,.6),transparent) bottom/100% 10px no-repeat scroll}
-.leaflet-popup{margin-bottom:26px}
-.leaflet-popup-close-button{top:4px!important;left:4px!important;right:auto!important;
-  width:40px!important;height:40px!important;line-height:40px!important;font-size:24px!important;padding:0!important;
-  background:var(--red)!important;color:#fff!important;border-radius:50%!important;
-  text-align:center!important;box-shadow:0 2px 8px rgba(0,0,0,.4)}
-.leaflet-popup-close-button:hover{background:#ff5c5c!important;color:#fff!important}
-.leaflet-popup.stk-below{margin-bottom:0}
-.leaflet-popup.stk-below .leaflet-popup-tip-container{top:-19px;margin-top:0;transform:rotate(180deg)}
+/* כרטיס מידע "מה יש כאן" (InfoCard, pmt-layer.js): אלמנט בתוך מכל המפה — לא חלון Leaflet ולא מזיז את המפה. העיצוב של המסגרת ב-pmt-layer.js, כאן רק התוכן */
 .stk{direction:rtl;text-align:right}
-.stk-top{padding-left:36px;min-height:26px}
-.stk-head{font-weight:800;font-size:13px;color:var(--amber);margin-bottom:2px}
 .stk-it{border-top:1px solid var(--line)}
 .stk-it:first-of-type{border-top:0}
-.stk-it>summary{margin:0;padding:10px 0;font-size:13.5px;line-height:1.6;color:var(--ink);cursor:pointer}
+.stk-it>summary{margin:0;padding:10px 0;font-size:13.5px;line-height:1.6;color:var(--ink);cursor:pointer;min-height:40px}
 .stk-nm{font-weight:700}
 .badge.appr{color:var(--amber);border-color:rgba(255,184,77,.55)}
 .pp-id{font-family:'IBM Plex Mono',monospace;color:var(--red);font-weight:700;font-size:14px}
@@ -206,7 +188,7 @@ textarea:focus{outline:2px solid var(--amber);outline-offset:-1px;border-color:t
 .pane.orig .head{color:var(--cyan)} .pane.heb .head{color:var(--amber)}
 .pane .body{padding:14px;font-size:14px;line-height:1.85;flex:1;white-space:pre-wrap;word-break:break-word;overscroll-behavior:contain}
 .pane.orig .body{direction:ltr;text-align:left;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#c7d6ec}
-.badge{font-size:10.5px;font-weight:600;border-radius:999px;padding:3px 9px;border:1px solid var(--line);color:var(--muted)}
+.badge{font-size:10.5px;font-weight:600;border-radius:999px;padding:3px 9px;border:1px solid var(--line);color:var(--muted);display:inline-block;white-space:nowrap;line-height:1.4;vertical-align:middle}
 .badge.ai{border-color:rgba(103,216,232,.5);color:var(--cyan)}
 .badge.wait{border-color:rgba(255,184,77,.5);color:var(--amber);animation:pulse 1.2s infinite}
 @keyframes pulse{50%{opacity:.45}}
@@ -260,26 +242,43 @@ footer{padding:22px 22px calc(22px + env(safe-area-inset-bottom));color:var(--mu
   .side{grid-column:1/-1;grid-row:4;max-height:min(60vh,520px)}
   .item{padding:13px 14px}
 
-  /* סינון: מגירה צפה בתחתית המסך — לא דוחפת את המפה מחוץ למסך */
+  /* סינון: מגירה צפה קומפקטית בתחתית המסך (עד 40% מהגובה, צ'יפים של 36px, 3 בשורה) — רוב המפה נשארת גלויה ורואים את השפעת הכפתורים */
   .catwrap{display:none}
   body.filters-open .catwrap{display:flex;flex-direction:column;position:fixed;left:0;right:0;bottom:0;z-index:2000;
-    max-height:min(60vh,460px);max-height:min(60dvh,460px);background:var(--panel);border-top:1px solid var(--line);border-radius:16px 16px 0 0;
+    max-height:min(40vh,300px);max-height:min(40dvh,300px);background:var(--panel);border-top:1px solid var(--line);border-radius:16px 16px 0 0;
     box-shadow:0 -10px 30px rgba(0,0,0,.55);padding-bottom:env(safe-area-inset-bottom);animation:cardin .18s ease}
-  .sheet-head{display:flex;align-items:center;justify-content:space-between;flex:none;padding:4px 14px 0;font-weight:800;color:var(--amber);font-size:14px}
-  .sheet-head button{width:44px;height:44px;padding:0;border-radius:50%;font-size:18px}
-  .catwrap .catbar{display:flex;flex-wrap:wrap;gap:8px;overflow-y:auto;overscroll-behavior:contain;padding:4px 12px 12px;margin:0}
-  .catbtn{flex:1 1 calc(50% - 8px);min-height:44px;justify-content:center}
+  .sheet-head{display:flex;align-items:center;justify-content:space-between;flex:none;padding:0 4px 0 12px;min-height:40px;font-weight:800;color:var(--amber);font-size:14px}
+  .sheet-head button{width:40px;height:40px;padding:0;border-radius:50%;font-size:17px}
+  .catwrap .catbar{display:flex;flex-wrap:wrap;gap:6px;overflow-y:auto;overscroll-behavior:contain;padding:2px 10px 10px;margin:0}
+  .catbtn{flex:1 1 calc(33.33% - 6px);min-height:36px;padding:3px 6px;gap:5px;font-size:12px;line-height:1.15;justify-content:center;text-align:center}
+  .catbtn .cnt{font-size:10px}
+  .pmt-sep{margin-top:2px}
+  .pmt-sep .sep-long{display:none}
+  .pmt-sep .sep-short{display:inline}
 }
-@media (min-width:600px) and (max-width:1000px){.catwrap .catbtn{flex-basis:calc(33.3% - 8px)}}
-/* טלפון לרוחב: כותרת וטאבים בשורה אחת כדי שהמפה תתפוס את רוב המסך */
+/* טלפון לרוחב: כותרת וטאבים בשורה אחת, כפתורי הפעולה בפס אנכי לצד המפה, והמפה כמעט בכל גובה המסך; מגירת הסינון — עמודה בצד */
 @media (max-height:500px) and (max-width:1000px){
+  header{padding-top:max(4px,env(safe-area-inset-top))}
   header .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:0 8px}
-  .hrow{flex:1 1 auto}
+  .hrow{flex:1 1 0;min-width:0}
+  .brand h1{font-size:16px}
   .tabs{margin-top:0;flex:none}
-  .tab{min-height:40px}
+  .tab{min-height:38px;padding:6px 10px;font-size:13px}
+  .hdr-toggle{width:38px;height:38px}
   body.hdr-open .hdr-more{flex:1 1 100%}
-  #bigmap{height:max(220px,calc(100vh - 190px));height:max(220px,calc(100dvh - 190px))}
-  body.filters-open .catwrap{max-height:80vh;max-height:80dvh}
+  main{padding-top:6px;padding-bottom:calc(6px + env(safe-area-inset-bottom))}
+  #tab-map{grid-template-columns:1fr auto 64px;grid-template-rows:auto auto;gap:6px}
+  .topbar .stamp{grid-column:1;grid-row:1}
+  #filterToggle{grid-column:2;grid-row:1;min-height:40px}
+  .mapbox{grid-column:1/3;grid-row:2}
+  #bigmap{height:max(190px,calc(100vh - 106px));height:max(190px,calc(100dvh - 106px))}
+  .topbar .actions{grid-column:3;grid-row:1/3;display:flex;flex-direction:column;gap:5px;align-self:stretch}
+  .actions button{flex:1 1 0;min-height:40px;font-size:10px;padding:2px 1px}
+  .actions .ic{font-size:16px}
+  .side{grid-row:3}
+  body.filters-open .catwrap{top:0;bottom:0;left:0;right:auto;width:min(310px,48vw);max-height:none;border-top:0;border-radius:0 16px 16px 0;
+    box-shadow:10px 0 30px rgba(0,0,0,.55);padding-top:env(safe-area-inset-top)}
+  .catbtn{flex-basis:calc(50% - 6px)}
 }
 </style>
 </head>
@@ -316,7 +315,7 @@ footer{padding:22px 22px calc(22px + env(safe-area-inset-bottom));color:var(--mu
 <!-- ============ לשונית 1: מפה ארצית ============ -->
 <div id="tab-map">
   <div class="topbar">
-    <div class="stamp"><span class="stamp-lbl">נתונים נמשכו מאתר רש״ת: </span><b id="fetchStamp" dir="ltr" style="display:inline-block"></b> · <span id="countStamp"></span> · <span id="freshBadge" class="fresh"></span><span id="visitBox" style="display:none"> · 👁 כניסות: <b id="visitCount" style="color:var(--cyan)"></b></span></div>
+    <div class="stamp"><span class="stamp-lbl">נתונים נמשכו מאתר רש״ת: </span><b id="fetchStamp" dir="ltr" style="display:inline-block"></b> · <span id="countStamp"></span> · <span id="freshBadge" class="fresh"></span><button id="retryLoad" type="button" class="primary" style="display:none;padding:3px 12px;font-size:12px">נסה שוב</button><span id="visitBox" style="display:none"> · 👁 כניסות: <b id="visitCount" style="color:var(--cyan)"></b></span></div>
     <div class="actions">
       <button id="nearBtn"><span class="ic">📍</span><span class="lg">📍 בקרבתי</span><span class="sh">בקרבתי</span></button>
       <button id="onlyActiveBtn"><span class="ic">⏱</span><span class="lg">הצג בתוקף עכשיו בלבד</span><span class="sh">בתוקף</span></button>
@@ -403,18 +402,22 @@ footer{padding:22px 22px calc(22px + env(safe-area-inset-bottom));color:var(--mu
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
-/* ================= נתונים מוטמעים (נמשכו מאתר רש״ת) ================= */
-const FETCHED_AT = "16/07/2026 08:04 UTC";
-const FETCHED_ISO = "2026-07-16T08:04:00Z";
+/* מזהה גרסה: חייב להיות זהה ל-PMT_BUILD ב-pmt-layer.js ול-?v= בכתובת הסקריפט (בסוף הדף) — אם לא, הדף מתרענן פעם אחת (ראו בסוף הדף) */
+const BUILD = "20261003";
 /* === הגדרות אתר === */
-/* קודם הקובץ שלצד הדף (נתיב יחסי — עובד גם תחת /notam-map-/ ב-GitHub Pages), ואחריו הגיבויים;
+/* אין נתונים מוטמעים בקוד: הנתונים נטענים מהקובץ שלצד הדף (ובמטמון ה-Service Worker לאופליין).
+   קודם הקובץ שלצד הדף (נתיב יחסי — עובד גם תחת /notam-map-/ ב-GitHub Pages), ואחריו הגיבויים;
    כשהקובץ מוטמע באתר icd.org.il אפשר למשוך גם מנקודת הקצה של האתר (Velo HTTP Function). */
 const DATA_URLS = ["notam-data.json", "../notam-data.json", "https://icd-org.github.io/notam-map-/notam-data.json", "https://www.icd.org.il/_functions/notamData"];
 const MAX_APPROX_M = 50000;   // עיגול משוער (לפי שורת Q) ברדיוס גדול מזה לא מצויר — אין לו מיקום מדויק
 /* מעקב כניסות: הדביקו כאן את מזהה Google Analytics שלכם (למשל "G-ABC123XYZ")
    ולחלופין — בהטמעה ב-Wix, האנליטיקס של האתר סופר כניסות אוטומטית. */
 const GA_ID = "";
-const NOTAM_DATA = [{"id": "C1519/26", "loc": "LLEY", "name": "מנחת עין יהב (LLEY)", "heb": "פעילות כטב\"מ תתקיים בתוך מנחת עין יהב, מהקרקע ועד 3,000 רגל מעל פני הים.\nהפעילות תתואם ותאושר ע\"י בקרת התעופה.\nמומלצת זהירות.\nלו\"ז (UTC): 21/07 בשעות 03:00–05:45, 09:15–09:55, 13:25–16:00; 22/07 בשעות 03:00–04:25.", "raw": "C1519/26 NOTAMN\nQ) LLLL/QFALT/IV/NBO/A /000/999/3037N03512E005\nA) LLEY B) 2607210300 C) 2607220425\nD) 21 0300-0545 0915-0955 1325-1600, 22 0300-0425\nE) UAS ACT WILL TAKE PLACE WI AIRSTRIP, FM GND UP TO 3,000FT AMSL.\nOPS WILL BE COORD AND APPROVED BY ATC.\nCTN ADZ.)"}, {"id": "C1512/26", "loc": "LLLL", "name": "תענכים / גדיש", "heb": "פעילות כטב\"מ תתקיים בתענכים/גדיש.\nאזור ברדיוס 400 מטר סביב נ.צ. 32°33'09\"N 35°14'47\"E סגור לכל הטיסות, כולל טיסות ריסוס חקלאיות, מהקרקע ועד 100 מטר מעל הקרקע (560 רגל מעל פני הים).\nמומלצת זהירות.", "raw": "C1512/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/006/3233N03515E001\nA) LLLL B) 2607151042 C) 2607312059\nE) UAS ACT WILL TAKE PLACE AT TAANACHIM/GADISH.\nAN AREA WI 400M RADIUS CENTERED ON PSN 323309N0351447E\nFM GND UP TO 100M AGL, 560FT AMSL CLSD TO ALL FLT\nINCLUDING AGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 560FT AMSL)"}, {"id": "C1511/26", "loc": "LLLL", "name": "תענכים", "heb": "פעילות כטב\"מ תתקיים בתענכים.\nאזור (פוליגון) בין נקודות הציון סגור מהקרקע ועד 100 מטר מעל הקרקע (560 רגל מעל פני הים).\nטיסות ריסוס חקלאיות יתאפשרו באישור מוקדם של 15 דקות מבקרת התעופה.\nמומלצת זהירות.", "raw": "C1511/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/006/3233N03517E002\nA) LLLL B) 2607151018 C) 2607312059\nE) UAS ACT WILL TAKE PLACE AT TAANACHIM.\nAN AREA BTN FLW PSN CLSD FM GND UP TO 100M AGL 560FT AMSL\n323333N0351719E 323219N0351747E 323221N0351759E\n323207N0351803E 323201N0351722E 323254N0351640E\n323313N0351637E 323317N0351558E 323335N0351558E.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.\nF) GND G) 560FT AMSL)"}, {"id": "C1487/26", "loc": "LLLL", "name": "תלמי בילו", "heb": "פעילות כטב\"מ/רחפנים תתקיים בתלמי בילו.\nאזור (פוליגון) סגור מהקרקע ועד 150 מטר (1,000 רגל מעל פני הים).\nלו\"ז: מדי יום 02:20–16:30 UTC.\nמומלצת זהירות.", "raw": "C1487/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/010/3125N03439E002\nA) LLLL B) 2607140220 C) 2607161630\nD) DAILY 0220-1630\nE) UAS/UAV ACT WILL TAKE PLACE AT TALMEI-BILU.\nAN AREA FM GND UP TO 150M, 1,000FT AMSL CLSD BTN FLW PSN\n312543N0343847E 312544N0343910E 312334N0343920E\n312334N0343857E.\nCTN ADZ.\nF) GND G) 1000FT AMSL)"}, {"id": "C1476/26", "loc": "LLLL", "name": "ירוחם", "heb": "פעילות כטב\"מ/רחפנים תתקיים בירוחם, מהקרקע ועד 600 מטר מעל הקרקע.\nאזור ברדיוס 0.3 מייל ימי סביב נ.צ. 30°58'19\"N 34°56'01\"E סגור מהקרקע ועד 3,700 רגל מעל פני הים.\nלו\"ז: מדי יום 03:00–14:30 UTC.\nמומלצת זהירות.", "raw": "C1476/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/037/3058N03456E001\nA) LLLL B) 2607120300 C) 2607161430\nD) DAILY 0300-1430\nE) UAS/UAV ACT WILL TAKE PLACE AT YERUHAM, FM GND UP TO 600M AGL.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 305819N0345601E\nCLSD FM GND UP TO 3,700FT AMSL.\nCTN ADZ.\nF) GND G) 3700FT AMSL)"}, {"id": "C1459/26", "loc": "LLHZ", "name": "הרצליה (LLHZ) — טריגר", "heb": "נוטמ טריגר — עדכון AIP פנים-ארצי 01/26, בתוקף מ-06/08/2026:\nטיסות אווירובטיות באזור אימונים 12, כתובת דוא\"ל לתיאום פעילות כטב\"מ, ועדכון מפת נקודות חמות (Hotspot).", "raw": "C1459/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /AE/000/999/3211N03450E005\nA) LLHZ B) 2608060001 C) 2608192359\nE) TRIGGER NOTAM - AIRAC DOM AIP AMDT 01/26 WEF 06 AUG 2026\nAEROBATICS FLT WI TRG AREA 12, EMAIL FOR COOR UAS ACT,\nHOTSPOT CHART UPDATED.)"}, {"id": "C1434/26", "loc": "LLLL", "name": "כפר המכביה (בתוך CTR בן-גוריון)", "heb": "פעילות כטב\"מ/רחפנים תתקיים בכפר המכביה, בתוך אזור הבקרה של נתב\"ג.\nמהקרקע ועד 100 מטר מעל הקרקע (עד 830 רגל מעל פני הים), אזור בין נקודות הציון (פוליגון).\nמומלצת זהירות.", "raw": "C1434/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/009/3203N03450E001\nA) LLLL B) 2607010001 C) 2607242059\nE) UAS/UAV ACT WILL TAKE PLACE AT KFAR-HAMACABIYA WI LLBG CTR,\nFM GND UP TO 100M AGL, BTN FLW PSN  320311N0344907E\n320325N0344914E 320339N0344932E 320337N0344953E\n320328N0345004E 320315N0345005E 320303N0344959E\n320255N0344950E 320253N0344937E 320258N0344917E\nCTN ADZ.\nF) GND G) 830FT AMSL)"}, {"id": "C1405/26", "loc": "LLLL", "name": "קיסריה", "heb": "פעילות כטב\"מ/רחפנים תתקיים בקיסריה, עד 100 מטר מעל הקרקע.\nאזור ברדיוס 0.8 מייל ימי סביב נ.צ. 32°29'41\"N 34°54'39\"E סגור מהקרקע ועד 500 רגל מעל פני הים.\nלו\"ז: מדי לילה 19:00–02:15 UTC.\nמומלצת זהירות.", "raw": "C1405/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/005/3230N03455E001\nA) LLLL B) 2607011900 C) 2608010215\nD) DAILY 1900-0215\nE) UAS/UAV ACT WILL TAKE PLACE AT KESARYA UP TO 100M AGL,\nAN AREA WI 0.8NM RADIUS CENTERED ON PSN 322941N0345439E\nCLSD FM GND UP TO 500FT AMSL.\nCTN ADZ.\nF) GND G) 500FT AMSL)"}, {"id": "C1395/26", "loc": "LLGV", "name": "גבעולים (LLGV)", "heb": "אזור הבקרה (CTR) של גבעולים זמין לטיסות כטב\"מ/רחפנים או טיסות ריסוס חקלאיות בלבד.", "raw": "C1395/26 NOTAMR C1164/26\nQ) LLLL/QACLP/IV/NBO/AE/000/015/3113N03428E002\nA) LLGV B) 2606280808 C) 2607312059\nE) CTR AVBL FOR UAS/UAV OR AGRICULTURE FLT ONLY.)"}, {"id": "C1386/26", "loc": "LLLL", "name": "רצועת גבול לבנון (8 ק\"מ)", "heb": "אזור מגבול לבנון ועד 8 ק\"מ דרומה סגור לכל הטיסות הפנים-ארציות,\nלמעט משטרה, כיבוי אש, פינוי רפואי, או טיסות כטב\"מ/רחפנים למטרות חירום, ביטחון ופינוי רפואי בלבד.\nכל טיסת חירום מאושרת תתואם עם בקרת התעופה ומב\"ח.\n(האזור במפה משוער — רצועה לאורך הגבול)", "raw": "C1386/26 NOTAMR C1158/26\nQ) LLLL/QAELC/IV/NBO/E /000/999/3308N03526E019\nA) LLLL B) 2606280801 C) 2607312059\nE) AN AREA FM LEBANON BOUNDRAY TO 8KM SB CLSD TO ALL DOM FLT,\nEXC POLICE, FIREFIGHTING, MEDEVAC FLT OR UAS/UAV FLT FOR\nEMERG, SECURITY, MEDEVAC PURPOSES ONLY.\nALL EMERG APPROVED FLT SHALL COORD WITH ATC AND MABBAH.)"}, {"id": "C1387/26", "loc": "LLLL", "name": "רצועת גבול סוריה (6 ק\"מ)", "heb": "אזור מגבול סוריה ועד 6 ק\"מ מערבה סגור לכל הטיסות הפנים-ארציות,\nלמעט משטרה, כיבוי אש, פינוי רפואי, או טיסות כטב\"מ/רחפנים למטרות חירום, ביטחון ופינוי רפואי בלבד.\nכל טיסת חירום מאושרת תתואם עם בקרת התעופה ומב\"ח.\n(האזור במפה משוער — רצועה לאורך הגבול)", "raw": "C1387/26 NOTAMR C1159/26\nQ) LLLL/QAELP/IV/NBO/E /000/999/3302N03547E018\nA) LLLL B) 2606280802 C) 2607312059\nE) AN AREA FM SYRIA BOUNDRAY TO 6KM WB CLSD TO ALL DOM FLT,\nEXC POLICE, FIREFIGHTING, MEDEVAC FLT OR UAS/UAV FLT FOR\nEMERG, SECURITY, MEDEVAC PURPOSES ONLY.\nALL EMERG APPROVED FLT SHALL COORD WITH ATC AND MABBAH.)"}, {"id": "C1361/26", "loc": "LLLL", "name": "אשדוד", "heb": "פעילות כטב\"מ/רחפנים תתקיים באשדוד, מהקרקע ועד 100 מטר מעל הקרקע.\nאזור בין נקודות הציון (פוליגון) סגור מהקרקע ועד 950 רגל מעל פני הים.\nבתוקף עד סוף דצמבר 2026.\nמומלצת זהירות.", "raw": "C1361/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/010/3151N03440E002\nA) LLLL B) 2607010001 C) 2612312159\nE) UAS/UAV ACT WILL TAKE PLACE AT ASHDOD, FM GND UP TO 100M AGL.\nAN AREA BTN FLW PSN CLSD FM GND UP TO 950FT AMSL\n315119N0344122E 315127N0344037E 315123N0344007E\n315132N0343931E 315055N0343917E 315038N0344013E\n315035N0344120E.\nCTN ADZ.\nF) GND G) 950FT AMSL)"}, {"id": "C1359/26", "loc": "LLLL", "name": "פארק רעים", "heb": "פעילות כטב\"מ/רחפנים תתקיים בפארק רעים.\nאזור ברדיוס 0.5 מייל ימי סביב נ.צ. 31°46'33\"N 34°45'20\"E סגור מהקרקע ועד 25 מטר מעל הקרקע (300 רגל מעל פני הים).\nהפעלה באישור מוקדם מבקרת התעופה בלבד.\nמומלצת זהירות.", "raw": "C1359/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/003/3146N03445E001\nA) LLLL B) 2607010001 C) 2607312059\nE) UAS/UAV ACT WILL TAKE PLACE AT PARK-REEM.\nAN AREA WI 0.5NM RADIUS CENTERED ON PSN 314633N0344520E\nCLSD FM GND UP TO 25M AGL 300FT AMSL.\nOPS AVBL WITH PPR FM ATC ONLY.\nCTN ADZ.\nF) GND G) 300FT AMSL)"}, {"id": "C1358/26", "loc": "LLLL", "name": "דליה / צפית (בועת גוברין דרום)", "heb": "פעילות כטב\"מ/רחפנים תתקיים בדליה/צפית, בתוך בועת הזעירים גוברין דרום (BGOVS), עד 100 מטר מעל הקרקע.\nאזור בין נקודות הציון (פוליגון) סגור מהקרקע ועד 1,400 רגל מעל פני הים.\nמומלצת זהירות.", "raw": "C1358/26 NOTAMR C1356/26\nQ) LLLL/QWULW/IV/BO /W /000/014/3143N03450E002\nA) LLLL B) 2606250629 C) 2607312059\nE) UAS/UAV ACT WILL TAKE PLACE AT DALIA/TZAFIT, WI ULTRALIGHT\nBUBBLE GOVRIN SOUTH (BGOVS) UP TO 100M AGL.\nAN AREA BTN THE FLW PSN CLSD FM GND UP TO 1,400FT AMSL\n314353N0345038E 314339N0345010E 314221N0344925E\n314150N0345023E 314222N0345118E 314323N0345123E.\nCTN ADZ.\nF) GND G) 1400FT AMSL)"}, {"id": "C1348/26", "loc": "LLLL", "name": "מגן שאול", "heb": "פעילות כטב\"מ/רחפנים תתקיים במגן שאול, עד 100 מטר מעל הקרקע.\nאזור בין נקודות הציון (פוליגון) סגור מהקרקע ועד 1,500 רגל מעל פני הים.\nמומלצת זהירות.", "raw": "C1348/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/015/3231N03518E002\nA) LLLL B) 2607010001 C) 2607312059\nE) UAS/UAV ACT WILL TAKE PLACE AT MAGEN-SHAUL, UP TO 100M AGL.\nAN AREA BTN THE FLW PSN CLSD FM GND UP TO 1,500FT AMSL\n323145N0351642E 323024N0351638E 323039N0352004E\n323139N0351954E 323153N0351930E 323159N0351907E\nCTN ADZ.\nF) GND G) 1500FT AMSL)"}, {"id": "C1345/26", "loc": "LLLL", "name": "צומת סגולה (פתח תקווה)", "heb": "פעילות כטב\"מ/רחפנים תתקיים בצומת סגולה.\nאזור ברדיוס 0.65 מייל ימי סביב נ.צ. 32°06'12\"N 34°54'20\"E, מהקרקע ועד 300 רגל מעל פני הים.\nמומלצת זהירות.", "raw": "C1345/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/003/3206N03454E001\nA) LLLL B) 2607010001 C) 2607312059\nE) UAS/UAV ACT WILL TAKE PLACE AT SEGULA JUNCTION,\nWI 0.65NM RADIUS CENTERED ON PSN 320612N0345420E\nFM GND UP TO 300FT AMSL.\nCTN ADZ.\nF) GND G) 300FT AMSL)"}, {"id": "C1313/26", "loc": "LLLL", "name": "בית חולים איתנים", "heb": "פעילות כטב\"מ/רחפנים תתקיים בבית החולים איתנים.\nאזור ברדיוס 500 מטר סביב נ.צ. 31°46'43\"N 35°05'39\"E סגור לכל הטיסות, כולל טיסות ריסוס, מהקרקע ועד 100 מטר מעל הקרקע (2,800 רגל מעל פני הים).\nלו\"ז: מדי יום 05:00–15:00 UTC.\nחציית הסגירה באישור מוקדם מ: אלון קלוס 052-9459432, חאתם סעד 052-5582412, 04-9523999.\nמומלצת זהירות.", "raw": "C1313/26 NOTAMR C1312/26\nQ) LLLL/QWULW/IV/BO /W /000/028/3147N03506E001\nA) LLLL B) 2606171235 C) 2607311500\nD) DAILY 0500-1500\nE) UAS/UAV ACT WILL TAKE PLACE AT EITANIM-HOSPITAL.\nAN AREA WI 500M RADIUS CENTERED ON PSN 314643N0350539E\nFM GND UP TO 100M AGL, 2,800FT AMSL CLSD TO ALL FLT\nINCLUDING AGRICULTURE FLT.\nXNG CLOSURE BY PPR FM FLW\nALON KLOSS 052-9459432, HATEM SAAD 052-5582412, 04-9523999.\nCTN ADZ.\nF) GND G) 2800FT AMSL)"}, {"id": "C1284/26", "loc": "LLLL", "name": "נשר (בתוך CTR חיפה)", "heb": "פעילות כטב\"מ/רחפנים תתקיים בנשר, בתוך אזור הבקרה של חיפה.\nמהקרקע ועד 460 מטר מעל הקרקע (1,510 רגל מעל פני הים), אזור בין נקודות הציון (פוליגון).\nמומלצת זהירות.", "raw": "C1284/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/015/3246N03502E002\nA) LLLL B) 2606151332 C) 2607312059\nE) UAS/UAV ACT WILL TAKE PLACE AT NESHER WI LLHA CTR\nFM GND UP TO 460M AGL 1,510FT AMSL, BTN FLW PSN\n324637N0350134E 324629N0350037E 324552N0350043E\n324514N0350131E 324513N0350243E 324559N0350245E\n324617N0350207E.\nCTN ADZ.\nF) GND G) 1500FT AMSL)"}, {"id": "C1116/26", "loc": "LLLL", "name": "בית חולים בילינסון", "heb": "פעילות כטב\"מ/רחפנים תתקיים בבית החולים בילינסון.\nאזור בין נקודות הציון (פוליגון) מהקרקע ועד 300 רגל מעל פני הים.\nטיסות מסוקים באישור מוקדם ממפעיל המנחת (LLBL).\nמומלצת זהירות.", "raw": "C1116/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/003/3205N03452E001\nA) LLLL B) 2606010001 C) 2607312059\nE) UAS/UAV ACT WILL TAKE PLACE AT BELINSON-HOSPITAL,\nBTN FLW PSN FM GND UP TO 300FT AMSL\n320545N0345149E 320536N0345134E 320507N0345130E\n320458N0345138E 320453N0345206E 320459N0345220E\n320529N0345227E 320542N0345218E.\nOPS OF HEL BY PPR FM HELIPAD OPR (LLBL).\nCTN ADZ.\nF) GND G) 300FT AMSL)"}, {"id": "C0431/26", "loc": "LLLL", "name": "צפון תל אביב — איסור קבוע", "heb": "איסור קבוע: הפעלת כטב\"מ/רחפנים או טיסנים ברדיוס 500 מטר סביב נ.צ. 32°04'18\"N 34°47'10\"E אסורה, מהקרקע ועד 300 רגל מעל פני הים.\nהפניה: AIP פנים-ארצי, חלק A-17, עמ' 5, סעיף 1א.ג ונספח ג.", "raw": "C0431/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/003/3204N03447E001\nA) LLLL B) 2602111125 C) PERM\nE) OPS OF UAS/UAV OR MODEL ACFT WI 500M RADIUS CENTERED ON\nPSN 320418N0344709.6E FM GND UP TO 300FT AMSL PROHIBITED.\nDOM AIP, PART A-17, PAGE 5, PARA 1A.C. AND NISPACH C. REF.\nF) GND G) 300FT AMSL)"}, {"id": "C0162/26", "loc": "LLLL", "name": "טלפונים — בקרה צבאית (הודעה כללית)", "heb": "שינוי זמני במספרי הטלפון של הבקרה הצבאית:\nהגב גובה-נמוך: 08-6502307\nהגב לכטב\"מים: 08-6502308 (רוקק)", "raw": "C0162/26 NOTAMR C0161/26\nQ) LLLL/QSCCI/IV/BO /E /000/999/3048N03428E078\nA) LLLL B) 2601141307 C) PERM\nE) MIL ATC PHONE NR TEMPO CHG AS FLW\nHAGAV LOW-LEVEL 08-6502307.\nHAGAV FOR UAS/UAV 08-6502308 (ROKAK).)"}, {"id": "C0090/26", "loc": "LLLL", "name": "נוהל כטב\"מ — טיסה מקומית (הודעה כללית)", "heb": "הפעלת כטב\"מ בתוך אזור אימונים / בועת כטב\"מ או בתוך סגירה — מוגדרת כטיסה מקומית ופטורה מהגשת תוכנית טיסה.\nמפעיל הכטב\"מ חייב לקבל אישור מבקרת התעופה לפני ההמראה.\nהפניה: AIP פנים-ארצי, חלק A-11 וחלק B-09.", "raw": "C0090/26 NOTAMN\nQ) LLLL/QPLCH/IV/M  /E /000/999/3125N03521E117\nA) LLLL B) 2601071605 C) PERM\nE) OPS OF UAS WI TRG AREA/UAS BUBBLE OR WI CLOSURE DESIGNATED\nAS LOCAL FLIGHT AND EXEMPTED OF SUBMISSION FPL.\nOPR OF UAS SHALL GET APPROVAL FM ATC BFR TKOF.\nDOM AIP, PART A-11, PAGE 2, PARA 2.F. AND PART B-09,\nPAGE 6, PARA 6.D. REF.)"}, {"id": "C0010/26", "loc": "LLLL", "name": "לטרון — קבוע", "heb": "פעילות כטב\"מ מתקיימת בלטרון (נוטמ קבוע).\nאזור בין נקודות הציון (פוליגון) סגור מהקרקע ועד 300 רגל מעל הקרקע (950 רגל מעל פני הים).\nמומלצת זהירות.\nהפניה: AIP פנים-ארצי, חלק B-03 ו-B-08.", "raw": "C0010/26 NOTAMR C2794/25\nQ) LLLL/QWULW/IV/BO /W /000/010/3149N03458E001\nA) LLLL B) 2601010640 C) PERM\nE) UAS ACT WILL TAKE PLACE AT LATRUN.\nAN AREA BTN THE FLW PSNS  N314945E0345822 N314949E0345806\nN314936E0345743 N314910E0345813 CLSD FM GND UP TO\n300FT AGL, 950FT AMSL.\nCTN ADZ.\nDOM AIP, PART B-03, CHART A, B-08, CHART A. REF.\nF) GND G) 1000FT AMSL)"}, {"id": "C0005/26", "loc": "LLLL", "name": "אזור תעשייה אור עקיבא — קבוע", "heb": "פעילות כטב\"מ/רחפנים מתקיימת באזור התעשייה אור עקיבא (נוטמ קבוע).\nאזור בין נקודות הציון (פוליגון) סגור מהקרקע ועד 500 רגל מעל פני הים.\nמומלצת זהירות.\nהפניה: AIP פנים-ארצי, חלק A-17, נספח 2.", "raw": "C0005/26 NOTAMR C0731/25\nQ) LLLL/QWULW/IV/BO /W /000/005/3231N03455E001\nA) LLLL B) 2601010630 C) PERM\nE) UAS/UAV ACT WILL TAKE PLACE AT OR-AKIVA INDUSTRY AREA.\nAN AREA BTN THE FLW PSN CLSD FM GND UP TO 500FT AMSL\nN323122E0345511 N323119E0345512 N323119E0345515\nN323123E0345514.\nCTN ADZ.\nDOM AIP, PART A-17, PAGE 10, PARA 3. NISPACH 2 REF.\nF) GND G) 500FT AMSL)"}];
+/* fetch עם timeout — תואם גם לדפדפנים ישנים (אין AbortSignal.timeout ב-iOS 15 ומטה) */
+function fetchT(url, opts, ms){
+  const c = new AbortController(), t = setTimeout(() => c.abort(), ms);
+  return fetch(url, Object.assign({}, opts, {signal: c.signal})).finally(() => clearTimeout(t));
+}
 
 /* ================= מילון ותרגום תבניתי ================= */
 const PHRASES=[
@@ -580,6 +583,7 @@ let activeCats=new Set(["uas"]);
 function renderCatBar(){
   const bar=document.getElementById("catBar"); bar.innerHTML="";
   const counts={}; DATA.forEach(it=>{counts[it.cat]=(counts[it.cat]||0)+1;});
+  if(!DATA.length){ updateFilterCount(); return; }   // אין נתונים (טוען/שגיאה): אין קטגוריות נוט"ם להציג
   Object.entries(CATS).forEach(([k,c])=>{
     if(!counts[k]) return;
     const b=document.createElement("div");
@@ -602,7 +606,7 @@ function renderCatBar(){
 let map=null, satLayer, osmLayer, usingSat=true, gratDrawn=false;
 const shapes={}; let selectedId=null;
 let pasted=null;                         // נוט"ם שהודבק במפענח והוצג במפה: {item,layer}
-let rendApprox=null, rendNotam=null;     // רנדררים נפרדים לנוט"ם משוער / מדויק (סדר ציור קבוע)
+window.mapCanvas=null;                    // קנבס יחיד משותף לכל הצורות (נוט"מים + פמ"ת/רט"ג); סדר הציור נקבע ב-reorder() של pmt-layer.js
 const COARSE=window.matchMedia("(pointer:coarse)").matches;
 
 function drawGraticule(){
@@ -616,13 +620,11 @@ function drawGraticule(){
     L.polyline([[29,lo],[34.2,lo]],{color:"#22406a",weight:1,interactive:false}).addTo(g);
 }
 function initMap(){
-  map=L.map("bigmap",{zoomControl:true}).setView([31.9,34.95],8);
-  if(COARSE&&map.zoomControl) map.zoomControl.setPosition("bottomleft");   // במגע: כפתורי הזום למטה ולא מתחת לחלון המידע
-  /* סדר ציור קבוע (לא תלוי בסדר הטעינה): נוט"ם משוער 330 < פמ"ת 350 < שמורות/גנים 360 < נוט"ם מדויק 380 < נקודות 390 (pmt-layer.js) */
-  map.createPane("notamApproxPane").style.zIndex=330;
-  map.createPane("notamPane").style.zIndex=380;
-  rendApprox=L.canvas({pane:"notamApproxPane",padding:0.4,tolerance:COARSE?8:3});
-  rendNotam=L.canvas({pane:"notamPane",padding:0.4,tolerance:COARSE?8:3});
+  /* אף לחיצה/הקשה לא משנה זום או מזיזה את המפה: זום בלחיצה כפולה כבוי (pinch וכפתורי הזום נשארים) */
+  map=L.map("bigmap",{zoomControl:true,doubleClickZoom:false}).setView([31.9,34.95],8);
+  if(COARSE&&map.zoomControl) map.zoomControl.setPosition("bottomleft");   // במגע: כפתורי הזום למטה (ומוסתרים כשכרטיס המידע פתוח)
+  /* קנבס אחד לכל הצורות (במקום 4-5): חוסך זיכרון וזמן ב-DPR גבוה. סדר הציור: נוט"ם משוער < פמ"ת < שמורות/גנים < נוט"ם מדויק < נקודות (pmt-layer.js) */
+  window.mapCanvas=L.canvas({padding:0.1});
   satLayer=L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",{maxZoom:19,attribution:"Esri World Imagery"});
   osmLayer=L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"OpenStreetMap"});
   satLayer.addTo(map);
@@ -633,16 +635,18 @@ function initMap(){
   osmLayer.on("load",ok).on("tileerror",bad);
   setTimeout(()=>{if(!tileOK)bad();},2500);
   /* תיקון: לפעמים Leaflet נוצר לפני שהקונטיינר קיבל את מידותיו הסופיות (במיוחד בנייד) —
-     מכריחים חישוב גודל מחדש בכמה נקודות זמן, וגם בכל שינוי גודל מסך */
+     מכריחים חישוב גודל מחדש בכמה נקודות זמן, וגם בכל שינוי גודל מסך (הכרטיס הפתוח מתמקם מחדש לבד באירוע resize של המפה) */
   setTimeout(()=>map&&map.invalidateSize(),150);
   setTimeout(()=>map&&map.invalidateSize(),600);
   setTimeout(()=>map&&map.invalidateSize(),1500);
-  /* חלון המידע חופשי (לא קשור לשכבה): נסגר בלחיצה ריקה / ✕, וסימון הבחירה מתנקה איתו */
-  map.on("popupopen",()=>map.getContainer().classList.add("pop-open"));
-  map.on("popupclose",()=>{ map.getContainer().classList.remove("pop-open"); clearSelected(); });
-  map.on("click",()=>setFilters(false));
   window.addEventListener("resize",()=>map&&map.invalidateSize());
   window.addEventListener("orientationchange",()=>setTimeout(()=>map&&map.invalidateSize(),300));
+  /* הקשה על המפה כשמגירת הסינון פתוחה — רק סוגרת אותה (pmt-layer.js קורא לפונקציה הזו לפני פתיחת כרטיס); כל הקשה מבטלת פתיחה ממתינה */
+  window.pmtClickGuard=()=>{
+    cancelPending();
+    if(document.body.classList.contains("filters-open")){ setFilters(false); return true; }
+    return false;
+  };
 }
 
 function isActiveNow(p){
@@ -653,12 +657,19 @@ function isActiveNow(p){
   return true;
 }
 
-/* ===== חלון "מה יש כאן": pmt-layer.js אוסף את האזורים הקבועים ואת הנוט"מים שחלים בנקודה שנלחצה ופותח חלון חופשי ===== */
-const escH=s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+/* ===== כרטיס "מה יש כאן": pmt-layer.js אוסף את האזורים הקבועים ואת הנוט"מים שחלים בנקודה שנלחצה ופותח כרטיס מידע (InfoCard) ===== */
+const escH=s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
 const ltr=s=>'<bdi dir="ltr">'+escH(s)+'</bdi>';
 const COORD_RX=/\d{1,3}°\d{2}'\d{2}(?:\.\d+)?"[NS]\s?\d{1,3}°\d{2}'\d{2}(?:\.\d+)?"[EW]/g;
-/* קואורדינטות בתוך טקסט עברי (RTL) מתהפכות — עוטפים כל זוג בבידוד משמאל לימין */
+/* קואורדינטות בתוך טקסט עברי (RTL) מתהפכות — עוטפים כל זוג בבידוד משמאל לימין (לטקסט רגיל: תווי בידוד; ל-HTML: bidiHtml) */
 const bidiFix=s=>String(s==null?"":s).replace(COORD_RX,"⁦$&⁩");
+function bidiHtml(s){
+  s=String(s==null?"":s); let out="", i=0, m; COORD_RX.lastIndex=0;
+  while((m=COORD_RX.exec(s))!==null){ out+=escH(s.slice(i,m.index))+'<bdi dir="ltr">'+escH(m[0])+'</bdi>'; i=m.index+m[0].length; }
+  return out+escH(s.slice(i));
+}
+/* ריבוי בעברית: pl(1,"נוט״ם אחד","נוט״מים") → "נוט״ם אחד"; pl(2,...) → "2 נוט״מים" */
+const pl=(n,one,many)=>n===1?one:n+" "+many;
 
 let notamLabel=null;
 function removeNotamLabel(){
@@ -687,7 +698,7 @@ function notamBody(item,p){
   if(p.alt) meta.push(escH(p.alt));
   return (p.approx?'<div class="approx-note">⚠ מיקום משוער לפי שורת Q — אינו מדויק</div>':"")+
     '<div class="pp-meta">'+meta.join(" · ")+'</div>'+
-    '<div class="pp-heb">'+bidiFix(escH(item.heb))+'</div>'+
+    '<div class="pp-heb">'+bidiHtml(item.heb)+'</div>'+
     '<details><summary>הצג נוטמ מקורי</summary><div class="pp-raw">'+escH(item.raw)+'</div></details>';
 }
 /* כל שכבות הנוט"ם שעל המפה (כולל נוט"ם שהודבק במפענח) */
@@ -697,17 +708,35 @@ function notamLayers(){
   if(pasted&&map.hasLayer(pasted.layer)) out.push(pasted);
   return out;
 }
-function notamEntry(item,layer){
-  const c=CATS[item.cat]||CATS.uas, p=item.parsed;
-  return {id:item.id,name:item.name,color:c.color,tag:"נוט״ם · "+c.label,group:p.approx?2:1,area:layer._area||0,dist:0,dot:false,approx:!!p.approx,body:()=>notamBody(item,p)};
+/* בדיקת פגיעה מדויקת בפיקסלים של שכבת המפה (לא _containsPoint: אין "סבילות" נסתרת): בפנים / בקרבה (עד R פיקסלים מהקצה) / לא */
+function notamHit(layer,pt,R){
+  try{
+    if(!map.hasLayer(layer)) return null;
+    if(layer._point&&layer._radius!=null){   // עיגול
+      const d=pt.distanceTo(layer._point), r=layer._radius;
+      return d<=r?{inside:true,dist:0}:d<=r+R?{inside:false,dist:d-r}:null;
+    }
+    const rings=layer._rings; if(!rings) return null;
+    let inside=false, dm=Infinity;
+    rings.forEach(ring=>{
+      for(let i=0,j=ring.length-1;i<ring.length;j=i++){
+        const a=ring[i], b=ring[j];
+        if((a.y>pt.y)!==(b.y>pt.y)&&pt.x<(b.x-a.x)*(pt.y-a.y)/(b.y-a.y)+a.x) inside=!inside;
+        const d=L.LineUtil.pointToSegmentDistance(pt,a,b); if(d<dm) dm=d;
+      }
+    });
+    return inside?{inside:true,dist:0}:dm<=R?{inside:false,dist:dm}:null;
+  }catch(e){ return null; }
 }
-/* נוט"מים שמכילים את הנקודה (pt = נקודת שכבה): בדיקת הכלה של Leaflet על העיגול/הפוליגון */
-function notamStackEntries(pt){
+function notamEntry(item,layer,hit){
+  const c=CATS[item.cat]||CATS.uas, p=item.parsed, h=hit||{inside:true,dist:0};
+  return {id:item.id,name:item.name,color:c.color,tag:"נוט״ם · "+c.label,group:p.approx?2:1,area:layer._area||0,dist:h.dist,near:!h.inside,inBuf:false,
+    approx:!!p.approx,rank:h.inside?1:2,body:()=>notamBody(item,p)};
+}
+/* נוט"מים שמכילים את הנקודה או קרובים אליה (pt = נקודת שכבה, R = סבילות בפיקסלים) */
+function notamStackEntries(pt,R){
   const out=[];
-  notamLayers().forEach(({item,layer})=>{
-    let hit=false; try{ hit=layer._containsPoint(pt); }catch(e){}
-    if(hit) out.push(notamEntry(item,layer));
-  });
+  notamLayers().forEach(({item,layer})=>{ const h=notamHit(layer,pt,R==null?10:R); if(h) out.push(notamEntry(item,layer,h)); });
   return out;
 }
 function notamEntryById(id){
@@ -723,7 +752,7 @@ function setFilters(open){
 }
 document.addEventListener("DOMContentLoaded",()=>{
   const ft=document.getElementById("filterToggle");
-  if(ft) ft.addEventListener("click",()=>{ const open=!document.body.classList.contains("filters-open"); if(open&&map) map.closePopup(); setFilters(open); });
+  if(ft) ft.addEventListener("click",()=>{ const open=!document.body.classList.contains("filters-open"); if(open&&map) closeCard(); setFilters(open); });
   const sc=document.getElementById("sheetClose");
   if(sc) sc.addEventListener("click",()=>setFilters(false));
   const ht=document.getElementById("hdrToggle");
@@ -746,8 +775,8 @@ function drawItem(item){
   /* הצורות לא אינטראקטיביות: לחיצה וריחוף מטופלים פעם אחת ברמת המפה (pmt-layer.js), כך שאף שכבה לא בולעת לחיצה על מה שמתחתיה.
      נוט"ם משוער בשכבה התחתונה, מדויק בעליונה — בלי קשר לסדר הטעינה */
   const style=p.approx
-    ? {color:col,weight:2,dashArray:"7 6",fillColor:col,fillOpacity:.10,renderer:rendApprox,interactive:false}
-    : {color:col,weight:3,fillColor:col,fillOpacity:.22,renderer:rendNotam,interactive:false};
+    ? {color:col,weight:2,dashArray:"7 6",fillColor:col,fillOpacity:.10,renderer:window.mapCanvas,interactive:false}
+    : {color:col,weight:3,fillColor:col,fillOpacity:.22,renderer:window.mapCanvas,interactive:false};
   let layer;
   if(geo.type==="circle") layer=L.circle([geo.center.lat,geo.center.lng],{radius:geo.radius,...style});
   else layer=L.polygon(geo.points.map(c=>[c.lat,c.lng]),style);
@@ -755,12 +784,13 @@ function drawItem(item){
   layer.addTo(map);
   return layer;
 }
-/* קטנים מעל גדולים — מסדרים מחדש בלי למחוק ולהוסיף */
+/* קטנים מעל גדולים — מסדרים מחדש בלי למחוק ולהוסיף. קנבס אחד משותף: כשמודול הפמ"ת נטען הוא מסדר את כל השכבות יחד (pmtReorder) */
 function reorderShapes(){
+  if(typeof window.pmtReorder==="function") return window.pmtReorder();
   Object.values(shapes).sort((a,b)=>b._area-a._area).forEach(l=>l.bringToFront());
 }
 
-/* ===== בחירה מהרשימה (מותר למרכז ולהתקרב) ===== */
+/* ===== בחירה מהרשימה (מותר למרכז ולהתקרב — זו פעולה מכוונת) ===== */
 function clearSelected(){
   selectedId=null;
   document.querySelectorAll(".item.sel").forEach(el=>el.classList.remove("sel"));
@@ -776,32 +806,78 @@ function markSelected(id){
     if(r.top<lr.top) sl.scrollTop-=lr.top-r.top; else if(r.bottom>lr.bottom) sl.scrollTop+=r.bottom-lr.bottom;
   }
 }
-/* אם המפה לא גלויה (רשימה מתחתיה בנייד/טאבלט) — מגלגלים אליה בעדינות */
+/* אם המפה לא גלויה (רשימה מתחתיה בנייד/טאבלט) — מגלגלים אליה מיד, בלי אנימציה (גלילה חלקה הייתה עדיין רצה כשהכרטיס נפתח) */
 function scrollMapIntoView(){
   const r=document.getElementById("bigmap").getBoundingClientRect(), vh=window.innerHeight;
   const vis=Math.min(r.bottom,vh)-Math.max(r.top,0);
   if(vis>=Math.min(r.height,vh)*0.75) return;
-  window.scrollTo({top:Math.max(0,window.scrollY+r.top-8),behavior:"smooth"});
+  window.scrollTo({top:Math.max(0,window.scrollY+r.top-8),behavior:"auto"});
 }
+/* פתיחת כרטיס מושהית: ממתינים שהמפה והדף יציבים (אין אנימציית מפה, scrollY לא משתנה בשני פריימים רצופים), ורק אז פותחים.
+   כל פעולה חדשה (בחירה אחרת, הקשה על המפה, סגירה) מבטלת את הממתינה — אין מטפלים נערמים (D-RACE) */
+let pendingOpen=null;
+function cancelPending(){ if(pendingOpen){ cancelAnimationFrame(pendingOpen.raf); clearTimeout(pendingOpen.tm); pendingOpen=null; } }
+function closeCard(){ cancelPending(); try{ if(window.InfoCard) InfoCard.hide(); }catch(e){} clearSelected(); }
+function whenSettled(cb){
+  cancelPending();
+  const po=pendingOpen={raf:0,tm:0}; let last=-1, stable=0;
+  const fire=()=>{ if(pendingOpen!==po) return; cancelPending(); cb(); };
+  const tick=()=>{
+    if(pendingOpen!==po) return;
+    const anim=map._animatingZoom||(map._panAnim&&map._panAnim._inProgress), sy=window.scrollY;
+    stable=(!anim&&sy===last)?stable+1:0; last=sy;
+    if(stable>=2) return fire();
+    po.raf=requestAnimationFrame(tick);
+  };
+  po.raf=requestAnimationFrame(tick);
+  po.tm=setTimeout(fire,1200);   // רשת ביטחון (למשל לשונית ברקע שבה rAF מושהה)
+}
+function pointVisible(ll){
+  const r=map.getContainer().getBoundingClientRect(), p=map.latLngToContainerPoint(ll), x=r.left+p.x, y=r.top+p.y;
+  return p.x>=0&&p.y>=0&&p.x<=r.width&&p.y<=r.height&&x>=0&&y>=0&&x<=window.innerWidth&&y<=window.innerHeight;
+}
+/* מרכז את המפה על נקודה (בלי הנפשה), מגלגל אליה את הדף אם צריך, ופותח כרטיס רק כשהכול יציב והנקודה גלויה.
+   opts: {zoom, focus, heading, intro, allowEmpty, touch, after(ok)} */
+function centerAndOpen(ll,opts){
+  opts=opts||{};
+  cancelPending();
+  try{ if(window.InfoCard) InfoCard.hide(); }catch(e){}   // לא מנקים את הבחירה כאן: הקורא כבר סימן את הפריט שנבחר
+  /* לחיצה ראשונה — מיידית; לחיצות מהירות ברצף (פחות מ-400ms מהקודמת) מתמזגות לתזוזה אחת אחרי 150ms של שקט
+     (כל תזוזה = ציור מחדש של כל השכבות, ובמכשיר איטי ברצף כזה הדף היה נתקע) */
+  const nowT=Date.now(), delay=nowT-centerAndOpen.last<400?150:0; centerAndOpen.last=nowT;
+  const po=pendingOpen={raf:0,tm:setTimeout(()=>{
+    if(pendingOpen!==po) return; pendingOpen=null;
+    scrollMapIntoView();
+    map.invalidateSize({animate:false});
+    const sz=map.getSize(), z=opts.zoom==null?map.getZoom():opts.zoom;
+    /* בנייד (מגירה תחתונה) הנקודה מוצבת מעט מעל מרכז המפה — כך המגירה לא מכסה אותה */
+    const view=sz.x<=760?map.unproject(map.project(ll,z).add([0,sz.y*0.12]),z):ll;
+    map.setView(view,z,{animate:false});
+    let tries=0;
+    const open=()=>{
+      if(!pointVisible(ll)&&tries++<2){ scrollMapIntoView(); whenSettled(open); return; }
+      const ok=typeof window.pmtOpenStack==="function"&&window.pmtOpenStack(ll,{focus:opts.focus,heading:opts.heading,intro:opts.intro,allowEmpty:opts.allowEmpty,touch:opts.touch});
+      if(opts.after) opts.after(ok);
+    };
+    whenSettled(open);
+  },delay)};
+}
+centerAndOpen.last=0;
 function showItemOnMap(item,layer){
+  closeCard();                                   // סוגר כרטיס/בחירה ישנים לפני כל הצגה חדשה (גם להודעה כללית)
   if(!layer){ showMsg(item.id+" — "+item.name+"\n\n"+bidiFix(item.heb)); return; }
-  scrollMapIntoView();
+  markSelected(item.id);
   let bounds=null, center;
   if(layer.getBounds){ bounds=layer.getBounds(); center=bounds.getCenter(); } else center=layer.getLatLng();
   let z=map.getZoom();
   if(bounds) z=Math.min(13,Math.max(9,map.getBoundsZoom(bounds.pad(0.35))));   /* לא רחוק מדי, לא קרוב מדי */
-  /* העוגן מוצב מעט מתחת למרכז המסך — החלון נפתח כלפי מעלה ונכנס בלי הזזה נוספת */
-  const view=map.unproject(map.project(center,z).subtract([0,map.getSize().y*0.18]),z);
-  map.once("moveend",()=>{
-    const ok=typeof window.pmtOpenStack==="function"&&window.pmtOpenStack(center,{focus:item.id});
+  centerAndOpen(center,{zoom:z,focus:item.id,touch:COARSE,after:ok=>{
     if(!ok){ showMsg(item.id+" — "+item.name+"\n\n"+bidiFix(item.heb)); return; }
     markSelected(item.id); addNotamLabel(item,layer);
-  });
-  map.setView(view,z,{animate:true});
+  }});
 }
 function selectItem(id){
   const item=DATA.find(x=>x.id===id); if(!item) return;
-  markSelected(id);
   showItemOnMap(item,shapes[id]);
 }
 
@@ -827,7 +903,7 @@ function dayLabel(iso){
   const days=Math.round((n0-d0)/86400000);
   if(days<=0) return "היום 🆕";
   if(days===1) return "אתמול";
-  if(days<=6) return "לפני "+days+" ימים";
+  if(days<=6) return days===2?"לפני יומיים":"לפני "+days+" ימים";
   return d.toLocaleDateString("he-IL",{day:"2-digit",month:"2-digit",year:"numeric"});
 }
 let showRemoved=false;
@@ -859,6 +935,7 @@ function renderAll(){
   if(added) reorderShapes();
 
   const addSec=t=>{const d=document.createElement("div");d.className="sechead";d.textContent=t;list.appendChild(d);};
+  if(!DATA.length) list.appendChild(loadPanel());
   addSec("אזורים במפה — "+shown);
   let listOrder=mapped;
   if(userPos){
@@ -885,10 +962,10 @@ function renderAll(){
     }
     const div=document.createElement("div");
     div.className="item"; div.dataset.id=it.id;
-    div.innerHTML=`<div class="t"><span class="name"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:${(CATS[it.cat]||CATS.uas).color};margin-left:6px"></span>${it.name}</span><span class="nid">${it.id}</span></div>
+    div.innerHTML=`<div class="t"><span class="name"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:${(CATS[it.cat]||CATS.uas).color};margin-left:6px"></span>${escH(it.name)}</span><span class="nid">${escH(it.id)}</span></div>
       <div class="meta"><span class="dotv ${active?"on":"off"}"></span>
       <span>${active?"בתוקף עכשיו":"לא בתוקף כרגע"}</span>
-      ${it.parsed.times.perm?"<span>· קבוע</span>":(it.parsed.times.to?`<span>· עד ${it.parsed.times.to.slice(0,10)}</span>`:"")}
+      ${it.parsed.times.perm?"<span>· קבוע</span>":(it.parsed.times.to?`<span>· עד ${escH(it.parsed.times.to.slice(0,10))}</span>`:"")}
       ${it.parsed.approx?'<span style="color:var(--amber)">· משוער</span>':""}${(userPos&&it._dist<9999)?`<span style="color:var(--cyan)">· ${it._dist.toFixed(1)} ק״מ ממך</span>`:""}</div>`;
     div.onclick=()=>selectItem(it.id);
     list.appendChild(div);
@@ -899,9 +976,9 @@ function renderAll(){
     genShow.forEach(it=>{
       const div=document.createElement("div");
       div.className="item"; div.dataset.id=it.id;
-      div.innerHTML=`<div class="t"><span class="name">${it.name}</span><span class="nid">${it.id}</span></div>
-        <div class="meta">${it.parsed.noLoc?'<span style="color:var(--amber)">ללא מיקום מדויק</span> · ':""}<span>${it.heb.split("\n")[0].slice(0,60)}…</span></div>`;
-      div.onclick=()=>{ showMsg(it.id+" — "+it.name+"\n\n"+bidiFix(it.heb)); };
+      div.innerHTML=`<div class="t"><span class="name">${escH(it.name)}</span><span class="nid">${escH(it.id)}</span></div>
+        <div class="meta">${it.parsed.noLoc?'<span style="color:var(--amber)">ללא מיקום מדויק</span> · ':""}<span>${escH(it.heb.split("\n")[0].slice(0,60))}…</span></div>`;
+      div.onclick=()=>{ closeCard(); showMsg(it.id+" — "+it.name+"\n\n"+bidiFix(it.heb)); };   // סוגר כרטיס/בחירה ישנים לפני ההודעה
       list.appendChild(div);
     });
   }
@@ -916,15 +993,15 @@ function renderAll(){
         const div=document.createElement("div");
         div.className="removed-item";
         const col=(CATS[r.cat]||CATS.other).color;
-        div.innerHTML=`<div class="name" style="color:${col}">${r.name}</div>
-          <div class="meta">${r.id} · ירד ${dayLabel(r.removed_at)}</div>`;
-        div.onclick=()=>showMsg(r.id+" — "+r.name+" (הנוטמ הזה כבר לא פעיל)\n\n"+(r.heb||""));
+        div.innerHTML=`<div class="name" style="color:${col}">${escH(r.name)}</div>
+          <div class="meta">${escH(r.id)} · ירד ${escH(dayLabel(r.removed_at))}</div>`;
+        div.onclick=()=>{ closeCard(); showMsg(r.id+" — "+r.name+" (הנוטמ הזה כבר לא פעיל)\n\n"+(r.heb||"")); };
         list.appendChild(div);
       });
     }
   }
   document.getElementById("sideCount").textContent=shown+" במפה";
-  document.getElementById("countStamp").textContent=`${DATA.length} נוטמים · מוצגים ${shown} במפה`;
+  document.getElementById("countStamp").textContent=DATA.length?`${pl(DATA.length,"נוט״ם אחד","נוט״מים")} · מוצגים ${shown} במפה`:(loadState==="error"?"אין נתונים":"טוען נתונים…");
   list.scrollTop=keepScroll;
   if(selectedId){ const el=list.querySelector(`.item[data-id="${CSS.escape(selectedId)}"]`); if(el) el.classList.add("sel"); }
 }
@@ -949,12 +1026,12 @@ function kmlPlacemark(item){
     const ring=geo.points.map(c=>c.lng+","+c.lat+",0"); ring.push(geo.points[0].lng+","+geo.points[0].lat+",0");
     coordsStr=ring.join(" ");
   }
-  const meta=[p.times.from?("מ־"+p.times.from):"",p.times.to?("עד "+p.times.to):"",p.radius?("רדיוס "+p.radius.label):"",p.alt||""].filter(Boolean).join(" · ");
-  const heb=item.heb.replace(/</g,"&lt;").replace(/\n/g,"<br/>");
-  const raw=item.raw.replace(/</g,"&lt;").replace(/\n/g,"<br/>");
-  return `<Placemark><name>${item.id} — ${item.name}</name>
+  const meta=escH([p.times.from?("מ־"+p.times.from):"",p.times.to?("עד "+p.times.to):"",p.radius?("רדיוס "+p.radius.label):"",p.alt||""].filter(Boolean).join(" · "));
+  const heb=escH(item.heb).replace(/\n/g,"<br/>");
+  const raw=escH(item.raw).replace(/\n/g,"<br/>");
+  return `<Placemark><name>${escH(item.id+" — "+item.name)}</name>
 <description><![CDATA[<div dir="rtl" style="font-family:Arial;max-width:380px;text-align:right;line-height:1.6">
-<b style="font-size:15px">${item.name}</b> (${item.id})<br/>${p.approx?"⚠ מיקום משוער לפי שורת Q<br/>":""}
+<b style="font-size:15px">${escH(item.name)}</b> (${escH(item.id)})<br/>${p.approx?"⚠ מיקום משוער לפי שורת Q<br/>":""}
 <span style="color:#666">${meta}</span><hr/><b>פענוח בעברית:</b><br/>${heb}<hr/>
 <b>מקור:</b><br/><span style="font-family:monospace;direction:ltr;display:inline-block;text-align:left;font-size:11px">${raw}</span></div>]]></description>
 <styleUrl>#${item.cat||"uas"}</styleUrl>
@@ -970,7 +1047,7 @@ function makeAllKML(){
   const marks=DATA.filter(it=>activeCats.has(it.cat)).map(kmlPlacemark).filter(Boolean).join("\n");
   return `<?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2"><Document>
-<name>נוט״מ כטב״מים — ${FETCHED_AT}</name>
+<name>נוט״מ כטב״מים — ${escH(curStamp)}</name>
 ${kmlStyles()}
 ${marks}
 </Document></kml>`;
@@ -990,11 +1067,13 @@ function showMsg(text, sticky){
   clearTimeout(showMsg._tm);
   if(!sticky) showMsg._tm=setTimeout(()=>{t.style.display="none";}, 12000);
 }
+function hideMsg(){ clearTimeout(showMsg._tm); document.getElementById("toast").style.display="none"; }
 
 /* ================= לשוניות ================= */
 const $=id=>document.getElementById(id);
 function showTab(which){
   setFilters(false);
+  if(which!=="map"&&map) closeCard();
   $("tab-map").style.display=which==="map"?"":"none";
   $("tab-decode").style.display=which==="decode"?"block":"none";
   $("tabBtnMap").classList.toggle("active",which==="map");
@@ -1022,6 +1101,15 @@ $("onlyActiveBtn").onclick=function(){
   this.classList.toggle("primary",onlyActive);
   renderAll();
 };
+/* גיל בעברית תקנית: "שעה", "שעתיים", "3 שעות", "יום אחד", "יומיים", "5 ימים" */
+function ageText(ms){
+  const h=ms/3600000;
+  if(h<1) return "פחות משעה";
+  const r=Math.round(h);
+  if(r<24) return r===1?"שעה":r===2?"שעתיים":r+" שעות";
+  const d=Math.round(h/24);
+  return d===1?"יום אחד":d===2?"יומיים":d+" ימים";
+}
 $("refreshBtn").onclick=async function(){
   setBtn(this,"בודק עדכונים…","בודק…"); this.disabled=true;
   /* שלב 1: ניסיון עדכון אמיתי מקובץ הנתונים של האתר המארח */
@@ -1033,13 +1121,13 @@ $("refreshBtn").onclick=async function(){
   let reachable=false;
   for(const u of proxies){
     try{
-      const r=await fetch(u,{signal:AbortSignal.timeout(15000)});
+      const r=await fetchT(u,{},15000);
       if(r.ok){const t=await r.text(); if(t.includes("NotamID")){reachable=true;break;}}
     }catch(e){}
   }
   this.disabled=false; setBtn(this,"עדכון נתונים","עדכון");
-  const hrs=Math.round((Date.now()-Date.parse(curISO))/3600000);
-  showMsg("לא נמצא מקור נתונים מעודכן.\n\nגיל הנתונים הנוכחיים: כ-"+hrs+" שעות ("+curStamp+").\n\n"+
+  const age=curISO?"גיל הנתונים הנוכחיים: "+ageText(Date.now()-Date.parse(curISO))+" (\u2066"+curStamp+"\u2069).":"הנתונים לא נטענו עדיין.";
+  showMsg("לא נמצא מקור נתונים מעודכן.\n\n"+age+"\n\n"+
     (reachable?"אתר רש״ת נגיש — נדרש עדכון קובץ הנתונים באתר המארח.":"חומת האש של רש״ת חוסמת גישה ישירה מהדפדפן.")+
     "\n\nלעדכון מיידי: כתבו ל-Claude בצ׳אט ״עדכן נוטמים״ ותקבלו קובץ חדש תוך דקה,\nאו העלו notam-data.json מעודכן לאתר לצד הקובץ הזה.");
 };
@@ -1147,44 +1235,80 @@ window.addEventListener("error", e=>{
 });
 
 /* ================= אתחול ================= */
-let DATA=NOTAM_DATA.map(it=>({...it,cat:it.cat||"uas",first_seen:it.first_seen||"2026-07-01T00:00:00Z",parsed:parseNotam(it.raw)}));
-let REMOVED=(typeof NOTAM_REMOVED!=="undefined")?NOTAM_REMOVED:[];
-let curStamp=FETCHED_AT, curISO=FETCHED_ISO;
+/* אין נתונים מוטמעים בקוד: עד שהטעינה הראשונה מסתיימת מוצג "טוען נתונים…", ואם כל המקורות נכשלו — הודעה גלויה + כפתור "נסה שוב" */
+let DATA=[];
+let REMOVED=[];
+let curStamp="", curISO=null, loadState="loading", lastLoadOk=0;
+
+/* פאנל בראש רשימת הנוט"מים כשאין נתונים: טוען / שגיאה + "נסה שוב" */
+function loadPanel(){
+  const d=document.createElement("div"); d.className="loadmsg"+(loadState==="error"?" bad":"");
+  if(loadState==="error"){
+    d.innerHTML='<b>⚠ לא ניתן לטעון את נתוני הנוט״מים.</b><br>בדקו את החיבור לאינטרנט ונסו שוב.<br><button type="button" class="primary" data-retry>נסה שוב</button>';
+    d.querySelector("[data-retry]").onclick=loadInitial;
+  }else d.textContent="טוען נתונים…";
+  return d;
+}
+function setLoadState(st){
+  loadState=st;
+  if(!DATA.length){
+    const bd=document.getElementById("freshBadge");
+    document.getElementById("fetchStamp").textContent=st==="error"?"—":"טוען…";
+    bd.className="fresh "+(st==="error"?"r":"y"); bd.textContent=st==="error"?"הנתונים לא נטענו":"טוען נתונים…";
+  }
+  document.getElementById("retryLoad").style.display=(st==="error"&&!DATA.length)?"":"none";
+  renderAll();
+}
+async function loadInitial(){
+  setLoadState("loading");
+  const ok=await tryLoadFromSite(true);
+  if(!ok&&!DATA.length) setLoadState("error");
+}
 
 function refreshFreshBadge(){
+  if(!curISO) return;
   const el=document.getElementById("freshBadge");
-  const hrs=(Date.now()-Date.parse(curISO))/3600000;
+  const ms=Date.now()-Date.parse(curISO), hrs=ms/3600000;
   let cls,txt;
-  if(hrs<24){cls="g";txt=hrs<1?"עודכן לפני פחות משעה":"עודכן לפני "+Math.round(hrs)+" שעות";}
-  else if(hrs<72){cls="y";txt="עודכן לפני "+Math.round(hrs/24)+" ימים — מומלץ לרענן";}
-  else{cls="r";txt="עודכן לפני "+Math.round(hrs/24)+" ימים — נדרש רענון!";}
+  if(hrs<24){cls="g";txt="עודכן לפני "+ageText(ms);}
+  else if(hrs<72){cls="y";txt="עודכן לפני "+ageText(ms)+" — מומלץ לרענן";}
+  else{cls="r";txt="עודכן לפני "+ageText(ms)+" — נדרש רענון!";}
   el.className="fresh "+cls; el.textContent=txt;
 }
 function applyData(notams, stampText, stampISO, removedList){
+  const sig=a=>a.map(x=>x.id+":"+(x.raw||"").length).join("|");
+  const changed=sig(DATA)!==sig(notams);
   DATA=notams.map(it=>({...it,cat:it.cat||"uas",parsed:parseNotam(it.raw)}));
   if(removedList) REMOVED=removedList;
   curStamp=stampText||curStamp; curISO=stampISO||curISO;
+  loadState="ok"; lastLoadOk=Date.now();
+  document.getElementById("retryLoad").style.display="none";
   document.getElementById("fetchStamp").textContent=curStamp;
   refreshFreshBadge();
   renderCatBar();
   renderAll();
+  if(changed&&window.InfoCard&&InfoCard.isOpen()) closeCard();   // הנתונים התעדכנו בזמן שהכרטיס פתוח — התוכן שבו כבר לא מדויק
 }
-/* ניסיון טעינת נתונים עדכניים מהאתר המארח (כשהקובץ מוטמע ב-icd.org.il) */
+/* ניסיון טעינת נתונים עדכניים: הקובץ שלצד הדף, ואחריו הגיבויים (מהאתר המארח ב-icd.org.il) */
 async function tryLoadFromSite(silent){
   for(const url of DATA_URLS){
     try{
-      const r=await fetch(url+(url.includes("?")?"&":"?")+"t="+Date.now(),{signal:AbortSignal.timeout(12000)});
+      const r=await fetchT(url+(url.includes("?")?"&":"?")+"t="+Date.now(),{},url===DATA_URLS[0]?12000:8000);
       if(!r.ok) continue;
       const j=await r.json();
       if(j && Array.isArray(j.notams) && j.notams.length){
         applyData(j.notams, j.fetched_at, j.fetched_iso, j.removed);
-        if(!silent) showMsg("✅ הנתונים עודכנו בהצלחה!\nעדכון אחרון: "+(j.fetched_at||""));
+        if(!silent) showMsg("✅ הנתונים עודכנו בהצלחה!\nעדכון אחרון: \u2066"+(j.fetched_at||"")+"\u2069");
         return true;
       }
     }catch(e){}
   }
   return false;
 }
+/* חזרה לחזית אחרי 5 דקות ומעלה: רענון שקט של הנתונים (אם נכשל — נשארים עם מה שיש) */
+document.addEventListener("visibilitychange",()=>{
+  if(document.visibilityState==="visible"&&DATA.length&&Date.now()-lastLoadOk>5*60000) tryLoadFromSite(true);
+});
 /* מעקב כניסות — Google Analytics (אם הוגדר GA_ID) */
 if(GA_ID){
   const s=document.createElement("script");
@@ -1207,7 +1331,7 @@ console.log("%c© הארגון הישראלי לרחפנים · ISRAEL DRONE ORG
 /* כל טעינת דף נרשמת במונה מרכזי ומוצגת. שירות חינמי: counterapi.dev */
 async function countVisit(){
   try{
-    const r=await fetch("https://api.counterapi.dev/v1/icd-notam/map-visits/up",{signal:AbortSignal.timeout(10000)});
+    const r=await fetchT("https://api.counterapi.dev/v1/icd-notam/map-visits/up",{},10000);
     if(!r.ok) return;
     const j=await r.json();
     if(j && typeof j.count==="number"){
@@ -1234,24 +1358,27 @@ document.getElementById("nearBtn").onclick=()=>{
   if(!navigator.geolocation){showMsg("הדפדפן לא תומך באיתור מיקום.");return;}
   showMsg("מאתר את מיקומך…");
   navigator.geolocation.getCurrentPosition(p=>{
+    hideMsg();
     userPos={lat:p.coords.latitude,lng:p.coords.longitude};
     if(userMarker){try{map.removeLayer(userMarker)}catch(e){}}
-    userMarker=L.circleMarker([userPos.lat,userPos.lng],{radius:9,color:"#67d8e8",weight:3,fillColor:"#67d8e8",fillOpacity:.85,bubblingMouseEvents:false})
-      .addTo(map).bindPopup("📍 המיקום שלך");
-    scrollMapIntoView();
-    map.setView([userPos.lat,userPos.lng],11);
+    userMarker=L.circleMarker([userPos.lat,userPos.lng],{radius:9,color:"#67d8e8",weight:3,fillColor:"#67d8e8",fillOpacity:.85,interactive:false})
+      .addTo(map);
     renderAll();
     const near=DATA.filter(it=>it.parsed.geometry&&activeCats.has(it.cat)&&distKm(userPos,geomCenter(it.parsed.geometry))<=15);
-    showMsg(near.length
-      ? "נמצאו "+near.length+" נוטמים ברדיוס 15 ק\"מ ממך (בקטגוריות המסומנות).\nהרשימה מוינה לפי מרחק — הקרוב ביותר למעלה."
-      : "אין נוטמים ברדיוס 15 ק\"מ ממך בקטגוריות המסומנות.\nנסה להדליק עוד קטגוריות.");
+    const intro='<div class="pp-meta">'+(near.length
+      ? (near.length===1?"נמצא נוט״ם אחד":"נמצאו "+near.length+" נוט״מים")+" ברדיוס 15 ק״מ ממך (בקטגוריות המסומנות). הרשימה מוינה לפי מרחק — הקרוב ביותר למעלה."
+      : "אין נוט״מים ברדיוס 15 ק״מ ממך בקטגוריות המסומנות. נסו להדליק עוד קטגוריות.")+'</div>';
+    /* מרכוז מכוון על המיקום (מותר), ואז כרטיס שמציג מה יש בדיוק במיקום שלך */
+    closeCard();
+    centerAndOpen(L.latLng(userPos.lat,userPos.lng),{zoom:11,heading:"המיקום שלך",intro,allowEmpty:true,touch:true,
+      after:ok=>{ if(!ok) showMsg(near.length?"נמצאו נוט״מים ברדיוס 15 ק״מ ממך — ראו ברשימה.":"אין נוט״מים ברדיוס 15 ק״מ ממך בקטגוריות המסומנות."); }});
   },e=>{showMsg("לא הצלחתי לאתר מיקום.\nודא שאישרת לדפדפן הרשאת מיקום.");},
   {enableHighAccuracy:true,timeout:12000,maximumAge:60000});
 };
 /* רישום ה-Service Worker — הופך את הדף לאפליקציה מותקנת */
 if("serviceWorker" in navigator){
   /* מעדכן את האפליקציה המותקנת: בדיקת גרסה חדשה בכל כניסה, ורענון חד-פעמי כשמגיעה גרסה חדשה */
-  navigator.serviceWorker.register("sw.js").then(reg=>{ try{reg.update();}catch(e){} }).catch(()=>{});
+  navigator.serviceWorker.register("sw.js").then(reg=>{ try{ const u=reg.update(); if(u&&u.catch) u.catch(()=>{}); }catch(e){} }).catch(()=>{});
   const hadSW=!!navigator.serviceWorker.controller; let swReloaded=false;
   navigator.serviceWorker.addEventListener("controllerchange",()=>{ if(!hadSW||swReloaded) return; swReloaded=true; location.reload(); });
 }
@@ -1264,18 +1391,28 @@ if(new URLSearchParams(location.search).get("dev")==="icd2026"){
   b.textContent="🔑 מצב מנהל — גישה ישירה, לא דרך Wix. אל תשתפו כתובת זו.";
   document.body.insertBefore(b, document.body.firstChild);
 }
-document.getElementById("fetchStamp").textContent=FETCHED_AT;
-refreshFreshBadge();
+document.getElementById("retryLoad").onclick=loadInitial;
 try{
   initMap();
   renderCatBar();
-  renderAll();
-  tryLoadFromSite(true);
+  loadInitial();
 }catch(e){
   showFatalError("המפה נתקלה בבעיה בטעינה.<br>אם עברת עכשיו הרשמה/תשלום, לפעמים לוקח לWix דקה להכיר בכך — נסו לרענן.<br><small style=\'color:#8fa0ba\'>"+
-    (e&&e.message||"")+"</small>");
+    escH(e&&e.message||"")+"</small>");
 }
 </script>
-<script src="pmt-layer.js?v=20261002"></script>
+<script src="pmt-layer.js?v=20261003"></script>
+<script>
+/* בדיקת גרסה (מניעת שילוב index חדש + pmt-layer.js ישן ממטמון): אם מודול הכרטיס חסר או שהגרסה שלו שונה — רענון חד-פעמי (דגל ב-sessionStorage, בלי לולאה) */
+(function(){
+  try{
+    if(typeof window.pmtOpenStack==="function"&&window.PMT_BUILD===BUILD){ sessionStorage.removeItem("pmtReloaded"); return; }
+    if(sessionStorage.getItem("pmtReloaded")) return;
+    sessionStorage.setItem("pmtReloaded","1");
+    const u=new URL(location.href); u.searchParams.set("r",Date.now());
+    location.replace(u.href);
+  }catch(e){}
+})();
+</script>
 </body>
 </html>
