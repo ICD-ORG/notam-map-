@@ -591,27 +591,27 @@
   {
    "id": "C1828/26",
    "loc": "LLLL",
-   "name": "אזור מ-SYRIA BOUNDRAY ל-6 ק\"מ WB סגור ל-ALL…",
+   "name": "אזור מגבול סוריה ועד 6 ק\"מ מערבה סגור לכל…",
    "cat": "uas",
-   "heb": "אזור מ-SYRIA BOUNDRAY ל-6 ק\"מ WB סגור ל-ALL טיסות פנים-ארציות, למעט POLICE, FIREFIGHTING, MEDEVAC טיסות או UAS/UAV טיסות ל-חירום, SECURITY, MEDEVAC PURPOSES בלבד. ALL חירום APPROVED טיסות SHALL תיאום עם בקרת התעופה ו- MABBAH.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-30/08/2026 12:26 UTC עד 31/10/2026 21:59 UTC",
+   "heb": "אזור מגבול סוריה ועד 6 ק\"מ מערבה סגור לכל הטיסות הפנים-ארציות, למעט טיסות משטרה, כיבוי אש ופינוי רפואי, או טיסות כטב\"ם/רחפנים לצורכי חירום, ביטחון ופינוי רפואי בלבד. כל טיסות החירום המאושרות יתואמו עם בקרת התעופה ועם MABBAH.\nבתוקף: מ-30/08/2026 12:26 UTC עד 31/10/2026 21:59 UTC",
    "raw": "C1828/26 NOTAMR C1578/26\nQ) LLLL/QAELP/IV/NBO/E /000/999/3302N03547E018\nA) LLLL B) 2608301226 C) 2610312159\nE) AN AREA FM SYRIA BOUNDRAY TO 6KM WB CLSD TO ALL DOM FLT,\nEXC POLICE, FIREFIGHTING, MEDEVAC FLT OR UAS/UAV FLT FOR\nEMERG, SECURITY, MEDEVAC PURPOSES ONLY.\nALL EMERG APPROVED FLT SHALL COORD WITH ATC AND MABBAH.)",
    "first_seen": "2026-08-30T17:18:56Z"
   },
   {
    "id": "C1829/26",
    "loc": "LLLL",
-   "name": "הפעלת טיסות מ-JORDAN BOUNDRAY ל-6 ק\"מ WB…",
+   "name": "הפעלת טיסות מגבול ירדן ועד 6 ק\"מ מערבה מחייבת…",
    "cat": "other",
-   "heb": "הפעלת טיסות מ-JORDAN BOUNDRAY ל-6 ק\"מ WB REQUIRES TRANSPONDER OPERATING DRG ALL THE טיסות ו- MAINTANING TWO WAY RADIO COM עם בקרת התעופה.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-30/08/2026 12:27 UTC עד 31/10/2026 21:59 UTC",
+   "heb": "הפעלת טיסות מגבול ירדן ועד 6 ק\"מ מערבה מחייבת טרנספונדר פועל לאורך כל הטיסה ושמירת קשר רדיו דו-כיווני עם בקרת התעופה.\nבתוקף: מ-30/08/2026 12:27 UTC עד 31/10/2026 21:59 UTC",
    "raw": "C1829/26 NOTAMR C1579/26\nQ) LLLL/QAELP/IV/NBO/E /000/999/3123N03524E087\nA) LLLL B) 2608301227 C) 2610312159\nE) OPS OF FLT FM JORDAN BOUNDRAY TO 6KM WB REQUIRES\nTRANSPONDER OPERATING DRG ALL THE FLT AND MAINTANING\nTWO WAY RADIO COM WITH ATC.)",
    "first_seen": "2026-08-30T17:18:56Z"
   },
   {
    "id": "C1830/26",
    "loc": "LLLL",
-   "name": "הפעלת טיסות מ-EGYPT BOUNDRAY ל-6 ק\"מ WB…",
+   "name": "הפעלת טיסות מגבול מצרים ועד 6 ק\"מ מערבה מחייבת…",
    "cat": "other",
-   "heb": "הפעלת טיסות מ-EGYPT BOUNDRAY ל-6 ק\"מ WB REQUIRES TRANSPONDER OPERATING DRG ALL THE טיסות ו- MAINTANING TWO WAY RADIO COM עם בקרת התעופה.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-30/08/2026 12:27 UTC עד 31/10/2026 21:59 UTC",
+   "heb": "הפעלת טיסות מגבול מצרים ועד 6 ק\"מ מערבה מחייבת טרנספונדר פועל לאורך כל הטיסה ושמירת קשר רדיו דו-כיווני עם בקרת התעופה.\nבתוקף: מ-30/08/2026 12:27 UTC עד 31/10/2026 21:59 UTC",
    "raw": "C1830/26 NOTAMR C1580/26\nQ) LLLL/QAELP/IV/NBO/E /000/999/3029N03435E050\nA) LLLL B) 2608301227 C) 2610312159\nE) OPS OF FLT FM EGYPT BOUNDRAY TO 6KM WB REQUIRES\nTRANSPONDER OPERATING DRG ALL THE FLT AND MAINTANING\nTWO WAY RADIO COM WITH ATC.)",
    "first_seen": "2026-08-30T17:18:56Z"
   },
@@ -629,7 +629,7 @@
    "loc": "LLLL",
    "name": "רצועת עזה (GAZA-STRIP)",
    "cat": "other",
-   "heb": "אזור ב-GAZA-STRIP בין נקודות הציון הבאות סגור לכל הטיסות, למעט אישור מוקדם טיסות מ-IAF או טיסות ריסוס חקלאיות, חירום, MEDEVAC מסוקים 31°07'14\"N 34°17'59\"E 31°08'18\"N 34°37'09\"E 31°05'50\"N 34°40'03\"E 31°08'18\"N 34°48'00\"E 31°13'16\"N 34°47'37\"E 31°19'00\"N 34°40'23\"E 31°25'52\"N 34°44'47\"E 31°34'52\"N 34°45'28\"E 31°36'49\"N 34°44'11\"E 31°39'23\"N 34°36'00\"E 31°42'59\"N 34°33'16\"E 31°50'55\"N 34°36'48\"E 31°51'13\"N 34°32'44\"E 31°55'51\"N 34°34'43\"E 31°56'01\"N 34°09'59\"E 31°51'45\"N 34°04'14\"E 31°46'13\"N 34°00'54\"E 31°19'27\"N 34°13'05\"E. פעילות טיסות מ-GAZA-STRIP BOUNDRAY ל-6 ק\"מ OUTWARD זמין ע\"י אישור מוקדם מ-IAF ו- CAAI ו- ENTRY APPROVAL מ-IDF (MABBAH) ע\"י מספר טלפון 08-9115730. מומלצת זהירות.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-30/08/2026 12:25 UTC עד 31/10/2026 21:59 UTC",
+   "heb": "אזור ב-GAZA-STRIP בין נקודות הציון הבאות סגור לכל הטיסות, למעט אישור מוקדם טיסות מ-IAF או טיסות ריסוס חקלאיות, חירום, MEDEVAC מסוקים 31°07'14\"N 34°17'59\"E 31°08'18\"N 34°37'09\"E 31°05'50\"N 34°40'03\"E 31°08'18\"N 34°48'00\"E 31°13'16\"N 34°47'37\"E 31°19'00\"N 34°40'23\"E 31°25'52\"N 34°44'47\"E 31°34'52\"N 34°45'28\"E 31°36'49\"N 34°44'11\"E 31°39'23\"N 34°36'00\"E 31°42'59\"N 34°33'16\"E 31°50'55\"N 34°36'48\"E 31°51'13\"N 34°32'44\"E 31°55'51\"N 34°34'43\"E 31°56'01\"N 34°09'59\"E 31°51'45\"N 34°04'14\"E 31°46'13\"N 34°00'54\"E 31°19'27\"N 34°13'05\"E. פעילות טיסות מ-GAZA-STRIP גבול ל-6 ק\"מ OUTWARD זמין ע\"י אישור מוקדם מ-IAF ו- CAAI ו- ENTRY APPROVAL מ-IDF (MABBAH) ע\"י מספר טלפון 08-9115730. מומלצת זהירות.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-30/08/2026 12:25 UTC עד 31/10/2026 21:59 UTC",
    "raw": "C1825/26 NOTAMR C1575/26\nQ) LLLL/QAELP/IV/NBO/E /000/999/3132N03429E030\nA) LLLL B) 2608301225 C) 2610312159\nE) AN AREA AT GAZA-STRIP BTN FLW PSN CLSD TO ALL FLT, EXC\nPPR FLT FM IAF OR AGRICULTURE FLT, EMERG, MEDEVAC HEL\n310714N0341759E 310818N0343709E 310550N0344003E\n310818N0344800E 311316N0344737E 311900N0344023E\n312552N0344447E 313452N0344528E 313649N0344411E\n313923N0343600E 314259N0343316E 315055N0343648E\n315113N0343244E 315551N0343443E 315601N0340959E\n315145N0340414E 314613N0340054E 311927N0341305E.\nOPS FLT FM GAZA-STRIP BOUNDRAY TO 6KM OUTWARD\nAVBL BY PPR FM IAF AND CAAI AND ENTRY APPROVAL\nFM IDF (MABBAH) BY PHONE NR 08-9115730.\nCTN ADZ.)",
    "first_seen": "2026-08-30T17:18:56Z"
   },
@@ -638,16 +638,16 @@
    "loc": "LLLL",
    "name": "אזור מצפון ל כביש מס' 85 ו- כביש מס' 91 סגור…",
    "cat": "act",
-   "heb": "אזור מצפון ל כביש מס' 85 ו- כביש מס' 91 סגור ל-ALL טיסות פנים-ארציות, למעט בועת זעירים BZVUE, חירום, OIL RIG טיסות, MEDEVAC מסוקים או אישור מוקדם טיסות מ-IAF. מומלצת זהירות.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-30/08/2026 12:25 UTC עד 31/10/2026 21:59 UTC",
+   "heb": "אזור מצפון ל כביש מס' 85 ו- כביש מס' 91 סגור לכל הטיסות הפנים-ארציות, למעט בועת זעירים BZVUE, חירום, OIL RIG טיסות, MEDEVAC מסוקים או אישור מוקדם טיסות מ-IAF. מומלצת זהירות.\nבתוקף: מ-30/08/2026 12:25 UTC עד 31/10/2026 21:59 UTC",
    "raw": "C1826/26 NOTAMR C1576/26\nQ) LLLL/QAELC/IV/NBO/E /000/999/3306N03525E019\nA) LLLL B) 2608301225 C) 2610312159\nE) AN AREA N OF ROAD NR 85 AND ROAD NR 91 CLSD TO ALL DOM FLT,\nEXC  ULTRALIGHT BUBBLE BZVUE, EMERG, OIL RIG FLT,\nMEDEVAC HEL OR PPR FLT FM IAF.\nCTN ADZ.)",
    "first_seen": "2026-08-30T17:18:56Z"
   },
   {
    "id": "C1827/26",
    "loc": "LLLL",
-   "name": "אזור מ-LEBANON BOUNDRAY ל-8 ק\"מ SB סגור ל-ALL…",
+   "name": "אזור מגבול לבנון ועד 8 ק\"מ דרומה סגור לכל…",
    "cat": "uas",
-   "heb": "אזור מ-LEBANON BOUNDRAY ל-8 ק\"מ SB סגור ל-ALL טיסות פנים-ארציות, למעט POLICE, FIREFIGHTING, MEDEVAC טיסות או UAS/UAV טיסות ל-חירום, SECURITY, MEDEVAC PURPOSES בלבד. ALL חירום APPROVED טיסות SHALL תיאום עם בקרת התעופה ו- MABBAH.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-30/08/2026 12:26 UTC עד 31/10/2026 21:59 UTC",
+   "heb": "אזור מגבול לבנון ועד 8 ק\"מ דרומה סגור לכל הטיסות הפנים-ארציות, למעט טיסות משטרה, כיבוי אש ופינוי רפואי, או טיסות כטב\"ם/רחפנים לצורכי חירום, ביטחון ופינוי רפואי בלבד. כל טיסות החירום המאושרות יתואמו עם בקרת התעופה ועם MABBAH.\nבתוקף: מ-30/08/2026 12:26 UTC עד 31/10/2026 21:59 UTC",
    "raw": "C1827/26 NOTAMR C1577/26\nQ) LLLL/QAELC/IV/NBO/E /000/999/3308N03526E019\nA) LLLL B) 2608301226 C) 2610312159\nE) AN AREA FM LEBANON BOUNDRAY TO 8KM SB CLSD TO ALL DOM FLT,\nEXC POLICE, FIREFIGHTING, MEDEVAC FLT OR UAS/UAV FLT FOR\nEMERG, SECURITY, MEDEVAC PURPOSES ONLY.\nALL EMERG APPROVED FLT SHALL COORD WITH ATC AND MABBAH.)",
    "first_seen": "2026-08-30T17:18:56Z"
   },
