@@ -1,16 +1,16 @@
 {
- "fetched_at": "02/10/2026 18:17 UTC",
- "fetched_iso": "2026-10-02T18:17:57Z",
+ "fetched_at": "03/10/2026 09:27 UTC",
+ "fetched_iso": "2026-10-03T09:27:40Z",
  "count": 97,
  "notams": [
   {
-   "id": "A0793/26",
+   "id": "A0794/26",
    "loc": "LLLL",
    "name": "VOR ZFR/ZOFAR 115",
    "cat": "ad",
-   "heb": "VOR ZFR/ZOFAR 115.600MHZ CH103X מושבת לצורך תחזוקה.\nבתוקף: מ-02/10/2026 08:26 UTC עד 03/10/2026 08:00 UTC",
-   "raw": "A0793/26 NOTAMR A0792/26\nQ) LLLL/QNMAS/IV/BO /E /000/999/3034N03510E025\nA) LLLL B) 2610020826 C) 2610030800\nE) VOR ZFR/ZOFAR 115.600MHZ CH103X\nWITHDRAWN FOR MAINT.)",
-   "first_seen": "2026-10-02T10:05:43Z"
+   "heb": "VOR ZFR/ZOFAR 115.600MHZ CH103X מושבת לצורך תחזוקה.\nבתוקף: מ-03/10/2026 05:44 UTC עד 04/10/2026 08:00 UTC",
+   "raw": "A0794/26 NOTAMR A0793/26\nQ) LLLL/QNMAS/IV/BO /E /000/999/3034N03510E025\nA) LLLL B) 2610030544 C) 2610040800\nE) VOR ZFR/ZOFAR 115.600MHZ CH103X\nWITHDRAWN FOR MAINT.)",
+   "first_seen": "2026-10-03T09:27:40Z"
   },
   {
    "id": "C2061/26",
@@ -878,6 +878,13 @@
   }
  ],
  "removed": [
+  {
+   "id": "A0793/26",
+   "name": "VOR ZFR/ZOFAR 115",
+   "cat": "ad",
+   "heb": "VOR ZFR/ZOFAR 115.600MHZ CH103X מושבת לצורך תחזוקה.\nבתוקף: מ-02/10/2026 08:26 UTC עד 03/10/2026 08:00 UTC",
+   "removed_at": "2026-10-03T09:27:40Z"
+  },
   {
    "id": "C2035/26",
    "name": "בועת זעירים זמינה לטיסה",
