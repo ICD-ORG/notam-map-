@@ -1,0 +1,1846 @@
+
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0e1b2a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="מפת א-17">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="manifest" href="manifest.json">
+<meta name="robots" content="noindex,nofollow"><title>[בדיקה] פמ"ת א-17 — אזורים אסורים, מוגבלים ומסוכנים לטיסה</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+  :root{
+    --ink:#101820; --panel:#0e1b2a; --panel2:#122336; --line:#24405e;
+    --text:#e8eef5; --dim:#8fa6bd;
+    --llp:#e0452f; --llr:#e8930c; --lld:#d8c024; --llu:#8f6fe8; --obst:#5c6b7a;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html,body{height:100%}
+  body{font-family:"Segoe UI", "Arial Hebrew", Arial, sans-serif; background:var(--ink); color:var(--text); overflow:hidden}
+  #app{position:relative; height:100vh; height:100dvh}
+ 
+  /* ---- sidebar: חלונית צפה ---- */
+  #side{position:absolute; top:14px; right:14px; width:330px; max-height:calc(100vh - 28px); max-height:calc(100dvh - 28px);
+    background:var(--panel); border:1px solid var(--line); border-radius:12px;
+    box-shadow:0 14px 44px rgba(0,0,0,.55); display:flex; flex-direction:column; z-index:1000; overflow:hidden}
+  #side.collapsed{display:none}
+  #side header{padding:12px 16px 10px; border-bottom:1px solid var(--line); cursor:move; user-select:none; position:relative; background:linear-gradient(180deg,var(--panel2),var(--panel))}
+  #closeside{position:absolute; top:8px; left:8px; width:26px; height:26px; border:1px solid var(--line); border-radius:6px; background:var(--panel); color:var(--dim); font-size:13px; cursor:pointer; line-height:1}
+  #closeside:hover{background:var(--panel2); color:var(--text)}
+  #resizer{position:absolute; top:0; bottom:0; left:0; width:9px; cursor:ew-resize; z-index:1002}
+  #resizer::after{content:""; position:absolute; top:50%; left:3px; transform:translateY(-50%); width:3px; height:46px; border-radius:2px; background:var(--line)}
+  #resizer:hover::after{background:#4d7db3}
+  #side header{padding:14px 16px 10px; border-bottom:1px solid var(--line)}
+  #side header h1{font-size:16px; font-weight:700; letter-spacing:.2px}
+  #side header .sub, .about-m .sub{font-size:11.5px; color:var(--dim); margin-top:4px; line-height:1.5}
+  #side header .stamp, .about-m .stamp{display:inline-block; margin-top:6px; font-family:Consolas,monospace; font-size:10.5px; color:#f5c46a; border:1px solid #6a5320; background:#211a08; padding:2px 7px; border-radius:3px; direction:ltr}
+  #search{margin:0; padding:10px 14px 6px; position:sticky; top:0; z-index:3; background:var(--panel)}
+  #search input{width:100%; background:var(--panel2); border:1px solid var(--line); border-radius:6px; color:var(--text); padding:8px 10px; font-size:13px}
+  #search input:focus{outline:2px solid #3b6ea5; outline-offset:1px}
+  #groups{flex:none; overflow:visible; padding:4px 8px 20px}
+  .grp{margin:8px 6px}
+  .grp>button{width:100%; display:flex; align-items:center; gap:8px; background:none; border:none; color:var(--text); font-size:13px; font-weight:700; padding:7px 6px; cursor:pointer; border-radius:5px; text-align:right}
+  .grp>button:hover{background:var(--panel2)}
+  .swatch{width:12px; height:12px; border-radius:3px; flex:none}
+  .cnt{margin-inline-start:auto; color:var(--dim); font-size:11px; font-family:Consolas,monospace}
+  .items{display:none}
+  .grp.open .items{display:block}
+  .item{display:flex; align-items:baseline; gap:8px; padding:5px 10px 5px 6px; border-radius:5px; cursor:pointer; font-size:12.5px}
+  .item:hover{background:var(--panel2)}
+  .item .code{font-family:Consolas,monospace; font-size:11px; color:var(--dim); direction:ltr; flex:none; min-width:56px}
+  .noteblock{margin:4px 10px 10px; padding:8px 10px; background:var(--panel2); border-radius:6px; font-size:11px; color:var(--dim); line-height:1.6}
+  #foot{padding:9px 14px; border-top:1px solid var(--line); font-size:10.5px; color:var(--dim); line-height:1.55}
+  #foot b{color:#f0a9a0}
+  /* #sidebody הוא אזור הגלילה היחיד של המקרא בכל הגדלים: רשימת הקבוצות לא נדחסת כשפותחים את רשימת הנוט"מים */
+  #sidebody{display:block; flex:1 1 auto; min-height:0; overflow-y:auto; overscroll-behavior:contain; -webkit-overflow-scrolling:touch}
+  #ntListBody{max-height:none!important; overflow:visible!important}
+  #ntListSection{display:contents}      /* כותרת רשימת הנוט"מים נדבקת לתחתית אזור הגלילה — תמיד נגישה, בלי קשר לאורך רשימת הקבוצות */
+  #ntListToggle{position:sticky; bottom:0; z-index:3; border-top:2px solid var(--line)}
+  .about-m{display:none}
+  #apxRow{display:flex; align-items:center; gap:8px; margin:6px 14px 0; padding:6px 4px; font-size:12.5px; color:var(--text); cursor:pointer; min-height:34px}
+  #apxRow input{width:18px; height:18px; flex:none; accent-color:#4d7db3; cursor:pointer}
+  #apxRow .n{margin-inline-start:auto; font-family:Consolas,monospace; font-size:11px; color:var(--dim)}
+ 
+    /* ---- map ---- */
+  #mapwrap{position:absolute; inset:0}
+  #map{position:absolute; inset:0; background:#0b141d}
+  #togglebtn{position:absolute; top:14px; right:14px; z-index:999; display:none; background:var(--panel); color:var(--text); border:1px solid var(--line); border-radius:8px; padding:8px 12px; font-size:13px; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,.4)}
+  #togglebtn:hover{background:var(--panel2)}
+ 
+  /* כרטיס מידע "מה יש כאן" — אלמנט בתוך מכל המפה (לא חלון Leaflet): לא מזיז את המפה, ממוקם בצד הנגדי לנקודה שנלחצה */
+  .infocard{position:absolute; z-index:1200; display:none; flex-direction:column; box-sizing:border-box; direction:rtl; text-align:right;
+    width:min(360px,calc(100% - 20px)); max-height:calc(100% - 20px); background:var(--panel); color:var(--text);
+    border:1px solid var(--line); border-radius:12px; box-shadow:0 10px 34px rgba(0,0,0,.55); font-size:13px; line-height:1.55; overflow:hidden;
+    font-family:"Segoe UI",Arial,sans-serif; cursor:default}
+  .infocard.on{display:flex}
+  .infocard .ic-head{display:flex; align-items:center; justify-content:space-between; gap:8px; padding:6px 8px 6px 12px; border-bottom:1px solid var(--line); font-weight:700; font-size:13px; flex:none; min-height:44px}
+  .infocard .ic-title{min-width:0; overflow-wrap:anywhere}
+  .infocard .ic-x{width:40px; height:40px; margin:-4px 0; border:0; border-radius:8px; background:transparent; color:var(--dim); font-size:20px; line-height:1; cursor:pointer; flex:none}
+  .infocard .ic-x:hover,.infocard .ic-x:focus-visible{background:rgba(255,255,255,.1); color:var(--text)}
+  .infocard .ic-body{overflow-y:auto; overscroll-behavior:contain; -webkit-overflow-scrolling:touch; padding:10px 12px 12px; flex:1 1 auto; min-height:0}
+  .ic-mark{pointer-events:none}
+  .ic-mark i{display:block; width:20px; height:20px; border-radius:50%; border:3px solid #fff; background:#ff3b30; box-shadow:0 0 0 2px rgba(0,0,0,.45),0 2px 8px rgba(0,0,0,.6)}
+  @media (max-width:560px){ .infocard{width:calc(100% - 20px)} }
+  .pp-code{font-family:Consolas,monospace; font-size:18px; font-weight:700; direction:ltr; text-align:right; letter-spacing:.5px}
+  .pp-name{font-size:14px; font-weight:700; margin:3px 0 7px}
+  .pp-badge{display:inline-block; font-size:10.5px; padding:2px 8px; border-radius:10px; color:#fff; margin-bottom:8px}
+  .pp-row{display:flex; gap:6px; font-size:12px; margin:3px 0}
+  .pp-row .k{color:var(--dim); min-width:72px; flex:none}
+  .pp-row .v{direction:ltr; text-align:right; font-family:Consolas,monospace; font-size:12px}
+  .pp-note{margin-top:8px; padding-top:7px; border-top:1px dashed var(--line); font-size:11px; color:var(--dim); line-height:1.55}
+  .hi{border-top:1px solid var(--line)}
+  .hi>summary{display:flex; align-items:center; gap:6px; flex-wrap:wrap; min-height:44px; padding:4px 0; cursor:pointer; list-style:none}
+  .hi>summary::-webkit-details-marker{display:none}
+  .hi>summary::after{content:"▾"; margin-inline-start:auto; color:var(--dim); font-size:13px; transition:transform .15s}
+  .hi[open]>summary::after{transform:rotate(180deg)}
+  .hc{font-family:Consolas,monospace; font-weight:700; font-size:13px; direction:ltr; flex:none}
+  .hn{font-size:13px; font-weight:700; min-width:0; overflow-wrap:anywhere}
+  .ht{flex:none; font-size:10px; padding:1px 7px; border-radius:9px; color:#fff; line-height:1.5}
+  .ht.apx{border:1px dashed currentColor; background:none}
+  .ht.near{background:none; border:1px solid var(--dim); color:var(--dim)}
+  .ic-near{margin:0 0 6px}
+  .hb{padding:0 0 8px}
+  /* tooltip בריחוף (מחשב בלבד) */
+  .hover-tip{background:var(--panel); color:var(--text); border:1px solid var(--line); border-radius:6px; padding:4px 9px; font-size:12px; box-shadow:0 4px 14px rgba(0,0,0,.5); direction:rtl}
+  .hover-tip.leaflet-tooltip-top:before{border-top-color:var(--line)}
+  .hover-tip b{font-family:Consolas,monospace; direction:ltr; unicode-bidi:isolate; margin-left:6px}
+  .hover-tip .more{color:var(--dim)}
+
+  .leaflet-control-layers{direction:rtl; text-align:right; background:var(--panel); color:var(--text); border:1px solid var(--line)!important; border-radius:8px}
+  /* מכווץ: רק האייקון, בלי פס ריק שחוסם את המפה. פתוח: לא גבוה מהמסך — כל הבורר (כולל נעילה ומונה) נגלל */
+  .leaflet-control-layers-expanded{min-width:180px; max-height:calc(100vh - 130px); max-height:calc(100dvh - 130px); overflow-y:auto}
+  .leaflet-control-layers-expanded .leaflet-control-layers-list{height:auto!important; overflow:visible!important; padding-right:0}
+  .leaflet-control-layers label{font-size:12.5px}
+  .leaflet-control-layers-toggle{background-color:var(--panel)!important; width:36px!important; height:36px!important; border-radius:8px!important}
+  /* מונה כניסות בתוך בורר השכבות */
+  #layers-counter{padding:6px 10px 4px; border-top:1px solid var(--line); margin-top:4px; display:flex; align-items:center; gap:6px; font-size:11px; color:var(--dim)}
+  #layers-counter span.n{font-family:Consolas,monospace; font-size:13px; color:#a8d4f0; font-weight:700}
+  /* כפתור נעילת הבורר */
+  #lock-layers{width:100%; margin:4px 0 2px; padding:5px 0; background:var(--panel2);
+    border:1px solid var(--line); border-radius:5px; color:var(--dim); font-size:12px;
+    cursor:pointer; text-align:center; direction:rtl}
+  /* כפתור הנעילה והמונה מוצגים רק כשהבורר פתוח */
+  .leaflet-control-layers:not(.leaflet-control-layers-expanded) #lock-layers,
+  .leaflet-control-layers:not(.leaflet-control-layers-expanded) #layers-counter{display:none}
+  #lock-layers.locked{color:#f0c060; border-color:#7a6020; background:#1e1608}
+  #lock-layers:hover{color:var(--text); border-color:#4d7db3}
+  .leaflet-bar a{background:var(--panel); color:var(--text); border-bottom:1px solid var(--line)}
+  .leaflet-bar a:hover{background:var(--panel2)}
+  .leaflet-control-attribution{background:rgba(14,27,42,.8)!important; color:var(--dim)!important; font-size:9px}
+  .leaflet-control-attribution a{color:#7fa7cf!important}
+ 
+ 
+  /* ---- לוגו ICD ---- */
+  #icd-logo{position:absolute; bottom:12px; left:12px; z-index:1000; opacity:0.55; transition:opacity .2s}
+  #icd-logo:hover{opacity:1}
+  #icd-logo img{width:56px; height:auto; display:block; filter:drop-shadow(0 1px 4px #000a)}
+/* כפתורי העזר לא מכסים את בקרי המפה (זום / בורר שכבות) */
+  #decoderBtn{left:62px!important; top:10px!important}
+  #nearBtn{left:62px!important; top:52px!important}
+/* ---- חריגי בטיחות: חריץ/שורת מצב (viewport-fit=cover) ---- */
+  .leaflet-top{top:env(safe-area-inset-top)}
+  .leaflet-left{left:env(safe-area-inset-left)}
+  .leaflet-bottom{bottom:env(safe-area-inset-bottom)}
+  .leaflet-right{right:env(safe-area-inset-right)}
+  .dec-head{display:flex; justify-content:space-between; align-items:center; margin:-20px -20px 14px; padding:16px 20px 8px; position:sticky; top:-20px; background:var(--panel); z-index:2}
+/* ---- מסך קטן (טלפון / גובה נמוך): מקרא קומפקטי — כותרת מצומצמת, התיאור והחותמות עוברים לגוף הגלילה ---- */
+@media (max-width:760px), (max-height:700px){
+    #side header{padding:10px 12px 8px 54px}
+    #side header h1{font-size:15px; line-height:1.3}
+    #side header .sub, #side header .stamp, #side header details{display:none}
+    #closeside{width:40px; height:40px; top:4px; left:6px; font-size:16px}
+    #search{padding:8px 14px 6px}
+    .about-m{display:block; margin-bottom:8px; padding-bottom:8px; border-bottom:1px solid var(--line)}
+    .about-m .stamp{margin-inline-end:4px}
+  }
+/* ---- טלפון ---- */
+@media (max-width:760px){
+    #side header{cursor:default}
+    .leaflet-control-layers-expanded{max-width:calc(100vw - 150px)}
+    #icd-logo{display:none}
+    #ntDecGrid{grid-template-columns:1fr!important}
+  }
+@media (max-width:760px) and (min-height:421px){
+    /* בטלפון לאורך: המקרא הוא מגירה תחתונה והמפה נשארת גלויה (בגובה ≤420 — לרוחב — נשארת חלונית צד) */
+    #side{top:auto!important; left:0!important; right:0!important; bottom:0; width:100%!important;
+      max-height:72vh; max-height:72dvh; border-radius:14px 14px 0 0; padding-bottom:env(safe-area-inset-bottom)}
+    #resizer{display:none}
+    #togglebtn{top:auto; bottom:calc(18px + env(safe-area-inset-bottom)); right:calc(14px + env(safe-area-inset-right)); padding:11px 16px; font-size:14px; box-shadow:0 4px 14px rgba(0,0,0,.5)}
+    #decoderBtn{left:auto!important; right:calc(14px + env(safe-area-inset-right))!important; top:calc(14px + env(safe-area-inset-top))!important; padding:10px 12px!important}
+    #nearBtn{left:auto!important; right:calc(14px + env(safe-area-inset-right))!important; top:calc(60px + env(safe-area-inset-top))!important; padding:10px 12px!important}
+    #ntBanner{bottom:calc(76px + env(safe-area-inset-bottom))}
+  }
+@media (max-width:760px) and (max-height:420px){
+    #side{width:min(330px,62vw)}
+  }
+/* ---- מגע / מסך צר: שדות קלט 16px (בלי זום אוטומטי ב-iOS) ואזורי מגע ≥40px ---- */
+@media (max-width:760px), (pointer:coarse){
+    #search input, #ntInput{font-size:16px!important}
+    .grp>button{min-height:44px}
+    .item{min-height:40px; align-items:center}
+    #collapseall, #expandall, #nt-refresh, #a17-refresh, #lock-layers, #nt-retry{min-height:40px}
+    #ntListToggle{min-height:44px}
+    .vis{padding:10px 8px; margin:-10px 0}
+    .leaflet-control-layers-overlays label{padding:6px 0}
+    .leaflet-control-layers-base label{padding:6px 0}
+    .leaflet-bar a{width:40px!important; height:40px!important; line-height:40px!important}
+    .leaflet-control-layers-toggle{width:40px!important; height:40px!important}
+    #decoderClose{width:40px!important; height:40px!important}
+    #closeside{width:40px; height:40px}
+    #side header details>summary{min-height:32px; display:flex; align-items:center}
+    #apxRow{min-height:44px}
+  }
+  /* הודעת טעינה / שגיאה של נתוני הנוט"מים — גלויה גם כשהמקרא סגור */
+  #ntBanner{position:absolute; left:50%; bottom:46px; transform:translateX(-50%); z-index:998; display:flex; align-items:center; gap:10px; max-width:calc(100% - 24px); padding:8px 14px; border-radius:10px;
+    background:var(--panel); color:var(--text); border:1px solid var(--line); box-shadow:0 6px 22px rgba(0,0,0,.5); font-size:13px; line-height:1.45; direction:rtl}
+  #ntBanner[hidden]{display:none}
+  #ntBanner.err{border-color:#a33; background:#2a1215; color:#ffd0d0}
+  #ntBanner button{flex:none; background:#a8c6e8; color:#0e1b2a; border:0; border-radius:7px; padding:7px 14px; font-size:13px; font-weight:700; cursor:pointer; min-height:34px}
+</style>
+</head>
+<body><div id="prevstrip" style="position:fixed;top:0;left:0;right:0;z-index:99999;height:15px;line-height:15px;background:#f5a623;color:#111;font:700 10px/15px system-ui,sans-serif;text-align:center;pointer-events:none;direction:rtl">גרסת בדיקה — לא האתר החי</div>
+<div id="app">
+  <div id="mapwrap">
+    <button id="togglebtn">☰ הצג מקרא</button>
+    <button id="decoderBtn" style="position:absolute;top:14px;left:14px;z-index:999;background:var(--panel);color:#a8c6e8;border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:13px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.4)">🔤 מפענח נוט"מ</button>
+    <button id="nearBtn" style="position:absolute;top:56px;left:14px;z-index:999;background:var(--panel);color:#67d8e8;border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:13px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.4)">📍 בקרבתי</button>
+    <div id="map"></div>
+    <div id="ntBanner" role="status" aria-live="polite" hidden></div>
+    </div>
+    <!-- חלונית מפענח נוטמ בודד -->
+    <div id="decoderModal" style="display:none;position:fixed;inset:0;z-index:5000;background:rgba(0,0,0,.7);backdrop-filter:blur(3px)">
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(680px,94vw);max-height:90vh;overflow-y:auto;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;direction:rtl">
+        <div class="dec-head">
+          <h2 style="font-size:16px;color:#a8c6e8;font-weight:700">מפענח נוט"מ בודד</h2>
+          <button id="decoderClose" style="width:32px;height:32px;border:none;border-radius:50%;background:#e0452f;color:#fff;font-size:18px;cursor:pointer">✕</button>
+        </div>
+        <p style="font-size:12.5px;color:var(--dim);margin-bottom:8px">הדבק נוט"מ (שורת E או הודעה מלאה) — פענוח לעברית, מפה ו-KML</p>
+        <textarea id="ntInput" style="width:100%;min-height:130px;background:#0a101c;border:1px solid var(--line);border-radius:8px;color:#d7e3f4;padding:12px;font-size:12.5px;line-height:1.6;direction:ltr;text-align:left;font-family:Consolas,monospace;resize:vertical"></textarea>
+        <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
+          <button id="ntDecodeBtn" style="background:#a8c6e8;border:none;color:#0e1b2a;font-weight:700;padding:9px 16px;border-radius:8px;cursor:pointer">פענח</button>
+          <button id="ntExampleBtn" style="background:var(--panel2);border:1px solid var(--line);color:var(--text);padding:9px 16px;border-radius:8px;cursor:pointer">טען דוגמה</button>
+          <button id="ntClearBtn" style="background:var(--panel2);border:1px solid var(--line);color:var(--text);padding:9px 16px;border-radius:8px;cursor:pointer">נקה</button>
+        </div>
+        <div id="ntDecErr" style="display:none;color:#ff6b6b;margin-top:8px;font-size:13px"></div>
+        <div id="ntDecResult" style="display:none;margin-top:16px">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px" id="ntDecGrid">
+            <div style="background:var(--panel2);border:1px solid var(--line);border-radius:10px;overflow:hidden">
+              <div style="padding:8px 12px;font-size:12px;font-weight:700;color:#67d8e8;border-bottom:1px solid var(--line)">נוט"מ מקורי</div>
+              <div id="ntOrigBody" style="padding:12px;font-size:11.5px;line-height:1.7;direction:ltr;text-align:left;font-family:Consolas,monospace;color:#c7d6ec;white-space:pre-wrap;word-break:break-word"></div>
+            </div>
+            <div style="background:var(--panel2);border:1px solid var(--line);border-radius:10px;overflow:hidden">
+              <div style="padding:8px 12px;font-size:12px;font-weight:700;color:#a8c6e8;border-bottom:1px solid var(--line)">פענוח בעברית</div>
+              <div id="ntHebBody" style="padding:12px;font-size:13.5px;line-height:1.8;white-space:pre-wrap;word-break:break-word"></div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+            <button id="ntGmapsBtn" style="background:var(--panel2);border:1px solid var(--line);color:var(--text);padding:9px 16px;border-radius:8px;cursor:pointer">פתח ב-Google Maps</button>
+          </div>
+        </div>
+      </div>
+    </div>
+        <a id="icd-logo" href="https://www.icd.org.il" target="_blank" title="הארגון הישראלי לרב-להב">
+      <img src="https://static.wixstatic.com/media/3ae480_bd1aa7403fb5415ca03a36a0b07933b3~mv2.png/v1/crop/x_230,y_546,w_6464,h_3101/fill/w_200,h_96,al_c,q_95,enc_avif,quality_auto/logo%20new22-07.png"
+           onerror="this.style.display='none'" alt="ICD"></a>
+ 
+  <aside id="side">
+    <div id="resizer" title="גרירה לשינוי רוחב המקרא"></div>
+    <header>
+      <button id="closeside" title="הסתר מקרא">✕</button>
+      <h1>אזורים אסורים, מוגבלים ומסוכנים לטיסה</h1>
+      <div class="sub">פמ"ת פנים ארצי · פרק א'-17 · רשות התעופה האזרחית<br><b style="color:#a8c6e8">מותאם לכטב"מ, רחפנים וטיסנים</b> — כל ההנחיות חלות גם עליהם לפי תקנה 180ז(ג), אלא אם צוין אחרת</div>
+      <span class="stamp">UPDATE 1/26 · 06 AUG 2026</span>
+      <span class="stamp" style="color:#8fd0a0; border-color:#2c5a3a; background:#0d2114">MAP v1.0 · 11 AUG 2026</span>
+      <details style="margin-top:7px">
+        <summary style="cursor:pointer; font-size:11px; color:var(--dim)">היסטוריית גרסאות המפה</summary>
+        <div style="font-size:10.5px; color:var(--dim); line-height:1.7; padding:5px 2px 0; direction:rtl">
+          <b style="color:var(--text)">v1.0 · 11.08.2026</b> — גרסה ראשונה: כל אזורי פמ"ת א'-17 עדכון 1/26 (LLP/LLR/LLD/LLU/בלונים), מגבלות גבול (סעיף 4), החרגת יו"ש/יריחו לכטב"מ, 22 שדות ומנחתים עם חיץ 2 ק"מ, אנשי קשר מלאים.<br>
+          <span style="color:#7a8fa5">כל עדכון עתידי יתווסף כאן עם מספר גרסה, תאריך, ופירוט השינויים — באותה כתובת.</span>
+        </div>
+      </details>
+    </header>
+    <div id="sidebody">
+    <div id="search"><input type="text" id="q" placeholder="חיפוש לפי שם או מספר LL…" aria-label="חיפוש אזור"></div>
+    <!-- כפתורי קפל/פתח -->
+    <div style="display:flex; align-items:center; gap:8px; margin:6px 14px 2px; flex-wrap:wrap">
+      <button id="collapseall" style="flex:1; background:var(--panel2); border:1px solid var(--line); border-radius:6px; color:var(--dim); font-size:12px; padding:6px 8px; cursor:pointer; text-align:center">▶ קפל הכול</button>
+      <button id="expandall" style="flex:1; background:var(--panel2); border:1px solid var(--line); border-radius:6px; color:var(--dim); font-size:12px; padding:6px 8px; cursor:pointer; text-align:center">▼ פתח הכול</button>
+    </div>
+    <label id="apxRow" title="עיגולי נוט&quot;מים שמיקומם נלקח משורת Q בלבד (מקווקווים)"><input type="checkbox" id="apxToggle"><span>הצג מיקומים משוערים (נוט"מים)</span><span class="n" id="apxCnt"></span></label>
+    <div id="groups"></div>
+    <div id="ntListSection">
+      <div id="ntListToggle" style="padding:10px 14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;background:#1a1010;color:#ff8a8a;font-size:13px;font-weight:700">
+        <span>📋 רשימת נוט"מים <span id="ntListCount" style="color:var(--dim);font-size:11px"></span></span>
+        <span id="ntListChev">▼</span>
+      </div>
+      <div id="ntListBody" style="display:none;max-height:300px;overflow-y:auto"></div>
+    </div>
+    <div id="foot">
+      <div class="about-m">
+        <div class="sub">פמ"ת פנים ארצי · פרק א'-17 · רשות התעופה האזרחית<br><b style="color:#a8c6e8">מותאם לכטב"מ, רחפנים וטיסנים</b> — כל ההנחיות חלות גם עליהם לפי תקנה 180ז(ג), אלא אם צוין אחרת</div>
+        <span class="stamp">UPDATE 1/26 · 06 AUG 2026</span><span class="stamp" style="color:#8fd0a0; border-color:#2c5a3a; background:#0d2114">MAP v1.0 · 11 AUG 2026</span>
+        <details style="margin-top:7px">
+          <summary style="cursor:pointer; font-size:11px; color:var(--dim); min-height:32px; display:flex; align-items:center">היסטוריית גרסאות המפה</summary>
+          <div style="font-size:10.5px; color:var(--dim); line-height:1.7; padding:5px 2px 0; direction:rtl">
+            <b style="color:var(--text)">v1.0 · 11.08.2026</b> — גרסה ראשונה: כל אזורי פמ"ת א'-17 עדכון 1/26 (LLP/LLR/LLD/LLU/בלונים), מגבלות גבול (סעיף 4), החרגת יו"ש/יריחו לכטב"מ, 22 שדות ומנחתים עם חיץ 2 ק"מ, אנשי קשר מלאים.<br>
+            <span style="color:#7a8fa5">כל עדכון עתידי יתווסף כאן עם מספר גרסה, תאריך, ופירוט השינויים — באותה כתובת.</span>
+          </div>
+        </details>
+      </div>
+      <b>לידיעה בלבד — אינו מסמך תעופתי מבצעי.</b>
+      תיחומים מקורבים לפי נספחים ב'–ד'. שים לב: סגירות רט"ג — מאות שמורות, גנים ואתרי קינון (נספח ה') — <b>חלות גם על כטב"מ ורחפנים</b> (ההחרגה היא רק למצנחי רחיפה לא ממונעים, גילשונים ובלונים); הן אינן משורטטות כאן כי הקואורדינטות שלהן מתפרסמות רק כשכבות GIS באתרי רט"ג ורת"א. אזורי ENR 5.1 ללא שרטוט. בקשה לטיסה החורגת מהמגבלות: אגף פיקוח אווירי רת"א — caai-charigot@mot.gov.il (אישור גורם התיאום המצוין באזור מייתר אישור רת"א). יש לאמת מול הפמ"ת, מפת הניווט הרשמית ו-NOTAM לפני כל טיסה.
+    </div>
+    </div><!-- /sidebody -->
+  </aside>
+</div>
+ 
+<script>
+/* ===== helpers ===== */
+function D(d,m,s){ return d + m/60 + s/3600; }               // DMS -> decimal
+const R_E = 6371000;
+function dest(lat,lng,brgDeg,distM){                          // destination point
+  const br = brgDeg*Math.PI/180, la1=lat*Math.PI/180, lo1=lng*Math.PI/180, dr=distM/R_E;
+  const la2=Math.asin(Math.sin(la1)*Math.cos(dr)+Math.cos(la1)*Math.sin(dr)*Math.cos(br));
+  const lo2=lo1+Math.atan2(Math.sin(br)*Math.sin(dr)*Math.cos(la1), Math.cos(dr)-Math.sin(la1)*Math.sin(la2));
+  return [la2*180/Math.PI, lo2*180/Math.PI];
+}
+function bearing(cLat,cLng,pLat,pLng){
+  const dy=(pLat-cLat)*Math.PI/180, dx=(pLng-cLng)*Math.PI/180*Math.cos(cLat*Math.PI/180);
+  let b=Math.atan2(dx,dy)*180/Math.PI; return (b+360)%360;
+}
+/* arc from ptA to ptB around center, dir: 'cw'|'ccw' */
+function arc(center,rM,ptA,ptB,dir,steps){
+  steps=steps||48;
+  let a=bearing(center[0],center[1],ptA[0],ptA[1]);
+  let b=bearing(center[0],center[1],ptB[0],ptB[1]);
+  let span;
+  if(dir==='cw'){ span=(b-a+360)%360; } else { span=-((a-b+360)%360); }
+  const pts=[];
+  for(let i=0;i<=steps;i++){ pts.push(dest(center[0],center[1],a+span*i/steps,rM)); }
+  return pts;
+}
+function circlePoly(center,rM,steps){ steps=steps||72; const p=[]; for(let i=0;i<steps;i++){p.push(dest(center[0],center[1],i*360/steps,rM));} return p; }
+/* קפסולה: כל הנקודות במרחק r מקטע המסלול A–B */
+function capsule(A,B,r){
+  const brg=bearing(A[0],A[1],B[0],B[1]);
+  const pts=[];
+  for(let t=-90;t<=90;t+=9) pts.push(dest(B[0],B[1],brg+t,r));
+  for(let t=90;t<=270;t+=9) pts.push(dest(A[0],A[1],brg+t,r));
+  return pts;
+}
+/* רצועה ברוחב distM לאורך קו גבול, side: 'L'/'R' ביחס לכיוון ההליכה */
+function stripPoly(line,distM,side){
+  const lat0=line.reduce((s,p)=>s+p[0],0)/line.length;
+  const kx=111320*Math.cos(lat0*Math.PI/180), ky=110540;
+  const xy=line.map(p=>[p[1]*kx,p[0]*ky]);
+  const off=[];
+  for(let i=0;i<xy.length;i++){
+    const a=xy[Math.max(0,i-1)], b=xy[Math.min(xy.length-1,i+1)];
+    let dx=b[0]-a[0], dy=b[1]-a[1]; const L=Math.hypot(dx,dy)||1; dx/=L; dy/=L;
+    const nx=(side==="L")?-dy:dy, ny=(side==="L")?dx:-dx;
+    off.push([(xy[i][1]+ny*distM)/ky,(xy[i][0]+nx*distM)/kx]);
+  }
+  return line.concat(off.reverse());
+}
+ 
+/* ===== data =====
+   geometry kinds: poly (coords [lat,lng]), circle (c,r meters), segs (mixed points+arcs) */
+const NM=1852;
+const AREAS=[
+/* -------- LLP — אזורים אסורים -------- */
+{code:"LLP01", name:"שמורת הטבע החולה", cat:"P", alt:"GND – 3,000 ft AMSL", g:{k:"poly", pts:[
+ [D(33,7,13.65),D(35,35,13.44)],[D(33,7,5.65),D(35,36,43.44)],[D(33,6,35.65),D(35,37,30.44)],[D(33,5,40.65),D(35,37,25.44)],
+ [D(33,5,28.65),D(35,36,23.44)],[D(33,5,8.65),D(35,36,22.44)],[D(33,4,38.65),D(35,37,4.44)],[D(33,3,44.65),D(35,36,35.44)],
+ [D(33,3,39.65),D(35,36,16.44)],[D(33,3,39.65),D(35,35,24.44)],[D(33,4,38.65),D(35,34,33.44)],[D(33,5,51.65),D(35,34,32.44)],
+ [D(33,6,2.65),D(35,35,14.44)],[D(33,6,59.65),D(35,35,6.44)]]}},
+{code:"LLP02", name:"שמורת הטבע גמלא", cat:"P", alt:"GND – 3,500 ft AMSL", g:{k:"poly", pts:[
+ [D(32,53,47.65),D(35,46,29.46)],[D(32,53,16.65),D(35,42,43.46)],[D(32,53,50.65),D(35,42,29.46)],
+ [D(32,54,13.64),D(35,41,7.46)],[D(32,55,12.65),D(35,45,46.46)]]}},
+{code:"LLP03", name:"מכון דוד", cat:"P", alt:"GND/MSL – 3,000 ft AMSL", note:"תיאום: מב\"ט אבטחה מכון דוד 050-3384198", g:{k:"poly", pts:[
+ [D(32,51,40.52),D(35,5,20.77)],[D(32,51,24.62),D(35,5,1.17)],[D(32,51,25.89),D(35,3,44.27)],
+ [D(32,53,35.06),D(35,4,25.74)],[D(32,53,34.43),D(35,5,4.21)]]}},
+{code:"LLP04", name:"בתי הזיקוק — חיפה", cat:"P", alt:"GND – 3,000 ft AMSL", g:{k:"poly", pts:[
+ [D(32,47,38.02),D(35,4,21.29)],[D(32,46,59.84),D(35,3,34.28)],[D(32,47,36.04),D(35,3,4.37)],
+ [D(32,47,55.64),D(35,2,57.13)],[D(32,48,14.80),D(35,3,16.79)]]}},
+{code:"LLP05", name:"עתלית", cat:"P", alt:"GND/SFC – 2,000 ft AMSL", g:{k:"poly", pts:[
+ [D(32,40,43.37),D(34,56,38.71)],[D(32,40,44.73),D(34,55,10.45)],[D(32,42,31.84),D(34,55,12.74)],[D(32,42,30.48),D(34,56,41.03)]]}},
+{code:"LLP06", name:"קיסריה", cat:"P", alt:"GND – 2,000 ft AMSL", g:{k:"poly", pts:[
+ [D(32,30,19.60),D(34,54,13.41)],[D(32,30,42.60),D(34,53,50.41)],[D(32,32,4.60),D(34,54,12.41)],[D(32,32,39.60),D(34,54,42.41)],
+ [D(32,32,36.60),D(34,54,53.41)],[D(32,31,55.99),D(34,54,50.89)],[D(32,30,48.60),D(34,54,37.41)],[D(32,30,25.60),D(34,54,44.41)]]}},
+{code:"LLP07", name:"תחנת כוח חדרה", cat:"P", alt:"GND/SFC – 2,000 ft AMSL", g:{k:"circle", c:[D(32,28,13.29),D(34,53,11.05)], r:1000}},
+{code:"LLP08", name:"רמת השרון", cat:"P", alt:"GND – 1,100 ft AMSL", g:{k:"poly", pts:[
+ [D(32,9,38.17),D(34,51,8.73)],[D(32,9,34.30),D(34,51,50.64)],[D(32,7,59.78),D(34,52,15.43)],[D(32,7,59.49),D(34,52,34.51)],
+ [D(32,7,36.66),D(34,52,41.67)],[D(32,7,14.16),D(34,52,25.95)],[D(32,7,17.97),D(34,51,47.87)],[D(32,7,40.92),D(34,51,33.07)],
+ [D(32,7,56.98),D(34,51,44.85)],[D(32,8,17.40),D(34,50,40.39)]]}},
+{code:"LLP09", name:"המכון למחקר ביולוגי — נס ציונה", cat:"P", alt:"GND – 1,100 ft AMSL", g:{k:"circle", c:[D(31,55,33.65),D(34,47,24.17)], r:500}},
+{code:"LLP10", name:"משמר איילון", cat:"P", alt:"GND – 900 ft AMSL", note:"אין לבצע המתנה מעל האזור.", g:{k:"circle", c:[D(31,51,48.92),D(34,57,23.11)], r:500}},
+{code:"LLP11", name:"הר הבית — ירושלים", cat:"P", alt:"בכל גובה — לכל כלי הטיס", note:"החרגת נתיבי התובלה ב-TMA בן-גוריון נוגעת לטיסות מסחריות מאוישות בלבד ואינה רלוונטית לכטב\"מ.", g:{k:"circle", c:[D(31,46,41),D(35,14,9)], r:1500}},
+{code:"LLP12", name:"שטח אש 209", cat:"P", alt:"GND – 3,000 ft AMSL", g:{k:"poly", pts:[
+ [D(31,47,26),D(34,53,47)],[D(31,44,52),D(34,52,47)],[D(31,42,23),D(34,55,22)],[D(31,42,15),D(34,56,3)],
+ [D(31,42,36),D(34,57,25)],[D(31,44,51),D(34,58,24)],[D(31,45,33),D(34,56,13)],[D(31,44,56),D(34,51,5)],
+ [D(31,46,23),D(34,51,24)],[D(31,48,19),D(34,52,37)]]}},
+{code:"LLP13", name:"ירושלים", cat:"P", alt:"GND – 4,000 ft AMSL", note:"בחפיפה עם LLP11 (הר הבית) — קובעת המגבלה המחמירה. רלוונטי לרחפנים: טיסות רב-להב בקשר עין מחייבות אישור תכנית טיסה מול אחראית מידע ותעופה במשרד התחבורה, אביטל שלס 050-6212003.", g:{k:"circle", c:[D(31,47,4),D(35,12,34)], r:6000}},
+{code:"LLP14", name:"רמת בקע", cat:"P", alt:"GND – 7,000 ft AMSL", note:"תיאום מוקדם לפני בקשת טיסת מרחב (לפי סדר עדיפות): משה ישראל 054-3390262 · יוסי שמש 052-5773105 · ניר כהן 052-8686406 · אריה גלוטמן 052-3678550", g:{k:"poly", pts:[
+ [D(31,7,57),D(34,50,0)],[D(31,8,28),D(34,52,31)],[D(31,8,6),D(34,57,40)],[D(31,7,36),D(34,58,9)],
+ [D(31,5,53),D(34,58,1)],[D(31,5,9),D(34,57,20)],[D(31,4,28),D(34,55,58)],[D(31,4,28),D(34,51,30)]]}},
+{code:"LLP15", name:"דימונה", cat:"P", alt:"בכל גובה (GND – UNL)", g:{k:"segs", segs:[
+ {p:[D(31,2,58.77),D(35,10,48.91)]},{p:[D(31,2,51.25),D(35,10,51.18)]},{p:[D(31,2,53.31),D(35,11,0.37)]},
+ {p:[D(31,1,51.76),D(35,11,45.16)]},{p:[D(30,56,25.16),D(35,8,45.20)]},{p:[D(30,56,34.19),D(35,6,50.26)]},
+ {arc:{c:[D(30,58,19.15),D(35,4,26.60)], r:5000, to:[D(31,0,59.14),D(35,3,54.73)], dir:"cw"}},
+ {p:[D(31,0,59.60),D(35,3,58.80)]},{p:[D(31,1,12.50),D(35,4,27.17)]},{p:[D(31,0,56.28),D(35,5,1.56)]},
+ {p:[D(31,2,12.43),D(35,5,50.00)]},{p:[D(31,2,17.10),D(35,8,31.81)]}]}},
+{code:"LLP16", name:"שמורת הטבע עין עבדת", cat:"P", alt:"GND – 2,700 ft AMSL", g:{k:"poly", pts:[
+ [D(30,50,28.29),D(34,45,23.22)],[D(30,49,30.28),D(34,45,22.22)],[D(30,49,0.28),D(34,45,52.22)],[D(30,49,22.39),D(34,46,51.27)],
+ [D(30,49,5.00),D(34,48,36.53)],[D(30,49,6.06),D(34,50,46.32)],[D(30,49,12.93),D(34,50,59.77)],[D(30,49,22.30),D(34,50,59.70)],
+ [D(30,51,15.45),D(34,49,48.72)],[D(30,51,48.45),D(34,49,48.21)],[D(30,52,12.52),D(34,49,11.48)],[D(30,52,16.52),D(34,48,48.48)],
+ [D(30,51,16.29),D(34,46,39.22)],[D(30,49,2.33),D(34,50,11.06)]]}},
+{code:"LLP171", name:"יהודה ושומרון — מקטע צפוני", cat:"X", alt:"GND – 6,000 ft AMSL (לכלי טיס מאוישים)", note:"סעיף 1(יז): האיסור אינו חל על כטב\"מ וטיסן, בתנאי שתואמה הפעילות מול הגורם הצבאי הרלוונטי לפי פרק א'-11(3)(ב)(2)(ה). ללא תיאום — האיסור בתוקף.", g:{k:"poly", pts:[
+ [D(32,13,46.68),D(35,26,50.54)],[D(32,3,57.08),D(35,22,52.42)],[D(32,9,26.15),D(35,10,2.42)],[D(32,13,56.15),D(34,59,57.50)],
+ [D(32,15,12.81),D(35,2,13.01)],[D(32,17,31.85),D(34,59,33.52)],[D(32,20,18.86),D(34,59,55.77)],[D(32,22,7.10),D(35,1,54.94)],
+ [D(32,23,42.22),D(35,1,40.07)],[D(32,27,10.36),D(35,3,10.79)],[D(32,29,15.77),D(35,8,28.85)],[D(32,30,45.01),D(35,8,23.02)],
+ [D(32,33,13.25),D(35,11,18.83)],[D(32,34,4.31),D(35,13,58.90)],[D(32,31,49.61),D(35,16,8.44)],[D(32,32,11.85),D(35,21,29.00)],
+ [D(32,31,3.63),D(35,24,38.83)],[D(32,27,53.62),D(35,26,16.77)]]}},
+{code:"LLP172", name:"יהודה ושומרון — מקטע מרכזי", cat:"X", alt:"GND – 6,000 ft AMSL (לכלי טיס מאוישים)", note:"סעיף 1(יח): האיסור אינו חל על כטב\"מ וטיסן, בתנאי שתואמה הפעילות מול הגורם הצבאי הרלוונטי לפי פרק א'-11(3)(ב)(2)(ה). ללא תיאום — האיסור בתוקף.", g:{k:"segs", segs:[
+ {p:[D(31,49,0.11),D(35,15,36.85)]},
+ {arc:{c:[D(31,47,4),D(35,12,34)], r:6000, to:[D(31,47,44.56),D(35,9,2.48)], dir:"ccw"}},
+ {p:[D(31,48,50.63),D(35,5,15.57)]},{p:[D(31,50,17.47),D(35,4,12.60)]},{p:[D(31,50,7.91),D(35,2,55.26)]},
+ {p:[D(31,51,33.80),D(35,1,20.64)]},{p:[D(31,55,10.13),D(35,1,47.73)]},{p:[D(31,55,1.86),D(34,59,26.05)]},
+ {p:[D(31,58,24.18),D(34,58,5.76)]},{p:[D(32,0,29.50),D(34,59,25.95)]},{p:[D(32,3,31.70),D(34,58,43.25)]},
+ {p:[D(32,7,13.55),D(34,59,34.95)]},{p:[D(32,9,32.88),D(34,57,9.29)]},{p:[D(32,11,58.71),D(34,56,30.12)]},
+ {p:[D(32,12,22.47),D(34,57,12.09)]},{p:[D(32,13,56.15),D(34,59,57.50)]},{p:[D(32,9,26.15),D(35,10,2.42)]},
+ {p:[D(32,3,57.08),D(35,22,52.42)]},{p:[D(31,55,19.95),D(35,19,23.39)]}]}},
+{code:"LLP173", name:"יהודה ושומרון — מקטע דרומי", cat:"X", alt:"GND – 6,000 ft AMSL (לכלי טיס מאוישים)", note:"סעיף 1(יז): האיסור אינו חל על כטב\"מ וטיסן, בתנאי שתואמה הפעילות מול הגורם הצבאי הרלוונטי לפי פרק א'-11(3)(ב)(2)(ה). ללא תיאום — האיסור בתוקף.", g:{k:"segs", segs:[
+ {p:[D(31,44,24.30),D(35,10,9.33)]},
+ {arc:{c:[D(31,47,4),D(35,12,34)], r:6000, to:[D(31,44,32.20),D(35,15,8.22)], dir:"ccw"}},
+ {p:[D(31,44,42.63),D(35,15,25.26)]},{p:[D(31,43,55.80),D(35,19,24.01)]},{p:[D(31,43,8.58),D(35,19,38.48)]},
+ {p:[D(31,39,0.57),D(35,17,51.48)]},{p:[D(31,34,7.57),D(35,11,43.48)]},{p:[D(31,31,4.56),D(35,12,25.48)]},
+ {p:[D(31,25,16.56),D(35,11,39.49)]},{p:[D(31,20,43.55),D(35,4,11.48)]},{p:[D(31,22,1.55),D(34,58,8.47)]},
+ {p:[D(31,20,29.55),D(34,54,28.47)]},{p:[D(31,21,19.55),D(34,53,2.46)]},{p:[D(31,25,30.62),D(34,52,28.80)]},
+ {p:[D(31,29,40.30),D(34,55,14.45)]}]}},
+{code:"LLP18", name:"יריחו", cat:"X", alt:"מובילים אוויריים: GND – 6,000 ft · שאר כלי טיס מאוישים: GND – 4,000 ft", note:"סעיף 1(יט): האיסור אינו חל על כטב\"מ וטיסן, בתנאי שתואמה הפעילות מול הגורם הצבאי הרלוונטי לפי פרק א'-11(3)(ב)(2)(ה). ללא תיאום — האיסור בתוקף.", g:{k:"poly", pts:[
+ [D(31,54,30.82),D(35,27,38.21)],[D(31,53,12.77),D(35,27,53.32)],[D(31,52,27.45),D(35,30,19.34)],[D(31,49,43.80),D(35,30,44.52)],
+ [D(31,48,8.13),D(35,29,21.44)],[D(31,48,3.10),D(35,26,5.06)],[D(31,48,50.93),D(35,24,59.60)],[D(31,54,25.78),D(35,24,54.56)]]}},
+{code:"LLP19", name:"רצועת עזה", cat:"P", alt:"בכל גובה (GND – UNL)", note:"הפוליגון כולל את רצועת ה-6 ק\"מ מגבול הרצועה לפי סעיף 4(ב)(1). חל על כטב\"מ וטיסן ללא החרגה.", g:{k:"poly", pts:[
+ [D(31,38,58),D(34,29,17)],[D(31,38,36.08),D(34,31,15.97)],[D(31,34,21),D(34,37,9)],[D(31,33,5),D(34,37,40)],
+ [D(31,31,40.49),D(34,37,44.18)],[D(31,30,37.47),D(34,37,21.99)],[D(31,29,28.84),D(34,36,18.49)],[D(31,27,34.57),D(34,33,47.72)],
+ [D(31,27,4.72),D(34,32,32.76)],[D(31,26,2.04),D(34,31,9.40)],[D(31,24,27.15),D(34,29,33.88)],[D(31,21,44.28),D(34,26,9.66)],
+ [D(31,20,58.36),D(34,25,48.33)],[D(31,18,17),D(34,26,13)],[D(31,15,55),D(34,25,19)],[D(31,14,23.21),D(34,23,21.89)],
+ [D(31,11,49.92),D(34,19,49.95)],[D(31,10,23.17),D(34,17,4.22)],[D(31,11,24.99),D(34,16,41.07)],[D(31,17,46.90),D(34,14,7.81)],
+ [D(31,19,21.87),D(34,13,4.59)],[D(31,20,32),D(34,11,55)],[D(31,21,14),D(34,11,38)],[D(31,22,17),D(34,11,25)],
+ [D(31,27,33.30),D(34,17,14.71)],[D(31,32,10.40),D(34,21,48)],[D(31,36,41),D(34,25,42)],[D(31,38,34),D(34,27,35)]]}},
+{code:"LLP21", name:"לשם", cat:"P", alt:"GND – 2,000 ft AMSL", g:{k:"poly", pts:[
+ [D(32,50,36.16),D(35,18,0.81)],[D(32,50,47.69),D(35,16,19.52)],[D(32,51,28.76),D(35,16,5.91)],
+ [D(32,51,28.91),D(35,17,5.27)],[D(32,51,11.56),D(35,18,3.43)]]}},
+{code:"LLP22", name:"מפעל יצחק", cat:"P", alt:"GND – 2,000 ft AMSL", note:"תיאום: קב\"ט המתקן 054-9992044 / 052-3678155", g:{k:"circle", c:[D(32,41,58.97),D(35,20,7.05)], r:500}},
+{code:"LLP23", name:"הר קרן", cat:"P", alt:"GND – 3,000 ft AMSL", g:{k:"circle", c:[D(30,59,36.98),D(34,29,30.16)], r:500}},
+{code:"LLP24", name:"שורק", cat:"P", alt:"MSL – 4,000 ft AMSL", g:{k:"circle", c:[D(31,53,56.94),D(34,42,9)], r:500}},
+{code:"LLP25", name:"אסדת תמר / ים טטיס", cat:"P", alt:"MSL – 3,000 ft AMSL", g:{k:"circle", c:[D(31,44,14),D(34,18,12)], r:6500}},
+{code:"LLP26", name:"אסדת גט\"ן", cat:"P", alt:"MSL – 3,000 ft AMSL", g:{k:"circle", c:[D(32,27,12),D(34,46,15)], r:3700}},
+{code:"LLP27", name:"גלילות", cat:"P", alt:"MSL – 800 ft AMSL", g:{k:"circle", c:[D(32,8,38),D(34,48,23)], r:350}},
+{code:"LLP28", name:"אסדת לוויתן", cat:"P", alt:"MSL – 3,000 ft AMSL", g:{k:"circle", c:[D(32,36,1),D(34,48,19)], r:3*NM}},
+{code:"LLP30", name:"תחנת אשדוד", cat:"P", alt:"GND – 1,700 ft AMSL", g:{k:"circle", c:[D(31,51,1),D(34,40,49)], r:700}},
+{code:"LLP39", name:"אשלים", cat:"P", alt:"GND – 4,000 ft AMSL", g:{k:"poly", pts:[
+ [D(30,58,34.20),D(34,44,20.40)],[D(30,57,54.60),D(34,44,59.40)],[D(30,57,40.80),D(34,44,59.40)],[D(30,57,18.00),D(34,44,31.20)],
+ [D(30,56,57.00),D(34,43,3.00)],[D(30,57,3.00),D(34,42,50.40)],[D(30,57,40.20),D(34,42,36.00)],[D(30,58,12.00),D(34,43,24.60)]]}},
+{code:"LLP41", name:"פלוגות", cat:"P", alt:"GND – 1,100 ft AMSL", g:{k:"poly", pts:[
+ [D(31,37,45.25),D(34,45,27.49)],[D(31,38,32.21),D(34,45,30.20)],[D(31,38,49.52),D(34,44,24.08)],[D(31,38,13.77),D(34,44,16.36)]]}},
+{code:"LLP42", name:"בלון צופר", cat:"P", alt:"GND – 2,000 ft AMSL", g:{k:"circle", c:[D(30,33,6),D(35,11,55)], r:1000}},
+{code:"LLP43", name:"בלון אבשלום", cat:"P", alt:"GND – 2,500 ft AMSL", g:{k:"circle", c:[D(31,12,9),D(34,17,7)], r:1000}},
+{code:"LLP44", name:"תחנת אתגל", cat:"P", alt:"GND – 1,500 ft AMSL", g:{k:"circle", c:[D(31,50,16.80),D(34,39,32.76)], r:100}},
+ 
+/* -------- LLR — אזורים מוגבלים -------- */
+{code:"LLR20", name:"גליל הצנחה הבונים", cat:"R", alt:"GND/SFC – 12,000 ft AMSL", note:"בסופ\"ש וחגים תיתכן פעילות עד 16,000 ft. תיאום (לפי הסדר): עינב ליברמן, סמנכ\"ל תפעול 054-2518700 (einavlib@gmail.com) · אור אלרון, מפעיל מנחת 052-5365141 (12orelron@gmail.com) · דן מוקדי, מנכ\"ל 054-2519100 (danm@parardive.co.il)", g:{k:"segs", segs:[
+ {p:[D(32,39,57),D(34,57,31)]},{p:[D(32,37,53),D(34,57,22)]},
+ {arc:{c:[D(32,39,0),D(34,55,58)], r:3000, to:[D(32,39,57),D(34,57,31)], dir:"cw"}}]}},
+{code:"LLR27", name:"אילת", cat:"R", alt:"GND/SFC – 23,000 ft AMSL", note:"מופעל באמצעות NOTAM בלבד. הצלע המערבית לאורך גבול מצרים (משורטטת בקירוב).", g:{k:"poly", pts:[
+ [D(29,39,56),D(34,52,2)],[D(29,40,17),D(34,56,0)],[D(29,35,22),D(34,58,49)],[D(29,32,9),D(34,57,23)],[D(29,29,31),D(34,54,15)]]}},
+{code:"LLR30", name:"שטח אש 30", cat:"R", alt:"בכל גובה (GND – UNL)", g:{k:"poly", pts:[
+ [D(32,40,54.70),D(34,52,5)],[D(32,42,56),D(34,52,59)],[D(32,42,55),D(34,56,35)],[D(32,40,54.70),D(34,55,39)]]}},
+{code:"LLR83", name:"שט\"ן 83", cat:"R", alt:"GND – 11,000 ft AMSL", note:"בקשת תכנית טיסה — 7 ימי עבודה מראש לחה\"א.", g:{k:"poly", pts:[
+ [D(32,33,2),D(35,20,54)],[D(32,30,43),D(35,28,18)],[D(32,5,2),D(35,26,42)],[D(32,11,18),D(35,13,45)],
+ [D(32,15,40),D(35,2,56)],[D(32,17,26),D(35,3,24)]]}},
+{code:"LLR90", name:"מטווח 90", cat:"R", alt:"GND – 11,000 ft AMSL", note:"בקשת תכנית טיסה — 7 ימי עבודה מראש לחה\"א.", g:{k:"poly", pts:[
+ [D(30,55,57),D(35,14,25)],[D(30,41,22),D(35,7,12)],[D(30,49,15),D(34,55,11)],[D(30,55,26),D(35,1,20)],[D(30,56,6),D(35,9,43)]]}},
+{code:"LLR100", name:"שטח אש 100", cat:"R", alt:"בכל גובה (GND – UNL)", g:{k:"poly", pts:[
+ [D(32,37,7.279),D(35,1,56.666)],[D(32,38,1.840),D(34,59,12.892)],[D(32,38,52.326),D(35,0,7.385)],[D(32,37,54.283),D(35,0,32.382)],
+ [D(32,39,45.115),D(35,0,42.529)],[D(32,41,7.499),D(34,58,3.363)],[D(32,41,25.094),D(34,59,59.042)],[D(32,41,48.456),D(35,0,55.754)],
+ [D(32,40,40.292),D(35,1,33.556)],[D(32,40,33.479),D(35,3,21.261)],[D(32,38,25.044),D(35,3,33.884)]]}},
+{code:"LLR801", name:"מטווח 80 — צפון מרכזי", cat:"R", alt:"GND – 11,000 ft AMSL", note:"בקשת תכנית טיסה — 7 ימי עבודה מראש לחה\"א.", g:{k:"poly", pts:[
+ [D(30,33,42.60),D(34,53,12.32)],[D(30,29,1.60),D(34,42,2.29)],[D(30,24,25.59),D(34,36,31.27)],[D(30,23,21.59),D(34,38,18.28)],
+ [D(30,18,22.59),D(34,40,11.28)],[D(30,20,33.59),D(34,57,2.33)]]}},
+{code:"LLR802", name:"מטווח 80 — צפון מזרחי", cat:"R", alt:"GND – 11,000 ft AMSL", note:"בקשת תכנית טיסה — 7 ימי עבודה מראש לחה\"א.", g:{k:"poly", pts:[
+ [D(30,20,33.59),D(34,57,2.33)],[D(30,29,41.60),D(34,56,0.33)],[D(30,26,47.60),D(35,3,0.35)],[D(30,21,17.59),D(35,3,0.35)]]}},
+{code:"LLR803", name:"מטווח 80 — צפון מערבי", cat:"R", alt:"GND – 11,000 ft AMSL", note:"בקשת תכנית טיסה — 7 ימי עבודה מראש לחה\"א.", g:{k:"poly", pts:[
+ [D(30,33,42.60),D(34,53,12.32)],[D(30,29,1.60),D(34,42,2.29)],[D(30,33,42.61),D(34,39,30.28)],
+ [D(30,31,43.60),D(34,35,9.27)],[D(30,25,20.59),D(34,37,37.27)]]}},
+{code:"LLR900", name:"שטח אש 900", cat:"R", alt:"בכל גובה (GND – UNL)", g:{k:"poly", pts:[
+ [D(32,24,20.385),D(35,26,25.565)],[D(32,24,44.942),D(35,27,12.927)],[D(32,21,43.206),D(35,30,31.494)],[D(32,19,48.556),D(35,30,27.146)],
+ [D(32,19,57.323),D(35,32,7.940)],[D(32,12,33.380),D(35,32,47.679)],[D(32,9,39.719),D(35,30,35.865)],[D(32,4,51.363),D(35,29,25.272)],
+ [D(32,2,34.315),D(35,25,47.826)],[D(31,57,0.0),D(35,27,1.831)],[D(31,57,31.171),D(35,23,50.759)],[D(31,56,48.457),D(35,23,27.307)],
+ [D(31,55,22.611),D(35,24,54.714)],[D(31,54,59.712),D(35,22,13.423)],[D(31,56,16.389),D(35,20,35.301)],[D(31,57,37.991),D(35,21,26.269)],
+ [D(31,58,52.971),D(35,20,52.210)],[D(32,0,11.646),D(35,22,16.426)],[D(32,9,12.258),D(35,21,53.149)],[D(32,10,1.688),D(35,22,18.092)],
+ [D(32,9,35.693),D(35,23,2.840)],[D(32,12,20.136),D(35,23,29.398)],[D(32,14,23.715),D(35,28,6.466)],[D(32,15,58.029),D(35,27,26.923)],
+ [D(32,17,37.376),D(35,24,9.413)],[D(32,19,3.507),D(35,23,28.831)],[D(32,21,3.572),D(35,24,42.266)],[D(32,21,31.058),D(35,23,51.007)],
+ [D(32,22,35.510),D(35,24,29.886)],[D(32,23,30.860),D(35,23,12.169)],[D(32,25,3.243),D(35,24,58.489)]]}},
+ 
+/* -------- LLD — אזורים מסוכנים -------- */
+{code:"LLD28", name:"גליל הצנחה חוף התמרים", cat:"D", alt:"GND/SFC – 14,000 ft AMSL", note:"חצי מעגל צפוני, קטום במזרח לאורך כביש 4 ומסילת הרכבת (שרטוט מקורב).", g:{k:"segs", segs:[
+ {arcFrom:{c:[D(32,54,47),D(35,4,51)], r:3000, fromBrg:90, toBrg:270, dir:"ccw"}}]}},
+{code:"LLD29", name:"גליל הצנחה באר שבע", cat:"D", alt:"5,000 – 11,000 ft AMSL", g:{k:"circle", c:[D(31,17,13),D(34,43,22)], r:5000}},
+{code:"LLD30", name:"טורבינות עמק הבכא", cat:"D", alt:"GND – 4,500 ft AMSL", g:{k:"poly", pts:[
+ [D(33,11,14.40),D(35,47,26.40)],[D(33,10,40.80),D(35,49,53.40)],[D(33,10,16.80),D(35,50,10.80)],[D(33,9,48.00),D(35,50,9.60)],
+ [D(33,8,45.60),D(35,49,43.80)],[D(33,8,49.20),D(35,49,0.60)],[D(33,8,19.20),D(35,48,46.80)],[D(33,8,13.80),D(35,48,10.20)],
+ [D(33,8,40.80),D(35,47,30.00)],[D(33,8,38.40),D(35,46,45.00)],[D(33,8,46.20),D(35,46,0.60)],[D(33,10,18.60),D(35,45,45.00)],
+ [D(33,10,37.20),D(35,46,12.60)],[D(33,10,38.40),D(35,46,42.00)],[D(33,11,2.40),D(35,47,9.40)]]}},
+{code:"LLD31", name:"רמת חובב", cat:"D", alt:"GND – 1,900 ft AMSL", note:"תיאום: יוסי מעוז (קב\"ט) 054-2479323", g:{k:"poly", pts:[
+ [D(31,8,30.12),D(34,47,32.80)],[D(31,8,31.01),D(34,46,44.97)],[D(31,7,22.94),D(34,46,51.99)],[D(31,7,15.46),D(34,47,51.72)],
+ [D(31,7,43.14),D(34,47,53.28)],[D(31,8,8.48),D(34,47,52.66)],[D(31,8,11.40),D(34,47,33.13)]]}},
+{code:"LLD34", name:"מנחתי טיסנים אלישמע", cat:"D", alt:"GND – 600 ft AMSL", g:{k:"circle", c:[D(32,8,39),D(34,55,21)], r:1300}},
+{code:"LLD35", name:"אירובוטיקס קריית גת", cat:"D", alt:"GND – 900 ft AMSL", note:"תיאום: חמ\"ל אינטל 08-6121111", g:{k:"circle", c:[D(31,35,47),D(34,47,22)], r:1000}},
+{code:"LLD36", name:"מחצבת חתרורים", cat:"D", alt:"GND – 1,900 ft AMSL", g:{k:"circle", c:[D(31,9,18),D(35,16,37)], r:2000}},
+{code:"LLD37", name:"גליל הצנחה מחניים — מערב", cat:"D", alt:"GND – 11,000 ft AMSL", note:"נתחם מערבית למסלול 33/15.", g:{k:"segs", segs:[
+ {p:[D(32,57,43),D(35,35,8)]},
+ {arc:{c:[D(32,58,58),D(35,34,32)], r:2500, to:[D(33,0,2),D(35,33,33)], dir:"cw"}}]}},
+{code:"LLD38", name:"גליל הצנחה מחניים — מזרח", cat:"D", alt:"GND – 11,000 ft AMSL", note:"נתחם מזרחית למסלול 33/15.", g:{k:"segs", segs:[
+ {p:[D(32,57,43),D(35,35,8)]},
+ {arc:{c:[D(32,58,58),D(35,34,32)], r:2500, to:[D(33,0,2),D(35,33,33)], dir:"ccw"}}]}},
+{code:"LLD39", name:"הטסת רחפנים גלילות", cat:"D", alt:"GND – 300 ft AMSL", note:"תיאום: חמ\"ל 9950 — 052-3792937", g:{k:"circle", c:[D(32,9,7),D(34,49,3)], r:900}},
+{code:"LLD40", name:"הטסת רחפנים גלילות דרום", cat:"D", alt:"GND – 300 ft AMSL", note:"תיאום: חמ\"ל 9950 — 052-3792937", g:{k:"poly", pts:[
+ [D(32,7,47.50),D(34,50,17.60)],[D(32,7,49.20),D(34,50,29.30)],[D(32,7,30.40),D(34,51,11.00)],[D(32,7,24.20),D(34,51,13.70)],
+ [D(32,6,26.70),D(34,50,55.90)],[D(32,6,24.40),D(34,50,51.00)],[D(32,7,17.30),D(34,50,37.30)],[D(32,7,39.00),D(34,50,18.90)],
+ [D(32,7,43.10),D(34,50,1.00)],[D(32,7,47.70),D(34,50,1.20)]]}},
+{code:"LLD41", name:"דליה", cat:"D", alt:"2,000 – 8,000 ft AMSL", note:"תיאום: מגדל רמת דוד (טלפון בפרק א'-07).", g:{k:"poly", pts:[
+ [D(32,37,14),D(35,5,17)],[D(32,36,49),D(35,5,5)],[D(32,36,8),D(35,4,10)],[D(32,34,21),D(35,4,11)],
+ [D(32,33,15),D(35,8,32)],[D(32,35,2),D(35,9,11)],[D(32,36,1),D(35,5,34)],[D(32,37,13),D(35,5,31)]]}},
+{code:"LLD42", name:"הטסת רחפנים כי\"ל ים המלח", cat:"D", alt:"GND – ‎(-530)‎ ft (מתחת לפני הים)", note:"תיאום: שי חן 054-7302309 / 08-9977741", g:{k:"poly", pts:[
+ [D(31,6,11.45),D(35,23,13.16)],[D(31,3,58.12),D(35,23,29.01)],[D(31,2,43.81),D(35,21,46.18)],[D(31,1,59.93),D(35,21,8.61)],
+ [D(31,1,20.97),D(35,21,8.73)],[D(31,0,7.05),D(35,20,40.07)],[D(30,59,47.90),D(35,20,55.43)],[D(30,59,40.27),D(35,21,16.02)],
+ [D(30,58,4.86),D(35,21,21.39)],[D(30,57,46.95),D(35,21,18.14)],[D(30,57,38.18),D(35,21,23.61)],[D(30,57,26.94),D(35,21,50.68)],
+ [D(30,57,44.17),D(35,24,54.79)],[D(30,57,59.79),D(35,25,13.90)],[D(31,2,41.02),D(35,25,39.14)],[D(31,4,40.95),D(35,26,56.15)],
+ [D(31,5,25.59),D(35,26,46.69)],[D(31,6,41.82),D(35,24,30.42)],[D(31,6,46.88),D(35,23,34.62)],[D(31,6,37.14),D(35,23,16.41)]]}},
+{code:"LLD43", name:"הטסת רחפנים עתלית", cat:"D", alt:"GND – 2,000 ft AMSL", g:{k:"poly", pts:[
+ [D(32,42,43.20),D(34,56,25.80)],[D(32,42,3.00),D(34,56,42.00)],[D(32,40,54.60),D(34,56,39.60)],
+ [D(32,40,55.20),D(34,52,5.40)],[D(32,42,48.00),D(34,52,57.00)]]}},
+{code:"LLD44", name:"משמר העמק", cat:"D", alt:"GND – 2,000 ft AMSL", note:"תיאום: מגדל רמת דוד.", g:{k:"poly", pts:[
+ [D(32,39,10),D(35,10,40)],[D(32,39,36),D(35,9,10)],[D(32,39,23),D(35,7,57)],[D(32,37,11),D(35,5,40)],
+ [D(32,36,3),D(35,5,41)],[D(32,34,56),D(35,10,4)],[D(32,35,52),D(35,10,37)]]}},
+{code:"LLD47", name:"מנחת טיסנים נגבה", cat:"D", alt:"MSL – 500 ft AMSL", g:{k:"poly", pts:[
+ [D(31,41,24.60),D(34,41,51.00)],[D(31,40,49.20),D(34,43,36.60)],[D(31,39,55.80),D(34,43,11.40)],[D(31,40,31.80),D(34,41,25.20)]]}},
+{code:"LLD48", name:"רמת הכובש", cat:"D", alt:"GND – 700 ft AMSL (כטב\"מ עד 50 מ' מעפ\"ש)", note:"תיאום: חברת קנדו — 054-2021535 / 052-6909123", g:{k:"poly", pts:[
+ [D(32,12,37.70),D(34,56,44.40)],[D(32,13,25.20),D(34,56,55.50)],[D(32,13,36.80),D(34,56,20.70)],
+ [D(32,13,39.70),D(34,55,40.60)],[D(32,12,50.10),D(34,55,29.80)],[D(32,12,39.10),D(34,55,55.10)]]}},
+{code:"LLD49", name:"גזר", cat:"D", alt:"GND – 800 ft AMSL (כטב\"מ עד 20 מ' מעפ\"ש בנ.צ המרכזי)", note:"תיאום: חברת פרספטו — 050-7058511 / 050-5805050", g:{k:"circle", c:[D(31,52,28.20),D(34,55,16.10)], r:300}},
+{code:"LLD50", name:"אזור תעשייה קיסריה", cat:"D", alt:"GND – 700 ft · בין 18:00 ל-06:00 בלבד", note:"תיאום: קנדו, בועז צרפתי 054-2021535", g:{k:"poly", pts:[
+ [D(32,28,19),D(34,55,56)],[D(32,29,26),D(34,56,10)],[D(32,29,30),D(34,57,11)],[D(32,29,5),D(34,57,15)],
+ [D(32,28,45),D(34,57,14)],[D(32,28,9),D(34,56,46)]]}},
+{code:"LLD51", name:"ציפורי", cat:"D", alt:"4,500 – 7,000 ft AMSL", note:"תיאום: מגדל רמת דוד.", g:{k:"poly", pts:[
+ [D(32,50,21.61),D(35,13,44.97)],[D(32,50,20.30),D(35,23,57.19)],[D(32,48,42.17),D(35,23,55.48)],
+ [D(32,43,14.53),D(35,17,39.88)],[D(32,46,7.81),D(35,13,55.93)]]}},
+{code:"LLD52", name:"אזור 410", cat:"D", alt:"3,500 – 8,000 ft AMSL", note:"תיאום: מגדל רמת דוד.", g:{k:"poly", pts:[
+ [D(32,38,30),D(35,1,54)],[D(32,38,30),D(35,3,12.93)],[D(32,34,24),D(35,4,0)],[D(32,34,24),D(35,1,54)]]}},
+ 
+/* -------- נספח ד' — בלונים מעוגנים (מכשולים קבועים) -------- */
+{code:"LLP3000", name:"בלון מעוגן — מוצב מפגש", cat:"O", alt:"עד 2,800 ft", g:{k:"circle", c:[D(30,58,38),D(34,21,45)], r:0.54*NM}},
+{code:"LLP3001", name:"בלון מעוגן — חלמיש", cat:"O", alt:"עד 3,400 ft", g:{k:"circle", c:[D(32,0,42),D(35,8,0)], r:0.54*NM}},
+{code:"LLP3002", name:"בלון מעוגן — רצועת עזה", cat:"O", alt:"עד 2,700 ft", g:{k:"circle", c:[D(31,33,32),D(34,32,47)], r:0.54*NM}},
+{code:"LLP3003", name:"בלון מעוגן — רצועת עזה", cat:"O", alt:"עד 2,400 ft", g:{k:"circle", c:[D(31,27,2),D(34,28,15)], r:0.54*NM}},
+{code:"LLP3004", name:"בלון מעוגן — רצועת עזה", cat:"O", alt:"עד 2,800 ft", g:{k:"circle", c:[D(31,12,30),D(34,16,53)], r:0.54*NM}},
+{code:"LLP3005", name:"בלון מעוגן — רצועת עזה", cat:"O", alt:"עד 2,800 ft", g:{k:"circle", c:[D(31,14,26),D(34,20,9)], r:0.54*NM}},
+{code:"LLP3006", name:"בלון מעוגן — רצועת עזה", cat:"O", alt:"עד 2,400 ft", g:{k:"circle", c:[D(31,28,44),D(34,30,10)], r:0.54*NM}},
+{code:"LLP3007", name:"בלון מעוגן — רצועת עזה", cat:"O", alt:"עד 2,500 ft", g:{k:"circle", c:[D(31,22,2),D(34,23,29)], r:0.54*NM}}
+];
+ 
+/* -------- נספח ג' — LLU (כטב"מ/טיסן < 25 ק"ג VLOS, תעופה ספורטיבית ומסוקים מחוץ לנתיבים) -------- */
+const LLU_DEFAULT_ALT = 'GND – 1,000 ft AGL';
+const LLU_IPS = 'נדרש אישור בכתב משירות בתי הסוהר: מטה ארצי 074-7833333 · מחוז צפון 074-7834080 · מחוז מרכז 074-7836000 · מחוז דרום 074-7839000. אזור שאינו באחריות שב\"ס (משטרה, מג\"ב וכד\') — תיאום מול הגורם המצוין תחת האזור.';
+const LLU=[ // [code, name, radius m, latD,latM,latS, lngD,lngM,lngS, altOverride?, note?]
+["LLU01","איילון-מעשיהו",1000, 31,56,6, 34,52,50],
+["LLU02","אשל",1500, 31,12,24, 34,48,37],
+["LLU03","אשקלון",1000, 31,39,56, 34,33,43],
+["LLU04","דמון",1500, 32,43,58, 35,1,19],
+["LLU05","השרון",1000, 32,14,27, 34,53,3],
+["LLU06","חיפה",500, 32,49,30, 34,59,25],
+["LLU07","ירושלים",1000, 31,46,53, 35,13,24],
+["LLU08","ירושלים — משטרת גילה",500, 31,43,54, 35,11,49],
+["LLU09","כרמל",1000, 32,42,48, 34,58,5],
+["LLU10","מגידו",1500, 32,34,14, 35,11,21],
+["LLU11","גנות",2000, 30,43,43, 34,46,16],
+["LLU12","נתניה",500, 32,19,48, 34,55,23],
+["LLU13","עופר",1500, 31,52,18, 35,10,46],
+["LLU14","פתח-תקווה",1000, 32,5,32, 34,53,18],
+["LLU15","צלמון",1500, 32,52,16, 35,26,49],
+["LLU16","קישון",1500, 32,43,39, 35,5,14],
+["LLU17","קציעות",2000, 30,53,12, 34,27,8],
+["LLU18","שיטה-גלבוע",1500, 32,32,48, 35,25,0],
+["LLU19","שיקמה",500, 31,39,49, 34,35,42],
+["LLU20","תל אביב",1000, 32,6,21, 34,48,9],
+["LLU21","גלילות",500, 32,8,38, 34,48,18, "GND – 3,000 ft AMSL", "תיאום: 03-5038875"],
+["LLU23","נגבה",300, 31,38,23, 34,44,24],
+["LLU24","מפקדת מג\"ב ירושלים",100, 31,47,39, 35,13,41],
+["LLU25","מרחב אילת",100, 29,33,28, 34,57,19],
+["LLU26","מרחב דוד",100, 31,46,31, 35,13,42],
+["LLU27","מחוז מרכז",150, 31,55,48, 34,52,9],
+["LLU28","תחנת ראשון לציון",100, 31,58,29, 34,47,50],
+["LLU29","מרחב נתב\"ג",100, 31,59,38, 34,53,48],
+["LLU30","נקודת גשר אלנבי",200, 31,52,10, 35,31,54],
+["LLU31","מחוז דרום",150, 31,14,45, 34,46,54],
+["LLU32","מחוז תל אביב",100, 32,3,13, 34,45,44],
+["LLU33","מחוז צפון",100, 32,42,37, 35,18,12],
+["LLU34","מחוז ש\"י",150, 31,47,53, 35,17,31],
+["LLU35","מחוז ירושלים",100, 31,46,54, 35,13,19],
+["LLU36","אגף התנועה",200, 32,0,2, 34,49,24],
+["LLU37","מחוז חוף",150, 32,48,18, 35,0,37],
+["LLU38","להב 433",150, 31,58,2, 34,53,56],
+["LLU39","מטה ארצי ירושלים",200, 31,47,52, 35,13,59],
+["LLU40","המכללה הלאומית לשוטרים",500, 31,44,14, 34,56,58],
+["LLU41","נקודת נמל תעופה אילת רמון",100, 29,42,53, 35,0,7],
+["LLU42","מטה מג\"ב לוד",150, 31,56,56, 34,53,52],
+["LLU43","בה\"ד מג\"ב בית חורון",250, 31,52,25, 35,8,4],
+["LLU44","קריית הממשלה",500, 31,46,48, 35,12,2],
+["LLU45","מעון בלפור",500, 31,46,25, 35,13,2],
+["LLU46","אזור סחר תל אביב",200, 32,4,22, 34,46,46],
+["LLU47","אזור סחר ראש העין",200, 32,5,40, 34,58,28],
+["LLU48","אזור תעשייה מודיעין",200, 31,54,23, 35,0,22],
+["LLU49","עיריית רעננה",200, 32,11,7, 34,53,5],
+["LLU50","אזור סחר תל אביב",200, 32,7,41, 34,47,56],
+["LLU51","מחנה זיקים",300, 31,35,46, 34,30,49],
+["LLU52","אשל הנשיא",300, 31,19,57, 34,41,40],
+["LLU53","השירות המטאורולוגי הישראלי",300, 32,0,22, 34,48,52],
+["LLU54","מחנה בית ליד",300, 32,19,50, 34,55,19],
+["LLU56","מתחם אשמורת",1000, 32,19,22, 34,54,10],
+["LLU57","אילת",1000, 29,34,10, 34,57,4],
+["LLU58","המכללה הלאומית למקצועות הכליאה",1000, 31,45,42, 34,47,38],
+["LLU59","מישר",500, 32,59,27, 35,31,2, "GND – 300 ft AGL", "תיאום: 04-6975253"],
+["LLU60","ירקון",500, 31,18,39, 34,32,37, "GND – 300 ft AGL", "תיאום: 073-3142501 / 052-9289403"],
+["LLU61","צניפים",500, 31,45,30, 35,9,13, "GND – 300 ft AGL", "תיאום: חמ\"ל 052-3410054 / 02-5917531"],
+["LLU62","ארסוף",500, 32,8,42, 34,49,14, "GND – 300 ft AGL", "תיאום: 03-5487211"],
+["LLU63","הרצים",500, 32,8,36, 34,48,48, "GND – 300 ft AGL", "תיאום: 052-9265944"],
+["LLU64","ברקאי",500, 32,28,10, 35,1,25, "GND – 300 ft AGL", "תיאום: 052-9265944"],
+["LLU65","רמות",500, 31,16,48, 34,49,11, "GND – 300 ft AGL", "תיאום: 052-9265944"],
+["LLU66","מפרסית",500, 30,54,20, 34,31,24, "GND – 300 ft AGL", "תיאום: 052-9265944"],
+["LLU67","שישים",500, 32,3,53, 34,48,5, "GND – 300 ft AGL", "תיאום: 052-9265944"],
+["LLU68","צפריר",500, 32,5,2, 34,55,24, "GND – 300 ft AGL", "תיאום: 052-9265944"],
+["LLU69","מעריב",500, 32,4,1, 34,47,5, "GND – 300 ft AGL", "תיאום: 052-9265944"],
+["LLU70","לינקולן",500, 32,4,4, 34,46,51, "GND – 300 ft AGL", "תיאום: 052-9265944"],
+["LLU71","סרדין",500, 32,7,44, 34,47,57, "GND – 300 ft AGL", "תיאום: 052-9265944"],
+["LLU72","תמנע",500, 31,37,57, 34,45,4, "GND – 300 ft AGL", "תיאום: 052-9265944"],
+["LLU73","תחנת אגירה כוכב הירדן",200, 32,35,53, 35,32,28, "GND – 1,000 ft AGL", "תיאום: ביטחון תחנה 04-9096525 (24/7), יריב שלם 052-5222789"]
+];
+LLU.forEach(u=>{
+  AREAS.push({code:u[0], name:u[1], cat:"U", alt:(u[9]||LLU_DEFAULT_ALT), note:u[10]||LLU_IPS, g:{k:"circle", c:[D(u[3],u[4],u[5]),D(u[6],u[7],u[8])], r:u[2]}});
+});
+/* LLU22 ירוחם — שני מרחבים (פוליגונים) */
+AREAS.push({code:"LLU22", name:"ירוחם — מרחב 1", cat:"U", alt:LLU_DEFAULT_ALT, note:LLU_IPS, g:{k:"poly", pts:[
+ [D(30,58,30),D(34,55,51)],[D(30,58,23),D(34,56,44)],[D(30,58,3),D(34,57,8)],[D(30,57,9),D(34,56,49)],
+ [D(30,56,36),D(34,56,24)],[D(30,56,59),D(34,54,56)]]}});
+AREAS.push({code:"LLU22b", dispCode:"LLU22", name:"ירוחם — מרחב 2", cat:"U", alt:LLU_DEFAULT_ALT, note:LLU_IPS, g:{k:"poly", pts:[
+ [D(30,58,30),D(34,55,51)],[D(30,56,59),D(34,54,56)],[D(30,57,16),D(34,53,46)],[D(30,58,43),D(34,54,25)]]}});
+AREAS.push({code:"LLU55", name:"דור", cat:"U", alt:LLU_DEFAULT_ALT, note:"תיאום: נציגי חברת שברון — itzik.sardinas@chevron.com · tal.lapidot@chevron.com", g:{k:"poly", pts:[
+ [D(32,35,45),D(34,55,36)],[D(32,36,17),D(34,55,36)],[D(32,36,17),D(34,55,49)],[D(32,35,45),D(34,55,49)]]}});
+ 
+/* -------- סעיף 4 — מגבלות קרבה לגבול (תוואי מקורב, חל גם על כטב"מ וטיסן) -------- */
+const BORDER_NOTE="תוואי הגבול משורטט בקירוב — להמחשה בלבד. המרחקים מתעדכנים תדיר ב-NOTAM בהתאם למצב הביטחוני. בקשות חריגה לכטב\"מ/טיסן: אישור מסנכרון חיל אוויר בלבד — sinhrun5@gmail.com (ללא צורך באישור רת\"א).";
+const EGY=[[31.216,34.267],[31.05,34.35],[30.885,34.415],[30.79,34.47],[30.55,34.53],[30.25,34.63],[29.97,34.73],[29.70,34.83],[29.49,34.904]];
+const LBN=[[33.089,35.103],[33.095,35.20],[33.09,35.31],[33.11,35.41],[33.10,35.50],[33.20,35.55],[33.275,35.57],[33.25,35.62]];
+const SYR=[[33.31,35.76],[33.20,35.79],[33.11,35.83],[32.95,35.87],[32.82,35.90],[32.75,35.86],[32.71,35.75],[32.686,35.66]];
+const JOR=[[32.68,35.64],[32.45,35.57],[32.10,35.55],[31.85,35.53],[31.60,35.50],[31.30,35.47],[30.95,35.40],[30.60,35.24],[30.20,35.15],[29.85,35.05],[29.55,34.99]];
+AREAS.push({code:"GVUL-EGY", dispCode:"סעיף 4(ב)(2)", name:"רצועת 3 ק\"מ מגבול מצרים — אסור לטוס", cat:"B", alt:"בכל גובה", note:BORDER_NOTE, g:{k:"strip", line:EGY, w:3000, side:"L"}});
+AREAS.push({code:"GVUL-LBN", dispCode:"סעיף 4(ב)(5)", name:"רצועת 3 ק\"מ מגבול לבנון — אסור לטוס", cat:"B", alt:"בכל גובה", note:BORDER_NOTE, g:{k:"strip", line:LBN, w:3000, side:"R"}});
+AREAS.push({code:"GVUL-SYR", dispCode:"סעיף 4(ב)(4)", name:"רצועת 6 ק\"מ מגבול סוריה — אסור לטוס", cat:"B", alt:"בכל גובה", note:BORDER_NOTE, g:{k:"strip", line:SYR, w:6000, side:"R"}});
+AREAS.push({code:"GVUL-JOR", dispCode:"סעיף 4(ב)(3)", name:"גבול ירדן — ניתן לטוס עד הגבול", cat:"B", alt:"ללא רצועת חיץ", lineColor:"#3fae6a", note:"ניתן לטוס עד גבול ירדן. "+BORDER_NOTE, g:{k:"line", pts:JOR}});
+/* הערה: סגירת 6 ק"מ מגבול עזה מכוסה ע"י הפוליגון LLP19. מגבלת קו הרוחב 33°00'N (סעיף 4א) אינה חלה על כטב"מ וטיסן — לכן אינה משורטטת. */
+ 
+/* הוספת שעות פעילות ואנשי קשר (מתא"מים) לכל שטחי האש */
+const LLR_FIRE='שטח אש פעיל: יום א׳/צאת חג 06:00 עד יום ה׳ 21:00 (ערב חג עד 14:00) או לפי NOTAM. בקשה לטיסה מחוץ לשעות המותרות: מתא"מ פיקוד דרום 08-9902926/8 (באר שבע ודרומה) · מתא"מ פיקוד מרכז 02-5305041/2 (באר שבע עד חדרה) · מתא"מ פיקוד צפון 073-3483007, pakmaz64@gmail.com (חדרה וצפונה, ללא רמה"ג) · מתא"מ 210 רמת הגולן 04-6977808.';
+AREAS.forEach(a=>{ if(a.cat==='R' && /^LLR(30|83|90|100|801|802|803|900)$/.test(a.code)){ a.note=(a.note?a.note+' ':'')+LLR_FIRE; } });
+ 
+/* -------- שדות תעופה ומנחתים — חיץ כ-2 ק"מ מכל נקודה במסלול --------
+   מיקומי קצות המסלולים מקורבים (אינם מתוך פרק א'-17). */
+const AP_NOTE="חיץ של כ-2 ק\"מ מכל נקודה במסלול (תיחום מקורב). הטסת כטב\"מ/רחפן/טיסן בקרבת שדה תעופה או מנחת אסורה ללא אישור, בהתאם לפרק א'-11 ולהנחיות רת\"א. מיקום המסלול משורטט בקירוב — לא לניווט.";
+const AIRPORTS=[
+ // [שם, ICAO, [[latA,lngA,latB,lngB], ...מסלולים]]
+ ["נתב\"ג — בן גוריון","LLBG",[[32.0060,34.8560,32.0175,34.8975],[32.0290,34.8660,32.0080,34.8900],[31.9985,34.8665,32.0225,34.8785]]],
+ ["הרצליה","LLHZ",[[32.1797,34.8290,32.1815,34.8415]]],
+ ["חיפה","LLHA",[[32.8155,35.0405,32.8040,35.0455]]],
+ ["רמון (אילת)","LLER",[[29.7085,35.0055,29.7395,35.0175]]],
+ ["ראש פינה — מחניים","LLIB",[[32.9850,35.5700,32.9765,35.5735]]],
+ ["באר שבע — תימן","LLBS",[[31.2900,34.7175,31.2835,34.7280]]],
+ ["מגידו","LLMG",[[32.5965,35.2195,32.5980,35.2390]]],
+ ["קרית שמונה","LLKS",[[33.2115,35.5975,33.2220,35.6015]]],
+ ["עין יהב","LLEY",[[30.6165,35.2030,30.6270,35.2040]]],
+ ["יטבתה","LLYO",[[29.8950,35.0640,29.9060,35.0670]]],
+ ["בר יהודה — מצדה","LLMZ",[[31.3335,35.3875,31.3235,35.3900]]],
+ ["עין שמר","LLES",[[32.4400,35.0010,32.4420,35.0140]]],
+ ["רמת דוד (צבאי)","LLRD",[[32.6635,35.1650,32.6665,35.1930]]],
+ ["תל נוף (צבאי)","LLEK",[[31.8500,34.8180,31.8280,34.8260]]],
+ ["חצור (צבאי)","LLHS",[[31.7540,34.7160,31.7710,34.7380]]],
+ ["חצרים (צבאי)","LLHB",[[31.2320,34.6500,31.2350,34.6760]]],
+ ["נבטים (צבאי)","LLNV",[[31.1920,35.0080,31.2250,35.0170]]],
+ ["עובדה (צבאי)","LLOV",[[29.9270,34.9330,29.9540,34.9390]]],
+ ["פלמחים (צבאי)","LLPL",[[31.8880,34.6880,31.9090,34.6940]]],
+ ["תנובות","מנחת",[[32.3045,34.9755,32.3050,34.9840]]],
+ ["הבונים","מנחת",[[32.6405,34.9300,32.6475,34.9345]]],
+ ["מצפה רמון","מנחת",[[30.6470,34.8000,30.6550,34.8090]]]
+];
+AIRPORTS.forEach((ap,ai)=>{
+  ap[2].forEach((rw,ri)=>{
+    AREAS.push({code:"AP-"+ai+"-"+ri, dispCode:ap[1], name:ap[0]+(ap[2].length>1?" — מסלול "+(ri+1):""), cat:"A",
+      alt:"חיץ קרקעי סביב המסלול — נדרש אישור להטסה", note:AP_NOTE,
+      g:{k:"capsule", a:[rw[0],rw[1]], b:[rw[2],rw[3]], r:2000}});
+  });
+});
+ 
+ 
+/* אזורים שקואורדינטות שלהם מפורסמות ב-ENR 5.1 בלבד (לא ניתנים לשרטוט מקובץ זה) */
+const NO_COORDS=[
+ ["LLR24","שטחי אש 24","בכל גובה"],["LLR36","שטחי אש 36","בכל גובה"],["LLR82","שטח אש 82","GND – 4,000 ft"],
+ ["LLR309","שטחי אש 309","GND – 5,000 ft"],["LLR500","שטחי אש 500","GND – 14,500 ft"],["LLR502","שטחי אש 502","GND – 14,500 ft"],
+ ["LLR504","שטחי אש 504","GND – 14,500 ft"],["LLR520","שטחי אש 520","GND – 14,500 ft"],["LLR589","שטחי אש 589","GND – 14,500 ft"],
+ ["LLR618","שטחי אש 618","GND – 14,500 ft"],["LLR804","מטווח 80 דרום מערב","בכל גובה"],["LLR805","מטווח 80 דרום מזרח","GND – 12,500 ft"],
+ ["LLR921","שטחי אש 921","GND – 5,000 ft"]
+];
+ 
+/* ===== map ===== */
+/* לחיצה על המפה רק פותחת כרטיס "מה יש כאן" — בלי מרכוז, בלי זום, בלי fitBounds ובלי autoPan.
+   גם זום בלחיצה כפולה כבוי כדי שאף לחיצה על המפה לא תשנה את הזום. */
+const map=L.map('map',{zoomControl:true, preferCanvas:true, doubleClickZoom:false}).setView([31.6,35.0],8);
+/* קנבס משותף אחד לכל השכבות (4 קנבסים בגודל מסך ב-DPR2 היו כבדים פי 5-10). סדר הציור מלמטה למעלה נקבע ב-restack():
+   נוט"ם משוער, אזורי פמ"ת, שמורות/גנים, נוט"ם מדויק. השכבות עצמן לא אינטראקטיביות — לחיצה וריחוף מטופלים במאזין אחד על המפה. */
+const SHARED=L.canvas({padding:0.1});
+const RO={renderer:SHARED, interactive:false};
+const osm=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19, attribution:'© OpenStreetMap'});
+const sat=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:19, attribution:'Esri World Imagery'});
+osm.addTo(map);
+ 
+const CATS={
+ P:{label:"אזורים אסורים (LLP)", color:"#e0452f", badge:"אסור"},
+ R:{label:"אזורים מוגבלים (LLR) — שטחי אש", color:"#e8930c", badge:"מוגבל"},
+ D:{label:"אזורים מסוכנים (LLD)", color:"#d8c024", badge:"מסוכן"},
+ U:{label:"סגירות כטב\"מ/טיסן (LLU)", color:"#8f6fe8", badge:"LLU"},
+ A:{label:"שדות תעופה — חיץ 2 ק\"מ מהמסלול", color:"#3e8fe0", badge:"שדה"},
+ B:{label:"מגבלות קרבה לגבול (סעיף 4)", color:"#cf5fa6", badge:"גבול"},
+ X:{label:"מוחרג לכטב\"מ בתיאום צבאי — יו\"ש ויריחו", color:"#5f8291", badge:"מוחרג"},
+ O:{label:"בלונים מעוגנים — מכשולים (נספח ד')", color:"#7d8da0", badge:"מכשול"},
+ NR:{label:"שמורות טבע — רט\"ג (נספח ה')", color:"#3ddc84", badge:"שמורת טבע"},
+ NP:{label:"גנים לאומיים — רט\"ג (נספח ה')", color:"#4da3ff", badge:"גן לאומי"},
+ /* ---- נוטמ (NOTAM) — שכבה חיה ---- */
+ NT_uas: {label:"נוט\"מ — כטב\"מ ורחפנים", color:"#ff2d2d", badge:"NOTAM"},
+ NT_pje: {label:"נוט\"מ — הצנחות",         color:"#b16dff", badge:"NOTAM"},
+ NT_frng:{label:"נוט\"מ — ירי ואימונים",   color:"#ff8a3b", badge:"NOTAM"},
+ NT_act: {label:"נוט\"מ — פעילות אווירית", color:"#ff6dc0", badge:"NOTAM"},
+ NT_obst:{label:"נוט\"מ — מנופים",         color:"#ffd24d", badge:"NOTAM"},
+ NT_ad:  {label:"נוט\"מ — שדות תעופה",     color:"#5b8cff", badge:"NOTAM"},
+ NT_other:{label:"נוט\"מ — כללי",          color:"#9aa8c0", badge:"NOTAM"}
+};
+const groups={}; Object.keys(CATS).forEach(k=>groups[k]=L.layerGroup());
+
+/* ===== "מה יש כאן": כרטיס מידע בנקודה שנלחצה =====
+   איזה אזורים מכילים את הנקודה נקבע לפי הגאומטריה של השכבות (בפיקסלים, על הטבעות המלאות ולא על הגרסה המפושטת שמצוירת) — לא לפי "השכבה העליונה". */
+const HERE=[];                 // אזורים קבועים (פמ"ת / רט"ג)
+const ntEntries=new Map();     // נוט"מים: id -> רשומה (גם כאלה שאינם מצוירים)
+const compactMQ=window.matchMedia('(max-width:760px), (max-height:520px)');
+const CAN_HOVER=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+const COARSE=window.matchMedia('(pointer:coarse)').matches;
+const ESC_MAP={'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'};
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>ESC_MAP[c]);   // כל מחרוזת נתונים שנכנסת ל-HTML עוברת כאן
+const pl=(n,one,many)=>n===1?one:n+' '+many;                          // ריבוי בעברית: "נוט"ם אחד" / "2 נוט"מים"
+/* קואורדינטות DMS בתוך טקסט עברי: מבודדות כ-LTR (אחרת הסימנים ° ' " N E מתחלפים בסדר) */
+const DMS_RE=/\d{1,3}° ?\d{1,2}['′] ?\d{1,2}(?:\.\d+)?["″]? ?[NSEW](?:[ ,]+\d{1,3}° ?\d{1,2}['′] ?\d{1,2}(?:\.\d+)?["″]? ?[NSEW])?/g;
+function txtHtml(s){
+  s=String(s==null?'':s); let out='',last=0,m; DMS_RE.lastIndex=0;
+  while((m=DMS_RE.exec(s))){ out+=esc(s.slice(last,m.index))+'<bdi dir="ltr">'+esc(m[0])+'</bdi>'; last=m.index+m[0].length; }
+  return out+esc(s.slice(last));
+}
+/* fetch של JSON עם timeout — תואם גם לדפדפנים בלי AbortSignal.timeout (iOS ≤15, WebView ישנים) */
+async function fetchJSON(url,opts,ms){
+  const c=new AbortController(), t=setTimeout(()=>c.abort(),ms);
+  try{ const r=await fetch(url,Object.assign({},opts,{signal:c.signal})); if(!r.ok) throw new Error('HTTP '+r.status); return await r.json(); }
+  finally{ clearTimeout(t); }
+}
+
+/* ---- כרטיס מידע (InfoCard): אלמנט DOM בתוך מכל המפה במקום חלון Leaflet ----
+   לא מזיז את המפה לעולם (אין autoPan/panBy/setView). ממוקם בעמודה הצדדית/הרצועה שאינה מכסה את הנקודה שנלחצה, המקרא והפקדים;
+   גלילה פנימית וכפתור ✕ של 40px. הנקודה מסומנת בסמן. */
+const InfoCard=(function(){
+  const M=10, R=24, MINH=96;     // שוליים · רדיוס חופשי סביב הנקודה · גובה מינימלי שימושי
+  let el=null, bodyEl=null, titleEl=null, headEl=null, mark=null, anchor=null, forbidFn=null, curKey='';
+  const markIcon=L.divIcon({className:'ic-mark', iconSize:[20,20], iconAnchor:[10,10], html:'<i></i>'});
+  const isOpen=()=>!!(el&&el.classList.contains('on'));
+  function ensure(){
+    if(el) return;
+    el=document.createElement('div'); el.className='infocard'; el.setAttribute('role','dialog'); el.setAttribute('aria-label','מה יש כאן');
+    el.innerHTML='<div class="ic-head"><span class="ic-title"></span><button type="button" class="ic-x" aria-label="סגור">✕</button></div><div class="ic-body"></div>';
+    headEl=el.firstChild; titleEl=el.querySelector('.ic-title'); bodyEl=el.querySelector('.ic-body');
+    el.querySelector('.ic-x').onclick=()=>hide();
+    map.getContainer().appendChild(el);
+    L.DomEvent.disableClickPropagation(el);                  // לחיצה/מגע/גרירה על הכרטיס לא מגיעים למפה
+    el.addEventListener('wheel',ev=>{                         // גלגלת מעל הכרטיס לא מזיזה/מזממת את המפה ולא גוללת את הדף
+      ev.stopPropagation();
+      if(bodyEl.scrollHeight<=bodyEl.clientHeight+1) ev.preventDefault();
+    },{passive:false});
+    el.addEventListener('toggle',ev=>{                        // פתיחת פריט משנה את הגובה
+      place();
+      const d=ev.target; if(d&&d.open&&d.scrollIntoView) d.scrollIntoView({block:'nearest'});
+    },true);
+    document.addEventListener('keydown',ev=>{ if(ev.key==='Escape'&&isOpen()) hide(); });
+    /* הסטת מפה ידנית (גרירה/זום) או שינוי גודל (סיבוב מסך): הכרטיס מתמקם מחדש כדי שלא יכסה את הנקודה ולא ייחתך.
+       הכרטיס נשאר פתוח עד ✕ / Escape / לחיצה על ריק — גם אם הנקודה יצאה מהפריים. */
+    map.on('moveend',()=>place()); map.on('resize',()=>place());
+  }
+  /* מלבנים אסורים (מקרא צף, פקדי Leaflet, כפתורי עזר) — קואורדינטות יחסית למכל המפה */
+  function forbidden(){
+    const out=[], c=map.getContainer().getBoundingClientRect();
+    (forbidFn?forbidFn():[]).forEach(n=>{
+      if(!n) return; const cs=getComputedStyle(n); if(cs.display==='none'||cs.visibility==='hidden') return;
+      const r=n.getBoundingClientRect(); if(r.width>0&&r.height>0) out.push({l:r.left-c.left,t:r.top-c.top,r:r.right-c.left,b:r.bottom-c.top});
+    });
+    return out;
+  }
+  function place(){
+    if(!isOpen()) return;
+    const sz=map.getSize(), W=sz.x, H=sz.y, p=anchor?map.latLngToContainerPoint(anchor):null;
+    const narrow=W<=560, w=narrow?W-2*M:Math.min(360,Math.max(260,Math.round(W*0.46)));
+    el.style.width=w+'px';
+    const Hn=headEl.offsetHeight+bodyEl.scrollHeight+2;      // גובה טבעי של התוכן ברוחב הזה
+    const bad=forbidden(), hcap=Math.round(narrow?H*0.42:H*0.8);   // בנייד צר: מגירה עליונה/תחתונה ≤42% מהמפה
+    let best=null;
+    (narrow?[M]:[M,W-M-w]).forEach((x,xi)=>{
+      /* פסים אנכיים חסומים בעמודה: פקדים/מקרא החופפים אופקית + סביב הנקודה; הכרטיס נכנס רק לרווחים שביניהם */
+      const blocks=[];
+      bad.forEach(f=>{ if(f.r>x-4&&f.l<x+w+4) blocks.push([f.t-6,f.b+6]); });
+      if(p&&p.x>x-R&&p.x<x+w+R) blocks.push([p.y-R,p.y+R]);
+      blocks.sort((a,b)=>a[0]-b[0]);
+      const gaps=[]; let cur=M;
+      blocks.forEach(b=>{ if(b[0]-cur>=1) gaps.push([cur,b[0]]); cur=Math.max(cur,b[1]); });
+      if(H-M-cur>=1) gaps.push([cur,H-M]);
+      gaps.forEach(g=>{
+        const len=g[1]-g[0]; if(len<MINH) return;
+        const h=Math.floor(Math.min(Hn,len,hcap)), top=p?p.y>(g[0]+g[1])/2:false, t=Math.round(top?g[0]:g[1]-h), key=xi+(top?'t':'b');
+        const sc=(h>=Hn-1?200:0)+60*h/Hn+(p?Math.min(Math.hypot(x+w/2-p.x,t+h/2-p.y),500)/12:0)+(key===curKey?35:0);
+        if(!best||sc>best.sc) best={sc,x,t,h,key};
+      });
+    });
+    if(!best){ const h=Math.floor(Math.min(Hn,hcap,H-2*M)); best={x:M,t:p&&p.y>H/2?M:H-M-h,h,key:'fb'}; }   // מסך זעיר: לפחות לא מכסה את הנקודה
+    el.style.left=best.x+'px'; el.style.top=best.t+'px'; el.style.right=el.style.bottom='auto'; el.style.maxHeight=best.h+'px';
+    curKey=best.key;
+  }
+  /* latlng=null: כרטיס בלי נקודה (פריט בלי מיקום); forbid: ()=>[nodes] */
+  function show(latlng,title,html,opts){
+    ensure(); opts=opts||{}; anchor=latlng||null; forbidFn=opts.forbid||null;
+    titleEl.textContent=title||''; bodyEl.innerHTML=html; bodyEl.scrollTop=0;
+    el.classList.add('on');
+    if(mark){ map.removeLayer(mark); mark=null; }
+    if(anchor) mark=L.marker(anchor,{icon:markIcon, interactive:false, keyboard:false, zIndexOffset:1000}).addTo(map);
+    curKey=''; place();
+    return el;
+  }
+  function hide(){
+    if(!isOpen()) return;
+    el.classList.remove('on'); if(mark){ map.removeLayer(mark); mark=null; } anchor=null;
+  }
+  return {show,hide,place,isOpen,anchor:()=>anchor,el:()=>el};
+})();
+/* מה לא יכוסה ע"י הכרטיס: פקדי Leaflet, כפתורי העזר, כפתור פתיחת המקרא, המקרא (כשפתוח) והודעת הנתונים */
+const cardForbid=()=>[].slice.call(map.getContainer().querySelectorAll('.leaflet-control'))
+  .concat(['side','decoderBtn','nearBtn','togglebtn','ntBanner'].map(id=>document.getElementById(id)));
+
+/* ---- גאומטריה: טבעות, שטח, גבולות, נקודה פנימית ---- */
+function llRings(x,out){ out=out||[]; if(x&&x.length){ if(typeof x[0].lat==='number') out.push(x); else x.forEach(y=>llRings(y,out)); } return out; }
+function ringArea(r){            // מ"ר (קירוב שווה-מלבני)
+  if(r.length<3) return 0;
+  const o=r[0], k=Math.cos(o.lat*Math.PI/180)*111320, ky=110540; let s=0;
+  for(let i=0,j=r.length-1;i<r.length;j=i++){ s+=(r[j].lng-o.lng)*k*(r[i].lat-o.lat)*ky-(r[i].lng-o.lng)*k*(r[j].lat-o.lat)*ky; }
+  return Math.abs(s)/2;
+}
+function layerArea(l){
+  if(l instanceof L.Circle) return Math.PI*l.getRadius()*l.getRadius();
+  return llRings(l.getLatLngs()).reduce((s,r)=>s+ringArea(r),0);
+}
+function layerBounds(l){         // getBounds של עיגול תלוי במפה — מחשבים ידנית
+  if(!(l instanceof L.Circle)) return l.getBounds();
+  const c=l.getLatLng(), r=l.getRadius(), dLat=r/111194, dLng=r/(111320*Math.max(0.1,Math.cos(c.lat*Math.PI/180)));
+  return L.latLngBounds([c.lat-dLat,c.lng-dLng],[c.lat+dLat,c.lng+dLng]);
+}
+function bestInterior(r){        // נקודה בתוך הטבעת הרחוקה ככל האפשר מהקצוות (דגימה גסה + עידון)
+  let s=90,n=-90,w=180,e=-180; r.forEach(p=>{ if(p.lat<s)s=p.lat; if(p.lat>n)n=p.lat; if(p.lng<w)w=p.lng; if(p.lng>e)e=p.lng; });
+  const kx=Math.cos((s+n)/2*Math.PI/180);
+  const inside=(la,lo)=>{ let c=false; for(let i=0,j=r.length-1;i<r.length;j=i++){ const a=r[i],b=r[j]; if((a.lat>la)!==(b.lat>la)&&lo<(b.lng-a.lng)*(la-a.lat)/(b.lat-a.lat)+a.lng) c=!c; } return c; };
+  const clear=(la,lo)=>{ let d=1e9; for(let i=0,j=r.length-1;i<r.length;j=i++){
+      const ax=(r[j].lng-lo)*kx, ay=r[j].lat-la, bx=(r[i].lng-lo)*kx-ax, by=r[i].lat-la-ay, l2=bx*bx+by*by;
+      const t=l2?Math.max(0,Math.min(1,-(ax*bx+ay*by)/l2)):0, dx=ax+t*bx, dy=ay+t*by, q=dx*dx+dy*dy; if(q<d) d=q; } return d; };
+  let best=null,bd=-1;
+  const scan=(s0,n0,w0,e0,N)=>{ for(let i=0;i<N;i++) for(let j=0;j<N;j++){
+      const la=s0+(n0-s0)*(i+.5)/N, lo=w0+(e0-w0)*(j+.5)/N;
+      if(!inside(la,lo)) continue;
+      const d=clear(la,lo); if(d>bd){ bd=d; best=L.latLng(la,lo); } } };
+  scan(s,n,w,e,16);
+  if(best){ const hs=(n-s)/16, hw=(e-w)/16; scan(best.lat-hs,best.lat+hs,best.lng-hw,best.lng+hw,8); }
+  return best||L.latLngBounds(r).getCenter();
+}
+function interiorPoint(e){       // נקודת עיגון לכרטיס כשבוחרים פריט מרשימה/מקרא
+  if(e.ip) return e.ip;
+  const l=e.layer; let ip=e.bounds.getCenter();
+  if(l instanceof L.Circle) ip=l.getLatLng();
+  else if(!e.line&&l.getLatLngs){
+    const rings=llRings(l.getLatLngs());
+    if(rings.length){ let best=rings[0],ba=-1; rings.forEach(r=>{ const a=ringArea(r); if(a>ba){ ba=a; best=r; } }); ip=bestInterior(best); }
+  }
+  return e.ip=ip;
+}
+/* מבחן נקודה מול צורה בפיקסלים של שכבת המפה, על הטבעות המלאות (_rings) — לא על הטבעות המפושטות (_parts) שמצוירות,
+   כך שאתרים קטנים וצרים נתפסים גם בזום ארצי. d = 0 בתוך הצורה, אחרת המרחק לקו המתאר */
+function pxInRings(rings,p){
+  let c=false;
+  for(const r of rings) for(let i=0,j=r.length-1;i<r.length;j=i++){ const a=r[i],b=r[j]; if((a.y>p.y)!==(b.y>p.y)&&p.x<(b.x-a.x)*(p.y-a.y)/(b.y-a.y)+a.x) c=!c; }
+  return c;
+}
+function pxDistRings(rings,p,closed){
+  let d=Infinity;
+  for(const r of rings){ const n=r.length; if(n===1){ d=Math.min(d,p.distanceTo(r[0])); continue; }
+    for(let i=closed?0:1,j=closed?n-1:0;i<n;j=i++){ const q=L.LineUtil.pointToSegmentDistance(p,r[j],r[i]); if(q<d) d=q; } }
+  return d;
+}
+function shapeDist(l,lp,line){
+  if(l instanceof L.Circle) return Math.max(0,lp.distanceTo(l._point)-l._radius);
+  const rings=l._rings;
+  if(!rings||!rings.length) return (l._containsPoint&&l._containsPoint(lp))?0:Infinity;
+  if(line) return pxDistRings(rings,lp,false);
+  return pxInRings(rings,lp)?0:pxDistRings(rings,lp,true);
+}
+
+/* ---- בדיקת "מה יש כאן" בנקודה: מחזיר רשימה ממוינת ----
+   סדר: שמורות/גנים ואזורים קבועים (קטנים קודם) · אתרים קרובים · נוט"מים מדויקים · נוט"מים משוערים (אחרונים).
+   "קרוב" = אתר קטן על המסך שקו המתאר שלו עד 10px מהנקודה (16px במגע) — מסומן 'בקרבת הנקודה'. */
+function hitTest(ll,exactOnly,coarse){
+  const lp=map.latLngToLayerPoint(ll), tol=coarse?16:10, ltol=coarse?14:8;
+  const cl=Math.max(0.1,Math.cos(ll.lat*Math.PI/180));
+  const dLat=Math.max(tol,ltol)*(40075016.686*cl/(256*Math.pow(2,map.getZoom())))/110000, dLng=dLat/cl;
+  const out=[];
+  const test=e=>{
+    const l=e.layer; if(!l||!map.hasLayer(l)) return;
+    const b=e.hb;
+    if(ll.lat<b.getSouth()-dLat||ll.lat>b.getNorth()+dLat||ll.lng<b.getWest()-dLng||ll.lng>b.getEast()+dLng) return;
+    let d;
+    try{
+      d=shapeDist(l,lp,e.line);
+      if(e.line){ if(d<=ltol) out.push({e,near:false,d:0}); return; }
+      if(d===0||(e.buf&&map.hasLayer(e.buf)&&e.buf._rings&&pxInRings(e.buf._rings,lp))){ out.push({e,near:false,d:0}); return; }
+    }catch(_){ return; }
+    if(exactOnly||!(d<=tol)) return;
+    /* אתרים זעירים: קרבה בפיקסלים (בזום נמוך אתר שלם הוא כתם של פיקסלים בודדים) */
+    if(!e.dot){ const a=map.latLngToLayerPoint(e.bounds.getSouthWest()), c=map.latLngToLayerPoint(e.bounds.getNorthEast());
+      if(Math.max(Math.abs(c.x-a.x),Math.abs(c.y-a.y))>60) return; }
+    out.push({e,near:true,d});
+  };
+  HERE.forEach(test);
+  ntEntries.forEach(n=>{ if(n.layer) test(n); });
+  out.sort((x,y)=>(x.e.cls-y.e.cls)||((x.near?1:0)-(y.near?1:0))||(x.near?x.d-y.d:x.e.size-y.e.size));
+  let near=0;
+  return out.filter(h=>!h.near||++near<=6).slice(0,60);
+}
+
+/* ---- תוכן הכרטיס ---- */
+function areaHead(a){
+  const c=CATS[a.cat];
+  return `<div class="pp-top"><div class="pp-code" style="color:${c.color}">${esc(a.dispCode||a.code)}</div>
+  <div class="pp-name">${esc(a.name)}</div></div>
+  <span class="pp-badge" style="background:${c.color}">${c.badge}</span>`;
+}
+function areaBody(a){
+  /* a.note: HTML מכוון (מהקוד / INPA_RULES); שדות נתונים שנכנסים אליו כבר עברו esc */
+  return `<div class="pp-row"><span class="k">${a.altLabel||'גובה:'}</span><span>${esc(a.alt)}</span></div>
+  ${a.g.k==="circle"?`<div class="pp-row"><span class="k">רדיוס:</span><span class="v">${a.g.r>=1000?(a.g.r/1000).toFixed(a.g.r%1000?2:0)+" km":a.g.r+" m"}</span></div>
+  <div class="pp-row"><span class="k">מרכז:</span><span class="v">${a.g.c[0].toFixed(4)}N ${a.g.c[1].toFixed(4)}E</span></div>`:""}
+  ${a.note?`<div class="pp-note">${a.note}</div>`:`<div class="pp-note">לא פורסם גורם תיאום ייעודי בפרק. בקשה לטיסה חורגת: אגף פיקוח אווירי רת"א — caai-charigot@mot.gov.il</div>`}
+  <div class="pp-note">${a.src==="inpa"?'מקור: פמ"ת א\'-17 נספח ה\', עדכון 1/26 · גבולות: רשות הטבע והגנים (קובץ מ-11/01/2026), לידיעה בלבד':'מקור: פמ"ת א\'-17, עדכון 1/26 · תיחום מקורב, לידיעה בלבד'}</div>`;
+}
+function areaItem(e,near){
+  const a=e.area, c=CATS[a.cat];
+  return {code:esc(a.dispCode||a.code), name:esc(a.name), tag:c.badge, col:c.color, near, head:()=>areaHead(a), body:()=>areaBody(a)};
+}
+/* פריט אחד: נפתח ישירות. כמה פריטים: <details> לכל פריט, הראשון פתוח */
+function cardHtml(items){
+  if(items.length===1) return (items[0].near?'<div class="ic-near"><span class="ht near">בקרבת הנקודה</span></div>':'')+items[0].head()+items[0].body();
+  return items.map((it,i)=>
+    '<details class="hi"'+(i===0?' open':'')+'><summary><span class="hc" style="color:'+it.col+'">'+it.code+'</span><span class="hn">'+it.name+'</span>'+
+    '<span class="ht'+(it.apx?' apx':'')+'" style="'+(it.apx?'color:'+it.col:'background:'+it.col)+'">'+it.tag+'</span>'+
+    (it.near?'<span class="ht near">בקרבת הנקודה</span>':'')+'</summary><div class="hb">'+it.body()+'</div></details>').join('');
+}
+/* כרטיס חופשי: לא קשור לשכבה, ולכן החלפת שכבות/רענון נוט"מים לא סוגרים אותו. המפה לא זזה. */
+function openInfo(items,ll,lead){
+  const title=(lead||'מה יש כאן')+(items.length>1?' · '+pl(items.length,'פריט אחד','פריטים'):'');
+  return InfoCard.show(ll,title,cardHtml(items),{forbid:cardForbid});
+}
+function showHere(ll,lead,coarse){
+  const hits=hitTest(ll,false,coarse||COARSE); if(!hits.length) return false;
+  if(compactMQ.matches&&typeof setPanel==='function') setPanel(true);   // בטלפון המגירה לא מסתירה את הכרטיס
+  openInfo(hits.map(h=>h.e.item(h.near)),ll,lead);
+  return true;
+}
+/* לחיצה על המפה: פותחת/מחליפה את הכרטיס; נקודה בלי אתר סוגרת אותו. בשום מקרה לא מזיזה את המפה */
+map.on('click',ev=>{
+  const oe=ev.originalEvent, t=oe&&oe.target;
+  if(t&&t.closest&&t.closest('.infocard,.leaflet-control')) return;
+  if(!showHere(ev.latlng,null,oe&&oe.pointerType==='touch')) InfoCard.hide();
+});
+
+/* ---- ריחוף (מחשב בלבד): tooltip יחיד עם שם וקוד האזור העליון בנקודה; בלי setStyle ובלי מאזין לכל שכבה ---- */
+if(CAN_HOVER){
+  const tip=L.tooltip({direction:'top', offset:[0,-4], opacity:1, className:'hover-tip'});
+  let t0=0, timer=null, lastEv=null, txt='';
+  const cont=map.getContainer();
+  const clear=()=>{ if(tip._map) map.removeLayer(tip); cont.classList.remove('leaflet-interactive'); txt=''; };
+  const run=ev=>{
+    const hits=hitTest(ev.latlng,true).filter(h=>h.e.cls<2);
+    if(!hits.length){ clear(); return; }
+    const f=hits[0].e.item(false), html='<b>'+f.code+'</b>'+f.name+(hits.length>1?' <span class="more">+'+(hits.length-1)+'</span>':'');
+    if(html!==txt){ txt=html; tip.setContent(html); }
+    tip.setLatLng(ev.latlng); if(!tip._map) tip.addTo(map);
+    cont.classList.add('leaflet-interactive');
+  };
+  map.on('mousemove',ev=>{
+    const t=ev.originalEvent&&ev.originalEvent.target;
+    if(t&&t.closest&&t.closest('.infocard,.leaflet-control')){ clearTimeout(timer); timer=null; lastEv=null; clear(); return; }   // מעל הכרטיס/הפקדים: בלי tooltip תקוע
+    if(ev.originalEvent.buttons) return;
+    lastEv=ev; const now=performance.now();
+    if(now-t0>=60){ t0=now; run(ev); }
+    else if(!timer) timer=setTimeout(()=>{ timer=null; t0=performance.now(); if(lastEv) run(lastEv); },60);
+  });
+  map.on('mouseout dragstart zoomstart',()=>{ clearTimeout(timer); timer=null; lastEv=null; clear(); });
+}
+
+/* ---- אזורים קבועים ---- */
+function buildGeom(a,key){
+  key=key||'fix';
+  const st={color:CATS[a.cat].color, weight:1.6, fillColor:CATS[a.cat].color, fillOpacity:0.22, ...RO};
+  if(key==='nat') st.smoothFactor=2;       // שמורות/גנים גדולים; לאתרים קטנים/צרים מורידים אחרי חישוב השטח (כדי שלא ייעלמו בפישוט)
+  let layer=null;
+  if(a.g.k==="circle"){ layer=L.circle(a.g.c,{radius:a.g.r,...st}); }
+  else if(a.g.k==="poly"){ layer=L.polygon(a.g.pts,st); }
+  else if(a.g.k==="multi"){ layer=L.polygon(a.g.rings.map(r=>[r]),st); }
+  else if(a.g.k==="capsule"){ layer=L.polygon(capsule(a.g.a,a.g.b,a.g.r),st); }
+  else if(a.g.k==="strip"){ layer=L.polygon(stripPoly(a.g.line,a.g.w,a.g.side),st); }
+  else if(a.g.k==="line"){ layer=L.polyline(a.g.pts,{color:a.lineColor||CATS[a.cat].color, weight:3.5, dashArray:"7 6", ...RO}); }
+  else if(a.g.k==="segs"){
+    let pts=[];
+    a.g.segs.forEach(s=>{
+      if(s.p) pts.push(s.p);
+      else if(s.arc){ const from=pts.length?pts[pts.length-1]:s.arc.to; pts=pts.concat(arc(s.arc.c,s.arc.r,from,s.arc.to,s.arc.dir)); }
+      else if(s.arcFrom){ const A=dest(s.arcFrom.c[0],s.arcFrom.c[1],s.arcFrom.fromBrg,s.arcFrom.r);
+        const B=dest(s.arcFrom.c[0],s.arcFrom.c[1],s.arcFrom.toBrg,s.arcFrom.r);
+        pts=pts.concat(arc(s.arcFrom.c,s.arcFrom.r,A,B,s.arcFrom.dir)); }
+    });
+    layer=L.polygon(pts,st);
+  }
+  return layer;
+}
+const layersByCode={};
+function regArea(a,layer,pane,size){
+  const b=layerBounds(layer);
+  const e={area:a, layer, dot:null, buf:null, bufRings:null, bounds:b, hb:L.latLngBounds(b.getSouthWest(),b.getNorthEast()),
+    size:size==null?layerArea(layer):size, cls:0, pane, line:a.g.k==="line", ip:null};
+  e.item=near=>areaItem(e,near);
+  layersByCode[a.code]=e; HERE.push(e);
+  return e;
+}
+AREAS.forEach(a=>{
+  const layer=buildGeom(a); if(!layer) return;
+  layer.addTo(groups[a.cat]);
+  const e=regArea(a,layer,'fix');
+  /* מעגלים קטנים (בתי כלא, תחנות משטרה וכד') נעלמים בזום ארצי — מוסיפים נקודת סימון קבועה */
+  if(a.g.k==="circle" && a.g.r<=1000){
+    e.dot=L.circleMarker(a.g.c,{radius:4, color:CATS[a.cat].color, weight:1.5, fillColor:CATS[a.cat].color, fillOpacity:0.9, ...RO});
+    e.dot.addTo(groups[a.cat]);
+  }
+});
+/* ---- אייקון מטוס על כל מנחת/שדה, מסובב לכיוון המסלול ---- */
+AIRPORTS.forEach((ap,ai)=>{
+  const rw=ap[2][0];
+  const mid=[(rw[0]+rw[2])/2,(rw[1]+rw[3])/2];
+  const brg=bearing(rw[0],rw[1],rw[2],rw[3]);
+  if(!{'LLRD':1,'LLIB':1,'LLBS':1,'LLHB':1,'LLNV':1,'LLPL':1,'LLEK':1,'LLMG':1,'LLOV':1,'LLER':1,'LLKS':1,'LLHS':1,'LLBG':1,'LLHZ':1,'LLHA':1}.hasOwnProperty(ap[1])) return;
+  const ic=L.divIcon({className:'', iconSize:[26,26], iconAnchor:[13,13],
+    html:`<div style="font-size:21px; line-height:26px; text-align:center; color:#bcd9f6; text-shadow:0 0 5px #06101c,0 0 5px #06101c,0 1px 2px #000; transform:rotate(${(brg-45).toFixed(0)}deg)">✈</div>`});
+  const mk=L.marker(mid,{icon:ic, title:ap[0]+' ('+ap[1]+')', keyboard:false});   // keyboard:false — אחרת הקשה על הסמן ממקדת אותו ו-Leaflet מזיז את המפה (panInside) כשהוא ליד הקצה
+  mk.on('click',ev=>showHere(ev.latlng));
+  mk.addTo(groups.A);
+});
+
+/* ---- סדר ציור בקנבס המשותף, מלמטה למעלה: נוט"ם משוער, אזורי פמ"ת, שמורות/גנים, נוט"ם מדויק; בתוך כל קבוצה גדולים למטה וקטנים למעלה
+   (בלי קשר לסדר ההוספה). כל שכבה שמוקפצת ל-bringToFront נשארת מעל הקודמות. נקרא אחרי כל הוספה/הדלקת שכבה ---- */
+let userMarker=null;     // סמן "בקרבתי"
+function restack(){
+  const order=arr=>arr.sort((x,y)=>y.size-x.size).forEach(e=>{ [e.layer,e.buf,e.dot].forEach(l=>{ if(l&&map.hasLayer(l)) l.bringToFront(); }); });
+  const nt=[], apx=[]; ntEntries.forEach(n=>{ if(n.layer) (n.approx?apx:nt).push(n); });
+  order(apx); order(HERE.filter(e=>e.pane==='fix')); order(HERE.filter(e=>e.pane==='nat')); order(nt);
+  if(userMarker&&map.hasLayer(userMarker)) userMarker.bringToFront();
+}
+/* קווי חיץ 150 מ' של שמורות/גנים: רק מזום 11 (ובשכבה פעילה). מתעדכן רק בשינוי זום — לא בכל הזזה:
+   הוספה/הסרה של שכבות בכל moveend גרמה לציור כפול של הקנבס (כבד ב-DPR גבוה). מחוץ לפריים הקנבס מדלג על שכבות בעצמו. */
+const BUF_MINZ=11;
+function syncBuf(){
+  const on=map.getZoom()>=BUF_MINZ; let changed=false;
+  HERE.forEach(e=>{
+    if(!e.bufRings) return;
+    const g=groups[e.area.cat], want=on&&map.hasLayer(e.layer);
+    if(want&&!e.buf) e.buf=L.polygon(e.bufRings.map(r=>[r]),{color:CATS[e.area.cat].color, weight:1.4, dashArray:'5 5', fill:false, smoothFactor:2, ...RO});
+    if(want){ if(!g.hasLayer(e.buf)){ g.addLayer(e.buf); changed=true; } }
+    else if(e.buf&&g.hasLayer(e.buf)){ g.removeLayer(e.buf); changed=true; }
+  });
+  if(changed) restack();
+}
+map.on('zoomend',syncBuf);
+map.on('overlayadd',()=>{ syncBuf(); restack(); });
+
+groups.P.addTo(map); groups.R.addTo(map); groups.D.addTo(map); groups.U.addTo(map); groups.A.addTo(map); groups.B.addTo(map);
+groups.NR.addTo(map); groups.NP.addTo(map);
+groups.NT_uas.addTo(map); groups.NT_pje.addTo(map); groups.NT_frng.addTo(map); groups.NT_act.addTo(map); groups.NT_obst.addTo(map); groups.NT_ad.addTo(map); groups.NT_other.addTo(map);
+restack();
+// שכבת המוחרגים (X) והבלונים (O) כבויות כברירת מחדל
+ 
+const overlays={};
+Object.keys(CATS).forEach(k=>overlays[`<span style="color:${CATS[k].color};font-weight:700">${CATS[k].label}</span>`]=groups[k]);
+const layersCtrl=L.control.layers({"מפת רחובות":osm,"תצלום אוויר":sat}, overlays, {collapsed:true, position:'topleft'}).addTo(map);
+/* הוספת מונה כניסות לתוך בורר השכבות */
+const lcDiv=layersCtrl.getContainer();
+const ctrDiv=document.createElement('div');
+ctrDiv.id='layers-counter';
+ctrDiv.innerHTML='<span>👁</span><span class="n" id="vc-n">—</span><span>כניסות למפה</span>';
+/* כפתור נעילה — מופיע רק כשהבורר פתוח */
+const lockBtn=document.createElement('button');
+lockBtn.id='lock-layers';
+lockBtn.textContent='🔓 נעל פתוח';
+lcDiv.appendChild(lockBtn);
+lcDiv.appendChild(ctrDiv);
+let layersLocked=false;
+function syncLock(){
+  lockBtn.classList.toggle('locked',layersLocked);
+  lockBtn.textContent=layersLocked?'🔒 נועל פתוח':'🔓 נעל פתוח';
+}
+lockBtn.onclick=()=>{ layersLocked=!layersLocked; syncLock(); };
+/* עקוב אחרי פתיחה/סגירה של הבורר כדי להציג/להסתיר את כפתור הנעילה */
+const obs=new MutationObserver(()=>{
+  if(layersLocked && !lcDiv.classList.contains('leaflet-control-layers-expanded')){
+    requestAnimationFrame(()=>lcDiv.classList.add('leaflet-control-layers-expanded'));
+  }
+  InfoCard.place();       // הבורר נפתח/נסגר — הכרטיס (אם פתוח) לא יכוסה ולא יכסה אותו
+});
+obs.observe(lcDiv,{attributes:true,attributeFilter:['class']});
+ 
+/* ===== sidebar ===== */
+const ORDER=["P","R","D","U","A","B","X","O","NR","NP","NT_uas","NT_pje","NT_frng","NT_act","NT_obst","NT_ad","NT_other"];
+let INPA_UNMAPPED=[]; /* נטען בהמשך מ-data/inpa-zones.json */
+const groupsEl=document.getElementById('groups');
+const HE_COLLATOR=new Intl.Collator('he');
+const openState={P:true};   /* מצב פתיחה של קבוצות המקרא — נשמר בין רינדורים (חיפוש / טעינת רט"ג) */
+/* ---- בחירה מרשימה/מקרא ("הצג במפה"): כאן מותר לזוז/לקרב — זו פעולה מכוונת. הכרטיס נפתח רק אחרי שהתזוזה הסתיימה ובתנאי שהנקודה גלויה ---- */
+const visRect=el=>{ if(!el) return null; const cs=getComputedStyle(el); if(cs.display==='none'||cs.visibility==='hidden') return null; const r=el.getBoundingClientRect(); return r.width&&r.height?r:null; };
+function fitPads(){              // השטח הפנוי למפה כשהכרטיס פתוח: בלי המקרא הצף, ועם מקום לכרטיס בצד אחד
+  const mr=map.getContainer().getBoundingClientRect(), W=mr.width, H=mr.height, p={l:12,t:12,r:12,b:12};
+  const sr=visRect(document.getElementById('side')); let sideLeft=false;
+  if(sr){
+    if(sr.width>W*0.9) p.b=Math.max(p.b,mr.bottom-sr.top+8);
+    else if((sr.left+sr.right)/2-mr.left<W/2){ p.l=Math.max(p.l,sr.right-mr.left+8); sideLeft=true; }
+    else p.r=Math.max(p.r,mr.right-sr.left+8);
+  }
+  if(W<=560){                    // מגירה תחתונה ≤42% מהמפה; מעל הפקדים העליונים
+    p.b=Math.max(p.b,Math.round(H*0.42)+16);
+    const lt=visRect(document.querySelector('.leaflet-top.leaflet-left')); if(lt) p.t=Math.max(p.t,lt.bottom-mr.top+8);
+  }else{
+    const cw=Math.min(360,Math.max(260,Math.round(W*0.46)))+22;
+    if(sideLeft) p.r=Math.max(p.r,cw); else p.l=Math.max(p.l,cw);
+    if(W-p.l-p.r<240){ if(sideLeft) p.r=Math.max(12,W-p.l-240); else p.l=Math.max(12,W-p.r-240); }
+  }
+  p.t=Math.min(p.t,H*0.4); p.b=Math.min(p.b,H*0.55);
+  return {tl:[p.l,p.t],br:[p.r,p.b]};
+}
+function whenSettled(fn){        // אחרי שאנימציית זום/הזזה (אם יש) הסתיימה
+  const busy=()=>!!(map._animatingZoom||(map._panAnim&&map._panAnim._inProgress));
+  const go=()=>{ if(busy()) map.once('moveend',()=>setTimeout(go,0)); else fn(); };
+  go();
+}
+function openAfterMove(items,ll){
+  whenSettled(()=>{
+    if(ll&&!map.getBounds().contains(ll)) map.setView(ll,map.getZoom(),{animate:false});     // הנקודה חייבת להיות גלויה
+    openInfo(items,ll);
+  });
+}
+/* בחירת אזור מהמקרא: זום מכוון לאזור + כרטיס מידע */
+function focusArea(code){
+  const e=layersByCode[code]; if(!e) return;
+  if(!map.hasLayer(groups[e.area.cat])) groups[e.area.cat].addTo(map);
+  if(compactMQ.matches) setPanel(true);
+  const fp=fitPads();
+  map.fitBounds(e.bounds.pad(0.6),{paddingTopLeft:fp.tl,paddingBottomRight:fp.br,maxZoom:17,animate:false});
+  openAfterMove([e.item(false)],interiorPoint(e));
+}
+const curFilter=()=>document.getElementById('q').value.trim().toLowerCase()||null;
+/* נוט"מים פעילים (לא פגי תוקף) בקבוצת נוט"ם במקרא, אחרי סינון החיפוש; אלפביתי */
+function ntGroupItems(k,filter){
+  const out=[];
+  ntEntries.forEach(n=>{
+    if(n.catK!==k||n.expired) return;
+    const it=n.it; if(filter&&!((it.id||'')+' '+(it.name||'')+' '+(it.loc||'')).toLowerCase().includes(filter)) return;
+    out.push(n);
+  });
+  return out.sort((x,y)=>HE_COLLATOR.compare(x.it.name||'',y.it.name||''));
+}
+function renderList(filter){
+  groupsEl.innerHTML="";
+  ORDER.forEach(k=>{
+    const isNt=k.indexOf('NT_')===0;
+    let items=isNt?ntGroupItems(k,filter):AREAS.filter(a=>a.cat===k && (!filter || (a.code+" "+(a.dispCode||"")+" "+a.name).toLowerCase().includes(filter)));
+    if(!items.length && filter) return;
+    if(k==='NR'||k==='NP') items=items.slice().sort((a,b)=>HE_COLLATOR.compare(a.name,b.name));   // שמורות וגנים: אלפביתי
+    const g=document.createElement('div'); g.className='grp'+((filter||openState[k])?' open':'');
+    const btn=document.createElement('button');
+    btn.innerHTML=`<span class="swatch" style="background:${CATS[k].color}"></span><span style="color:${CATS[k].color}">${CATS[k].label}</span><span class="cnt">${items.length}</span><span class="vis" data-k="${k}" title="הצג / הסתר שכבה" style="margin-inline-start:8px;cursor:pointer;font-size:15px;opacity:${map.hasLayer(groups[k])?1:.3}">👁</span>`;
+    btn.querySelector('.vis').onclick=ev=>{ ev.stopPropagation(); if(map.hasLayer(groups[k])) map.removeLayer(groups[k]); else groups[k].addTo(map); };
+    btn.onclick=()=>{ g.classList.toggle('open'); if(!filter) openState[k]=g.classList.contains('open'); };
+    g.appendChild(btn);
+    const wrap=document.createElement('div'); wrap.className='items';
+    items.forEach(a=>{
+      const it=document.createElement('div'); it.className='item';
+      it.style.borderRight='3px solid '+CATS[k].color;
+      if(isNt){      // a = רשומת נוט"ם
+        it.innerHTML=`<span class="code" style="color:${CATS[k].color}">${esc(a.it.id)}</span><span>${esc(a.it.name)}</span>`+(a.approx?'<span class="cnt">משוער</span>':'');
+        it.onclick=()=>ntFocus(a.it.id);
+      }else{
+        it.innerHTML=`<span class="code" style="color:${CATS[k].color}">${esc(a.dispCode||a.code)}</span><span>${esc(a.name)}</span>`;
+        it.onclick=()=>focusArea(a.code);
+      }
+      wrap.appendChild(it);
+    });
+    if(k==='R'){
+      const nb=document.createElement('div'); nb.className='noteblock';
+      nb.innerHTML="<b>ללא שרטוט</b> (קואורדינטות ב-ENR 5.1 בלבד): "+NO_COORDS.map(n=>`<span style="direction:ltr;font-family:Consolas,monospace">${n[0]}</span>`).join(", ")+
+      "<br>שטחי אש פעילים א'–ה' 06:00–21:00 (ערב חג עד 14:00) או לפי NOTAM.";
+      wrap.appendChild(nb);
+    }
+    if(k==='NR'&&INPA_UNMAPPED.length){
+      const nb=document.createElement('div'); nb.className='noteblock';
+      nb.innerHTML="<b>ללא גבולות במפה</b> ("+INPA_UNMAPPED.length+" אתרים ברשימת הפמ\"ת שאין להם גבולות בקבצי רט\"ג — בעיקר אתרי קינון והאכלה): "+INPA_UNMAPPED.map(u=>`<span style="direction:ltr;font-family:Consolas,monospace">${esc(String(u.id).replace('LLP',''))}</span> ${esc(u.name)}`).join(" · ");
+      wrap.appendChild(nb);
+    }
+    if(k==='U'){
+      const nb=document.createElement('div'); nb.className='noteblock';
+      nb.innerHTML="חל על כטב\"מ/טיסן במשקל עד 25 ק\"ג ב-VLOS, תעופה ספורטיבית ומסוקים מחוץ לנתיבים. ברירת מחדל: רדיוס 500 מ' וגובה 1,000 רגל מעפ\"ש אלא אם צוין אחרת. LLU59–LLU72: עד 300 רגל מעפ\"ש.";
+      wrap.appendChild(nb);
+    }
+    if(k==='A'){
+      const nb=document.createElement('div'); nb.className='noteblock';
+      nb.innerHTML="חיץ של כ-2 ק\"מ מכל נקודה במסלול, בצורת קפסולה סביב כל מסלול. שכבה זו <b>אינה חלק מפרק א'-17</b> — היא תוספת עזר לפי דרישת ההרחקה משדות תעופה (פרק א'-11 והנחיות רת\"א). מיקומי המסלולים מקורבים. שדות מרובי-מסלולים (נתב\"ג) מוצגים כקפסולה לכל מסלול.";
+      wrap.appendChild(nb);
+    }
+    if(k==='B'){
+      const nb=document.createElement('div'); nb.className='noteblock';
+      nb.innerHTML="סעיף 4(ב), חל גם על כטב\"מ וטיסן: עזה — 6 ק\"מ (מכוסה ע\"י LLP19) · מצרים — 3 ק\"מ · סוריה — 6 ק\"מ · לבנון — 3 ק\"מ · ירדן — מותר עד הגבול. מגבלת קו הרוחב 33°00'N (סעיף 4א) <b>אינה חלה</b> על כטב\"מ וטיסן. תוואי הגבולות מקורב והמרחקים מתעדכנים תדיר ב-NOTAM.";
+      wrap.appendChild(nb);
+    }
+    if(k==='NT_uas'){
+      const nb=document.createElement('div'); nb.className='noteblock';
+      nb.innerHTML='נוטמים פנים-ארציים נמשכים מאתר רש"ת (IAA). <b>אינם מחליפים את הנוטמ הרשמי</b> — לאמת לפני כל טיסה. אזורים מקווקווים = מיקום משוער לפי שורת Q (אפשר להסתירם בתיבה "הצג מיקומים משוערים" בראש הרשימה). לחץ על "עדכן נוט"מ" בתחתית לנתונים עדכניים.';
+      wrap.appendChild(nb);
+    }
+    if(k==='X'){
+      const nb=document.createElement('div'); nb.className='noteblock';
+      nb.innerHTML="לפי סעיפים 1(יז)–1(יט): האיסור ב-LLP171/172/173 (יו\"ש) וב-LLP18 (יריחו) <b>אינו חל</b> על כטב\"מ וטיסן — בתנאי שתואמה הפעילות מול הגורם הצבאי הרלוונטי לפי פרק א'-11(3)(ב)(2)(ה). ללא תיאום כזה האיסור בתוקף מלא. השכבה כבויה כברירת מחדל וניתן להדליקה בבורר השכבות.";
+      wrap.appendChild(nb);
+    }
+    g.appendChild(wrap);
+    groupsEl.appendChild(g);
+  });
+  if(filter&&!groupsEl.children.length){ const m=document.createElement('div'); m.className='noteblock'; m.id='noMatch'; m.textContent='לא נמצאו אתרים תואמים'; groupsEl.appendChild(m); }
+}
+renderList();
+document.getElementById('q').addEventListener('input',e=>{ renderList(e.target.value.trim().toLowerCase()||null); ntRenderList(); });
+/* קבוצות הנוט"מים במקרא (מונה + פריטים) מתעדכנות כשרשימת הנוט"מים הפעילים משתנה */
+let ntGroupsSig='';
+function refreshNtGroups(){
+  const f=curFilter(), sig=f+'|'+NT_ORDER.map(k=>ntGroupItems(k,f).map(n=>n.it.id+(n.approx?'~':'')).join(',')).join('|');
+  if(sig===ntGroupsSig) return;
+  ntGroupsSig=sig; renderList(f);
+}
+/* סנכרון עינית ההצגה במקרא עם בורר השכבות */
+function syncVis(){ document.querySelectorAll('#groups .vis').forEach(el=>{ const k=el.dataset.k; if(groups[k]) el.style.opacity=map.hasLayer(groups[k])?1:.3; }); }
+map.on('overlayadd overlayremove',syncVis);
+/* ---- שמורות טבע וגנים לאומיים (נספח ה' + גבולות רט"ג) — נטענות בנפרד כי הקובץ גדול ---- */
+const INPA_RULES={
+ NR:'שמורת טבע: גובה מזערי להטסה 300 רגל מעפ"ש ו-150 מ\' מגבול השמורה (הקו המקווקו, מוצג מזום 11 ומעלה). אסור נחיתה והמראה. רבי להב (רחפנים): מותר רק למפעיל מורשה ובמסגרת הכללים של רט"ג. ',
+ NP:'גן לאומי: גובה מזערי להטסה 500 רגל מעפ"ש. אסור נחיתה והמראה; אסור להטיס רבי להב (רחפנים) בגנים לאומיים. '
+};
+/* הודעת מצב על המפה (גלויה גם כשהמקרא סגור): טעינה / שגיאה + "נסה שוב" — לנוט"מים ולשכבות רט"ג.
+   מצב 'loading' מוצג רק אם הטעינה נמשכת יותר מ-250ms (בלי הבהוב בטעינה מהירה) */
+const loadSt={nt:'idle', inpa:'idle'};
+function refreshBanner(){
+  const b=document.getElementById('ntBanner'); if(!b) return;
+  const errs=[]; if(loadSt.nt==='err') errs.push('נתוני הנוט"מים'); if(loadSt.inpa==='err') errs.push('שכבות רט"ג (שמורות וגנים)');
+  b.textContent='';
+  if(errs.length){
+    b.hidden=false; b.className='err';
+    const sp=document.createElement('span'); sp.textContent='לא ניתן לטעון: '+errs.join(' ו')+'. בדקו את החיבור לאינטרנט.';
+    const bt=document.createElement('button'); bt.type='button'; bt.id='nt-retry'; bt.textContent='נסה שוב';
+    bt.onclick=()=>{ if(loadSt.nt==='err') ntLoadAuto(); if(loadSt.inpa==='err') loadInpa(); };
+    b.appendChild(sp); b.appendChild(bt);
+  }else if(loadSt.nt==='loading'||loadSt.inpa==='loading'){ b.hidden=false; b.className=''; b.textContent='⏳ טוען נתונים…'; }
+  else{ b.hidden=true; b.className=''; }
+  InfoCard.place();
+}
+function setLoad(key,state){
+  loadSt[key]=state;
+  if(state==='loading') setTimeout(refreshBanner,250); else refreshBanner();
+}
+let inpaLoaded=false;
+function loadInpa(){
+ if(inpaLoaded) return;
+ setLoad('inpa','loading');
+ return fetchJSON('../data/inpa-zones.json?v=20261003',null,60000).then(d=>{
+  inpaLoaded=true;
+  INPA_UNMAPPED=d.unmapped||[];
+  const built=d.sites.map(site=>{
+    const cat=site.kind==='P'?'NP':'NR';
+    const a={code:site.id, name:site.name, cat, src:'inpa', altLabel:'סגור להטסה:',
+      alt:'מהקרקע עד '+Number(site.max).toLocaleString('en-US')+' רגל מעפ"ש',
+      note:INPA_RULES[cat]+(site.note?'<br>'+esc(site.note)+'. ':'')+(site.nb?'<br><i>'+esc(site.nb)+'</i> ':'')+'<br>חריגים: <a href="https://www.parks.org.il/article/tisa/" target="_blank" rel="noopener" style="color:#7fc0ff">טופס בקשה לחריגה (רט"ג)</a>',
+      g:{k:'multi', rings:site.rings}};
+    AREAS.push(a);
+    const layer=buildGeom(a,'nat'), size=layerArea(layer);
+    layer.options.smoothFactor=size<1e7?0.5:1.5;     // אתרים קטנים/צרים (רצועת חוף) לא מפושטים עד היעלמות
+    return {a,site,layer,size};
+  }).sort((x,y)=>y.size-x.size);   // גדולים נוספים קודם — קטנים מעליהם (לא תלוי בסדר הקובץ)
+  built.forEach(({a,site,layer,size})=>{
+    layer.addTo(groups[a.cat]);
+    const e=regArea(a,layer,'nat',size);
+    if(site.buf){ e.bufRings=site.buf; site.buf.forEach(r=>r.forEach(p=>e.hb.extend(p))); }
+  });
+  syncBuf(); restack();
+  renderList(document.getElementById('q').value.trim().toLowerCase()||null);
+  setLoad('inpa','ok');
+}).catch(()=>{
+  if(inpaLoaded) return;
+  setLoad('inpa','err');
+  const nb=document.createElement('div'); nb.className='noteblock'; nb.id='inpaErr'; nb.textContent='שכבות רט"ג (שמורות וגנים) לא נטענו. ';
+  const rb=document.createElement('button'); rb.type='button'; rb.id='inpa-retry'; rb.textContent='נסה שוב';
+  rb.style.cssText='margin-top:6px;padding:7px 14px;min-height:36px;border:0;border-radius:7px;background:#a8c6e8;color:#0e1b2a;font-weight:700;cursor:pointer';
+  rb.onclick=()=>{ nb.remove(); loadInpa(); };
+  nb.appendChild(rb); groupsEl.appendChild(nb);
+ });
+}
+loadInpa();
+/* ---- חלונית מקרא צפה: פתיחה/סגירה ---- */
+const sideEl=document.getElementById('side'), tbtn=document.getElementById('togglebtn');
+function setPanel(hidden){
+  sideEl.classList.toggle('collapsed',hidden);
+  tbtn.style.display=hidden?'block':'none';
+  InfoCard.place();       // המקרא נפתח/נסגר — הכרטיס (אם פתוח) מתמקם מחדש
+}
+tbtn.onclick=()=>setPanel(false);
+document.getElementById('closeside').onclick=()=>setPanel(true);
+setPanel(compactMQ.matches); /* בטלפון/לרוחב נמוך המקרא מתחיל סגור — המפה גלויה */
+ 
+/* ---- גרירת מיקום החלונית (מהכותרת) ---- */
+const hdrEl=sideEl.querySelector('header');
+let dragPos=null;
+function posStart(e){
+  if(window.innerWidth<=760||e.target.closest('#closeside,summary,details,button,a,input')) return;   // בטלפון המקרא קבוע; אין חסימה של לחיצות
+  const pt=e.touches?e.touches[0]:e;
+  const r=sideEl.getBoundingClientRect();
+  sideEl.style.left=r.left+'px'; sideEl.style.top=r.top+'px'; sideEl.style.right='auto';
+  dragPos={dx:pt.clientX-r.left, dy:pt.clientY-r.top};
+  document.body.style.userSelect='none';
+  if(e.type==='mousedown') e.preventDefault();
+}
+function posMove(e){
+  if(!dragPos) return;
+  const pt=e.touches?e.touches[0]:e;
+  const w=sideEl.offsetWidth;
+  let L=Math.max(8-w+60, Math.min(window.innerWidth-60, pt.clientX-dragPos.dx));
+  let T=Math.max(8, Math.min(window.innerHeight-50, pt.clientY-dragPos.dy));
+  sideEl.style.left=L+'px'; sideEl.style.top=T+'px';
+  if(e.cancelable) e.preventDefault();
+}
+function posEnd(){ if(dragPos){ dragPos=null; document.body.style.userSelect=''; InfoCard.place(); } }
+hdrEl.addEventListener('mousedown',posStart);
+hdrEl.addEventListener('touchstart',posStart,{passive:true});
+window.addEventListener('mousemove',posMove);
+window.addEventListener('touchmove',posMove,{passive:false});
+window.addEventListener('mouseup',posEnd);
+window.addEventListener('touchend',posEnd);
+ 
+/* ---- גרירת רוחב החלונית (מהקצה השמאלי) ---- */
+const resizer=document.getElementById('resizer');
+let rz=null;
+function rzStart(e){
+  const r=sideEl.getBoundingClientRect();
+  rz={right:r.right};
+  sideEl.style.left=r.left+'px'; sideEl.style.top=r.top+'px'; sideEl.style.right='auto';
+  document.body.style.userSelect='none';
+  e.preventDefault();
+}
+function rzMove(e){
+  if(!rz) return;
+  const x=(e.touches? e.touches[0].clientX : e.clientX);
+  let w=Math.max(230, Math.min(500, rz.right-x));
+  sideEl.style.width=w+'px';
+  sideEl.style.left=(rz.right-w)+'px';
+  if(e.cancelable) e.preventDefault();
+}
+function rzEnd(){ if(rz){ rz=null; document.body.style.userSelect=''; InfoCard.place(); } }
+resizer.addEventListener('mousedown',rzStart);
+resizer.addEventListener('touchstart',rzStart,{passive:false});
+window.addEventListener('mousemove',rzMove);
+window.addEventListener('touchmove',rzMove,{passive:false});
+window.addEventListener('mouseup',rzEnd);
+window.addEventListener('touchend',rzEnd);
+ 
+ 
+ 
+ 
+ 
+ 
+/* ---- קפל/פתח כל הקבוצות ---- */
+document.getElementById('collapseall').onclick=()=>{
+  ORDER.forEach(k=>openState[k]=false);
+  document.querySelectorAll('#groups .grp').forEach(g=>g.classList.remove('open'));
+};
+document.getElementById('expandall').onclick=()=>{
+  ORDER.forEach(k=>openState[k]=true);
+  document.querySelectorAll('#groups .grp').forEach(g=>g.classList.add('open'));
+};
+ 
+ 
+(async()=>{
+  try{
+    const r=await fetch('https://api.countapi.xyz/hit/icd-a17-map/visits');
+    const d=await r.json();
+    document.getElementById('vc-n').textContent=d.value.toLocaleString('he-IL');
+  }catch(e){ const vc=document.getElementById('layers-counter'); if(vc) vc.style.display='none'; }
+})();
+ 
+ 
+/* ============================================================
+   נוט"מ (NOTAM) — שכבה חיה
+   ============================================================ */
+const NOTAM_CATS={uas:"NT_uas",pje:"NT_pje",frng:"NT_frng",act:"NT_act",obst:"NT_obst",ad:"NT_ad",other:"NT_other"};
+const NOTAM_DATA_URLS=["../../notam-data.json","https://icd-org.github.io/notam-map-/notam-data.json"];
+ 
+/* ----- פרסור ----- */
+function ntDms(d,m,s){ return (+d)+(+m)/60+(+s)/3600; }
+function ntParseCoords(text){
+  const out=[]; let re=/(\d{2})(\d{2})(\d{2}(?:\.\d+)?)N\s?0?(\d{2})(\d{2})(\d{2}(?:\.\d+)?)E/g, m;
+  while((m=re.exec(text))!==null) out.push({lat:ntDms(m[1],m[2],m[3]),lng:ntDms(m[4],m[5],m[6]),idx:m.index});
+  re=/N(\d{2})(\d{2})(\d{2}(?:\.\d+)?)E\s?0?(\d{2})(\d{2})(\d{2}(?:\.\d+)?)/g;
+  while((m=re.exec(text))!==null){
+    if(out.some(c=>Math.abs(c.idx-m.index)<3)) continue;
+    out.push({lat:ntDms(m[1],m[2],m[3]),lng:ntDms(m[4],m[5],m[6]),idx:m.index});
+  }
+  out.sort((a,b)=>a.idx-b.idx); return out;
+}
+function ntParseRadius(text){
+  const m=/([\d.]+)\s*(NM|KM|M)\s+RADIUS/i.exec(text); if(!m) return null;
+  const v=parseFloat(m[1]);
+  const meters=m[2].toUpperCase()==="NM"?v*1852:m[2].toUpperCase()==="KM"?v*1000:v;
+  return {meters,label:`${m[1]} ${m[2].toUpperCase()}`};
+}
+function ntParseQline(text){
+  const m=/Q\)[^\n]*?(\d{2})(\d{2})N(\d{3})(\d{2})E(\d{3})/.exec(text); if(!m) return null;
+  return {center:{lat:ntDms(m[1],m[2],0),lng:ntDms(m[3],m[4],0)},radius:(+m[5])*1852};
+}
+function ntParseTimes(text){
+  const b=/B\)\s*(\d{10})/.exec(text), c=/C\)\s*(\d{10})/.exec(text), perm=/C\)\s*PERM/i.test(text);
+  const toD=t=>Date.UTC(2000+ +t.slice(0,2),+t.slice(2,4)-1,+t.slice(4,6),+t.slice(6,8),+t.slice(8,10));
+  return {fromD:b?toD(b[1]):null, toD:perm?null:(c?toD(c[1]):null), perm,
+          fromS:b?`${b[1].slice(4,6)}/${b[1].slice(2,4)}/20${b[1].slice(0,2)} ${b[1].slice(6,8)}:${b[1].slice(8,10)} UTC`:null,
+          toS:perm?"קבוע":(c?`${c[1].slice(4,6)}/${c[1].slice(2,4)}/20${c[1].slice(0,2)} ${c[1].slice(6,8)}:${c[1].slice(8,10)} UTC`:null)};
+}
+function ntParseGeom(raw){
+  const up=raw.toUpperCase();
+  const eM=/E\)\s*([\s\S]*?)(?=\n[FG]\)|$)/.exec(up); const eText=eM?eM[1].trim():up;
+  const coords=ntParseCoords(eText), radius=ntParseRadius(eText);
+  const centered=/CENT(?:E?)RED\s+ON/.test(eText);
+  if(radius&&coords.length>=1&&(centered||coords.length<3)){
+    let center=coords[0];
+    const ci=eText.search(/CENT(?:E?)RED\s+ON/);
+    if(ci>=0){let best=null,bd=1e9;coords.forEach(c=>{const d=Math.abs(c.idx-ci);if(c.idx>ci&&d<bd){bd=d;best=c;}});if(best)center=best;}
+    return {type:"circle",center,radius:radius.meters,approx:false};
+  }
+  if(coords.length>=3) return {type:"polygon",points:coords,approx:false};
+  if(coords.length===1&&radius) return {type:"circle",center:coords[0],radius:radius.meters,approx:false};
+  const q=ntParseQline(raw); if(q) return {type:"circle",center:q.center,radius:q.radius,approx:true};
+  return null;
+}
+ 
+/* ----- ציור ----- */
+function ntDest(lat,lng,brgDeg,distM){
+  const br=brgDeg*Math.PI/180,la1=lat*Math.PI/180,lo1=lng*Math.PI/180,dr=distM/6371000;
+  const la2=Math.asin(Math.sin(la1)*Math.cos(dr)+Math.cos(la1)*Math.sin(dr)*Math.cos(br));
+  const lo2=lo1+Math.atan2(Math.sin(br)*Math.sin(dr)*Math.cos(la1),Math.cos(dr)-Math.sin(la1)*Math.sin(la2));
+  return [la2*180/Math.PI,lo2*180/Math.PI];
+}
+function ntCirclePoly(c,r,n=60){const p=[];for(let i=0;i<n;i++)p.push(ntDest(c.lat,c.lng,i*360/n,r));return p;}
+
+/* נוט"ם מנהלי (CHECKLIST / TRIGGER, קוד Q שמתחיל ב-QKK או QOA) וכל עיגול משוער גדול מ-50 ק"מ: לא מצוירים — נשארים ברשימה */
+const NT_APPROX_MAX_M=50000;
+function ntIsAdmin(raw){ return /Q\)\s*[A-Z]{4}\/Q(?:KK|OA)/i.test(raw)||/CHECKLIST|TRIGGER\s+NOTAM/i.test(raw); }
+
+/* תוכן הנוט"ם בחלון "מה יש כאן" */
+function ntBodyHtml(n){
+  const it=n.it, geo=n.geo, times=n.times;
+  const note=!geo?'⚠ ללא מיקום מדויק — מוצג ברשימה בלבד'
+    :(!n.layer&&!n.expired)?'⚠ ללא מיקום מדויק — לא מסומן על המפה'
+    :n.approx?'⚠ מיקום משוער לפי שורת Q':'';
+  const meta=[];
+  if(times.fromS) meta.push('מ-'+times.fromS);
+  if(times.toS) meta.push('עד '+times.toS);
+  if(n.layer&&geo) meta.push(geo.type==="circle"?`רדיוס ${Math.round(geo.radius)} מ'`:`${geo.points.length} נקודות`);
+  const altM=/UP\s+TO\s+([\d,]+)\s*FT\s+AMSL/i.exec(it.raw||'');
+  if(altM) meta.push(`עד ${altM[1]} רגל מעפ"ש`);
+  const heb=txtHtml(it.heb).replace(/\n/g,'<br>');
+  return `${note?`<div style="color:#ffd24d;font-size:11px;margin-bottom:4px">${note}</div>`:''}
+<div class="pp-row"><span class="k">קטגוריה:</span><span>${CATS[n.catK].label.replace('נוט"מ — ','')}</span></div>
+${meta.length?`<div class="pp-row"><span class="k">זמן:</span><span style="font-size:11px">${meta.join(' · ')}</span></div>`:''}
+<div class="pp-note" style="border-top:1px dashed var(--line);padding-top:6px;margin-top:6px;white-space:pre-wrap">${heb}</div>
+<details style="margin-top:6px"><summary style="cursor:pointer;color:#7fb3d8;font-size:11px;min-height:32px;display:flex;align-items:center">הצג נוטמ מקורי</summary>
+<div style="direction:ltr;text-align:left;font-family:Consolas,monospace;font-size:10px;color:#8fa6bd;margin-top:4px;white-space:pre-wrap;word-break:break-word;background:#0a101c;padding:6px;border-radius:5px">${esc(it.raw)}</div></details>
+<div class="pp-note">מקור: נוטמ פנים-ארצי · לא מחליף את הנוטמ הרשמי</div>`;
+}
+function ntItem(n,near){
+  const col=CATS[n.catK].color, it=n.it;
+  return {code:esc(it.id), name:esc(it.name), tag:n.approx?'מיקום משוער':'NOTAM', apx:n.approx, col, near:!!near,
+    head:()=>`<div class="pp-top"><div class="pp-code" style="color:${col}">${esc(it.id)}</div><div class="pp-name">${esc(it.name)}</div></div>
+<span class="pp-badge" style="background:${col}">NOTAM</span>`,
+    body:()=>ntBodyHtml(n)};
+}
+
+/* שכבות נוט"מ נשמרות לפי id: ברענון מוסרות/נוספות רק שכבות שהשתנו, ואף חלון מידע לא נסגר */
+function ntRemoveEntry(n){ if(n&&n.layer){ groups[n.catK].removeLayer(n.layer); n.layer=null; } }
+const NT_APPROX_FILL_MAX_M=20000;   // עיגול משוער גדול מ-20 ק"מ: קו מתאר בלבד, בלי מילוי
+function ntMake(n){
+  const geo=n.geo, col=CATS[n.catK].color, bigApx=n.approx&&geo.radius>NT_APPROX_FILL_MAX_M;
+  const st={color:col, weight:n.approx?1.4:2, fillColor:col, fill:!bigApx, fillOpacity:n.approx?0.08:0.22, dashArray:n.approx?"7 5":null, ...RO};
+  const layer=geo.type==="circle"?L.polygon(ntCirclePoly(geo.center,geo.radius),st):L.polygon(geo.points.map(c=>[c.lat,c.lng]),st);
+  n.layer=layer; n.bounds=layer.getBounds(); n.hb=n.bounds; n.size=layerArea(layer); n.ip=null;
+  n.item=near=>ntItem(n,near);
+  if(!n.approx||apxOn) groups[n.catK].addLayer(layer);      // משוערים: רק כשהמתג "הצג מיקומים משוערים" דלוק
+}
+function ntDraw(notams){
+  const now=Date.now(), next=new Map();
+  notams.forEach(it=>{
+    if(!it||!it.id||next.has(it.id)) return;
+    const raw=it.raw||'', sig=raw+'\u0001'+(it.name||'')+'\u0001'+(it.cat||'')+'\u0001'+(it.heb||'');
+    const times=ntParseTimes(raw), expired=!!(times.toD&&now>times.toD);
+    const geo=ntParseGeom(raw), approx=!!(geo&&geo.approx);
+    const draw=!!geo&&!expired&&!ntIsAdmin(raw)&&!(approx&&geo.radius>NT_APPROX_MAX_M);
+    const prev=ntEntries.get(it.id);
+    let n;
+    if(prev&&prev.sig===sig&&prev.draw===draw){ n=prev; n.it=it; n.times=times; n.expired=expired; }   // לא השתנה — משאירים את השכבה
+    else{
+      ntRemoveEntry(prev);
+      n={it,sig,geo,times,expired,approx,draw,layer:null,catK:NOTAM_CATS[it.cat||"uas"]||"NT_uas",cls:approx?2:1,size:0};
+      if(draw) ntMake(n);
+    }
+    next.set(it.id,n);
+  });
+  ntEntries.forEach((n,id)=>{ if(!next.has(id)) ntRemoveEntry(n); });
+  ntEntries.clear(); next.forEach((n,id)=>ntEntries.set(id,n));
+  restack();
+  if(typeof ntRenderList==="function") ntRenderList();
+  refreshNtGroups(); refreshApx();
+  return ntStats();
+}
+/* ספירה: פעילים (לא פגי תוקף) · מסומנים כרגע במפה (משוערים — רק כשהמתג דלוק) */
+function ntStats(){ let drawn=0, active=0; ntEntries.forEach(n=>{ if(!n.expired) active++; if(n.layer&&(!n.approx||apxOn)) drawn++; }); return {drawn,active}; }
+/* מתג "הצג מיקומים משוערים": ברירת מחדל כבוי בטלפון/מסך קטן ודלוק במחשב; הבחירה נשמרת */
+let apxOn=(()=>{ try{ const v=localStorage.getItem('a17-apx'); if(v==='1'||v==='0') return v==='1'; }catch(_){} return !compactMQ.matches; })();
+const apxTog=document.getElementById('apxToggle'), apxCnt=document.getElementById('apxCnt');
+function refreshApx(){ let c=0; ntEntries.forEach(n=>{ if(n.approx&&n.layer) c++; }); apxCnt.textContent=c?String(c):''; apxTog.checked=apxOn; }
+function setApprox(on){
+  apxOn=!!on; try{ localStorage.setItem('a17-apx',apxOn?'1':'0'); }catch(_){}
+  ntEntries.forEach(n=>{ if(n.approx&&n.layer){ const g=groups[n.catK]; if(apxOn){ if(!g.hasLayer(n.layer)) g.addLayer(n.layer); } else g.removeLayer(n.layer); } });
+  restack(); refreshApx();
+  if(ntLastFetch) ntUpdateStamp(ntStats(),ntFetchedAt);
+}
+apxTog.onchange=()=>setApprox(apxTog.checked);
+refreshApx();
+ 
+/* ----- טעינה ועדכון ----- */
+let ntData=[];
+ 
+/* הוספת כפתור עדכון נוטמ לסרגל הצד */
+document.addEventListener('DOMContentLoaded',()=>{
+  const foot=document.getElementById('foot');
+  if(!foot) return;
+  const row=document.createElement('div');
+  row.style.cssText='display:flex;gap:6px;margin:0 14px 8px';
+  const ntBtn=document.createElement('button');
+  ntBtn.id='nt-refresh';
+  ntBtn.style.cssText='flex:1;background:#1a2438;border:1px solid #ff2d2d44;border-radius:6px;color:#ff8a8a;font-size:12px;padding:7px 6px;cursor:pointer';
+  ntBtn.innerHTML='\ud83d\udd04 עדכן נוט"מ';
+  const a17Btn=document.createElement('button');
+  a17Btn.id='a17-refresh';
+  a17Btn.style.cssText='flex:1;background:#1a2438;border:1px solid #e0452f44;border-radius:6px;color:#f0a090;font-size:12px;padding:7px 6px;cursor:pointer';
+  a17Btn.innerHTML='\ud83d\udd04 עדכן פמ"ת';
+  row.appendChild(ntBtn); row.appendChild(a17Btn);
+  const ntSt=document.createElement('div');
+  ntSt.id='nt-status';
+  ntSt.style.cssText='display:none;font-size:10.5px;color:var(--dim);margin:0 14px 6px;line-height:1.4';
+  const ntSec=document.getElementById('ntListSection');
+  ntSec.before(row); ntSec.before(ntSt);
+  ntBtn.onclick=async()=>{ await ntLoadAuto(); };
+  a17Btn.onclick=async()=>{
+    a17Btn.textContent='בודק…'; a17Btn.disabled=true;
+    try{
+      if('serviceWorker' in navigator){
+        const reg=await navigator.serviceWorker.getRegistration();
+        if(reg){ await reg.update().catch(()=>{}); }
+      }
+      ntSt.textContent='נתוני הפמ"ת מוטמעים בקוד (גרסה 1/26). עדכון מלא מגיע כשמעלים גרסה חדשה.';
+      ntSt.style.display='block'; setTimeout(()=>ntSt.style.display='none',7000);
+    }catch(e){}
+    a17Btn.textContent='\ud83d\udd04 עדכן פמ"ת'; a17Btn.disabled=false;
+  };
+  if(ntLastFetch) ntUpdateStamp(ntStats(),ntFetchedAt);      // הנתונים הגיעו לפני שנוצר אלמנט הסטטוס
+});
+ 
+/* הוספת הסבר לשכבות הנוטמ במקרא */
+const NT_ORDER=["NT_uas","NT_pje","NT_frng","NT_act","NT_obst","NT_ad","NT_other"];
+ 
+/* ---- עדכון אוטומטי של נוטמים ---- */
+let ntLastFetch=null, ntFetchedAt=null, ntLoading=false;
+const NT_REFRESH_MS=5*60*1000; // רענון כל 5 דקות
+
+/* בלי ?t=: cache:'no-store' עוקף את מטמון ה-HTTP, ומפתח המטמון ב-Service Worker נשאר קבוע (אין צבירה) */
+async function ntFetch(timeoutMs){
+  for(const url of NOTAM_DATA_URLS){
+    try{
+      const j=await fetchJSON(url,{cache:'no-store'},timeoutMs);
+      if(j&&Array.isArray(j.notams)&&(j.notams.length||j.fetched_at)) return j;
+    }catch(e){}
+  }
+  return null;
+}
+async function ntLoadAuto(){
+  if(ntLoading) return false;
+  ntLoading=true;
+  const btn=document.getElementById('nt-refresh'), first=!ntLastFetch;
+  if(btn){ btn.textContent='⏳ טוען נוטמים…'; btn.disabled=true; }
+  if(first) setLoad('nt','loading');
+  let ok=false;
+  try{
+    const j=await ntFetch(15000);
+    if(j){
+      ntData=j.notams;
+      const r=ntDraw(ntData);
+      ntLastFetch=new Date(); ntFetchedAt=j.fetched_at;
+      ntUpdateStamp(r, j.fetched_at);
+      setLoad('nt','ok');
+      ok=true;
+    }else if(first) setLoad('nt','err');                    // אין נתונים בכלל: הודעה ברורה + "נסה שוב" (בלי נתוני ברירת מחדל מוטמעים)
+    else ntUpdateStamp(ntStats(), ntFetchedAt, true);       // רענון נכשל: ממשיכים להציג את הנתונים האחרונים, עם אזהרה
+  }catch(e){ if(first) setLoad('nt','err'); }
+  ntLoading=false;
+  if(btn){ btn.textContent='🔄 עדכן נוט"מ'; btn.disabled=false; }
+  return ok;
+}
+
+function ntUpdateStamp(r, fetchedAt, failed){
+  const el=document.getElementById('nt-status');
+  if(!el) return;
+  const now=ntLastFetch||new Date();
+  el.innerHTML=(failed?'<span style="color:#f0a060">⚠ העדכון האחרון נכשל — מוצגים הנתונים הקודמים</span> · ':'<span style="color:#4ade80">✓</span> ')+
+    `${pl(r.active,'נוט"ם אחד פעיל','נוט"מים פעילים')} (${r.drawn===1?'אחד מסומן':r.drawn+' מסומנים'} במפה) · עדכון: ${esc(fetchedAt||now.toLocaleTimeString('he-IL'))} · <span style="color:var(--dim);font-size:10px">מתרענן כל 5 דק'</span>`;
+  el.style.display='block';
+}
+ 
+/* טעינה ראשונית מיד עם פתיחת המפה */
+ntLoadAuto();
+ 
+/* רענון אוטומטי כל 5 דקות */
+setInterval(ntLoadAuto, NT_REFRESH_MS);
+ 
+/* רענון כשהדפדפן/טאב חוזר לפוקוס (אחרי שהאפליקציה הייתה ברקע) */
+document.addEventListener('visibilitychange',()=>{
+  if(document.visibilityState==='visible'){
+    const ago=ntLastFetch?Date.now()-ntLastFetch.getTime():Infinity;
+    if(ago>NT_REFRESH_MS) ntLoadAuto();
+  }
+});
+/* ---- רשימת נוט"מים בסרגל הצד ---- */
+function ntDayLabel(it){
+  // תאריך תחילת התוקף משורת B
+  const m=/B\)\s*(\d{10})/.exec(it.raw||'');
+  if(!m) return {lbl:"\u05e7\u05d1\u05d5\u05e2",d:0};
+  const t=m[1];
+  const d=new Date(Date.UTC(2000+ +t.slice(0,2),+t.slice(2,4)-1,+t.slice(4,6)));
+  const now=new Date();
+  const days=Math.round((Date.UTC(now.getFullYear(),now.getMonth(),now.getDate())-Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()))/86400000);
+  if(days<=0) return {lbl:"\ud83c\udd95 \u05d4\u05d9\u05d5\u05dd",d:days};
+  if(days===1) return {lbl:"\u05d0\u05ea\u05de\u05d5\u05dc",d:days};
+  if(days<=6) return {lbl:"\u05dc\u05e4\u05e0\u05d9 "+days+" \u05d9\u05de\u05d9\u05dd",d:days};
+  return {lbl:d.toLocaleDateString("he-IL",{day:"2-digit",month:"2-digit",year:"numeric"}),d:days};
+}
+let ntListSig='';
+function ntRenderList(){
+  const body=document.getElementById('ntListBody');
+  const cnt=document.getElementById('ntListCount');
+  if(!body||!ntData||!ntData.length) return;
+  const f=(document.getElementById('q').value||'').trim().toLowerCase();
+  // מיון לפי תאריך תחילה (חדש קודם); החיפוש במקרא מסנן גם את רשימת הנוט"מים
+  const rows=ntData.map(it=>({it,dd:ntDayLabel(it)})).sort((a,b)=>a.dd.d-b.dd.d)
+    .filter(({it})=>!f||((it.id||'')+' '+(it.name||'')+' '+(it.loc||'')+' '+(it.heb||'')).toLowerCase().includes(f));
+  cnt.textContent=f?"("+rows.length+"/"+ntData.length+")":"("+ntData.length+")";
+  const sig=f+'|'+new Date().toDateString()+'|'+rows.map(({it})=>{ const n=ntEntries.get(it.id); return it.id+(n&&n.layer?(n.approx?'~':'+'):'-'); }).join(',');
+  if(sig===ntListSig) return;     // לא השתנה כלום — לא בונים מחדש (שומר על מיקום הגלילה)
+  ntListSig=sig;
+  body.innerHTML="";
+  if(!rows.length){ const h=document.createElement('div'); h.style.cssText='padding:10px 14px;color:var(--dim);font-size:12px'; h.textContent='אין נוט"מים תואמים'; body.appendChild(h); return; }
+  let lastLbl=null;
+  rows.forEach(({it,dd})=>{
+    if(dd.lbl!==lastLbl){
+      lastLbl=dd.lbl;
+      const h=document.createElement('div');
+      const today=dd.lbl.includes("היום");
+      h.style.cssText='padding:6px 14px;background:'+(today?'rgba(74,222,128,.14)':'var(--panel2)')+';color:'+(today?'#4ade80':'var(--dim)')+';font-size:11px;font-weight:700;border-top:1px solid var(--line)';
+      h.textContent="📅 "+dd.lbl;
+      body.appendChild(h);
+    }
+    const catK=NOTAM_CATS[it.cat||"uas"]||"NT_uas";
+    const col=(CATS[catK]||CATS.NT_uas).color;
+    const n=ntEntries.get(it.id);
+    const tag=!n?'':n.layer?(n.approx?'מיקום משוער':''):(n.expired?'':'ללא מיקום מדויק');
+    const row=document.createElement('div');
+    row.style.cssText='padding:8px 14px;border-bottom:1px solid var(--line);cursor:pointer;font-size:12.5px;min-height:40px';
+    row.onmouseover=()=>row.style.background='var(--panel2)';
+    row.onmouseout=()=>row.style.background='';
+    row.innerHTML='<div style="display:flex;justify-content:space-between;gap:6px"><span style="font-weight:600"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:'+col+';margin-left:5px"></span>'+esc(it.name)+'</span><span style="font-family:Consolas,monospace;font-size:11px;color:#67d8e8">'+esc(it.id)+'</span></div>'+
+      (tag?'<div style="font-size:10.5px;color:#ffd24d;margin-top:2px">'+tag+'</div>':'');
+    row.onclick=()=>ntFocus(it.id);
+    body.appendChild(row);
+  });
+}
+/* בחירת נוט"ם מהרשימה: זום מכוון לשכבה + כרטיס מידע. נוט"ם בלי מיקום מדויק נפתח כרטיס בלי סמן */
+function ntFocus(id){
+  const n=ntEntries.get(id); if(!n) return;
+  if(compactMQ.matches) setPanel(true);
+  if(!n.layer){ openInfo([ntItem(n)],null); return; }          // בלי מיקום: כרטיס בלי סמן, המפה לא זזה
+  if(!map.hasLayer(groups[n.catK])) groups[n.catK].addTo(map);
+  if(n.approx&&!groups[n.catK].hasLayer(n.layer)){ groups[n.catK].addLayer(n.layer); restack(); }   // משוער שהמתג מסתיר: מוצג כשבוחרים אותו במפורש
+  const fp=fitPads();
+  map.fitBounds(n.bounds.pad(0.5),{paddingTopLeft:fp.tl,paddingBottomRight:fp.br,maxZoom:16,animate:false});
+  openAfterMove([ntItem(n)],interiorPoint(n));
+}
+(function(){
+  const tog=document.getElementById('ntListToggle');
+  const body=document.getElementById('ntListBody');
+  const chev=document.getElementById('ntListChev');
+  if(tog) tog.onclick=()=>{
+    const open=body.style.display==='none';
+    body.style.display=open?'block':'none';
+    chev.textContent=open?'\u25b2':'\u25bc';
+    if(open){      // הרשימה נפתחת אחרי כל הקבוצות — גוללים אליה (גלילה של אזור המקרא בלבד)
+      const sb=document.getElementById('sidebody'), sr=sb.getBoundingClientRect(), br=body.getBoundingClientRect();
+      sb.scrollTop+=br.top-sr.top-document.getElementById('search').offsetHeight-tog.offsetHeight;     // הכותרת (במיקומה הטבעי) מיד מתחת לשורת החיפוש הנדבקת
+    }
+  };
+})();
+ 
+/* ---- בקרבתי ---- */
+(function(){
+  const btn=document.getElementById('nearBtn');
+  if(!btn) return;
+  btn.onclick=()=>{
+    if(!navigator.geolocation){alert('\u05d4\u05d3\u05e4\u05d3\u05e4\u05df \u05dc\u05d0 \u05ea\u05d5\u05de\u05da \u05d1\u05d0\u05d9\u05ea\u05d5\u05e8 \u05de\u05d9\u05e7\u05d5\u05dd.');return;}
+    btn.textContent='\u05de\u05d0\u05ea\u05e8\u2026';
+    navigator.geolocation.getCurrentPosition(p=>{
+      const lat=p.coords.latitude, lng=p.coords.longitude;
+      if(userMarker){try{map.removeLayer(userMarker)}catch(e){}}
+      const ll=L.latLng(lat,lng);
+      userMarker=L.circleMarker(ll,{radius:9,color:'#67d8e8',weight:3,fillColor:'#67d8e8',fillOpacity:.85,...RO}).addTo(map);
+      userMarker.bringToFront();
+      map.setView(ll,12,{animate:false});     // בקשה מכוונת של המשתמש — מותר לזוז
+      /* "המיקום שלך" + מה שיש בנקודה (אם יש); כרטיס חופשי, לא קשור לסמן */
+      whenSettled(()=>{
+        if(showHere(ll,'📍 המיקום שלך')) return;
+        if(compactMQ.matches) setPanel(true);
+        InfoCard.show(ll,'📍 המיקום שלך','<div class="pp-note" style="border:0;margin:0;padding:0">אין אזורים או נוט"מים במיקום זה.</div>',{forbid:cardForbid});
+      });
+      btn.textContent='\ud83d\udccd \u05d1\u05e7\u05e8\u05d1\u05ea\u05d9';
+    },e=>{
+      alert('\u05dc\u05d0 \u05d4\u05e6\u05dc\u05d7\u05ea\u05d9 \u05dc\u05d0\u05ea\u05e8 \u05de\u05d9\u05e7\u05d5\u05dd. \u05d5\u05d3\u05d0 \u05e9\u05d0\u05d9\u05e9\u05e8\u05ea \u05d4\u05e8\u05e9\u05d0\u05ea \u05de\u05d9\u05e7\u05d5\u05dd.');
+      btn.textContent='\ud83d\udccd \u05d1\u05e7\u05e8\u05d1\u05ea\u05d9';
+    },{enableHighAccuracy:true,timeout:12000});
+  };
+})();
+ 
+ 
+/* ---- מפענח נוט"מ בודד ---- */
+(function(){
+  const modal=document.getElementById('decoderModal');
+  const openBtn=document.getElementById('decoderBtn');
+  const closeBtn=document.getElementById('decoderClose');
+  if(!modal||!openBtn) return;
+  openBtn.onclick=()=>{modal.style.display='block';};
+  closeBtn.onclick=()=>{modal.style.display='none';};
+  modal.onclick=(e)=>{if(e.target===modal) modal.style.display='none';};
+  const inp=document.getElementById('ntInput');
+  const EX="C1513/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/015/3243N03524E001\nA) LLLL B) 2607191000 C) 2607221300\nE) AN AREA AT KFAR-TAVOR WI 1.1NM RADIUS CENTERED ON\nPSN 324241N0352429E CLSD FM GND UP TO 1,500FT AMSL TO ALL FLT.";
+  document.getElementById('ntExampleBtn').onclick=()=>{inp.value=EX;};
+  document.getElementById('ntClearBtn').onclick=()=>{inp.value='';document.getElementById('ntDecResult').style.display='none';document.getElementById('ntDecErr').style.display='none';};
+  let lastGeom=null;
+  document.getElementById('ntDecodeBtn').onclick=()=>{
+    const raw=inp.value.trim();
+    const err=document.getElementById('ntDecErr');
+    err.style.display='none';
+    if(!raw){err.textContent='\u05d4\u05d3\u05d1\u05e7 \u05e0\u05d5\u05d8"\u05de \u05e7\u05d5\u05d3\u05dd.';err.style.display='block';return;}
+    const eM=/E\)\s*([\s\S]*?)(?=\n[FG]\)|$)/i.exec(raw.toUpperCase());
+    const eText=eM?eM[1].trim():raw.toUpperCase();
+    lastGeom=ntParseGeom(raw);
+    document.getElementById('ntOrigBody').textContent=raw;
+    document.getElementById('ntHebBody').textContent=ntLocalTranslate(eText);
+    document.getElementById('ntDecResult').style.display='block';
+  };
+  document.getElementById('ntGmapsBtn').onclick=()=>{
+    if(!lastGeom)return;
+    const c=lastGeom.center||(lastGeom.points&&lastGeom.points[0]);
+    if(c) window.open("https://www.google.com/maps/search/?api=1&query="+c.lat.toFixed(6)+","+c.lng.toFixed(6),'_blank');
+  };
+})();
+function ntLocalTranslate(eText){
+  const PH=[
+   ["UAS/UAV ACT WILL TAKE PLACE AT","\u05e4\u05e2\u05d9\u05dc\u05d5\u05ea \u05db\u05d8\u05d1\"\u05de/\u05e8\u05d7\u05e4\u05e0\u05d9\u05dd \u05ea\u05ea\u05e7\u05d9\u05d9\u05dd \u05d1"],
+   ["UAS ACT WILL TAKE PLACE AT","\u05e4\u05e2\u05d9\u05dc\u05d5\u05ea \u05db\u05d8\u05d1\"\u05de \u05ea\u05ea\u05e7\u05d9\u05d9\u05dd \u05d1"],
+   ["AN AREA BTN THE FLW PSN","\u05d0\u05d6\u05d5\u05e8 \u05d1\u05d9\u05df \u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05d4\u05e6\u05d9\u05d5\u05df"],
+   ["RADIUS CENTERED ON PSN","\u05e8\u05d3\u05d9\u05d5\u05e1 \u05e9\u05de\u05e8\u05db\u05d6\u05d5 \u05d1\u05e0.\u05e6."],
+   ["AN AREA AT","\u05d0\u05d6\u05d5\u05e8 \u05d1"],["AN AREA WI","\u05d0\u05d6\u05d5\u05e8 \u05d1\u05ea\u05d5\u05da"],
+   ["CLSD TO ALL FLT","\u05e1\u05d2\u05d5\u05e8 \u05dc\u05db\u05dc \u05d4\u05d8\u05d9\u05e1\u05d5\u05ea"],["TO ALL FLT","\u05dc\u05db\u05dc \u05d4\u05d8\u05d9\u05e1\u05d5\u05ea"],
+   ["CLSD FM GND UP TO","\u05e1\u05d2\u05d5\u05e8 \u05de\u05d4\u05e7\u05e8\u05e7\u05e2 \u05d5\u05e2\u05d3"],["FM GND UP TO","\u05de\u05d4\u05e7\u05e8\u05e7\u05e2 \u05d5\u05e2\u05d3"],
+   ["AGRICULTURE FLT","\u05d8\u05d9\u05e1\u05d5\u05ea \u05e8\u05d9\u05e1\u05d5\u05e1"],["PPR FM ATC","\u05d0\u05d9\u05e9\u05d5\u05e8 \u05de\u05d5\u05e7\u05d3\u05dd \u05de\u05d1\u05e7\u05e8\u05ea \u05d4\u05ea\u05e2\u05d5\u05e4\u05d4"],
+   ["CTN ADZ","\u05de\u05d5\u05de\u05dc\u05e6\u05ea \u05d6\u05d4\u05d9\u05e8\u05d5\u05ea"],["FT AMSL","\u05e8\u05d2\u05dc \u05de\u05e2\u05dc \u05e4\u05e0\u05d9 \u05d4\u05d9\u05dd"],
+   ["FT AGL","\u05e8\u05d2\u05dc \u05de\u05e2\u05dc \u05d4\u05e7\u05e8\u05e7\u05e2"],["NM RADIUS","\u05de\u05d9\u05d9\u05dc \u05d9\u05de\u05d9 \u05e8\u05d3\u05d9\u05d5\u05e1"],
+   ["M RADIUS","\u05de\u05d8\u05e8 \u05e8\u05d3\u05d9\u05d5\u05e1"],["PROHIBITED","\u05d0\u05e1\u05d5\u05e8"],["FLW PSN","\u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05d4\u05e6\u05d9\u05d5\u05df"],
+   ["PSN","\u05e0.\u05e6."],["CLSD","\u05e1\u05d2\u05d5\u05e8"],["OPS","\u05e4\u05e2\u05d9\u05dc\u05d5\u05ea"],["HEL","\u05de\u05e1\u05d5\u05e7\u05d9\u05dd"],
+   ["UP TO","\u05e2\u05d3"],["PERM","\u05e7\u05d1\u05d5\u05e2"]
+  ];
+  let t=" "+eText.replace(/\s+/g," ").trim()+" ";
+  for(const [en,he] of PH) t=t.split(en).join(he);
+  return t.replace(/\s+,/g,",").replace(/\s+\./g,".").trim();
+}
+ 
+ 
+ 
+if('serviceWorker' in navigator){
+  /* ה-SW עושה skipWaiting + claim ורשת-קודם, ולכן אין צורך בבאנר "גרסה חדשה" (שהיה מכסה את הפקדים) */
+  navigator.serviceWorker.register('./sw.js').then(reg=>{
+    reg.update().catch(()=>{});      // בדיקת עדכון בכל כניסה (באופליין נכשלת בשקט)
+  }).catch(()=>{});
+}
+ 
+</script>
+</body>
+</html>
