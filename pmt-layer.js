@@ -1,20 +1,72 @@
 /* שכבות איסורים קבועים — פמ״ת פנים ארצי א-17 (עדכון 1/26) + גבולות רשות הטבע והגנים
-   נקודה צבעונית לכל אזור; בהתקרבות מופיע האזור המלא כפוליגון שקוף.
-   לחיצה על המפה פותחת "כרטיס מידע" (InfoCard) אחד — כל האזורים והנוט"מים שחלים בנקודה. הכרטיס הוא אלמנט בתוך מכל המפה
-   (לא חלון Leaflet): הוא מוצב בצד שלא מכסה את הנקודה ואת הפקדים, ואף פעם לא מזיז את המפה.
+   נקודה צבעונית לכל אזור; בהתקרבות מופיע האזור המלא כפוליגון שקוף, עם מסגרת כהה והילה לבנה (קריא על כל רקע).
+   לחיצה/הקשה על המפה פותחת "כרטיס מידע" (InfoCard) אחד — כל האזורים והנוט"מים שחלים בנקודה: במחשב/טאבלט כרטיס צף בתוך מכל המפה (ואף פעם לא מזיז אותה),
+   ובנייד (פריסת split ב-index.html) — בלשונית "מה יש כאן" של הפאנל התחתון. הגבול המדויק של הפריט הפעיל (או שמתחת לעכבר) מודגש בשכבת SVG משלה מעל כל השכבות, והנקודה מסומנת בסיכה.
    נתונים: data/pmt-zones.json , data/inpa-zones.json */
 (function(){
   if(typeof map==="undefined"||!map||typeof L==="undefined") return;
 
   /* מזהה גרסה — חייב להיות זהה ל-BUILD ב-index.html (index.html מרענן פעם אחת אם הקובץ הזה ישן) */
-  const BUILD="20261005";
+  const BUILD="20261006";
   window.PMT_BUILD=BUILD;
 
-  /* ======================= InfoCard — כרטיס מידע צף שלא מזיז את המפה ======================= */
+  /* ======================= הדגשת האזור הנבחר + סיכת מיקום =======================
+     שכבה ייעודית אחת (pane משלה מעל כל השכבות, SVG — כדי שאפשר יהיה glow ב-CSS) מציירת את הגבול המדויק של הפריט המודגש: קו לבן רחב + קו בצבע הקטגוריה + מילוי לבן עדין.
+     הגיאומטריה היא הטבעות עצמן מהנתונים (אותן טבעות שמשמשות את בדיקת הפגיעה); אתר קטן (פחות מ-14px) מקבל טבעת. בלי setStyle בשכבות הרגילות.
+     "מודגש" = מה שמתחת לעכבר (ריחוף) או, בלעדיו, הפריט הפעיל בכרטיס (הראשון / השורה שנבחרה). הסיכה — בנקודה שנלחצה/נבחרה. */
+  const PIN_SVG='<svg width="30" height="42" viewBox="0 0 30 42" aria-hidden="true" focusable="false"><path d="M15 40S3 25.5 3 15.5a12 12 0 0 1 24 0C27 25.5 15 40 15 40z" fill="#e53935" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/><circle cx="15" cy="15.5" r="4.6" fill="#fff"/></svg>';
+  const HL=(function(){
+    const PANE="hlpane", RING_PX=14;
+    let rend=null, grp=null, key="", pinned=null, hovered=null, pin=null;
+    function setup(){
+      if(rend) return;
+      const p=map.createPane(PANE); p.style.zIndex=470; p.style.pointerEvents="none"; p.classList.add("hl-pane");
+      rend=L.svg({pane:PANE,padding:0.1});
+    }
+    function clearLayers(){ if(grp){ map.removeLayer(grp); grp=null; } key=""; }
+    function draw(e){
+      const g=e&&e.hl;
+      if(!g){ clearLayers(); return; }
+      const z=map.getZoom(), k=e.id+"|"+z;
+      if(grp&&k===key) return;
+      clearLayers(); setup();
+      const col=e.color||"#ffb84d", c=g.center, px=g.ext/mpp(z,c.lat);
+      const base={renderer:rend,interactive:false,lineJoin:"round",lineCap:"round",smoothFactor:1};
+      const mk=f=>[f(Object.assign({},base,{color:"#fff",weight:6,opacity:.95,fill:false,className:"hl-w"})),
+                   f(Object.assign({},base,{color:col,weight:3,opacity:1,fill:true,fillColor:"#fff",fillOpacity:.12,className:"hl-c"}))];
+      let ls;
+      if(px<RING_PX) ls=mk(o=>L.circleMarker(c,Object.assign(o,{radius:12})));
+      else if(g.circle) ls=mk(o=>L.circle([g.circle.lat,g.circle.lng],Object.assign(o,{radius:g.circle.r})));
+      else ls=mk(o=>L.polygon(g.rings,o));
+      grp=L.layerGroup(ls).addTo(map); key=k;
+    }
+    const render=()=>draw(hovered||pinned);
+    return {
+      pin(e){ pinned=e||null; render(); },
+      hover(e){ hovered=e||null; render(); },
+      clear(){ pinned=null; hovered=null; clearLayers(); },
+      refresh(){ key=""; render(); },
+      setPin(ll){
+        HL.clearPin();
+        pin=L.marker(ll,{interactive:false,keyboard:false,zIndexOffset:1000,icon:L.divIcon({className:"ic-pin-wrap",html:PIN_SVG,iconSize:[30,42],iconAnchor:[15,40]})}).addTo(map);
+      },
+      clearPin(){ if(pin){ map.removeLayer(pin); pin=null; } },
+      layers:()=>grp?grp.getLayers():[],
+      pinLayer:()=>pin
+    };
+  })();
+  window.pmtHL=HL;
+  window.pmtHover=e=>HL.hover(e);   // ריחוף על פריט ברשימה (index.html)
+  map.on("zoomend",()=>HL.refresh());   // מעבר בין טבעת לפוליגון לפי הזום
+
+  /* ======================= InfoCard — כרטיס "מה יש כאן" =======================
+     במחשב/טאבלט: כרטיס צף שלא מזיז את המפה. בנייד (מצב split — panelUI מ-index.html): אותו תוכן בלשונית "מה יש כאן" של הפאנל התחתון (בלי כרטיס צף) */
   const InfoCard=(function(){
-    let mp=null, el=null, titleEl=null, bodyEl=null, hintEl=null, pin=null, anchor=null, forbidFn=null, onClose=null;
+    let mp=null, el=null, titleEl=null, bodyEl=null, hintEl=null, anchor=null, forbidFn=null, onClose=null;
     let touchMode=false, multi=false, lastKey="", cur=null, natF=0, natS=0, natH=0, raf=0, keyBound=false;
+    let panelOpen=false, entries=[], lastShow=null;
     const MARGIN=12, GAP=8;
+    const panelUI=()=>{ const u=window.panelUI; return u&&u.active&&u.active()?u:null; };
     function css(){
       if(document.getElementById("infocard-css")) return;
       const s=document.createElement("style"); s.id="infocard-css";
@@ -36,13 +88,17 @@
       ".infocard .ic-more{display:none;position:absolute;left:0;right:0;bottom:0;height:38px;align-items:flex-end;justify-content:center;padding-bottom:6px;box-sizing:border-box;"+
         "pointer-events:none;background:linear-gradient(to bottom,rgba(18,28,46,0),var(--panel,#121c2e) 58%);color:var(--amber,#ffb84d);font-size:12px;font-weight:800}"+
       ".infocard .ic-more.on{display:flex}"+
+      /* סיכת מיקום (קצה הסיכה בנקודה המדויקת) והדגשת הגבול: שכבת SVG משלה מעל כל השכבות, בלי לקלוט מגע */
       ".ic-pin-wrap{background:transparent;border:0;pointer-events:none}"+
-      ".ic-pin{width:22px;height:22px;box-sizing:border-box;border-radius:50%;background:#ff3b30;border:3px solid #fff;box-shadow:0 0 0 2px rgba(0,0,0,.5),0 2px 10px rgba(0,0,0,.7)}";
+      ".ic-pin-wrap svg{display:block;filter:drop-shadow(0 2px 3px rgba(0,0,0,.65))}"+
+      ".hl-pane,.hl-pane svg,.hl-pane path{pointer-events:none}"+
+      ".hl-pane svg{filter:drop-shadow(0 0 3px rgba(0,0,0,.75))}";
       document.head.appendChild(s);
     }
+    css();
     /* רמז גלילה: כמה פריטים (שורות) עדיין מתחת לקצה התחתון הגלוי */
     function hint(){
-      if(!hintEl||!bodyEl) return;
+      if(!hintEl||!bodyEl||panelOpen) return;
       const b=bodyEl, over=b.scrollHeight-b.clientHeight;
       if(!el.classList.contains("on")||over<=3||b.scrollTop>=over-3){ hintEl.classList.remove("on"); return; }
       const bb=b.getBoundingClientRect().bottom; let n=0;
@@ -50,9 +106,40 @@
       hintEl.textContent=n?"↓ "+(n===1?"עוד אזור אחד":"עוד "+n+" אזורים"):"↓ גללו לעוד";
       hintEl.classList.add("on");
     }
+    const curBox=()=>panelOpen&&window.panelUI?window.panelUI.hereBody:bodyEl;
+    /* הפריט הפעיל בכרטיס (הראשון, או השורה שהוקשה/נפתחה/שמרחפים עליה): הוא המודגש במפה, והשורה שלו מסומנת */
+    function setActive(id){
+      const e=entries.find(x=>x.id===id); if(!e) return;
+      HL.pin(e);
+      const box=curBox(); if(box) box.querySelectorAll(".stk-it").forEach(d=>d.classList.toggle("act",d.dataset.id===id));
+    }
+    /* שורות הכרטיס (צף או בפאנל): הקשה פותחת/סוגרת ומסמנת את השורה; ריחוף (מחשב) מדגיש זמנית את הגבול שלה.
+       בפתיחה/כיווץ הכותרת שנלחצה נשארת באותו מקום על המסך (לא "קופצת"); כרטיס צף מעוגן לתחתית לא גדל כלפי מעלה על חשבון הכותרת */
+    function bindRows(box){
+      if(!box||box._pmtRows) return; box._pmtRows=true;
+      box.addEventListener("click",ev=>{
+        const sm=ev.target.closest&&ev.target.closest("summary"); if(!sm||!box.contains(sm)) return;
+        const d=sm.parentNode; if(!d||d.tagName!=="DETAILS") return;
+        ev.preventDefault();
+        const sc=(box===bodyEl?bodyEl:(window.panelUI&&window.panelUI.scroller))||box, y0=sm.getBoundingClientRect().top;
+        d.open=!d.open;
+        if(d.classList.contains("stk-it")) setActive(d.dataset.id);
+        if(box===bodyEl&&cur&&cur.top) place({measure:true,keep:true,lock:true});
+        const dy=sm.getBoundingClientRect().top-y0;
+        if(Math.abs(dy)>.5) sc.scrollTop+=dy;
+        hint();
+      });
+      if(CAN_HOVER){
+        box.addEventListener("mouseover",ev=>{
+          const d=ev.target.closest&&ev.target.closest(".stk-it");
+          HL.hover(d&&box.contains(d)?entries.find(x=>x.id===d.dataset.id):null);
+        });
+        box.addEventListener("mouseleave",()=>HL.hover(null));
+      }
+    }
     function ensure(m){
       if(el&&mp===m) return;
-      css(); mp=m;
+      mp=m;
       el=document.createElement("div"); el.className="infocard"; el.setAttribute("role","dialog"); el.setAttribute("aria-label","מה יש כאן");
       el.innerHTML='<div class="ic-head"><span class="ic-title"></span><button type="button" class="ic-x" aria-label="סגור">✕</button></div><div class="ic-body"></div><div class="ic-more" aria-hidden="true"></div>';
       titleEl=el.querySelector(".ic-title"); bodyEl=el.querySelector(".ic-body"); hintEl=el.querySelector(".ic-more");
@@ -67,30 +154,18 @@
         if((b.scrollTop<=0&&ev.deltaY<0)||(b.scrollTop+b.clientHeight>=b.scrollHeight-1&&ev.deltaY>0)) ev.preventDefault();
       },{passive:false});
       bodyEl.addEventListener("scroll",hint,{passive:true});
-      /* פתיחה/כיווץ של פריט: הכותרת שנלחצה נשארת באותו מקום על המסך (לא "קופצת"). כרטיס מעוגן למעלה גדל כלפי מטה; כרטיס מעוגן לתחתית לא גדל
-         כלפי מעלה על חשבון הכותרת — התוכן נפתח מתחתיה בתוך אזור הגלילה (רמז "↓ גללו" מופיע כשהוא חורג) */
-      bodyEl.addEventListener("click",ev=>{
-        const sm=ev.target.closest&&ev.target.closest("summary"); if(!sm||!bodyEl.contains(sm)) return;
-        const d=sm.parentNode; if(!d||d.tagName!=="DETAILS") return;
-        ev.preventDefault();
-        const y0=sm.getBoundingClientRect().top;
-        d.open=!d.open;
-        if(cur&&cur.top) place({measure:true,keep:true,lock:true});
-        const dy=sm.getBoundingClientRect().top-y0;
-        if(Math.abs(dy)>.5) bodyEl.scrollTop+=dy;
-        hint();
-      });
-      if(!keyBound){ keyBound=true; document.addEventListener("keydown",ev=>{ if(ev.key==="Escape") hide(); }); }
-      const sched=()=>{ if(raf||!anchor) return; raf=requestAnimationFrame(()=>{ raf=0; place({keep:true}); }); };
+      bindRows(bodyEl);
+      const sched=()=>{ if(raf||!anchor||panelOpen) return; raf=requestAnimationFrame(()=>{ raf=0; place({keep:true}); }); };
       mp.on("move zoomend",sched);
       window.addEventListener("scroll",sched,{passive:true});   // גלילת הדף משנה את החלק הגלוי של המפה
       mp.on("resize",()=>{
-        if(!anchor) return;
+        if(!anchor||panelOpen) return;
         const sz=mp.getSize(), p=mp.latLngToContainerPoint(anchor);
         if(p.x<-4||p.y<-4||p.x>sz.x+4||p.y>sz.y+4) return hide();   /* אחרי סיבוב מסך הנקודה יצאה מהמפה — סוגרים */
         place({measure:true,keep:true});
       });
     }
+    if(!keyBound){ keyBound=true; document.addEventListener("keydown",ev=>{ if(ev.key==="Escape") hide(); }); }
     /* מלבנים אסורים (פקדים צפים) לפי קואורדינטות המכל; פס דק בתחתית (קרדיט המפה) נחשב שולי תחתון */
     function forbidden(sz){
       const rects=[], strips=[], c=mp.getContainer().getBoundingClientRect();
@@ -106,12 +181,12 @@
       el.style.width=w+"px"; el.style.maxHeight="none"; el.style.minHeight="0"; el.style.left="0px"; el.style.top="0px"; el.style.right=el.style.bottom="auto";
       return el.offsetHeight;
     }
-    /* מיקום: בוחרים את הצד הפנוי הטוב ביותר (מגירה תחתונה/עליונה, או עמודה בצד), כך שהכרטיס — גם בגובהו המרבי —
+    /* מיקום (כרטיס צף): בוחרים את הצד הפנוי הטוב ביותר (מגירה תחתונה/עליונה, או עמודה בצד), כך שהכרטיס — גם בגובהו המרבי —
        לא מכסה את הנקודה שנלחצה (ריבוע ביטחון סביבה) ולא את הפקדים, ובתוך גבולות המפה. גובה הכרטיס מוגבל לשטח הפנוי (גלילה פנימית).
-       מפה גבוהה וצרה (נייד/טאבלט לאורך): מגירה בתחתית/בראש (עד 55% מהגובה כשיש כמה פריטים). מפה נמוכה (לרוחב, חלון נמוך): עמודת צד 280-320px */
+       מפה גבוהה וצרה (טאבלט לאורך): מגירה בתחתית/בראש (עד 55% מהגובה כשיש כמה פריטים). מפה נמוכה: עמודת צד 280-320px */
     function place(o){
       o=o||{};
-      if(!el||!anchor||!el.classList.contains("on")) return;
+      if(!el||!anchor||panelOpen||!el.classList.contains("on")) return;
       const sz=mp.getSize(), W=sz.x, H=sz.y;
       if(!(W>0&&H>0)) return;
       const p=mp.latLngToContainerPoint(anchor), compact=W<=760, sheet=compact&&H>=W*0.8, SM=compact?8:MARGIN;
@@ -180,30 +255,45 @@
       if(bodyEl.scrollTop!==st) bodyEl.scrollTop=st;
       hint();
     }
-    function setPin(ll){
-      if(pin){ mp.removeLayer(pin); pin=null; }
-      pin=L.marker(ll,{interactive:false,keyboard:false,zIndexOffset:1000,icon:L.divIcon({className:"ic-pin-wrap",html:'<div class="ic-pin"></div>',iconSize:[22,22],iconAnchor:[11,11]})}).addTo(mp);
-    }
-    /* opts: {title, touch, multi, forbid:()=>[nodes], onClose}; html: מחרוזת HTML מהימנה (כל מחרוזות הנתונים עברו esc) */
+    /* opts: {title, touch, multi, entries, forbid:()=>[nodes], onClose}; html: מחרוזת HTML מהימנה (כל מחרוזות הנתונים עברו esc) */
     function show(m,latlng,html,opts){
-      ensure(m); opts=opts||{};
-      anchor=latlng; forbidFn=opts.forbid||null; onClose=opts.onClose||null; touchMode=!!opts.touch; multi=!!opts.multi; lastKey=""; cur=null;
-      titleEl.textContent=opts.title||"";
-      bodyEl.innerHTML=html; bodyEl.scrollTop=0;
-      el.classList.add("on"); mp.getContainer().classList.add("pop-open");
-      setPin(latlng);
-      place({measure:true});
-      return el;
+      opts=opts||{}; mp=m;
+      const pu=panelUI();
+      lastShow={m,latlng,html,opts};
+      anchor=latlng; forbidFn=opts.forbid||null; onClose=opts.onClose||null; touchMode=!!opts.touch; multi=!!opts.multi; entries=opts.entries||[];
+      if(pu){
+        if(el&&el.classList.contains("on")){ el.classList.remove("on"); mp.getContainer().classList.remove("pop-open"); if(hintEl) hintEl.classList.remove("on"); }
+        panelOpen=true; cur=null; natH=0;
+        bindRows(pu.showCard(opts.title||"",html));
+      }else{
+        panelOpen=false; ensure(m); lastKey=""; cur=null;
+        titleEl.textContent=opts.title||"";
+        bodyEl.innerHTML=html; bodyEl.scrollTop=0;
+        el.classList.add("on"); mp.getContainer().classList.add("pop-open");
+      }
+      HL.setPin(latlng);
+      if(entries.length) setActive(entries[0].id); else HL.pin(null);
+      if(!pu) place({measure:true});
+      return pu?null:el;
     }
     function hide(){
-      if(!el||!el.classList.contains("on")) return;
-      el.classList.remove("on"); if(mp) mp.getContainer().classList.remove("pop-open");
-      if(hintEl) hintEl.classList.remove("on");
-      if(pin){ mp.removeLayer(pin); pin=null; }
-      anchor=null; natH=0; cur=null;
+      const fl=!!(el&&el.classList.contains("on"));
+      if(!fl&&!panelOpen) return;
+      if(fl){ el.classList.remove("on"); mp.getContainer().classList.remove("pop-open"); if(hintEl) hintEl.classList.remove("on"); }
+      if(panelOpen){ panelOpen=false; const u=window.panelUI; if(u&&u.clearCard) u.clearCard(); }
+      HL.clearPin(); HL.clear();
+      anchor=null; natH=0; cur=null; entries=[]; lastShow=null;
       const f=onClose; onClose=null; if(f) try{f();}catch(e){}
     }
-    return {show,hide,place,isOpen:()=>!!(el&&el.classList.contains("on")),body:()=>bodyEl,anchor:()=>anchor,el:()=>el};
+    /* מעבר בין פריסת פאנל (נייד) לכרטיס צף (סיבוב/שינוי גודל חלון) כשכרטיס פתוח: מציגים אותו מחדש בפריסה החדשה, בלי לסגור את הבחירה */
+    function relayout(){
+      if(!lastShow||!(panelOpen||(el&&el.classList.contains("on")))) return;
+      const a=lastShow;
+      if(panelOpen){ panelOpen=false; const u=window.panelUI; if(u&&u.clearCard) u.clearCard(); }
+      else{ el.classList.remove("on"); mp.getContainer().classList.remove("pop-open"); if(hintEl) hintEl.classList.remove("on"); }
+      show(a.m,a.latlng,a.html,a.opts);
+    }
+    return {show,hide,place,relayout,setActive,isOpen:()=>!!(panelOpen||(el&&el.classList.contains("on"))),body:curBox,anchor:()=>anchor,el:()=>el};
   })();
   window.InfoCard=InfoCard;
 
@@ -217,7 +307,6 @@
     NR:{label:"שמורות טבע (רט״ג)",short:"שמורות טבע",row:"שמורת טבע",color:"#3ddc84"},
     NP:{label:"גנים לאומיים (רט״ג)",short:"גנים לאומיים",row:"גן לאומי",color:"#4da3ff"}
   };
-  const VERSION="02.10.2026";
   const on=new Set(Object.keys(KEYS));
   const items=[];           // {key,d,ext,area,bounds,center,rings,bufRings,dot,poly,buf,col,bb,cx,cy,P,PB}
   const counts={};
@@ -266,15 +355,16 @@
   const Z_LO=8, Z_HI=11;
   const zt=z=>Math.max(0,Math.min(1,(z-Z_LO)/(Z_HI-Z_LO)));
   const mix=(a,b,t)=>a+(b-a)*t;
-  const dotRadius=(k,z)=>{ const t=zt(z); return isNat(k)?mix(2,COARSE?7:5,t):mix(3,COARSE?8:6,t); };
-  /* נקודה: רדיוס, מסגרת כהה דקה (עבה רק בהתקרבות) ושקיפות (NR/NP בלבד) */
+  const dotRadius=(k,z)=>{ const t=zt(z); return isNat(k)?mix(2.6,COARSE?7:5,t):mix(3.2,COARSE?8:6,t); };
+  /* נקודה: טבעת לבנה דקה סביב המילוי הצבעוני + מסגרת כהה (casing) — בולטת גם על ירוק/כהה/בהיר. בזום נמוך שמורות/גנים קטנות ושקופות מעט (שקט) */
   const dotStyle=(k,z)=>{ const t=zt(z); return isNat(k)
-    ?{radius:dotRadius(k,z),weight:mix(.6,1,t),fillOpacity:mix(.6,.95,t),opacity:mix(.6,1,t)}
-    :{radius:dotRadius(k,z),weight:mix(1,1.5,t),fillOpacity:.95,opacity:1}; };
-  /* פוליגון: אזורי רט"ג בזום נמוך — קו דק ומילוי עמום; האיסורים (פמ"ת) תמיד בעוצמה מלאה */
+    ?{radius:dotRadius(k,z),weight:mix(.9,1.2,t),fillOpacity:mix(.8,.95,t),opacity:mix(.85,1,t),casing:mix(1.2,1.6,t)}
+    :{radius:dotRadius(k,z),weight:mix(1,1.4,t),fillOpacity:.95,opacity:1,casing:1.6}; };
+  /* פוליגון: קו צבעוני + מסגרת כהה רחבה (casing) + הילה לבנה דקה בין השניים (halo) — הקו נשאר קריא על כל רקע (בז' OSM, ירוק-חום של לוויין, כהה). מילוי מעט חזק יותר
+     מקודם (ירוק רט"ג לא נבלע בירוק). אזורי רט"ג בזום נמוך — קו דק, בלי הילה ומילוי עמום (מאות אזורים, שקט); האיסורים (פמ"ת) תמיד בעוצמה מלאה */
   const polyStyle=(k,z)=>{ const t=zt(z); return isNat(k)
-    ?{weight:mix(1.2,2,t),opacity:mix(.7,1,t),fillOpacity:mix(.08,.16,t)}
-    :{weight:2,opacity:1,fillOpacity:.16}; };
+    ?{weight:mix(1.3,2,t),opacity:1,fillOpacity:mix(.1,.2,t),casing:mix(1.8,3.2,t),halo:t<.5?0:1.5*t}
+    :{weight:2.2,opacity:1,fillOpacity:.2,casing:3.4,halo:1.6}; };
   /* מגבלת גודל מינימלי לציור פוליגון (בפיקסלים של הצד הארוך): בזום ≤8 צורה קטנה מ-16px (איסורים) / 24px (שמורות וגנים) נשארת נקודה בלבד —
      אחרת נקודה+קו מתאר עבה מתמזגים לכתם. בזום 9 — 12/18px, ומזום 10 — 12px כמו קודם. הנקודה נשארת תמיד עד PX_DOT, ולכן אין רגע שבו אתר "נעלם".
      זה ציור בלבד: בדיקות הפגיעה (collect) משתמשות בגיאומטריה המלאה ובקבועים PX_POLY/PX_DOT כמו קודם */
@@ -349,7 +439,7 @@
     const it={key,d:z,ext:Math.max(h,w),area:h*w,bounds,center,rings,bufRings:z.buf||null,dot:null,poly:null,buf:null,col,dz:null,pz:null,
       bb:bbOf(bounds),bbBuf:bufB?bbOf(L.latLngBounds(bounds.getSouthWest(),bounds.getNorthEast()).extend(bufB)):null,   // bbBuf: איחוד תיבת הטבעת ותיבת רצועת 150 מ' (DT-2)
       cx:mx(center.lng),cy:my(center.lat),P:null,PB:null};
-    it.dot=L.circleMarker(center,{renderer:REND,color:"#0b1220",fillColor:col,interactive:false,...dotStyle(key,8)});
+    it.dot=L.circleMarker(center,{renderer:REND,color:"#ffffff",fillColor:col,interactive:false,...dotStyle(key,8)});
     items.push(it); counts[key]=(counts[key]||0)+1;
   }
   /* גרסה מפושטת של הטבעות (סטייה עד ~120 מ' = פחות מפיקסל בזום ≤10): מורידה ~75% מהנקודות שמוקרנות ומצוירות בכל תזוזה/זום ארצי.
@@ -383,7 +473,7 @@
     it.polyLow=z<=LOW_Z;
     it.pz=z;
     it.poly=L.polygon(it.polyLow?lowRings(it):it.rings,{renderer:REND,color:it.col,fillColor:it.col,smoothFactor:sf,interactive:false,...polyStyle(it.key,z)});
-    if(it.bufRings) it.buf=L.polygon(it.bufRings,{renderer:REND,color:it.col,weight:1.4,dashArray:"5 5",fill:false,smoothFactor:sf,interactive:false});
+    if(it.bufRings) it.buf=L.polygon(it.bufRings,{renderer:REND,color:it.col,weight:1.4,dashArray:"5 5",fill:false,casing:2,smoothFactor:sf,interactive:false});
   }
   function rm(l){ if(l&&map.hasLayer(l)) map.removeLayer(l); }
   /* סדר ציור (למטה→למעלה): נוט"ם משוער < שמורות/גנים < פמ"ת < נוט"ם מדויק < נקודות שמורות/גנים < נקודות LLP/LLR/LLD/LLU/בלונים (האיסורים תמיד מעל הרקע של רט"ג);
@@ -449,7 +539,7 @@
       /* כלל "בקרבת הנקודה" (זהה בשתי המפות): כל אתר, גדול או קטן, שהנקודה בתוך R פיקסלים מגבולו ולא בתוכו */
       const near=!inside&&!inBuf;
       out.push({id:it.d.id,name:it.d.name,key:it.key,color:it.col,tag:KEYS[it.key].label,rtag:KEYS[it.key].row,group:0,area:it.area,near,inBuf,approx:false,
-        rank:dDot<=R?0:(inside||inBuf)?1:2,dist:near?dNear:dDot,body:()=>bodyHtml(it)});
+        rank:dDot<=R?0:(inside||inBuf)?1:2,dist:near?dNear:dDot,hl:{rings:it.rings,center:it.center,ext:it.ext},body:()=>bodyHtml(it)});
     });
     if(typeof window.notamStackEntries==="function") window.notamStackEntries(map.latLngToLayerPoint(ll),R).forEach(e=>out.push(e));
     if(focus&&!out.some(e=>e.id===focus)&&typeof window.notamEntryById==="function"){ const e=window.notamEntryById(focus); if(e) out.push(e); }
@@ -472,7 +562,7 @@
     }
     return '<div class="stk">'+list.map(e=>{
       const sel=!!focus&&e.id===focus;
-      return '<details class="stk-it'+(sel?' foc':'')+'"><summary><span class="stk-nm">'+esc(e.name)+'</span><span class="pp-id" style="color:'+e.color+'">'+esc(e.id)+'</span>'+badges(e,true)+
+      return '<details class="stk-it'+(sel?' foc':'')+'" data-id="'+esc(e.id)+'" style="--cc:'+e.color+'"><summary><span class="stk-nm">'+esc(e.name)+'</span><span class="pp-id" style="color:'+e.color+'">'+esc(e.id)+'</span>'+badges(e,true)+
         (sel?' <span class="badge sel">נבחר</span>':'')+'</summary><div class="stk-b">'+e.body()+'</div></details>';
     }).join("")+'</div>';
   }
@@ -495,14 +585,17 @@
     if(more>0) html+='<div class="pp-meta">ועוד '+more+' — התקרבו כדי לראות אותם.</div>';
     const cnt=list.length?" — "+plural(all.length,"אזור אחד","אזורים"):"";
     const title=opts.heading?opts.heading+cnt:list.length===1?list[0].name:"מה יש כאן"+cnt;
-    InfoCard.show(map,ll,html,{title:title,touch,multi:list.length>=2,forbid:forbidNodes,onClose:()=>{ cardClosed(); }});
+    InfoCard.show(map,ll,html,{title:title,touch,multi:list.length>=2,entries:list,forbid:forbidNodes,onClose:()=>{ cardClosed(); }});
     cardEntries=list.map(e=>({id:e.id,key:e.key||""}));
     return true;
   }
   window.pmtOpenStack=openStack;
   const openAt=(ll,touch)=>{
     if(typeof clearSelected==="function") clearSelected();
-    if(!openStack(ll,{touch})) InfoCard.hide();   // נקודה ריקה: סוגרת ולא מזיזה כלום
+    if(!openStack(ll,{touch})){   // נקודה ריקה: סוגרת ולא מזיזה כלום (בפאנל הנייד — הודעה קצרה בלשונית "מה יש כאן")
+      InfoCard.hide();
+      const u=window.panelUI; if(u&&u.active&&u.active()&&u.tapEmpty) u.tapEmpty();
+    }
   };
   /* לחיצה בזמן אנימציית זום: לא נבלעת — נפתחת ב-zoomend (ממתינה אחת; גרירה/לחיצה חדשה מבטלות אותה) */
   let zoomClick=null;
@@ -528,6 +621,7 @@
     let last=0,tmr=0,pend=null,lastKey="",lx=-99,ly=-99,tw=0,th=0,shown=false;
     const hide=()=>{ if(shown){ tipEl.remove(); shown=false; } lastKey=""; lx=ly=-99; box.classList.remove("hit"); };
     const stop=()=>{ clearTimeout(tmr); tmr=0; pend=null; hide(); };   // מנקים גם טיימר ממתין — אחרת הטולטיפ נתקע מעל הכרטיס/הפקדים
+    const stopAll=()=>{ stop(); HL.hover(null); };                      // וגם הדגשת הריחוף (חוזרים להדגשת הפריט הפעיל בכרטיס)
     const overUi=t=>!!(t&&t.closest&&t.closest(".infocard,.leaflet-control"));
     /* מקום הטולטיפ לפי המקום שנשאר: מעל העכבר; מתחתיו אם אין מקום למעלה; ובקצה שמאל/ימין — לצד העכבר (לא נחתך). x,y — פינה שמאלית-עליונה במכל */
     function aim(cp){
@@ -543,14 +637,15 @@
       tipEl.style.transform="translate("+Math.round(x)+"px,"+Math.round(y)+"px)";
     }
     const run=ev=>{
-      if(map._animatingZoom||(map.dragging&&map.dragging.moving())) return hide();
+      if(map._animatingZoom||(map.dragging&&map.dragging.moving())){ HL.hover(null); return hide(); }
       if(overUi(ev.target)) return hide();
       const ll=map.mouseEventToLatLng(ev), cp=map.mouseEventToContainerPoint(ev);
       const a=InfoCard.anchor();   // ליד עוגן הכרטיס הפתוח לא מציגים טולטיפ (הכרטיס כבר מציג את אותו מידע)
-      if(a&&map.latLngToContainerPoint(a).distanceTo(cp)<30) return hide();
+      if(a&&map.latLngToContainerPoint(a).distanceTo(cp)<30){ HL.hover(null); return hide(); }
       const list=collect(ll,false);
-      if(!list.length) return hide();
+      if(!list.length){ HL.hover(null); return hide(); }
       const top=list[0], key=top.id+"|"+list.length;
+      HL.hover(top);   // האזור שמתחת לעכבר מודגש (הגבול המדויק שלו) — אותו אזור שהטולטיפ מציג
       if(key!==lastKey||!shown){
         lastKey=key;
         tipEl.innerHTML='<b style="color:'+top.color+'">'+esc(top.name)+'</b> · <span class="mono">'+esc(top.id)+'</span>'+(list.length>1?' <span class="tip-more" dir="ltr">+'+(list.length-1)+'</span>':'');
@@ -572,14 +667,14 @@
       run(ev);
     };
     box.addEventListener("mousemove",ev=>{
-      if(overUi(ev.target)){ stop(); return; }
+      if(overUi(ev.target)){ if(ev.target.closest(".infocard")) stop(); else stopAll(); return; }   // מעל הכרטיס — השורות מנהלות את ההדגשה בעצמן
       const t=performance.now(); if(pt0) sp=sp*0.5+Math.hypot(ev.clientX-px0,ev.clientY-py0)/Math.max(1,t-pt0)*0.5;
       pt0=t; px0=ev.clientX; py0=ev.clientY; lastEv=t;
       pend=ev; if(tmr) return;
       tmr=setTimeout(fire,Math.max(0,100-(t-last)));
     },{passive:true});
-    box.addEventListener("mouseleave",stop);
-    map.on("movestart zoomstart click",stop);
+    box.addEventListener("mouseleave",stopAll);
+    map.on("movestart zoomstart click",stopAll);
   }
 
   /* ---- טעינת הנתונים: כל קובץ בנפרד (מה שנטען מצויר גם אם השני נכשל), עם timeout, חיווי טעינה ו"נסה שוב" לקובץ שנכשל ---- */
@@ -618,13 +713,15 @@
     });
     Object.keys(KEYS).forEach(k=>{
       if(!counts[k]) return;
-      const c=KEYS[k], b=document.createElement("div");
-      b.className="catbtn pmt"+(on.has(k)?" on":""); b.style.color=on.has(k)?c.color:"";
+      const c=KEYS[k], b=document.createElement("button"); b.type="button";
+      b.className="catbtn pmt"+(on.has(k)?" on":""); b.style.color=on.has(k)?c.color:""; b.setAttribute("aria-pressed",on.has(k)?"true":"false");
       b.innerHTML='<span class="cdot" style="background:'+c.color+'"></span><span class="cl-long">'+c.label+'</span><span class="cl-short">'+c.short+'</span> <span class="cnt">('+counts[k]+')</span>';
       b.onclick=()=>{
         const was=on.has(k); was?on.delete(k):on.add(k);
         if(was&&cardEntries.some(e=>e.key===k)) InfoCard.hide();   // הכרטיס הפתוח מכיל אתר מהקטגוריה שכובתה — נסגר (DT-6)
-        update(); b.className="catbtn pmt"+(on.has(k)?" on":""); b.style.color=on.has(k)?c.color:""; if(typeof updateFilterCount==="function") updateFilterCount();
+        update(); b.className="catbtn pmt"+(on.has(k)?" on":""); b.style.color=on.has(k)?c.color:""; b.setAttribute("aria-pressed",on.has(k)?"true":"false");
+        if(typeof updateFilterCount==="function") updateFilterCount();
+        if(typeof window.panelRefresh==="function") window.panelRefresh();
       };
       bar.appendChild(b);
     });
@@ -653,6 +750,20 @@
       (inpa?'<b>אתרי טבע (נספח ה\') ללא גבולות זמינים ('+(inpa.unmapped||[]).length+'):</b><br>'+li(inpa.unmapped)+'<br><br>':'')+
       '<b>מגבלות קרבה לגבול (סעיף 4 בפמ״ת):</b> אין טיסה בכל גובה ומרחק של פחות מ-6 ק״מ מגבול רצועת עזה (LLP19), 3 ק״מ מגבול מצרים, 6 ק״מ מגבול סוריה ו-3 ק״מ מגבול לבנון; ניתן לטוס עד גבול ירדן; וצפונית לקו הרוחב 33°00\'00"N (קו שבי-ציון–ראש פינה) אלא באישור מתאים. קווי הגבול עצמם אינם מצוירים.';
   }
+  /* מטא-דאטה של הקבצים לחלון המידע והכותרת: מהדורת הפמ"ת ("מהדורה 1/26, 06.08.2026") ותאריך קובץ רט"ג — מנותחים מהשדה edition שבקבצי הנתונים; אם הניתוח נכשל — הטקסט כפי שהוא */
+  const MONTHS=["ינו","פבר","מרץ","אפר","מאי","יוני","יולי","אוג","ספט","אוק","נוב","דצמ"];
+  function pmtEdition(ed){
+    if(!ed) return "";
+    const n=/עדכון\s*(\d+\/\d+)/.exec(ed), d=/(\d{1,2})\s+([^\s\d]+)\s+(\d{4})/.exec(ed);
+    const mi=d?MONTHS.findIndex(m=>d[2].replace(/['׳]/g,"").indexOf(m)===0):-1;
+    return n&&d&&mi>=0?"מהדורה "+n[1]+", "+String(d[1]).padStart(2,"0")+"."+String(mi+1).padStart(2,"0")+"."+d[3]:ed;
+  }
+  window.pmtMeta=()=>{
+    const p=SRC.pmt.data, i=SRC.inpa.data, f=i&&/קובץ מ-(\d{2})\/(\d{2})\/(\d{4})/.exec(i.edition||"");
+    return {pmt:p?pmtEdition(p.edition):"", inpaFile:f?f[1]+"."+f[2]+"."+f[3]:"", raw:{pmt:p&&p.edition||"",inpa:i&&i.edition||""}};
+  };
+  /* מונה האתרים שמוצגים/קיימים (לכרטיס הריק בפאנל): פמ"ת + רט"ג */
+  window.pmtStats=()=>({total:items.length,shown:items.filter(it=>on.has(it.key)).length});
   let versionShown=false;
   function loadSrc(k){
     const s=SRC[k]; s.st="loading"; s.err=""; barRefresh();
@@ -665,9 +776,11 @@
       if(!versionShown&&Object.keys(SRC).every(x=>SRC[x].st==="ok")){
         versionShown=true;
         const sub=document.querySelector(".brand .sub");
-        if(sub) sub.appendChild(document.createTextNode(" · גרסת שכבות פמ״ת "+VERSION));
+        const ed=window.pmtMeta().pmt;
+        if(sub&&ed) sub.appendChild(document.createTextNode(" · פמ״ת א-17 — "+ed));
       }
       barRefresh();
+      if(typeof window.panelRefresh==="function") window.panelRefresh();
     });
   }
   Object.keys(SRC).forEach(k=>{ loadSrc(k); });

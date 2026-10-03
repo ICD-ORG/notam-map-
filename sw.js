@@ -5,7 +5,7 @@
    מוגש המטמון (והרשת ממשיכה ומעדכנת אותו ברקע). Leaflet מה-CDN: מהמטמון קודם (גרסה קבועה). */
 const PREFIX = "notam-main-";
 const CACHE = PREFIX + "v6";
-const BUILD = "20261005";   // חייב להיות זהה ל-BUILD ב-index.html, ל-PMT_BUILD ב-pmt-layer.js ול-?v= שלו ושל קבצי הנתונים
+const BUILD = "20261006";   // חייב להיות זהה ל-BUILD ב-index.html, ל-PMT_BUILD ב-pmt-layer.js ול-?v= שלו ושל קבצי הנתונים
 const LEAFLET = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/";
 const LEAFLET_CDN = /^https:\/\/cdnjs\.cloudflare\.com\/ajax\/libs\/leaflet\/1\.9\.4\//;
 const NET_TIMEOUT = 4000, NET_SLOW_TIMEOUT = 900;
@@ -16,11 +16,21 @@ const SHELL = ["./", "./manifest.json", "./icon-192.png", "./pmt-layer.js?v=" + 
 /* images/layers*.png — אייקון פקד השכבות שה-CSS של Leaflet מבקש; בלעדיו הכפתור ריק אופליין */
 const CDN_SHELL = [LEAFLET + "leaflet.min.js", LEAFLET + "leaflet.min.css", LEAFLET + "images/layers.png", LEAFLET + "images/layers-2x.png"];
 
+/* אחרי שמירת קובץ גרסתי (?v=) — מוחקים ממנו גרסאות ישנות באותו מטמון (אותו שם מטמון נשמר בין גרסאות; בלי זה ?v= ישן היה מוגש כגיבוי אופליין) */
+async function dropOldVersions(c, u) {
+  try {
+    const cur = new URL(u, self.registration.scope);
+    if (!cur.search) return;
+    const ks = await c.keys();
+    await Promise.all(ks.filter(k => { const x = new URL(k.url); return x.origin === cur.origin && x.pathname === cur.pathname && x.href !== cur.href; }).map(k => c.delete(k)));
+  } catch (err) {}
+}
+
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => Promise.allSettled([
     /* כתובות עם ?v= הן גרסתיות (בלתי-משתנות): משתמשים במטמון ה-HTTP הרגיל, כך שמה שהדף כבר הוריד לא יורד פעם שנייה ובקו איטי ה-precache לא מתחרה בטעינת הדף.
        שאר הקבצים (./ , notam-data.json ועוד) — cache:"reload", תמיד העותק העדכני מהרשת */
-    ...SHELL.map(u => c.add(new Request(u, u.includes("?v=") ? {} : { cache: "reload" }))),
+    ...SHELL.map(u => c.add(new Request(u, u.includes("?v=") ? {} : { cache: "reload" })).then(() => dropOldVersions(c, u))),
     // Leaflet נשמר כ-cors (בלי opaque) כדי שאפשר יהיה להגיש אותו אופליין
     ...CDN_SHELL.map(u => fetch(u, { mode: "cors", credentials: "omit" }).then(r => r.ok ? c.put(u, r) : null))
   ])));
