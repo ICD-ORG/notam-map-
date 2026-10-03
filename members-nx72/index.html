@@ -931,6 +931,10 @@ try{ map.dragging._draggable.options.clickTolerance=COARSE?10:6; }catch(_){}
    (בז'/ירוק/כהה): אם הקו הבהיר נבלע ברקע — המסגרת הכהה בולטת, ולהפך. אותו נתיב ואותו קנבס, בלי שכבות נוספות */
 const CASE_W=4.4, CASE_COLOR='#03080e';
 const CasedCanvas=L.Canvas.extend({
+  _updatePoly:function(layer,closed){      // שכבה עם minZoom (קווי חיץ 150 מ') לא מצוירת מתחת לזום הזה — נשארת במפה, בלי הוספה/הסרה בכל חציית זום
+    if(layer.options.minZoom&&this._map.getZoom()<layer.options.minZoom) return;
+    L.Canvas.prototype._updatePoly.call(this,layer,closed);
+  },
   _fillStroke:function(ctx,layer){
     const o=layer.options;
     if(o.fill){ ctx.globalAlpha=o.fillOpacity; ctx.fillStyle=o.fillColor||o.color; ctx.fill(o.fillRule||'evenodd'); }
@@ -1309,7 +1313,7 @@ function hitTest(ll,exactOnly,coarse,dotPx){
     try{
       d=shapeDist(l,lp,e.line);
       if(e.line){ if(d<=ltol) out.push({e,near:false,d:0}); return; }
-      if(d===0||(e.buf&&map.hasLayer(e.buf)&&e.buf._rings&&pxInRings(e.buf._rings,lp))){ out.push({e,near:false,d:0}); return; }
+      if(d===0||(bufOn(e)&&e.buf._rings&&pxInRings(e.buf._rings,lp))){ out.push({e,near:false,d:0}); return; }
     }catch(_){ return; }
     if(dotPx&&e.dot&&d<=dotPx){ out.push({e,near:false,d:0}); return; }
     if(exactOnly||!(d<=tol)) return;
@@ -1503,22 +1507,11 @@ function restack(){
   order(apx); order(HERE.filter(e=>e.pane==='fix')); order(HERE.filter(e=>e.pane==='nat')); order(nt);
   if(userMarker&&map.hasLayer(userMarker)) userMarker.bringToFront();
 }
-/* קווי חיץ 150 מ' של שמורות/גנים: רק מזום 11 (ובשכבה פעילה). מתעדכן רק בשינוי זום — לא בכל הזזה:
-   הוספה/הסרה של שכבות בכל moveend גרמה לציור כפול של הקנבס (כבד ב-DPR גבוה). מחוץ לפריים הקנבס מדלג על שכבות בעצמו. */
+/* קווי חיץ 150 מ' של שמורות/גנים: נוצרים ונוספים פעם אחת בטעינת רט"ג ומצוירים רק מזום 11 (minZoom בכלי הציור). בלי הוספה/הסרה בכל חציית זום:
+   הוספת ~300 שכבות כבדות באמצע זום יצרה כמה פריימים ארוכים בכל חציית זום 11 (ב-DPR גבוה). השכבה פעילה/כבויה יחד עם הקבוצה שלה. */
 const BUF_MINZ=11;
-function syncBuf(){
-  const on=map.getZoom()>=BUF_MINZ; let changed=false;
-  HERE.forEach(e=>{
-    if(!e.bufRings) return;
-    const g=groups[e.area.cat], want=on&&map.hasLayer(e.layer);
-    if(want&&!e.buf) e.buf=L.polygon(e.bufRings.map(r=>[r]),{color:LINE[e.area.cat], weight:1.6, dashArray:'5 5', fill:false, smoothFactor:2, cw:2.6, ...RO});
-    if(want){ if(!g.hasLayer(e.buf)){ g.addLayer(e.buf); changed=true; } }
-    else if(e.buf&&g.hasLayer(e.buf)){ g.removeLayer(e.buf); changed=true; }
-  });
-  if(changed) restack();
-}
-map.on('zoomend',syncBuf);
-map.on('overlayadd',()=>{ syncBuf(); restack(); });
+const bufOn=e=>!!(e.buf&&map.getZoom()>=BUF_MINZ&&map.hasLayer(e.buf));
+map.on('overlayadd',()=>{ restack(); });
 
 groups.P.addTo(map); groups.R.addTo(map); groups.D.addTo(map); groups.U.addTo(map); groups.A.addTo(map); groups.B.addTo(map);
 groups.NR.addTo(map); groups.NP.addTo(map);
@@ -1780,9 +1773,11 @@ function loadInpa(){
   built.forEach(({a,site,layer,size})=>{
     layer.addTo(groups[a.cat]);
     const e=regArea(a,layer,'nat',size);
-    if(site.buf){ e.bufRings=site.buf; site.buf.forEach(r=>r.forEach(p=>e.hb.extend(p))); }
+    if(site.buf){ e.bufRings=site.buf; site.buf.forEach(r=>r.forEach(p=>e.hb.extend(p)));
+      e.buf=L.polygon(site.buf.map(r=>[r]),{color:LINE[a.cat], weight:1.6, dashArray:'5 5', fill:false, smoothFactor:2, cw:2.6, minZoom:BUF_MINZ, ...RO});
+      groups[a.cat].addLayer(e.buf); }
   });
-  syncBuf(); restack();
+  restack();
   renderList(document.getElementById('q').value.trim().toLowerCase()||null);
   refreshHereStats();
   setLoad('inpa','ok');
