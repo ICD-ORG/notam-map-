@@ -5,7 +5,7 @@
    מוגש המטמון (והרשת ממשיכה ומעדכנת אותו ברקע). Leaflet מה-CDN: מהמטמון קודם (גרסה קבועה). */
 const PREFIX = "notam-main-";
 const CACHE = PREFIX + "v5";
-const BUILD = "20261003";   // חייב להיות זהה ל-BUILD ב-index.html, ל-PMT_BUILD ב-pmt-layer.js ול-?v= שלו ושל קבצי הנתונים
+const BUILD = "20261004";   // חייב להיות זהה ל-BUILD ב-index.html, ל-PMT_BUILD ב-pmt-layer.js ול-?v= שלו ושל קבצי הנתונים
 const LEAFLET = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/";
 const LEAFLET_CDN = /^https:\/\/cdnjs\.cloudflare\.com\/ajax\/libs\/leaflet\/1\.9\.4\//;
 const NET_TIMEOUT = 4000, NET_SLOW_TIMEOUT = 900;

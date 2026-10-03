@@ -403,7 +403,7 @@ footer{padding:22px 22px calc(22px + env(safe-area-inset-bottom));color:var(--mu
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
 /* מזהה גרסה: חייב להיות זהה ל-PMT_BUILD ב-pmt-layer.js ול-?v= בכתובת הסקריפט (בסוף הדף) — אם לא, הדף מתרענן פעם אחת (ראו בסוף הדף) */
-const BUILD = "20261003";
+const BUILD = "20261004";
 /* === הגדרות אתר === */
 /* אין נתונים מוטמעים בקוד: הנתונים נטענים מהקובץ שלצד הדף (ובמטמון ה-Service Worker לאופליין).
    קודם הקובץ שלצד הדף (נתיב יחסי — עובד גם תחת /notam-map-/ ב-GitHub Pages), ואחריו הגיבויים;
@@ -641,6 +641,7 @@ function initMap(){
   setTimeout(()=>map&&map.invalidateSize(),1500);
   window.addEventListener("resize",()=>map&&map.invalidateSize());
   window.addEventListener("orientationchange",()=>setTimeout(()=>map&&map.invalidateSize(),300));
+  map.on("zoomend",()=>{ notamLayers().forEach(x=>softenNotam(x.layer)); });   // סגנון נוט"ם עצום לפי הזום (ראו softenNotam)
   /* הקשה על המפה כשמגירת הסינון פתוחה — רק סוגרת אותה (pmt-layer.js קורא לפונקציה הזו לפני פתיחת כרטיס); כל הקשה מבטלת פתיחה ממתינה */
   window.pmtClickGuard=()=>{
     cancelPending();
@@ -782,7 +783,21 @@ function drawItem(item){
   else layer=L.polygon(geo.points.map(c=>[c.lat,c.lng]),style);
   layer._area=areaOf(p);
   layer.addTo(map);
+  softenNotam(layer);
   return layer;
+}
+/* בזום נמוך נוט"ם עצום (עשרות ק"מ) מצויר שקט יותר — פחות מילוי, קו דק ושקיפות קלה — כדי שלא יכסה את הנקודות שמתחתיו ולא ישלוט במסך.
+   נוט"ם קטן נשאר בדיוק כמו שהיה. רק סגנון: הגיאומטריה ובדיקות הפגיעה לא משתנים. המשקל הכי חזק בזום ≤9, חצי בזום 10, ומזום 11 — סגנון מלא */
+function softenNotam(layer){
+  try{
+    if(!layer||!map||!layer._area) return;
+    const z=map.getZoom(), b=layer._base||(layer._base={w:layer.options.weight,f:layer.options.fillOpacity});
+    const dpx=2*Math.sqrt(layer._area/Math.PI)/(156543.03392*Math.cos(31.5*Math.PI/180)/Math.pow(2,z));   // קוטר שקול בפיקסלים (ישראל ~31.5°N)
+    const f=Math.max(0,Math.min(1,(dpx-60)/120))*(z<=9?1:z===10?.5:0);   // 0 = קטן (בלי שינוי) · 1 = עצום (60px ומעלה בהדרגה עד 180px)
+    if((layer._soft||0)===f) return;
+    layer._soft=f;
+    layer.setStyle({weight:b.w*(1-.3*f),opacity:1-.25*f,fillOpacity:b.f*(1-.6*f)});
+  }catch(e){}
 }
 /* קטנים מעל גדולים — מסדרים מחדש בלי למחוק ולהוסיף. קנבס אחד משותף: כשמודול הפמ"ת נטען הוא מסדר את כל השכבות יחד (pmtReorder) */
 function reorderShapes(){
@@ -1401,7 +1416,7 @@ try{
     escH(e&&e.message||"")+"</small>");
 }
 </script>
-<script src="pmt-layer.js?v=20261003"></script>
+<script src="pmt-layer.js?v=20261004"></script>
 <script>
 /* בדיקת גרסה (מניעת שילוב index חדש + pmt-layer.js ישן ממטמון): אם מודול הכרטיס חסר או שהגרסה שלו שונה — רענון חד-פעמי (דגל ב-sessionStorage, בלי לולאה) */
 (function(){

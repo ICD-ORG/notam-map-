@@ -7,7 +7,7 @@
   if(typeof map==="undefined"||!map||typeof L==="undefined") return;
 
   /* מזהה גרסה — חייב להיות זהה ל-BUILD ב-index.html (index.html מרענן פעם אחת אם הקובץ הזה ישן) */
-  const BUILD="20261003";
+  const BUILD="20261004";
   window.PMT_BUILD=BUILD;
 
   /* ======================= InfoCard — כרטיס מידע צף שלא מזיז את המפה ======================= */
@@ -235,9 +235,25 @@
     return bboxOf([best]).getCenter();
   }
   const mpp=(z,lat)=>156543.03392*Math.cos(lat*Math.PI/180)/Math.pow(2,z);   // מטר לפיקסל
-  /* נקודות NR/NP (מאות) קטנות יותר — פחות בלגן במסך הראשון; LLP/LLR/LLD/LLU גדולות ומעליהן */
+  /* ---- היררכיה חזותית לפי זום: בזום נמוך (≤8) הכול קטן ושקט — נקודה קטנה לכל אתר, שמורות/גנים (מאות) עוד יותר קטנות ושקופות למחצה (שלא יקדמו על
+     פני האיסורים), וכל זה גדל עם ההתקרבות עד הגודל המלא בזום ≥11. ההחלקה ליניארית בין זום 8 ל-11 (זום שלם בלבד, אז אין קפיצות באמצע תנועה) ---- */
   const isNat=k=>k==="NR"||k==="NP";
-  const dotRadius=(k,z)=>isNat(k)?(z<=8?2.5:z===9?(COARSE?4:3.5):(COARSE?7:5)):(COARSE?(z<=8?5:z===9?6:8):(z<=8?4:z===9?5:6));
+  const Z_LO=8, Z_HI=11;
+  const zt=z=>Math.max(0,Math.min(1,(z-Z_LO)/(Z_HI-Z_LO)));
+  const mix=(a,b,t)=>a+(b-a)*t;
+  const dotRadius=(k,z)=>{ const t=zt(z); return isNat(k)?mix(2,COARSE?7:5,t):mix(3,COARSE?8:6,t); };
+  /* נקודה: רדיוס, מסגרת כהה דקה (עבה רק בהתקרבות) ושקיפות (NR/NP בלבד) */
+  const dotStyle=(k,z)=>{ const t=zt(z); return isNat(k)
+    ?{radius:dotRadius(k,z),weight:mix(.6,1,t),fillOpacity:mix(.6,.95,t),opacity:mix(.6,1,t)}
+    :{radius:dotRadius(k,z),weight:mix(1,1.5,t),fillOpacity:.95,opacity:1}; };
+  /* פוליגון: אזורי רט"ג בזום נמוך — קו דק ומילוי עמום; האיסורים (פמ"ת) תמיד בעוצמה מלאה */
+  const polyStyle=(k,z)=>{ const t=zt(z); return isNat(k)
+    ?{weight:mix(1.2,2,t),opacity:mix(.7,1,t),fillOpacity:mix(.08,.16,t)}
+    :{weight:2,opacity:1,fillOpacity:.16}; };
+  /* מגבלת גודל מינימלי לציור פוליגון (בפיקסלים של הצד הארוך): בזום ≤8 צורה קטנה מ-16px (איסורים) / 24px (שמורות וגנים) נשארת נקודה בלבד —
+     אחרת נקודה+קו מתאר עבה מתמזגים לכתם. בזום 9 — 12/18px, ומזום 10 — 12px כמו קודם. הנקודה נשארת תמיד עד PX_DOT, ולכן אין רגע שבו אתר "נעלם".
+     זה ציור בלבד: בדיקות הפגיעה (collect) משתמשות בגיאומטריה המלאה ובקבועים PX_POLY/PX_DOT כמו קודם */
+  const polyMin=(k,z)=>z>=10?PX_POLY:isNat(k)?(z<=8?24:18):(z<=8?16:PX_POLY);
 
   /* ---- מרקטור יחידתי (0..1) — בדיקות פגיעה מדויקות בפיקסלים, בלי תלות בצורות המצוירות/המפושטות ---- */
   const DEG=Math.PI/180;
@@ -290,9 +306,9 @@
     const rings=z.rings; if(!rings||!rings.length) return;
     const bounds=bboxOf(rings), center=z.c?L.latLng(z.c[0],z.c[1]):mainRing(rings), col=KEYS[key].color;
     const h=(bounds.getNorth()-bounds.getSouth())*111320, w=(bounds.getEast()-bounds.getWest())*111320*Math.cos(center.lat*Math.PI/180);
-    const it={key,d:z,ext:Math.max(h,w),area:h*w,bounds,center,rings,bufRings:z.buf||null,dot:null,poly:null,buf:null,col,
+    const it={key,d:z,ext:Math.max(h,w),area:h*w,bounds,center,rings,bufRings:z.buf||null,dot:null,poly:null,buf:null,col,dz:null,pz:null,
       bb:[mx(bounds.getWest()),my(bounds.getNorth()),mx(bounds.getEast()),my(bounds.getSouth())],cx:mx(center.lng),cy:my(center.lat),P:null,PB:null};
-    it.dot=L.circleMarker(center,{renderer:REND,radius:dotRadius(key,8),color:"#0b1220",weight:isNat(key)?1:1.5,fillColor:col,fillOpacity:.95,interactive:false});
+    it.dot=L.circleMarker(center,{renderer:REND,color:"#0b1220",fillColor:col,interactive:false,...dotStyle(key,8)});
     items.push(it); counts[key]=(counts[key]||0)+1;
   }
   /* גרסה מפושטת של הטבעות (סטייה עד ~120 מ' = פחות מפיקסל בזום ≤10): מורידה ~75% מהנקודות שמוקרנות ומצוירות בכל תזוזה/זום ארצי.
@@ -324,17 +340,18 @@
     /* אתרים קטנים וצרים לא מפושטים (smoothFactor נמוך) כדי שהצורה שלהם נשארת שלמה גם בזום ארצי */
     const sf=it.ext>30000?1.5:0.4;
     it.polyLow=z<=LOW_Z;
-    it.poly=L.polygon(it.polyLow?lowRings(it):it.rings,{renderer:REND,color:it.col,weight:2,fillColor:it.col,fillOpacity:.16,smoothFactor:sf,interactive:false});
+    it.pz=z;
+    it.poly=L.polygon(it.polyLow?lowRings(it):it.rings,{renderer:REND,color:it.col,fillColor:it.col,smoothFactor:sf,interactive:false,...polyStyle(it.key,z)});
     if(it.bufRings) it.buf=L.polygon(it.bufRings,{renderer:REND,color:it.col,weight:1.4,dashArray:"5 5",fill:false,smoothFactor:sf,interactive:false});
   }
   function rm(l){ if(l&&map.hasLayer(l)) map.removeLayer(l); }
-  /* סדר ציור (למטה→למעלה): נוט"ם משוער < פמ"ת < שמורות/גנים < נוט"ם מדויק < נקודות שמורות/גנים < נקודות LLP/LLR/LLD/LLU/בלונים;
+  /* סדר ציור (למטה→למעלה): נוט"ם משוער < שמורות/גנים < פמ"ת < נוט"ם מדויק < נקודות שמורות/גנים < נקודות LLP/LLR/LLD/LLU/בלונים (האיסורים תמיד מעל הרקע של רט"ג);
      בכל קבוצה גדולים למטה וקטנים מעל. קנבס יחיד, ולכן הסדר נקבע כאן ב-bringToFront (גם נוט"מים מ-index.html) */
   function reorder(){
     const seq=[], area=l=>l._area||0, approx=[], exact=[];
     (typeof window.notamLayers==="function"?window.notamLayers():[]).forEach(x=>{ (x.item.parsed&&x.item.parsed.approx?approx:exact).push(x.layer); });
     approx.sort((a,b)=>area(b)-area(a)).forEach(l=>seq.push(l));
-    [false,true].forEach(nat=>byArea.forEach(it=>{ if(isNat(it.key)===nat){ seq.push(it.poly); seq.push(it.buf); } }));
+    [true,false].forEach(nat=>byArea.forEach(it=>{ if(isNat(it.key)===nat){ seq.push(it.poly); seq.push(it.buf); } }));
     exact.sort((a,b)=>area(b)-area(a)).forEach(l=>seq.push(l));
     [true,false].forEach(nat=>items.forEach(it=>{ if(isNat(it.key)===nat) seq.push(it.dot); }));
     seq.forEach(l=>{ if(l&&map.hasLayer(l)) l.bringToFront(); });
@@ -348,12 +365,15 @@
     items.forEach(it=>{
       if(!on.has(it.key)||!view.intersects(it.bounds)){ rm(it.dot);rm(it.poly);rm(it.buf); return; }
       const px=it.ext/mpp(z,it.center.lat);
-      if(px>=PX_POLY){
+      if(px>=polyMin(it.key,z)){
         if(!it.poly) build(it,z);
-        else if(it.polyLow!==(z<=LOW_Z)){ it.polyLow=z<=LOW_Z; it.poly.setLatLngs(it.polyLow?lowRings(it):it.rings); }
+        else{
+          if(it.polyLow!==(z<=LOW_Z)){ it.polyLow=z<=LOW_Z; it.poly.setLatLngs(it.polyLow?lowRings(it):it.rings); }
+          if(it.pz!==z){ it.pz=z; it.poly.setStyle(polyStyle(it.key,z)); }
+        }
         ad(it.poly);
       }else rm(it.poly);
-      if(px<PX_DOT){ const r=dotRadius(it.key,z); if(it.dot.options.radius!==r) it.dot.setRadius(r); ad(it.dot); }else rm(it.dot);
+      if(px<PX_DOT){ if(it.dz!==z){ it.dz=z; it.dot.setStyle(dotStyle(it.key,z)); } ad(it.dot); }else rm(it.dot);
       if(it.buf&&z>=11&&px>=PX_POLY) ad(it.buf); else rm(it.buf);   // קווי חיץ 150 מ' — רק מזום 11 ובתוך הפריים
     });
     if(added) reorder();
