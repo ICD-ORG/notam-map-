@@ -4,8 +4,8 @@
    אסטרטגיה: רשת קודם (עם revalidation — לא מתקבל קובץ ישן ממטמון ה-HTTP של GitHub Pages), עם timeout של 4 שניות שאחריו
    מוגש המטמון (והרשת ממשיכה ומעדכנת אותו ברקע). Leaflet מה-CDN: מהמטמון קודם (גרסה קבועה). */
 const PREFIX = "preview-main-";
-const CACHE = PREFIX + "v5";
-const BUILD = "20261004";   // חייב להיות זהה ל-BUILD ב-index.html, ל-PMT_BUILD ב-pmt-layer.js ול-?v= שלו ושל קבצי הנתונים
+const CACHE = PREFIX + "v6";
+const BUILD = "20261006";   // חייב להיות זהה ל-BUILD ב-index.html, ל-PMT_BUILD ב-pmt-layer.js ול-?v= שלו ושל קבצי הנתונים
 const LEAFLET = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/";
 const LEAFLET_CDN = /^https:\/\/cdnjs\.cloudflare\.com\/ajax\/libs\/leaflet\/1\.9\.4\//;
 const NET_TIMEOUT = 4000, NET_SLOW_TIMEOUT = 900;
@@ -13,12 +13,24 @@ let slowUntil = 0;   // עד מתי הרשת נחשבת איטית (אחרי ח�
 /* קבצים שנשמרים מראש (כדי שגם אחרי ביקור יחיד האפליקציה תעבוד בלי רשת) */
 const SHELL = ["./", "./manifest.json", "./icon-192.png", "./pmt-layer.js?v=" + BUILD, "../notam-data.json",
   "./data/pmt-zones.json?v=" + BUILD, "./data/inpa-zones.json?v=" + BUILD, "./translate-dict.json"];
-const CDN_SHELL = [LEAFLET + "leaflet.min.js", LEAFLET + "leaflet.min.css"];
+/* images/layers*.png — אייקון פקד השכבות שה-CSS של Leaflet מבקש; בלעדיו הכפתור ריק אופליין */
+const CDN_SHELL = [LEAFLET + "leaflet.min.js", LEAFLET + "leaflet.min.css", LEAFLET + "images/layers.png", LEAFLET + "images/layers-2x.png"];
+
+/* אחרי שמירת קובץ גרסתי (?v=) — מוחקים ממנו גרסאות ישנות באותו מטמון (אותו שם מטמון נשמר בין גרסאות; בלי זה ?v= ישן היה מוגש כגיבוי אופליין) */
+async function dropOldVersions(c, u) {
+  try {
+    const cur = new URL(u, self.registration.scope);
+    if (!cur.search) return;
+    const ks = await c.keys();
+    await Promise.all(ks.filter(k => { const x = new URL(k.url); return x.origin === cur.origin && x.pathname === cur.pathname && x.href !== cur.href; }).map(k => c.delete(k)));
+  } catch (err) {}
+}
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => Promise.allSettled([
-    // cache:"reload" — תמיד העותק העדכני מהרשת (לא ממטמון ה-HTTP)
-    ...SHELL.map(u => c.add(new Request(u, { cache: "reload" }))),
+    /* כתובות עם ?v= הן גרסתיות (בלתי-משתנות): משתמשים במטמון ה-HTTP הרגיל, כך שמה שהדף כבר הוריד לא יורד פעם שנייה ובקו איטי ה-precache לא מתחרה בטעינת הדף.
+       שאר הקבצים (./ , notam-data.json ועוד) — cache:"reload", תמיד העותק העדכני מהרשת */
+    ...SHELL.map(u => c.add(new Request(u, u.includes("?v=") ? {} : { cache: "reload" })).then(() => dropOldVersions(c, u))),
     // Leaflet נשמר כ-cors (בלי opaque) כדי שאפשר יהיה להגיש אותו אופליין
     ...CDN_SHELL.map(u => fetch(u, { mode: "cors", credentials: "omit" }).then(r => r.ok ? c.put(u, r) : null))
   ])));
@@ -32,6 +44,10 @@ self.addEventListener("activate", e => {
     .map(k => caches.delete(k)))));
   self.clients.claim();
 });
+
+/* שורש האפליקציה: ה-scope עצמו או index.html בו (ניווט לכל נתיב אחר — קובץ JSON/תמונה/קוד — לא נשמר ולא מוגש מהמטמון) */
+const SCOPE_PATH = new URL(self.registration.scope).pathname;
+const isAppRoot = url => url.pathname === SCOPE_PATH || url.pathname === SCOPE_PATH + "index.html";
 
 /* מפתח המטמון: לניווט — תמיד כתובת האפליקציה (בלי query: אין צבירת עותק לכל ?fbclid/?utm/?r), לשאר — בלי הפרמטר t= (notam-data.json?t=...) */
 function cacheKey(req, url) {
@@ -64,7 +80,8 @@ async function handle(e, req, url, key, cdn) {
     : nav ? fetch(req.url, { cache: "no-cache", credentials: "same-origin", redirect: "manual" })
     : fetch(req, { cache: "no-cache" });          // revalidation (ETag → 304 זול) — לא קובץ ישן ממטמון ה-HTTP
   const net = netReq.then(r => {
-    if (r && r.status === 200 && (r.type === "basic" || r.type === "cors")) e.waitUntil(store(key, r.clone()));
+    /* ניווט: נשמר רק מסמך HTML (לא קובץ אחר שנפתח בשורת הכתובת) */
+    if (r && r.status === 200 && (r.type === "basic" || r.type === "cors") && (!nav || /text\/html/i.test(r.headers.get("content-type") || ""))) e.waitUntil(store(key, r.clone()));
     return r;
   });
   net.catch(() => {});
@@ -88,6 +105,7 @@ self.addEventListener("fetch", e => {
   if (req.method !== "GET") return;
   const url = new URL(req.url), cdn = LEAFLET_CDN.test(req.url);
   if (url.origin !== location.origin && !cdn) return;   // אריחי מפה, גופנים וכל שאר הבקשות החיצוניות — ישירות מהדפדפן
-  if (!cdn && url.pathname.includes("/members-nx72/")) return;   // לאפליקציית החברים יש SW משלה
+  if (!cdn && /\/members-nx72(\/|$)/.test(url.pathname)) return;   // לאפליקציית החברים יש SW משלה (גם בכתובת בלי / בסוף)
+  if (!cdn && req.mode === "navigate" && !isAppRoot(url)) return;    // ניווט לקובץ אחר בתוך ה-scope: ישירות מהדפדפן, בלי מטמון
   e.respondWith(handle(e, req, url, cdn ? req.url : cacheKey(req, url), cdn));
 });
