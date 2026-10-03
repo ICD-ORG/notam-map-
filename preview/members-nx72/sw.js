@@ -3,28 +3,42 @@
    * הבקשות לרשת הן עם revalidation (cache:'no-cache' — 304 זול עם ETag), כדי שה-max-age=600 של GitHub Pages לא ייצור
      שילוב של דף חדש עם קובץ ישן מה-HTTP cache.
    * timeout של ~4 שניות: ברשת איטית/מתה מוצג מיד מה שבמטמון, והרשת ממשיכה ברקע ומעדכנת את המטמון.
-   * ב-install נשמרים מראש (precache) הדף, קבצי הנתונים ו-Leaflet מה-CDN — כבר הביקור הראשון עובד אופליין.
+   * ב-install נשמרים מראש (precache) הדף, קבצי הנתונים ו-Leaflet מה-CDN (כולל אייקון בורר השכבות) — כבר הביקור הראשון עובד אופליין.
+     כתובות עם ?v= (גרסתיות, לא משתנות) נטענות דרך מטמון ה-HTTP הרגיל: הדף כבר מוריד אותן באותו רגע, וכך ה-precache לא מתחרה בו
+     על הרשת (ביקור ראשון בקו איטי לא מוריד פעמיים את אותו קובץ). רק הקבצים בלי ?v= נטענים עם cache:'reload'.
    * נשמרות רק תשובות תקינות (לא שגיאות ולא opaque); אריחי המפה לא נשמרים בכלל. בקשה שאינה בדף (JSON/תמונה) שלא במטמון נכשלת — לא מחזירים לה HTML.
+   * מפתח ה-scope (דף האפליקציה) נשמר ומוגש רק לניווט אל שורש האפליקציה / index.html ורק כשהתשובה היא text/html —
+     ניווט ישיר לקובץ אחר בתוך ה-scope (JSON/תמונה/קוד) לא דורס את דף האפליקציה השמור.
    למטמון קידומת ייחודית לאפליקציה הזו — SW של המפה הראשית לא מוחק אותו, וכאן לא נמחק מטמון של אחרים. */
 const PREFIX = "preview-a17-";
-const CACHE = PREFIX + "v3";
+const CACHE = PREFIX + "v4";
 const LEGACY = [];   // השם הישן של המטמון של אפליקציה זו
 const LEAFLET_CDN = /^https:\/\/cdnjs\.cloudflare\.com\/ajax\/libs\/leaflet\/1\.9\.4\//;
-const LEAFLET_FILES = ["https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css", "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"];
+const LEAFLET_BASE = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/";
+// layers.png / layers-2x.png: אייקון כפתור בורר השכבות (נטען מה-CSS לפני שה-SW שולט) — בלעדיהם הכפתור ריק אופליין
+const LEAFLET_FILES = ["leaflet.min.css", "leaflet.min.js", "images/layers.png", "images/layers-2x.png"].map(f => LEAFLET_BASE + f);
 const DATA_V = "20261003";   // חייב להתאים ל-?v= של data/inpa-zones.json ב-index.html
 const PRECACHE = ["./", "./manifest.json", "./icon-192.png", "../../notam-data.json", "../data/inpa-zones.json?v=" + DATA_V];
 const NET_TIMEOUT = 4000;
+const SCOPE = new URL("./", self.registration.scope).href;       // שורש האפליקציה
+const SCOPE_PATH = new URL(SCOPE).pathname;
+const ROOT_PATHS = [SCOPE_PATH, SCOPE_PATH.replace(/\/$/, ""), new URL("index.html", SCOPE).pathname];   // גם בלי / בסוף: אופליין מציג את האפליקציה
 
-/* מפתח המטמון: לבקשת ניווט — קבוע (שורש האפליקציה, בלי query ובלי index.html), כך שאין צבירת עותקים;
-   קובץ הנוט"מים — גם אם נוסף לו ?t=; כל השאר — הכתובת המלאה */
+const isRoot = url => url.origin === location.origin && ROOT_PATHS.includes(url.pathname);
+const isHtml = res => /text\/html/i.test((res && res.headers && res.headers.get("content-type")) || "");
+
+/* מפתח המטמון: לניווט אל שורש האפליקציה/index.html — קבוע (בלי query ובלי index.html), כך שאין צבירת עותקים;
+   קובץ הנוט"מים — גם אם נוסף לו ?t=; כל השאר (גם ניווט ישיר לקובץ אחר) — הכתובת המלאה */
 function cacheKey(req, url) {
-  if (req && req.mode === "navigate") return new URL("./", self.registration.scope).href;
+  if (req && req.mode === "navigate" && isRoot(url)) return SCOPE;
+  if (!req && isRoot(url)) return SCOPE;
   return /notam-data\.json$/.test(url.pathname) ? url.origin + url.pathname : url.href;
 }
 
 async function store(key, url, res) {
   try {
     if (!res || !res.ok || res.status !== 200 || res.type === "opaque") return;
+    if (key === SCOPE && !isHtml(res)) return;      // מפתח הדף נשמר רק עם HTML אמיתי
     const c = await caches.open(CACHE);
     // מסירים גרסאות ישנות של אותו נתיב (למשל ?v= קודם)
     const ks = await c.keys();
@@ -36,8 +50,10 @@ async function store(key, url, res) {
 async function pre(c, u, cors) {
   try {
     const url = new URL(u, self.location.href);
-    const r = await fetch(url.href, cors ? { mode: "cors", credentials: "omit" } : { cache: "reload" });
-    if (r.ok && r.status === 200) await c.put(cacheKey(null, url), r);
+    const opts = cors ? { mode: "cors", credentials: "omit" } : (/[?&]v=/.test(url.search) ? {} : { cache: "reload" });
+    const r = await fetch(url.href, opts);
+    const key = cacheKey(null, url);
+    if (r.ok && r.status === 200 && (key !== SCOPE || isHtml(r))) await c.put(key, r);
   } catch (err) {}
 }
 
