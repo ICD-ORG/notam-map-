@@ -538,6 +538,7 @@
         if(cp.x+G+tw<=sz.x-M){ dir="right"; x=cp.x+G; y=cp.y-th/2; }
         else if(cp.x-G-tw>=M){ dir="left"; x=cp.x-G-tw; y=cp.y-th/2; }
       }
+      x=Math.max(M,Math.min(sz.x-tw-M,x)); y=Math.max(M,Math.min(sz.y-th-M,y));   // פינה (קצה אופקי + אנכי יחד) — לא נחתך
       const cn="leaflet-tooltip hover-tip leaflet-tooltip-"+dir; if(tipEl.className!==cn) tipEl.className=cn;
       tipEl.style.transform="translate("+Math.round(x)+"px,"+Math.round(y)+"px)";
     }
@@ -559,17 +560,23 @@
       aim(cp);
       box.classList.add("hit");
     };
+    /* תנועה מהירה (סריקה על פני המפה) לא מעדכנת טולטיפ באמצע — הוא מוסתר ויחושב מחדש כשהעכבר מאט או נעצר (חוסך עבודה ממוקדת-צביעה בכל פריים) */
+    let lastEv=0,sp=0,px0=0,py0=0,pt0=0;
     const fire=()=>{
-      tmr=0; last=performance.now();
+      tmr=0; const now=performance.now();
       const ev=pend; pend=null; if(!ev) return;
+      if(now-lastEv<45&&sp>1.2){ pend=ev; if(shown) hide(); tmr=setTimeout(fire,60); return; }
+      last=now;
       if(Math.hypot(ev.clientX-lx,ev.clientY-ly)<3) return;   // זז פחות מ-3px מהנקודה שנבדקה — אין מה לחשב מחדש
       lx=ev.clientX; ly=ev.clientY;
       run(ev);
     };
     box.addEventListener("mousemove",ev=>{
       if(overUi(ev.target)){ stop(); return; }
+      const t=performance.now(); if(pt0) sp=sp*0.5+Math.hypot(ev.clientX-px0,ev.clientY-py0)/Math.max(1,t-pt0)*0.5;
+      pt0=t; px0=ev.clientX; py0=ev.clientY; lastEv=t;
       pend=ev; if(tmr) return;
-      tmr=setTimeout(fire,Math.max(0,100-(performance.now()-last)));
+      tmr=setTimeout(fire,Math.max(0,100-(t-last)));
     },{passive:true});
     box.addEventListener("mouseleave",stop);
     map.on("movestart zoomstart click",stop);

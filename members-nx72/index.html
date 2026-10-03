@@ -234,7 +234,7 @@
     .item{min-height:44px; align-items:center}
     #collapseall, #expandall, #nt-refresh, #a17-refresh, #lock-layers, #nt-retry, .rbtn, #ntBanner button, #decoderBtn, #nearBtn, #togglebtn, #ntDecodeBtn, #ntExampleBtn, #ntClearBtn, #ntGmapsBtn{min-height:44px}
     #ntListToggle{min-height:44px}
-    .vis{display:inline-flex; align-items:center; justify-content:center; width:44px; min-height:44px; padding:0; margin:-8px -6px -8px 0}
+    .vis{display:inline-flex; align-items:center; justify-content:center; width:44px; min-height:44px; padding:0; margin:-8px 0 -8px -6px}
     .leaflet-control-layers label>span{display:flex; align-items:center; gap:8px; min-height:44px}
     .leaflet-control-layers-selector{width:20px; height:20px; margin:0}
     .leaflet-bar a{width:44px!important; height:44px!important; line-height:44px!important}
@@ -1446,7 +1446,7 @@ renderList();
 /* מעבר בין טלפון למחשב (סיבוב מסך/שינוי גודל חלון): סדר ותוויות המקרא מתעדכנים */
 (function(){ const f=()=>renderList(curFilter()); if(compactMQ.addEventListener) compactMQ.addEventListener('change',f); else if(compactMQ.addListener) compactMQ.addListener(f); })();
 document.getElementById('q').addEventListener('input',e=>{ renderList(e.target.value.trim().toLowerCase()||null); ntRenderList(); });
-(function(){ const q=document.getElementById('q'), sd=document.getElementById('side'); q.addEventListener('focus',()=>sd.classList.add('searching')); q.addEventListener('blur',()=>sd.classList.remove('searching')); })();
+(function(){ const q=document.getElementById('q'), sd=document.getElementById('side'); q.addEventListener('focus',()=>sd.classList.add('searching')); q.addEventListener('blur',()=>setTimeout(()=>{ if(document.activeElement!==q) sd.classList.remove('searching'); },250)); })();
 /* קבוצות הנוט"מים במקרא (מונה + פריטים) מתעדכנות כשרשימת הנוט"מים הפעילים משתנה */
 let ntGroupsSig='';
 function refreshNtGroups(){
