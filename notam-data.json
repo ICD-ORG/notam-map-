@@ -15,7 +15,7 @@
   {
    "id": "C2061/26",
    "loc": "LLLL",
-   "name": "KELCH/LACHISH",
+   "name": "כלח/לכיש (KELCH/LACHISH)",
    "cat": "uas",
    "heb": "פעילות כטב\"מ תתקיים ב-KELCH/LACHISH. אזור מהקרקע ועד 2,500 רגל מעל פני הים סגור לכל הטיסות בין נקודות הציון הבאות 31°32'26\"N 34°48'01\"E 31°32'25\"N 34°54'09\"E 31°31'44\"N 34°54'09\"E 31°31'29\"N 34°52'46\"E 31°31'29\"N 34°51'26\"E 31°31'25\"N 34°48'43\"E טיסות ריסוס חקלאיות באישור מוקדם של 15 דקות מבקרת התעופה. מומלצת זהירות.\nבתוקף: מ-05/10/2026 05:00 UTC עד 08/10/2026 15:00 UTC\nלו\"ז: DAILY 0500-1500",
    "raw": "C2061/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/025/3132N03451E003\nA) LLLL B) 2610050500 C) 2610081500\nD) DAILY 0500-1500\nE) UAS ACT WILL TAKE PLACE AT KELCH/LACHISH.\nAN AREA FM GND UP TO 2,500FT AMSL CLSD TO ALL FLT\nBTN FLW PSN  313226N0344801E 313225N0345409E\n313144N0345409E 313129N0345246E 313129N0345126E\n313125N0344843E\nOPS OF AGRICULTURE FLT WI 15MIN PPR FM ATC.\nCTN ADZ.\nF) GND G) 2500FT AMSL)",
@@ -51,7 +51,7 @@
   {
    "id": "C2056/26",
    "loc": "LLLL",
-   "name": "YERUHAM",
+   "name": "ירוחם (YERUHAM)",
    "cat": "uas",
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב-YERUHAM, מהקרקע ועד 600 מטר מעל הקרקע. אזור בתוך ברדיוס 0.3 מייל ימי שמרכזו בנ.צ. 30°58'19\"N 34°56'01\"E סגור מהקרקע ועד 3,700 רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-04/10/2026 03:00 UTC עד 08/10/2026 14:30 UTC\nלו\"ז: DAILY 0300-1430",
    "raw": "C2056/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/037/3058N03456E001\nA) LLLL B) 2610040300 C) 2610081430\nD) DAILY 0300-1430\nE) UAS/UAV ACT WILL TAKE PLACE AT YERUHAM, FM GND UP TO 600M AGL.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 305819N0345601E\nCLSD FM GND UP TO 3,700FT AMSL.\nCTN ADZ.\nF) GND G) 3700FT AMSL)",
@@ -60,7 +60,7 @@
   {
    "id": "C2055/26",
    "loc": "LLLL",
-   "name": "TAMRAH",
+   "name": "תמרה (TAMRAH)",
    "cat": "act",
    "heb": "בלון קשור יופעל ב-TAMRAH. אזור בתוך ברדיוס 0.3 מייל ימי שמרכזו בנ.צ. 32°48'50\"N 35°10'02\"E סגור מהקרקע ועד 1,800 רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-03/10/2026 21:00 UTC עד 11/10/2026 20:59 UTC",
    "raw": "C2055/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/018/3249N03510E001\nA) LLLL B) 2610032100 C) 2610112059\nE) CAPTIVE BALLOON WILL TAKE PLACE AT TAMRAH.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 324850N0351002E\nCLSD FM GND UP TO 1,800FT AMSL, TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.\nF) GND G) 1800FT AMSL)",
@@ -96,7 +96,7 @@
   {
    "id": "C2026/26",
    "loc": "LLLL",
-   "name": "YERUHAM",
+   "name": "ירוחם (YERUHAM)",
    "cat": "uas",
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב-YERUHAM. אזור בין נקודות הציון הבאות 30°58'30\"N 34°55'51\"E 30°58'23\"N 34°56'44\"E 30°58'03\"N 34°57'08\"E 30°57'09\"N 34°56'49\"E 30°56'24\"N 34°56'14\"E 30°56'52\"N 34°54'53\"E סגור מהקרקע ועד 2,500 רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-04/10/2026 03:10 UTC עד 08/10/2026 16:00 UTC\nלו\"ז: DAILY 0310-1600",
    "raw": "C2026/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/025/3057N03456E002\nA) LLLL B) 2610040310 C) 2610081600\nD) DAILY 0310-1600\nE) UAS/UAV ACT WILL TAKE PLACE AT YERUHAM.\nAN AREA BTN FLW PSN 305830N0345551E 305823N0345644E\n305803N0345708E 305709N0345649E 305624N0345614E\n305652N0345453E CLSD FM GND UP TO 2,500FT AMSL.\nCTN ADZ.\nF) GND G) 2500FT AMSL)",
@@ -114,7 +114,7 @@
   {
    "id": "A0784/26",
    "loc": "LLBG",
-   "name": "EL-AL JUNCTION",
+   "name": "צומת אל על (EL-AL JUNCTION)",
    "cat": "obst",
    "heb": "עגורן הוקם בתוך LLBG אזור בקרה, ב-EL-AL JUNCTION. אזור בתוך ברדיוס 0.3 מייל ימי שמרכזו בנ.צ. 31°59'41\"N 34°54'30\"E סגור מהקרקע ועד 89M 292 רגל מעל פני הים. במקרה חירום יונמך בתוך 5 דקות. מומלצת זהירות.\nבתוקף: מ-12/10/2026 05:00 UTC עד 12/10/2026 10:00 UTC",
    "raw": "A0784/26 NOTAMN\nQ) LLLL/QOBCE/IV/M  /AE/000/003/3200N03454E001\nA) LLBG B) 2610120500 C) 2610121000\nE) CRANE ERECTED WI LLBG CTR, AT EL-AL JUNCTION.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 315941.27N0345429.55E\nCLSD FM GND UP TO 89M 292FT AMSL.\nIN CASE OF EMERG LOWERED WI 5MIN.\nCTN ADZ.)",
@@ -123,7 +123,7 @@
   {
    "id": "A0785/26",
    "loc": "LLBG",
-   "name": "EL-AL JUNCTION",
+   "name": "צומת אל על (EL-AL JUNCTION)",
    "cat": "obst",
    "heb": "עגורן הוקם בתוך LLBG אזור בקרה, ב-EL-AL JUNCTION. אזור בתוך ברדיוס 0.3 מייל ימי שמרכזו בנ.צ. 31°59'41\"N 34°54'30\"E סגור מהקרקע ועד 89M 292 רגל מעל פני הים. במקרה חירום יונמך בתוך 5 דקות. מומלצת זהירות.\nבתוקף: מ-19/10/2026 05:00 UTC עד 19/10/2026 10:00 UTC",
    "raw": "A0785/26 NOTAMN\nQ) LLLL/QOBCE/IV/M  /AE/000/003/3200N03454E001\nA) LLBG B) 2610190500 C) 2610191000\nE) CRANE ERECTED WI LLBG CTR, AT EL-AL JUNCTION.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 315941.27N0345429.55E\nCLSD FM GND UP TO 89M 292FT AMSL.\nIN CASE OF EMERG LOWERED WI 5MIN.\nCTN ADZ.)",
@@ -132,7 +132,7 @@
   {
    "id": "A0786/26",
    "loc": "LLBG",
-   "name": "EL-AL JUNCTION",
+   "name": "צומת אל על (EL-AL JUNCTION)",
    "cat": "obst",
    "heb": "עגורן הוקם בתוך LLBG אזור בקרה, ב-EL-AL JUNCTION. אזור בתוך ברדיוס 0.3 מייל ימי שמרכזו בנ.צ. 31°59'41\"N 34°54'30\"E סגור מהקרקע ועד 89M 292 רגל מעל פני הים. במקרה חירום יונמך בתוך 5 דקות. מומלצת זהירות.\nבתוקף: מ-26/10/2026 06:00 UTC עד 26/10/2026 11:00 UTC",
    "raw": "A0786/26 NOTAMN\nQ) LLLL/QOBCE/IV/M  /AE/000/003/3200N03454E001\nA) LLBG B) 2610260600 C) 2610261100\nE) CRANE ERECTED WI LLBG CTR, AT EL-AL JUNCTION.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 315941.27N0345429.55E\nCLSD FM GND UP TO 89M 292FT AMSL.\nIN CASE OF EMERG LOWERED WI 5MIN.\nCTN ADZ.)",
@@ -141,7 +141,7 @@
   {
    "id": "A0783/26",
    "loc": "LLBG",
-   "name": "EL-AL JUNCTION",
+   "name": "צומת אל על (EL-AL JUNCTION)",
    "cat": "obst",
    "heb": "עגורן הוקם בתוך LLBG אזור בקרה, ב-EL-AL JUNCTION. אזור בתוך ברדיוס 0.3 מייל ימי שמרכזו בנ.צ. 31°59'41\"N 34°54'30\"E סגור מהקרקע ועד 89M 292 רגל מעל פני הים. במקרה חירום יונמך בתוך 5 דקות. מומלצת זהירות.\nבתוקף: מ-05/10/2026 05:00 UTC עד 05/10/2026 10:00 UTC",
    "raw": "A0783/26 NOTAMN\nQ) LLLL/QOBCE/IV/M  /AE/000/003/3200N03454E001\nA) LLBG B) 2610050500 C) 2610051000\nE) CRANE ERECTED WI LLBG CTR, AT EL-AL JUNCTION.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 315941.27N0345429.55E\nCLSD FM GND UP TO 89M 292FT AMSL.\nIN CASE OF EMERG LOWERED WI 5MIN.\nCTN ADZ.)",
@@ -159,7 +159,7 @@
   {
    "id": "C2016/26",
    "loc": "LLLL",
-   "name": "TAANACHIM AND GADISH",
+   "name": "תענכים וגדיש (TAANACHIM AND GADISH)",
    "cat": "uas",
    "heb": "פעילות כטב\"מ תתקיים ב-TAANACHIM ו- GADISH. אזור סגור מהקרקע ועד 100 מטר מעל הקרקע 560 רגל מעל פני הים בין נקודות הציון הבאות 32°33'33\"N 35°17'19\"E 32°32'19\"N 35°17'47\"E 32°32'21\"N 35°17'59\"E 32°32'07\"N 35°18'03\"E 32°32'01\"N 35°17'22\"E 32°32'54\"N 35°16'40\"E 32°33'13\"N 35°16'37\"E 32°33'17\"N 35°15'58\"E 32°33'35\"N 35°15'58\"E. אזור בתוך ברדיוס 400 מטר שמרכזו בנ.צ. 32°33'09\"N 35°14'47\"E סגור מהקרקע ועד 100 מטר מעל הקרקע, 560 רגל מעל פני הים. טיסות ריסוס חקלאיות באישור מוקדם של 15 דקות מבקרת התעופה. מומלצת זהירות.\nבתוקף: מ-01/10/2026 00:01 UTC עד 31/10/2026 21:59 UTC",
    "raw": "C2016/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/006/3233N03517E002\nA) LLLL B) 2610010001 C) 2610312159\nE) UAS ACT WILL TAKE PLACE AT TAANACHIM AND GADISH.\nAN AREA CLSD FM GND UP TO 100M AGL 560FT AMSL BTN FLW PSN\n323333N0351719E 323219N0351747E 323221N0351759E\n323207N0351803E 323201N0351722E 323254N0351640E\n323313N0351637E 323317N0351558E 323335N0351558E.\nAN AREA WI 400M RADIUS CENTERED ON PSN 323309N0351447E\nCLSD FM GND UP TO 100M AGL, 560FT AMSL.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.\nF) GND G) 560FT AMSL)",
@@ -168,7 +168,7 @@
   {
    "id": "C2015/26",
    "loc": "LLLL",
-   "name": "KESARYA",
+   "name": "קיסריה (KESARYA)",
    "cat": "uas",
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב-KESARYA עד 100 מטר מעל הקרקע, אזור בתוך ברדיוס 0.8 מייל ימי שמרכזו בנ.צ. 32°29'41\"N 34°54'39\"E סגור מהקרקע ועד 500 רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-01/10/2026 19:00 UTC עד 01/11/2026 03:30 UTC\nלו\"ז: 01-24 DAILY 1900-0315, 25-31 DAILY 2000-0330",
    "raw": "C2015/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/005/3230N03455E001\nA) LLLL B) 2610011900 C) 2611010330\nD) 01-24 DAILY 1900-0315, 25-31 DAILY 2000-0330\nE) UAS/UAV ACT WILL TAKE PLACE AT KESARYA UP TO 100M AGL,\nAN AREA WI 0.8NM RADIUS CENTERED ON PSN 322941N0345439E\nCLSD FM GND UP TO 500FT AMSL.\nCTN ADZ.\nF) GND G) 500FT AMSL)",
@@ -177,7 +177,7 @@
   {
    "id": "C2013/26",
    "loc": "LLLL",
-   "name": "PARK-REEM",
+   "name": "פארק רעים (PARK-REEM)",
    "cat": "uas",
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב-PARK-REEM. אזור בתוך ברדיוס 0.5 מייל ימי שמרכזו בנ.צ. 31°46'33\"N 34°45'20\"E סגור מהקרקע ועד 25 מטר מעל הקרקע 300 רגל מעל פני הים. הפעלה באישור מוקדם מבקרת התעופה בלבד. מומלצת זהירות.\nבתוקף: מ-01/10/2026 00:01 UTC עד 31/10/2026 21:59 UTC",
    "raw": "C2013/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/003/3146N03445E001\nA) LLLL B) 2610010001 C) 2610312159\nE) UAS/UAV ACT WILL TAKE PLACE AT PARK-REEM.\nAN AREA WI 0.5NM RADIUS CENTERED ON PSN 314633N0344520E\nCLSD FM GND UP TO 25M AGL 300FT AMSL.\nOPS AVBL WITH PPR FM ATC ONLY.\nCTN ADZ.\nF) GND G) 300FT AMSL)",
@@ -186,7 +186,7 @@
   {
    "id": "C2012/26",
    "loc": "LLLL",
-   "name": "EITANIM-HOSPITAL",
+   "name": "בית חולים איתנים (EITANIM-HOSPITAL)",
    "cat": "uas",
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב-EITANIM-HOSPITAL. אזור בתוך ברדיוס 0.3 מייל ימי שמרכזו בנ.צ. 31°46'43\"N 35°05'39\"E סגור מהקרקע ועד 100 מטר מעל הקרקע, 2,800 רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-01/10/2026 07:00 UTC עד 31/10/2026 16:00 UTC\nלו\"ז: 01-24 DAILY 0700-1500, 25-31 DAILY 0800-1600",
    "raw": "C2012/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/028/3147N03506E001\nA) LLLL B) 2610010700 C) 2610311600\nD) 01-24 DAILY 0700-1500, 25-31 DAILY 0800-1600\nE) UAS/UAV ACT WILL TAKE PLACE AT EITANIM-HOSPITAL.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 314643N0350539E\nCLSD FM GND UP TO 100M AGL, 2,800FT AMSL.\nCTN ADZ.\nF) GND G) 2800FT AMSL)",
@@ -195,7 +195,7 @@
   {
    "id": "C2011/26",
    "loc": "LLLL",
-   "name": "MACCABIM",
+   "name": "מכבים (MACCABIM)",
    "cat": "uas",
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב-MACCABIM, מהקרקע ועד 50 מטר מעל הקרקע. אזור בין נקודות הציון הבאות 31°53'51\"N 35°02'18\"E 31°53'11\"N 35°02'22\"E 31°53'11\"N 35°02'20\"E 31°53'20\"N 35°02'16\"E 31°53'19\"N 35°02'10\"E 31°53'23\"N 35°02'07\"E 31°53'28\"N 35°02'08\"E 31°53'29\"N 35°02'02\"E 31°53'36\"N 35°02'01\"E 31°53'36\"N 35°02'10\"E 31°53'46\"N 35°02'13\"E 31°53'48\"N 35°02'11\"E 31°53'53\"N 35°02'12\"E סגור מהקרקע ועד 1,050 רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-01/10/2026 00:01 UTC עד 31/10/2026 21:59 UTC",
    "raw": "C2011/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/011/3154N03502E001\nA) LLLL B) 2610010001 C) 2610312159\nE) UAS/UAV ACT WILL TAKE PLACE AT MACCABIM, FM GND UP TO 50M AGL.\nAN AREA BTN FLW PSN 315351N0350218E 315311N0350222E\n315311N0350220E 315320N0350216E 315319N0350210E\n315323N0350207E 315328N0350208E 315329N0350202E\n315336N0350201E 315336N0350210E 315346N0350213E\n315348N0350211E 315353N0350212E\nCLSD FM GND UP TO 1,050FT AMSL.\nCTN ADZ.\nF) GND G) 1100FT AMSL)",
@@ -204,7 +204,7 @@
   {
    "id": "C2010/26",
    "loc": "LLLL",
-   "name": "MAGEN-SHAUL",
+   "name": "מגן שאול (MAGEN-SHAUL)",
    "cat": "uas",
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב-MAGEN-SHAUL, עד 100 מטר מעל הקרקע. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 1,500 רגל מעל פני הים 32°31'45\"N 35°16'42\"E 32°30'24\"N 35°16'38\"E 32°30'39\"N 35°20'04\"E 32°31'39\"N 35°19'54\"E 32°31'53\"N 35°19'30\"E 32°31'59\"N 35°19'07\"E מומלצת זהירות.\nבתוקף: מ-01/10/2026 00:01 UTC עד 31/10/2026 21:59 UTC",
    "raw": "C2010/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/015/3231N03518E002\nA) LLLL B) 2610010001 C) 2610312159\nE) UAS/UAV ACT WILL TAKE PLACE AT MAGEN-SHAUL, UP TO 100M AGL.\nAN AREA BTN THE FLW PSN CLSD FM GND UP TO 1,500FT AMSL\n323145N0351642E 323024N0351638E 323039N0352004E\n323139N0351954E 323153N0351930E 323159N0351907E\nCTN ADZ.\nF) GND G) 1500FT AMSL)",
@@ -222,7 +222,7 @@
   {
    "id": "C2006/26",
    "loc": "LLLL",
-   "name": "MAGAL",
+   "name": "מגל (MAGAL)",
    "cat": "other",
    "heb": "אזור ב-MAGAL מהקרקע ועד 1,800 רגל מעל פני הים סגור לכל הטיסות בין נקודות הציון הבאות 32°23'06\"N 35°01'17\"E 32°22'39\"N 35°03'41\"E 32°21'58\"N 35°03'33\"E 32°22'31\"N 35°02'02\"E 32°22'15\"N 35°01'38\"E 32°21'19\"N 35°01'25\"E 32°21'21\"N 35°01'01\"E 32°21'42\"N 35°01'05\"E 32°22'21\"N 35°01'01\"E טיסות ריסוס חקלאיות באישור מוקדם של 15 דקות מבקרת התעופה. מומלצת זהירות.\nבתוקף: מ-04/10/2026 06:30 UTC עד 08/10/2026 15:00 UTC\nלו\"ז: DAILY 0630-0830 1030-1230 1330-1500",
    "raw": "C2006/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/018/3222N03502E002\nA) LLLL B) 2610040630 C) 2610081500\nD) DAILY 0630-0830 1030-1230 1330-1500\nE) AN AREA AT MAGAL FM GND UP TO 1,800FT AMSL CLSD TO ALL FLT\nBTN FLW PSN  322306N0350117E 322239N0350341E 322158N0350333E\n322231N0350202E 322215N0350138E 322119N0350125E\n322121N0350101E 322142N0350105E 322221N0350101E\nOPS OF AGRICULTURE FLT WI 15MIN PPR FM ATC.\nCTN ADZ.)",
@@ -231,7 +231,7 @@
   {
    "id": "C1983/26",
    "loc": "LLLL",
-   "name": "EMEK HEFER",
+   "name": "עמק חפר (EMEK HEFER)",
    "cat": "uas",
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב-EMEK HEFER, מהקרקע ועד 30 מטר מעל הקרקע. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 950 רגל מעל פני הים 32°24'07\"N 34°53'54\"E 32°24'07\"N 34°53'57\"E 32°24'05\"N 34°53'57\"E 32°24'05\"N 34°53'55\"E. מומלצת זהירות.\nבתוקף: מ-22/09/2026 07:37 UTC עד 15/10/2026 20:59 UTC",
    "raw": "C1983/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/010/3224N03454E001\nA) LLLL B) 2609220737 C) 2610152059\nE) UAS/UAV ACT WILL TAKE PLACE AT EMEK HEFER, FM GND UP TO 30M AGL.\nAN AREA BTN FLW PSN CLSD FM GND UP TO 950FT AMSL\n322407N0345354E 322407N0345357E 322405N0345357E\n322405N0345355E.\nCTN ADZ.\nF) GND G) 950FT AMSL)",
@@ -267,7 +267,7 @@
   {
    "id": "A0756/26",
    "loc": "LLBG",
-   "name": "EL-AL JUNCTION",
+   "name": "צומת אל על (EL-AL JUNCTION)",
    "cat": "obst",
    "heb": "עקב עגורן ב-EL-AL JUNCTION, מסלול 12 סגור ל-המראה, מסלול 30 סגור ל-נחיתה.\nבתוקף: מ-05/10/2026 05:00 UTC עד 05/10/2026 10:00 UTC",
    "raw": "A0756/26 NOTAMN\nQ) LLLL/QMRLT/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2610050500 C) 2610051000\nE) DUE CRANE AT EL-AL JUNCTION,\nRWY 12 CLSD FOR TKOF,\nRWY 30 CLSD FOR LDG.)",
@@ -276,7 +276,7 @@
   {
    "id": "A0757/26",
    "loc": "LLBG",
-   "name": "EL-AL JUNCTION",
+   "name": "צומת אל על (EL-AL JUNCTION)",
    "cat": "obst",
    "heb": "עקב עגורן ב-EL-AL JUNCTION, מסלול 12 סגור ל-המראה, מסלול 30 סגור ל-נחיתה.\nבתוקף: מ-12/10/2026 05:00 UTC עד 12/10/2026 10:00 UTC",
    "raw": "A0757/26 NOTAMN\nQ) LLLL/QMRLT/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2610120500 C) 2610121000\nE) DUE CRANE AT EL-AL JUNCTION,\nRWY 12 CLSD FOR TKOF,\nRWY 30 CLSD FOR LDG.)",
@@ -285,7 +285,7 @@
   {
    "id": "A0758/26",
    "loc": "LLBG",
-   "name": "EL-AL JUNCTION",
+   "name": "צומת אל על (EL-AL JUNCTION)",
    "cat": "obst",
    "heb": "עקב עגורן ב-EL-AL JUNCTION, מסלול 12 סגור ל-המראה, מסלול 30 סגור ל-נחיתה.\nבתוקף: מ-19/10/2026 05:00 UTC עד 19/10/2026 10:00 UTC",
    "raw": "A0758/26 NOTAMN\nQ) LLLL/QMRLT/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2610190500 C) 2610191000\nE) DUE CRANE AT EL-AL JUNCTION,\nRWY 12 CLSD FOR TKOF,\nRWY 30 CLSD FOR LDG.)",
@@ -294,7 +294,7 @@
   {
    "id": "A0759/26",
    "loc": "LLBG",
-   "name": "EL-AL JUNCTION",
+   "name": "צומת אל על (EL-AL JUNCTION)",
    "cat": "obst",
    "heb": "עקב עגורן ב-EL-AL JUNCTION, מסלול 12 סגור ל-המראה, מסלול 30 סגור ל-נחיתה.\nבתוקף: מ-26/10/2026 06:00 UTC עד 26/10/2026 11:00 UTC",
    "raw": "A0759/26 NOTAMN\nQ) LLLL/QMRLT/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2610260600 C) 2610261100\nE) DUE CRANE AT EL-AL JUNCTION,\nRWY 12 CLSD FOR TKOF,\nRWY 30 CLSD FOR LDG.)",
@@ -312,7 +312,7 @@
   {
    "id": "C1948/26",
    "loc": "LLLL",
-   "name": "NESHER",
+   "name": "נשר (NESHER)",
    "cat": "uas",
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב-NESHER בתוך LLHA אזור בקרה מהקרקע ועד 460 מטר מעל הקרקע 1,510 רגל מעל פני הים, בין נקודות הציון הבאות 32°46'37\"N 35°01'34\"E 32°46'29\"N 35°00'37\"E 32°45'52\"N 35°00'43\"E 32°45'14\"N 35°01'31\"E 32°45'13\"N 35°02'43\"E 32°45'59\"N 35°02'45\"E 32°46'17\"N 35°02'07\"E. מומלצת זהירות.\nבתוקף: מ-01/10/2026 00:01 UTC עד 31/10/2026 21:59 UTC",
    "raw": "C1948/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/015/3246N03502E002\nA) LLLL B) 2610010001 C) 2610312159\nE) UAS/UAV ACT WILL TAKE PLACE AT NESHER WI LLHA CTR\nFM GND UP TO 460M AGL 1,510FT AMSL, BTN FLW PSN\n324637N0350134E 324629N0350037E 324552N0350043E\n324514N0350131E 324513N0350243E 324559N0350245E\n324617N0350207E.\nCTN ADZ.\nF) GND G) 1500FT AMSL)",
@@ -321,7 +321,7 @@
   {
    "id": "C1947/26",
    "loc": "LLLL",
-   "name": "DALIA/TZAFIT",
+   "name": "דליה/צפית (DALIA/TZAFIT)",
    "cat": "uas",
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב-DALIA/TZAFIT, בתוך בועת זעירים GOVRIN SOUTH (BGOVS) עד 100 מטר מעל הקרקע. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 1,400 רגל מעל פני הים 31°43'53\"N 34°50'38\"E 31°43'39\"N 34°50'10\"E 31°42'21\"N 34°49'25\"E 31°41'50\"N 34°50'23\"E 31°42'22\"N 34°51'18\"E 31°43'23\"N 34°51'23\"E. מומלצת זהירות.\nבתוקף: מ-01/10/2026 00:01 UTC עד 31/10/2026 21:59 UTC",
    "raw": "C1947/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/014/3143N03450E002\nA) LLLL B) 2610010001 C) 2610312159\nE) UAS/UAV ACT WILL TAKE PLACE AT DALIA/TZAFIT, WI ULTRALIGHT\nBUBBLE GOVRIN SOUTH (BGOVS) UP TO 100M AGL.\nAN AREA BTN THE FLW PSN CLSD FM GND UP TO 1,400FT AMSL\n314353N0345038E 314339N0345010E 314221N0344925E\n314150N0345023E 314222N0345118E 314323N0345123E.\nCTN ADZ.\nF) GND G) 1400FT AMSL)",
@@ -429,7 +429,7 @@
   {
    "id": "C1860/26",
    "loc": "LLLL",
-   "name": "GEZER POWER PLANT",
+   "name": "תחנת הכוח גזר (GEZER POWER PLANT)",
    "cat": "other",
    "heb": "אזור בתוך ברדיוס 1 ק\"מ שמרכזו בנ.צ. 31°54'55\"N 34°55'00\"E ב-GEZER POWER PLANT סגור מהקרקע ועד 1,200 רגל מעל פני הים, עקב GAS EMISSION. מומלצת זהירות.\nבתוקף: מ-05/09/2026 17:00 UTC עד 05/09/2029 19:00 UTC",
    "raw": "C1860/26 NOTAMN\nQ) LLLL/QWSLW/IV/M  /W /000/012/3155N03455E001\nA) LLLL B) 2609051700 C) 2909051900\nE) AN AREA WI 1KM RADIUS CENTERED ON PSN 315455N0345500E\nAT GEZER POWER PLANT CLSD FM GND UP TO 1,200FT AMSL,\nDUE TO GAS EMISSION.\nCTN ADZ.\nF) GND G) 1200FT AMSL)",
@@ -438,7 +438,7 @@
   {
    "id": "C1859/26",
    "loc": "LLLL",
-   "name": "CHECKLIST YEAR=2026 0005 0010 0032 0037 0431 128…",
+   "name": "רשימת נוט\"מים בתוקף (CHECKLIST)",
    "cat": "other",
    "heb": "CHECKLIST YEAR=2026 0005 0010 0032 0037 0431 1281 1361 1541 1556 1637 1656 1678 1698 1781 1782 1783 1784 1785 1786 1788 1789 1790 1795 1796 1797 1798 1799 1802 1803 1806 1811 1812 1813 1822 1823 1825 1826 1827 1828 1829 1830 1831 1832 1833 1834 1835 1836 1837 1838 1839 1840 1841 1842 1843 1846 1851 1853 1854 1857 1858 LATEST PUBLICATIONS AIP AIRAC AMDT IFR 001/2026 תאריך כניסה לתוקף 06 AUG 26 AIP AIRAC SUP אין AIC IFR A001/2026 תאריך כניסה לתוקף 05 FEB 26 AIC CHECKLIST AIP IFR A001/2026 AIP VFR A001/2026 AIP MIL אין SUP CHECKLIST AIP IFR אין AIP VFR אין AIP MIL אין\nבתוקף: מ-03/09/2026 05:46 UTC עד 03/10/2026 05:46 UTC",
    "raw": "C1859/26 NOTAMR C1647/26\nQ) LLLL/QKKKK/K /K  /K /000/999/3124N03520E999\nA) LLLL B) 2609030546 C) 2610030546EST\nE) CHECKLIST\nYEAR=2026 0005 0010 0032 0037 0431 1281 1361 1541 1556 1637 1656 1678\n1698 1781 1782 1783 1784 1785 1786 1788 1789 1790 1795 1796\n1797 1798 1799 1802 1803 1806 1811 1812 1813 1822 1823 1825\n1826 1827 1828 1829 1830 1831 1832 1833 1834 1835 1836 1837\n1838 1839 1840 1841 1842 1843 1846 1851 1853 1854 1857 1858\nLATEST PUBLICATIONS\nAIP AIRAC AMDT IFR 001/2026 EFFECTIVE DATE 06 AUG 26\nAIP AIRAC SUP NIL\nAIC IFR A001/2026 EFFECTIVE DATE 05 FEB 26\nAIC CHECKLIST\nAIP IFR\nA001/2026\nAIP VFR\nA001/2026\nAIP MIL\nNIL\nSUP CHECKLIST\nAIP IFR\nNIL\nAIP VFR\nNIL\nAIP MIL\nNIL)",
@@ -447,7 +447,7 @@
   {
    "id": "A0721/26",
    "loc": "LLLL",
-   "name": "CHECKLIST YEAR=2026 0056 0116 0117 0281 0353 035…",
+   "name": "רשימת נוט\"מים בתוקף (CHECKLIST)",
    "cat": "other",
    "heb": "CHECKLIST YEAR=2026 0056 0116 0117 0281 0353 0354 0457 0467 0475 0612 0616 0622 0630 0668 0669 0670 0686 0687 0688 0689 0691 0693 0694 0695 0696 0698 0701 0702 0703 0704 0705 0706 0707 0708 0709 0710 0715 0718 0719 0720 LATEST PUBLICATIONS AIP AIRAC AMDT IFR 001/2026 תאריך כניסה לתוקף 06 AUG 26 AIP AIRAC SUP אין AIC IFR A001/2026 תאריך כניסה לתוקף 05 FEB 26 AIC CHECKLIST AIP IFR A001/2026 AIP VFR A001/2026 AIP MIL אין SUP CHECKLIST AIP IFR אין AIP VFR אין AIP MIL אין\nבתוקף: מ-03/09/2026 05:44 UTC עד 03/10/2026 05:44 UTC",
    "raw": "A0721/26 NOTAMR A0610/26\nQ) LLLL/QKKKK/K /K  /K /000/999/3124N03520E999\nA) LLLL B) 2609030544 C) 2610030544EST\nE) CHECKLIST\nYEAR=2026 0056 0116 0117 0281 0353 0354 0457 0467 0475 0612 0616 0622\n0630 0668 0669 0670 0686 0687 0688 0689 0691 0693 0694 0695\n0696 0698 0701 0702 0703 0704 0705 0706 0707 0708 0709 0710\n0715 0718 0719 0720\nLATEST PUBLICATIONS\nAIP AIRAC AMDT IFR 001/2026 EFFECTIVE DATE 06 AUG 26\nAIP AIRAC SUP NIL\nAIC IFR A001/2026 EFFECTIVE DATE 05 FEB 26\nAIC CHECKLIST\nAIP IFR\nA001/2026\nAIP VFR\nA001/2026\nAIP MIL\nNIL\nSUP CHECKLIST\nAIP IFR\nNIL\nAIP VFR\nNIL\nAIP MIL\nNIL)",
@@ -474,7 +474,7 @@
   {
    "id": "A0718/26",
    "loc": "LLLL",
-   "name": "TRIGGER NOTAM",
+   "name": "נוט\"ם מנהלי (TRIGGER NOTAM)",
    "cat": "other",
    "heb": "TRIGGER NOTAM - אין AIRAC AIP AMDT בתוקף מ-01 OCT 2026.\nבתוקף: מ-01/10/2026 00:01 UTC עד 14/10/2026 23:59 UTC",
    "raw": "A0718/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /E /000/999/3123N03515E999\nA) LLLL B) 2610010001 C) 2610142359\nE) TRIGGER NOTAM - NIL AIRAC AIP AMDT WEF 01 OCT 2026.)",
@@ -483,7 +483,7 @@
   {
    "id": "C1853/26",
    "loc": "LLLL",
-   "name": "TRIGGER NOTAM",
+   "name": "נוט\"ם מנהלי (TRIGGER NOTAM)",
    "cat": "other",
    "heb": "TRIGGER NOTAM - אין AIRAC AIP פנים-ארצי AMDT בתוקף מ-01 OCT 2026.\nבתוקף: מ-01/10/2026 00:01 UTC עד 14/10/2026 23:59 UTC",
    "raw": "C1853/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /E /000/999/3211N03515E015\nA) LLLL B) 2610010001 C) 2610142359\nE) TRIGGER NOTAM - NIL AIRAC DOM AIP AMDT WEF 01 OCT 2026.)",
@@ -501,7 +501,7 @@
   {
    "id": "C1843/26",
    "loc": "LLRS",
-   "name": "טיסות DEPARTING AIRSTRIP NB VIA TYONA PILOT SHAL…",
+   "name": "טיסות DEPARTING AIRSTRIP NB VIA TYONA PILOT…",
    "cat": "ad",
    "heb": "טיסות DEPARTING AIRSTRIP NB VIA TYONA PILOT SHALL CONTACT PLUTO CTL ל-IDENT OVER TYONA.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-30/08/2026 13:26 UTC עד 31/10/2026 21:59 UTC",
    "raw": "C1843/26 NOTAMR C1590/26\nQ) LLLL/QCACI/IV/BO /AE/000/999/3158N03445E005\nA) LLRS B) 2608301326 C) 2610312159\nE) FLT DEPARTING AIRSTRIP NB VIA TYONA PILOT SHALL CONTACT\nPLUTO CTL FOR IDENT OVER TYONA.)",
@@ -573,7 +573,7 @@
   {
    "id": "C1834/26",
    "loc": "LLLL",
-   "name": "בועת זעירים RAMAT HAGOLAN (BRGOL) סגור מצפון ל כ…",
+   "name": "בועת זעירים RAMAT HAGOLAN (BRGOL) סגור מצפון ל…",
    "cat": "act",
    "heb": "בועת זעירים RAMAT HAGOLAN (BRGOL) סגור מצפון ל כביש מס' 91.\nבתוקף: מ-30/08/2026 12:31 UTC עד 31/10/2026 21:59 UTC",
    "raw": "C1834/26 NOTAMR C1587/26\nQ) LLLL/QAELC/IV/NBO/E /000/040/3301N03542E014\nA) LLLL B) 2608301231 C) 2610312159\nE) ULTRALIGHT BUBBLE RAMAT HAGOLAN (BRGOL) CLSD N OF ROAD NR 91.)",
@@ -591,27 +591,27 @@
   {
    "id": "C1828/26",
    "loc": "LLLL",
-   "name": "אזור מ-SYRIA BOUNDRAY ל-6 ק\"מ WB סגור ל-ALL טיסו…",
+   "name": "אזור מגבול סוריה ועד 6 ק\"מ מערבה סגור לכל…",
    "cat": "uas",
-   "heb": "אזור מ-SYRIA BOUNDRAY ל-6 ק\"מ WB סגור ל-ALL טיסות פנים-ארציות, למעט POLICE, FIREFIGHTING, MEDEVAC טיסות או UAS/UAV טיסות ל-חירום, SECURITY, MEDEVAC PURPOSES בלבד. ALL חירום APPROVED טיסות SHALL תיאום עם בקרת התעופה ו- MABBAH.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-30/08/2026 12:26 UTC עד 31/10/2026 21:59 UTC",
+   "heb": "אזור מגבול סוריה ועד 6 ק\"מ מערבה סגור לכל הטיסות הפנים-ארציות, למעט טיסות משטרה, כיבוי אש ופינוי רפואי, או טיסות כטב\"ם/רחפנים לצורכי חירום, ביטחון ופינוי רפואי בלבד. כל טיסות החירום המאושרות יתואמו עם בקרת התעופה ועם MABBAH.\nבתוקף: מ-30/08/2026 12:26 UTC עד 31/10/2026 21:59 UTC",
    "raw": "C1828/26 NOTAMR C1578/26\nQ) LLLL/QAELP/IV/NBO/E /000/999/3302N03547E018\nA) LLLL B) 2608301226 C) 2610312159\nE) AN AREA FM SYRIA BOUNDRAY TO 6KM WB CLSD TO ALL DOM FLT,\nEXC POLICE, FIREFIGHTING, MEDEVAC FLT OR UAS/UAV FLT FOR\nEMERG, SECURITY, MEDEVAC PURPOSES ONLY.\nALL EMERG APPROVED FLT SHALL COORD WITH ATC AND MABBAH.)",
    "first_seen": "2026-08-30T17:18:56Z"
   },
   {
    "id": "C1829/26",
    "loc": "LLLL",
-   "name": "הפעלת טיסות מ-JORDAN BOUNDRAY ל-6 ק\"מ WB REQUIRE…",
+   "name": "הפעלת טיסות מגבול ירדן ועד 6 ק\"מ מערבה מחייבת…",
    "cat": "other",
-   "heb": "הפעלת טיסות מ-JORDAN BOUNDRAY ל-6 ק\"מ WB REQUIRES TRANSPONDER OPERATING DRG ALL THE טיסות ו- MAINTANING TWO WAY RADIO COM עם בקרת התעופה.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-30/08/2026 12:27 UTC עד 31/10/2026 21:59 UTC",
+   "heb": "הפעלת טיסות מגבול ירדן ועד 6 ק\"מ מערבה מחייבת טרנספונדר פועל לאורך כל הטיסה ושמירת קשר רדיו דו-כיווני עם בקרת התעופה.\nבתוקף: מ-30/08/2026 12:27 UTC עד 31/10/2026 21:59 UTC",
    "raw": "C1829/26 NOTAMR C1579/26\nQ) LLLL/QAELP/IV/NBO/E /000/999/3123N03524E087\nA) LLLL B) 2608301227 C) 2610312159\nE) OPS OF FLT FM JORDAN BOUNDRAY TO 6KM WB REQUIRES\nTRANSPONDER OPERATING DRG ALL THE FLT AND MAINTANING\nTWO WAY RADIO COM WITH ATC.)",
    "first_seen": "2026-08-30T17:18:56Z"
   },
   {
    "id": "C1830/26",
    "loc": "LLLL",
-   "name": "הפעלת טיסות מ-EGYPT BOUNDRAY ל-6 ק\"מ WB REQUIRES…",
+   "name": "הפעלת טיסות מגבול מצרים ועד 6 ק\"מ מערבה מחייבת…",
    "cat": "other",
-   "heb": "הפעלת טיסות מ-EGYPT BOUNDRAY ל-6 ק\"מ WB REQUIRES TRANSPONDER OPERATING DRG ALL THE טיסות ו- MAINTANING TWO WAY RADIO COM עם בקרת התעופה.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-30/08/2026 12:27 UTC עד 31/10/2026 21:59 UTC",
+   "heb": "הפעלת טיסות מגבול מצרים ועד 6 ק\"מ מערבה מחייבת טרנספונדר פועל לאורך כל הטיסה ושמירת קשר רדיו דו-כיווני עם בקרת התעופה.\nבתוקף: מ-30/08/2026 12:27 UTC עד 31/10/2026 21:59 UTC",
    "raw": "C1830/26 NOTAMR C1580/26\nQ) LLLL/QAELP/IV/NBO/E /000/999/3029N03435E050\nA) LLLL B) 2608301227 C) 2610312159\nE) OPS OF FLT FM EGYPT BOUNDRAY TO 6KM WB REQUIRES\nTRANSPONDER OPERATING DRG ALL THE FLT AND MAINTANING\nTWO WAY RADIO COM WITH ATC.)",
    "first_seen": "2026-08-30T17:18:56Z"
   },
@@ -627,34 +627,34 @@
   {
    "id": "C1825/26",
    "loc": "LLLL",
-   "name": "GAZA-STRIP",
+   "name": "רצועת עזה (GAZA-STRIP)",
    "cat": "other",
-   "heb": "אזור ב-GAZA-STRIP בין נקודות הציון הבאות סגור לכל הטיסות, למעט אישור מוקדם טיסות מ-IAF או טיסות ריסוס חקלאיות, חירום, MEDEVAC מסוקים 31°07'14\"N 34°17'59\"E 31°08'18\"N 34°37'09\"E 31°05'50\"N 34°40'03\"E 31°08'18\"N 34°48'00\"E 31°13'16\"N 34°47'37\"E 31°19'00\"N 34°40'23\"E 31°25'52\"N 34°44'47\"E 31°34'52\"N 34°45'28\"E 31°36'49\"N 34°44'11\"E 31°39'23\"N 34°36'00\"E 31°42'59\"N 34°33'16\"E 31°50'55\"N 34°36'48\"E 31°51'13\"N 34°32'44\"E 31°55'51\"N 34°34'43\"E 31°56'01\"N 34°09'59\"E 31°51'45\"N 34°04'14\"E 31°46'13\"N 34°00'54\"E 31°19'27\"N 34°13'05\"E. פעילות טיסות מ-GAZA-STRIP BOUNDRAY ל-6 ק\"מ OUTWARD זמין ע\"י אישור מוקדם מ-IAF ו- CAAI ו- ENTRY APPROVAL מ-IDF (MABBAH) ע\"י מספר טלפון 08-9115730. מומלצת זהירות.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-30/08/2026 12:25 UTC עד 31/10/2026 21:59 UTC",
+   "heb": "אזור ב-GAZA-STRIP בין נקודות הציון הבאות סגור לכל הטיסות, למעט אישור מוקדם טיסות מ-IAF או טיסות ריסוס חקלאיות, חירום, MEDEVAC מסוקים 31°07'14\"N 34°17'59\"E 31°08'18\"N 34°37'09\"E 31°05'50\"N 34°40'03\"E 31°08'18\"N 34°48'00\"E 31°13'16\"N 34°47'37\"E 31°19'00\"N 34°40'23\"E 31°25'52\"N 34°44'47\"E 31°34'52\"N 34°45'28\"E 31°36'49\"N 34°44'11\"E 31°39'23\"N 34°36'00\"E 31°42'59\"N 34°33'16\"E 31°50'55\"N 34°36'48\"E 31°51'13\"N 34°32'44\"E 31°55'51\"N 34°34'43\"E 31°56'01\"N 34°09'59\"E 31°51'45\"N 34°04'14\"E 31°46'13\"N 34°00'54\"E 31°19'27\"N 34°13'05\"E. פעילות טיסות מ-GAZA-STRIP גבול ל-6 ק\"מ OUTWARD זמין ע\"י אישור מוקדם מ-IAF ו- CAAI ו- ENTRY APPROVAL מ-IDF (MABBAH) ע\"י מספר טלפון 08-9115730. מומלצת זהירות.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-30/08/2026 12:25 UTC עד 31/10/2026 21:59 UTC",
    "raw": "C1825/26 NOTAMR C1575/26\nQ) LLLL/QAELP/IV/NBO/E /000/999/3132N03429E030\nA) LLLL B) 2608301225 C) 2610312159\nE) AN AREA AT GAZA-STRIP BTN FLW PSN CLSD TO ALL FLT, EXC\nPPR FLT FM IAF OR AGRICULTURE FLT, EMERG, MEDEVAC HEL\n310714N0341759E 310818N0343709E 310550N0344003E\n310818N0344800E 311316N0344737E 311900N0344023E\n312552N0344447E 313452N0344528E 313649N0344411E\n313923N0343600E 314259N0343316E 315055N0343648E\n315113N0343244E 315551N0343443E 315601N0340959E\n315145N0340414E 314613N0340054E 311927N0341305E.\nOPS FLT FM GAZA-STRIP BOUNDRAY TO 6KM OUTWARD\nAVBL BY PPR FM IAF AND CAAI AND ENTRY APPROVAL\nFM IDF (MABBAH) BY PHONE NR 08-9115730.\nCTN ADZ.)",
    "first_seen": "2026-08-30T17:18:56Z"
   },
   {
    "id": "C1826/26",
    "loc": "LLLL",
-   "name": "אזור מצפון ל כביש מס' 85 ו- כביש מס' 91 סגור ל-A…",
+   "name": "אזור מצפון ל כביש מס' 85 ו- כביש מס' 91 סגור…",
    "cat": "act",
-   "heb": "אזור מצפון ל כביש מס' 85 ו- כביש מס' 91 סגור ל-ALL טיסות פנים-ארציות, למעט בועת זעירים BZVUE, חירום, OIL RIG טיסות, MEDEVAC מסוקים או אישור מוקדם טיסות מ-IAF. מומלצת זהירות.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-30/08/2026 12:25 UTC עד 31/10/2026 21:59 UTC",
+   "heb": "אזור מצפון ל כביש מס' 85 ו- כביש מס' 91 סגור לכל הטיסות הפנים-ארציות, למעט בועת זעירים BZVUE, חירום, OIL RIG טיסות, MEDEVAC מסוקים או אישור מוקדם טיסות מ-IAF. מומלצת זהירות.\nבתוקף: מ-30/08/2026 12:25 UTC עד 31/10/2026 21:59 UTC",
    "raw": "C1826/26 NOTAMR C1576/26\nQ) LLLL/QAELC/IV/NBO/E /000/999/3306N03525E019\nA) LLLL B) 2608301225 C) 2610312159\nE) AN AREA N OF ROAD NR 85 AND ROAD NR 91 CLSD TO ALL DOM FLT,\nEXC  ULTRALIGHT BUBBLE BZVUE, EMERG, OIL RIG FLT,\nMEDEVAC HEL OR PPR FLT FM IAF.\nCTN ADZ.)",
    "first_seen": "2026-08-30T17:18:56Z"
   },
   {
    "id": "C1827/26",
    "loc": "LLLL",
-   "name": "אזור מ-LEBANON BOUNDRAY ל-8 ק\"מ SB סגור ל-ALL טי…",
+   "name": "אזור מגבול לבנון ועד 8 ק\"מ דרומה סגור לכל…",
    "cat": "uas",
-   "heb": "אזור מ-LEBANON BOUNDRAY ל-8 ק\"מ SB סגור ל-ALL טיסות פנים-ארציות, למעט POLICE, FIREFIGHTING, MEDEVAC טיסות או UAS/UAV טיסות ל-חירום, SECURITY, MEDEVAC PURPOSES בלבד. ALL חירום APPROVED טיסות SHALL תיאום עם בקרת התעופה ו- MABBAH.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-30/08/2026 12:26 UTC עד 31/10/2026 21:59 UTC",
+   "heb": "אזור מגבול לבנון ועד 8 ק\"מ דרומה סגור לכל הטיסות הפנים-ארציות, למעט טיסות משטרה, כיבוי אש ופינוי רפואי, או טיסות כטב\"ם/רחפנים לצורכי חירום, ביטחון ופינוי רפואי בלבד. כל טיסות החירום המאושרות יתואמו עם בקרת התעופה ועם MABBAH.\nבתוקף: מ-30/08/2026 12:26 UTC עד 31/10/2026 21:59 UTC",
    "raw": "C1827/26 NOTAMR C1577/26\nQ) LLLL/QAELC/IV/NBO/E /000/999/3308N03526E019\nA) LLLL B) 2608301226 C) 2610312159\nE) AN AREA FM LEBANON BOUNDRAY TO 8KM SB CLSD TO ALL DOM FLT,\nEXC POLICE, FIREFIGHTING, MEDEVAC FLT OR UAS/UAV FLT FOR\nEMERG, SECURITY, MEDEVAC PURPOSES ONLY.\nALL EMERG APPROVED FLT SHALL COORD WITH ATC AND MABBAH.)",
    "first_seen": "2026-08-30T17:18:56Z"
   },
   {
    "id": "A0701/26",
    "loc": "LLBG",
-   "name": "YAHUD/IAI INDUSTRY",
+   "name": "יהוד / התעשייה האווירית (YAHUD/IAI INDUSTRY)",
    "cat": "obst",
    "heb": "עגורן הוקם בתוך LLBG אזור בקרה, ב-YAHUD/IAI INDUSTRY. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 74.50M 245 רגל מעל פני הים 32°01'52\"N 34°54'16\"E 32°01'50\"N 34°54'16\"E 32°01'50\"N 34°54'13\"E 32°01'52\"N 34°54'13\"E. מואר ומסומן לשעות היום. מומלצת זהירות.\nבתוקף: מ-01/10/2026 00:01 UTC עד 31/12/2026 20:59 UTC",
    "raw": "A0701/26 NOTAMN\nQ) LLLL/QOBCE/IV/M  /AE/000/003/3202N03454E001\nA) LLBG B) 2610010001 C) 2612312059\nE) CRANE ERECTED WI LLBG CTR, AT YAHUD/IAI INDUSTRY.\nAN AREA BTN FLW PSN CLSD FM GND UP TO 74.50M 245FT AMSL\n320152N0345416E 320150N0345416E 320150N0345413E\n320152N0345413E.\nLIT AND DAY MARKED.\nCTN ADZ.)",
@@ -699,7 +699,7 @@
   {
    "id": "A0687/26",
    "loc": "LLLL",
-   "name": "מקסימום ALT ALONG ATS נתיב J10 בין NURIT-SIVAK 1…",
+   "name": "מקסימום ALT ALONG ATS נתיב J10 בין NURIT-SIVAK…",
    "cat": "other",
    "heb": "מקסימום ALT ALONG ATS נתיב J10 בין NURIT-SIVAK 18,000 רגל מעל פני הים.\nבתוקף: מ-26/08/2026 09:47 UTC עד 31/10/2026 23:59 UTC",
    "raw": "A0687/26 NOTAMR A0595/26\nQ) LLLL/QANLT/I /NBO/E /040/370/3053N03516E052\nA) LLLL B) 2608260947 C) 2610312359\nE) MAX ALT ALONG ATS RTE J10 BTN NURIT-SIVAK 18,000FT AMSL.)",
@@ -708,7 +708,7 @@
   {
    "id": "A0688/26",
    "loc": "LLLL",
-   "name": "POSS INTRP ל-AIRBORNE GNSS EQPT בתוך TEL-AVIV FI…",
+   "name": "POSS INTRP ל-AIRBORNE GNSS EQPT בתוך TEL-AVIV…",
    "cat": "other",
    "heb": "POSS INTRP ל-AIRBORNE GNSS EQPT בתוך TEL-AVIV FIR.\nבתוקף: מ-26/08/2026 09:47 UTC עד 31/10/2026 23:59 UTC",
    "raw": "A0688/26 NOTAMR A0596/26\nQ) LLLL/QGWAU/IV/NBO/E /000/999/3125N03521E117\nA) LLLL B) 2608260947 C) 2610312359\nE) POSS INTRP TO AIRBORNE GNSS EQPT WI TEL-AVIV FIR.)",
@@ -735,7 +735,7 @@
   {
    "id": "A0622/26",
    "loc": "LLLL",
-   "name": "ATS נתיב W13 זמין מסביב לשעון בין TAPUZ-JILET-DA…",
+   "name": "ATS נתיב W13 זמין מסביב לשעון בין…",
    "cat": "other",
    "heb": "ATS נתיב W13 זמין מסביב לשעון בין TAPUZ-JILET-DAFNA בין 12,000 רגל-FL325. ו- בין TAPUZ-JILET-DAFNA CDR1 בין FL330-FL600, כדלקמן SUN 2100(2000) - MON 0500(0400) MON 2100(2000) - TUE 0500(0400) TUE 2100(2000) - WED 0500(0400) WED 2100(2000) - THU 0500(0400) THU 1500(1400) - SUN 0600(0500) HOL-1 1500(1400) - HOL+1 0600(0500) TIME IN BRACKETS ARE SUMMER SAVING, ALL TIMES UTC. AIP ישראל, PART ENR 3.1, PAGE ENR 3.1-30, CHART ENR 6-1 ראו.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-06/08/2026 16:30 UTC (קבוע)",
    "raw": "A0622/26 NOTAMN\nQ) LLLL/QANLT/I /NBO/E /120/600/3217N03423E018\nA) LLLL B) 2608061630 C) PERM\nE) ATS RTE W13 AVBL H24 BTN TAPUZ-JILET-DAFNA BTN 12,000FT-FL325.\nAND BTN TAPUZ-JILET-DAFNA CDR1 BTN FL330-FL600, AS FLW\nSUN 2100(2000) - MON 0500(0400)\nMON 2100(2000) - TUE 0500(0400)\nTUE 2100(2000) - WED 0500(0400)\nWED 2100(2000) - THU 0500(0400)\nTHU 1500(1400) - SUN 0600(0500)\nHOL-1 1500(1400) - HOL+1 0600(0500)\nTIME IN BRACKETS ARE SUMMER SAVING, ALL TIMES UTC.\nISRAEL AIP, PART ENR 3.1, PAGE ENR 3.1-30, CHART ENR 6-1 REF.)",
@@ -762,7 +762,7 @@
   {
    "id": "C1361/26",
    "loc": "LLLL",
-   "name": "ASHDOD",
+   "name": "אשדוד (ASHDOD)",
    "cat": "uas",
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב-ASHDOD, מהקרקע ועד 100 מטר מעל הקרקע. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 950 רגל מעל פני הים 31°51'19\"N 34°41'22\"E 31°51'27\"N 34°40'37\"E 31°51'23\"N 34°40'07\"E 31°51'32\"N 34°39'31\"E 31°50'55\"N 34°39'17\"E 31°50'38\"N 34°40'13\"E 31°50'35\"N 34°41'20\"E. מומלצת זהירות.\nבתוקף: מ-01/07/2026 00:01 UTC עד 31/12/2026 21:59 UTC",
    "raw": "C1361/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/010/3151N03440E002\nA) LLLL B) 2607010001 C) 2612312159\nE) UAS/UAV ACT WILL TAKE PLACE AT ASHDOD, FM GND UP TO 100M AGL.\nAN AREA BTN FLW PSN CLSD FM GND UP TO 950FT AMSL\n315119N0344122E 315127N0344037E 315123N0344007E\n315132N0343931E 315055N0343917E 315038N0344013E\n315035N0344120E.\nCTN ADZ.\nF) GND G) 950FT AMSL)",
@@ -771,7 +771,7 @@
   {
    "id": "C1281/26",
    "loc": "LLLL",
-   "name": "GOLANI-INTERCHANGE",
+   "name": "מחלף גולני (GOLANI-INTERCHANGE)",
    "cat": "other",
    "heb": "אזור ב-GOLANI-INTERCHANGE בתוך ברדיוס 0.6 מייל ימי שמרכזו בנ.צ. 32°46'00\"N 35°25'30\"E סגור לכל הטיסות כולל טיסות ריסוס חקלאיות, מהקרקע ועד 1,500 רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-15/06/2026 11:46 UTC (קבוע)",
    "raw": "C1281/26 NOTAMR C1119/26\nQ) LLLL/QAELC/IV/NBO/E /000/015/3246N03525E001\nA) LLLL B) 2606151146 C) PERM\nE) AN AREA AT GOLANI-INTERCHANGE WI 0.6NM RADIUS CENTRED\nON PSN 324600N0352530E CLSD TO ALL FLT INCLUDING\nAGRICULTURE FLT, FM GND UP TO 1,500FT AMSL.\nCTN ADZ.)",
@@ -780,7 +780,7 @@
   {
    "id": "A0457/26",
    "loc": "LLBG",
-   "name": "מינימום CMB GRADIENT שונה כדלקמן CHART שדה תעופה…",
+   "name": "מינימום CMB GRADIENT שונה כדלקמן CHART שדה…",
    "cat": "obst",
    "heb": "מינימום CMB GRADIENT שונה כדלקמן CHART שדה תעופה 2 LLBG SID 26-1 ALL SID מינימום CMB GRADIENT REQUIRED 7.0 PERCENT עד 2,500 רגל עקב AIR-SPACE RESTRICTIONS. אם לא ניתן ADZ בקרת התעופה ו- EXECUTE מינימום CMB GRADIENT OF 3.5 PERCENT עקב מכשול. CHART שדה תעופה 2 LLBG SID 12-26-30-1 ל-SID PIDET1E מינימום CMB GRADIENT REQUIRED OF 6.0 PERCENT עד 5,000 רגל עקב AIR-SPACE RESTRICTIONS. אם לא ניתן ADZ בקרת התעופה ו- EXECUTE מינימום CMB GRADIENT OF 3.5 PERCENT עקב מכשול. ל-SID RIPUD1E מינימום CMB GRADIENT REQUIRED OF 7.0 PERCENT עד 6,000 רגל עקב AIR-SPACE RESTRICTIONS. אם לא ניתן ADZ בקרת התעופה ו- EXECUTE מינימום CMB GRADIENT OF 3.5 PERCENT עקב מכשול. CHART שדה תעופה 2 LLBG SID 12-26-30-2, ל-SID ORLEV1E מינימום CMB GRADIENT REQUIRED 8.0 PERCENT עד 5,000 רגל עקב AIR-SPACE RESTRICTIONS. אם לא ניתן ADZ בקרת התעופה ו- EXECUTE מינימום CMB GRADIENT OF 3.5 PERCENT עקב מכשול. AIP ישראל, PART שדה תעופה, CHARTS שדה תעופה 2 LLBG SID 26-1, שדה תעופה 2 LLBG SID 12-26-30-1, שדה תעופה 2 LLBG SID 12-26-30-2. ראו.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-08/06/2026 05:31 UTC (קבוע)",
    "raw": "A0457/26 NOTAMR A0410/26\nQ) LLLL/QPDCH/I /NBO/A /000/999/3201N03453E005\nA) LLBG B) 2606080531 C) PERM\nE) MNM CMB GRADIENT CHG AS FLW\nCHART AD 2 LLBG SID 26-1\nALL SID  MNM CMB GRADIENT REQUIRED 7.0 PERCENT UP TO\n2,500FT DUE TO AIR-SPACE RESTRICTIONS.\nIF UNABLE ADZ ATC AND EXECUTE MNM CMB GRADIENT OF\n3.5 PERCENT DUE TO OBST.\nCHART AD 2 LLBG SID 12-26-30-1\nFOR SID PIDET1E  MNM CMB GRADIENT REQUIRED OF 6.0 PERCENT\nUP TO 5,000FT DUE TO AIR-SPACE RESTRICTIONS.\nIF UNABLE ADZ ATC AND EXECUTE MNM CMB GRADIENT OF\n3.5 PERCENT DUE TO OBST.\nFOR SID RIPUD1E  MNM CMB GRADIENT REQUIRED OF 7.0 PERCENT\nUP TO 6,000FT DUE TO AIR-SPACE RESTRICTIONS.\nIF UNABLE ADZ ATC AND EXECUTE MNM CMB GRADIENT OF\n3.5 PERCENT DUE TO OBST.\nCHART AD 2 LLBG SID 12-26-30-2, FOR SID ORLEV1E\nMNM CMB GRADIENT REQUIRED 8.0 PERCENT UP TO 5,000FT\nDUE TO AIR-SPACE RESTRICTIONS.\nIF UNABLE ADZ ATC AND EXECUTE MNM CMB GRADIENT OF\n3.5 PERCENT DUE TO OBST.\nISRAEL AIP, PART AD, CHARTS  AD 2 LLBG SID 26-1,\nAD 2 LLBG SID 12-26-30-1, AD 2 LLBG SID 12-26-30-2. REF.)",
@@ -807,7 +807,7 @@
   {
    "id": "C0431/26",
    "loc": "LLLL",
-   "name": "הפעלת UAS/UAV או טיסנים בתוך ברדיוס 500 מטר שמרכ…",
+   "name": "הפעלת UAS/UAV או טיסנים בתוך ברדיוס 500 מטר…",
    "cat": "uas",
    "heb": "הפעלת UAS/UAV או טיסנים בתוך ברדיוס 500 מטר שמרכזו בנ.צ. 32°04'18\"N 34°47'10\"E מהקרקע ועד 300 רגל מעל פני הים אסור. AIP פנים-ארצי, PART A-17, PAGE 5, PARA 1A.C. ו- NISPACH C. ראו.\nבתוקף: מ-11/02/2026 11:25 UTC (קבוע)",
    "raw": "C0431/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/003/3204N03447E001\nA) LLLL B) 2602111125 C) PERM\nE) OPS OF UAS/UAV OR MODEL ACFT WI 500M RADIUS CENTERED ON\nPSN 320418N0344709.6E FM GND UP TO 300FT AMSL PROHIBITED.\nDOM AIP, PART A-17, PAGE 5, PARA 1A.C. AND NISPACH C. REF.\nF) GND G) 300FT AMSL)",
@@ -834,7 +834,7 @@
   {
    "id": "A0056/26",
    "loc": "LLLL",
-   "name": "ATS נתיב P42 בין TAPUZ-MERVA זמין ע\"י בקרת התעופ…",
+   "name": "ATS נתיב P42 בין TAPUZ-MERVA זמין ע\"י בקרת…",
    "cat": "other",
    "heb": "ATS נתיב P42 בין TAPUZ-MERVA זמין ע\"י בקרת התעופה בלבד. AIP ישראל, PART ENR 3.1, PAGE ENR 3.1-17, CHART ENR 6-1 ראו.\nבתוקף: מ-25/01/2026 08:05 UTC (קבוע)",
    "raw": "A0056/26 NOTAMR A0722/25\nQ) LLLL/QANLC/I /NBO/E /120/600/3224N03432E024\nA) LLLL B) 2601250805 C) PERM\nE) ATS RTE P42 BTN TAPUZ-MERVA AVBL BY ATC ONLY.\nISRAEL AIP, PART ENR 3.1, PAGE ENR 3.1-17, CHART ENR 6-1 REF.)",
@@ -852,7 +852,7 @@
   {
    "id": "C0032/26",
    "loc": "LLLL",
-   "name": "NAURA",
+   "name": "נעורה (NAURA)",
    "cat": "other",
    "heb": "אזור ב-NAURA בתוך LLMG אזור אימונים B-WEST בתוך ברדיוס 2.2 ק\"מ שמרכזו בנ.צ. 32°37'33\"N 35°23'02\"E סגור לכל הטיסות כולל טיסות ריסוס חקלאיות, מהקרקע ועד 10,000 רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-01/01/2026 11:56 UTC עד 31/12/2026 21:59 UTC",
    "raw": "C0032/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/100/3238N03523E002\nA) LLLL B) 2601011156 C) 2612312159\nE) AN AREA AT NAURA WI LLMG TRG AREA B-WEST WI 2.2KM RADIUS\nCENTERED ON PSN 323732.9N0352302.1E CLSD TO ALL FLT\nINCLUDING AGRICULTURE FLT, FM GND UP TO 10,000FT AMSL.\nCTN ADZ.)",
@@ -861,7 +861,7 @@
   {
    "id": "C0010/26",
    "loc": "LLLL",
-   "name": "LATRUN",
+   "name": "לטרון (LATRUN)",
    "cat": "uas",
    "heb": "פעילות כטב\"מ תתקיים ב-LATRUN. אזור בין נקודות הציון הבאות 31°49'45\"N 34°58'22\"E 31°49'49\"N 34°58'06\"E 31°49'36\"N 34°57'43\"E 31°49'10\"N 34°58'13\"E סגור מהקרקע ועד 300 רגל מעל הקרקע, 950 רגל מעל פני הים. מומלצת זהירות. AIP פנים-ארצי, PART B-03, CHART A, B-08, CHART A. ראו.\nבתוקף: מ-01/01/2026 06:40 UTC (קבוע)",
    "raw": "C0010/26 NOTAMR C2794/25\nQ) LLLL/QWULW/IV/BO /W /000/010/3149N03458E001\nA) LLLL B) 2601010640 C) PERM\nE) UAS ACT WILL TAKE PLACE AT LATRUN.\nAN AREA BTN THE FLW PSNS  N314945E0345822 N314949E0345806\nN314936E0345743 N314910E0345813 CLSD FM GND UP TO\n300FT AGL, 950FT AMSL.\nCTN ADZ.\nDOM AIP, PART B-03, CHART A, B-08, CHART A. REF.\nF) GND G) 1000FT AMSL)",
@@ -870,7 +870,7 @@
   {
    "id": "C0005/26",
    "loc": "LLLL",
-   "name": "OR-AKIVA INDUSTRY",
+   "name": "אזור התעשייה אור עקיבא (OR-AKIVA INDUSTRY)",
    "cat": "uas",
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב-או-AKIVA INDUSTRY AREA. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 500 רגל מעל פני הים 32°31'22\"N 34°55'11\"E 32°31'19\"N 34°55'12\"E 32°31'19\"N 34°55'15\"E 32°31'23\"N 34°55'14\"E. מומלצת זהירות. AIP פנים-ארצי, PART A-17, PAGE 10, PARA 3. NISPACH 2 ראו.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-01/01/2026 06:30 UTC (קבוע)",
    "raw": "C0005/26 NOTAMR C0731/25\nQ) LLLL/QWULW/IV/BO /W /000/005/3231N03455E001\nA) LLLL B) 2601010630 C) PERM\nE) UAS/UAV ACT WILL TAKE PLACE AT OR-AKIVA INDUSTRY AREA.\nAN AREA BTN THE FLW PSN CLSD FM GND UP TO 500FT AMSL\nN323122E0345511 N323119E0345512 N323119E0345515\nN323123E0345514.\nCTN ADZ.\nDOM AIP, PART A-17, PAGE 10, PARA 3. NISPACH 2 REF.\nF) GND G) 500FT AMSL)",
