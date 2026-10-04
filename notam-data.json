@@ -1,8 +1,152 @@
 {
- "fetched_at": "04/10/2026 10:07 UTC",
- "fetched_iso": "2026-10-04T10:07:22Z",
- "count": 101,
+ "fetched_at": "04/10/2026 17:24 UTC",
+ "fetched_iso": "2026-10-04T17:24:51Z",
+ "count": 114,
  "notams": [
+  {
+   "id": "A0799/26",
+   "loc": "LLLL",
+   "name": "ATS נתיב J14 סגור בין MEGID-GIMIK",
+   "cat": "other",
+   "heb": "ATS נתיב J14 סגור בין MEGID-GIMIK.\nבתוקף: מ-05/10/2026 05:45 UTC עד 05/10/2026 12:00 UTC\nלו\"ז: 0545-0800 0930-1200",
+   "raw": "A0799/26 NOTAMN\nQ) LLLL/QANLC/I /NBO/E /050/060/3241N03524E011\nA) LLLL B) 2610050545 C) 2610051200\nD) 0545-0800 0930-1200\nE) ATS RTE J14 CLSD BTN MEGID-GIMIK.)",
+   "first_seen": "2026-10-04T17:24:51Z"
+  },
+  {
+   "id": "C2082/26",
+   "loc": "LLLL",
+   "name": "בועת זעירים A-WEST (BMGWA) סגור",
+   "cat": "act",
+   "heb": "בועת זעירים A-WEST (BMGWA) סגור.\nבתוקף: מ-05/10/2026 05:45 UTC עד 05/10/2026 12:00 UTC\nלו\"ז: 0545-0800 0930-1200",
+   "raw": "C2082/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/020/3242N03521E006\nA) LLLL B) 2610050545 C) 2610051200\nD) 0545-0800 0930-1200\nE) ULTRALIGHT BUBBLE A-WEST (BMGWA) CLSD.)",
+   "first_seen": "2026-10-04T17:24:51Z"
+  },
+  {
+   "id": "C2081/26",
+   "loc": "LLLL",
+   "name": "KFAR-TAVOR",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ תתקיים ב-KFAR-TAVOR. אזור בתוך LLMG אזור אימונים NR A-WEST בין נקודות הציון הבאות סגור מהקרקע ועד 4,500 רגל מעל פני הים לכל הטיסות. טיסות ריסוס חקלאיות באישור מוקדם של 15 דקות מבקרת התעופה 32°47'11\"N 35°23'45\"E 32°43'17\"N 35°25'34\"E 32°42'10\"N 35°23'22\"E 32°46'24\"N 35°21'33\"E. מומלצת זהירות.\nבתוקף: מ-05/10/2026 05:45 UTC עד 05/10/2026 12:00 UTC\nלו\"ז: 0545-0800 0930-1200",
+   "raw": "C2081/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/045/3245N03524E003\nA) LLLL B) 2610050545 C) 2610051200\nD) 0545-0800 0930-1200\nE) UAS ACT WILL TAKE PLACE AT KFAR-TAVOR.\nAN AREA WI LLMG TRG AREA NR A-WEST BTN FLW\nPSN CLSD FM GND UP TO 4,500FT AMSL TO ALL FLT.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC\n324711N0352345E 324317N0352534E 324210N0352322E\n324624N0352133E.\nCTN ADZ.\nF) GND G) 4500FT AMSL)",
+   "first_seen": "2026-10-04T17:24:51Z"
+  },
+  {
+   "id": "C2080/26",
+   "loc": "LLLL",
+   "name": "מסוקים נתיב סגור למעט ע\"י בקרת התעופה GALIM-SUVA…",
+   "cat": "other",
+   "heb": "מסוקים נתיב סגור למעט ע\"י בקרת התעופה GALIM-SUVAS. GALIM-KONFO. GALIM-DAFNA. GALIM-MERVA. GALIM-INBAR.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
+   "raw": "C2080/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /005/015/3234N03425E034\nA) LLLL B) 2610051930 C) 2610111300\nD) 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300\nE) HEL RTE CLSD EXC BY ATC\nGALIM-SUVAS.\nGALIM-KONFO.\nGALIM-DAFNA.\nGALIM-MERVA.\nGALIM-INBAR.)",
+   "first_seen": "2026-10-04T17:24:51Z"
+  },
+  {
+   "id": "C2077/26",
+   "loc": "LLLL",
+   "name": "הפעלת UAV בין נקודות הציון הבאות מהקרקע ועד 6",
+   "cat": "uas",
+   "heb": "הפעלת UAV בין נקודות הציון הבאות מהקרקע ועד 6,800 רגל מעל פני הים אסור 31°35'25\"N 34°33'42\"E 31°38'18\"N 34°35'18\"E 31°38'38\"N 34°31'50\"E 31°37'12\"N 34°30'45\"E. מומלצת זהירות.\nבתוקף: מ-05/10/2026 03:00 UTC עד 05/10/2026 09:00 UTC",
+   "raw": "C2077/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/068/3137N03433E003\nA) LLLL B) 2610050300 C) 2610050900\nE) OPS OF UAV BTN FLW PSN FM GND UP TO 6,800FT AMSL PROHIBITED\n313525N0343342E 313818N0343518E 313838N0343150E\n313712N0343045E.\nCTN ADZ.)",
+   "first_seen": "2026-10-04T17:24:51Z"
+  },
+  {
+   "id": "C2076/26",
+   "loc": "LLLL",
+   "name": "אזור בין נקודות הציון הבאות סגור לכל הטיסות",
+   "cat": "other",
+   "heb": "אזור בין נקודות הציון הבאות סגור לכל הטיסות, כולל טיסות ריסוס חקלאיות מהקרקע ועד 500 רגל מעל פני הים 31°37'26\"N 34°31'42\"E 31°37'23\"N 34°29'10\"E 31°35'15\"N 34°29'09\"E 31°35'17\"N 34°31'42\"E. מומלצת זהירות.\nבתוקף: מ-05/10/2026 03:00 UTC עד 05/10/2026 09:00 UTC",
+   "raw": "C2076/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/005/3136N03430E003\nA) LLLL B) 2610050300 C) 2610050900\nE) AN AREA BTN FLW PSN CLSD TO ALL FLT,\nINCLUDING AGRICULTURE FLT FM GND UP TO 500FT AMSL\n313726N0343142E 313723N0342910E 313515N0342909E\n313517N0343142E.\nCTN ADZ.)",
+   "first_seen": "2026-10-04T17:24:51Z"
+  },
+  {
+   "id": "C2075/26",
+   "loc": "LLLL",
+   "name": "מסוקים נתיב סגור",
+   "cat": "other",
+   "heb": "מסוקים נתיב סגור, למעט ע\"י בקרת התעופה EVLYM-AHIUD-AAKKO-SMRAT-SZION. GILAM-EVLYM. HASID-EVLYM-MOVIL.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
+   "raw": "C2075/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /004/020/3252N03509E009\nA) LLLL B) 2610051930 C) 2610111300\nD) 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300\nE) HEL RTE CLSD, EXC BY ATC\nEVLYM-AHIUD-AAKKO-SMRAT-SZION.\nGILAM-EVLYM.\nHASID-EVLYM-MOVIL.)",
+   "first_seen": "2026-10-04T17:24:51Z"
+  },
+  {
+   "id": "C2074/26",
+   "loc": "LLLL",
+   "name": "TRIGGER NOTAM",
+   "cat": "other",
+   "heb": "TRIGGER NOTAM - אין AIRAC AIP פנים-ארצי AMDT בתוקף מ-29 OCT 2026.\nבתוקף: מ-29/10/2026 00:01 UTC עד 11/11/2026 23:59 UTC",
+   "raw": "C2074/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /E /000/999/3211N03515E015\nA) LLLL B) 2610290001 C) 2611112359\nE) TRIGGER NOTAM - NIL AIRAC DOM AIP AMDT WEF 29 OCT 2026.)",
+   "first_seen": "2026-10-04T17:24:51Z"
+  },
+  {
+   "id": "A0798/26",
+   "loc": "LLLL",
+   "name": "TRIGGER NOTAM",
+   "cat": "other",
+   "heb": "TRIGGER NOTAM - אין AIRAC AIP AMDT בתוקף מ-29 OCT 2026.\nבתוקף: מ-29/10/2026 00:01 UTC עד 11/11/2026 21:59 UTC",
+   "raw": "A0798/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /E /000/999/3123N03515E999\nA) LLLL B) 2610290001 C) 2611112159\nE) TRIGGER NOTAM - NIL AIRAC AIP AMDT WEF 29 OCT 2026.)",
+   "first_seen": "2026-10-04T17:24:51Z"
+  },
+  {
+   "id": "C2073/26",
+   "loc": "LLLL",
+   "name": "נתיב CVFR סגור",
+   "cat": "other",
+   "heb": "נתיב CVFR סגור, למעט ע\"י בקרת התעופה EVLYM-AHIUD-AAKKO-SMRAT-SZION. GILAM-EVLYM-SEGEV.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
+   "raw": "C2073/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /015/030/3255N03510E007\nA) LLLL B) 2610051930 C) 2610111300\nD) 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300\nE) CVFR RTE CLSD, EXC BY ATC\nEVLYM-AHIUD-AAKKO-SMRAT-SZION.\nGILAM-EVLYM-SEGEV.)",
+   "first_seen": "2026-10-04T17:24:51Z"
+  },
+  {
+   "id": "C2071/26",
+   "loc": "LLLL",
+   "name": "ULTRALIGHT נתיב סגור",
+   "cat": "act",
+   "heb": "ULTRALIGHT נתיב סגור, למעט ע\"י בקרת התעופה EVLYM-AHIUD-YASIF-AAKKO-SMRAT. GILAM-EVLYM-MOVIL.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
+   "raw": "C2071/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /004/013/3251N03510E008\nA) LLLL B) 2610051930 C) 2610111300\nD) 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300\nE) ULTRALIGHT RTE CLSD, EXC BY ATC\nEVLYM-AHIUD-YASIF-AAKKO-SMRAT.\nGILAM-EVLYM-MOVIL.)",
+   "first_seen": "2026-10-04T17:24:51Z"
+  },
+  {
+   "id": "C2069/26",
+   "loc": "LLLL",
+   "name": "LLHA אזור אימונים NR A",
+   "cat": "act",
+   "heb": "LLHA אזור אימונים NR A,B,C ו- ZVULUN בועת זעירים N, S (BZVUL ו- BZVUN) סגור לכל הטיסות כולל טיסות ריסוס חקלאיות, למעט ע\"י בקרת התעופה.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
+   "raw": "C2069/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/040/3254N03507E006\nA) LLLL B) 2610051930 C) 2610111300\nD) 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300\nE) LLHA TRG AREA NR A,B,C AND ZVULUN ULTRALIGHT BUBBLE N, S\n(BZVUL AND BZVUN) CLSD TO ALL FLT INCLUDING AGRICULTURE\nFLT, EXC BY ATC.)",
+   "first_seen": "2026-10-04T17:24:51Z"
+  },
+  {
+   "id": "A0797/26",
+   "loc": "LLLL",
+   "name": "ATS נתיב סגור למעט ע\"י בקרת התעופה P68 בין GALIM…",
+   "cat": "other",
+   "heb": "ATS נתיב סגור למעט ע\"י בקרת התעופה P68 בין GALIM-ZAHAV. Q28 בין ATLIT-GALIM.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
+   "raw": "A0797/26 NOTAMN\nQ) LLLL/QANLC/I /NBO/E /030/260/3247N03454E006\nA) LLLL B) 2610051930 C) 2610111300\nD) 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300\nE) ATS RTE CLSD EXC BY ATC\nP68 BTN GALIM-ZAHAV.\nQ28 BTN ATLIT-GALIM.)",
+   "first_seen": "2026-10-04T17:24:51Z"
+  },
+  {
+   "id": "A0796/26",
+   "loc": "LLHA",
+   "name": "חיפה (LLHA)",
+   "cat": "ad",
+   "heb": "אזור בקרה סגור לכל הטיסות למעט ע\"י בקרת התעופה, עקב TEST טיסות.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
+   "raw": "A0796/26 NOTAMN\nQ) LLLL/QACLC/IV/NBO/AE/000/030/3251N03503E007\nA) LLHA B) 2610051930 C) 2610111300\nD) 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300\nE) CTR CLSD TO ALL FLT EXC BY ATC, DUE TEST FLT.)",
+   "first_seen": "2026-10-04T17:24:51Z"
+  },
+  {
+   "id": "C2068/26",
+   "loc": "LLLL",
+   "name": "LASER EMISSION תתקיים ממערב ל LLHA אזור בקרה",
+   "cat": "other",
+   "heb": "LASER EMISSION תתקיים ממערב ל LLHA אזור בקרה. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 45,000 רגל מעל פני הים לכל הטיסות, למעט ע\"י בקרת התעופה 32°51'42\"N 35°04'42\"E 32°51'31\"N 34°31'41\"E 33°05'11\"N 34°35'58\"E. מומלצת זהירות.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
+   "raw": "C2068/26 NOTAMN\nQ) LLLL/QWOLW/IV/M  /W /000/450/3255N03448E015\nA) LLLL B) 2610051930 C) 2610111300\nD) 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300\nE) LASER EMISSION WILL TAKE PLACE W OF LLHA CTR.\nAN AREA BTN FLW PSN CLSD FM GND UP TO 45,000FT AMSL\nTO ALL FLT, EXC BY ATC  325142N0350442E 325131N0343141E\n330511N0343558E.\nCTN ADZ.\nF) GND G) 45000FT AMSL)",
+   "first_seen": "2026-10-04T17:24:51Z"
+  },
+  {
+   "id": "C2067/26",
+   "loc": "LLLL",
+   "name": "פעילות כטב\"מ תתקיים בתוך LLHA אזור בקרה",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ תתקיים בתוך LLHA אזור בקרה. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 4,500 רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות, למעט ע\"י בקרת התעופה 32°57'19\"N 35°10'03\"E 32°46'37\"N 35°10'03\"E 32°46'37\"N 34°56'46\"E 32°57'19\"N 34°56'46\"E. מומלצת זהירות.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
+   "raw": "C2067/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/045/3252N03503E009\nA) LLLL B) 2610051930 C) 2610111300\nD) 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300\nE) UAS ACT WILL TAKE PLACE WI LLHA CTR.\nAN AREA BTN FLW PSN CLSD FM GND UP TO 4,500FT AMSL\nTO ALL FLT INCLUDING AGRICULTURE FLT, EXC BY ATC\n325719N0351003E 324637N0351003E 324637N0345646E\n325719N0345646E.\nCTN ADZ.\nF) GND G) 4500FT AMSL)",
+   "first_seen": "2026-10-04T17:24:51Z"
+  },
   {
    "id": "C2066/26",
    "loc": "LLLL",
@@ -29,24 +173,6 @@
    "heb": "CVFR ו- מסוקים נתיב סגור ב-1,200 רגל, זמין BIDIRECTIONAL ב-800 רגל מעל פני הים בלבד TYONA-SUPER-NTAIM-BOVED-NAGID-YAVNE-ZASHD.\nבתוקף: מ-05/10/2026 14:00 UTC עד 05/10/2026 19:45 UTC\nלו\"ז: 1400-1500 1845-1945",
    "raw": "C2064/26 NOTAMN\nQ) LLLL/QARLT/IV/NBO/E /008/012/3155N03446E008\nA) LLLL B) 2610051400 C) 2610051945\nD) 1400-1500 1845-1945\nE) CVFR AND HEL RTE CLSD AT 1,200FT,\nAVBL BIDIRECTIONAL AT 800FT AMSL ONLY\nTYONA-SUPER-NTAIM-BOVED-NAGID-YAVNE-ZASHD.)",
    "first_seen": "2026-10-04T10:07:22Z"
-  },
-  {
-   "id": "C2063/26",
-   "loc": "LLLL",
-   "name": "KFAR-TAVOR",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ תתקיים ב-KFAR-TAVOR. אזור בתוך LLMG אזור אימונים NR A-WEST בין נקודות הציון הבאות סגור מהקרקע ועד 4,500 רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות 32°47'13\"N 35°23'45\"E 32°43'34\"N 35°25'25\"E 32°42'06\"N 35°30'46\"E 32°39'59\"N 35°30'09\"E 32°41'42\"N 35°23'28\"E 32°46'28\"N 35°21'18\"E. מומלצת זהירות.\nבתוקף: מ-04/10/2026 11:30 UTC עד 04/10/2026 13:30 UTC",
-   "raw": "C2063/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/045/3243N03526E006\nA) LLLL B) 2610041130 C) 2610041330\nE) UAS ACT WILL TAKE PLACE AT KFAR-TAVOR.\nAN AREA WI LLMG TRG AREA NR A-WEST BTN FLW\nPSN CLSD FM GND UP TO 4,500FT AMSL TO ALL FLT INCLUDING\nAGRICULTURE FLT  324713N0352345E 324334N0352525E\n324206N0353046E 323959N0353009E 324142N0352328E\n324628N0352118E.\nCTN ADZ.\nF) GND G) 4500FT AMSL)",
-   "first_seen": "2026-10-04T10:07:22Z"
-  },
-  {
-   "id": "C2062/26",
-   "loc": "LLLL",
-   "name": "KFAR-TAVOR",
-   "cat": "other",
-   "heb": "אזור ב-KFAR-TAVOR בתוך LLMG אזור אימונים NR A-WEST בין נקודות הציון הבאות סגור מהקרקע ועד 2,000 רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות 32°47'11\"N 35°23'45\"E 32°42'09\"N 35°26'06\"E 32°41'18\"N 35°23'38\"E 32°46'24\"N 35°21'33\"E. מומלצת זהירות.\nבתוקף: מ-04/10/2026 07:30 UTC עד 04/10/2026 12:30 UTC\nלו\"ז: 0730-0930 1030-1230",
-   "raw": "C2062/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/020/3244N03524E004\nA) LLLL B) 2610040730 C) 2610041230\nD) 0730-0930 1030-1230\nE) AN AREA AT KFAR-TAVOR WI LLMG TRG AREA NR A-WEST BTN FLW\nPSN CLSD FM GND UP TO 2,000FT AMSL TO ALL FLT INCLUDING\nAGRICULTURE FLT  324711N0352345E 324209N0352606E\n324118N0352338E 324624N0352133E.\nCTN ADZ.)",
-   "first_seen": "2026-10-03T17:05:07Z"
   },
   {
    "id": "C2061/26",
@@ -380,15 +506,6 @@
    "heb": "אזור בקרה סגור לכל הטיסות, עקב חירום DRILL. CLOSURE EXP ל-BE EXTENDED.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-08/10/2026 10:30 UTC עד 08/10/2026 13:30 UTC",
    "raw": "C1937/26 NOTAMN\nQ) LLLL/QACLC/IV/NBO/AE/000/020/3211N03451E004\nA) LLHZ B) 2610081030 C) 2610081330\nE) CTR CLSD TO ALL FLT, DUE EMERG DRILL.\nCLOSURE EXP TO BE EXTENDED.)",
    "first_seen": "2026-09-15T09:00:37Z"
-  },
-  {
-   "id": "A0749/26",
-   "loc": "LLLL",
-   "name": "DME BTM/BET-MEIR תדר 112",
-   "cat": "ad",
-   "heb": "DME BTM/BET-MEIR תדר 112.000MHZ מושבת לצורך תחזוקה.\nבתוקף: מ-04/10/2026 04:00 UTC עד 04/10/2026 14:00 UTC",
-   "raw": "A0749/26 NOTAMN\nQ) LLLL/QNDAS/IV/BO /E /000/999/3148N03502E025\nA) LLLL B) 2610040400 C) 2610041400\nE) DME BTM/BET-MEIR FREQ 112.000MHZ WITHDRAWN FOR MAINT.)",
-   "first_seen": "2026-09-10T17:00:50Z"
   },
   {
    "id": "A0742/26",
@@ -914,6 +1031,27 @@
   }
  ],
  "removed": [
+  {
+   "id": "C2063/26",
+   "name": "KFAR-TAVOR",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ תתקיים ב-KFAR-TAVOR. אזור בתוך LLMG אזור אימונים NR A-WEST בין נקודות הציון הבאות סגור מהקרקע ועד 4,500 רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות 32°47'13\"N 35°23'45\"E 32°43'34\"N 35°25'25\"E 32°42'06\"N 35°30'46\"E 32°39'59\"N 35°30'09\"E 32°41'42\"N 35°23'28\"E 32°46'28\"N 35°21'18\"E. מומלצת זהירות.\nבתוקף: מ-04/10/2026 11:30 UTC עד 04/10/2026 13:30 UTC",
+   "removed_at": "2026-10-04T17:24:51Z"
+  },
+  {
+   "id": "C2062/26",
+   "name": "KFAR-TAVOR",
+   "cat": "other",
+   "heb": "אזור ב-KFAR-TAVOR בתוך LLMG אזור אימונים NR A-WEST בין נקודות הציון הבאות סגור מהקרקע ועד 2,000 רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות 32°47'11\"N 35°23'45\"E 32°42'09\"N 35°26'06\"E 32°41'18\"N 35°23'38\"E 32°46'24\"N 35°21'33\"E. מומלצת זהירות.\nבתוקף: מ-04/10/2026 07:30 UTC עד 04/10/2026 12:30 UTC\nלו\"ז: 0730-0930 1030-1230",
+   "removed_at": "2026-10-04T17:24:51Z"
+  },
+  {
+   "id": "A0749/26",
+   "name": "DME BTM/BET-MEIR תדר 112",
+   "cat": "ad",
+   "heb": "DME BTM/BET-MEIR תדר 112.000MHZ מושבת לצורך תחזוקה.\nבתוקף: מ-04/10/2026 04:00 UTC עד 04/10/2026 14:00 UTC",
+   "removed_at": "2026-10-04T17:24:51Z"
+  },
   {
    "id": "A0794/26",
    "name": "VOR ZFR/ZOFAR 115",
