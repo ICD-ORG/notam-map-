@@ -1,8 +1,62 @@
 {
- "fetched_at": "04/10/2026 17:24 UTC",
- "fetched_iso": "2026-10-04T17:24:51Z",
- "count": 114,
+ "fetched_at": "05/10/2026 10:53 UTC",
+ "fetched_iso": "2026-10-05T10:53:10Z",
+ "count": 115,
  "notams": [
+  {
+   "id": "C2084/26",
+   "loc": "LLLL",
+   "name": "מרחב פעילות צניחה חופשית METZADA ACT מ-8",
+   "cat": "pje",
+   "heb": "מרחב פעילות צניחה חופשית METZADA ACT מ-8,000 רגל מעל פני הים. הפעלה באישור מוקדם מבקרת התעופה בלבד.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-08/10/2026 10:00 UTC עד 09/10/2026 11:00 UTC\nלו\"ז: 08 1000-1545, 09 0500-1100",
+   "raw": "C2084/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/080/3120N03523E003\nA) LLLL B) 2610081000 C) 2610091100\nD) 08 1000-1545, 09 0500-1100\nE) PJE AIRSPACE METZADA ACT FM 8,000FT AMSL.\nOPR BY PPR FM ATC ONLY.\nF) GND G) 8000FT AMSL)",
+   "first_seen": "2026-10-05T10:53:10Z"
+  },
+  {
+   "id": "A0804/26",
+   "loc": "LLBG",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "ILS מסלול 26 C/S BA תדר 108.700MHZ מושבת לצורך תחזוקה.\nבתוקף: מ-07/10/2026 06:00 UTC עד 07/10/2026 09:00 UTC",
+   "raw": "A0804/26 NOTAMN\nQ) LLLL/QISAS/I /NBO/A /000/999/3201N03451E005\nA) LLBG B) 2610070600 C) 2610070900\nE) ILS RWY 26 C/S BA FREQ 108.700MHZ WITHDRAWN FOR MAINT.)",
+   "first_seen": "2026-10-05T10:53:10Z"
+  },
+  {
+   "id": "A0803/26",
+   "loc": "LLBG",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "מסלול 03/21 סגור למעט מסלול INT עקב עבודות.\nבתוקף: מ-06/10/2026 05:00 UTC עד 06/10/2026 10:00 UTC",
+   "raw": "A0803/26 NOTAMN\nQ) LLLL/QMRLC/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2610060500 C) 2610061000\nE) RWY 03/21 CLSD EXC RWY INT DUE WIP.)",
+   "first_seen": "2026-10-05T10:53:10Z"
+  },
+  {
+   "id": "C2083/26",
+   "loc": "LLLL",
+   "name": "MINI UAV בועה ASHKELON סגור לכל הטיסות",
+   "cat": "uas",
+   "heb": "MINI UAV בועה ASHKELON סגור לכל הטיסות.\nבתוקף: מ-06/10/2026 05:00 UTC עד 06/10/2026 05:30 UTC",
+   "raw": "C2083/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/020/3137N03435E005\nA) LLLL B) 2610060500 C) 2610060530\nE) MINI UAV BUBBLE ASHKELON CLSD TO ALL FLT.)",
+   "first_seen": "2026-10-05T10:53:10Z"
+  },
+  {
+   "id": "A0802/26",
+   "loc": "LLBG",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "ILS מסלול 08 C/S BC תדר 110.900MHZ ON TEST, DO NOT USE.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-05/10/2026 07:07 UTC עד 31/10/2026 21:59 UTC",
+   "raw": "A0802/26 NOTAMN\nQ) LLLL/QISCT/I /NBO/A /000/999/3201N03454E005\nA) LLBG B) 2610050707 C) 2610312159\nE) ILS RWY 08 C/S BC FREQ 110.900MHZ ON TEST, DO NOT USE.)",
+   "first_seen": "2026-10-05T10:53:10Z"
+  },
+  {
+   "id": "A0800/26",
+   "loc": "LLLL",
+   "name": "VOR/DME NAT תדר 112",
+   "cat": "ad",
+   "heb": "VOR/DME NAT תדר 112.400MHZ מושבת לצורך תחזוקה.\nבתוקף: מ-14/10/2026 07:00 UTC עד 14/10/2026 10:00 UTC",
+   "raw": "A0800/26 NOTAMN\nQ) LLLL/QNMAS/IV/BO /E /000/999/3220N03458E025\nA) LLLL B) 2610140700 C) 2610141000\nE) VOR/DME NAT FREQ 112.400MHZ WITHDRAWN FOR MAINT.)",
+   "first_seen": "2026-10-05T10:53:10Z"
+  },
   {
    "id": "A0799/26",
    "loc": "LLLL",
@@ -37,24 +91,6 @@
    "cat": "other",
    "heb": "מסוקים נתיב סגור למעט ע\"י בקרת התעופה GALIM-SUVAS. GALIM-KONFO. GALIM-DAFNA. GALIM-MERVA. GALIM-INBAR.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
    "raw": "C2080/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /005/015/3234N03425E034\nA) LLLL B) 2610051930 C) 2610111300\nD) 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300\nE) HEL RTE CLSD EXC BY ATC\nGALIM-SUVAS.\nGALIM-KONFO.\nGALIM-DAFNA.\nGALIM-MERVA.\nGALIM-INBAR.)",
-   "first_seen": "2026-10-04T17:24:51Z"
-  },
-  {
-   "id": "C2077/26",
-   "loc": "LLLL",
-   "name": "הפעלת UAV בין נקודות הציון הבאות מהקרקע ועד 6",
-   "cat": "uas",
-   "heb": "הפעלת UAV בין נקודות הציון הבאות מהקרקע ועד 6,800 רגל מעל פני הים אסור 31°35'25\"N 34°33'42\"E 31°38'18\"N 34°35'18\"E 31°38'38\"N 34°31'50\"E 31°37'12\"N 34°30'45\"E. מומלצת זהירות.\nבתוקף: מ-05/10/2026 03:00 UTC עד 05/10/2026 09:00 UTC",
-   "raw": "C2077/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/068/3137N03433E003\nA) LLLL B) 2610050300 C) 2610050900\nE) OPS OF UAV BTN FLW PSN FM GND UP TO 6,800FT AMSL PROHIBITED\n313525N0343342E 313818N0343518E 313838N0343150E\n313712N0343045E.\nCTN ADZ.)",
-   "first_seen": "2026-10-04T17:24:51Z"
-  },
-  {
-   "id": "C2076/26",
-   "loc": "LLLL",
-   "name": "אזור בין נקודות הציון הבאות סגור לכל הטיסות",
-   "cat": "other",
-   "heb": "אזור בין נקודות הציון הבאות סגור לכל הטיסות, כולל טיסות ריסוס חקלאיות מהקרקע ועד 500 רגל מעל פני הים 31°37'26\"N 34°31'42\"E 31°37'23\"N 34°29'10\"E 31°35'15\"N 34°29'09\"E 31°35'17\"N 34°31'42\"E. מומלצת זהירות.\nבתוקף: מ-05/10/2026 03:00 UTC עד 05/10/2026 09:00 UTC",
-   "raw": "C2076/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/005/3136N03430E003\nA) LLLL B) 2610050300 C) 2610050900\nE) AN AREA BTN FLW PSN CLSD TO ALL FLT,\nINCLUDING AGRICULTURE FLT FM GND UP TO 500FT AMSL\n313726N0343142E 313723N0342910E 313515N0342909E\n313517N0343142E.\nCTN ADZ.)",
    "first_seen": "2026-10-04T17:24:51Z"
   },
   {
@@ -202,15 +238,6 @@
    "first_seen": "2026-10-01T10:29:39Z"
   },
   {
-   "id": "A0789/26",
-   "loc": "LLBG",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "OCA(H) ל-ILS מסלול 08 שונה ל 500(403) ל-ALL CAT.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-01/10/2026 06:20 UTC עד 15/10/2026 20:59 UTC",
-   "raw": "A0789/26 NOTAMN\nQ) LLLL/QPOCH/I /NBO/A /000/999/3201N03454E005\nA) LLBG B) 2610010620 C) 2610152059\nE) OCA(H) FOR ILS RWY 08 CHG TO 500(403) FOR ALL CAT.)",
-   "first_seen": "2026-10-01T10:29:39Z"
-  },
-  {
    "id": "C2056/26",
    "loc": "LLLL",
    "name": "YERUHAM",
@@ -298,15 +325,6 @@
    "cat": "obst",
    "heb": "עגורן הוקם בתוך LLBG אזור בקרה, ב-EL-AL JUNCTION. אזור בתוך ברדיוס 0.3 מייל ימי שמרכזו בנ.צ. 31°59'41\"N 34°54'30\"E סגור מהקרקע ועד 89M 292 רגל מעל פני הים. במקרה חירום יונמך בתוך 5 דקות. מומלצת זהירות.\nבתוקף: מ-26/10/2026 06:00 UTC עד 26/10/2026 11:00 UTC",
    "raw": "A0786/26 NOTAMN\nQ) LLLL/QOBCE/IV/M  /AE/000/003/3200N03454E001\nA) LLBG B) 2610260600 C) 2610261100\nE) CRANE ERECTED WI LLBG CTR, AT EL-AL JUNCTION.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 315941.27N0345429.55E\nCLSD FM GND UP TO 89M 292FT AMSL.\nIN CASE OF EMERG LOWERED WI 5MIN.\nCTN ADZ.)",
-   "first_seen": "2026-09-24T17:53:21Z"
-  },
-  {
-   "id": "A0783/26",
-   "loc": "LLBG",
-   "name": "EL-AL JUNCTION",
-   "cat": "obst",
-   "heb": "עגורן הוקם בתוך LLBG אזור בקרה, ב-EL-AL JUNCTION. אזור בתוך ברדיוס 0.3 מייל ימי שמרכזו בנ.צ. 31°59'41\"N 34°54'30\"E סגור מהקרקע ועד 89M 292 רגל מעל פני הים. במקרה חירום יונמך בתוך 5 דקות. מומלצת זהירות.\nבתוקף: מ-05/10/2026 05:00 UTC עד 05/10/2026 10:00 UTC",
-   "raw": "A0783/26 NOTAMN\nQ) LLLL/QOBCE/IV/M  /AE/000/003/3200N03454E001\nA) LLBG B) 2610050500 C) 2610051000\nE) CRANE ERECTED WI LLBG CTR, AT EL-AL JUNCTION.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 315941.27N0345429.55E\nCLSD FM GND UP TO 89M 292FT AMSL.\nIN CASE OF EMERG LOWERED WI 5MIN.\nCTN ADZ.)",
    "first_seen": "2026-09-24T17:53:21Z"
   },
   {
@@ -424,15 +442,6 @@
    "cat": "ad",
    "heb": "PAPI מסלול 19 EAST מושבת.\nבתוקף: מ-16/09/2026 13:49 UTC עד 31/12/2026 21:59 UTC",
    "raw": "A0760/26 NOTAMN\nQ) LLLL/QLPAS/IV/BO /A /000/999/2944N03501E005\nA) LLER B) 2609161349 C) 2612312159\nE) PAPI RWY 19 EAST U/S.)",
-   "first_seen": "2026-09-16T17:37:44Z"
-  },
-  {
-   "id": "A0756/26",
-   "loc": "LLBG",
-   "name": "EL-AL JUNCTION",
-   "cat": "obst",
-   "heb": "עקב עגורן ב-EL-AL JUNCTION, מסלול 12 סגור ל-המראה, מסלול 30 סגור ל-נחיתה.\nבתוקף: מ-05/10/2026 05:00 UTC עד 05/10/2026 10:00 UTC",
-   "raw": "A0756/26 NOTAMN\nQ) LLLL/QMRLT/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2610050500 C) 2610051000\nE) DUE CRANE AT EL-AL JUNCTION,\nRWY 12 CLSD FOR TKOF,\nRWY 30 CLSD FOR LDG.)",
    "first_seen": "2026-09-16T17:37:44Z"
   },
   {
@@ -1031,6 +1040,41 @@
   }
  ],
  "removed": [
+  {
+   "id": "C2077/26",
+   "name": "הפעלת UAV בין נקודות הציון הבאות מהקרקע ועד 6",
+   "cat": "uas",
+   "heb": "הפעלת UAV בין נקודות הציון הבאות מהקרקע ועד 6,800 רגל מעל פני הים אסור 31°35'25\"N 34°33'42\"E 31°38'18\"N 34°35'18\"E 31°38'38\"N 34°31'50\"E 31°37'12\"N 34°30'45\"E. מומלצת זהירות.\nבתוקף: מ-05/10/2026 03:00 UTC עד 05/10/2026 09:00 UTC",
+   "removed_at": "2026-10-05T10:53:10Z"
+  },
+  {
+   "id": "C2076/26",
+   "name": "אזור בין נקודות הציון הבאות סגור לכל הטיסות",
+   "cat": "other",
+   "heb": "אזור בין נקודות הציון הבאות סגור לכל הטיסות, כולל טיסות ריסוס חקלאיות מהקרקע ועד 500 רגל מעל פני הים 31°37'26\"N 34°31'42\"E 31°37'23\"N 34°29'10\"E 31°35'15\"N 34°29'09\"E 31°35'17\"N 34°31'42\"E. מומלצת זהירות.\nבתוקף: מ-05/10/2026 03:00 UTC עד 05/10/2026 09:00 UTC",
+   "removed_at": "2026-10-05T10:53:10Z"
+  },
+  {
+   "id": "A0789/26",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "OCA(H) ל-ILS מסלול 08 שונה ל 500(403) ל-ALL CAT.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-01/10/2026 06:20 UTC עד 15/10/2026 20:59 UTC",
+   "removed_at": "2026-10-05T10:53:10Z"
+  },
+  {
+   "id": "A0783/26",
+   "name": "EL-AL JUNCTION",
+   "cat": "obst",
+   "heb": "עגורן הוקם בתוך LLBG אזור בקרה, ב-EL-AL JUNCTION. אזור בתוך ברדיוס 0.3 מייל ימי שמרכזו בנ.צ. 31°59'41\"N 34°54'30\"E סגור מהקרקע ועד 89M 292 רגל מעל פני הים. במקרה חירום יונמך בתוך 5 דקות. מומלצת זהירות.\nבתוקף: מ-05/10/2026 05:00 UTC עד 05/10/2026 10:00 UTC",
+   "removed_at": "2026-10-05T10:53:10Z"
+  },
+  {
+   "id": "A0756/26",
+   "name": "EL-AL JUNCTION",
+   "cat": "obst",
+   "heb": "עקב עגורן ב-EL-AL JUNCTION, מסלול 12 סגור ל-המראה, מסלול 30 סגור ל-נחיתה.\nבתוקף: מ-05/10/2026 05:00 UTC עד 05/10/2026 10:00 UTC",
+   "removed_at": "2026-10-05T10:53:10Z"
+  },
   {
    "id": "C2063/26",
    "name": "KFAR-TAVOR",
@@ -2185,13 +2229,6 @@
    "cat": "ad",
    "heb": "VOR/DME NAT FREQ 112.400MHZ WITHDRAWN FOR MAINT.\nבתוקף: מ-14/09/2026 07:00 UTC עד 14/09/2026 10:00 UTC",
    "removed_at": "2026-09-14T18:28:23Z"
-  },
-  {
-   "id": "C1906/26",
-   "name": "C1906/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור FRDIS-BOREN.\nבתוקף: מ-14/09/2026 14:30 UTC עד 14/09/2026 20:55 UTC\nלו\"ז: 1430-1600 1800-2055",
-   "removed_at": "2026-09-14T09:19:40Z"
   }
  ]
 }
