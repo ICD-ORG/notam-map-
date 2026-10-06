@@ -1,8 +1,44 @@
 {
- "fetched_at": "05/10/2026 21:10 UTC",
- "fetched_iso": "2026-10-05T21:10:57Z",
- "count": 120,
+ "fetched_at": "06/10/2026 10:48 UTC",
+ "fetched_iso": "2026-10-06T10:48:15Z",
+ "count": 115,
  "notams": [
+  {
+   "id": "C2098/26",
+   "loc": "LLLL",
+   "name": "ULTRALIGHT WEEKEND ו- WEEKDAY נתיב סגור TYONA-SH…",
+   "cat": "pje",
+   "heb": "ULTRALIGHT WEEKEND ו- WEEKDAY נתיב סגור TYONA-SHFAM, עקב POWERED PARACHUTE ACT.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-07/10/2026 03:30 UTC עד 07/10/2026 05:30 UTC",
+   "raw": "C2098/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /000/004/3207N03446E008\nA) LLLL B) 2610070330 C) 2610070530\nE) ULTRALIGHT WEEKEND AND WEEKDAY RTE CLSD  TYONA-SHFAM,\nDUE POWERED PARACHUTE ACT.)",
+   "first_seen": "2026-10-06T10:48:15Z"
+  },
+  {
+   "id": "C2097/26",
+   "loc": "LLIB",
+   "name": "ראש פינה (LLIB)",
+   "cat": "ad",
+   "heb": "שדה תעופה סגור לכל הטיסות, עקב עבודות. הפעלת מסוקים זמין באישור מוקדם מבקרת התעופה. במקרה של חירום או MEDEVAC מסוקים זמין בתוך 10 דקות.\nבתוקף: מ-25/10/2026 07:00 UTC עד 25/10/2026 10:00 UTC",
+   "raw": "C2097/26 NOTAMN\nQ) LLLL/QFALT/IV/NBO/A /000/999/3259N03534E005\nA) LLIB B) 2610250700 C) 2610251000\nE) AD CLSD TO ALL FLT, DUE WIP.\nOPS OF HEL AVBL BY PPR FM ATC.\nIN CASE OF EMERG OR MEDEVAC HEL AVBL WI 10MIN.)",
+   "first_seen": "2026-10-06T10:48:15Z"
+  },
+  {
+   "id": "C2096/26",
+   "loc": "LLLL",
+   "name": "GEZER POWER PLANT",
+   "cat": "other",
+   "heb": "אזור בתוך ברדיוס 1 ק\"מ שמרכזו בנ.צ. 31°54'55\"N 34°55'00\"E ב-GEZER POWER PLANT סגור מהקרקע ועד 1,200 רגל מעל פני הים, עקב GAS EMISSION. מומלצת זהירות.\nבתוקף: מ-10/10/2026 16:00 UTC עד 10/10/2026 19:00 UTC",
+   "raw": "C2096/26 NOTAMN\nQ) LLLL/QWSLW/IV/M  /W /000/012/3155N03455E001\nA) LLLL B) 2610101600 C) 2610101900\nE) AN AREA WI 1KM RADIUS CENTERED ON PSN 315455N0345500E\nAT GEZER POWER PLANT CLSD FM GND UP TO 1,200FT AMSL,\nDUE TO GAS EMISSION.\nCTN ADZ.\nF) GND G) 1200FT AMSL)",
+   "first_seen": "2026-10-06T10:48:15Z"
+  },
+  {
+   "id": "C2095/26",
+   "loc": "LLLL",
+   "name": "RAMAT-BEKA",
+   "cat": "frng",
+   "heb": "FRNG תתקיים ב-RAMAT-BEKA בתוך LLP14. אזור בין נקודות הציון הבאות 31°05'42\"N 34°53'14\"E 31°05'41\"N 34°53'52\"E 31°05'09\"N 34°53'51\"E 31°04'53\"N 34°53'13\"E סגור מהקרקע ועד 12,000 רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-07/10/2026 05:00 UTC עד 29/10/2026 15:00 UTC\nלו\"ז: SUN-THU 0500-1500",
+   "raw": "C2095/26 NOTAMN\nQ) LLLL/QWMLW/IV/BO /W /000/120/3105N03454E001\nA) LLLL B) 2610070500 C) 2610291500\nD) SUN-THU 0500-1500\nE) FRNG WILL TAKE PLACE AT RAMAT-BEKA WI LLP14.\nAN AREA BTN THE FLW PSN  310542N0345314E\n310541N0345352E 310509N0345351E 310453N0345313E\nCLSD FM GND UP TO 12,000FT AMSL.\nCTN ADZ.\nF) GND G) 12000FT AMSL)",
+   "first_seen": "2026-10-06T10:48:15Z"
+  },
   {
    "id": "C2094/26",
    "loc": "LLLL",
@@ -22,66 +58,12 @@
    "first_seen": "2026-10-05T21:10:57Z"
   },
   {
-   "id": "C2092/26",
-   "loc": "LLLL",
-   "name": "נתיב CVFR סגור",
-   "cat": "other",
-   "heb": "נתיב CVFR סגור, עקב IFR ACT בתוך LLHS NITZA-HODYA-REVAH. התנועה תוסט דרך ASKLN.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-06/10/2026 06:30 UTC עד 06/10/2026 09:15 UTC\nלו\"ז: 0630-0700 0830-0915",
-   "raw": "C2092/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /015/020/3141N03439E005\nA) LLLL B) 2610060630 C) 2610060915\nD) 0630-0700 0830-0915\nE) CVFR RTE CLSD, DUE IFR ACT WI LLHS  NITZA-HODYA-REVAH.\nTFC WILL BE DIVERTED VIA ASKLN.)",
-   "first_seen": "2026-10-05T21:10:57Z"
-  },
-  {
-   "id": "C2091/26",
-   "loc": "LLLL",
-   "name": "נתיב CVFR סגור עקב IFR ACT בתוך LLHB NEGEV-HOVAV…",
-   "cat": "other",
-   "heb": "נתיב CVFR סגור עקב IFR ACT בתוך LLHB NEGEV-HOVAV-OHLIM-OMMER. HOVAV-SOKET. התנועה תוסט דרך BKAMA-SOKET-ARRAD-ZOHAR.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-06/10/2026 06:00 UTC עד 06/10/2026 10:30 UTC\nלו\"ז: 0600-0650 0730-0800 0845-1030",
-   "raw": "C2091/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /030/035/3111N03452E008\nA) LLLL B) 2610060600 C) 2610061030\nD) 0600-0650 0730-0800 0845-1030\nE) CVFR RTE CLSD DUE IFR ACT WI LLHB\nNEGEV-HOVAV-OHLIM-OMMER.\nHOVAV-SOKET.\nTFC WILL BE DIVERTED VIA BKAMA-SOKET-ARRAD-ZOHAR.)",
-   "first_seen": "2026-10-05T21:10:57Z"
-  },
-  {
    "id": "C2090/26",
    "loc": "LLLL",
    "name": "נתיב CVFR סגור",
    "cat": "other",
    "heb": "נתיב CVFR סגור, עקב IFR ACT בתוך LLHS ZDAFA-NITZA-HODYA-REVAH. התנועה תוסט דרך BSEMS-ZHRYA-GOVRN-NOAAM.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-06/10/2026 11:00 UTC עד 06/10/2026 12:00 UTC",
    "raw": "C2090/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /008/020/3143N03439E007\nA) LLLL B) 2610061100 C) 2610061200\nE) CVFR RTE CLSD, DUE IFR ACT WI LLHS  ZDAFA-NITZA-HODYA-REVAH.\nTFC WILL BE DIVERTED VIA BSEMS-ZHRYA-GOVRN-NOAAM.)",
-   "first_seen": "2026-10-05T21:10:57Z"
-  },
-  {
-   "id": "C2089/26",
-   "loc": "LLLL",
-   "name": "LLMG אזור אימונים ו- בועת זעירים NR B-WEST (BMGW…",
-   "cat": "act",
-   "heb": "LLMG אזור אימונים ו- בועת זעירים NR B-WEST (BMGWB) LTD ל-מקסימום 1,600 רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-06/10/2026 07:00 UTC עד 06/10/2026 08:00 UTC",
-   "raw": "C2089/26 NOTAMN\nQ) LLLL/QAELP/IV/NBO/E /000/020/3237N03523E005\nA) LLLL B) 2610060700 C) 2610060800\nE) LLMG TRG AREA AND ULTRALIGHT BUBBLE NR B-WEST (BMGWB)\nLTD TO MAX 1,600FT AMSL.\nCTN ADZ.)",
-   "first_seen": "2026-10-05T21:10:57Z"
-  },
-  {
-   "id": "C2086/26",
-   "loc": "LLMG",
-   "name": "מגידו (LLMG)",
-   "cat": "ad",
-   "heb": "AIRSTRIP LTD ל-מקסימום 400 רגל מעל פני הים עקב ILS ACT בתוך LLRD מומלצת זהירות.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-06/10/2026 07:00 UTC עד 06/10/2026 08:00 UTC",
-   "raw": "C2086/26 NOTAMN\nQ) LLLL/QFALT/IV/NBO/A /000/999/3236N03514E001\nA) LLMG B) 2610060700 C) 2610060800\nE) AIRSTRIP LTD TO MAX 400FT AMSL DUE ILS ACT WI LLRD\nCTN ADZ.)",
-   "first_seen": "2026-10-05T21:10:57Z"
-  },
-  {
-   "id": "C2087/26",
-   "loc": "LLLL",
-   "name": "נתיב CVFR סגור עקב ILS ACT בתוך LLRD EIRON-ZMGID…",
-   "cat": "ad",
-   "heb": "נתיב CVFR סגור עקב ILS ACT בתוך LLRD EIRON-ZMGID-AFULA-TAVOR. AFULA-EITAN.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-06/10/2026 07:00 UTC עד 06/10/2026 08:00 UTC",
-   "raw": "C2087/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /025/030/3235N03513E013\nA) LLLL B) 2610060700 C) 2610060800\nE) CVFR RTE CLSD DUE ILS ACT WI LLRD\nEIRON-ZMGID-AFULA-TAVOR.\nAFULA-EITAN.)",
-   "first_seen": "2026-10-05T21:10:57Z"
-  },
-  {
-   "id": "C2088/26",
-   "loc": "LLLL",
-   "name": "ULTRALIGHT ו- מסוקים נתיב סגור EIRON-ARRAA-ZMGID…",
-   "cat": "act",
-   "heb": "ULTRALIGHT ו- מסוקים נתיב סגור EIRON-ARRAA-ZMGID-NIRYA-MRHVA-TAVOR. התנועה תוסט דרך FRDIS-HASID.\nבתוקף: מ-06/10/2026 07:00 UTC עד 06/10/2026 08:00 UTC",
-   "raw": "C2088/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /010/020/3235N03513E013\nA) LLLL B) 2610060700 C) 2610060800\nE) ULTRALIGHT AND HEL RTE CLSD\nEIRON-ARRAA-ZMGID-NIRYA-MRHVA-TAVOR.\nTFC WILL BE DIVERTED VIA FRDIS-HASID.)",
    "first_seen": "2026-10-05T21:10:57Z"
   },
   {
@@ -118,24 +100,6 @@
    "cat": "ad",
    "heb": "ILS מסלול 26 C/S BA תדר 108.700MHZ מושבת לצורך תחזוקה.\nבתוקף: מ-07/10/2026 06:00 UTC עד 07/10/2026 09:00 UTC",
    "raw": "A0804/26 NOTAMN\nQ) LLLL/QISAS/I /NBO/A /000/999/3201N03451E005\nA) LLBG B) 2610070600 C) 2610070900\nE) ILS RWY 26 C/S BA FREQ 108.700MHZ WITHDRAWN FOR MAINT.)",
-   "first_seen": "2026-10-05T10:53:10Z"
-  },
-  {
-   "id": "A0803/26",
-   "loc": "LLBG",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "מסלול 03/21 סגור למעט מסלול INT עקב עבודות.\nבתוקף: מ-06/10/2026 05:00 UTC עד 06/10/2026 10:00 UTC",
-   "raw": "A0803/26 NOTAMN\nQ) LLLL/QMRLC/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2610060500 C) 2610061000\nE) RWY 03/21 CLSD EXC RWY INT DUE WIP.)",
-   "first_seen": "2026-10-05T10:53:10Z"
-  },
-  {
-   "id": "C2083/26",
-   "loc": "LLLL",
-   "name": "MINI UAV בועה ASHKELON סגור לכל הטיסות",
-   "cat": "uas",
-   "heb": "MINI UAV בועה ASHKELON סגור לכל הטיסות.\nבתוקף: מ-06/10/2026 05:00 UTC עד 06/10/2026 05:30 UTC",
-   "raw": "C2083/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/020/3137N03435E005\nA) LLLL B) 2610060500 C) 2610060530\nE) MINI UAV BUBBLE ASHKELON CLSD TO ALL FLT.)",
    "first_seen": "2026-10-05T10:53:10Z"
   },
   {
@@ -643,15 +607,6 @@
    "first_seen": "2026-09-07T08:41:33Z"
   },
   {
-   "id": "A0728/26",
-   "loc": "LLHA",
-   "name": "חיפה (LLHA)",
-   "cat": "ad",
-   "heb": "שדה תעופה סגור לכל הטיסות כולל מסוקים, עקב עבודות. במקרה של חירום זמין בתוך 10 דקות.\nבתוקף: מ-06/10/2026 05:25 UTC עד 06/10/2026 10:00 UTC\nלו\"ז: 0525-0725 0830-1000",
-   "raw": "A0728/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3249N03503E005\nA) LLHA B) 2610060525 C) 2610061000\nD) 0525-0725 0830-1000\nE) AD CLSD TO ALL FLT INCLUDING HEL, DUE WIP.\nIN CASE OF EMERG AVBL WI 10MIN.)",
-   "first_seen": "2026-09-05T15:56:22Z"
-  },
-  {
    "id": "C1860/26",
    "loc": "LLLL",
    "name": "GEZER POWER PLANT",
@@ -1085,6 +1040,69 @@
   }
  ],
  "removed": [
+  {
+   "id": "C2092/26",
+   "name": "נתיב CVFR סגור",
+   "cat": "other",
+   "heb": "נתיב CVFR סגור, עקב IFR ACT בתוך LLHS NITZA-HODYA-REVAH. התנועה תוסט דרך ASKLN.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-06/10/2026 06:30 UTC עד 06/10/2026 09:15 UTC\nלו\"ז: 0630-0700 0830-0915",
+   "removed_at": "2026-10-06T10:48:15Z"
+  },
+  {
+   "id": "C2091/26",
+   "name": "נתיב CVFR סגור עקב IFR ACT בתוך LLHB NEGEV-HOVAV…",
+   "cat": "other",
+   "heb": "נתיב CVFR סגור עקב IFR ACT בתוך LLHB NEGEV-HOVAV-OHLIM-OMMER. HOVAV-SOKET. התנועה תוסט דרך BKAMA-SOKET-ARRAD-ZOHAR.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-06/10/2026 06:00 UTC עד 06/10/2026 10:30 UTC\nלו\"ז: 0600-0650 0730-0800 0845-1030",
+   "removed_at": "2026-10-06T10:48:15Z"
+  },
+  {
+   "id": "C2089/26",
+   "name": "LLMG אזור אימונים ו- בועת זעירים NR B-WEST (BMGW…",
+   "cat": "act",
+   "heb": "LLMG אזור אימונים ו- בועת זעירים NR B-WEST (BMGWB) LTD ל-מקסימום 1,600 רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-06/10/2026 07:00 UTC עד 06/10/2026 08:00 UTC",
+   "removed_at": "2026-10-06T10:48:15Z"
+  },
+  {
+   "id": "C2086/26",
+   "name": "מגידו (LLMG)",
+   "cat": "ad",
+   "heb": "AIRSTRIP LTD ל-מקסימום 400 רגל מעל פני הים עקב ILS ACT בתוך LLRD מומלצת זהירות.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-06/10/2026 07:00 UTC עד 06/10/2026 08:00 UTC",
+   "removed_at": "2026-10-06T10:48:15Z"
+  },
+  {
+   "id": "C2087/26",
+   "name": "נתיב CVFR סגור עקב ILS ACT בתוך LLRD EIRON-ZMGID…",
+   "cat": "ad",
+   "heb": "נתיב CVFR סגור עקב ILS ACT בתוך LLRD EIRON-ZMGID-AFULA-TAVOR. AFULA-EITAN.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-06/10/2026 07:00 UTC עד 06/10/2026 08:00 UTC",
+   "removed_at": "2026-10-06T10:48:15Z"
+  },
+  {
+   "id": "C2088/26",
+   "name": "ULTRALIGHT ו- מסוקים נתיב סגור EIRON-ARRAA-ZMGID…",
+   "cat": "act",
+   "heb": "ULTRALIGHT ו- מסוקים נתיב סגור EIRON-ARRAA-ZMGID-NIRYA-MRHVA-TAVOR. התנועה תוסט דרך FRDIS-HASID.\nבתוקף: מ-06/10/2026 07:00 UTC עד 06/10/2026 08:00 UTC",
+   "removed_at": "2026-10-06T10:48:15Z"
+  },
+  {
+   "id": "A0803/26",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "מסלול 03/21 סגור למעט מסלול INT עקב עבודות.\nבתוקף: מ-06/10/2026 05:00 UTC עד 06/10/2026 10:00 UTC",
+   "removed_at": "2026-10-06T10:48:15Z"
+  },
+  {
+   "id": "C2083/26",
+   "name": "MINI UAV בועה ASHKELON סגור לכל הטיסות",
+   "cat": "uas",
+   "heb": "MINI UAV בועה ASHKELON סגור לכל הטיסות.\nבתוקף: מ-06/10/2026 05:00 UTC עד 06/10/2026 05:30 UTC",
+   "removed_at": "2026-10-06T10:48:15Z"
+  },
+  {
+   "id": "A0728/26",
+   "name": "חיפה (LLHA)",
+   "cat": "ad",
+   "heb": "שדה תעופה סגור לכל הטיסות כולל מסוקים, עקב עבודות. במקרה של חירום זמין בתוך 10 דקות.\nבתוקף: מ-06/10/2026 05:25 UTC עד 06/10/2026 10:00 UTC\nלו\"ז: 0525-0725 0830-1000",
+   "removed_at": "2026-10-06T10:48:15Z"
+  },
   {
    "id": "A0799/26",
    "name": "ATS נתיב J14 סגור בין MEGID-GIMIK",
@@ -2253,20 +2271,6 @@
    "cat": "other",
    "heb": "ATS RTE J14 AVBL בין ZACCI-GIMIK BIDIRECTIONAL ב-6,000רגל מעל פני הים ONLY.\nבתוקף: מ-15/09/2026 07:15 UTC עד 15/09/2026 10:50 UTC\nלו\"ז: 0715-0735 1030-1050",
    "removed_at": "2026-09-15T17:34:58Z"
-  },
-  {
-   "id": "A0696/26",
-   "name": "A0696/26",
-   "cat": "obst",
-   "heb": "RWY 12 סגור FOR TKOF ONLY, למעט RWY INT DUE CRANE.\nבתוקף: מ-02/09/2026 04:00 UTC עד 15/09/2026 08:00 UTC\nלו\"ז: SUN-THU 0400-0800",
-   "removed_at": "2026-09-15T09:00:37Z"
-  },
-  {
-   "id": "A0695/26",
-   "name": "EL-AL JUNCTION",
-   "cat": "obst",
-   "heb": "CRANE ERECTED בתוך LLBG CTR, ב-EL-AL JUNCTION. אזור מ GND עד 100M 360רגל מעל פני הים סגור בין נקודות הציון הבאות 31°59'24\"N 34°54'25\"E 31°59'22\"N 34°54'23\"E 31°59'24\"N 34°54'19\"E 31°59'26\"N 34°54'21\"E. מומלצת זהירות.\nבתוקף: מ-02/09/2026 04:00 UTC עד 15/09/2026 08:00 UTC\nלו\"ז: SUN-THU 0400-0800",
-   "removed_at": "2026-09-15T09:00:37Z"
   }
  ]
 }
