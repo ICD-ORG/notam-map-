@@ -1,8 +1,35 @@
 {
- "fetched_at": "06/10/2026 18:53 UTC",
- "fetched_iso": "2026-10-06T18:53:56Z",
- "count": 114,
+ "fetched_at": "07/10/2026 10:37 UTC",
+ "fetched_iso": "2026-10-07T10:37:57Z",
+ "count": 111,
  "notams": [
+  {
+   "id": "C2105/26",
+   "loc": "LLLL",
+   "name": "YERUHAM",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב-YERUHAM, מהקרקע ועד 600 מטר מעל הקרקע. אזור בתוך ברדיוס 0.3 מייל ימי שמרכזו בנ.צ. 30°58'19\"N 34°56'01\"E סגור מהקרקע ועד 3,700 רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-11/10/2026 03:00 UTC עד 15/10/2026 14:30 UTC\nלו\"ז: DAILY 0300-1430",
+   "raw": "C2105/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/037/3058N03456E001\nA) LLLL B) 2610110300 C) 2610151430\nD) DAILY 0300-1430\nE) UAS/UAV ACT WILL TAKE PLACE AT YERUHAM, FM GND UP TO 600M AGL.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 305819N0345601E\nCLSD FM GND UP TO 3,700FT AMSL.\nCTN ADZ.\nF) GND G) 3700FT AMSL)",
+   "first_seen": "2026-10-07T10:37:57Z"
+  },
+  {
+   "id": "C2104/26",
+   "loc": "LLLL",
+   "name": "YERUHAM",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב-YERUHAM. אזור בין נקודות הציון הבאות 30°58'30\"N 34°55'51\"E 30°58'23\"N 34°56'44\"E 30°58'03\"N 34°57'08\"E 30°57'09\"N 34°56'49\"E 30°56'24\"N 34°56'14\"E 30°56'52\"N 34°54'53\"E סגור מהקרקע ועד 2,500 רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-11/10/2026 03:20 UTC עד 15/10/2026 16:00 UTC\nלו\"ז: DAILY 0320-1600",
+   "raw": "C2104/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/025/3057N03456E002\nA) LLLL B) 2610110320 C) 2610151600\nD) DAILY 0320-1600\nE) UAS/UAV ACT WILL TAKE PLACE AT YERUHAM.\nAN AREA BTN FLW PSN 305830N0345551E 305823N0345644E\n305803N0345708E 305709N0345649E 305624N0345614E\n305652N0345453E CLSD FM GND UP TO 2,500FT AMSL.\nCTN ADZ.\nF) GND G) 2500FT AMSL)",
+   "first_seen": "2026-10-07T10:37:57Z"
+  },
+  {
+   "id": "C2103/26",
+   "loc": "LLLL",
+   "name": "UAS/UAV AIR-SHOW תתקיים מדרום ל LLMZ",
+   "cat": "uas",
+   "heb": "UAS/UAV AIR-SHOW תתקיים מדרום ל LLMZ. אזור בתוך ברדיוס 0.3 מייל ימי שמרכזו בנ.צ. 31°18'28\"N 35°22'35\"E סגור מהקרקע ועד 50 מטר מעל הקרקע, (MINUS) -920 רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-10/10/2026 18:00 UTC עד 11/10/2026 20:00 UTC\nלו\"ז: DAILY 1800-2000",
+   "raw": "C2103/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/001/3118N03523E001\nA) LLLL B) 2610101800 C) 2610112000\nD) DAILY 1800-2000\nE) UAS/UAV AIR-SHOW WILL TAKE PLACE S OF LLMZ.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 311828N0352235E\nCLSD FM GND UP TO 50M AGL, (MINUS) -920FT AMSL.\nCTN ADZ.\nF) GND G) 100FT AMSL)",
+   "first_seen": "2026-10-07T10:37:57Z"
+  },
   {
    "id": "A0807/26",
    "loc": "LLLL",
@@ -47,15 +74,6 @@
    "heb": "אזור ב-BAT-SHLOMO בתוך ברדיוס 0.27 מייל ימי שמרכזו בנ.צ. 32°37'21\"N 35°00'02\"E סגור מהקרקע ועד 2,200 רגל מעל פני הים לכל הטיסות, טיסות ריסוס חקלאיות יתאפשרו באישור מוקדם של 15 דקות מבקרת התעופה. מומלצת זהירות.\nבתוקף: מ-07/10/2026 06:00 UTC עד 07/10/2026 13:00 UTC",
    "raw": "C2099/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/022/3242N03524E001\nA) LLLL B) 2610070600 C) 2610071300\nE) AN AREA AT BAT-SHLOMO WI 0.27NM RADIUS CENTERED ON\nPSN 323721N0350002E CLSD FM GND UP TO 2,200FT AMSL\nTO ALL FLT, OPS OF AGRICULTURE FLT AVBL WITH 15MIN\nPPR FM ATC.\nCTN ADZ.)",
    "first_seen": "2026-10-06T18:53:56Z"
-  },
-  {
-   "id": "C2098/26",
-   "loc": "LLLL",
-   "name": "ULTRALIGHT WEEKEND ו- WEEKDAY נתיב סגור TYONA-SH…",
-   "cat": "pje",
-   "heb": "ULTRALIGHT WEEKEND ו- WEEKDAY נתיב סגור TYONA-SHFAM, עקב POWERED PARACHUTE ACT.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-07/10/2026 03:30 UTC עד 07/10/2026 05:30 UTC",
-   "raw": "C2098/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /000/004/3207N03446E008\nA) LLLL B) 2610070330 C) 2610070530\nE) ULTRALIGHT WEEKEND AND WEEKDAY RTE CLSD  TYONA-SHFAM,\nDUE POWERED PARACHUTE ACT.)",
-   "first_seen": "2026-10-06T10:48:15Z"
   },
   {
    "id": "C2097/26",
@@ -109,15 +127,6 @@
    "cat": "pje",
    "heb": "מרחב פעילות צניחה חופשית METZADA ACT מ-8,000 רגל מעל פני הים. הפעלה באישור מוקדם מבקרת התעופה בלבד.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-08/10/2026 10:00 UTC עד 09/10/2026 11:00 UTC\nלו\"ז: 08 1000-1545, 09 0500-1100",
    "raw": "C2084/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/080/3120N03523E003\nA) LLLL B) 2610081000 C) 2610091100\nD) 08 1000-1545, 09 0500-1100\nE) PJE AIRSPACE METZADA ACT FM 8,000FT AMSL.\nOPR BY PPR FM ATC ONLY.\nF) GND G) 8000FT AMSL)",
-   "first_seen": "2026-10-05T10:53:10Z"
-  },
-  {
-   "id": "A0804/26",
-   "loc": "LLBG",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "ILS מסלול 26 C/S BA תדר 108.700MHZ מושבת לצורך תחזוקה.\nבתוקף: מ-07/10/2026 06:00 UTC עד 07/10/2026 09:00 UTC",
-   "raw": "A0804/26 NOTAMN\nQ) LLLL/QISAS/I /NBO/A /000/999/3201N03451E005\nA) LLBG B) 2610070600 C) 2610070900\nE) ILS RWY 26 C/S BA FREQ 108.700MHZ WITHDRAWN FOR MAINT.)",
    "first_seen": "2026-10-05T10:53:10Z"
   },
   {
@@ -265,24 +274,6 @@
    "first_seen": "2026-10-01T18:47:44Z"
   },
   {
-   "id": "A0790/26",
-   "loc": "LLER",
-   "name": "OCA(H) ל-ILS מסלול 01 שונה ל 500(248) ל-ALL CAT",
-   "cat": "ad",
-   "heb": "OCA(H) ל-ILS מסלול 01 שונה ל 500(248) ל-ALL CAT.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-01/10/2026 06:21 UTC עד 15/10/2026 20:59 UTC",
-   "raw": "A0790/26 NOTAMN\nQ) LLLL/QPOCH/I /NBO/A /000/999/2944N03501E005\nA) LLER B) 2610010621 C) 2610152059\nE) OCA(H) FOR ILS RWY 01 CHG TO 500(248) FOR ALL CAT.)",
-   "first_seen": "2026-10-01T10:29:39Z"
-  },
-  {
-   "id": "A0791/26",
-   "loc": "LLER",
-   "name": "OCA(H) ל-ILS מסלול 19 שונה ל 500(228) ל-ALL CAT",
-   "cat": "ad",
-   "heb": "OCA(H) ל-ILS מסלול 19 שונה ל 500(228) ל-ALL CAT.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-01/10/2026 06:21 UTC עד 15/10/2026 20:59 UTC",
-   "raw": "A0791/26 NOTAMN\nQ) LLLL/QPOCH/I /NBO/A /000/999/2944N03501E005\nA) LLER B) 2610010621 C) 2610152059\nE) OCA(H) FOR ILS RWY 19 CHG TO 500(228) FOR ALL CAT.)",
-   "first_seen": "2026-10-01T10:29:39Z"
-  },
-  {
    "id": "C2056/26",
    "loc": "LLLL",
    "name": "YERUHAM",
@@ -353,15 +344,6 @@
    "heb": "עגורן הוקם בתוך LLBG אזור בקרה, ב-EL-AL JUNCTION. אזור בתוך ברדיוס 0.3 מייל ימי שמרכזו בנ.צ. 31°59'41\"N 34°54'30\"E סגור מהקרקע ועד 89M 292 רגל מעל פני הים. במקרה חירום יונמך בתוך 5 דקות. מומלצת זהירות.\nבתוקף: מ-26/10/2026 06:00 UTC עד 26/10/2026 11:00 UTC",
    "raw": "A0786/26 NOTAMN\nQ) LLLL/QOBCE/IV/M  /AE/000/003/3200N03454E001\nA) LLBG B) 2610260600 C) 2610261100\nE) CRANE ERECTED WI LLBG CTR, AT EL-AL JUNCTION.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 315941.27N0345429.55E\nCLSD FM GND UP TO 89M 292FT AMSL.\nIN CASE OF EMERG LOWERED WI 5MIN.\nCTN ADZ.)",
    "first_seen": "2026-09-24T17:53:21Z"
-  },
-  {
-   "id": "A0777/26",
-   "loc": "LLHA",
-   "name": "חיפה (LLHA)",
-   "cat": "ad",
-   "heb": "תרגילי מעגל אסורים, למעט כלי טיס ATR C/S HFA. נחיתה אסורה למעט טיסות באישור מוקדם מהנהלת שדה התעופה או מבקרת התעופה. צפוי עיכוב בטיסות יציאה.\nבתוקף: מ-12/10/2026 14:00 UTC עד 12/10/2026 16:30 UTC",
-   "raw": "A0777/26 NOTAMN\nQ) LLLL/QACLP/IV/NBO/AE/000/030/3251N03503E007\nA) LLHA B) 2610121400 C) 2610121630\nE) CIRCUIT EXER PROHIBITED, EXC ACFT ATR C/S HFA.\nLDG PROHIBITED EXC PPR FLT FM AD MANAGEMENT OR FM ATC.\nEXP DLA FOR DEP FLT.)",
-   "first_seen": "2026-09-24T08:49:26Z"
   },
   {
    "id": "C2016/26",
@@ -488,15 +470,6 @@
    "heb": "עקב עגורן ב-EL-AL JUNCTION, מסלול 12 סגור ל-המראה, מסלול 30 סגור ל-נחיתה.\nבתוקף: מ-26/10/2026 06:00 UTC עד 26/10/2026 11:00 UTC",
    "raw": "A0759/26 NOTAMN\nQ) LLLL/QMRLT/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2610260600 C) 2610261100\nE) DUE CRANE AT EL-AL JUNCTION,\nRWY 12 CLSD FOR TKOF,\nRWY 30 CLSD FOR LDG.)",
    "first_seen": "2026-09-16T17:37:44Z"
-  },
-  {
-   "id": "A0751/26",
-   "loc": "LLER",
-   "name": "שדה תעופה סגור לכל הטיסות עקב עבודות",
-   "cat": "ad",
-   "heb": "שדה תעופה סגור לכל הטיסות עקב עבודות. במקרה של חירום זמין בתוך 10 דקות אישור מוקדם מבקרת התעופה.\nבתוקף: מ-05/10/2026 16:00 UTC עד 07/10/2026 02:00 UTC\nלו\"ז: 05 1600-2359, 06 0001-0200 1800-2359, 07 0001-0200",
-   "raw": "A0751/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/2944N03501E005\nA) LLER B) 2610051600 C) 2610070200\nD) 05 1600-2359, 06 0001-0200 1800-2359, 07 0001-0200\nE) AD CLSD TO ALL FLT DUE WIP.\nIN CASE OF EMERG AVBL WI 10MIN PPR FM ATC.)",
-   "first_seen": "2026-09-15T17:34:58Z"
   },
   {
    "id": "C1948/26",
@@ -1031,6 +1004,48 @@
   }
  ],
  "removed": [
+  {
+   "id": "C2098/26",
+   "name": "ULTRALIGHT WEEKEND ו- WEEKDAY נתיב סגור TYONA-SH…",
+   "cat": "pje",
+   "heb": "ULTRALIGHT WEEKEND ו- WEEKDAY נתיב סגור TYONA-SHFAM, עקב POWERED PARACHUTE ACT.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-07/10/2026 03:30 UTC עד 07/10/2026 05:30 UTC",
+   "removed_at": "2026-10-07T10:37:57Z"
+  },
+  {
+   "id": "A0804/26",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "ILS מסלול 26 C/S BA תדר 108.700MHZ מושבת לצורך תחזוקה.\nבתוקף: מ-07/10/2026 06:00 UTC עד 07/10/2026 09:00 UTC",
+   "removed_at": "2026-10-07T10:37:57Z"
+  },
+  {
+   "id": "A0790/26",
+   "name": "OCA(H) ל-ILS מסלול 01 שונה ל 500(248) ל-ALL CAT",
+   "cat": "ad",
+   "heb": "OCA(H) ל-ILS מסלול 01 שונה ל 500(248) ל-ALL CAT.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-01/10/2026 06:21 UTC עד 15/10/2026 20:59 UTC",
+   "removed_at": "2026-10-07T10:37:57Z"
+  },
+  {
+   "id": "A0791/26",
+   "name": "OCA(H) ל-ILS מסלול 19 שונה ל 500(228) ל-ALL CAT",
+   "cat": "ad",
+   "heb": "OCA(H) ל-ILS מסלול 19 שונה ל 500(228) ל-ALL CAT.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-01/10/2026 06:21 UTC עד 15/10/2026 20:59 UTC",
+   "removed_at": "2026-10-07T10:37:57Z"
+  },
+  {
+   "id": "A0777/26",
+   "name": "חיפה (LLHA)",
+   "cat": "ad",
+   "heb": "תרגילי מעגל אסורים, למעט כלי טיס ATR C/S HFA. נחיתה אסורה למעט טיסות באישור מוקדם מהנהלת שדה התעופה או מבקרת התעופה. צפוי עיכוב בטיסות יציאה.\nבתוקף: מ-12/10/2026 14:00 UTC עד 12/10/2026 16:30 UTC",
+   "removed_at": "2026-10-07T10:37:57Z"
+  },
+  {
+   "id": "A0751/26",
+   "name": "שדה תעופה סגור לכל הטיסות עקב עבודות",
+   "cat": "ad",
+   "heb": "שדה תעופה סגור לכל הטיסות עקב עבודות. במקרה של חירום זמין בתוך 10 דקות אישור מוקדם מבקרת התעופה.\nבתוקף: מ-05/10/2026 16:00 UTC עד 07/10/2026 02:00 UTC\nלו\"ז: 05 1600-2359, 06 0001-0200 1800-2359, 07 0001-0200",
+   "removed_at": "2026-10-07T10:37:57Z"
+  },
   {
    "id": "C2094/26",
    "name": "ULTRALIGHT נתיב סגור עקב IFR ACT בתוך LLEK MACHZ…",
@@ -2185,34 +2200,6 @@
    "cat": "ad",
    "heb": "RWY 03/21 סגור למעט RWY INT 03/30 DUE WIP.\nבתוקף: מ-16/09/2026 03:00 UTC עד 16/09/2026 10:00 UTC",
    "removed_at": "2026-09-16T17:37:44Z"
-  },
-  {
-   "id": "C1943/26",
-   "name": "GEZER POWER PLANT CLSD FM GND UP TO 1",
-   "cat": "other",
-   "heb": "אזור בתוך 1KM רדיוס שמרכזו בנ.צ. 31°54'55\"N 34°55'00\"E ב-GEZER POWER PLANT סגור מהקרקע ועד 1,200רגל מעל פני הים, DUE TO GAS EMISSION. מומלצת זהירות.\nבתוקף: מ-15/09/2026 16:00 UTC עד 15/09/2026 19:00 UTC",
-   "removed_at": "2026-09-16T08:55:02Z"
-  },
-  {
-   "id": "C1928/26",
-   "name": "C1928/26",
-   "cat": "act",
-   "heb": "בועת זעירים A-WEST (BMGWA) סגור.\nבתוקף: מ-15/09/2026 14:00 UTC עד 16/09/2026 06:30 UTC\nלו\"ז: 15 1400-1445, 16 0600-0630",
-   "removed_at": "2026-09-16T08:55:02Z"
-  },
-  {
-   "id": "C1927/26",
-   "name": "KFAR-TAVOR WI 1",
-   "cat": "other",
-   "heb": "אזור ב KFAR-TAVOR בתוך 1.1NM רדיוס שמרכזו בנ.צ. 32°42'41\"N 35°24'29\"E סגור מהקרקע ועד 2,000רגל מעל פני הים לכל הטיסות, טיסות ריסוס יתאפשרו באישור מוקדם של 15 דק' מהבקרה. מומלצת זהירות.\nבתוקף: מ-15/09/2026 14:00 UTC עד 16/09/2026 06:30 UTC\nלו\"ז: 15 1400-1445, 16 0600-0630",
-   "removed_at": "2026-09-16T08:55:02Z"
-  },
-  {
-   "id": "C1907/26",
-   "name": "C1907/26",
-   "cat": "other",
-   "heb": "CVFR RTE סגור ZOFAR-HRGVS.\nבתוקף: מ-15/09/2026 16:15 UTC עד 15/09/2026 17:45 UTC",
-   "removed_at": "2026-09-16T08:55:02Z"
   }
  ]
 }
