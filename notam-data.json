@@ -1,7 +1,7 @@
 {
- "fetched_at": "08/10/2026 19:15 UTC",
- "fetched_iso": "2026-10-08T19:15:48Z",
- "count": 112,
+ "fetched_at": "09/10/2026 10:56 UTC",
+ "fetched_iso": "2026-10-09T10:56:22Z",
+ "count": 111,
  "notams": [
   {
    "id": "C2130/26",
@@ -317,15 +317,6 @@
    "heb": "פעילות כטב\"מ תתקיים בתוך LLHA אזור בקרה. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 4,500 רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות, למעט ע\"י בקרת התעופה 32°57'19\"N 35°10'03\"E 32°46'37\"N 35°10'03\"E 32°46'37\"N 34°56'46\"E 32°57'19\"N 34°56'46\"E. מומלצת זהירות.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
    "raw": "C2067/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/045/3252N03503E009\nA) LLLL B) 2610051930 C) 2610111300\nD) 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300\nE) UAS ACT WILL TAKE PLACE WI LLHA CTR.\nAN AREA BTN FLW PSN CLSD FM GND UP TO 4,500FT AMSL\nTO ALL FLT INCLUDING AGRICULTURE FLT, EXC BY ATC\n325719N0351003E 324637N0351003E 324637N0345646E\n325719N0345646E.\nCTN ADZ.\nF) GND G) 4500FT AMSL)",
    "first_seen": "2026-10-04T17:24:51Z"
-  },
-  {
-   "id": "C2066/26",
-   "loc": "LLLL",
-   "name": "HACHULA-LAKE",
-   "cat": "act",
-   "heb": "בלון קשור יופעל ב-HACHULA-LAKE DRG לילה, מהקרקע ועד 400 מטר מעל הקרקע. מואר ומסומן לשעות היום. אזור בתוך ברדיוס 0.54 מייל ימי שמרכזו בנ.צ. 33°06'22\"N 35°34'54\"E סגור מהקרקע ועד 2,000 רגל מעל פני הים. במקרה חירום יונמך בתוך 10 דקות. מומלצת זהירות.\nבתוקף: מ-07/10/2026 16:00 UTC עד 09/10/2026 02:00 UTC\nלו\"ז: DAILY 0001-0200 1600-2359",
-   "raw": "C2066/26 NOTAMN\nQ) LLLL/QWCLW/IV/M  /W /000/020/3306N03535E001\nA) LLLL B) 2610071600 C) 2610090200\nD) DAILY 0001-0200 1600-2359\nE) CAPTIVE BALLOON WILL TAKE PLACE AT HACHULA-LAKE DRG NGT,\nFM GND UP TO 400M AGL. LIT AND DAY MARKED.\nAN AREA WI 0.54NM RADIUS CENTERED ON PSN 330622N0353454E\nCLSD FM GND UP TO 2,000FT AMSL.\nIN CASE OF EMERG LOWERED WI 10MIN.\nCTN ADZ.\nF) GND G) 2000FT AMSL)",
-   "first_seen": "2026-10-04T10:07:22Z"
   },
   {
    "id": "C2055/26",
@@ -1013,6 +1004,13 @@
   }
  ],
  "removed": [
+  {
+   "id": "C2066/26",
+   "name": "HACHULA-LAKE",
+   "cat": "act",
+   "heb": "בלון קשור יופעל ב-HACHULA-LAKE DRG לילה, מהקרקע ועד 400 מטר מעל הקרקע. מואר ומסומן לשעות היום. אזור בתוך ברדיוס 0.54 מייל ימי שמרכזו בנ.צ. 33°06'22\"N 35°34'54\"E סגור מהקרקע ועד 2,000 רגל מעל פני הים. במקרה חירום יונמך בתוך 10 דקות. מומלצת זהירות.\nבתוקף: מ-07/10/2026 16:00 UTC עד 09/10/2026 02:00 UTC\nלו\"ז: DAILY 0001-0200 1600-2359",
+   "removed_at": "2026-10-09T10:56:22Z"
+  },
   {
    "id": "C2065/26",
    "name": "HACHULA-LAKE",
@@ -2069,41 +2067,6 @@
    "cat": "pje",
    "heb": "PJE AIRSPACE METZADA ACT מ-8,000רגל מעל פני הים. OPR באישור מוקדם מבקרת התעופה ONLY.\nבתוקף: מ-17/09/2026 09:30 UTC עד 18/09/2026 11:00 UTC\nלו\"ז: 17 0930-1608, 18 0600-1100",
    "removed_at": "2026-09-18T17:03:42Z"
-  },
-  {
-   "id": "C1974/26",
-   "name": "C1974/26",
-   "cat": "pje",
-   "heb": "POWERED PARACHUTE WILL TAKE PLACE N OF GOLANI JUNCTION. אזור בין נקודות הציון הבאות סגור לכל הטיסות כולל טיסות ריסוס חקלאיות 32°47'24\"N 35°19'23\"E 32°46'36\"N 35°21'08\"E 32°47'00\"N 35°26'30\"E 32°45'48\"N 35°30'03\"E 32°49'27\"N 35°30'34\"E 32°50'19\"N 35°29'46\"E 32°49'50\"N 35°21'25\"E 32°47'50\"N 35°19'40\"E. מומלצת זהירות.\nבתוקף: מ-18/09/2026 03:30 UTC עד 18/09/2026 06:00 UTC",
-   "removed_at": "2026-09-18T08:35:04Z"
-  },
-  {
-   "id": "C1964/26",
-   "name": "C1964/26",
-   "cat": "act",
-   "heb": "ULTRALIGHT RTE סגור, למעט PARTICIPATING ACFT IN FLY-PAST MOVIL-KKANA-ZGLNI-MIGDL. TAVOR-ZGLNI. מסוקים RTE סגור, למעט PARTICIPATING ACFT IN FLY-PAST MOVIL-ZGLNI-MIGDL. TAVOR-ZGLNI.\nבתוקף: מ-18/09/2026 03:30 UTC עד 18/09/2026 06:00 UTC",
-   "removed_at": "2026-09-18T08:35:04Z"
-  },
-  {
-   "id": "C1959/26",
-   "name": "C1959/26",
-   "cat": "act",
-   "heb": "בועת זעירים BET-GOVRIN NORTH (BGOVN) AND SOUTH (BGOVS) סגור לכל הטיסות.\nבתוקף: מ-18/09/2026 03:00 UTC עד 18/09/2026 04:00 UTC",
-   "removed_at": "2026-09-18T08:35:04Z"
-  },
-  {
-   "id": "C1958/26",
-   "name": "C1958/26",
-   "cat": "act",
-   "heb": "CVFR RTE סגור NSHRM-AYLON-LTRUN-SHARG-SORES. SORES-HAREL-HNINA-ANATA-DUMIM. ANATA-MIHMS. ZHRYA-BSEMS-ESTOL-SORES. מסוקים RTE סגור NSHRM-AYLON-LTRUN-SHARG-SORES. SORES-HAREL-HNINA-DUMIM. SORES-ESTOL-LTRUN-NCSHN. ZHRYA-BSEMS-ESTOL-SHARG. ULTRALIGHT RTE סגור NSHRM-AYLON-LTRUN-SHARG. SHARG-SORES-TZUBA-KENED-HOMMA-DUMIM. NSHRM-SHLVM-REUTE. SHARG-HORON-REUTE-LAPID-MCZVA-YARHV-MEYAL. ZHRYA-BSEMS-ESTOL-SHARG. BSEMS-NCSHN-LTRUN.\nבתוקף: מ-18/09/2026 03:00 UTC עד 18/09/2026 04:00 UTC",
-   "removed_at": "2026-09-18T08:35:04Z"
-  },
-  {
-   "id": "C1944/26",
-   "name": "C1944/26",
-   "cat": "act",
-   "heb": "CVFR RTE סגור NOAAM-GOVRN-ZHRYA-BSEMS-ESTOL-SORES. מסוקים RTE סגור MACHZ-MKGAT-NAHEM-ZHRYA-BSEMS-ESTOL-SHARG. SORES-ESTOL-LTRUN-NCSHN. ULTRALIGHT RTE סגור BSEMS-NCSHN-LTRUN. MACHZ-MKGAT-NAHLA-NAHEM-GEFFN-ZHRYA-BSEMS-ESTOL-SHARG.\nבתוקף: מ-17/09/2026 15:45 UTC עד 17/09/2026 22:00 UTC",
-   "removed_at": "2026-09-18T08:35:04Z"
   }
  ]
 }
