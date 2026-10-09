@@ -1,8 +1,17 @@
 {
- "fetched_at": "09/10/2026 10:56 UTC",
- "fetched_iso": "2026-10-09T10:56:22Z",
- "count": 111,
+ "fetched_at": "09/10/2026 18:46 UTC",
+ "fetched_iso": "2026-10-09T18:46:53Z",
+ "count": 110,
  "notams": [
+  {
+   "id": "C2131/26",
+   "loc": "LLLL",
+   "name": "ULTRALIGHT WEEKEND נתיב סגור TYONA-SHEFC-SOREK",
+   "cat": "act",
+   "heb": "ULTRALIGHT WEEKEND נתיב סגור TYONA-SHEFC-SOREK.\nבתוקף: מ-10/10/2026 04:00 UTC עד 10/10/2026 11:00 UTC",
+   "raw": "C2131/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /000/004/3158N03444E004\nA) LLLL B) 2610100400 C) 2610101100\nE) ULTRALIGHT WEEKEND RTE CLSD\nTYONA-SHEFC-SOREK.)",
+   "first_seen": "2026-10-09T18:46:53Z"
+  },
   {
    "id": "C2130/26",
    "loc": "LLLL",
@@ -191,15 +200,6 @@
    "heb": "CHECKLIST YEAR=2026 0005 0010 0032 0037 0431 1281 1361 1541 1637 1656 1698 1825 1826 1827 1828 1829 1830 1831 1832 1833 1834 1835 1836 1837 1838 1840 1842 1843 1853 1858 1860 1884 1937 1938 1947 1948 1983 2006 2009 2010 2011 2012 2013 2015 2016 2024 2026 2039 2040 2055 2056 2061 2064 2065 2066 2067 2068 2069 2071 2073 2074 2075 2080 2083 2084 LATEST PUBLICATIONS AIP AIRAC AMDT IFR 001/2026 תאריך כניסה לתוקף 06 AUG 26 AIP AIRAC SUP אין AIC IFR A001/2026 תאריך כניסה לתוקף 05 FEB 26 AIC CHECKLIST AIP IFR A001/2026 AIP VFR A001/2026 AIP MIL אין SUP CHECKLIST AIP IFR אין AIP VFR אין AIP MIL אין\nבתוקף: מ-05/10/2026 12:39 UTC עד 05/11/2026 12:39 UTC",
    "raw": "C2085/26 NOTAMR C1859/26\nQ) LLLL/QKKKK/K /K  /K /000/999/3124N03520E999\nA) LLLL B) 2610051239 C) 2611051239EST\nE) CHECKLIST\nYEAR=2026 0005 0010 0032 0037 0431 1281 1361 1541 1637 1656 1698 1825\n1826 1827 1828 1829 1830 1831 1832 1833 1834 1835 1836 1837\n1838 1840 1842 1843 1853 1858 1860 1884 1937 1938 1947 1948\n1983 2006 2009 2010 2011 2012 2013 2015 2016 2024 2026 2039\n2040 2055 2056 2061 2064 2065 2066 2067 2068 2069 2071 2073\n2074 2075 2080 2083 2084\nLATEST PUBLICATIONS\nAIP AIRAC AMDT IFR 001/2026 EFFECTIVE DATE 06 AUG 26\nAIP AIRAC SUP NIL\nAIC IFR A001/2026 EFFECTIVE DATE 05 FEB 26\nAIC CHECKLIST\nAIP IFR\nA001/2026\nAIP VFR\nA001/2026\nAIP MIL\nNIL\nSUP CHECKLIST\nAIP IFR\nNIL\nAIP VFR\nNIL\nAIP MIL\nNIL)",
    "first_seen": "2026-10-05T21:10:57Z"
-  },
-  {
-   "id": "C2084/26",
-   "loc": "LLLL",
-   "name": "מרחב פעילות צניחה חופשית METZADA ACT מ-8",
-   "cat": "pje",
-   "heb": "מרחב פעילות צניחה חופשית METZADA ACT מ-8,000 רגל מעל פני הים. הפעלה באישור מוקדם מבקרת התעופה בלבד.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-08/10/2026 10:00 UTC עד 09/10/2026 11:00 UTC\nלו\"ז: 08 1000-1545, 09 0500-1100",
-   "raw": "C2084/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/080/3120N03523E003\nA) LLLL B) 2610081000 C) 2610091100\nD) 08 1000-1545, 09 0500-1100\nE) PJE AIRSPACE METZADA ACT FM 8,000FT AMSL.\nOPR BY PPR FM ATC ONLY.\nF) GND G) 8000FT AMSL)",
-   "first_seen": "2026-10-05T10:53:10Z"
   },
   {
    "id": "A0802/26",
@@ -424,15 +424,6 @@
    "cat": "uas",
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב-MAGEN-SHAUL, עד 100 מטר מעל הקרקע. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 1,500 רגל מעל פני הים 32°31'45\"N 35°16'42\"E 32°30'24\"N 35°16'38\"E 32°30'39\"N 35°20'04\"E 32°31'39\"N 35°19'54\"E 32°31'53\"N 35°19'30\"E 32°31'59\"N 35°19'07\"E מומלצת זהירות.\nבתוקף: מ-01/10/2026 00:01 UTC עד 31/10/2026 21:59 UTC",
    "raw": "C2010/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/015/3231N03518E002\nA) LLLL B) 2610010001 C) 2610312159\nE) UAS/UAV ACT WILL TAKE PLACE AT MAGEN-SHAUL, UP TO 100M AGL.\nAN AREA BTN THE FLW PSN CLSD FM GND UP TO 1,500FT AMSL\n323145N0351642E 323024N0351638E 323039N0352004E\n323139N0351954E 323153N0351930E 323159N0351907E\nCTN ADZ.\nF) GND G) 1500FT AMSL)",
-   "first_seen": "2026-09-23T17:51:04Z"
-  },
-  {
-   "id": "C2009/26",
-   "loc": "LLLL",
-   "name": "מרחב פעילות צניחה חופשית TEIMAN ACT מ-11",
-   "cat": "pje",
-   "heb": "מרחב פעילות צניחה חופשית TEIMAN ACT מ-11,000 רגל מעל פני הים. במקרה של חירום CLEAR THE AIRSPACE בתוך 5 דקות. מומלצת זהירות.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-09/10/2026 09:15 UTC עד 09/10/2026 11:00 UTC",
-   "raw": "C2009/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/110/3117N03443E004\nA) LLLL B) 2610090915 C) 2610091100\nE) PJE AIRSPACE TEIMAN ACT FM 11,000FT AMSL.\nIN CASE OF EMERG CLEAR THE AIRSPACE WI 5MIN.\nCTN ADZ.\nF) GND G) 11000FT AMSL)",
    "first_seen": "2026-09-23T17:51:04Z"
   },
   {
@@ -1004,6 +995,20 @@
   }
  ],
  "removed": [
+  {
+   "id": "C2084/26",
+   "name": "מרחב פעילות צניחה חופשית METZADA ACT מ-8",
+   "cat": "pje",
+   "heb": "מרחב פעילות צניחה חופשית METZADA ACT מ-8,000 רגל מעל פני הים. הפעלה באישור מוקדם מבקרת התעופה בלבד.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-08/10/2026 10:00 UTC עד 09/10/2026 11:00 UTC\nלו\"ז: 08 1000-1545, 09 0500-1100",
+   "removed_at": "2026-10-09T18:46:53Z"
+  },
+  {
+   "id": "C2009/26",
+   "name": "מרחב פעילות צניחה חופשית TEIMAN ACT מ-11",
+   "cat": "pje",
+   "heb": "מרחב פעילות צניחה חופשית TEIMAN ACT מ-11,000 רגל מעל פני הים. במקרה של חירום CLEAR THE AIRSPACE בתוך 5 דקות. מומלצת זהירות.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-09/10/2026 09:15 UTC עד 09/10/2026 11:00 UTC",
+   "removed_at": "2026-10-09T18:46:53Z"
+  },
   {
    "id": "C2066/26",
    "name": "HACHULA-LAKE",
@@ -2060,13 +2065,6 @@
    "cat": "act",
    "heb": "ULTRALIGHT RTE סגור SHARG-HORON-REUTE-LAPID-MCZVA-YARHV-MEYAL.\nבתוקף: מ-20/09/2026 10:00 UTC עד 20/09/2026 12:00 UTC",
    "removed_at": "2026-09-20T16:48:10Z"
-  },
-  {
-   "id": "C1897/26",
-   "name": "C1897/26",
-   "cat": "pje",
-   "heb": "PJE AIRSPACE METZADA ACT מ-8,000רגל מעל פני הים. OPR באישור מוקדם מבקרת התעופה ONLY.\nבתוקף: מ-17/09/2026 09:30 UTC עד 18/09/2026 11:00 UTC\nלו\"ז: 17 0930-1608, 18 0600-1100",
-   "removed_at": "2026-09-18T17:03:42Z"
   }
  ]
 }
