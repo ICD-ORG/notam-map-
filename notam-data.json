@@ -1,17 +1,8 @@
 {
- "fetched_at": "10/10/2026 10:11 UTC",
- "fetched_iso": "2026-10-10T10:11:31Z",
- "count": 110,
+ "fetched_at": "10/10/2026 17:46 UTC",
+ "fetched_iso": "2026-10-10T17:46:06Z",
+ "count": 109,
  "notams": [
-  {
-   "id": "C2131/26",
-   "loc": "LLLL",
-   "name": "ULTRALIGHT WEEKEND נתיב סגור TYONA-SHEFC-SOREK",
-   "cat": "act",
-   "heb": "ULTRALIGHT WEEKEND נתיב סגור TYONA-SHEFC-SOREK.\nבתוקף: מ-10/10/2026 04:00 UTC עד 10/10/2026 11:00 UTC",
-   "raw": "C2131/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /000/004/3158N03444E004\nA) LLLL B) 2610100400 C) 2610101100\nE) ULTRALIGHT WEEKEND RTE CLSD\nTYONA-SHEFC-SOREK.)",
-   "first_seen": "2026-10-09T18:46:53Z"
-  },
   {
    "id": "C2130/26",
    "loc": "LLLL",
@@ -995,6 +986,13 @@
   }
  ],
  "removed": [
+  {
+   "id": "C2131/26",
+   "name": "ULTRALIGHT WEEKEND נתיב סגור TYONA-SHEFC-SOREK",
+   "cat": "act",
+   "heb": "ULTRALIGHT WEEKEND נתיב סגור TYONA-SHEFC-SOREK.\nבתוקף: מ-10/10/2026 04:00 UTC עד 10/10/2026 11:00 UTC",
+   "removed_at": "2026-10-10T17:46:06Z"
+  },
   {
    "id": "C2084/26",
    "name": "מרחב פעילות צניחה חופשית METZADA ACT מ-8",
