@@ -1,8 +1,35 @@
 {
- "fetched_at": "11/10/2026 10:22 UTC",
- "fetched_iso": "2026-10-11T10:22:31Z",
- "count": 108,
+ "fetched_at": "11/10/2026 18:00 UTC",
+ "fetched_iso": "2026-10-11T18:00:08Z",
+ "count": 100,
  "notams": [
+  {
+   "id": "A0820/26",
+   "loc": "LLER",
+   "name": "LNAV/VNAV OCA(H) ל-RNP מסלול 19 (MAP GRADIENT 2",
+   "cat": "ad",
+   "heb": "LNAV/VNAV OCA(H) ל-RNP מסלול 19 (MAP GRADIENT 2.5 PERCENTAGE) שונה ל 730(460) ל-ALL CAT. AIP ישראל, PART שדה תעופה, CHART שדה תעופה 2 LLER IAC-19RNP. ראו.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-11/10/2026 14:18 UTC (קבוע)",
+   "raw": "A0820/26 NOTAMR A0819/26\nQ) LLLL/QPOCH/I /NBO/A /000/999/2944N03501E005\nA) LLER B) 2610111418 C) PERM\nE) LNAV/VNAV OCA(H) FOR RNP RWY 19 (MAP GRADIENT 2.5 PERCENTAGE)\nCHG TO 730(460) FOR ALL CAT.\nISRAEL AIP, PART AD, CHART AD 2 LLER IAC-19RNP. REF.)",
+   "first_seen": "2026-10-11T18:00:08Z"
+  },
+  {
+   "id": "C2135/26",
+   "loc": "LLLL",
+   "name": "SDOM POWER PLANT",
+   "cat": "other",
+   "heb": "GAS EMISSION תתקיים ב-SDOM POWER PLANT. אזור בתוך ברדיוס 1 ק\"מ שמרכזו בנ.צ. 31°02'32\"N 35°22'00\"E סגור מהקרקע ועד 1,000 רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-17/10/2026 05:00 UTC עד 17/10/2026 08:00 UTC",
+   "raw": "C2135/26 NOTAMN\nQ) LLLL/QWSLW/IV/M  /W /000/010/3103N03522E001\nA) LLLL B) 2610170500 C) 2610170800\nE) GAS EMISSION WILL TAKE PLACE AT SDOM POWER PLANT.\nAN AREA WI 1KM RADIUS CENTERED ON PSN 310232N0352200E\nCLSD FM GND UP TO 1,000FT AMSL.\nCTN ADZ.\nF) GND G) 1000FT AMSL)",
+   "first_seen": "2026-10-11T18:00:08Z"
+  },
+  {
+   "id": "C2134/26",
+   "loc": "LLLL",
+   "name": "ADERET",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ תתקיים ב-ADERET. אזור בין נקודות הציון הבאות מהקרקע ועד 3,500 רגל מעל פני הים סגור לכל הטיסות כולל טיסות ריסוס חקלאיות 31°41'07\"N 34°59'19\"E 31°38'46\"N 34°58'57\"E 31°38'04\"N 35°01'16\"E 31°39'31\"N 35°03'42\"E 31°41'31\"N 35°01'34\"E. מומלצת זהירות.\nבתוקף: מ-12/10/2026 06:30 UTC עד 12/10/2026 11:30 UTC\nלו\"ז: 0630-0800 0900-1130",
+   "raw": "C2134/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/035/3140N03501E003\nA) LLLL B) 2610120630 C) 2610121130\nD) 0630-0800 0900-1130\nE) UAS ACT WILL TAKE PLACE AT ADERET.\nAN AREA BTN FLW PSN FM GND UP TO 3,500FT AMSL CLSD TO\nALL FLT INCLUDING AGRICULTURE FLT  314107N0345919E\n313846N0345857E 313804N0350116E 313931N0350342E\n314131N0350134E.\nCTN ADZ.\nF) GND G) 3500FT AMSL)",
+   "first_seen": "2026-10-11T18:00:08Z"
+  },
   {
    "id": "C2133/26",
    "loc": "LLLL",
@@ -19,15 +46,6 @@
    "cat": "other",
    "heb": "אזור בתוך ברדיוס 1 ק\"מ שמרכזו בנ.צ. 31°54'55\"N 34°55'00\"E ב-GEZER POWER PLANT סגור מהקרקע ועד 1,200 רגל מעל פני הים, עקב GAS EMISSION. מומלצת זהירות.\nבתוקף: מ-12/10/2026 04:00 UTC עד 12/10/2026 07:00 UTC",
    "raw": "C2132/26 NOTAMN\nQ) LLLL/QWSLW/IV/M  /W /000/012/3155N03455E001\nA) LLLL B) 2610120400 C) 2610120700\nE) AN AREA WI 1KM RADIUS CENTERED ON PSN 315455N0345500E\nAT GEZER POWER PLANT CLSD FM GND UP TO 1,200FT AMSL,\nDUE TO GAS EMISSION.\nCTN ADZ.\nF) GND G) 1200FT AMSL)",
-   "first_seen": "2026-10-11T10:22:31Z"
-  },
-  {
-   "id": "A0819/26",
-   "loc": "LLER",
-   "name": "LNAV/VNAV OCA(H) ל-RNP מסלול 19 (MAP GRADIENT 2",
-   "cat": "ad",
-   "heb": "LNAV/VNAV OCA(H) ל-RNP מסלול 19 (MAP GRADIENT 2.5 PERCENTAGE) שונה ל 730(460) ל-ALL CAT. AIP ישראל, PART שדה תעופה, CHART שדה תעופה 2 LLER IAC-19RNP. ראו.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-11/10/2026 06:23 UTC עד 31/12/2026 23:59 UTC",
-   "raw": "A0819/26 NOTAMN\nQ) LLLL/QPOCH/I /NBO/A /000/999/2944N03501E005\nA) LLER B) 2610110623 C) 2612312359\nE) LNAV/VNAV OCA(H) FOR RNP RWY 19 (MAP GRADIENT 2.5 PERCENTAGE)\nCHG TO 730(460) FOR ALL CAT.\nISRAEL AIP, PART AD, CHART AD 2 LLER IAC-19RNP. REF.)",
    "first_seen": "2026-10-11T10:22:31Z"
   },
   {
@@ -64,15 +82,6 @@
    "cat": "other",
    "heb": "נתיב CVFR סגור ZOFAR-HRGVS-RUHOT.\nבתוקף: מ-13/10/2026 06:00 UTC עד 13/10/2026 13:40 UTC",
    "raw": "C2126/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /035/045/3037N03500E011\nA) LLLL B) 2610130600 C) 2610131340\nE) CVFR RTE CLSD  ZOFAR-HRGVS-RUHOT.)",
-   "first_seen": "2026-10-07T19:20:17Z"
-  },
-  {
-   "id": "C2124/26",
-   "loc": "LLLL",
-   "name": "נתיב CVFR סגור ZOFAR-HRGVS-RUHOT",
-   "cat": "other",
-   "heb": "נתיב CVFR סגור ZOFAR-HRGVS-RUHOT.\nבתוקף: מ-11/10/2026 07:40 UTC עד 11/10/2026 14:10 UTC",
-   "raw": "C2124/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /035/045/3037N03500E011\nA) LLLL B) 2610110740 C) 2610111410\nE) CVFR RTE CLSD  ZOFAR-HRGVS-RUHOT.)",
    "first_seen": "2026-10-07T19:20:17Z"
   },
   {
@@ -202,24 +211,6 @@
    "first_seen": "2026-10-05T10:53:10Z"
   },
   {
-   "id": "C2080/26",
-   "loc": "LLLL",
-   "name": "מסוקים נתיב סגור למעט ע\"י בקרת התעופה GALIM-SUVA…",
-   "cat": "other",
-   "heb": "מסוקים נתיב סגור למעט ע\"י בקרת התעופה GALIM-SUVAS. GALIM-KONFO. GALIM-DAFNA. GALIM-MERVA. GALIM-INBAR.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
-   "raw": "C2080/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /005/015/3234N03425E034\nA) LLLL B) 2610051930 C) 2610111300\nD) 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300\nE) HEL RTE CLSD EXC BY ATC\nGALIM-SUVAS.\nGALIM-KONFO.\nGALIM-DAFNA.\nGALIM-MERVA.\nGALIM-INBAR.)",
-   "first_seen": "2026-10-04T17:24:51Z"
-  },
-  {
-   "id": "C2075/26",
-   "loc": "LLLL",
-   "name": "מסוקים נתיב סגור",
-   "cat": "other",
-   "heb": "מסוקים נתיב סגור, למעט ע\"י בקרת התעופה EVLYM-AHIUD-AAKKO-SMRAT-SZION. GILAM-EVLYM. HASID-EVLYM-MOVIL.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
-   "raw": "C2075/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /004/020/3252N03509E009\nA) LLLL B) 2610051930 C) 2610111300\nD) 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300\nE) HEL RTE CLSD, EXC BY ATC\nEVLYM-AHIUD-AAKKO-SMRAT-SZION.\nGILAM-EVLYM.\nHASID-EVLYM-MOVIL.)",
-   "first_seen": "2026-10-04T17:24:51Z"
-  },
-  {
    "id": "C2074/26",
    "loc": "LLLL",
    "name": "TRIGGER NOTAM",
@@ -235,69 +226,6 @@
    "cat": "other",
    "heb": "TRIGGER NOTAM - אין AIRAC AIP AMDT בתוקף מ-29 OCT 2026.\nבתוקף: מ-29/10/2026 00:01 UTC עד 11/11/2026 21:59 UTC",
    "raw": "A0798/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /E /000/999/3123N03515E999\nA) LLLL B) 2610290001 C) 2611112159\nE) TRIGGER NOTAM - NIL AIRAC AIP AMDT WEF 29 OCT 2026.)",
-   "first_seen": "2026-10-04T17:24:51Z"
-  },
-  {
-   "id": "C2073/26",
-   "loc": "LLLL",
-   "name": "נתיב CVFR סגור",
-   "cat": "other",
-   "heb": "נתיב CVFR סגור, למעט ע\"י בקרת התעופה EVLYM-AHIUD-AAKKO-SMRAT-SZION. GILAM-EVLYM-SEGEV.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
-   "raw": "C2073/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /015/030/3255N03510E007\nA) LLLL B) 2610051930 C) 2610111300\nD) 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300\nE) CVFR RTE CLSD, EXC BY ATC\nEVLYM-AHIUD-AAKKO-SMRAT-SZION.\nGILAM-EVLYM-SEGEV.)",
-   "first_seen": "2026-10-04T17:24:51Z"
-  },
-  {
-   "id": "C2071/26",
-   "loc": "LLLL",
-   "name": "ULTRALIGHT נתיב סגור",
-   "cat": "act",
-   "heb": "ULTRALIGHT נתיב סגור, למעט ע\"י בקרת התעופה EVLYM-AHIUD-YASIF-AAKKO-SMRAT. GILAM-EVLYM-MOVIL.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
-   "raw": "C2071/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /004/013/3251N03510E008\nA) LLLL B) 2610051930 C) 2610111300\nD) 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300\nE) ULTRALIGHT RTE CLSD, EXC BY ATC\nEVLYM-AHIUD-YASIF-AAKKO-SMRAT.\nGILAM-EVLYM-MOVIL.)",
-   "first_seen": "2026-10-04T17:24:51Z"
-  },
-  {
-   "id": "C2069/26",
-   "loc": "LLLL",
-   "name": "LLHA אזור אימונים NR A",
-   "cat": "act",
-   "heb": "LLHA אזור אימונים NR A,B,C ו- ZVULUN בועת זעירים N, S (BZVUL ו- BZVUN) סגור לכל הטיסות כולל טיסות ריסוס חקלאיות, למעט ע\"י בקרת התעופה.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
-   "raw": "C2069/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/040/3254N03507E006\nA) LLLL B) 2610051930 C) 2610111300\nD) 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300\nE) LLHA TRG AREA NR A,B,C AND ZVULUN ULTRALIGHT BUBBLE N, S\n(BZVUL AND BZVUN) CLSD TO ALL FLT INCLUDING AGRICULTURE\nFLT, EXC BY ATC.)",
-   "first_seen": "2026-10-04T17:24:51Z"
-  },
-  {
-   "id": "A0797/26",
-   "loc": "LLLL",
-   "name": "ATS נתיב סגור למעט ע\"י בקרת התעופה P68 בין GALIM…",
-   "cat": "other",
-   "heb": "ATS נתיב סגור למעט ע\"י בקרת התעופה P68 בין GALIM-ZAHAV. Q28 בין ATLIT-GALIM.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
-   "raw": "A0797/26 NOTAMN\nQ) LLLL/QANLC/I /NBO/E /030/260/3247N03454E006\nA) LLLL B) 2610051930 C) 2610111300\nD) 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300\nE) ATS RTE CLSD EXC BY ATC\nP68 BTN GALIM-ZAHAV.\nQ28 BTN ATLIT-GALIM.)",
-   "first_seen": "2026-10-04T17:24:51Z"
-  },
-  {
-   "id": "A0796/26",
-   "loc": "LLHA",
-   "name": "חיפה (LLHA)",
-   "cat": "ad",
-   "heb": "אזור בקרה סגור לכל הטיסות למעט ע\"י בקרת התעופה, עקב TEST טיסות.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
-   "raw": "A0796/26 NOTAMN\nQ) LLLL/QACLC/IV/NBO/AE/000/030/3251N03503E007\nA) LLHA B) 2610051930 C) 2610111300\nD) 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300\nE) CTR CLSD TO ALL FLT EXC BY ATC, DUE TEST FLT.)",
-   "first_seen": "2026-10-04T17:24:51Z"
-  },
-  {
-   "id": "C2068/26",
-   "loc": "LLLL",
-   "name": "LASER EMISSION תתקיים ממערב ל LLHA אזור בקרה",
-   "cat": "other",
-   "heb": "LASER EMISSION תתקיים ממערב ל LLHA אזור בקרה. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 45,000 רגל מעל פני הים לכל הטיסות, למעט ע\"י בקרת התעופה 32°51'42\"N 35°04'42\"E 32°51'31\"N 34°31'41\"E 33°05'11\"N 34°35'58\"E. מומלצת זהירות.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
-   "raw": "C2068/26 NOTAMN\nQ) LLLL/QWOLW/IV/M  /W /000/450/3255N03448E015\nA) LLLL B) 2610051930 C) 2610111300\nD) 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300\nE) LASER EMISSION WILL TAKE PLACE W OF LLHA CTR.\nAN AREA BTN FLW PSN CLSD FM GND UP TO 45,000FT AMSL\nTO ALL FLT, EXC BY ATC  325142N0350442E 325131N0343141E\n330511N0343558E.\nCTN ADZ.\nF) GND G) 45000FT AMSL)",
-   "first_seen": "2026-10-04T17:24:51Z"
-  },
-  {
-   "id": "C2067/26",
-   "loc": "LLLL",
-   "name": "פעילות כטב\"מ תתקיים בתוך LLHA אזור בקרה",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ תתקיים בתוך LLHA אזור בקרה. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 4,500 רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות, למעט ע\"י בקרת התעופה 32°57'19\"N 35°10'03\"E 32°46'37\"N 35°10'03\"E 32°46'37\"N 34°56'46\"E 32°57'19\"N 34°56'46\"E. מומלצת זהירות.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
-   "raw": "C2067/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/045/3252N03503E009\nA) LLLL B) 2610051930 C) 2610111300\nD) 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300\nE) UAS ACT WILL TAKE PLACE WI LLHA CTR.\nAN AREA BTN FLW PSN CLSD FM GND UP TO 4,500FT AMSL\nTO ALL FLT INCLUDING AGRICULTURE FLT, EXC BY ATC\n325719N0351003E 324637N0351003E 324637N0345646E\n325719N0345646E.\nCTN ADZ.\nF) GND G) 4500FT AMSL)",
    "first_seen": "2026-10-04T17:24:51Z"
   },
   {
@@ -977,6 +905,83 @@
   }
  ],
  "removed": [
+  {
+   "id": "A0819/26",
+   "name": "LNAV/VNAV OCA(H) ל-RNP מסלול 19 (MAP GRADIENT 2",
+   "cat": "ad",
+   "heb": "LNAV/VNAV OCA(H) ל-RNP מסלול 19 (MAP GRADIENT 2.5 PERCENTAGE) שונה ל 730(460) ל-ALL CAT. AIP ישראל, PART שדה תעופה, CHART שדה תעופה 2 LLER IAC-19RNP. ראו.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-11/10/2026 06:23 UTC עד 31/12/2026 23:59 UTC",
+   "removed_at": "2026-10-11T18:00:08Z"
+  },
+  {
+   "id": "C2124/26",
+   "name": "נתיב CVFR סגור ZOFAR-HRGVS-RUHOT",
+   "cat": "other",
+   "heb": "נתיב CVFR סגור ZOFAR-HRGVS-RUHOT.\nבתוקף: מ-11/10/2026 07:40 UTC עד 11/10/2026 14:10 UTC",
+   "removed_at": "2026-10-11T18:00:08Z"
+  },
+  {
+   "id": "C2080/26",
+   "name": "מסוקים נתיב סגור למעט ע\"י בקרת התעופה GALIM-SUVA…",
+   "cat": "other",
+   "heb": "מסוקים נתיב סגור למעט ע\"י בקרת התעופה GALIM-SUVAS. GALIM-KONFO. GALIM-DAFNA. GALIM-MERVA. GALIM-INBAR.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
+   "removed_at": "2026-10-11T18:00:08Z"
+  },
+  {
+   "id": "C2075/26",
+   "name": "מסוקים נתיב סגור",
+   "cat": "other",
+   "heb": "מסוקים נתיב סגור, למעט ע\"י בקרת התעופה EVLYM-AHIUD-AAKKO-SMRAT-SZION. GILAM-EVLYM. HASID-EVLYM-MOVIL.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
+   "removed_at": "2026-10-11T18:00:08Z"
+  },
+  {
+   "id": "C2073/26",
+   "name": "נתיב CVFR סגור",
+   "cat": "other",
+   "heb": "נתיב CVFR סגור, למעט ע\"י בקרת התעופה EVLYM-AHIUD-AAKKO-SMRAT-SZION. GILAM-EVLYM-SEGEV.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
+   "removed_at": "2026-10-11T18:00:08Z"
+  },
+  {
+   "id": "C2071/26",
+   "name": "ULTRALIGHT נתיב סגור",
+   "cat": "act",
+   "heb": "ULTRALIGHT נתיב סגור, למעט ע\"י בקרת התעופה EVLYM-AHIUD-YASIF-AAKKO-SMRAT. GILAM-EVLYM-MOVIL.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
+   "removed_at": "2026-10-11T18:00:08Z"
+  },
+  {
+   "id": "C2069/26",
+   "name": "LLHA אזור אימונים NR A",
+   "cat": "act",
+   "heb": "LLHA אזור אימונים NR A,B,C ו- ZVULUN בועת זעירים N, S (BZVUL ו- BZVUN) סגור לכל הטיסות כולל טיסות ריסוס חקלאיות, למעט ע\"י בקרת התעופה.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
+   "removed_at": "2026-10-11T18:00:08Z"
+  },
+  {
+   "id": "A0797/26",
+   "name": "ATS נתיב סגור למעט ע\"י בקרת התעופה P68 בין GALIM…",
+   "cat": "other",
+   "heb": "ATS נתיב סגור למעט ע\"י בקרת התעופה P68 בין GALIM-ZAHAV. Q28 בין ATLIT-GALIM.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
+   "removed_at": "2026-10-11T18:00:08Z"
+  },
+  {
+   "id": "A0796/26",
+   "name": "חיפה (LLHA)",
+   "cat": "ad",
+   "heb": "אזור בקרה סגור לכל הטיסות למעט ע\"י בקרת התעופה, עקב TEST טיסות.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
+   "removed_at": "2026-10-11T18:00:08Z"
+  },
+  {
+   "id": "C2068/26",
+   "name": "LASER EMISSION תתקיים ממערב ל LLHA אזור בקרה",
+   "cat": "other",
+   "heb": "LASER EMISSION תתקיים ממערב ל LLHA אזור בקרה. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 45,000 רגל מעל פני הים לכל הטיסות, למעט ע\"י בקרת התעופה 32°51'42\"N 35°04'42\"E 32°51'31\"N 34°31'41\"E 33°05'11\"N 34°35'58\"E. מומלצת זהירות.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
+   "removed_at": "2026-10-11T18:00:08Z"
+  },
+  {
+   "id": "C2067/26",
+   "name": "פעילות כטב\"מ תתקיים בתוך LLHA אזור בקרה",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ תתקיים בתוך LLHA אזור בקרה. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 4,500 רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות, למעט ע\"י בקרת התעופה 32°57'19\"N 35°10'03\"E 32°46'37\"N 35°10'03\"E 32°46'37\"N 34°56'46\"E 32°57'19\"N 34°56'46\"E. מומלצת זהירות.\nבתוקף: מ-05/10/2026 19:30 UTC עד 11/10/2026 13:00 UTC\nלו\"ז: 05 1930-2059, 06 0900-1000, 07 11 DAILY 1200-1300",
+   "removed_at": "2026-10-11T18:00:08Z"
+  },
   {
    "id": "C2127/26",
    "name": "ZVULUN בועת זעירים N (BZVUN) סגור לכל הטיסות",
@@ -2075,13 +2080,6 @@
    "cat": "ad",
    "heb": "OCA(H) FOR ILS RWY 21 CHG TO 500(366) FOR ALL CAT.\nבתוקף: מ-31/08/2026 06:29 UTC עד 30/09/2026 23:59 UTC",
    "removed_at": "2026-09-22T08:52:07Z"
-  },
-  {
-   "id": "C1975/26",
-   "name": "C1975/26",
-   "cat": "act",
-   "heb": "ULTRALIGHT RTE סגור SHARG-HORON-REUTE-LAPID-MCZVA-YARHV-MEYAL.\nבתוקף: מ-20/09/2026 10:00 UTC עד 20/09/2026 12:00 UTC",
-   "removed_at": "2026-09-20T16:48:10Z"
   }
  ]
 }
