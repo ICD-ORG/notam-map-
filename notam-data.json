@@ -1,8 +1,17 @@
 {
- "fetched_at": "12/10/2026 11:21 UTC",
- "fetched_iso": "2026-10-12T11:21:26Z",
- "count": 98,
+ "fetched_at": "12/10/2026 21:39 UTC",
+ "fetched_iso": "2026-10-12T21:39:12Z",
+ "count": 96,
  "notams": [
+  {
+   "id": "C2138/26",
+   "loc": "LLLL",
+   "name": "YERUHAM",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ/רחפנים תתקיים ב-YERUHAM, מהקרקע ועד 600 מטר מעל הקרקע. אזור בתוך ברדיוס 0.3 מייל ימי שמרכזו בנ.צ. 30°58'19\"N 34°56'01\"E סגור מהקרקע ועד 3,700 רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-18/10/2026 03:30 UTC עד 22/10/2026 14:30 UTC\nלו\"ז: DAILY 0330-1430",
+   "raw": "C2138/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/037/3058N03456E001\nA) LLLL B) 2610180330 C) 2610221430\nD) DAILY 0330-1430\nE) UAS/UAV ACT WILL TAKE PLACE AT YERUHAM, FM GND UP TO 600M AGL.\nAN AREA WI 0.3NM RADIUS CENTERED ON PSN 305819N0345601E\nCLSD FM GND UP TO 3,700FT AMSL.\nCTN ADZ.\nF) GND G) 3700FT AMSL)",
+   "first_seen": "2026-10-12T21:39:12Z"
+  },
   {
    "id": "C2137/26",
    "loc": "LLLL",
@@ -58,15 +67,6 @@
    "first_seen": "2026-10-11T18:00:08Z"
   },
   {
-   "id": "C2134/26",
-   "loc": "LLLL",
-   "name": "ADERET",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ תתקיים ב-ADERET. אזור בין נקודות הציון הבאות מהקרקע ועד 3,500 רגל מעל פני הים סגור לכל הטיסות כולל טיסות ריסוס חקלאיות 31°41'07\"N 34°59'19\"E 31°38'46\"N 34°58'57\"E 31°38'04\"N 35°01'16\"E 31°39'31\"N 35°03'42\"E 31°41'31\"N 35°01'34\"E. מומלצת זהירות.\nבתוקף: מ-12/10/2026 06:30 UTC עד 12/10/2026 11:30 UTC\nלו\"ז: 0630-0800 0900-1130",
-   "raw": "C2134/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/035/3140N03501E003\nA) LLLL B) 2610120630 C) 2610121130\nD) 0630-0800 0900-1130\nE) UAS ACT WILL TAKE PLACE AT ADERET.\nAN AREA BTN FLW PSN FM GND UP TO 3,500FT AMSL CLSD TO\nALL FLT INCLUDING AGRICULTURE FLT  314107N0345919E\n313846N0345857E 313804N0350116E 313931N0350342E\n314131N0350134E.\nCTN ADZ.\nF) GND G) 3500FT AMSL)",
-   "first_seen": "2026-10-11T18:00:08Z"
-  },
-  {
    "id": "C2133/26",
    "loc": "LLLL",
    "name": "YERUHAM",
@@ -112,30 +112,12 @@
    "first_seen": "2026-10-07T19:20:17Z"
   },
   {
-   "id": "C2125/26",
-   "loc": "LLLL",
-   "name": "נתיב CVFR סגור ZOFAR-HRGVS-RUHOT",
-   "cat": "other",
-   "heb": "נתיב CVFR סגור ZOFAR-HRGVS-RUHOT.\nבתוקף: מ-12/10/2026 06:00 UTC עד 12/10/2026 13:40 UTC",
-   "raw": "C2125/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /035/045/3037N03500E011\nA) LLLL B) 2610120600 C) 2610121340\nE) CVFR RTE CLSD  ZOFAR-HRGVS-RUHOT.)",
-   "first_seen": "2026-10-07T19:20:17Z"
-  },
-  {
    "id": "C2108/26",
    "loc": "LLLL",
    "name": "BET-HASHITA",
    "cat": "uas",
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב-BET-HASHITA. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 1,700 רגל מעל פני הים 32°33'26\"N 35°28'02\"E 32°34'31\"N 35°28'15\"E 32°34'41\"N 35°27'00\"E 32°33'44\"N 35°26'35\"E. טיסות ריסוס חקלאיות באישור מוקדם של 15 דקות מבקרת התעופה. מומלצת זהירות.\nבתוקף: מ-13/10/2026 04:00 UTC עד 13/10/2026 10:00 UTC",
    "raw": "C2108/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/017/3234N03527E002\nA) LLLL B) 2610130400 C) 2610131000\nE) UAS/UAV ACT WILL TAKE PLACE AT BET-HASHITA.\nAN AREA BTN FLW PSN CLSD FM GND UP TO 1,700FT AMSL\n323326N0352802E 323431N0352815E 323441N0352700E\n323344N0352635E.\nOPS OF AGRICULTURE FLT WITH 15MIN PPR FM ATC.\nCTN ADZ.\nF) GND G) 1700FT AMSL)",
-   "first_seen": "2026-10-07T19:20:17Z"
-  },
-  {
-   "id": "A0812/26",
-   "loc": "LLER",
-   "name": "ILS מסלול 19 C/S RB תדר 110",
-   "cat": "ad",
-   "heb": "ILS מסלול 19 C/S RB תדר 110.500MHZ מושבת לצורך תחזוקה.\nבתוקף: מ-12/10/2026 10:00 UTC עד 12/10/2026 13:00 UTC",
-   "raw": "A0812/26 NOTAMN\nQ) LLLL/QISAS/I /NBO/A /000/999/2943N03501E005\nA) LLER B) 2610121000 C) 2610121300\nE) ILS RWY 19 C/S RB FREQ 110.500MHZ WITHDRAWN FOR MAINT.)",
    "first_seen": "2026-10-07T19:20:17Z"
   },
   {
@@ -887,6 +869,27 @@
   }
  ],
  "removed": [
+  {
+   "id": "C2134/26",
+   "name": "ADERET",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ תתקיים ב-ADERET. אזור בין נקודות הציון הבאות מהקרקע ועד 3,500 רגל מעל פני הים סגור לכל הטיסות כולל טיסות ריסוס חקלאיות 31°41'07\"N 34°59'19\"E 31°38'46\"N 34°58'57\"E 31°38'04\"N 35°01'16\"E 31°39'31\"N 35°03'42\"E 31°41'31\"N 35°01'34\"E. מומלצת זהירות.\nבתוקף: מ-12/10/2026 06:30 UTC עד 12/10/2026 11:30 UTC\nלו\"ז: 0630-0800 0900-1130",
+   "removed_at": "2026-10-12T21:39:12Z"
+  },
+  {
+   "id": "C2125/26",
+   "name": "נתיב CVFR סגור ZOFAR-HRGVS-RUHOT",
+   "cat": "other",
+   "heb": "נתיב CVFR סגור ZOFAR-HRGVS-RUHOT.\nבתוקף: מ-12/10/2026 06:00 UTC עד 12/10/2026 13:40 UTC",
+   "removed_at": "2026-10-12T21:39:12Z"
+  },
+  {
+   "id": "A0812/26",
+   "name": "ILS מסלול 19 C/S RB תדר 110",
+   "cat": "ad",
+   "heb": "ILS מסלול 19 C/S RB תדר 110.500MHZ מושבת לצורך תחזוקה.\nבתוקף: מ-12/10/2026 10:00 UTC עד 12/10/2026 13:00 UTC",
+   "removed_at": "2026-10-12T21:39:12Z"
+  },
   {
    "id": "C2132/26",
    "name": "GEZER POWER PLANT",
