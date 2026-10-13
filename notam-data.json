@@ -1,8 +1,161 @@
 {
- "fetched_at": "13/10/2026 11:02 UTC",
- "fetched_iso": "2026-10-13T11:02:20Z",
- "count": 97,
+ "fetched_at": "13/10/2026 19:52 UTC",
+ "fetched_iso": "2026-10-13T19:52:05Z",
+ "count": 112,
  "notams": [
+  {
+   "id": "C2156/26",
+   "loc": "LLLL",
+   "name": "נתיב CVFR סגור",
+   "cat": "other",
+   "heb": "נתיב CVFR סגור, התנועה תוסט דרך YRUHM BOKER-TLLIM-NEGEV. מסוקים נתיב סגור, התנועה תוסט דרך YRUHM HAGAY--TLLIM-NEGEV.\nבתוקף: מ-14/10/2026 14:00 UTC עד 14/10/2026 15:15 UTC",
+   "raw": "C2156/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /022/040/3058N03448E007\nA) LLLL B) 2610141400 C) 2610141515\nE) CVFR RTE CLSD, TFC WILL BE DIVERTED VIA YRUHM\nBOKER-TLLIM-NEGEV.\nHEL RTE CLSD, TFC WILL BE DIVERTED VIA YRUHM\nHAGAY--TLLIM-NEGEV.)",
+   "first_seen": "2026-10-13T19:52:05Z"
+  },
+  {
+   "id": "C2155/26",
+   "loc": "LLLL",
+   "name": "TLALIM",
+   "cat": "other",
+   "heb": "אזור ב-TLALIM בתוך ברדיוס 2 מייל ימי שמרכזו בנ.צ. 30°52'57\"N 34°45'52\"E סגור לכל הטיסות כולל טיסות ריסוס חקלאיות מהקרקע ועד 11,000 רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-14/10/2026 14:00 UTC עד 14/10/2026 15:15 UTC",
+   "raw": "C2155/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/110/3059N03446E002\nA) LLLL B) 2610141400 C) 2610141515\nE) AN AREA AT TLALIM WI 2NM RADIUS CENTERED ON PSN 305257N0344552E\nCLSD TO ALL FLT INCLUDING AGRICULTURE FLT FM GND\nUP TO 11,000FT AMSL.\nCTN ADZ.)",
+   "first_seen": "2026-10-13T19:52:05Z"
+  },
+  {
+   "id": "C2154/26",
+   "loc": "LLRS",
+   "name": "TRIGGER NOTAM",
+   "cat": "ad",
+   "heb": "TRIGGER NOTAM - AIRAC AIP פנים-ארצי AMDT 02/26 בתוקף מ-26 NOV 2026 CHIMNEY מדרום ל CIRCUIT PATTERN, WEEKDAY נתיב ADDED, NISPACH UPDATED B, C, D, E.\nבתוקף: מ-26/11/2026 00:01 UTC עד 09/12/2026 23:59 UTC",
+   "raw": "C2154/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /AE/000/999/3158N03445E005\nA) LLRS B) 2611260001 C) 2612092359\nE) TRIGGER NOTAM - AIRAC DOM AIP AMDT 02/26 WEF 26 NOV 2026\nCHIMNEY S OF CIRCUIT PATTERN, WEEKDAY RTE ADDED,\nNISPACH UPDATED  B, C, D, E.)",
+   "first_seen": "2026-10-13T19:52:05Z"
+  },
+  {
+   "id": "C2152/26",
+   "loc": "LLLL",
+   "name": "TRIGGER NOTAM",
+   "cat": "uas",
+   "heb": "TRIGGER NOTAM - AIRAC AIP פנים-ארצי AMDT 02/26 בתוקף מ-26 NOV 2026 מינימום כלי טיס ל-FLYPAST, NISPACH A-11-C UPDATED, AIS מספר טלפון UPDATED, NAURAH CLOSURE ADDED, P/R/D UPDATED, UAV PLUGOT AREA ADDED, NISPACH A-17-A UPDATED. PREFERENCE טיסות ADDED, פעילות HR OF SHDEROTH בועה, מספר טלפון UPDATED.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-26/11/2026 00:01 UTC עד 09/12/2026 23:59 UTC",
+   "raw": "C2152/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /E /000/999/3211N03515E015\nA) LLLL B) 2611260001 C) 2612092359\nE) TRIGGER NOTAM - AIRAC DOM AIP AMDT 02/26 WEF 26 NOV 2026\nMNM ACFT FOR FLYPAST, NISPACH A-11-C UPDATED,\nAIS PHONE NR UPDATED, NAURAH CLOSURE ADDED, P/R/D UPDATED,\nUAV PLUGOT AREA ADDED, NISPACH A-17-A UPDATED.\nPREFERENCE FLT ADDED, OPS HR OF SHDEROTH BUBBLE,\nPHONE NR UPDATED.)",
+   "first_seen": "2026-10-13T19:52:05Z"
+  },
+  {
+   "id": "A0829/26",
+   "loc": "LLLL",
+   "name": "TRIGGER NOTAM",
+   "cat": "other",
+   "heb": "TRIGGER NOTAM - AIRAC AIP AMDT 02/26 בתוקף מ-26 NOV 2026 DIFFERENCES UPDATED, SAR UPDATED, NOTE UPDATE ל-LLR01.\nבתוקף: מ-26/11/2026 00:01 UTC עד 09/12/2026 23:59 UTC",
+   "raw": "A0829/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /E /000/999/3123N03515E999\nA) LLLL B) 2611260001 C) 2612092359\nE) TRIGGER NOTAM - AIRAC AIP AMDT 02/26 WEF 26 NOV 2026\nDIFFERENCES UPDATED, SAR UPDATED, NOTE UPDATE FOR LLR01.)",
+   "first_seen": "2026-10-13T19:52:05Z"
+  },
+  {
+   "id": "C2153/26",
+   "loc": "LLMZ",
+   "name": "מצדה (LLMZ)",
+   "cat": "ad",
+   "heb": "TRIGGER NOTAM - AIRAC AIP פנים-ארצי AMDT 02/26 בתוקף מ-26 NOV 2026 AIRSTRIP פעילות HR UPDATED.\nבתוקף: מ-26/11/2026 00:01 UTC עד 09/12/2026 23:59 UTC",
+   "raw": "C2153/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /AE/000/999/3120N03523E005\nA) LLMZ B) 2611260001 C) 2612092359\nE) TRIGGER NOTAM - AIRAC DOM AIP AMDT 02/26 WEF 26 NOV 2026\nAIRSTRIP OPS HR UPDATED.)",
+   "first_seen": "2026-10-13T19:52:05Z"
+  },
+  {
+   "id": "C2149/26",
+   "loc": "LLHZ",
+   "name": "TRIGGER NOTAM",
+   "cat": "act",
+   "heb": "TRIGGER NOTAM - AIRAC AIP פנים-ארצי AMDT 02/26 בתוקף מ-26 NOV 2026 RESTRICTIONS OF מפעיל AEROBATIC טיסות בתוך LLHZ אזור אימונים NR 12 COMPLETELY הוסר.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-26/11/2026 00:01 UTC עד 09/12/2026 23:59 UTC",
+   "raw": "C2149/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /AE/000/999/3211N03450E005\nA) LLHZ B) 2611260001 C) 2612092359\nE) TRIGGER NOTAM - AIRAC DOM AIP AMDT 02/26 WEF 26 NOV 2026\nRESTRICTIONS OF OPR AEROBATIC FLT WI LLHZ TRG AREA NR 12\nCOMPLETELY WITHDRAWN.)",
+   "first_seen": "2026-10-13T19:52:05Z"
+  },
+  {
+   "id": "C2150/26",
+   "loc": "LLIB",
+   "name": "TRIGGER NOTAM",
+   "cat": "act",
+   "heb": "TRIGGER NOTAM - AIRAC AIP פנים-ארצי AMDT 02/26 בתוקף מ-26 NOV 2026 COOR VOR PROC תרגיל, מגדל הפיקוח מספר טלפון UPDATED, PRKG OF GLD, RESPONSIBILITY OF PILOT/TWR, WING SPAN ON רחבת חניה M, WINDSOCKS LOCATIONS UPDATED, אזור בקרה BOUNDARY UPDATED, NISPACH B UPDATED.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-26/11/2026 00:01 UTC עד 09/12/2026 21:59 UTC",
+   "raw": "C2150/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /AE/000/999/3259N03534E005\nA) LLIB B) 2611260001 C) 2612092159\nE) TRIGGER NOTAM - AIRAC DOM AIP AMDT 02/26 WEF 26 NOV 2026\nCOOR VOR PROC EXER, TWR PHONE NR UPDATED, PRKG OF GLD,\nRESPONSIBILITY OF PILOT/TWR, WING SPAN ON APN M,\nWINDSOCKS LOCATIONS UPDATED, CTR BOUNDARY UPDATED,\nNISPACH B UPDATED.)",
+   "first_seen": "2026-10-13T19:52:05Z"
+  },
+  {
+   "id": "C2151/26",
+   "loc": "LLKS",
+   "name": "קרית שמונה (LLKS)",
+   "cat": "ad",
+   "heb": "TRIGGER NOTAM - AIRAC AIP פנים-ארצי AMDT 02/26 בתוקף מ-26 NOV 2026 NISPACH A UPDATED.\nבתוקף: מ-26/11/2026 00:01 UTC עד 09/12/2026 23:59 UTC",
+   "raw": "C2151/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /AE/000/999/3313N03536E005\nA) LLKS B) 2611260001 C) 2612092359\nE) TRIGGER NOTAM - AIRAC DOM AIP AMDT 02/26 WEF 26 NOV 2026\nNISPACH A UPDATED.)",
+   "first_seen": "2026-10-13T19:52:05Z"
+  },
+  {
+   "id": "C2146/26",
+   "loc": "LLEY",
+   "name": "עין יהב (LLEY)",
+   "cat": "ad",
+   "heb": "TRIGGER NOTAM - AIRAC AIP פנים-ארצי AMDT 02/26 בתוקף מ-26 NOV 2026 AIRSTRIP פעילות HR UPDATED.\nבתוקף: מ-26/11/2026 00:01 UTC עד 09/12/2026 23:59 UTC",
+   "raw": "C2146/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /AE/000/999/3037N03512E005\nA) LLEY B) 2611260001 C) 2612092359\nE) TRIGGER NOTAM - AIRAC DOM AIP AMDT 02/26 WEF 26 NOV 2026\nAIRSTRIP OPS HR UPDATED.)",
+   "first_seen": "2026-10-13T19:52:05Z"
+  },
+  {
+   "id": "A0828/26",
+   "loc": "LLHA",
+   "name": "TRIGGER NOTAM",
+   "cat": "obst",
+   "heb": "TRIGGER NOTAM - AIRAC AIP AMDT 02/26 בתוקף מ-26 NOV 2026 שדה תעופה מכשול DATA LINK ADDED, J10 STAND הוסר, רחבת חניה PCR UPDATED, מסלול הסעה Z WIDTH UPDATED, CPT תדר ADDED, יציאה/ARR טיסות PROC UPDATED, CHART UPDATED APDC, APDCN, APDCZ, VCC.\nבתוקף: מ-26/11/2026 00:01 UTC עד 09/12/2026 23:59 UTC",
+   "raw": "A0828/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /AE/000/999/3249N03503E005\nA) LLHA B) 2611260001 C) 2612092359\nE) TRIGGER NOTAM - AIRAC AIP AMDT 02/26 WEF 26 NOV 2026\nAD OBST DATA LINK ADDED, J10 STAND WITHDRAWN,\nAPN PCR UPDATED, TWY Z WIDTH UPDATED, CPT FREQ ADDED,\nDEP/ARR FLT PROC UPDATED, CHART UPDATED  APDC, APDCN,\nAPDCZ, VCC.)",
+   "first_seen": "2026-10-13T19:52:05Z"
+  },
+  {
+   "id": "C2147/26",
+   "loc": "LLHA",
+   "name": "חיפה (LLHA)",
+   "cat": "ad",
+   "heb": "TRIGGER NOTAM - AIRAC AIP פנים-ארצי AMDT 02/26 בתוקף מ-26 NOV 2026 פעילות HR שדה תעופה פעילות CENTER UPDATED, תדר UPDATED, MET DATA UPDATED, LIMITATIONS ON רחבת חניה G ADDED, POWERED TAX בתוך רחבת חניה UPDATED, REMOVAL OF MADATORY REP FORCE נחיתה תרגיל, CHART UPDATED B, B2, B3, G.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-26/11/2026 00:01 UTC עד 09/12/2026 23:59 UTC",
+   "raw": "C2147/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /AE/000/999/3249N03503E005\nA) LLHA B) 2611260001 C) 2612092359\nE) TRIGGER NOTAM - AIRAC DOM AIP AMDT 02/26 WEF 26 NOV 2026\nOPS HR AD OPS CENTER UPDATED, FREQ UPDATED, MET DATA\nUPDATED, LIMITATIONS ON APN G ADDED, POWERED TAX WI APN\nUPDATED, REMOVAL OF MADATORY REP FORCE LDG EXER,\nCHART UPDATED  B, B2, B3, G.)",
+   "first_seen": "2026-10-13T19:52:05Z"
+  },
+  {
+   "id": "A0826/26",
+   "loc": "LLBG",
+   "name": "TRIGGER NOTAM",
+   "cat": "obst",
+   "heb": "TRIGGER NOTAM - AIRAC AIP AMDT 02/26 בתוקף מ-26 NOV 2026 מכשול DATA LINK ON מסלול ADDED, שדה תעופה ADMIN DATA, PCR UPDATED, תאורה ו- SRY POWER SUPPLY DATA, TAX LIMITATIONS, טיסות PROC UPDATED, CHARTS UPDATED ADC, SIDS.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-26/11/2026 00:01 UTC עד 09/12/2026 23:59 UTC",
+   "raw": "A0826/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /AE/000/999/3201N03453E005\nA) LLBG B) 2611260001 C) 2612092359\nE) TRIGGER NOTAM - AIRAC AIP AMDT 02/26 WEF 26 NOV 2026\nOBST DATA LINK ON RWY ADDED, AD ADMIN DATA, PCR UPDATED,\nLGT AND SRY POWER SUPPLY DATA, TAX LIMITATIONS,\nFLT PROC UPDATED, CHARTS UPDATED  ADC, SIDS.)",
+   "first_seen": "2026-10-13T19:52:05Z"
+  },
+  {
+   "id": "C2145/26",
+   "loc": "LLBS",
+   "name": "באר שבע (LLBS)",
+   "cat": "ad",
+   "heb": "TRIGGER NOTAM - AIRAC AIP פנים-ארצי AMDT 02/26 בתוקף מ-26 NOV 2026 NISPACH A UPDATED.\nבתוקף: מ-26/11/2026 00:01 UTC עד 09/12/2026 21:59 UTC",
+   "raw": "C2145/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /AE/000/999/3117N03443E005\nA) LLBS B) 2611260001 C) 2612092159\nE) TRIGGER NOTAM - AIRAC DOM AIP AMDT 02/26 WEF 26 NOV 2026\nNISPACH A UPDATED.)",
+   "first_seen": "2026-10-13T19:52:05Z"
+  },
+  {
+   "id": "A0827/26",
+   "loc": "LLER",
+   "name": "TRIGGER NOTAM",
+   "cat": "obst",
+   "heb": "TRIGGER NOTAM - AIRAC AIP AMDT 02/26 בתוקף מ-26 NOV 2026 שדה תעופה מכשול DATA LINK ADDED, CHART UPDATED ADC, ADCV.\nבתוקף: מ-26/11/2026 00:01 UTC עד 09/12/2026 23:59 UTC",
+   "raw": "A0827/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /AE/000/999/2944N03501E005\nA) LLER B) 2611260001 C) 2612092359\nE) TRIGGER NOTAM - AIRAC AIP AMDT 02/26 WEF 26 NOV 2026\nAD OBST DATA LINK ADDED, CHART UPDATED  ADC, ADCV.)",
+   "first_seen": "2026-10-13T19:52:05Z"
+  },
+  {
+   "id": "C2143/26",
+   "loc": "LLLL",
+   "name": "REVIVIM",
+   "cat": "pje",
+   "heb": "פעילות צניחה חופשית תתקיים ב-REVIVIM. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 2,400 רגל מעל פני הים 31°07'12\"N 34°45'50\"E 31°05'11\"N 34°39'20\"E 31°04'55\"N 34°36'55\"E 30°59'31\"N 34°38'15\"E 31°00'35\"N 34°44'09\"E 31°03'59\"N 34°47'20\"E 31°07'12\"N 34°45'50\"E. טיסות ריסוס חקלאיות יתאפשרו באישור מוקדם של 15 דקות מבקרת התעופה מומלצת זהירות.\nבתוקף: מ-19/10/2026 06:00 UTC עד 21/10/2026 14:00 UTC\nלו\"ז: 19 0600-0930 1800-1920, 20 1150-1400, 21 0630-0900 1150-1400",
+   "raw": "C2143/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/024/3103N03442E006\nA) LLLL B) 2610190600 C) 2610211400\nD) 19 0600-0930 1800-1920, 20 1150-1400, 21 0630-0900 1150-1400\nE) PJE WILL TAKE PLACE AT REVIVIM.\nAN AREA BTN FLW PSN CLSD FM GND UP 2,400FT AMSL\n310712N0344550E 310511N0343920E 310455N0343655E\n305931N0343815E 310035N0344409E 310359N0344720E\n310712N0344550E.\nOPS OF AGRICULTURE FLT AVBL WITH 15MIN PPR FM ATC\nCTN ADZ.\nF) GND G) 2400FT AMSL)",
+   "first_seen": "2026-10-13T19:52:05Z"
+  },
+  {
+   "id": "C2142/26",
+   "loc": "LLLL",
+   "name": "NACHSHON",
+   "cat": "other",
+   "heb": "FIREFIGHTING ACT תתקיים ב-NACHSHON. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 1,500 רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות 31°49'53\"N 34°55'31\"E 31°51'39\"N 34°54'52\"E 31°51'46\"N 34°56'58\"E 31°50'15\"N 34°58'04\"E. מומלצת זהירות.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-18/10/2026 06:00 UTC עד 18/10/2026 08:30 UTC",
+   "raw": "C2142/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/015/3151N03456E002\nA) LLLL B) 2610180600 C) 2610180830\nE) FIREFIGHTING ACT WILL TAKE PLACE AT NACHSHON.\nAN AREA BTN FLW PSN CLSD FM GND UP TO 1,500FT AMSL\nTO ALL FLT INCLUDING AGRICULTURE FLT  314953N0345531E\n315139N0345452E 315146N0345658E 315015N0345804E.\nCTN ADZ.)",
+   "first_seen": "2026-10-13T19:52:05Z"
+  },
   {
    "id": "A0825/26",
    "loc": "LLHA",
@@ -19,15 +172,6 @@
    "cat": "ad",
    "heb": "שדה תעופה סגור לכל הטיסות כולל מסוקים, עקב עבודות. במקרה של חירום זמין בתוך 10 דקות.\nבתוקף: מ-03/11/2026 06:25 UTC עד 03/11/2026 11:00 UTC\nלו\"ז: 0625-0825 0930-1100",
    "raw": "A0824/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3249N03503E005\nA) LLHA B) 2611030625 C) 2611031100\nD) 0625-0825 0930-1100\nE) AD CLSD TO ALL FLT INCLUDING HEL, DUE WIP.\nIN CASE OF EMERG AVBL WI 10MIN.)",
-   "first_seen": "2026-10-13T11:02:20Z"
-  },
-  {
-   "id": "C2141/26",
-   "loc": "LLLL",
-   "name": "MODIIN",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ תתקיים ב-MODIIN. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 1,300 רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות 31°55'09\"N 34°58'56\"E 31°55'07\"N 35°01'00\"E 31°53'00\"N 35°00'55\"E 31°53'00\"N 34°58'57\"E. מומלצת זהירות.\nבתוקף: מ-13/10/2026 09:00 UTC עד 13/10/2026 19:30 UTC",
-   "raw": "C2141/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/013/3154N03500E002\nA) LLLL B) 2610130900 C) 2610131930\nE) UAS ACT WILL TAKE PLACE AT MODIIN.\nAN AREA BTN FLW PSN CLSD FM GND UP TO 1,300FT AMSL\nTO ALL FLT INCLUDING AGRICULTURE FLT\n315509N0345856E 315507N0350100E 315300N0350055E\n315300N0345857E.\nCTN ADZ.\nF) GND G) 1300FT AMSL)",
    "first_seen": "2026-10-13T11:02:20Z"
   },
   {
@@ -119,15 +263,6 @@
    "heb": "מרחב פעילות צניחה חופשית METZADA ACT מ-8,000 רגל מעל פני הים. הפעלה באישור מוקדם מבקרת התעופה בלבד.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-15/10/2026 09:30 UTC עד 16/10/2026 11:00 UTC\nלו\"ז: 15 0930-1530, 16 0600-1100",
    "raw": "C2128/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/080/3120N03523E003\nA) LLLL B) 2610150930 C) 2610161100\nD) 15 0930-1530, 16 0600-1100\nE) PJE AIRSPACE METZADA ACT FM 8,000FT AMSL.\nOPR BY PPR FM ATC ONLY.\nF) GND G) 8000FT AMSL)",
    "first_seen": "2026-10-08T19:15:48Z"
-  },
-  {
-   "id": "C2126/26",
-   "loc": "LLLL",
-   "name": "נתיב CVFR סגור ZOFAR-HRGVS-RUHOT",
-   "cat": "other",
-   "heb": "נתיב CVFR סגור ZOFAR-HRGVS-RUHOT.\nבתוקף: מ-13/10/2026 06:00 UTC עד 13/10/2026 13:40 UTC",
-   "raw": "C2126/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /035/045/3037N03500E011\nA) LLLL B) 2610130600 C) 2610131340\nE) CVFR RTE CLSD  ZOFAR-HRGVS-RUHOT.)",
-   "first_seen": "2026-10-07T19:20:17Z"
   },
   {
    "id": "C2107/26",
@@ -878,6 +1013,20 @@
   }
  ],
  "removed": [
+  {
+   "id": "C2141/26",
+   "name": "MODIIN",
+   "cat": "uas",
+   "heb": "פעילות כטב\"מ תתקיים ב-MODIIN. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 1,300 רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות 31°55'09\"N 34°58'56\"E 31°55'07\"N 35°01'00\"E 31°53'00\"N 35°00'55\"E 31°53'00\"N 34°58'57\"E. מומלצת זהירות.\nבתוקף: מ-13/10/2026 09:00 UTC עד 13/10/2026 19:30 UTC",
+   "removed_at": "2026-10-13T19:52:05Z"
+  },
+  {
+   "id": "C2126/26",
+   "name": "נתיב CVFR סגור ZOFAR-HRGVS-RUHOT",
+   "cat": "other",
+   "heb": "נתיב CVFR סגור ZOFAR-HRGVS-RUHOT.\nבתוקף: מ-13/10/2026 06:00 UTC עד 13/10/2026 13:40 UTC",
+   "removed_at": "2026-10-13T19:52:05Z"
+  },
   {
    "id": "A0822/26",
    "name": "נתב\"ג (LLBG)",
@@ -2067,41 +2216,6 @@
    "cat": "act",
    "heb": "AEROBATICS טיסות WILL TAKE PLACE ב-TAANACHIM, בין 500-4,000רגל מעל פני הים, בתוך THE נקודות הציון הבאות, ACFT TYPE/DR107, REG/4X-OMR 32°33'34\"N 35°16'15\"E 32°31'55\"N 35°16'09\"E 32°31'56\"N 35°18'04\"E 32°33'34\"N 35°18'07\"E. מומלצת זהירות.\nבתוקף: מ-23/09/2026 05:00 UTC עד 23/09/2026 06:30 UTC",
    "removed_at": "2026-09-23T08:54:15Z"
-  },
-  {
-   "id": "C1984/26",
-   "name": "C1984/26",
-   "cat": "other",
-   "heb": "אזור בין נקודות הציון הבאות סגור לכל הטיסות, כולל טיסות ריסוס חקלאיות מהקרקע ועד 1,200רגל מעל פני הים 32°55'23\"N 35°08'19\"E 32°55'54\"N 35°08'52\"E 32°56'02\"N 35°08'09\"E. מומלצת זהירות.)\nבתוקף: מ-22/09/2026 08:11 UTC עד 22/09/2026 11:00 UTC",
-   "removed_at": "2026-09-22T17:37:34Z"
-  },
-  {
-   "id": "A0766/26",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "RWY 12/30 סגור למעט RWY INT DUE WIP.\nבתוקף: מ-22/09/2026 05:00 UTC עד 22/09/2026 10:00 UTC",
-   "removed_at": "2026-09-22T17:37:34Z"
-  },
-  {
-   "id": "A0765/26",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "ILS RWY 12 C/S BG FREQ 110.300MHZ WITHDRAWN FOR MAINT.\nבתוקף: מ-22/09/2026 06:00 UTC עד 22/09/2026 09:00 UTC",
-   "removed_at": "2026-09-22T17:37:34Z"
-  },
-  {
-   "id": "C1949/26",
-   "name": "BARTAAH",
-   "cat": "other",
-   "heb": "FIREFIGHTING ACT WILL TAKE PLACE ב-BARTAAH. אזור בתוך 2NM רדיוס שמרכזו בנ.צ. 32°27'24\"N 35°06'49\"E סגור מהקרקע ועד 2,500רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-22/09/2026 06:00 UTC עד 22/09/2026 09:00 UTC",
-   "removed_at": "2026-09-22T17:37:34Z"
-  },
-  {
-   "id": "A0750/26",
-   "name": "A0750/26",
-   "cat": "obst",
-   "heb": "RWY 21 סגור FOR LDG, DUE CRANE ON FINAL 21. IN CASE OF EMERG LOWERED בתוך 30MIN.\nבתוקף: מ-22/09/2026 17:00 UTC עד 23/06/2029 01:30 UTC",
-   "removed_at": "2026-09-22T17:37:34Z"
   }
  ]
 }
