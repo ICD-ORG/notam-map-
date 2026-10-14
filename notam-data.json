@@ -1,7 +1,7 @@
 {
- "fetched_at": "13/10/2026 19:52 UTC",
- "fetched_iso": "2026-10-13T19:52:05Z",
- "count": 112,
+ "fetched_at": "14/10/2026 09:05 UTC",
+ "fetched_iso": "2026-10-14T09:05:02Z",
+ "count": 110,
  "notams": [
   {
    "id": "C2156/26",
@@ -236,24 +236,6 @@
    "heb": "פעילות כטב\"מ/רחפנים תתקיים ב-YERUHAM. אזור בין נקודות הציון הבאות 30°58'30\"N 34°55'51\"E 30°58'23\"N 34°56'44\"E 30°58'03\"N 34°57'08\"E 30°57'09\"N 34°56'49\"E 30°56'24\"N 34°56'14\"E 30°56'52\"N 34°54'53\"E סגור מהקרקע ועד 3,000 רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-18/10/2026 03:30 UTC עד 22/10/2026 15:30 UTC\nלו\"ז: DAILY 0330-1530",
    "raw": "C2133/26 NOTAMN\nQ) LLLL/QWULW/IV/BO /W /000/030/3057N03456E002\nA) LLLL B) 2610180330 C) 2610221530\nD) DAILY 0330-1530\nE) UAS/UAV ACT WILL TAKE PLACE AT YERUHAM.\nAN AREA BTN FLW PSN 305830N0345551E 305823N0345644E\n305803N0345708E 305709N0345649E 305624N0345614E\n305652N0345453E CLSD FM GND UP TO 3,000FT AMSL.\nCTN ADZ.\nF) GND G) 3000FT AMSL)",
    "first_seen": "2026-10-11T10:22:31Z"
-  },
-  {
-   "id": "C2130/26",
-   "loc": "LLLL",
-   "name": "נתיב CVFR סגור עקב ILS ACT בתוך LLRD EIRON-ZMGID…",
-   "cat": "act",
-   "heb": "נתיב CVFR סגור עקב ILS ACT בתוך LLRD EIRON-ZMGID-AFULA-TAVOR. AFULA-EITAN. ULTRALIGHT ו- מסוקים נתיב סגור EIRON-ARRAA-ZMGID-NIRYA-MRHVA-TAVOR התנועה תוסט דרך FRDIS-HASID.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-14/10/2026 08:00 UTC עד 14/10/2026 08:30 UTC",
-   "raw": "C2130/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /010/030/3235N03513E013\nA) LLLL B) 2610140800 C) 2610140830\nE) CVFR RTE CLSD DUE ILS ACT WI LLRD\nEIRON-ZMGID-AFULA-TAVOR.\nAFULA-EITAN.\nULTRALIGHT AND HEL RTE CLSD\nEIRON-ARRAA-ZMGID-NIRYA-MRHVA-TAVOR\nTFC WILL BE DIVERTED VIA FRDIS-HASID.)",
-   "first_seen": "2026-10-08T19:15:48Z"
-  },
-  {
-   "id": "C2129/26",
-   "loc": "LLMG",
-   "name": "מגידו (LLMG)",
-   "cat": "ad",
-   "heb": "AIRSTRIP LTD ל-מקסימום 900 רגל מעל פני הים עקב ILS ACT בתוך LLRD מומלצת זהירות.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-14/10/2026 08:00 UTC עד 14/10/2026 08:30 UTC",
-   "raw": "C2129/26 NOTAMN\nQ) LLLL/QFALT/IV/NBO/A /000/999/3236N03514E005\nA) LLMG B) 2610140800 C) 2610140830\nE) AIRSTRIP LTD TO MAX 900FT AMSL DUE ILS ACT WI LLRD\nCTN ADZ.)",
-   "first_seen": "2026-10-08T19:15:48Z"
   },
   {
    "id": "C2128/26",
@@ -1013,6 +995,20 @@
   }
  ],
  "removed": [
+  {
+   "id": "C2130/26",
+   "name": "נתיב CVFR סגור עקב ILS ACT בתוך LLRD EIRON-ZMGID…",
+   "cat": "act",
+   "heb": "נתיב CVFR סגור עקב ILS ACT בתוך LLRD EIRON-ZMGID-AFULA-TAVOR. AFULA-EITAN. ULTRALIGHT ו- מסוקים נתיב סגור EIRON-ARRAA-ZMGID-NIRYA-MRHVA-TAVOR התנועה תוסט דרך FRDIS-HASID.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-14/10/2026 08:00 UTC עד 14/10/2026 08:30 UTC",
+   "removed_at": "2026-10-14T09:05:02Z"
+  },
+  {
+   "id": "C2129/26",
+   "name": "מגידו (LLMG)",
+   "cat": "ad",
+   "heb": "AIRSTRIP LTD ל-מקסימום 900 רגל מעל פני הים עקב ILS ACT בתוך LLRD מומלצת זהירות.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-14/10/2026 08:00 UTC עד 14/10/2026 08:30 UTC",
+   "removed_at": "2026-10-14T09:05:02Z"
+  },
   {
    "id": "C2141/26",
    "name": "MODIIN",
@@ -2188,34 +2184,6 @@
    "cat": "pje",
    "heb": "PJE AIRSPACE METZADA ACT מ-8,000רגל מעל פני הים. OPR באישור מוקדם מבקרת התעופה ONLY.\nבתוקף: מ-24/09/2026 09:30 UTC עד 25/09/2026 11:00 UTC\nלו\"ז: 24 0930-1600, 25 0420-1100",
    "removed_at": "2026-09-23T17:51:04Z"
-  },
-  {
-   "id": "C1988/26",
-   "name": "NAZARETH",
-   "cat": "act",
-   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-NAZARETH. אזור בתוך 0.4NM רדיוס שמרכזו בנ.צ. 32°42'12\"N 35°19'02\"E סגור מהקרקע ועד 2,700רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-23/09/2026 21:00 UTC עד 25/09/2026 03:07 UTC",
-   "removed_at": "2026-09-23T08:54:15Z"
-  },
-  {
-   "id": "A0772/26",
-   "name": "A0772/26",
-   "cat": "obst",
-   "heb": "RWY 21 סגור FOR LDG, DUE CRANE ON FINAL 21. IN CASE OF EMERG LOWERED בתוך 30MIN.\nבתוקף: מ-22/09/2026 17:00 UTC עד 23/09/2026 01:30 UTC",
-   "removed_at": "2026-09-23T08:54:15Z"
-  },
-  {
-   "id": "C1969/26",
-   "name": "NAZARETH",
-   "cat": "act",
-   "heb": "CAPTIVE BALLOON WILL TAKE PLACE ב-NAZARETH. אזור בתוך 0.4NM רדיוס שמרכזו בנ.צ. 32°42'12\"N 35°19'02\"E סגור מהקרקע ועד 2,700רגל מעל פני הים, לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\nבתוקף: מ-17/09/2026 06:21 UTC עד 23/09/2026 03:00 UTC",
-   "removed_at": "2026-09-23T08:54:15Z"
-  },
-  {
-   "id": "C1950/26",
-   "name": "TAANACHIM",
-   "cat": "act",
-   "heb": "AEROBATICS טיסות WILL TAKE PLACE ב-TAANACHIM, בין 500-4,000רגל מעל פני הים, בתוך THE נקודות הציון הבאות, ACFT TYPE/DR107, REG/4X-OMR 32°33'34\"N 35°16'15\"E 32°31'55\"N 35°16'09\"E 32°31'56\"N 35°18'04\"E 32°33'34\"N 35°18'07\"E. מומלצת זהירות.\nבתוקף: מ-23/09/2026 05:00 UTC עד 23/09/2026 06:30 UTC",
-   "removed_at": "2026-09-23T08:54:15Z"
   }
  ]
 }
