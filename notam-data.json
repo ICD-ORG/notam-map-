@@ -1,25 +1,16 @@
 {
- "fetched_at": "14/10/2026 09:05 UTC",
- "fetched_iso": "2026-10-14T09:05:02Z",
- "count": 110,
+ "fetched_at": "14/10/2026 17:54 UTC",
+ "fetched_iso": "2026-10-14T17:54:01Z",
+ "count": 107,
  "notams": [
   {
-   "id": "C2156/26",
+   "id": "C2159/26",
    "loc": "LLLL",
-   "name": "נתיב CVFR סגור",
-   "cat": "other",
-   "heb": "נתיב CVFR סגור, התנועה תוסט דרך YRUHM BOKER-TLLIM-NEGEV. מסוקים נתיב סגור, התנועה תוסט דרך YRUHM HAGAY--TLLIM-NEGEV.\nבתוקף: מ-14/10/2026 14:00 UTC עד 14/10/2026 15:15 UTC",
-   "raw": "C2156/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /022/040/3058N03448E007\nA) LLLL B) 2610141400 C) 2610141515\nE) CVFR RTE CLSD, TFC WILL BE DIVERTED VIA YRUHM\nBOKER-TLLIM-NEGEV.\nHEL RTE CLSD, TFC WILL BE DIVERTED VIA YRUHM\nHAGAY--TLLIM-NEGEV.)",
-   "first_seen": "2026-10-13T19:52:05Z"
-  },
-  {
-   "id": "C2155/26",
-   "loc": "LLLL",
-   "name": "TLALIM",
-   "cat": "other",
-   "heb": "אזור ב-TLALIM בתוך ברדיוס 2 מייל ימי שמרכזו בנ.צ. 30°52'57\"N 34°45'52\"E סגור לכל הטיסות כולל טיסות ריסוס חקלאיות מהקרקע ועד 11,000 רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-14/10/2026 14:00 UTC עד 14/10/2026 15:15 UTC",
-   "raw": "C2155/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/110/3059N03446E002\nA) LLLL B) 2610141400 C) 2610141515\nE) AN AREA AT TLALIM WI 2NM RADIUS CENTERED ON PSN 305257N0344552E\nCLSD TO ALL FLT INCLUDING AGRICULTURE FLT FM GND\nUP TO 11,000FT AMSL.\nCTN ADZ.)",
-   "first_seen": "2026-10-13T19:52:05Z"
+   "name": "מרחב פעילות צניחה חופשית TEIMAN ACT מ-11",
+   "cat": "pje",
+   "heb": "מרחב פעילות צניחה חופשית TEIMAN ACT מ-11,000 רגל מעל פני הים. במקרה של חירום CLEAR THE AIRSPACE בתוך 5 דקות. מומלצת זהירות.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-16/10/2026 05:00 UTC עד 16/10/2026 11:00 UTC",
+   "raw": "C2159/26 NOTAMN\nQ) LLLL/QWPLW/IV/M  /W /000/110/3117N03443E004\nA) LLLL B) 2610160500 C) 2610161100\nE) PJE AIRSPACE TEIMAN ACT FM 11,000FT AMSL.\nIN CASE OF EMERG CLEAR THE AIRSPACE WI 5MIN.\nCTN ADZ.\nF) GND G) 11000FT AMSL)",
+   "first_seen": "2026-10-14T17:54:01Z"
   },
   {
    "id": "C2154/26",
@@ -202,15 +193,6 @@
    "first_seen": "2026-10-12T11:21:26Z"
   },
   {
-   "id": "A0823/26",
-   "loc": "LLBG",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "מסלול 08/26 סגור למעט מסלול INT, עקב עבודות.\nבתוקף: מ-14/10/2026 04:00 UTC עד 14/10/2026 11:00 UTC",
-   "raw": "A0823/26 NOTAMN\nQ) LLLL/QMRLC/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2610140400 C) 2610141100\nE) RWY 08/26 CLSD EXC RWY INT, DUE WIP.)",
-   "first_seen": "2026-10-12T11:21:26Z"
-  },
-  {
    "id": "A0820/26",
    "loc": "LLER",
    "name": "LNAV/VNAV OCA(H) ל-RNP מסלול 19 (MAP GRADIENT 2",
@@ -316,15 +298,6 @@
    "cat": "ad",
    "heb": "ILS מסלול 08 C/S BC תדר 110.900MHZ ON TEST, DO NOT USE.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-05/10/2026 07:07 UTC עד 31/10/2026 21:59 UTC",
    "raw": "A0802/26 NOTAMN\nQ) LLLL/QISCT/I /NBO/A /000/999/3201N03454E005\nA) LLBG B) 2610050707 C) 2610312159\nE) ILS RWY 08 C/S BC FREQ 110.900MHZ ON TEST, DO NOT USE.)",
-   "first_seen": "2026-10-05T10:53:10Z"
-  },
-  {
-   "id": "A0800/26",
-   "loc": "LLLL",
-   "name": "VOR/DME NAT תדר 112",
-   "cat": "ad",
-   "heb": "VOR/DME NAT תדר 112.400MHZ מושבת לצורך תחזוקה.\nבתוקף: מ-14/10/2026 07:00 UTC עד 14/10/2026 10:00 UTC",
-   "raw": "A0800/26 NOTAMN\nQ) LLLL/QNMAS/IV/BO /E /000/999/3220N03458E025\nA) LLLL B) 2610140700 C) 2610141000\nE) VOR/DME NAT FREQ 112.400MHZ WITHDRAWN FOR MAINT.)",
    "first_seen": "2026-10-05T10:53:10Z"
   },
   {
@@ -995,6 +968,34 @@
   }
  ],
  "removed": [
+  {
+   "id": "C2156/26",
+   "name": "נתיב CVFR סגור",
+   "cat": "other",
+   "heb": "נתיב CVFR סגור, התנועה תוסט דרך YRUHM BOKER-TLLIM-NEGEV. מסוקים נתיב סגור, התנועה תוסט דרך YRUHM HAGAY--TLLIM-NEGEV.\nבתוקף: מ-14/10/2026 14:00 UTC עד 14/10/2026 15:15 UTC",
+   "removed_at": "2026-10-14T17:54:01Z"
+  },
+  {
+   "id": "C2155/26",
+   "name": "TLALIM",
+   "cat": "other",
+   "heb": "אזור ב-TLALIM בתוך ברדיוס 2 מייל ימי שמרכזו בנ.צ. 30°52'57\"N 34°45'52\"E סגור לכל הטיסות כולל טיסות ריסוס חקלאיות מהקרקע ועד 11,000 רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-14/10/2026 14:00 UTC עד 14/10/2026 15:15 UTC",
+   "removed_at": "2026-10-14T17:54:01Z"
+  },
+  {
+   "id": "A0823/26",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "מסלול 08/26 סגור למעט מסלול INT, עקב עבודות.\nבתוקף: מ-14/10/2026 04:00 UTC עד 14/10/2026 11:00 UTC",
+   "removed_at": "2026-10-14T17:54:01Z"
+  },
+  {
+   "id": "A0800/26",
+   "name": "VOR/DME NAT תדר 112",
+   "cat": "ad",
+   "heb": "VOR/DME NAT תדר 112.400MHZ מושבת לצורך תחזוקה.\nבתוקף: מ-14/10/2026 07:00 UTC עד 14/10/2026 10:00 UTC",
+   "removed_at": "2026-10-14T17:54:01Z"
+  },
   {
    "id": "C2130/26",
    "name": "נתיב CVFR סגור עקב ILS ACT בתוך LLRD EIRON-ZMGID…",
@@ -2156,34 +2157,6 @@
    "cat": "ad",
    "heb": "AIRSTRIP LTD TO MAX 400רגל מעל פני הים DUE ILS ACT בתוך LLRD מומלצת זהירות.\nבתוקף: מ-24/09/2026 07:35 UTC עד 24/09/2026 08:00 UTC",
    "removed_at": "2026-09-24T08:49:26Z"
-  },
-  {
-   "id": "C1985/26",
-   "name": "ADERET",
-   "cat": "uas",
-   "heb": "פעילות כטב\"מ תתקיים ב ADERET. אזור בין נקודות הציון הבאות מהקרקע ועד 3,500רגל מעל פני הים סגור לכל הטיסות כולל טיסות ריסוס חקלאיות 31°41'07\"N 34°59'19\"E 31°38'46\"N 34°58'57\"E 31°38'04\"N 35°01'16\"E 31°39'31\"N 35°03'42\"E 31°41'31\"N 35°01'34\"E. מומלצת זהירות.\nבתוקף: מ-23/09/2026 06:00 UTC עד 23/09/2026 11:30 UTC\nלו\"ז: 0600-0800 0900-1130",
-   "removed_at": "2026-09-23T17:51:04Z"
-  },
-  {
-   "id": "A0768/26",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "RWY 03/21 סגור למעט RWY INT DUE WIP.\nבתוקף: מ-23/09/2026 05:00 UTC עד 23/09/2026 10:00 UTC",
-   "removed_at": "2026-09-23T17:51:04Z"
-  },
-  {
-   "id": "A0767/26",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "DVOR/DME BGN FREQ 113.500MHZ WITHDRAWN FOR MAINT.\nבתוקף: מ-23/09/2026 06:00 UTC עד 23/09/2026 10:00 UTC",
-   "removed_at": "2026-09-23T17:51:04Z"
-  },
-  {
-   "id": "C1973/26",
-   "name": "C1973/26",
-   "cat": "pje",
-   "heb": "PJE AIRSPACE METZADA ACT מ-8,000רגל מעל פני הים. OPR באישור מוקדם מבקרת התעופה ONLY.\nבתוקף: מ-24/09/2026 09:30 UTC עד 25/09/2026 11:00 UTC\nלו\"ז: 24 0930-1600, 25 0420-1100",
-   "removed_at": "2026-09-23T17:51:04Z"
   }
  ]
 }
