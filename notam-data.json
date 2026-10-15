@@ -1,8 +1,89 @@
 {
- "fetched_at": "14/10/2026 17:54 UTC",
- "fetched_iso": "2026-10-14T17:54:01Z",
- "count": 107,
+ "fetched_at": "15/10/2026 08:38 UTC",
+ "fetched_iso": "2026-10-15T08:38:51Z",
+ "count": 114,
  "notams": [
+  {
+   "id": "C2170/26",
+   "loc": "LLLL",
+   "name": "CVFR ו- מסוקים נתיב סגור ב-1",
+   "cat": "other",
+   "heb": "CVFR ו- מסוקים נתיב סגור ב-1,200 רגל, זמין BIDIRECTIONAL ב-800 רגל מעל פני הים בלבד TYONA-SUPER-NTAIM-BOVED-NAGID-YAVNE-ZASHD.\nבתוקף: מ-22/10/2026 04:15 UTC עד 22/10/2026 10:00 UTC\nלו\"ז: 0415-0530 0600-0650 0900-1000",
+   "raw": "C2170/26 NOTAMN\nQ) LLLL/QARLT/IV/NBO/E /008/012/3155N03446E008\nA) LLLL B) 2610220415 C) 2610221000\nD) 0415-0530 0600-0650 0900-1000\nE) CVFR AND HEL RTE CLSD AT 1,200FT,\nAVBL BIDIRECTIONAL AT 800FT AMSL ONLY\nTYONA-SUPER-NTAIM-BOVED-NAGID-YAVNE-ZASHD.)",
+   "first_seen": "2026-10-15T08:38:51Z"
+  },
+  {
+   "id": "C2169/26",
+   "loc": "LLLL",
+   "name": "CVFR ו- מסוקים נתיב סגור ב-1",
+   "cat": "other",
+   "heb": "CVFR ו- מסוקים נתיב סגור ב-1,200 רגל, זמין BIDIRECTIONAL ב-800 רגל מעל פני הים בלבד TYONA-SUPER-NTAIM-BOVED-NAGID-YAVNE-ZASHD.\nבתוקף: מ-21/10/2026 09:00 UTC עד 21/10/2026 18:00 UTC\nלו\"ז: 0900-1000 1700-1800",
+   "raw": "C2169/26 NOTAMN\nQ) LLLL/QARLT/IV/NBO/E /008/012/3155N03446E008\nA) LLLL B) 2610210900 C) 2610211800\nD) 0900-1000 1700-1800\nE) CVFR AND HEL RTE CLSD AT 1,200FT,\nAVBL BIDIRECTIONAL AT 800FT AMSL ONLY\nTYONA-SUPER-NTAIM-BOVED-NAGID-YAVNE-ZASHD.)",
+   "first_seen": "2026-10-15T08:38:51Z"
+  },
+  {
+   "id": "C2168/26",
+   "loc": "LLLL",
+   "name": "CVFR ו- מסוקים נתיב סגור ב-1",
+   "cat": "other",
+   "heb": "CVFR ו- מסוקים נתיב סגור ב-1,200 רגל, זמין BIDIRECTIONAL ב-800 רגל מעל פני הים בלבד TYONA-SUPER-NTAIM-BOVED-NAGID-YAVNE-ZASHD.\nבתוקף: מ-19/10/2026 18:00 UTC עד 19/10/2026 19:00 UTC",
+   "raw": "C2168/26 NOTAMN\nQ) LLLL/QARLT/IV/NBO/E /008/012/3155N03446E008\nA) LLLL B) 2610191800 C) 2610191900\nE) CVFR AND HEL RTE CLSD AT 1,200FT,\nAVBL BIDIRECTIONAL AT 800FT AMSL ONLY\nTYONA-SUPER-NTAIM-BOVED-NAGID-YAVNE-ZASHD.)",
+   "first_seen": "2026-10-15T08:38:51Z"
+  },
+  {
+   "id": "C2167/26",
+   "loc": "LLLL",
+   "name": "נתיב CVFR סגור KTORA-YAHEL-BMNUH-ZOFAR-ARAVA-ZOH…",
+   "cat": "other",
+   "heb": "נתיב CVFR סגור KTORA-YAHEL-BMNUH-ZOFAR-ARAVA-ZOHAR-MMORR-LLMZ-ZUKIM. MMORR-ARRAD-LLMZ. ARRAD-HATRU-ZOHAR. TARAD-ARRAD.\nבתוקף: מ-20/10/2026 17:30 UTC עד 20/10/2026 19:00 UTC",
+   "raw": "C2167/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /025/040/3051N03515E054\nA) LLLL B) 2610201730 C) 2610201900\nE) CVFR RTE CLSD\nKTORA-YAHEL-BMNUH-ZOFAR-ARAVA-ZOHAR-MMORR-LLMZ-ZUKIM.\nMMORR-ARRAD-LLMZ.\nARRAD-HATRU-ZOHAR.\nTARAD-ARRAD.)",
+   "first_seen": "2026-10-15T08:38:51Z"
+  },
+  {
+   "id": "C2166/26",
+   "loc": "LLLL",
+   "name": "ULTRALIGHT נתיב סגור עקב FIREFIGHTING ACT MOVIL-…",
+   "cat": "act",
+   "heb": "ULTRALIGHT נתיב סגור עקב FIREFIGHTING ACT MOVIL-KKANA.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-18/10/2026 06:00 UTC עד 18/10/2026 07:40 UTC",
+   "raw": "C2166/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /017/020/3246N03517E004\nA) LLLL B) 2610180600 C) 2610180740\nE) ULTRALIGHT RTE CLSD DUE FIREFIGHTING ACT\nMOVIL-KKANA.)",
+   "first_seen": "2026-10-15T08:38:51Z"
+  },
+  {
+   "id": "C2163/26",
+   "loc": "LLLL",
+   "name": "BEIT RIMON",
+   "cat": "other",
+   "heb": "FIREFIGHTING ACT תתקיים ב-BEIT RIMON. אזור בתוך ברדיוס 2 מייל ימי שמרכזו בנ.צ. 32°47'03\"N 35°19'02\"E סגור מהקרקע ועד 2,000 רגל מעל פני הים לכל הטיסות כולל טיסות ריסוס חקלאיות. מומלצת זהירות.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-18/10/2026 06:00 UTC עד 18/10/2026 07:40 UTC",
+   "raw": "C2163/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/020/3247N03519E002\nA) LLLL B) 2610180600 C) 2610180740\nE) FIREFIGHTING ACT WILL TAKE PLACE AT BEIT RIMON.\nAN AREA WI 2NM RADIUS CENTERED ON PSN 324703N0351902E\nCLSD FM GND UP TO 2,000FT AMSL TO ALL FLT INCLUDING\nAGRICULTURE FLT.\nCTN ADZ.)",
+   "first_seen": "2026-10-15T08:38:51Z"
+  },
+  {
+   "id": "C2162/26",
+   "loc": "LLEY",
+   "name": "עין יהב (LLEY)",
+   "cat": "ad",
+   "heb": "AIRSTRIP סגור לכל הטיסות.\nבתוקף: מ-20/10/2026 17:30 UTC עד 20/10/2026 19:00 UTC",
+   "raw": "C2162/26 NOTAMN\nQ) LLLL/QFALC/IV/NBO/A /000/999/3037N03512E005\nA) LLEY B) 2610201730 C) 2610201900\nE) AIRSTRIP CLSD TO ALL FLT.)",
+   "first_seen": "2026-10-15T08:38:51Z"
+  },
+  {
+   "id": "C2161/26",
+   "loc": "LLLL",
+   "name": "נתיב CVFR סגור ZOFAR-HRGVS",
+   "cat": "other",
+   "heb": "נתיב CVFR סגור ZOFAR-HRGVS.\nבתוקף: מ-20/10/2026 17:30 UTC עד 20/10/2026 19:00 UTC",
+   "raw": "C2161/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /035/045/3035N03504E007\nA) LLLL B) 2610201730 C) 2610201900\nE) CVFR RTE CLSD  ZOFAR-HRGVS.)",
+   "first_seen": "2026-10-15T08:38:51Z"
+  },
+  {
+   "id": "C2160/26",
+   "loc": "LLLL",
+   "name": "LLMG אזור אימונים ו- בועת זעירים NR B-EAST (BMGE…",
+   "cat": "act",
+   "heb": "LLMG אזור אימונים ו- בועת זעירים NR B-EAST (BMGEB) סגור לכל הטיסות כולל טיסות ריסוס חקלאיות מהקרקע ועד 3,000 רגל מעל פני הים עקב FIREFIGHTING ACT. מומלצת זהירות.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-18/10/2026 09:30 UTC עד 18/10/2026 12:30 UTC",
+   "raw": "C2160/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/030/3236N03530E008\nA) LLLL B) 2610180930 C) 2610181230\nE) LLMG TRG AREA AND ULTRALIGHT BUBBLE NR B-EAST (BMGEB)\nCLSD TO ALL FLT INCLUDING AGRICULTURE FLT\nFM GND UP TO 3,000FT AMSL DUE FIREFIGHTING ACT.\nCTN ADZ.)",
+   "first_seen": "2026-10-15T08:38:51Z"
+  },
   {
    "id": "C2159/26",
    "loc": "LLLL",
@@ -562,24 +643,6 @@
    "first_seen": "2026-09-02T17:06:44Z"
   },
   {
-   "id": "A0718/26",
-   "loc": "LLLL",
-   "name": "TRIGGER NOTAM",
-   "cat": "other",
-   "heb": "TRIGGER NOTAM - אין AIRAC AIP AMDT בתוקף מ-01 OCT 2026.\nבתוקף: מ-01/10/2026 00:01 UTC עד 14/10/2026 23:59 UTC",
-   "raw": "A0718/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /E /000/999/3123N03515E999\nA) LLLL B) 2610010001 C) 2610142359\nE) TRIGGER NOTAM - NIL AIRAC AIP AMDT WEF 01 OCT 2026.)",
-   "first_seen": "2026-09-02T08:12:16Z"
-  },
-  {
-   "id": "C1853/26",
-   "loc": "LLLL",
-   "name": "TRIGGER NOTAM",
-   "cat": "other",
-   "heb": "TRIGGER NOTAM - אין AIRAC AIP פנים-ארצי AMDT בתוקף מ-01 OCT 2026.\nבתוקף: מ-01/10/2026 00:01 UTC עד 14/10/2026 23:59 UTC",
-   "raw": "C1853/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /E /000/999/3211N03515E015\nA) LLLL B) 2610010001 C) 2610142359\nE) TRIGGER NOTAM - NIL AIRAC DOM AIP AMDT WEF 01 OCT 2026.)",
-   "first_seen": "2026-09-02T08:12:16Z"
-  },
-  {
    "id": "A0710/26",
    "loc": "LLLL",
    "name": "TEL AVIV CTL FLW תדר זמני לא זמין 123",
@@ -968,6 +1031,20 @@
   }
  ],
  "removed": [
+  {
+   "id": "A0718/26",
+   "name": "TRIGGER NOTAM",
+   "cat": "other",
+   "heb": "TRIGGER NOTAM - אין AIRAC AIP AMDT בתוקף מ-01 OCT 2026.\nבתוקף: מ-01/10/2026 00:01 UTC עד 14/10/2026 23:59 UTC",
+   "removed_at": "2026-10-15T08:38:51Z"
+  },
+  {
+   "id": "C1853/26",
+   "name": "TRIGGER NOTAM",
+   "cat": "other",
+   "heb": "TRIGGER NOTAM - אין AIRAC AIP פנים-ארצי AMDT בתוקף מ-01 OCT 2026.\nבתוקף: מ-01/10/2026 00:01 UTC עד 14/10/2026 23:59 UTC",
+   "removed_at": "2026-10-15T08:38:51Z"
+  },
   {
    "id": "C2156/26",
    "name": "נתיב CVFR סגור",
