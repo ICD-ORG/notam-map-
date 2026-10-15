@@ -142,7 +142,7 @@
     f.insertBefore(d,f.firstChild);
   }
 
-  Promise.all([fetch("data/pmt-zones.json?v=20261015").then(r=>r.json()),fetch("data/inpa-zones.json?v=20261015").then(r=>r.json())]).then(([pmt,inpa])=>{
+  Promise.all([fetch("data/pmt-zones.json?v=20261016").then(r=>r.json()),fetch("data/inpa-zones.json?v=20261015").then(r=>r.json())]).then(([pmt,inpa])=>{
     pmt.zones.forEach(z=>{z.src="pmt";z.edition=pmt.edition;add(z.cat,z);});
     inpa.sites.forEach(z=>{z.src="inpa";z.edition=inpa.edition;z.id=z.id;add(z.kind==="P"?"NP":"NR",z);});
     ready=true; update(); unmappedBox(pmt,inpa);
