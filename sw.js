@@ -1,5 +1,5 @@
 /* Service Worker — מפת נוט"מ: עבודה גם ללא רשת */
-const CACHE = "notam-v5";
+const CACHE = "notam-v6";
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(["./", "./manifest.json", "./pmt-layer.js"])));
