@@ -13,7 +13,7 @@
     NR:{label:"שמורות טבע (רט״ג)",color:"#3ddc84"},
     NP:{label:"גנים לאומיים (רט״ג)",color:"#4da3ff"}
   };
-  const VERSION="02.10.2026";
+  const VERSION="15.10.2026";
   const on=new Set(Object.keys(KEYS));
   const items=[];           // {key,z,bounds,center,dot,poly,buf,rings,bufRings,html}
   const counts={};
@@ -53,16 +53,18 @@
       const unit=z.maxunit==="AGL"?"מעל פני הקרקע":"";
       rows='<div class="pp-meta">גובה: מ־'+alt(z.min)+' ועד '+alt(z.max,unit)+(z.r?' · רדיוס '+(z.r>=1000?(z.r/1000).toFixed(z.r%1000?2:0).replace(/\.?0+$/,"")+' ק״מ':z.r+' מ׳'):'')+'</div>';
     }else{
-      rows='<div class="pp-meta">גובה מירבי: '+alt(z.max)+' מעפ״ש (מהקרקע)'+(key==="NR"?' · קו מקווקו = 150 מ׳ מגבול השמורה':'')+'</div>';
+      rows='<div class="pp-meta">סגור להטסה: מהקרקע עד '+fmt(z.max)+' רגל מעפ״ש'+(key==="NR"?' · קו מקווקו = 150 מ׳ מגבול השמורה (אינו מהפמ״ת)':'')+'</div>';
     }
-    const note=z.note?'<div class="pp-heb">'+esc(z.note)+'</div>':"";
+    const note=z.note?'<div class="pp-heb">'+(z.src==="inpa"?"":esc(z.note).replace(/\n/g,"<br>"))+'</div>':"";
     const nb=z.nb?'<div class="approx-note" style="margin-top:6px">'+esc(z.nb)+'</div>':"";
     let inpa="";
     if(z.src==="inpa"){
-      inpa='<details><summary>כללי רט״ג</summary><div class="pp-heb" style="border:0;padding-top:4px">'+
-        'בשמורות טבע: גובה מזערי 300 רגל מעפ״ש ו-150 מ׳ מגבול השמורה; בגנים לאומיים: 500 רגל מעפ״ש. '+
-        'אסור נחיתה והמראה בשמורות טבע ובגנים לאומיים. רט״ג מאפשרת אישור חריגים — '+
-        '<a href="https://www.parks.org.il/article/tisa/" target="_blank" rel="noopener" style="color:var(--cyan)">טופס בקשה לחריגה</a>.</div></details>';
+      const typ=z.note||(z.kind==="P"?"גן לאומי":"שמורת טבע");
+      inpa='<div class="pp-heb">'+esc(typ)+': סגירת רט״ג מהקרקע ועד '+fmt(z.max)+' רגל מעפ״ש.</div>'+
+        '<details><summary>לשון הפמ״ת על סגירות רט״ג</summary><div class="pp-heb" style="border:0;padding-top:4px">'+
+        'למען הסר ספק, הגובה המזערי הניתן לטיסה מעל הסגירות הינו הגובה המרבי המצוין לסגירה. רט״ג רשאית לאשר טיסה בסגירות אלו בהתאם לנהליה. במידה והתקבל אישור רט״ג לטיסה בסגירה, האישור ייחשב גם כאישור מטעם רת״א (לא נדרש גם אישור רת״א בנוסף לאישור רט״ג). האחריות לוודא אישור המחזיק בקרקע, טרם הנחיתה, הינה על הטייס. '+
+        'סגירות רט״ג בפרק זה הינן הסגירות האוויריות, וגבולותיהן, בחלק מהמקרים, אינם זהים לגבולות הקרקעיים של השמורות והגנים הלאומיים. '+
+        '<a href="https://www.parks.org.il/article/tisa/" target="_blank" rel="noopener" style="color:var(--cyan)">לבקשת אישור טיסה — אתר רט״ג (קישור חיצוני, אינו מהפמ״ת)</a>.</div></details>';
     }
     return '<div class="pp-bigclose" onclick="closeCurrentPopup()">✕ סגור</div>'+
       '<div class="pp-name">'+esc(z.name)+'</div>'+
@@ -125,15 +127,22 @@
   function unmappedBox(pmt,inpa){
     const f=document.querySelector("footer"); if(!f) return;
     const d=document.createElement("details"); d.style.cssText="max-width:900px;margin:0 auto 14px;text-align:right";
-    const li=a=>a.map(x=>'<span style="display:inline-block;margin:2px 10px 2px 0">'+esc(x.id)+' · '+esc(x.name)+'</span>').join("");
+    const li=a=>a.map(x=>'<span style="display:inline-block;margin:2px 10px 2px 0">'+esc(x.id)+' · '+esc(x.name)+(x.max?' ('+(x.max==="UNL"?"בכל גובה":fmt(x.max)+" רגל"+(x.datum==="AMSL"?" מעל פני הים":""))+')':'')+'</span>').join("");
+    const grp=a=>{ const g=new Map(); a.forEach(u=>{ const t=u.note||(u.kind==="P"?"גן לאומי":u.kind==="R"?"שמורת טבע":""); const k=fmt(u.max)+"|"+t; if(!g.has(k)) g.set(k,[]); g.get(k).push(u); });
+      return [...g.entries()].map(([k,arr])=>{ const [mx,t]=k.split("|"); return '<br><b>עד '+esc(mx)+' רגל מעפ״ש'+(t?' · '+esc(t):'')+':</b> '+arr.map(x=>esc(x.id)+' · '+esc(x.name)).join(" · "); }).join(""); };
     d.innerHTML='<summary style="cursor:pointer;color:var(--amber);font-weight:700">אזורים הרשומים בפמ״ת ואינם מוצגים במפה (אין להם קואורדינטות/גבולות בפמ״ת או בקובצי רט״ג)</summary>'+
-      '<div style="margin-top:8px;line-height:1.7"><b>שטחי אש — הקואורדינטות מפורטות בפרק ENR 5.1 ב-AIP ולא בפמ״ת:</b><br>'+li(pmt.nocoord)+
-      '<br><br><b>אתרי טבע (נספח ה\') ללא גבולות זמינים ('+inpa.unmapped.length+'):</b><br>'+li(inpa.unmapped)+
-      '<br><br><b>מגבלות קרבה לגבול (סעיף 4 בפמ״ת):</b> אין טיסה בכל גובה ומרחק של פחות מ-6 ק״מ מגבול רצועת עזה (LLP19), 3 ק״מ מגבול מצרים, 6 ק״מ מגבול סוריה ו-3 ק״מ מגבול לבנון; ניתן לטוס עד גבול ירדן; וצפונית לקו הרוחב 33°00\'00"N (קו שבי-ציון–ראש פינה) אלא באישור מתאים. קווי הגבול עצמם אינם מצוירים.</div>';
+      '<div style="margin-top:8px;line-height:1.7"><b>שטחי אש — בפמ״ת: קואורדינטות מפורטות בפרק ENR5.1 ב-AIP:</b><br>'+li(pmt.nocoord)+
+      '<br>אין לבצע טיסה בשטחי אש המיועדים לירי תלול מסלול כל עת שהאזורים פעילים (שטחי האש פעילים במהלך השבוע מיום ראשון/צאת החג בשעה 06:00 עד יום חמישי בשעה 21:00/בערב חג בשעה 14:00 או בהתאם למפורסם מעת לעת ב-NOTAM).'+
+      '<br><br><b>אתרי טבע (נספח ה\') ללא גבולות זמינים ('+inpa.unmapped.length+'):</b> גובה הסגירה המרבי (מעפ״ש) וסוג האזור כלשונם בנספח ה\' בפמ״ת.'+grp(inpa.unmapped)+
+      '<br><br><b>מגבלות קרבה לגבול (סעיף 4 בפמ״ת):</b> אין לטוס בכל גובה ובמרחק של פחות: מ-6 ק״מ מגבול רצועת עזה (ראה LLP19 בנספח א\'); מ-3 ק״מ מגבול מצרים; ניתן לטוס עד גבול ירדן; מ-6 ק״מ מגבול סוריה; מ-3 ק״מ מגבול לבנון. '+
+      'אין לבצע טיסה צפונית לקו הרוחב 33°00\'00"N (קו שבי-ציון ראש פינה) פרט לכלי טיס המקיים קשר אלחוט דיבור דו כיווני עם יחידת הנת"א הרלוונטית ומצויד במכשיר טרנספונדר תקין. איסור זה אינו חל על כטב"מ וטיסן. '+
+      'בקשות הנוגעות לכטב"מ/טיסן, יש לקבל אישור מסנכרון חיל אוויר בלבד ללא צורך באישור רת"א במייל הבא: sinhrun5@gmail.com. '+
+      'ההגבלות המפורטות בכל סעיף 4 אינן חלות על כלי טיס מאויש בטיסה חקלאית, כלי טיס בטיסת פינוי פצועים, כלי טיס בטיסת כיבוי אש, כלי טיס בטיסת פיזור פיתיונות ובטיסת פיזור זבובים. המרחקים מתעדכנים לעיתים קרובות בפרסומי המידע התעופתי הזמניים (NOTAM). קווי הגבול עצמם אינם מצוירים.'+
+      '<br><br><b>לפי פמ״ת א-09 סעיף 2(א):</b> "טיסה מעל אזור אסור, מוגבל או מסוכן לטיסה, או טיסה בקרבת הגבול, תבוצע בהתאם להגבלות הקבועות בנוהל א-17."</div>';
     f.insertBefore(d,f.firstChild);
   }
 
-  Promise.all([fetch("data/pmt-zones.json?v=20261002").then(r=>r.json()),fetch("data/inpa-zones.json?v=20261002").then(r=>r.json())]).then(([pmt,inpa])=>{
+  Promise.all([fetch("data/pmt-zones.json?v=20261015").then(r=>r.json()),fetch("data/inpa-zones.json?v=20261015").then(r=>r.json())]).then(([pmt,inpa])=>{
     pmt.zones.forEach(z=>{z.src="pmt";z.edition=pmt.edition;add(z.cat,z);});
     inpa.sites.forEach(z=>{z.src="inpa";z.edition=inpa.edition;z.id=z.id;add(z.kind==="P"?"NP":"NR",z);});
     ready=true; update(); unmappedBox(pmt,inpa);
