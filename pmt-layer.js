@@ -13,7 +13,7 @@
     NR:{label:"שמורות טבע (רט״ג)",color:"#3ddc84"},
     NP:{label:"גנים לאומיים (רט״ג)",color:"#4da3ff"}
   };
-  const VERSION="15.10.2026";
+  const VERSION="15.10.2026 · גרסה 2";
   const on=new Set(Object.keys(KEYS));
   const items=[];           // {key,z,bounds,center,dot,poly,buf,rings,bufRings,html}
   const counts={};
@@ -107,7 +107,7 @@
     if(!ready) return;
     const bar=document.getElementById("catBar"); if(!bar) return;
     const sep=document.createElement("div");
-    sep.className="pmt-sep"; sep.textContent="איסורים קבועים — פמ״ת א-17 ורשות הטבע והגנים (נקודה = אזור; התקרבו לראות את האזור המלא)";
+    sep.className="pmt-sep"; sep.textContent="איסורים קבועים — פמ״ת א-17 ורשות הטבע והגנים (נקודה = אזור; התקרבו לראות את האזור המלא) · גרסת נתונים "+VERSION;
     bar.appendChild(sep);
     Object.keys(KEYS).forEach(k=>{
       if(!counts[k]) return;
@@ -117,6 +117,17 @@
       b.onclick=()=>{ on.has(k)?on.delete(k):on.add(k); update(); b.className="catbtn"+(on.has(k)?" on":""); b.style.color=on.has(k)?c.color:""; };
       bar.appendChild(b);
     });
+    /* כיבוי / הדלקה של כל השכבות (נוט"מים + איסורים קבועים) */
+    const mk=(txt,fn)=>{ const b=document.createElement("div"); b.className="catbtn"; b.textContent=txt; b.onclick=fn; bar.appendChild(b); };
+    const setAll=onAll=>{
+      try{ activeCats=onAll?new Set(Object.keys(CATS)):new Set(); }catch(_){}
+      on.clear(); if(onAll) Object.keys(KEYS).forEach(k=>on.add(k));
+      update();
+      if(typeof renderCatBar==="function") renderCatBar();
+      if(typeof renderAll==="function") renderAll();
+    };
+    mk("🚫 כבה את כל השכבות",()=>setAll(false));
+    mk("👁 הדלק את כל השכבות",()=>setAll(true));
   }
   if(typeof renderCatBar==="function"){
     const orig=renderCatBar;
@@ -142,7 +153,7 @@
     f.insertBefore(d,f.firstChild);
   }
 
-  Promise.all([fetch("data/pmt-zones.json?v=20261019").then(r=>r.json()),fetch("data/inpa-zones.json?v=20261019").then(r=>r.json())]).then(([pmt,inpa])=>{
+  Promise.all([fetch("data/pmt-zones.json?v=20261020").then(r=>r.json()),fetch("data/inpa-zones.json?v=20261020").then(r=>r.json())]).then(([pmt,inpa])=>{
     pmt.zones.forEach(z=>{z.src="pmt";z.edition=pmt.edition;add(z.cat,z);});
     inpa.sites.forEach(z=>{z.src="inpa";z.edition=inpa.edition;z.id=z.id;add(z.kind==="P"?"NP":"NR",z);});
     ready=true; update(); unmappedBox(pmt,inpa);
