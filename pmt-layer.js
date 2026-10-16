@@ -12,11 +12,13 @@
     LLUC:{label:"משטרה ומג״ב (LLU)",color:"#ff73c0"},
     LLUM:{label:"בסיסים צבאיים (LLU)",color:"#d4146e"},
     LLUS:{label:"מתקנים ביטחוניים ותשתיות (LLU)",color:"#f04ca4"},
+    KTB:{label:"אזורי כטב״ם (פרק ב-09)",color:"#8a6bff"},
+    KBR:{label:"אזורי בראשית (פרק ב-09)",color:"#b79cff"},
     OBS:{label:"בלונים מעוגנים",color:"#c9a227"},
     NR:{label:"שמורות טבע (רט״ג)",color:"#3ddc84"},
     NP:{label:"גנים לאומיים (רט״ג)",color:"#4da3ff"}
   };
-  const VERSION="16.10.2026 · גרסה 4";
+  const VERSION="16.10.2026 · גרסה 5";
   const on=new Set(Object.keys(KEYS));
   const items=[];           // {key,z,bounds,center,dot,poly,buf,rings,bufRings,html}
   const counts={};
@@ -143,7 +145,7 @@
     f.insertBefore(d,f.firstChild);
   }
 
-  Promise.all([fetch("data/pmt-zones.json?v=20261022").then(r=>r.json()),fetch("data/inpa-zones.json?v=20261022").then(r=>r.json())]).then(([pmt,inpa])=>{
+  Promise.all([fetch("data/pmt-zones.json?v=20261023").then(r=>r.json()),fetch("data/inpa-zones.json?v=20261023").then(r=>r.json())]).then(([pmt,inpa])=>{
     UI=pmt.ui||UI; pmt.zones.forEach(z=>{z.src="pmt";z.edition=pmt.edition;add(z.cat,z);});
     inpa.sites.forEach(z=>{z.src="inpa";z.edition=inpa.edition;z.id=z.id;add(z.kind==="P"?"NP":"NR",z);});
     ready=true; update(); unmappedBox(pmt,inpa);
