@@ -1,0 +1,35 @@
+{
+ "at": "2026-10-16T23:42:21.106Z",
+ "checks": {
+  "tiles": {
+   "esri_world_imagery": {
+    "loaded": true,
+    "w": 256,
+    "h": 256,
+    "canvasReadable": true
+   },
+   "osm": {
+    "loaded": true,
+    "w": 256,
+    "h": 256,
+    "canvasReadable": true
+   }
+  },
+  "overpass": {
+   "https://overpass-api.de/api/interpreter": {
+    "error": "signal is aborted without reason"
+   },
+   "https://overpass.kumi.systems/api/interpreter": {
+    "status": 200,
+    "elements": 1
+   },
+   "https://overpass.private.coffee/api/interpreter": {
+    "error": "Failed to fetch"
+   }
+  },
+  "nominatim": {
+   "status": 200,
+   "name": "שביל יונתן, תל־אביב–יפו, הגפן, רמת גן, נפת תל אביב, מחוז תל אביב, 5253527, ישראל"
+  }
+ }
+}
