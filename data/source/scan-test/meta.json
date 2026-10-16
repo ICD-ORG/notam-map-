@@ -1,0 +1,22 @@
+{
+ "fetched_utc": "2026-10-16T23:25:41+00:00",
+ "lat": 32.099128,
+ "lon": 34.816617,
+ "near_r": 800,
+ "far_r": 15000,
+ "place_r": 3000,
+ "errors": [],
+ "near": {
+  "mirror": "https://overpass-api.de/api/interpreter",
+  "elements": 68,
+  "osm_base": "2026-10-16T23:24:28Z"
+ },
+ "far": {
+  "mirror": "https://overpass-api.de/api/interpreter",
+  "elements": 62,
+  "osm_base": "2026-10-16T23:25:21Z"
+ },
+ "reverse": {
+  "display_name": "שביל יונתן, תל־אביב–יפו, הגפן, רמת גן, נפת תל אביב, מחוז תל אביב, 5253527, ישראל"
+ }
+}
