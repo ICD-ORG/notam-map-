@@ -8,12 +8,15 @@
     LLP:{label:"אסורים (LLP)",color:"#ff3b30"},
     LLR:{label:"מוגבלים (LLR)",color:"#ff9500"},
     LLD:{label:"מסוכנים (LLD)",color:"#2ec4b6"},
-    LLU:{label:"אסורים לכטב״מ (LLU)",color:"#e8eefc"},
+    LLUP:{label:"בתי כלא (LLU)",color:"#ff2d95"},
+    LLUC:{label:"משטרה ומג״ב (LLU)",color:"#ff73c0"},
+    LLUM:{label:"בסיסים צבאיים (LLU)",color:"#d4146e"},
+    LLUS:{label:"מתקנים ביטחוניים ותשתיות (LLU)",color:"#f04ca4"},
     OBS:{label:"בלונים מעוגנים",color:"#c9a227"},
     NR:{label:"שמורות טבע (רט״ג)",color:"#3ddc84"},
     NP:{label:"גנים לאומיים (רט״ג)",color:"#4da3ff"}
   };
-  const VERSION="16.10.2026 · גרסה 3";
+  const VERSION="16.10.2026 · גרסה 4";
   const on=new Set(Object.keys(KEYS));
   const items=[];           // {key,z,bounds,center,dot,poly,buf,rings,bufRings,html}
   const counts={};
@@ -59,14 +62,17 @@
   function add(key,z){
     const rings=z.rings; if(!rings||!rings.length) return;
     const bounds=bboxOf(rings), center=z.c?L.latLng(z.c[0],z.c[1]):mainRing(rings), col=KEYS[key].color;
-    const it={key,z:zmin(bounds),bounds,center,rings,bufRings:z.buf||null,dot:null,poly:null,buf:null,html:popup(z,key),col};
+    const it={key,approx:!!z.approx,z:zmin(bounds),bounds,center,rings,bufRings:z.buf||null,dot:null,poly:null,buf:null,html:popup(z,key),col};
     const mob=window.matchMedia("(max-width:760px)").matches;
-    it.dot=L.circleMarker(center,{renderer:rend,radius:mob?8:6,color:"#0b1220",weight:1.5,fillColor:col,fillOpacity:.95});
+    const uu=/^LLU[PCMS]$/.test(key);
+    it.uu=uu;
+    it.dot=L.circleMarker(center,{renderer:rend,radius:uu?(mob?10:8):(mob?8:6),color:uu?"#2a0016":"#0b1220",weight:uu?2.4:1.5,fillColor:col,fillOpacity:uu?1:.95});
+    if(uu) it.dot.bindTooltip(z.name,{permanent:true,direction:"top",offset:[0,-9],className:"llu-lbl",opacity:1,interactive:false});
     it.dot.bindPopup(it.html);
     items.push(it); counts[key]=(counts[key]||0)+1;
   }
   function build(it){
-    it.poly=L.polygon(it.rings,{renderer:rend,color:it.col,weight:2,fillColor:it.col,fillOpacity:.16});
+    it.poly=L.polygon(it.rings,{renderer:rend,color:it.col,weight:it.uu?3.2:2,fillColor:it.col,fillOpacity:it.uu?.38:.16,dashArray:it.approx?"7 5":null});
     it.poly.bindPopup(it.html);
     if(it.bufRings) it.buf=L.polygon(it.bufRings,{renderer:rend,color:it.col,weight:1.4,dashArray:"5 5",fill:false,interactive:false});
   }
@@ -80,11 +86,12 @@
       if(!show){ rm(it.dot);rm(it.poly);rm(it.buf); return; }
       if(z>=it.z){
         if(!it.poly) build(it);
-        ad(it.poly);ad(it.buf);rm(it.dot);
-      }else{ ad(it.dot);rm(it.poly);rm(it.buf); }
+        ad(it.poly);ad(it.buf);rm(it.dot); if(it.uu) it.poly.bringToFront();
+      }else{ ad(it.dot);rm(it.poly);rm(it.buf); if(it.uu) it.dot.bringToFront(); }
     });
   }
   map.on("moveend zoomend",update);
+  { const zc=()=>map.getContainer().classList.toggle("zoom-llu",map.getZoom()>=10); map.on("zoomend",zc); zc(); }     // שמות LLU מזום 10
 
   /* ---- כפתורי סינון: מתווספים לסרגל הקטגוריות הקיים ---- */
   function pmtBar(){
@@ -130,13 +137,13 @@
       return row(u.id,ax?ax[1][1]:u.name,q+'<br><span class="mapnote">הערת המפה (אינה מהפמ״ת): בטבלת נספח ה׳ בפמ״ת אין מיקום או גבול לאתר זה, ובקובץ רט״ג שבמפה אין לו גבול — לכן הוא אינו מסומן במפה.</span><br><span class="mapnote">הערת המפה (אינה מהפמ״ת): את הגבול המדויק של סגירת רט״ג יש לבדוק באתר רט״ג.</span><div style="margin:8px 0"><a class="extbtn" href="https://www.parks.org.il/" target="_blank" rel="noopener noreferrer" aria-label="אתר רט״ג — נפתח בלשונית חדשה, המפה נשארת פתוחה">אתר רט״ג <span aria-hidden="true">↗</span></a></div>'+pmt.ui.inpaGen);
     }).join("");
     d.innerHTML='<summary style="cursor:pointer;color:var(--amber);font-weight:700">אזורים הרשומים בפמ״ת ואינם מוצגים במפה (אין להם שרטוט או גבולות)</summary>'+
-      '<div style="margin-top:8px;line-height:1.7"><b>אזורי LLR ללא שרטוט ('+pmt.nocoord.length+'):</b>'+nc+
-      '<br><b>אתרי טבע (נספח ה׳) ללא גבולות ('+inpa.unmapped.length+'):</b>'+un+
+      '<div style="margin-top:8px;line-height:1.7">'+(pmt.nocoord.length?'<b>אזורי LLR ללא שרטוט ('+pmt.nocoord.length+'):</b>'+nc+'<br>':'')+
+      '<b>אתרי טבע (נספח ה׳) ללא גבולות ('+inpa.unmapped.length+'):</b>'+un+
       '<br><b>מגבלות קרבה לגבול:</b><div class="pp-heb" style="white-space:normal;border:0">'+pmt.ui.sec4+'</div></div>';
     f.insertBefore(d,f.firstChild);
   }
 
-  Promise.all([fetch("data/pmt-zones.json?v=20261021").then(r=>r.json()),fetch("data/inpa-zones.json?v=20261021").then(r=>r.json())]).then(([pmt,inpa])=>{
+  Promise.all([fetch("data/pmt-zones.json?v=20261022").then(r=>r.json()),fetch("data/inpa-zones.json?v=20261022").then(r=>r.json())]).then(([pmt,inpa])=>{
     UI=pmt.ui||UI; pmt.zones.forEach(z=>{z.src="pmt";z.edition=pmt.edition;add(z.cat,z);});
     inpa.sites.forEach(z=>{z.src="inpa";z.edition=inpa.edition;z.id=z.id;add(z.kind==="P"?"NP":"NR",z);});
     ready=true; update(); unmappedBox(pmt,inpa);
