@@ -6,7 +6,6 @@ on:
     paths:
       - 'scripts/fetch_fixtures.mjs'
       - '.github/workflows/fixtures.yml'
-      - 'request/core.js'
   workflow_dispatch: {}
 
 permissions:
