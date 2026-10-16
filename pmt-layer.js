@@ -13,7 +13,7 @@
     NR:{label:"שמורות טבע (רט״ג)",color:"#3ddc84"},
     NP:{label:"גנים לאומיים (רט״ג)",color:"#4da3ff"}
   };
-  const VERSION="15.10.2026 · גרסה 2";
+  const VERSION="16.10.2026 · גרסה 3";
   const on=new Set(Object.keys(KEYS));
   const items=[];           // {key,z,bounds,center,dot,poly,buf,rings,bufRings,html}
   const counts={};
@@ -24,14 +24,6 @@
 
   const esc=s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
   const fmt=n=>/^\d+$/.test(n)?Number(n).toLocaleString("en-US"):n;
-  function alt(v,unit){
-    if(v==="UNL") return "ללא הגבלה";
-    if(v==="GND"||v==="SFC") return "קרקע (GND)";
-    if(v==="MSL/GND") return "קרקע/פני הים";
-    if(v==="MSL") return "פני הים";
-    if(/^\(-\)/.test(v)) return v.replace("(-)","מינוס ")+" רגל";
-    return fmt(v)+" רגל"+(unit?" "+unit:" מעל פני הים");
-  }
   function bboxOf(rings){
     let a=90,b=180,c=-90,d=-180;
     rings.forEach(r=>r.forEach(p=>{if(p[0]<a)a=p[0];if(p[0]>c)c=p[0];if(p[1]<b)b=p[1];if(p[1]>d)d=p[1];}));
@@ -46,31 +38,23 @@
     rings.forEach(r=>{const b=bboxOf([r]);const a=(b.getNorth()-b.getSouth())*(b.getEast()-b.getWest());if(a>ba){ba=a;best=r;}});
     return bboxOf([best]).getCenter();
   }
-  const GEN_HTML="<details class=\"gen\"><summary>כללי הפמ\"ת הכלליים (עמ' 1 ו-12)</summary><div><b>עמ' 1 (עדכון 3/24):</b> \"במקרה של סתירה בתחומי אזורים אסורים, מוגבלים ומסוכנים לטיסה בין פרסומי הפמ\"ת יהווה פרק א-17 (מלל) הפרסום הקובע.\" \"למען הסר ספק, הגובה המזערי הניתן לטיסה מעל הסגירות הינו הגובה המרבי המצוין לסגירה.\" \"בכל מקום שתשתית הנתיבים המפורסמת נמצאת בסתירה לסגירה – תשתית הנתיבים גוברת.\" \"הגבלות נוספות מתפרסמות בפרסומי המידע התעופתיים הזמניים (NOTAM, AIC).\" \"כל ההנחיות חלות גם על כטב\"מים (כל המשקלים) וטיסנים נהוגי רדיו בהתאם לתקנה 180ז.(ג) לתקנות הטיס (הפעלת כלי טיס וכללי טיסה), אלא אם צוין אחרת.\"<br><b>סעיף 5 — בקשה ואישור חריגה מן הכלל (עמ' 12, עדכון 1/26):</b> \"בקשה לטיסה החורגת מהמגבלות המפורטות בסעיפים 1 ו-1א תופנה לאגף פיקוח אווירי ברת\"א לדוא\"ל: caai-charigot@mot.gov.il. הערה: כאשר מצוין גורם יצירת קשר לסגירה מסוימת, במידה והתקבל אישור גורם זה לטיסה בסגירה, האישור מייתר את הצורך לפנות לרת\"א (לא נדרש גם אישור רת\"א בנוסף לאישור גורם זה). א. בקשה לטיסה החורגת ממגבלה בסעיף 4 תופנה לאגף פיקוח אווירי בדוא\"ל לעיל, בהתאם לנוהל רת\"א לאישור טיסות חריגות ביטחוניות, ולטופס הבקשה הנלווה לו (קישור לטפסים באתר רת\"א). ב. טיסות מסחריות באזורים LLP171/172/173/13/18 פטורות מבקשת אישור קודם מרת\"א. ג. אישור שניתן לביצוע טיסה החורגת מהמגבלות המפורטות יועבר למודיעין טיס ואינו פוטר מהגשת תוכנית טיסה ואישורה כמוגדר בפרק א-11.\"<br><b>הערת שוליים (*) בעמ' 12 (הכוכבית מסומנת ליד נספחים ב', ג' ו-ד'):</b> \"*הקואורדינאטות ברשת WGS-84 ובפורמט מעלות, דקות, שניות דצימליות, הגובה ניתן ברגל מעל פני הים (QNH).\"</div></details>";
-  const INPA_RULES="למען הסר ספק, הגובה המזערי הניתן לטיסה מעל הסגירות הינו הגובה המרבי המצוין לסגירה. … רט״ג רשאית לאשר טיסה בסגירות אלו בהתאם לנהליה. במידה והתקבל אישור רט״ג לטיסה בסגירה, האישור ייחשב גם כאישור מטעם רת״א (לא נדרש גם אישור רת״א בנוסף לאישור רט״ג). איסור הטיסה בסגירות רט״ג (בהיבט האווירי) אינו חל על מצנחי רחיפה לא ממונעים, גילשונים ובלונים. יש לשמור על מרחק אנכי של 100 מטר ומרחק אופקי של 600 מטר ממצוקים כפי שמפורטים באתר רט״ג. סגירות רט״ג בפרק זה הינן הסגירות האוויריות, וגבולותיהן, בחלק מהמקרים, אינם זהים לגבולות הקרקעיים של השמורות והגנים הלאומיים. הגבולות הקרקעיים של הגנים הלאומיים ושמורות הטבע מתפרסמים באופן מדויק רק בפרסומי רט״ג (רשומות, אתר רט״ג, אתר govmap ועוד). האחריות לוודא אישור המחזיק בקרקע, טרם הנחיתה, הינה על הטייס.";
+  let UI={gens:{},inpaGen:"",stamp:{},annexE:{t:"",h:[]},sec4:""};
+  const pg=p=>"עמ' "+p+(UI.stamp[p]?", עדכון "+UI.stamp[p]:"");
   function popup(z,key){
-    const k=KEYS[key];
-    let rows="";
+    const k=KEYS[key], W='style="white-space:normal"', W0='style="white-space:normal;border:0;padding-top:4px"';
+    let body="";
     if(z.src==="pmt"){
-      const unit=z.maxunit==="AGL"?"מעל פני הקרקע":"";
-      rows='<div class="pp-meta">גובה: מ־'+alt(z.min)+' ועד '+alt(z.max,unit)+(z.r?' · רדיוס '+(z.r>=1000?(z.r/1000).toFixed(z.r%1000?2:0).replace(/\.?0+$/,"")+' ק״מ':z.r+' מ׳'):'')+'</div>';
+      body='<div class="pp-heb" '+W+'>'+(z.note||"")+'</div>'+(UI.gens[z.gen]?'<div class="pp-heb" '+W0+'>'+UI.gens[z.gen]+'</div>':"");
     }else{
-      rows='<div class="pp-meta">סגור להטסה: מהקרקע עד '+fmt(z.max)+' רגל מעפ״ש'+(key==="NR"?' · קו מקווקו = 150 מ׳ מגבול השמורה (אינו מהפמ״ת)':'')+'</div>';
-    }
-    const note=z.note?'<div class="pp-heb">'+(z.src==="inpa"?"":esc(z.note).replace(/\n/g,"<br>"))+'</div>':"";
-    const nb=z.nb?'<div class="approx-note" style="margin-top:6px">'+esc(z.nb)+'</div>':"";
-    let inpa="";
-    if(z.src==="inpa"){
-      const typ=z.note||(z.kind==="P"?"גן לאומי":"שמורת טבע");
-      inpa='<div class="pp-heb">'+esc(typ)+': סגירת רט״ג מהקרקע ועד '+fmt(z.max)+' רגל מעפ״ש.</div>'+
-        '<details><summary>לשון הפמ״ת על סגירות רט״ג</summary><div class="pp-heb" style="border:0;padding-top:4px">'+
-        INPA_RULES+' '+'<a href="https://www.parks.org.il/article/tisa/" target="_blank" rel="noopener" style="color:var(--cyan)">לבקשת אישור טיסה — אתר רט״ג (קישור חיצוני, אינו מהפמ״ת)</a>.</div></details>';
+      const ax=z.ax;
+      const q=ax?esc(UI.annexE.t)+" ("+pg(ax[0])+"): <i>"+UI.annexE.h.map((h,i)=>esc(h)+": "+esc(ax[1][i])).join(" · ")+"</i>":"";
+      body='<div class="pp-heb" '+W+'>'+q+(z.nb?'<br><span class="mapnote">הערת המפה (אינה מהפמ״ת): '+esc(z.nb)+'</span>':"")+'</div>'+
+        '<div class="pp-heb" '+W0+'>'+UI.inpaGen+'</div>'+
+        '<div class="pp-heb" '+W0+'><span class="mapnote">הערת המפה (אינה מהפמ״ת): גבולות השמורה על המפה: קובץ רשות הטבע והגנים מ-11/01/2026.</span>'+(key==="NR"?' <span class="mapnote">הערת המפה (אינה מהפמ״ת): הקו המקווקו סביב שמורה — רצועת 150 מ׳ מגבול השמורה.</span>':"")+'</div>';
     }
     return '<div class="pp-bigclose" onclick="closeCurrentPopup()">✕ סגור</div>'+
       '<div class="pp-name">'+esc(z.name)+'</div>'+
-      '<span class="pp-id" style="color:'+k.color+'">'+esc(z.id)+'</span> <span class="badge" style="color:'+k.color+';border-color:currentColor">'+esc(k.label)+'</span>'+
-      rows+note+nb+inpa+(z.src==="pmt"&&z.cat!=="OBS"?'<div class="pp-heb" style="border:0;padding-top:4px">'+GEN_HTML+'</div>':"")+
-      '<div class="pp-meta" style="margin-top:8px">מקור: '+esc(z.edition)+'</div>';
+      '<span class="pp-id" style="color:'+k.color+'">'+esc(z.id)+'</span> <span class="badge" style="color:'+k.color+';border-color:currentColor">'+esc(k.label)+'</span>'+body;
   }
   function add(key,z){
     const rings=z.rings; if(!rings||!rings.length) return;
@@ -134,27 +118,26 @@
     renderCatBar=function(){ orig.apply(this,arguments); pmtBar(); };
   }
 
-  /* ---- רשימה: אזורים שמופיעים בפמ״ת ללא קואורדינטות ---- */
+  /* ---- רשימה: אזורים שמופיעים בפמ״ת ללא שרטוט במפה — כלשון הפמ״ת ---- */
   function unmappedBox(pmt,inpa){
     const f=document.querySelector("footer"); if(!f) return;
     const d=document.createElement("details"); d.style.cssText="max-width:900px;margin:0 auto 14px;text-align:right";
-    const li=a=>a.map(x=>'<span style="display:inline-block;margin:2px 10px 2px 0">'+esc(x.id)+' · '+esc(x.name)+(x.max?' ('+(x.max==="UNL"?"בכל גובה":fmt(x.max)+" רגל"+(x.datum==="AMSL"?" מעל פני הים":""))+')':'')+'</span>').join("");
-    const grp=a=>{ const g=new Map(); a.forEach(u=>{ const t=u.note||(u.kind==="P"?"גן לאומי":u.kind==="R"?"שמורת טבע":""); const k=fmt(u.max)+"|"+t; if(!g.has(k)) g.set(k,[]); g.get(k).push(u); });
-      return [...g.entries()].map(([k,arr])=>{ const [mx,t]=k.split("|"); return '<br><b>עד '+esc(mx)+' רגל מעפ״ש'+(t?' · '+esc(t):'')+':</b> '+arr.map(x=>esc(x.id)+' · '+esc(x.name)).join(" · "); }).join(""); };
-    d.innerHTML='<summary style="cursor:pointer;color:var(--amber);font-weight:700">אזורים הרשומים בפמ״ת ואינם מוצגים במפה (אין להם קואורדינטות/גבולות בפמ״ת או בקובצי רט״ג)</summary>'+
-      '<div style="margin-top:8px;line-height:1.7"><b>שטחי אש — בפמ״ת: קואורדינטות מפורטות בפרק ENR5.1 ב-AIP:</b><br>'+li(pmt.nocoord)+
-      '<br>אין לבצע טיסה בשטחי אש המיועדים לירי תלול מסלול כל עת שהאזורים פעילים (שטחי האש פעילים במהלך השבוע מיום ראשון/צאת החג בשעה 06:00 עד יום חמישי בשעה 21:00/בערב חג בשעה 14:00 או בהתאם למפורסם מעת לעת ב-NOTAM).'+
-      '<br><br><b>אתרי טבע (נספח ה\') ללא גבולות זמינים ('+inpa.unmapped.length+'):</b> גובה הסגירה המרבי (מעפ״ש) וסוג האזור כלשונם בנספח ה\' בפמ״ת.'+grp(inpa.unmapped)+
-      '<br><br><b>מגבלות קרבה לגבול (סעיף 4 בפמ״ת):</b> אין לטוס בכל גובה ובמרחק של פחות: מ-6 ק״מ מגבול רצועת עזה (ראה LLP19 בנספח א\'); מ-3 ק״מ מגבול מצרים; ניתן לטוס עד גבול ירדן; מ-6 ק״מ מגבול סוריה; מ-3 ק״מ מגבול לבנון. '+
-      'אין לבצע טיסה צפונית לקו הרוחב 33°00\'00"N (קו שבי-ציון ראש פינה) פרט לכלי טיס המקיים קשר אלחוט דיבור דו כיווני עם יחידת הנת"א הרלוונטית ומצויד במכשיר טרנספונדר תקין. איסור זה אינו חל על כטב"מ וטיסן. '+
-      'בקשות הנוגעות לכטב"מ/טיסן, יש לקבל אישור מסנכרון חיל אוויר בלבד ללא צורך באישור רת"א במייל הבא: sinhrun5@gmail.com. '+
-      'ההגבלות המפורטות בכל סעיף 4 אינן חלות על כלי טיס מאויש בטיסה חקלאית, כלי טיס בטיסת פינוי פצועים, כלי טיס בטיסת כיבוי אש, כלי טיס בטיסת פיזור פיתיונות ובטיסת פיזור זבובים. המרחקים מתעדכנים לעיתים קרובות בפרסומי המידע התעופתי הזמניים (NOTAM). קווי הגבול עצמם אינם מצוירים.'+
-      '<br><br><b>לפי פמ״ת ב-09 סעיף 2(א) (עדכון 2/21):</b> "טיסה מעל אזור אסור, מוגבל או מסוכן לטיסה, או טיסה בקרבת הגבול, תבוצע בהתאם להגבלות הקבועות בנוהל א-17."</div>';
+    const row=(code,name,html)=>'<details style="margin:4px 0"><summary style="cursor:pointer"><span dir="ltr">'+esc(code)+'</span> · '+esc(name)+'</summary><div class="pp-heb" style="white-space:normal;border:0">'+html+'</div></details>';
+    const nc=pmt.nocoord.map(b=>row(b.id,b.name,b.html)).join("");
+    const E=pmt.ui.annexE;
+    const un=inpa.unmapped.slice().sort((a,b)=>String(a.id).localeCompare(String(b.id))).map(u=>{
+      const ax=u.ax; const q=ax?esc(E.t)+" ("+pg(ax[0])+"): <i>"+E.h.map((h,i)=>esc(h)+": "+esc(ax[1][i])).join(" · ")+"</i>":"";
+      return row(u.id,ax?ax[1][1]:u.name,q+'<br><span class="mapnote">הערת המפה (אינה מהפמ״ת): בטבלת נספח ה׳ בפמ״ת אין מיקום או גבול לאתר זה, ובקובץ רט״ג שבמפה אין לו גבול — לכן הוא אינו מסומן במפה.</span><br><span class="mapnote">הערת המפה (אינה מהפמ״ת): את הגבול המדויק של סגירת רט״ג יש לבדוק באתר רט״ג.</span><div style="margin:8px 0"><a class="extbtn" href="https://www.parks.org.il/" target="_blank" rel="noopener noreferrer" aria-label="אתר רט״ג — נפתח בלשונית חדשה, המפה נשארת פתוחה">אתר רט״ג <span aria-hidden="true">↗</span></a></div>'+pmt.ui.inpaGen);
+    }).join("");
+    d.innerHTML='<summary style="cursor:pointer;color:var(--amber);font-weight:700">אזורים הרשומים בפמ״ת ואינם מוצגים במפה (אין להם שרטוט או גבולות)</summary>'+
+      '<div style="margin-top:8px;line-height:1.7"><b>אזורי LLR ללא שרטוט ('+pmt.nocoord.length+'):</b>'+nc+
+      '<br><b>אתרי טבע (נספח ה׳) ללא גבולות ('+inpa.unmapped.length+'):</b>'+un+
+      '<br><b>מגבלות קרבה לגבול:</b><div class="pp-heb" style="white-space:normal;border:0">'+pmt.ui.sec4+'</div></div>';
     f.insertBefore(d,f.firstChild);
   }
 
-  Promise.all([fetch("data/pmt-zones.json?v=20261020").then(r=>r.json()),fetch("data/inpa-zones.json?v=20261020").then(r=>r.json())]).then(([pmt,inpa])=>{
-    pmt.zones.forEach(z=>{z.src="pmt";z.edition=pmt.edition;add(z.cat,z);});
+  Promise.all([fetch("data/pmt-zones.json?v=20261021").then(r=>r.json()),fetch("data/inpa-zones.json?v=20261021").then(r=>r.json())]).then(([pmt,inpa])=>{
+    UI=pmt.ui||UI; pmt.zones.forEach(z=>{z.src="pmt";z.edition=pmt.edition;add(z.cat,z);});
     inpa.sites.forEach(z=>{z.src="inpa";z.edition=inpa.edition;z.id=z.id;add(z.kind==="P"?"NP":"NR",z);});
     ready=true; update(); unmappedBox(pmt,inpa);
     if(typeof renderCatBar==="function") renderCatBar();
