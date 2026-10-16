@@ -24,7 +24,10 @@
     "DJI Agras T100"
   ],
   "mail": {
-    "to": ["notamoffice@iaa.gov.il", "nofm@iaa.gov.il"],
+    "to": [
+      "notamoffice@iaa.gov.il",
+      "nofm@iaa.gov.il"
+    ],
     "fpl": "fpl@iaa.gov.il"
   },
   "defaults": {
@@ -34,18 +37,28 @@
   },
   "thresholds": {
     "near_zone_m": 1000,
-    "airfield_near_m": 5000,
+    "airfield_near_m": 1000,
     "airfield_scan_m": 15000,
     "place_scan_m": 3000,
     "border_scan_m": 7000,
     "notam_max_age_h": 72,
     "notam_warn_age_h": 24,
-    "min_working_days": 7
+    "min_working_days": 7,
+    "agri_near_m": 3000
   },
   "borders": {
-    "EG": { "name": "מצרים", "km": 3 },
-    "SY": { "name": "סוריה", "km": 6 },
-    "LB": { "name": "לבנון", "km": 3 }
+    "EG": {
+      "name": "מצרים",
+      "km": 3
+    },
+    "SY": {
+      "name": "סוריה",
+      "km": 6
+    },
+    "LB": {
+      "name": "לבנון",
+      "km": 3
+    }
   },
   "sources": {
     "a17": "פמ״ת פנים ארצי א-17",

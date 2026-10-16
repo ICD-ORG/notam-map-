@@ -78,6 +78,10 @@
     if (/^\(-\)/.test(v)) return v.replace("(-)", "מינוס ") + " רגל";
     return (/^\d+$/.test(v) ? fmtInt(v) : v) + " רגל" + (unit ? " " + unit : " מעל פני הים");
   }
+  function altRange(z) { // "מהקרקע (GND) ועד 1,000 רגל מעל פני הקרקע"
+    const lo = z.min === "GND" || z.min === "SFC" ? "מהקרקע (GND)" : z.min === "MSL" ? "מפני הים" : z.min === "MSL/GND" ? "מהקרקע/פני הים" : "מ־" + altText(z.min);
+    return lo + " ועד " + altText(z.max, z.maxunit === "AGL" ? "מעל פני הקרקע" : "");
+  }
   const ZONE_KIND = {
     LLP: "אזור אסור לטיסה (LLP)", LLR: "אזור מוגבל לטיסה (LLR)", LLD: "אזור מסוכן לטיסה (LLD)",
     LLU: "אזור אסור לטיסת כטב״ם וטיסן (LLU)", OBS: "בלון מעוגן (OBS)"
@@ -125,34 +129,48 @@
     return { near, far, ext, nearR };
   }
 
-  const MIRRORS = ["https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter", "https://overpass.private.coffee/api/interpreter"];
-  // fetchFn: fetch או מימוש תואם. מחזיר {data, mirror}; זורק שגיאה אם כל השרתים נכשלו.
+  const MIRRORS = ["https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter", "https://overpass.openstreetmap.fr/api/interpreter", "https://overpass.private.coffee/api/interpreter"];
+  // שולח את השאילתה לשרת הראשון, ואם לא ענה תוך staggerMs (או נכשל) מוסיף עוד שרת במקביל; התשובה התקינה הראשונה מנצחת.
+  // fetchFn: fetch או מימוש תואם. מחזיר {data, mirror}; זורק שגיאה אם כל השרתים נכשלו בכל הסבבים.
   async function overpass(query, opts) {
     opts = opts || {};
-    const f = opts.fetch || fetch, mirrors = opts.mirrors || MIRRORS, tries = opts.tries || 2;
+    const f = opts.fetch || fetch, mirrors = opts.mirrors || MIRRORS, rounds = opts.rounds || 2;
+    const stagger = opts.staggerMs == null ? 8000 : opts.staggerMs, timeoutMs = opts.timeoutMs || 60000;
     const wait = opts.wait || (ms => new Promise(r => setTimeout(r, ms)));
     const log = opts.log || (() => {});
-    let last = "";
-    for (const m of mirrors) {
-      for (let k = 0; k < tries; k++) {
+    let lastErr = "";
+    for (let round = 0; round < rounds; round++) {
+      const ctls = [];
+      const one = async (m) => {
+        const ctl = typeof AbortController !== "undefined" ? new AbortController() : null; if (ctl) ctls.push(ctl);
+        const tm = ctl ? setTimeout(() => ctl.abort(), timeoutMs) : null;
         try {
-          const ctl = typeof AbortController !== "undefined" ? new AbortController() : null;
-          const tm = ctl ? setTimeout(() => ctl.abort(), opts.timeoutMs || 90000) : null;
           const r = await f(m, { method: "POST", body: "data=" + encodeURIComponent(query), headers: { "Content-Type": "application/x-www-form-urlencoded" }, signal: ctl ? ctl.signal : undefined });
-          if (tm) clearTimeout(tm);
           if (!r.ok) throw new Error("HTTP " + r.status);
           const d = await r.json();
           if (!d || !Array.isArray(d.elements)) throw new Error("תשובה בלי elements");
-          if (d.remark && /error|timed out|out of memory/i.test(d.remark) && !d.elements.length) throw new Error("Overpass: " + d.remark);
+          if (d.remark && /error|timed out|out of memory/i.test(d.remark)) throw new Error("Overpass: " + d.remark);
           return { data: d, mirror: m };
         } catch (e) {
-          last = m + ": " + (e && e.message ? e.message : e);
-          log("נכשל — " + last);
-          await wait(k === 0 ? 3000 : 8000);
-        }
-      }
+          lastErr = m + ": " + (e && e.message ? e.message : e); log("נכשל — " + lastErr);
+          throw e;
+        } finally { if (tm) clearTimeout(tm); }
+      };
+      const winner = await new Promise(resolve => {
+        let pending = 0, started = 0, done = false;
+        const startNext = () => {
+          if (done || started >= mirrors.length) return;
+          const m = mirrors[started++]; pending++;
+          one(m).then(v => { if (!done) { done = true; resolve(v); } }, () => { pending--; if (!done) { if (started < mirrors.length) startNext(); else if (pending === 0) { done = true; resolve(null); } } });
+          if (started < mirrors.length) setTimeout(() => { if (!done) startNext(); }, stagger);
+        };
+        startNext();
+      });
+      ctls.forEach(c => { try { c.abort(); } catch (e) { /* כבר הסתיים */ } });
+      if (winner) return winner;
+      await wait(4000 * (round + 1));
     }
-    throw new Error("כל שרתי Overpass נכשלו. אחרון: " + last);
+    throw new Error("כל שרתי Overpass נכשלו. אחרון: " + lastErr);
   }
 
   /* ================= ניתוח אלמנטים של OSM ================= */
@@ -272,8 +290,7 @@
       const rec = { id: z.id, name: z.name, cat: z.cat || src, src, kind: kindLabel, d: r.d, edge: Math.max(0, r.d - R), p: r.p, ll: P.ll(r.p[0], r.p[1]), alt: altTxt, note: z.note || "", z };
       (r.d <= R ? out.inside : out.near).push(rec);
     };
-    (data.zones || []).forEach(z => push(z, "a17", ZONE_KIND[z.cat] || z.cat,
-      "מ־" + altText(z.min) + " ועד " + altText(z.max, z.maxunit === "AGL" ? "מעל פני הקרקע" : "")));
+    (data.zones || []).forEach(z => push(z, "a17", ZONE_KIND[z.cat] || z.cat, altRange(z)));
     ((data.inpa && data.inpa.sites) || []).forEach(s =>
       push({ id: s.id, name: s.name, cat: s.kind === "P" ? "NP" : "NR", rings: s.rings, note: s.note, max: s.max }, "inpa", s.kind === "P" ? "גן לאומי (רט״ג)" : "שמורת טבע (רט״ג)",
         "סגור להטסה מהקרקע ועד " + fmtInt(s.max) + " רגל מעפ״ש"));
@@ -447,27 +464,67 @@
     if (q) return { kind: "circle", c: [(+q[1] + +q[2] / 60) * (q[3] === "S" ? -1 : 1), (+q[4] + +q[5] / 60) * (q[6] === "W" ? -1 : 1)], r: +q[7] * NM, src: "Q" };
     return null;
   }
-  // נוטמים בתוקף בחלון הזמן שחופפים למעגל (מרכז P, רדיוס R)
-  function analyzeNotams(P, R, notams, winFromMs, winToMs) {
-    const hits = [], skipped = [];
+  function notamQ(raw) {
+    const m = /Q\)\s*[A-Z]{4}\/(Q[A-Z]{4})\/[^/]*\/[^/]*\/[^/]*\/(\d{3})\/(\d{3})\//.exec(raw);
+    return m ? { code: m[1], lowerFt: +m[2] * 100, upperFt: +m[3] * 100 } : null;
+  }
+  const TERRAIN_MAX_FT = 9500; // הנקודה הגבוהה בישראל (החרמון) כ-9,230 רגל
+  // נוטמים בתוקף בחלון הזמן שחופפים למעגל (מרכז P, רדיוס R). topFt = הגובה המבוקש ברגל.
+  // מוחרגים (ונספרים בדף הבדיקות): רשימת נוטמים (CHECKLIST), ביטולים, ונוטמים שגבולם התחתון גבוה מהגובה המבוקש גם מעל הקרקע הגבוהה בישראל.
+  function analyzeNotams(P, R, notams, winFromMs, winToMs, topFt) {
+    const hits = [], skipped = [], excluded = [];
     (notams || []).forEach(n => {
-      const w = notamWindow(n.raw || "");
-      if (!w) { skipped.push(n.id + " (אין תאריכי תוקף)"); return; }
+      const raw = n.raw || "", w = notamWindow(raw);
+      if (!w) { skipped.push(n.id); return; }
       if (!(w.from <= winToMs && w.to >= winFromMs)) return;
-      const g = notamGeometry(n.raw);
-      if (!g) { hits.push({ id: n.id, heb: n.heb, window: w, geometry: null, relation: "no-geometry" }); return; }
-      let d;
-      if (g.kind === "circle") { const c = P.xy(g.c[0], g.c[1]); d = Math.max(0, Math.hypot(c[0], c[1]) - g.r); }
-      else d = polyNearest(g.pts.map(p => P.xy(p[0], p[1])), true).d;
-      if (d <= R) hits.push({ id: n.id, heb: n.heb, name: n.name, raw: n.raw, window: w, geometry: g, d, relation: "overlap" });
+      const q = notamQ(raw);
+      if (/NOTAMC\b/.test(raw)) { excluded.push({ id: n.id, reason: "cancel" }); return; }
+      if (q && q.code === "QKKKK") { excluded.push({ id: n.id, reason: "checklist" }); return; }
+      const g = notamGeometry(raw);
+      let d = 0;
+      if (g) {
+        if (g.kind === "circle") { const c = P.xy(g.c[0], g.c[1]); d = Math.max(0, Math.hypot(c[0], c[1]) - g.r); }
+        else d = polyNearest(g.pts.map(p => P.xy(p[0], p[1])), true).d;
+        if (d > R) return;
+      }
+      let lowerFt = q ? q.lowerFt : null;
+      if (/E\)\s*ATS\s+RTE/i.test(raw)) { // נתיב ATS: הגובה שבטקסט (למשל BTN 11,000-16,000FT) מצמצם את התחולה
+        const lows = []; let mm; const rr = /(\d{1,2},?\d{3})\s*-\s*(\d{1,2},?\d{3})\s*FT/gi;
+        while ((mm = rr.exec(raw)) !== null) lows.push(parseInt(mm[1].replace(",", ""), 10));
+        if (lows.length) lowerFt = Math.max(lowerFt == null ? 0 : lowerFt, Math.min(...lows));
+      }
+      if (lowerFt != null && topFt != null && lowerFt >= topFt + TERRAIN_MAX_FT) { excluded.push({ id: n.id, reason: "above", lowerFt }); return; }
+      hits.push({ id: n.id, heb: n.heb, name: n.name, raw, window: w, geometry: g, d, q, relation: g ? "overlap" : "no-geometry" });
     });
-    return { hits, skipped };
+    return { hits, skipped, excluded };
+  }
+
+  /* ================= קלט נקודה ================= */
+  // מקבל "32.099128, 34.816617" / "32.099128 34.816617" / DMS בפורמט 32°05'56.86"N 34°48'59.82"E / קישור Google Maps (@lat,lon)
+  function parseCoordInput(str) {
+    if (!str) return null;
+    str = String(str).trim();
+    const at = /@(-?\d+\.\d+),(-?\d+\.\d+)/.exec(str);
+    if (at) return fix(+at[1], +at[2]);
+    const dm = [...str.matchAll(/(\d{1,3})\s*[°\s]\s*(\d{1,2})\s*['′\s]\s*(\d{1,2}(?:\.\d+)?)\s*["″]?\s*([NSEW])/gi)];
+    if (dm.length >= 2) {
+      const v = m => (+m[1] + +m[2] / 60 + +m[3] / 3600) * (/[SW]/i.test(m[4]) ? -1 : 1);
+      const a = dm[0], b = dm[1];
+      return /[NS]/i.test(a[4]) ? fix(v(a), v(b)) : fix(v(b), v(a));
+    }
+    const m = /(-?\d+(?:\.\d+)?)\s*[,;\s]\s*(-?\d+(?:\.\d+)?)/.exec(str);
+    return m ? fix(+m[1], +m[2]) : null;
+    function fix(la, lo) { // סדר הפוך (אורך, רוחב) — תיקון בישראל
+      if (la >= 34 && la <= 36.5 && lo >= 29 && lo <= 33.5) { const t = la; la = lo; lo = t; }
+      return isFinite(la) && isFinite(lo) ? { lat: la, lon: lo } : null;
+    }
   }
 
   /* ================= אימות קלט ================= */
   function validateInput(inp, cfg) {
     const errs = [], push = (k, m) => errs.push({ field: k, msg: m });
-    if (!(inp.lat >= 29 && inp.lat <= 34 && inp.lon >= 34 && inp.lon <= 36.5)) push("coord", "הנקודה מחוץ לתחום ישראל והסביבה");
+    if (!isFinite(inp.lat) || !isFinite(inp.lon)) push("coord", "יש להזין נקודת מרכז (או ללחוץ על המפה)");
+    else if (!(inp.lat >= 29 && inp.lat <= 34 && inp.lon >= 34 && inp.lon <= 36.5)) push("coord", "הנקודה מחוץ לתחום ישראל והסביבה");
     const lim = cfg.defaults;
     if (!(inp.radius >= lim.min_radius_m && inp.radius <= lim.max_radius_m)) push("radius", "רדיוס בין " + lim.min_radius_m + " ל-" + fmtInt(lim.max_radius_m) + " מטר");
     if (!(inp.heightM > 0 && inp.heightM <= 20000)) push("height", "יש להזין גובה במטרים");
@@ -504,8 +561,8 @@
     res.sun = dayNightTable(inp.lat, inp.lon, inp.dateFrom, inp.dateTo, inp.timeFrom, inp.timeTo);
     res.ft = inp.heightM * M2FT;
     if (res.sun.length) {
-      res.notams = analyzeNotams(P, R, data.notams, +res.sun[0].startUtc, +res.sun[res.sun.length - 1].endUtc);
-    } else res.notams = { hits: [], skipped: [] };
+      res.notams = analyzeNotams(P, R, data.notams, +res.sun[0].startUtc, +res.sun[res.sun.length - 1].endUtc, res.ft);
+    } else res.notams = { hits: [], skipped: [], excluded: [] };
     const nf = data.notamFetchedIso ? Date.parse(data.notamFetchedIso) : NaN;
     res.notamAgeH = isFinite(nf) ? (now.getTime() - nf) / 3600000 : null;
     const todayIl = tzParts(now.getTime()); res.todayYmd = todayIl.year + "-" + todayIl.month + "-" + todayIl.day;
@@ -523,7 +580,8 @@
     ["osm_near", "מכשולים ותשתיות בסביבה (OpenStreetMap)"],
     ["osm_far", "שדות תעופה, מנחתים וישובים (OpenStreetMap)"],
     ["osm_ext", "גבולות מדינה ושטחי טבע (OpenStreetMap)"],
-    ["map", "תמונת מפה עם רקע"]
+    ["map", "תמונת מפה עם רקע"],
+    ["selftest", "בדיקה עצמית של החישובים"]
   ];
   function gate(statuses) {
     const failing = REQUIRED_CHECKS.filter(([k]) => !(statuses[k] && statuses[k].ok));
@@ -533,8 +591,8 @@
   return {
     M2FT, NM, HEB_DAY, ZONE_KIND, REQUIRED_CHECKS, MIRRORS,
     Proj, polyNearest, circlePoints, dms, dmsLat, dmsLon, fmtInt, fmtDist, trimNum, esc, altText, fmtHM,
-    buildQueries, overpass, elemGeoms, elemDist, heLabel, classify, analyzeNear, analyzeZones, analyzeAgri, analyzeAirfields,
+    altRange, notamQ, buildQueries, overpass, elemGeoms, elemDist, heLabel, classify, analyzeNear, analyzeZones, analyzeAgri, analyzeAirfields,
     suggestSiteName, nearestPlaces, analyzeBorders, sunTimes, localToUtc, dayNightTable, workingDaysBefore, dayName, ddmmyyyy, parseDate, parseTime, hhmm,
-    notamGeometry, notamWindow, analyzeNotams, validateInput, analyze, gate
+    parseCoordInput, notamGeometry, notamWindow, analyzeNotams, validateInput, analyze, gate
   };
 });
