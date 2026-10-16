@@ -1,6 +1,7 @@
 /* שכבות איסורים קבועים — פמ״ת פנים ארצי א-17 (עדכון 1/26) + גבולות רשות הטבע והגנים
    נקודה צבעונית לכל אזור; בהתקרבות מופיע האזור המלא כפוליגון שקוף.
-   נתונים: data/pmt-zones.json , data/inpa-zones.json */
+   שכבה נוספת: מנחתים חקלאיים (נקודות ARP).
+   נתונים: data/pmt-zones.json , data/inpa-zones.json , data/agri-airstrips.json */
 (function(){
   if(typeof map==="undefined"||!map||typeof L==="undefined") return;
 
@@ -11,9 +12,10 @@
     LLU:{label:"אסורים לכטב״מ (LLU)",color:"#e8eefc"},
     OBS:{label:"בלונים מעוגנים",color:"#c9a227"},
     NR:{label:"שמורות טבע (רט״ג)",color:"#3ddc84"},
-    NP:{label:"גנים לאומיים (רט״ג)",color:"#4da3ff"}
+    NP:{label:"גנים לאומיים (רט״ג)",color:"#4da3ff"},
+    AGR:{label:"מנחתים חקלאיים",color:"#b388ff"}
   };
-  const VERSION="15.10.2026";
+  const VERSION="16.10.2026";
   const on=new Set(Object.keys(KEYS));
   const items=[];           // {key,z,bounds,center,dot,poly,buf,rings,bufRings,html}
   const counts={};
@@ -81,6 +83,32 @@
     it.dot.bindPopup(it.html);
     items.push(it); counts[key]=(counts[key]||0)+1;
   }
+  /* ---- מנחתים חקלאיים: נקודת ARP בלבד (אין פוליגון) ---- */
+  function dmsArp(s){ // "323208" -> 32°32′08″
+    return Number(s.slice(0,2))+"°"+s.slice(2,4)+"′"+s.slice(4,6)+"″";
+  }
+  function agrPopup(a,d){
+    const k=KEYS.AGR, ops=a.ops.map(o=>{
+      const c=d.operators&&d.operators[o]; if(!c) return '<b>'+esc(o)+'</b>';
+      return '<b>'+esc(o)+'</b> — משרד מבצעים ראשי: טלפון <span dir="ltr">'+esc(c.ops_office_tel)+'</span>, פקס <span dir="ltr">'+esc(c.ops_office_fax)+'</span>'+
+        (c.work_freq_mhz?' · תדרי עבודה: <span dir="ltr">'+c.work_freq_mhz.map(esc).join(" / ")+'</span> מ״ה':'');
+    });
+    const [la,lo]=a.arp.split("/");
+    return '<div class="pp-bigclose" onclick="closeCurrentPopup()">✕ סגור</div>'+
+      '<div class="pp-name">מנחת '+esc(a.name)+'</div>'+
+      '<span class="badge" style="color:'+k.color+';border-color:currentColor">'+esc(k.label)+'</span>'+
+      '<div class="pp-meta">נ״צ ARP: <span dir="ltr">'+dmsArp(la)+'N '+dmsArp(lo)+'E</span> <span dir="ltr">('+esc(a.arp)+')</span></div>'+
+      '<div class="pp-heb">מפעיל/ים:<br>'+ops.join("<br>")+'</div>'+
+      '<div class="approx-note" style="margin-top:6px">'+esc(d.note)+'</div>'+
+      '<div class="pp-meta" style="margin-top:8px">מקור: '+esc(d.edition)+'</div>';
+  }
+  function addPoint(key,a,d){
+    const col=KEYS[key].color, center=L.latLng(a.lat,a.lon), mob=window.matchMedia("(max-width:760px)").matches;
+    const it={key,pointOnly:true,z:0,bounds:L.latLngBounds(center,center),center,dot:null,poly:null,buf:null,col};
+    it.dot=L.circleMarker(center,{renderer:rend,radius:mob?9:7,color:"#0b1220",weight:1.5,fillColor:col,fillOpacity:.95});
+    it.dot.bindPopup(agrPopup(a,d));
+    items.push(it); counts[key]=(counts[key]||0)+1;
+  }
   function build(it){
     it.poly=L.polygon(it.rings,{renderer:rend,color:it.col,weight:2,fillColor:it.col,fillOpacity:.16});
     it.poly.bindPopup(it.html);
@@ -94,6 +122,7 @@
     items.forEach(it=>{
       const show=on.has(it.key)&&view.intersects(it.bounds);
       if(!show){ rm(it.dot);rm(it.poly);rm(it.buf); return; }
+      if(it.pointOnly){ ad(it.dot); return; }
       if(z>=it.z){
         if(!it.poly) build(it);
         ad(it.poly);ad(it.buf);rm(it.dot);
@@ -107,7 +136,7 @@
     if(!ready) return;
     const bar=document.getElementById("catBar"); if(!bar) return;
     const sep=document.createElement("div");
-    sep.className="pmt-sep"; sep.textContent="איסורים קבועים — פמ״ת א-17 ורשות הטבע והגנים (נקודה = אזור; התקרבו לראות את האזור המלא)";
+    sep.className="pmt-sep"; sep.textContent="שכבות פמ״ת — איסורים קבועים (א-17), רשות הטבע והגנים ומנחתים חקלאיים (נקודה = אזור; התקרבו לראות את האזור המלא)";
     bar.appendChild(sep);
     Object.keys(KEYS).forEach(k=>{
       if(!counts[k]) return;
@@ -142,9 +171,11 @@
     f.insertBefore(d,f.firstChild);
   }
 
-  Promise.all([fetch("data/pmt-zones.json?v=20261016").then(r=>r.json()),fetch("data/inpa-zones.json?v=20261015").then(r=>r.json())]).then(([pmt,inpa])=>{
+  Promise.all([fetch("data/pmt-zones.json?v=20261016").then(r=>r.json()),fetch("data/inpa-zones.json?v=20261015").then(r=>r.json()),
+    fetch("data/agri-airstrips.json?v=20261016").then(r=>r.json()).catch(()=>null)]).then(([pmt,inpa,agri])=>{
     pmt.zones.forEach(z=>{z.src="pmt";z.edition=pmt.edition;add(z.cat,z);});
     inpa.sites.forEach(z=>{z.src="inpa";z.edition=inpa.edition;z.id=z.id;add(z.kind==="P"?"NP":"NR",z);});
+    if(agri&&agri.airstrips) agri.airstrips.forEach(a=>addPoint("AGR",a,agri));
     ready=true; update(); unmappedBox(pmt,inpa);
     if(typeof renderCatBar==="function") renderCatBar();
     const sub=document.querySelector(".brand .sub");
