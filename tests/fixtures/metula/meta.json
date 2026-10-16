@@ -1,0 +1,24 @@
+{
+ "name": "metula",
+ "lat": 33.279,
+ "lon": 35.578,
+ "R": 100,
+ "fetched_utc": "2026-10-16T23:48:51.527Z",
+ "errors": [],
+ "near": {
+  "mirror": "https://overpass-api.de/api/interpreter",
+  "elements": 18,
+  "osm_base": "2026-10-16T23:47:54Z"
+ },
+ "far": {
+  "mirror": "https://overpass-api.de/api/interpreter",
+  "elements": 29,
+  "osm_base": "2026-10-16T23:48:57Z"
+ },
+ "ext": {
+  "mirror": "https://overpass-api.de/api/interpreter",
+  "elements": 1,
+  "osm_base": "2026-10-16T23:50:01Z"
+ },
+ "reverse": "אלסקה אין, הראשונים, מטולה, נפת צפת, מחוז הצפון, 1029200, ישראל"
+}

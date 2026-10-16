@@ -1,0 +1,21 @@
+{
+ "name": "hula",
+ "lat": 33.09,
+ "lon": 35.6,
+ "R": 300,
+ "fetched_utc": "2026-10-16T23:54:02.609Z",
+ "errors": [
+  "far: כל שרתי Overpass נכשלו. אחרון: https://overpass.private.coffee/api/interpreter: HTTP 500"
+ ],
+ "near": {
+  "mirror": "https://overpass-api.de/api/interpreter",
+  "elements": 0,
+  "osm_base": "2026-10-16T23:53:01Z"
+ },
+ "ext": {
+  "mirror": "https://overpass-api.de/api/interpreter",
+  "elements": 2,
+  "osm_base": "2026-10-16T23:55:02Z"
+ },
+ "reverse": "מועצה אזורית גליל עליון, נפת צפת, מחוז הצפון, 1210500, ישראל"
+}
