@@ -127,7 +127,7 @@
     const E=pmt.ui.annexE;
     const un=inpa.unmapped.slice().sort((a,b)=>String(a.id).localeCompare(String(b.id))).map(u=>{
       const ax=u.ax; const q=ax?esc(E.t)+" ("+pg(ax[0])+"): <i>"+E.h.map((h,i)=>esc(h)+": "+esc(ax[1][i])).join(" · ")+"</i>":"";
-      return row(u.id,ax?ax[1][1]:u.name,q+'<br><span class="mapnote">הערת המפה (אינה מהפמ״ת): אין לאתר זה מיקום או גבול בפמ״ת ובקבצי רט״ג, ולכן הוא אינו מסומן במפה.</span><br><span class="mapnote">הערת המפה (אינה מהפמ״ת): את גודל הפוליגון המדויק של סגירת רט״ג יש לבדוק באתר רט״ג.</span><div style="margin:8px 0"><a class="extbtn" href="https://www.parks.org.il/" target="_blank" rel="noopener noreferrer" aria-label="אתר רט״ג — נפתח בלשונית חדשה, המפה נשארת פתוחה">אתר רט״ג — בדיקת הגבולות המדויקים <span aria-hidden="true">↗</span></a></div>'+pmt.ui.inpaGen);
+      return row(u.id,ax?ax[1][1]:u.name,q+'<br><span class="mapnote">הערת המפה (אינה מהפמ״ת): בטבלת נספח ה׳ בפמ״ת אין מיקום או גבול לאתר זה, ובקובץ רט״ג שבמפה אין לו גבול — לכן הוא אינו מסומן במפה.</span><br><span class="mapnote">הערת המפה (אינה מהפמ״ת): את הגבול המדויק של סגירת רט״ג יש לבדוק באתר רט״ג.</span><div style="margin:8px 0"><a class="extbtn" href="https://www.parks.org.il/" target="_blank" rel="noopener noreferrer" aria-label="אתר רט״ג — נפתח בלשונית חדשה, המפה נשארת פתוחה">אתר רט״ג <span aria-hidden="true">↗</span></a></div>'+pmt.ui.inpaGen);
     }).join("");
     d.innerHTML='<summary style="cursor:pointer;color:var(--amber);font-weight:700">אזורים הרשומים בפמ״ת ואינם מוצגים במפה (אין להם שרטוט או גבולות)</summary>'+
       '<div style="margin-top:8px;line-height:1.7"><b>אזורי LLR ללא שרטוט ('+pmt.nocoord.length+'):</b>'+nc+
