@@ -9,5 +9,10 @@
   "mirror": "https://overpass.openstreetmap.fr/api/interpreter",
   "elements": 4,
   "osm_base": "2026-10-17T00:06:20Z"
+ },
+ "near": {
+  "mirror": "https://overpass.kumi.systems/api/interpreter",
+  "elements": 3,
+  "osm_base": "2026-07-15T15:22:01Z"
  }
 }

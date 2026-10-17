@@ -7,8 +7,8 @@
  "errors": [],
  "near": {
   "mirror": "https://overpass.openstreetmap.fr/api/interpreter",
-  "elements": 18,
-  "osm_base": "2026-10-17T00:03:07Z"
+  "elements": 15,
+  "osm_base": "2026-10-17T05:11:05Z"
  },
  "far": {
   "mirror": "https://overpass-api.de/api/interpreter",
