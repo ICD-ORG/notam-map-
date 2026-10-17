@@ -17,8 +17,8 @@
  },
  "ext": {
   "mirror": "https://overpass.openstreetmap.fr/api/interpreter",
-  "elements": 1,
-  "osm_base": "2026-10-17T00:00:06Z"
+  "elements": 4,
+  "osm_base": "2026-10-17T00:06:20Z"
  },
  "reverse": "ניצנה, מועצה אזורית רמת נגב, נפת באר שבע, מחוז הדרום, ישראל"
 }
