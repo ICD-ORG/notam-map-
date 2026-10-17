@@ -16,9 +16,9 @@
   "osm_base": "2026-10-16T23:58:03Z"
  },
  "ext": {
-  "mirror": "https://overpass.kumi.systems/api/interpreter",
+  "mirror": "https://overpass.openstreetmap.fr/api/interpreter",
   "elements": 0,
-  "osm_base": "2026-07-15T15:22:01Z"
+  "osm_base": "2026-10-17T05:19:05Z"
  },
  "reverse": "שביל יונתן, תל־אביב–יפו, הגפן, רמת גן, נפת תל אביב, מחוז תל אביב, 5253527, ישראל"
 }
