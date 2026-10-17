@@ -159,6 +159,12 @@
     }
     body.push(textPara(m.footer || "", { size: 16, color: "555555", before: 120 }));
 
+    return pack(body, imgs, m);
+  }
+
+  // אורז גוף מסמך (מערך XML של פסקאות/טבלאות) + תמונות לקובץ docx
+  async function pack(body, imgs, m) {
+    m = m || {};
     const NS = 'xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture"';
     const sect = '<w:sectPr><w:pgSz w:w="' + PAGE_W + '" w:h="' + PAGE_H + '"/><w:pgMar w:top="' + MARGIN + '" w:right="' + MARGIN + '" w:bottom="' + MARGIN + '" w:left="' + MARGIN + '" w:header="500" w:footer="500" w:gutter="0"/><w:bidi/></w:sectPr>';
     const documentXml = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:document ' + NS + "><w:body>" + body.join("") + sect + "</w:body></w:document>";
@@ -175,5 +181,5 @@
     return zip.generateAsync({ type: "uint8array", compression: "DEFLATE", mimeType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document" });
   }
 
-  return { build, runsOf, htmlRuns };
+  return { build, pack, runsOf, htmlRuns, helpers: { para, textPara, htmlPara, heading, cell, tableXml, CONTENT_W } };
 });
