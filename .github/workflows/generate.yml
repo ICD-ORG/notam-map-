@@ -1,0 +1,60 @@
+name: הרצת בקשה (נתונים גולמיים ותמונות)
+
+on:
+  workflow_dispatch:
+    inputs:
+      lat: { description: 'קו רוחב', required: true }
+      lon: { description: 'קו אורך', required: true }
+      radius: { description: 'רדיוס במטר', required: false, default: '100' }
+      height: { description: 'גובה מרבי במטר', required: true }
+      date_from: { description: 'תאריך התחלה YYYY-MM-DD', required: true }
+      date_to: { description: 'תאריך סיום YYYY-MM-DD', required: false, default: '' }
+      time_from: { description: 'משעה HH:MM', required: true }
+      time_to: { description: 'עד שעה HH:MM', required: true }
+      site: { description: 'שם ישוב/אתר', required: false, default: '' }
+      purpose_idx: { description: 'מהות (0-2)', required: false, default: '1' }
+      aircraft_idx: { description: 'כלי טיס (אינדקסים, למשל 0 או 0,1)', required: false, default: '0' }
+      vlos: { description: 'yes/no', required: false, default: 'yes' }
+      branch: { description: 'שם ענף זמני לפלט', required: true }
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: התקנת Playwright
+        run: |
+          npm init -y >/dev/null
+          npm i playwright@1.49.1
+          npx playwright install --with-deps chromium
+      - name: הרצה
+        env:
+          LAT: ${{ inputs.lat }}
+          LON: ${{ inputs.lon }}
+          RADIUS: ${{ inputs.radius }}
+          HEIGHT: ${{ inputs.height }}
+          DATE_FROM: ${{ inputs.date_from }}
+          DATE_TO: ${{ inputs.date_to }}
+          TIME_FROM: ${{ inputs.time_from }}
+          TIME_TO: ${{ inputs.time_to }}
+          SITE: ${{ inputs.site }}
+          PURPOSE_IDX: ${{ inputs.purpose_idx }}
+          AIRCRAFT_IDX: ${{ inputs.aircraft_idx }}
+          VLOS: ${{ inputs.vlos }}
+        run: node scripts/generate_request.mjs gen-out
+      - name: שמירה בענף זמני
+        if: always()
+        run: |
+          git config user.name "notam-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git checkout --orphan "${{ inputs.branch }}"
+          git rm -rf --cached . >/dev/null 2>&1 || true
+          git add -f gen-out
+          git commit -q -m "פלט הרצה (זמני)"
+          git push origin "${{ inputs.branch }}"
