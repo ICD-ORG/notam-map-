@@ -114,4 +114,4 @@ Actions → עדכון נוטמים יומי → Run workflow. תוך דקה ה�
 
 **הגדרות שאפשר לערוך** ב-`data/request-config.json`: שם הארגון, מס׳ רישום, סימוני אזהרה, מהויות, כלי טיס, כתובות נמענים, ורף ה"קרבה" (`thresholds`).
 
-**בדיקות:** `node --test tests/` (יחידה) ו-`node tests/e2e.mjs` (דפדפן מלא; דורש `playwright`). ב-GitHub: Actions → "בדיקות" (כולל הרצה חיה מול Overpass/Nominatim/תצלום אוויר).
+**בדיקות:** `node --test tests/core.test.mjs` (יחידה) ו-`node tests/e2e.mjs` (דפדפן מלא; דורש `playwright`). ב-GitHub: Actions → "בדיקות" (כולל הרצה חיה מול Overpass/Nominatim/תצלום אוויר).
