@@ -14,7 +14,7 @@ const POINTS = [
   { name: "hula", lat: 33.0900, lon: 35.6000, R: 300 },
   { name: "golan", lat: 33.1000, lon: 35.8200, R: 100 }
 ];
-const only = process.argv[2] && process.argv[2] !== "--force" ? process.argv[2] : null;
+const only = process.argv.slice(2).find(a => !a.startsWith("--")) || null;
 const force = process.argv.includes("--force");
 const partsArg = (process.argv.find(a => a.startsWith("--parts=")) || "").slice(8);
 const parts = partsArg ? partsArg.split(",") : ["near", "far", "ext", "reverse"];
