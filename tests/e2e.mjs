@@ -192,11 +192,13 @@ try {
     const ov0 = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     check("מובייל: אין גלילה אופקית לפני הרצה", ov0 <= 1, "חריגה " + ov0 + "px");
     await page.screenshot({ path: path.join(OUT, "mobile-top.png"), fullPage: false });
-    await fillExample(page); await page.click("#runBtn");
-    await page.waitForFunction(() => document.querySelector("#gate .banner"), null, { timeout: 150000 });
-    const ov1 = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
-    check("מובייל: אין גלילה אופקית אחרי הרצה", ov1 <= 1, "חריגה " + ov1 + "px");
-    await page.screenshot({ path: path.join(OUT, "mobile-result.png"), fullPage: true });
+    if (!LIVE) { // במצב חי לא מריצים שוב את כל הצינור — שרתי Overpass הציבוריים מגבילים בקשות חוזרות מאותה כתובת
+      await fillExample(page); await page.click("#runBtn");
+      await page.waitForFunction(() => document.querySelector("#gate .banner"), null, { timeout: 150000 });
+      const ov1 = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+      check("מובייל: אין גלילה אופקית אחרי הרצה", ov1 <= 1, "חריגה " + ov1 + "px");
+      await page.screenshot({ path: path.join(OUT, "mobile-result.png"), fullPage: true });
+    }
     await ctx.close();
   }
 

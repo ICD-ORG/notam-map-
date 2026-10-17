@@ -135,7 +135,7 @@
   // fetchFn: fetch או מימוש תואם. מחזיר {data, mirror}; זורק שגיאה אם כל השרתים נכשלו בכל הסבבים.
   async function overpass(query, opts) {
     opts = opts || {};
-    const f = opts.fetch || fetch, mirrors = opts.mirrors || MIRRORS, rounds = opts.rounds || 2;
+    const f = opts.fetch || fetch, mirrors = opts.mirrors || MIRRORS, rounds = opts.rounds || 3;
     const stagger = opts.staggerMs == null ? 8000 : opts.staggerMs, timeoutMs = opts.timeoutMs || 60000;
     const wait = opts.wait || (ms => new Promise(r => setTimeout(r, ms)));
     const log = opts.log || (() => {});
