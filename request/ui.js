@@ -172,13 +172,17 @@
     const q = C.buildQueries(inp0.lat, inp0.lon, inp0.radius, S.cfg);
     const fetchOpts = { log: () => {} };
     try {
-      for (const [k, key, sk] of [["near", "near", "osm_near"], ["far", "far", "osm_far"], ["ext", "ext", "osm_ext"]]) {
+      // שלוש השאילתות במקביל (מסונכרנות בהפרש קטן כדי לא להציף שרת אחד); כשל באחת מהן עוצר את ההכנה
+      const qs = [["near", "near", "osm_near"], ["far", "far", "osm_far"], ["ext", "ext", "osm_ext"]];
+      const results = await Promise.allSettled(qs.map(([k, key, sk], i) => (async () => {
+        await wait(i * 1500);
         try {
           const r = await C.overpass(q[k], fetchOpts); data[key] = r.data; st(sk, "ok", new URL(r.mirror).hostname + " · " + r.data.elements.length + " אלמנטים");
           setStatus(sk, true, "");
         } catch (e) { st(sk, "no", e.message); setStatus(sk, false, e.message); throw e; }
-        await wait(500);
-      }
+      })()));
+      const failed = results.find(r => r.status === "rejected");
+      if (failed) throw failed.reason;
       try {
         const ctl = new AbortController(); setTimeout(() => ctl.abort(), 20000);
         const rr = await fetch("https://nominatim.openstreetmap.org/reverse?" + new URLSearchParams({ format: "jsonv2", lat: inp0.lat, lon: inp0.lon, zoom: 18, "accept-language": "he", addressdetails: 1 }), { signal: ctl.signal });

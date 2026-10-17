@@ -53,7 +53,7 @@
       const sd = r => r.sunset + " ב-" + String(r.date.d).padStart(2, "0") + "." + String(r.date.m).padStart(2, "0");
       const f = rows[0], l = rows[rows.length - 1];
       const sunPhrase = rows.length === 1 ? "השקיעה " + f.sunset : "השקיעה: " + sd(f) + (rows.length > 1 ? ", " + sd(l) : "");
-      if (allDay) dn = "כל החלון ביום (לפני השקיעה: " + sunPhrase + ")";
+      if (allDay) dn = "כל החלון ביום (" + sunPhrase + ")";
       else if (allNight) dn = "כל החלון בלילה (אחרי השקיעה)";
       else dn = "יום: מ-" + f.start + " עד השקיעה · לילה: מהשקיעה עד " + f.end + " (" + sunPhrase + ")";
     }
