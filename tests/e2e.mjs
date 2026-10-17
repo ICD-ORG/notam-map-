@@ -65,6 +65,11 @@ async function newPage(browser, opts) {
         else r.fulfill({ status: 404, body: "" });
       });
     }
+    await page.route(/\/notam-data\.json/, r => { // תמונת מצב קבועה של הנוטמים, עם זמן משיכה "עכשיו" כדי שבדיקת הגיל לא תכשיל את הבדיקה
+      const d = JSON.parse(fs.readFileSync(path.join(ROOT, "tests", "fixtures", "notam-data.snap.json"), "utf8"));
+      d.fetched_iso = new Date().toISOString(); d.fetched_at = d.fetched_iso;
+      r.fulfill({ status: 200, contentType: "application/json", headers: CORS, body: JSON.stringify(d) });
+    });
     await page.route(/server\.arcgisonline\.com|tile\.openstreetmap\.org/, r => { calls.tiles++; if (opts.failTiles) return r.abort(); r.fulfill({ status: 200, contentType: "image/png", headers: CORS, body: tilePng(calls.tiles) }); });
     await page.route(/overpass/, async r => {
       calls.overpass++;
@@ -87,7 +92,8 @@ async function fillExample(page, over) {
   over = over || {};
   await page.fill("#coord", over.coord || "32.099128, 34.816617"); await page.dispatchEvent("#coord", "change");
   await page.fill("#radius", String(over.radius || 200)); await page.fill("#height", String(over.height || 80));
-  await page.fill("#dateFrom", "2026-10-20"); await page.fill("#dateTo", "2026-10-23");
+  const ymd = n => new Date(Date.now() + n * 86400000).toISOString().slice(0, 10);
+  await page.fill("#dateFrom", over.dateFrom || ymd(10)); await page.fill("#dateTo", over.dateTo || ymd(13));
   await page.fill("#timeFrom", "17:00"); await page.fill("#timeTo", "20:00");
   await page.selectOption("#purpose", { index: 1 });
   await page.fill("#reqName", "בודק ראשון"); await page.fill("#reqPhone", "050-0000001");

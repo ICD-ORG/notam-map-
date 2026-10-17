@@ -153,6 +153,7 @@
     $("e_run").textContent = "";
     const inp0 = readInputs();
     const errs = C.validateInput(Object.assign({}, inp0, { siteName: inp0.siteName || "-" }), S.cfg);
+    if (inp0.dateFrom && inp0.dateFrom < C.ilToday(new Date())) errs.push({ field: "dateFrom", msg: "תאריך ההתחלה כבר עבר" });
     showErrors(errs);
     if (errs.length) { setStatus("input", false, errs.map(e => e.msg).join(" · ")); $("e_run").textContent = "יש להשלים את השדות המסומנים."; return; }
     for (const k of ["a17", "agri", "notam"]) if (!(S.statuses[k] && S.statuses[k].ok)) { $("e_run").textContent = "נתונים סטטיים לא נטענו (" + k + "): " + (S.statuses[k] ? S.statuses[k].msg : "ממתין") + ". רעננו את הדף."; return; }

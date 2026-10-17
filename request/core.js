@@ -403,6 +403,7 @@
     const o = tzParts(guess), asUtc = Date.UTC(+o.year, +o.month - 1, +o.day, +o.hour, +o.minute, +o.second);
     return new Date(guess - (asUtc - guess));
   }
+  function ilToday(now) { const o = tzParts(now.getTime()); return o.year + "-" + o.month + "-" + o.day; }
   const hhmm = ms => { const o = tzParts(ms); return o.hour + ":" + o.minute; };
   function parseDate(s) { const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || ""); return m ? { y: +m[1], m: +m[2], d: +m[3] } : null; }
   function parseTime(s) { const m = /^(\d{1,2}):(\d{2})$/.exec(s || ""); return m ? { h: +m[1], mi: +m[2] } : null; }
@@ -570,7 +571,7 @@
     } else res.notams = { hits: [], skipped: [], excluded: [] };
     const nf = data.notamFetchedIso ? Date.parse(data.notamFetchedIso) : NaN;
     res.notamAgeH = isFinite(nf) ? (now.getTime() - nf) / 3600000 : null;
-    const todayIl = tzParts(now.getTime()); res.todayYmd = todayIl.year + "-" + todayIl.month + "-" + todayIl.day;
+    res.todayYmd = ilToday(now);
     res.workingDays = workingDaysBefore(res.todayYmd, inp.dateFrom);
     return res;
   }
@@ -598,6 +599,6 @@
     Proj, polyNearest, circlePoints, dms, dmsLat, dmsLon, fmtInt, fmtDist, trimNum, esc, altText, fmtHM,
     altRange, notamQ, buildQueries, overpass, elemGeoms, elemDist, heLabel, classify, analyzeNear, analyzeZones, analyzeAgri, analyzeAirfields,
     suggestSiteName, nearestPlaces, analyzeBorders, sunTimes, localToUtc, dayNightTable, workingDaysBefore, dayName, ddmmyyyy, parseDate, parseTime, hhmm,
-    parseCoordInput, notamGeometry, notamWindow, analyzeNotams, validateInput, analyze, gate
+    ilToday, parseCoordInput, notamGeometry, notamWindow, analyzeNotams, validateInput, analyze, gate
   };
 });
