@@ -3,22 +3,22 @@
  "lat": 30.887,
  "lon": 34.424,
  "R": 100,
- "fetched_utc": "2026-10-16T23:51:41.062Z",
+ "fetched_utc": "2026-10-17T00:00:17.612Z",
  "errors": [],
  "near": {
-  "mirror": "https://overpass-api.de/api/interpreter",
+  "mirror": "https://overpass.openstreetmap.fr/api/interpreter",
   "elements": 0,
-  "osm_base": "2026-10-16T23:51:01Z"
+  "osm_base": "2026-10-16T23:59:03Z"
  },
  "far": {
   "mirror": "https://overpass-api.de/api/interpreter",
   "elements": 15,
-  "osm_base": "2026-10-16T23:51:57Z"
+  "osm_base": "2026-10-17T00:00:06Z"
  },
  "ext": {
-  "mirror": "https://overpass-api.de/api/interpreter",
+  "mirror": "https://overpass.openstreetmap.fr/api/interpreter",
   "elements": 1,
-  "osm_base": "2026-10-16T23:51:57Z"
+  "osm_base": "2026-10-17T00:00:06Z"
  },
  "reverse": "ניצנה, מועצה אזורית רמת נגב, נפת באר שבע, מחוז הדרום, ישראל"
 }
