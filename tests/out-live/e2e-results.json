@@ -1,0 +1,41 @@
+{
+ "live": true,
+ "at": "2026-10-17T00:40:36.107Z",
+ "results": [
+  {
+   "name": "הבדיקה העצמית רצה אוטומטית וכל 19 שלביה עברו",
+   "ok": true,
+   "soft": false,
+   "detail": ""
+  },
+  {
+   "name": "מפה חיה נטענה (Leaflet)",
+   "ok": true,
+   "soft": false,
+   "detail": ""
+  },
+  {
+   "name": "לחיצה על המפה: נקבע מרכז ונוספו עיגולי ירוק וכתום",
+   "ok": true,
+   "soft": false,
+   "detail": "paths=2 coord=31.903647, 35.002441"
+  },
+  {
+   "name": "שינוי רדיוס מעדכן את העיגולים (150 / 300)",
+   "ok": true,
+   "soft": false,
+   "detail": "150,300"
+  },
+  {
+   "name": "רמז רגל מתעדכן",
+   "ok": true,
+   "soft": false,
+   "detail": "= 262.5 רגל"
+  },
+  {
+   "name": "ההרצה הסתיימה בזמן",
+   "soft": false,
+   "detail": "e_run=הבדיקות לא הושלמו: כל שרתי Overpass נכשלו. אחרון: https://z.overpass-api.de/api/interpreter: signal is aborted without reason. הבקשה אינה מסומנת כמוכנה לשליחה — אפשר להריץ שוב. | progress=✔ מכשולים ותשתיות בסביבה (OpenStreetMap) overpass.private.coffee · 68 אלמנטים ✖ שדות תעופה, מנחתים וישובים (OpenStreetMap) כל שרתי Overpass נכשלו. אחרון: https://z.overpass-api.de/api/interpreter: signal is aborted without reason ✔ גבולות מדינה ושטחי טבע (OpenStreetMap) overpass.kumi.systems · 0 אלמנטים … שם המקום (Nominatim) … חישוב מרחקים ובדיקת א-17, רט״ג, מנחתים ונוטמים … תמונת מפה עם רקע"
+  }
+ ]
+}
