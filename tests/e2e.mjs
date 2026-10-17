@@ -56,12 +56,12 @@ async function newPage(browser, opts) {
   page.on("pageerror", e => check("אין שגיאת JS בדף", false, String(e.message || e)));
   if (!LIVE) {
     await page.route(/fonts\.(googleapis|gstatic)\.com/, r => r.fulfill({ status: 200, contentType: "text/css", body: "" }));
-    if (LEAFLET_DIR) {
+    if (LEAFLET_DIR) { // Leaflet מקומי (בסביבה בלי גישה ל-CDN): LEAFLET_DIR = .../package/dist
       await page.route(/cdnjs\.cloudflare\.com\/ajax\/libs\/leaflet\/1\.9\.4\/.*/, r => {
         const name = r.request().url().split("/").pop().split("?")[0];
-        const f = path.join(LEAFLET_DIR, name.includes("images") ? "images/" + name : name);
-        const ff = fs.existsSync(f) ? f : path.join(LEAFLET_DIR, name);
-        if (fs.existsSync(ff)) r.fulfill({ status: 200, contentType: ff.endsWith(".css") ? "text/css" : ff.endsWith(".js") ? "text/javascript" : "image/png", body: fs.readFileSync(ff) });
+        const alias = { "leaflet.min.js": "leaflet.js", "leaflet.min.css": "leaflet.css" }[name] || name;
+        const f = [path.join(LEAFLET_DIR, alias), path.join(LEAFLET_DIR, "images", alias)].find(x => fs.existsSync(x));
+        if (f) r.fulfill({ status: 200, contentType: f.endsWith(".css") ? "text/css" : f.endsWith(".js") ? "text/javascript" : "image/png", body: fs.readFileSync(f) });
         else r.fulfill({ status: 404, body: "" });
       });
     }
@@ -102,6 +102,17 @@ try {
     await page.goto(BASE + "/request.html"); await page.waitForFunction(() => window.__REQ_READY === true, null, { timeout: 60000 });
     const st = await page.$$eval("#stList li", els => els.map(e => ({ ok: e.classList.contains("ok"), t: e.textContent })));
     check("הבדיקה העצמית רצה אוטומטית וכל " + st.length + " שלביה עברו", st.length > 8 && st.every(x => x.ok), st.filter(x => !x.ok).map(x => x.t).join(" | "));
+    check("מפה חיה נטענה (Leaflet)", await page.evaluate(() => typeof L !== "undefined" && !!document.querySelector("#map.leaflet-container")), "");
+    { // לחיצה על המפה קובעת מרכז, מצייר עיגולים ומעדכן את שדה הקואורדינטות
+      const box = await page.locator("#map").boundingBox();
+      await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
+      await page.waitForFunction(() => /^\d+\.\d+, \d+\.\d+$/.test(document.getElementById("coord").value), null, { timeout: 5000 });
+      const circles = await page.evaluate(() => document.querySelectorAll("#map path.leaflet-interactive").length);
+      check("לחיצה על המפה: נקבע מרכז ונוספו עיגולי ירוק וכתום", circles >= 2, "paths=" + circles + " coord=" + (await page.inputValue("#coord")));
+      await page.fill("#radius", "150");
+      const rr = await page.evaluate(() => window.__REQ.S.lf.green.getRadius() + "," + window.__REQ.S.lf.orange.getRadius());
+      check("שינוי רדיוס מעדכן את העיגולים (150 / 300)", rr === "150,300", rr);
+    }
     await fillExample(page);
     check("רמז רגל מתעדכן", /262\.5/.test(await page.textContent("#ftHint")), await page.textContent("#ftHint"));
     await page.click("#runBtn");

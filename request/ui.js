@@ -165,7 +165,8 @@
     const upd = () => progress(steps.map(x => ({ s: x.s, t: x.t, m: x.m })));
     const st = (k, s, m) => { const x = steps.find(y => y.k === k); x.s = s; x.m = m || ""; upd(); };
     upd();
-    S.res = null; S.report = null; S.stale = false;
+    S.res = null; S.report = null; S.stale = false; S.map = null;
+    ["osm_near", "osm_far", "osm_ext", "map"].forEach(k => { S.statuses[k] = { ok: false, msg: "לא הושלם" }; });
     const data = { zones: S.data.zones, inpa: S.data.inpa, agri: S.data.agri, notams: S.data.notams, notamFetchedIso: S.data.notamFetchedIso };
     const q = C.buildQueries(inp0.lat, inp0.lon, inp0.radius, S.cfg);
     const fetchOpts = { log: () => {} };
@@ -178,7 +179,8 @@
         await wait(500);
       }
       try {
-        const rr = await fetch("https://nominatim.openstreetmap.org/reverse?" + new URLSearchParams({ format: "jsonv2", lat: inp0.lat, lon: inp0.lon, zoom: 18, "accept-language": "he", addressdetails: 1 }));
+        const ctl = new AbortController(); setTimeout(() => ctl.abort(), 20000);
+        const rr = await fetch("https://nominatim.openstreetmap.org/reverse?" + new URLSearchParams({ format: "jsonv2", lat: inp0.lat, lon: inp0.lon, zoom: 18, "accept-language": "he", addressdetails: 1 }), { signal: ctl.signal });
         if (!rr.ok) throw new Error("HTTP " + rr.status);
         data.reverse = await rr.json(); st("reverse", "ok", data.reverse.display_name || "");
       } catch (e) { data.reverse = null; st("reverse", "ok", "לא התקבל שם מ-Nominatim — השם נגזר משכבות OpenStreetMap או מהקלדה"); }
@@ -190,7 +192,7 @@
       if (errs2.length) { setStatus("input", false, errs2.map(e => e.msg).join(" · ")); st("calc", "no", errs2.map(e => e.msg).join(" · ")); throw new Error("חסרים פרטים בטופס"); }
       setStatus("input", true, "");
       const age = res.notamAgeH;
-      if (age == null || age > S.cfg.thresholds.notam_max_age_h) { setStatus("notam", false, age == null ? "לא ידוע מתי נמשכו הנוטמים" : "נתוני הנוטמים ישנים (" + Math.round(age) + " שעות; מרבי " + S.cfg.thresholds.notam_max_age_h + ")"); }
+      if (age == null || age > S.cfg.thresholds.notam_max_age_h) { setStatus("notam", false, age == null ? "לא ידוע מתי נמשכו הנוטמים" : "נתוני הנוטמים ישנים (" + Math.round(age) + " שעות; מרבי " + S.cfg.thresholds.notam_max_age_h + "). יש לרענן: GitHub → Actions → עדכון נוטמים יומי → Run workflow"); }
       else setStatus("notam", true, "");
       S.data.near = data.near; S.data.far = data.far; S.data.ext = data.ext; S.data.reverse = data.reverse;
       S.res = res; S.scanKey = scanKey();

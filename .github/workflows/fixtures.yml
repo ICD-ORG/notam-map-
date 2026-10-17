@@ -1,11 +1,6 @@
 name: משיכת נתוני בדיקה אמיתיים (OpenStreetMap)
 
 on:
-  push:
-    branches: ['claude-icd/**']
-    paths:
-      - 'scripts/fetch_fixtures.mjs'
-      - '.github/workflows/fixtures.yml'
   workflow_dispatch: {}
 
 permissions:

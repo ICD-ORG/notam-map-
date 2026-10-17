@@ -13,7 +13,8 @@ const POINTS = [
   { name: "nitzana", lat: 30.8870, lon: 34.4240, R: 100 },
   { name: "hula", lat: 33.0900, lon: 35.6000, R: 300 }
 ];
-const only = process.argv[2];
+const only = process.argv[2] && process.argv[2] !== "--force" ? process.argv[2] : null;
+const force = process.argv.includes("--force");
 const outRoot = "tests/fixtures";
 let failed = 0;
 const wait = ms => new Promise(r => setTimeout(r, ms));
@@ -22,6 +23,7 @@ const f = (u, o) => fetch(u, { ...(o || {}), headers: { "User-Agent": UA, ...((o
 for (const p of POINTS) {
   if (only && only !== p.name) continue;
   const dir = `${outRoot}/${p.name}`; fs.mkdirSync(dir, { recursive: true });
+  try { const m = JSON.parse(fs.readFileSync(`${dir}/meta.json`, "utf8")); if (!force && m.errors && m.errors.length === 0) { console.log("קיים ותקין — מדלג:", p.name); continue; } } catch (e) { /* אין קובץ */ }
   const q = C.buildQueries(p.lat, p.lon, p.R, cfg), meta = { name: p.name, lat: p.lat, lon: p.lon, R: p.R, fetched_utc: new Date().toISOString(), errors: [] };
   for (const k of ["near", "far", "ext"]) {
     try {

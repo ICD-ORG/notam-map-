@@ -235,6 +235,20 @@ test("Overpass: מעבר לשרת הבא כשהראשון נכשל, ושגיאה
   await assert.rejects(C.overpass("q", { fetch: mk(bad), wait, staggerMs: 5, timeoutMs: 200, rounds: 2 }), /כל שרתי Overpass נכשלו/);
 });
 
-test("גבולות מדינה: זיהוי רצועה לפי מדינה (נתוני אמת אם נאספו)", { skip: !fs.existsSync(path.join(ROOT, "tests/fixtures/probe/borders.json")) }, () => {
-  assert.ok(true);
+test("גבולות מדינה: רצועת האיסור לפי מדינה (נתונים סינתטיים בגיאומטריה ידועה)", () => {
+  const lat = 33.0, lon = 35.5, P = new C.Proj(lat, lon);
+  const dLat = d => lat + d / P.ky; // מעלות צפונה במרחק d מטר
+  const way = (id, d) => ({ type: "way", id, tags: { boundary: "administrative", admin_level: "2" }, geometry: [{ lat: dLat(d), lon: lon - 0.02 }, { lat: dLat(d), lon: lon + 0.02 }] });
+  const rel = (id, iso, wid) => ({ type: "relation", id, tags: { boundary: "administrative", admin_level: "2", "ISO3166-1": iso }, members: [{ type: "way", ref: wid, role: "outer" }] });
+  const ext = { elements: [way(1, 2500), rel(10, "LB", 1), rel(11, "IL", 1), way(2, 5000), rel(12, "SY", 2)] };
+  const b = C.analyzeBorders(P, ext, cfg, 100);
+  const lb = b.find(x => x.iso === "LB"), sy = b.find(x => x.iso === "SY");
+  assert.ok(lb && Math.abs(lb.d - 2500) < 1 && lb.violates, "לבנון 2.5 ק״מ < 3 ק״מ");
+  assert.ok(sy && Math.abs(sy.d - 5000) < 1 && sy.violates, "סוריה 5 ק״מ < 6 ק״מ");
+  assert.ok(!b.find(x => x.iso === "IL"), "ישראל אינה גבול מוגבל");
+  const far = C.analyzeBorders(P, { elements: [way(1, 3200), rel(10, "LB", 1)] }, cfg, 100);
+  assert.equal(far[0].violates, false, "3.2 ק״מ − רדיוס 100 = 3.1 ק״מ > 3 ק״מ");
+  const edge = C.analyzeBorders(P, { elements: [way(1, 3200), rel(10, "LB", 1)] }, cfg, 300);
+  assert.equal(edge[0].violates, true, "קצה סגירה 300 מ׳ נכנס לרצועה");
+  assert.equal(C.analyzeBorders(P, { elements: [] }, cfg, 100).length, 0);
 });
