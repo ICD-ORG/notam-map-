@@ -1,6 +1,10 @@
 name: הרצת בקשה (נתונים גולמיים ותמונות)
 
 on:
+  push:
+    branches: ['claude-icd/**']
+    paths:
+      - '.github/workflows/generate.yml'
   workflow_dispatch:
     inputs:
       lat: { description: 'קו רוחב', required: true }
@@ -22,6 +26,7 @@ permissions:
 
 jobs:
   generate:
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
