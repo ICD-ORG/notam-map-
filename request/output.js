@@ -136,19 +136,48 @@
     // גבולות
     rows.push(["קרבה לגבול מדינה (פמ״ת א-17 סעיף 4)", "OpenStreetMap",
       res.borders.length ? res.borders.map(b => E("גבול " + b.name + ": " + C.fmtDist(b.d) + " מהנקודה (מגבלה: " + b.km + " ק״מ) — " + (b.violates ? "הסגירה נכנסת לרצועה" : "הסגירה מחוץ לרצועה"))).join("; ") + "." : "אין גבול מצרים/סוריה/לבנון בטווח " + C.fmtDist(th.border_scan_m) + "."]);
-    // נוטמים
+    // נוטמים: סגירות אוויריות עד notam_near_m מקצה הסגירה; מכשולים שפורסמו בנוטם עד site_near_m
     const fetched = data.notamFetchedIso ? data.notamFetchedIso.replace("T", " ").slice(0, 16) + " UTC" : "";
-    const nh = res.notams.hits, ex = res.notams.excluded || [];
-    const exBy = r => ex.filter(x => x.reason === r).map(x => x.id);
+    const nh = res.notams.hits, nob = res.notams.obstacles || [], ex = res.notams.excluded || [];
+    const cnt = r => ex.filter(x => x.reason === r).length;
+    const win = n => { const f = ms => ms === Infinity ? "קבוע" : new Date(ms).toISOString().slice(0, 16).replace("T", " ") + "Z"; return f(n.window.from) + " – " + f(n.window.to); };
+    const where = n => n.relation === "no-geometry" ? "אין מיקום בנוטם — יש לקרוא" : n.inside ? "חופף לסגירה המבוקשת" : C.fmtDist(n.edge) + " מקצה הסגירה";
+    const line = n => "<b>" + E(n.id) + "</b> — " + E(where(n)) + ": " + E((n.heb || n.name || "").split("\n")[0].slice(0, 260)) + " <span class='muted'>(בתוקף " + E(win(n)) + ")</span>";
     const exParts = [];
-    if (exBy("checklist").length) exParts.push("רשימות נוטמים (CHECKLIST): " + exBy("checklist").join(", "));
-    if (exBy("cancel").length) exParts.push("ביטולים: " + exBy("cancel").join(", "));
-    if (exBy("above").length) exParts.push("נוטמים בתוקף שגבולם התחתון גבוה מ-" + C.fmtInt(Math.round(res.ft + 9500)) + " רגל (הגובה המבוקש בתוספת הקרקע הגבוהה בישראל): " + exBy("above").join(", "));
-    const exTxt = exParts.length ? "<br><span class='muted'>לא נכללו בתוצאה: " + E(exParts.join(" · ")) + ".</span>" : "";
-    rows.push(["נוטמים בתוקף בחלון הפעילות", "נמשכו " + fetched,
-      (nh.length ? nh.map(n => "<b>" + E(n.id) + "</b>: " + E((n.heb || n.name || "").split("\n")[0].slice(0, 220)) + (n.relation === "no-geometry" ? " (אין מיקום בנוטם — יש לקרוא)" : "")).join("<br>") : "אין נוטם בתוקף שחופף לסגירה ולמועד.") + exTxt]);
+    [["comms", "תדרים/תקשורת"], ["gnss", "הפרעות GNSS"], ["route", "נתיבים"], ["checklist", "רשימות נוטמים"], ["cancel", "ביטולים"], ["other", "נוטמים אחרים שאינם סגירת מרחב (שדות תעופה, מכשירי ניווט, שינויי נוהל וכד׳)"]].forEach(([k, l]) => { if (cnt(k)) exParts.push(l + ": " + cnt(k)); });
+    if (cnt("far")) exParts.push("סגירות/מכשולים רחוקים מהטווח: " + cnt("far"));
+    const above = ex.filter(x => x.reason === "above").map(x => x.id);
+    if (above.length) exParts.push("בגובה מעל " + C.fmtInt(Math.round(res.ft + 9500)) + " רגל: " + above.join(", "));
+    const exTxt = exParts.length ? "<br><span class='muted'>לא נכללו (אינם סגירה אווירית בטווח): " + E(exParts.join(" · ")) + ".</span>" : "";
+    rows.push(["סגירות אוויריות בנוטמים (עד " + C.fmtDist(th.notam_near_m) + " מקצה הסגירה) ומכשולים שפורסמו", "נוטמים שנמשכו " + fetched,
+      (nh.length ? nh.map(line).join("<br>") : "אין סגירה אווירית בתוקף בחלון הפעילות במרחק עד " + C.fmtDist(th.notam_near_m) + " מקצה הסגירה.") +
+      "<br>" + (nob.length ? "<b>מכשולים שפורסמו בנוטם (עד " + C.fmtDist(th.site_near_m) + " מקצה הסגירה):</b><br>" + nob.map(line).join("<br>") : "מכשולים שפורסמו בנוטם עד " + C.fmtDist(th.site_near_m) + " מקצה הסגירה: אין.") + exTxt]);
     // שיטת הבדיקה
     return rows;
+  }
+
+  /* ---------- דוח כיסוי: מה נסרק ומה נמצא (מצאי מלא), כולל מה שלא נכנס לטופס ---------- */
+  function buildCoverage(res, data, cfg) {
+    const th = cfg.thresholds, R = res.R, all = res.nearScan.all || res.nearScan.items;
+    const groups = C.COVERAGE_GROUPS.map(g => {
+      const it = all.filter(i => i.grp === g), sum = f => it.filter(f).reduce((a, i) => a + i.count, 0);
+      return { group: g, found: sum(() => true), inside: sum(i => i.zone === "in"), ring: sum(i => i.zone === "ring"), near: sum(i => i.zone === "near") };
+    }).filter(g => g.group !== "הוזן ידנית" || g.found > 0);
+    const z = res.zones, a17 = x => x.src === "a17", nz = (data.zones && data.zones.zones ? data.zones.zones.length : 0);
+    const nt = res.notams, osmN = data.near && data.near.elements ? data.near.elements.length : 0;
+    const siteR = R + th.site_near_m;
+    const sources = [
+      ["אזורי איסור/הגבלה/סכנה (א-17)", nz + " אזורים נבדקו. בתוך הסגירה: " + z.inside.filter(a17).length + " · בקרבה (עד " + C.fmtDist(th.near_zone_m) + " מקצה הסגירה): " + z.near.filter(a17).length],
+      ["שמורות טבע וגנים לאומיים (רט״ג)", ((data.inpa && data.inpa.sites) ? data.inpa.sites.length : 0) + " אתרים עם גבולות נבדקו (+ " + ((data.inpa && data.inpa.unmapped) ? data.inpa.unmapped.length : 0) + " ללא גבולות — נבדקו לפי שם מול OpenStreetMap). בתוך הסגירה: " + z.inside.filter(x => x.src === "inpa").length + " · בקרבה: " + z.near.filter(x => x.src === "inpa").length],
+      ["מנחתים חקלאיים", res.agri.length + " מנחתים נבדקו; הקרוב ביותר: " + (res.agri[0] ? res.agri[0].name + ", " + C.fmtDist(res.agri[0].d) : "—")],
+      ["נוטמים", (nt.total || 0) + " נוטמים בקובץ · " + (nt.valid || 0) + " בתוקף בחלון הפעילות · " + nt.hits.length + " סגירות אוויריות בטווח " + C.fmtDist(th.notam_near_m) + " · " + (nt.obstacles ? nt.obstacles.length : 0) + " מכשולים שפורסמו בטווח " + C.fmtDist(th.site_near_m)],
+      ["OpenStreetMap — סביבה", osmN + " אלמנטים הוחזרו מהשרת. חיפוש מכשולים (מגדלים, חשמל, מבנים גבוהים...) עד " + C.fmtDist(2 * R) + " מהנקודה; חיפוש אתרים ותשתיות (אצטדיונים, כבישים, מסילות, מנחתים, בלונים, אתרי המונים...) עד " + C.fmtDist(siteR)],
+      ["OpenStreetMap — שדות תעופה", res.airfields.length + " שדות תעופה/מנחתים בטווח " + C.fmtDist(th.airfield_scan_m)],
+      ["גבולות מדינה (א-17 סעיף 4)", res.borders.length ? res.borders.map(b => b.name + " " + C.fmtDist(b.d)).join(" · ") : "אין גבול מצרים/סוריה/לבנון בטווח " + C.fmtDist(th.border_scan_m)],
+      ["פריטים שהוזנו ידנית", String((res.inp.manualItems || []).filter(m => (m.name || "").trim()).length)]
+    ];
+    const censusOnly = (res.nearScan.censusOnly || []).map(i => ({ title: i.title, grp: i.grp, d: i.d }));
+    return { groups, sources, censusOnly };
   }
 
   function sourceNotes(res, data, cfg) {
@@ -160,6 +189,47 @@
       "גבולות מרחב מבוקר (CTR/ATZ) אינם בנתונים; מוצג המרחק לשדה התעופה הקרוב ביותר.",
       "הנוטמים נבדקים לפי המיקום והתאריכים בטקסט הנוטם (שורת E או שורת Q). נוטם בלי מיקום מוצג לקריאה."
     ];
+  }
+
+  /* ---------- שם קובץ, הגשה, ומודל ל-Word ---------- */
+  const safeName = t => String(t || "").replace(/[\\/:*?"<>|\u0000-\u001f]/g, " ").replace(/\s+/g, " ").trim().slice(0, 80);
+  // "<שם המיקום> — <תאריך הפעילות>" (התיקייה/הקובץ בדרייב)
+  function fileBase(res) {
+    const a = C.parseDate(res.inp.dateFrom), b = C.parseDate(res.inp.dateTo);
+    return safeName(res.inp.siteName) + " — " + C.ddmmyyyy(a) + (res.inp.dateTo !== res.inp.dateFrom ? " עד " + C.ddmmyyyy(b) : "");
+  }
+  function submissionHtml(res, cfg) {
+    const wd = res.workingDays;
+    return (wd != null ? "ימי עבודה (א׳–ה׳, בלי חגים) מיום ההגשה (" + E(res.todayYmd.split("-").reverse().join(".")) + ") ועד תחילת הפעילות: <b>" + wd + "</b>. הנוהל (א-11 סעיף 6.ב) דורש לפחות " + cfg.thresholds.min_working_days + ". " : "") +
+      "בנוסף יש להגיש את תוכנית הטיסה שוב למודיעין טיס ביום שלפני הטיסה: <span dir='ltr'>" + E(cfg.mail.fpl) + "</span> (א-11 סעיף 3.ד.4).";
+  }
+  const whereOf = i => i.zone === "in" ? "בתוך האזור" : i.zone === "ring" ? "בטבעת הכתומה" : "בקרבת האזור";
+  // o: {images:{map,aerial}, includeChecks, draft, review (טקסט), creator}
+  function docxModel(res, data, cfg, o) {
+    o = o || {};
+    const inp = res.inp, now = o.now || new Date();
+    return {
+      docTitle: "בקשה לסגירה אווירית — " + fileBase(res), creator: o.creator || cfg.org.name,
+      title: "פמ״ת פנים ארצי א-11 — נספח ג׳", subtitle: "טופס בקשה לסגירה אווירית",
+      draftText: o.draft ? "טיוטה — לא מוכן לשליחה: " + o.draft : "",
+      rows: buildForm(res, cfg).map(r => ({ n: r.n, label: r.label, sub: r.sub, html: r.html })),
+      mailLine: "*את הבקשה יש להגיש לכתובות המייל: " + cfg.mail.to.join(", "),
+      formFooter: cfg.form + " · הופק " + now.toLocaleDateString("he-IL"),
+      mapTitle: "מפה/הדמיה מצורפת לבקשה" + (o.providerName ? " — " + o.providerName : ""),
+      mapNote: "ירוק: אזור הסגירה (" + res.R + " מ׳) · כתום: עד " + 2 * res.R + " מ׳ · אדום: אזור אסור/מוגבל (פמ״ת א-17) · צהוב: מכשול · תכלת: אתר/תשתית קרקעית · סגול: תשתית/מכשול אווירי · ירוק בהיר: אתר המונים/תשתית נוספת. המספרים תואמים לרשימה בשדה 8.",
+      items: res.nearScan.items.map(i => ({ n: i.n, title: i.title + (i.height ? " · גובה " + C.trimNum(i.height, 0) + " מ׳" : ""), dist: dLabel(i.d), where: whereOf(i) })),
+      images: o.images || {}, aerialTitle: "תצ״א (צילום אוויר) של האזור — ללא סימון",
+      includeChecks: !!o.includeChecks,
+      checkPoint: C.dmsLat(inp.lat) + " " + C.dmsLon(inp.lon) + " · ירוק: " + res.R + " מ׳ · כתום: עד " + 2 * res.R + " מ׳ · גובה " + C.trimNum(inp.heightM, 2) + " מ׳ (" + res.ft.toFixed(1) + " רגל)",
+      checks: buildChecks(res, data, cfg).map(r => [r[0], r[1], r[2]]),
+      coverage: (function () { const c = buildCoverage(res, data, cfg); return { sources: c.sources, groups: c.groups, censusOnly: c.censusOnly.map(i => ({ title: i.title, dist: dLabel(i.d) })) }; })(),
+      dayNightHead: ["תאריך", "זריחה", "שקיעה", "שעות יום בחלון", "שעות לילה בחלון"],
+      dayNight: res.sun.map(r => ["יום " + r.dayName + " " + C.ddmmyyyy(r.date), r.sunrise, r.sunset, C.fmtHM(r.dayMin), C.fmtHM(r.nightMin)]),
+      submission: submissionHtml(res, cfg),
+      notes: sourceNotes(res, data, cfg),
+      review: o.review || "",
+      footer: "מקורות: " + ((data.zones && data.zones.edition) || "") + " · פמ״ת א-11 עדכון 1/26 · OpenStreetMap · נוטמים · הופק " + now.toLocaleString("he-IL")
+    };
   }
 
   /* ---------- KML ---------- */
@@ -229,5 +299,5 @@
     return { to: cfg.mail.to, subject, body, mailto: "mailto:" + cfg.mail.to.join(",") + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body) };
   }
 
-  return { buildForm, buildChecks, sourceNotes, kml, mail, matchUnmapped, itemText, airInfraLines, toText, dLabel };
+  return { fileBase, safeName, submissionHtml, whereOf, docxModel, buildForm, buildChecks, buildCoverage, sourceNotes, kml, mail, matchUnmapped, itemText, airInfraLines, toText, dLabel };
 });

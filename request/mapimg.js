@@ -61,9 +61,14 @@
     tiles.forEach(t => { if (t.img) g.drawImage(t.img, Math.round(t.px), Math.round(t.py), 256, 256); else failed++; });
     const background = failed === 0 && tiles.length > 0;
 
-    // ---- אזורי א-17 / רט״ג (אדום) ----
+    const plain = !!opts.plain;
     g.lineJoin = "round";
     const path = (pts, close) => { g.beginPath(); pts.forEach((p, i) => { const q = X(p[0], p[1]); i ? g.lineTo(q[0], q[1]) : g.moveTo(q[0], q[1]); }); if (close) g.closePath(); };
+    const text = (s, x, y, o) => {
+      o = o || {}; g.font = (o.bold === false ? "" : "bold ") + (o.size || 15) + "px sans-serif"; g.textAlign = o.align || "center"; g.textBaseline = "middle"; g.direction = o.ltr ? "ltr" : "rtl";
+      g.lineWidth = 4; g.strokeStyle = o.halo || "rgba(0,0,0,0.85)"; g.strokeText(s, x, y); g.fillStyle = o.color || "#fff"; g.fillText(s, x, y);
+    };
+    if (!plain) {
     [...res.zones.inside, ...res.zones.near].forEach(zn => {
       const zz = zn.z, rings = zz.rings && zz.rings.length ? zz.rings : (zz.c && zz.r ? [C.circlePoints(new C.Proj(zz.c[0], zz.c[1]), zz.r, 96)] : []);
       rings.forEach(rg => { path(rg, true); g.fillStyle = "rgba(255,59,48,0.30)"; g.fill(); g.lineWidth = 3; g.strokeStyle = "#d92d20"; g.stroke(); });
@@ -78,7 +83,7 @@
 
     // ---- מכשולים ותשתיות ----
     const labels = [];
-    const COL = { obst: ["#ffd400", "rgba(255,212,0,0.40)"], ground: ["#22d3ee", "rgba(34,211,238,0.30)"], air: ["#e040fb", "rgba(224,64,251,0.32)"] };
+    const COL = { obst: ["#ffd400", "rgba(255,212,0,0.40)"], ground: ["#22d3ee", "rgba(34,211,238,0.30)"], air: ["#e040fb", "rgba(224,64,251,0.32)"], census: ["#a3e635", "rgba(163,230,53,0.28)"] };
     res.nearScan.items.forEach(it => {
       const [c1, c2] = COL[it.cat] || COL.obst;
       it.geoms.forEach(gm => {
@@ -92,18 +97,19 @@
       const pt = it.geoms.find(gm => gm.pt), [c1] = COL[it.cat] || COL.obst;
       const q = pt ? X(pt.pt[0], pt.pt[1]) : X(it.ll[0], it.ll[1]);
       if (pt) { g.fillStyle = c1; g.strokeStyle = "#111"; g.lineWidth = 2; g.fillRect(q[0] - 8, q[1] - 8, 16, 16); g.strokeRect(q[0] - 8, q[1] - 8, 16, 16); }
-      labels.push({ q, n: it.n, c: c1 });
+      labels.push({ q, n: it.n, c: c1, d: it.d });
     });
     labels.forEach(l => {
       g.beginPath(); g.arc(l.q[0] + 14, l.q[1] - 14, 11, 0, 2 * Math.PI); g.fillStyle = "#111"; g.fill();
-      g.fillStyle = l.c; g.font = "bold 14px sans-serif"; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(String(l.n), l.q[0] + 14, l.q[1] - 13);
+      g.fillStyle = l.c; g.font = "bold 14px sans-serif"; g.textAlign = "center"; g.textBaseline = "middle"; g.direction = "ltr"; g.fillText(String(l.n), l.q[0] + 14, l.q[1] - 13);
+    });
+    labels.forEach(l => { // מרחק מהנקודה ליד כל סימון
+      g.font = "bold 12px sans-serif"; g.textAlign = "left"; g.textBaseline = "middle"; g.direction = "rtl";
+      const t = l.d < 1 ? "בתוך השטח" : C.fmtDist(l.d);
+      g.lineWidth = 3.5; g.strokeStyle = "rgba(0,0,0,0.85)"; g.strokeText(t, l.q[0] + 28, l.q[1] - 14); g.fillStyle = "#fff"; g.fillText(t, l.q[0] + 28, l.q[1] - 14);
     });
 
     // ---- קווי מרחק לאזורי איסור ----
-    const text = (s, x, y, o) => {
-      o = o || {}; g.font = (o.bold === false ? "" : "bold ") + (o.size || 15) + "px sans-serif"; g.textAlign = o.align || "center"; g.textBaseline = "middle"; g.direction = o.ltr ? "ltr" : "rtl";
-      g.lineWidth = 4; g.strokeStyle = o.halo || "rgba(0,0,0,0.85)"; g.strokeText(s, x, y); g.fillStyle = o.color || "#fff"; g.fillText(s, x, y);
-    };
     [...res.zones.inside, ...res.zones.near].forEach(zn => {
       const a = [W / 2, H / 2], b = X(zn.ll[0], zn.ll[1]);
       if (zn.d >= 1) {
@@ -119,6 +125,7 @@
     g.strokeStyle = "#111"; g.lineWidth = 2; g.stroke();
     g.beginPath(); g.arc(W / 2, H / 2, 4, 0, 2 * Math.PI); g.fillStyle = "#111"; g.fill();
 
+    }
     // ---- סרגל קנה מידה ----
     const nice = [10, 20, 50, 100, 200, 500, 1000, 2000, 5000]; let sm = nice[0];
     nice.forEach(n => { if (n * pxPerM <= 200) sm = n; });
@@ -131,16 +138,18 @@
     g.fillStyle = "#fff"; g.beginPath(); g.moveTo(W - 40, 84); g.lineTo(W - 30, 112); g.lineTo(W - 40, 106); g.lineTo(W - 50, 112); g.closePath(); g.fill();
     text("N", W - 40, 126, { size: 15 });
 
+    if (!plain) {
     // ---- כותרת ----
     g.fillStyle = "rgba(11,18,32,0.88)"; g.fillRect(0, 0, W, 70);
     text("בקשת סגירה אווירית — " + inp.siteName, W - 20, 22, { align: "right", size: 20, halo: "rgba(0,0,0,0)" });
     text("רדיוס " + res.R + " מ׳   ·   גובה " + C.trimNum(inp.heightM, 2) + " מ׳ (" + res.ft.toFixed(1) + " רגל) מעפ״ש (AGL)", W - 20, 50, { align: "right", size: 15, bold: false, color: "#cfe3ff", halo: "rgba(0,0,0,0)" });
     text(C.dmsLat(inp.lat) + "   " + C.dmsLon(inp.lon), 20, 50, { align: "left", ltr: true, size: 15, bold: false, color: "#cfe3ff", halo: "rgba(0,0,0,0)" });
     // ---- מקרא ----
-    const items = [["#22c55e", "ירוק: אזור הסגירה (0–" + res.R + " מ׳)"], ["#ff9500", "כתום: עד " + 2 * res.R + " מ׳"], ["#ff3b30", "אדום: אזור אסור/מוגבל (פמ״ת א-17)"], ["#ffd400", "צהוב: מכשול (מספר = ברשימה בטופס)"], ["#22d3ee", "תכלת: אתר/תשתית קרקעית (אצטדיון, כביש, מסילה...)"], ["#e040fb", "סגול: תשתית/מכשול אווירי (שדה, מנחת, בלון)"]];
+    const items = [["#22c55e", "ירוק: אזור הסגירה (0–" + res.R + " מ׳)"], ["#ff9500", "כתום: עד " + 2 * res.R + " מ׳"], ["#ff3b30", "אדום: אזור אסור/מוגבל (פמ״ת א-17)"], ["#ffd400", "צהוב: מכשול (מספר = ברשימה בטופס)"], ["#22d3ee", "תכלת: אתר/תשתית קרקעית (אצטדיון, כביש, מסילה...)"], ["#e040fb", "סגול: תשתית/מכשול אווירי (שדה, מנחת, בלון)"], ["#a3e635", "ירוק בהיר: אתר המונים / תשתית נוספת"]];
     const lx0 = W - 20 - 420, ly0 = H - 20 - items.length * 26 - 12;
     g.fillStyle = "rgba(0,0,0,0.62)"; g.fillRect(lx0 - 12, ly0 - 8, 432, items.length * 26 + 20);
     items.forEach((it, i) => { g.fillStyle = it[0]; g.fillRect(lx0 + 400, ly0 + 5 + i * 26, 16, 16); text(it[1], lx0 + 390, ly0 + 13 + i * 26, { align: "right", size: 14, bold: false, halo: "rgba(0,0,0,0)" }); });
+    }
     // ---- זכויות יוצרים ----
     text(prov.attribution + " · " + new Date().toISOString().slice(0, 10), 6, H - 6, { align: "left", ltr: true, size: 11, bold: false, halo: "rgba(0,0,0,0.9)" });
 

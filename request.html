@@ -176,13 +176,27 @@ details{margin-top:8px}details summary{cursor:pointer;color:var(--amber);font-we
 <section id="resultsSec" style="display:none">
   <div id="gate"></div>
   <div id="staleBox"></div>
+  <div class="card nonprint" id="reviewBox">
+    <h2>4 · סקירה אנושית ותוספות</h2>
+    <p class="small">המערכת סורקת את פמ״ת א-17, רט״ג, מנחתים חקלאיים, נוטמים ו-OpenStreetMap, ומציגה את כל מה שנמצא (ראו "דף בדיקות" ו"מצאי לפי קבוצות"). מכשול חדש או זמני — עגורן, אנטנה, בלון, מתקן אירוע — עלול לא להופיע באף מקור. <b>עברו על התצ״א ועל הרשימה, והוסיפו כאן כל דבר שהמערכת לא מצאה.</b> הוספות נכנסות לטופס, למפה ול-KML.</p>
+    <div class="grid" style="margin-top:8px">
+      <label class="f"><b>מה (שם/תיאור)</b><input type="text" id="mName" placeholder="למשל: עגורן בנייה, אנטנה, בלון זמני"></label>
+      <label class="f"><b>נ״צ</b><input type="text" id="mCoord" dir="ltr" placeholder="32.0991, 34.8166"></label>
+      <label class="f"><b>גובה (מטר, אופציונלי)</b><input type="number" id="mHeight" min="1" step="1"></label>
+    </div>
+    <div class="row" style="margin-top:8px"><button type="button" id="mPick">בחר מיקום מהמפה</button><button type="button" id="mAdd" class="primary">הוסף לבקשה</button><span class="err" id="e_manual"></span></div>
+    <ul id="manualList" class="st-list" style="margin-top:8px"></ul>
+    <label class="checks" style="margin-top:12px"><span style="display:flex;gap:8px;align-items:flex-start;font-size:14px"><input type="checkbox" id="reviewOk" style="margin-top:4px"> עברתי על התצ״א, על רשימת המצאי ועל המפה, ואני מאשר שאין מכשול או תשתית נוספת שלא הופיעה בטופס (או שהוספתי אותה ידנית).</span></label>
+  </div>
   <div class="card nonprint" id="actions">
-    <h2>4 · הפקות</h2>
+    <h2>5 · הפקות</h2>
     <div class="row">
       <button type="button" class="primary" id="btnPrint">הדפס / שמור כ-PDF</button>
+      <button type="button" class="primary" id="btnDocx">הורד Word (ניתן לעריכה)</button>
       <label class="small" style="display:flex;gap:6px;align-items:center"><input type="checkbox" id="incChecks" checked> כולל דף בדיקות</label>
       <button type="button" id="btnKml">הורד KML (Google Earth)</button>
-      <button type="button" id="btnPng">הורד תמונת מפה (PNG)</button>
+      <button type="button" id="btnPng">הורד הדמיה (PNG)</button>
+      <button type="button" id="btnAerial">הורד תצ״א נקי (PNG)</button>
       <button type="button" id="btnCopy">העתק טקסט מייל</button>
       <a id="btnMail" href="#" role="button" style="text-decoration:none"><button type="button" tabindex="-1">פתח מייל</button></a>
     </div>
@@ -203,9 +217,11 @@ details{margin-top:8px}details summary{cursor:pointer;color:var(--amber);font-we
 </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script src="request/core.js?v=1"></script>
-<script src="request/output.js?v=1"></script>
-<script src="request/mapimg.js?v=1"></script>
-<script src="request/ui.js?v=1"></script>
+<script src="request/vendor/jszip.min.js"></script>
+<script src="request/core.js?v=2"></script>
+<script src="request/output.js?v=2"></script>
+<script src="request/docx.js?v=1"></script>
+<script src="request/mapimg.js?v=2"></script>
+<script src="request/ui.js?v=2"></script>
 </body>
 </html>

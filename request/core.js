@@ -114,6 +114,17 @@
       "nwr" + b + '[tourism=attraction][name~"בלון|balloon",i];' +
       "nwr" + b + "[sport=shooting];" +
       "nwr" + b + "[leisure=shooting_ground];" +
+      // מצאי רחב: אתרי המונים, תשתיות ותעשייה, כבישים ראשיים, קווי חשמל משניים, תחנות — כדי לא לפספס
+      "nwr" + b + '[tourism~"^(attraction|theme_park|zoo|aquarium)$"];' +
+      "nwr" + b + '[attraction~"^(amusement_ride|water_slide|roller_coaster|big_wheel|drop_tower|carousel|bungee_jumping|zip_line)$"];' +
+      "nwr" + b + '[amenity~"^(theatre|events_venue|conference_centre|exhibition_centre|fire_station)$"];' +
+      "nwr" + b + '[leisure~"^(water_park|golf_course|racetrack|marina)$"];' +
+      "nwr" + b + '[landuse~"^(industrial|quarry|landfill|port)$"];' +
+      "nwr" + b + '[man_made~"^(bridge|pier|works|wastewater_plant|water_works|gasometer|cooling_tower|telescope|radar|observatory|petroleum_well|dam|breakwater)$"];' +
+      "nwr" + b + "[waterway=dam];" +
+      "nwr" + b + '[power=minor_line];' +
+      "nwr" + b + "[highway=primary];" +
+      "nwr" + b + '[railway~"^(station|halt)$"];' +
       ");out geom tags;";
     const farR = th.airfield_scan_m || 15000, placeR = th.place_scan_m || 3000;
     const box = km => { const dLa = km / 111000, dLo = km / (111000 * Math.cos((lat * Math.PI) / 180)); return [lat - dLa, lon - dLo, lat + dLa, lon + dLo].map(v => v.toFixed(5)).join(","); };
@@ -219,26 +230,49 @@
 
   function nameOf(t) { return t["name:he"] || t.name || t["name:en"] || ""; }
   const isBalloon = t => t.attraction === "balloon_ride" || /^(tethered_balloon|balloon)$/.test(t.man_made || "") || (t.tourism === "attraction" && /בלון|balloon/i.test((t.name || "") + " " + (t["name:en"] || "")));
+  const OBST_MM = /^(tower|mast|chimney|crane|water_tower|silo|storage_tank|flare|lighthouse|communications_tower|antenna|windmill)$/;
+  const OBST_PW = /^(line|tower|substation|plant|generator)$/;
+  // קטגוריה: obst = מכשול (עד 2R) · air/ground = אוויר/קרקע (עד R+km) · census = מצאי רחב (בתוך/טבעת — בטופס; רחוק יותר — בדף הבדיקות)
   function classify(t) {
+    if (t["icd:manual"]) return "obst";
     if (isBalloon(t)) return "air";
+    if (t.aeroway || t.emergency === "helipad") return "air";
     if (t.sport === "shooting" || t.leisure === "shooting_ground") return "ground";
-    if (t.aeroway) return "air";
-    if (t.emergency === "helipad") return "air";
-    if (t.man_made || t.power || "aerialway" in t) return "obst";
+    if (OBST_MM.test(t.man_made || "") || OBST_PW.test(t.power || "") || "aerialway" in t) return "obst";
     if (t.building) return "obst";
-    return "ground";
+    if (/^(motorway|trunk)$/.test(t.highway || "") || /^(rail|light_rail|subway)$/.test(t.railway || "")) return "ground";
+    if (/^(hospital|prison|police)$/.test(t.amenity || "") || t.leisure === "stadium" || t.military || t.landuse === "military") return "ground";
+    return "census";
   }
+  // קבוצת כיסוי (לדוח "מצאי מלא")
+  function groupOf(t) {
+    if (t["icd:manual"]) return "הוזן ידנית";
+    if (isBalloon(t) || t.aeroway || t.emergency === "helipad") return "שדות תעופה, מנחתים ובלונים";
+    if (OBST_MM.test(t.man_made || "")) return "מגדלים, תרנים, ארובות ועגורנים";
+    if (t.power) return "קווי חשמל ותחנות";
+    if ("aerialway" in t) return "רכבלים";
+    if (t.building) return "מבנים גבוהים";
+    if (t.sport === "shooting" || t.leisure === "stadium" || t.leisure === "shooting_ground" || t.tourism || t.attraction || /^(theatre|events_venue|conference_centre|exhibition_centre)$/.test(t.amenity || "") || /^(water_park|golf_course|racetrack|marina)$/.test(t.leisure || "")) return "אצטדיונים, מטווחים ואתרי המונים";
+    if (t.military || t.landuse === "military") return "אזורים צבאיים";
+    if (t.highway || t.railway) return "כבישים ומסילות";
+    if (/^(hospital|prison|police|fire_station)$/.test(t.amenity || "")) return "מוסדות (בתי חולים, סוהר, משטרה, כיבוי)";
+    return "תעשייה ותשתיות";
+  }
+  const COVERAGE_GROUPS = ["מגדלים, תרנים, ארובות ועגורנים", "קווי חשמל ותחנות", "מבנים גבוהים", "רכבלים", "שדות תעופה, מנחתים ובלונים", "אצטדיונים, מטווחים ואתרי המונים", "אזורים צבאיים", "כבישים ומסילות", "מוסדות (בתי חולים, סוהר, משטרה, כיבוי)", "תעשייה ותשתיות", "הוזן ידנית"];
+  const ATTR_HE = { amusement_ride: "מתקן שעשועים", water_slide: "מגלשת מים", roller_coaster: "רכבת הרים", big_wheel: "גלגל ענק", drop_tower: "מגדל נפילה", carousel: "קרוסלה", bungee_jumping: "באנג׳י", zip_line: "קו אוויר (זיפליין)" };
   function heLabel(t) {
     if (isBalloon(t)) return "בלון (אטרקציית בלון / בלון מעוגן)";
+    if (t["icd:manual"]) return "מכשול/תשתית (הוזן ידנית)";
     if (t.sport === "shooting" || t.leisure === "shooting_ground") return "מטווח ירי";
     const mm = t.man_made, pw = t.power;
     if (pw === "line") { const v = parseInt(String(t.voltage || "").split(";")[0], 10); return v ? "קו מתח " + (v >= 100000 ? "עליון " : v >= 33000 ? "גבוה " : "") + Math.round(v / 1000) + " ק״ו" : "קו חשמל"; }
+    if (pw === "minor_line") return "קו חשמל (מתח נמוך/בינוני)";
     if (pw === "tower") return "עמוד חשמל" + (t.ref ? " " + t.ref : "");
     if (pw === "substation") return "תחנת משנה";
     if (pw === "plant" || pw === "generator") return "תחנת כוח";
     if (mm === "tower") return { communication: "מגדל תקשורת", observation: "מגדל תצפית" }[t["tower:type"]] || "מגדל";
     if (mm === "mast" || mm === "communications_tower" || mm === "antenna") return "תורן";
-    if (mm) return { storage_tank: "מיכל אחסון", chimney: "ארובה", crane: "עגורן", water_tower: "מגדל מים", silo: "ממגורה", flare: "לפיד", lighthouse: "מגדלור", windmill: "טורבינת רוח" }[mm] || "מבנה (" + mm + ")";
+    if (mm) return { storage_tank: "מיכל אחסון", chimney: "ארובה", crane: "עגורן", water_tower: "מגדל מים", silo: "ממגורה", flare: "לפיד", lighthouse: "מגדלור", windmill: "טורבינת רוח", bridge: "גשר", pier: "מזח", works: "מפעל", wastewater_plant: "מתקן טיהור שפכים", water_works: "מתקן מים", gasometer: "גזומטר", cooling_tower: "מגדל קירור", telescope: "טלסקופ", radar: "מכ״ם", observatory: "מצפה", petroleum_well: "באר נפט", dam: "סכר", breakwater: "שובר גלים" }[mm] || "מבנה (" + mm + ")";
     if ("aerialway" in t) return "רכבל";
     if (t.aeroway === "helipad" || t.emergency === "helipad") return "מנחת מסוקים";
     if (t.aeroway === "aerodrome") return "שדה תעופה";
@@ -251,43 +285,72 @@
     if (t.amenity === "prison") return "בית סוהר";
     if (t.amenity === "police") return "משטרה";
     if (t.leisure === "stadium") return "אצטדיון";
+    if (t.attraction && ATTR_HE[t.attraction]) return ATTR_HE[t.attraction];
+    if (t.tourism === "theme_park") return "פארק שעשועים";
+    if (t.tourism === "zoo") return "גן חיות";
+    if (t.tourism === "aquarium") return "אקווריום";
+    if (t.tourism === "attraction") return "אטרקציה";
+    if (t.amenity === "theatre") return "תיאטרון/אמפיתיאטרון";
+    if (t.amenity === "events_venue") return "אולם אירועים";
+    if (t.amenity === "conference_centre" || t.amenity === "exhibition_centre") return "מרכז כנסים/תערוכות";
+    if (t.amenity === "fire_station") return "תחנת כיבוי";
+    if (t.leisure === "water_park") return "פארק מים";
+    if (t.leisure === "golf_course") return "מגרש גולף";
+    if (t.leisure === "racetrack") return "מסלול מרוצים";
+    if (t.leisure === "marina") return "מרינה";
+    if (t.landuse === "industrial") return "אזור תעשייה";
+    if (t.landuse === "quarry") return "מחצבה";
+    if (t.landuse === "landfill") return "אתר פסולת";
+    if (t.landuse === "port") return "נמל";
+    if (t.waterway === "dam") return "סכר";
+    if (t.highway === "primary") return "כביש ראשי";
+    if (t.railway === "station" || t.railway === "halt") return "תחנת רכבת";
     if (t.building) {
       const h = parseFloat(t.height);
       return "מבנה גבוה" + (isFinite(h) ? " (" + trimNum(h, 0) + " מ׳)" : t["building:levels"] ? " (" + t["building:levels"] + " קומות)" : "");
     }
     return "אחר";
   }
-  function groupKey(e, t, label) {
-    // קטעים של אותו קו/כביש/מסילה מאוחדים לפריט אחד; כל השאר — פריט לכל אלמנט
-    if (t.power === "line" || t.railway || t.highway) return label + "|" + (t.ref || t.name || t["name:he"] || t.operator || "");
+  function groupKey(e, t, label, cat) {
+    // קטעים של אותו קו/כביש/מסילה מאוחדים לפריט אחד; מצאי רחב: לפי סוג ושם; כל השאר — פריט לכל אלמנט
+    if (t.power === "line" || t.power === "minor_line" || t.railway || t.highway) return label + "|" + (t.ref || t.name || t["name:he"] || t.operator || "");
+    if (cat === "census") return label + "|" + (t.name || t["name:he"] || "");
     return e.type + "/" + e.id;
   }
 
-  // near: תשובת Overpass של שאילתת הקרוב. מכשולים עד 2R; אתרים ותשתיות (קרקע/אוויר) עד R+site_near_m. ממוספרים לפי מרחק.
+  // near: תשובת Overpass של שאילתת הקרוב (+ פריטים שהוזנו ידנית). מכשולים עד 2R; אתרים ותשתיות עד R+site_near_m.
+  // פריטי מצאי רחב ("census") בתוך האזור/הטבעת נכנסים לטופס; רחוקים יותר — רק לדף הבדיקות ("censusOnly").
   function analyzeNear(P, R, near, th) {
     const siteM = (th && th.site_near_m) || 1000;
     const groups = new Map();
     (near.elements || []).forEach(e => {
       const r = elemDist(P, e); if (!r) return;
       const t = e.tags || {}, cat = classify(t);
-      if (r.d > (cat === "obst" ? 2 * R : R + siteM)) return;
-      const label = heLabel(t), key = groupKey(e, t, label);
+      if (!t["icd:manual"] && r.d > (cat === "obst" ? 2 * R : R + siteM)) return;
+      const label = heLabel(t), key = groupKey(e, t, label, cat);
       let g = groups.get(key);
-      if (!g) { g = { key, label, name: nameOf(t), cat, d: r.d, p: r.p, tags: t, ids: [], geoms: [] }; groups.set(key, g); }
+      if (!g) { g = { key, label, name: nameOf(t), cat, grp: groupOf(t), d: r.d, p: r.p, tags: t, ids: [], geoms: [] }; groups.set(key, g); }
       if (r.d < g.d) { g.d = r.d; g.p = r.p; }
       g.ids.push(e.type + "/" + e.id);
       elemGeoms(e).forEach(gm => g.geoms.push(gm));
     });
-    const items = [...groups.values()].sort((a, b) => a.d - b.d);
-    items.forEach((it, i) => {
-      it.n = i + 1;
+    const all = [...groups.values()].sort((a, b) => a.d - b.d);
+    all.forEach(it => {
       it.zone = it.d <= R ? "in" : it.d <= 2 * R ? "ring" : "near";
-      it.title = it.label + (it.name && it.label.indexOf(it.name) < 0 ? " ״" + it.name + "״" : "");
+      it.count = it.ids.length;
+      it.manual = !!it.tags["icd:manual"];
+      it.title = it.label + (it.name && it.label.indexOf(it.name) < 0 ? " ״" + it.name + "״" : "") + (it.cat === "census" && it.count > 1 ? " (×" + it.count + ", הקרוב)" : "");
       const ht = parseFloat(it.tags.height);
       if (isFinite(ht) && it.label.indexOf("מ׳") < 0) it.height = ht;
       it.ll = P.ll(it.p[0], it.p[1]);
     });
-    return { items, inside: items.filter(i => i.zone === "in"), ring: items.filter(i => i.zone === "ring"), near: items.filter(i => i.zone === "near") };
+    const items = all.filter(i => i.cat !== "census" || i.zone !== "near");
+    items.forEach((it, i) => { it.n = i + 1; });
+    return { items, all, inside: items.filter(i => i.zone === "in"), ring: items.filter(i => i.zone === "ring"), near: items.filter(i => i.zone === "near"), censusOnly: all.filter(i => i.cat === "census" && i.zone === "near") };
+  }
+  // פריט שהוזן ידנית -> אלמנט OSM סינתטי
+  function manualElements(list) {
+    return (list || []).filter(m => isFinite(m.lat) && isFinite(m.lon) && (m.name || "").trim()).map((m, i) => ({ type: "node", id: -(i + 1), lat: m.lat, lon: m.lon, tags: Object.assign({ "icd:manual": "yes", name: m.name.trim() }, isFinite(m.heightM) && m.heightM > 0 ? { height: String(m.heightM) } : {}) }));
   }
 
   /* ================= אזורי א-17 ורט״ג ================= */
@@ -499,34 +562,47 @@
     return m ? { code: m[1], lowerFt: +m[2] * 100, upperFt: +m[3] * 100 } : null;
   }
   const TERRAIN_MAX_FT = 9500; // הנקודה הגבוהה בישראל (החרמון) כ-9,230 רגל
-  // נוטמים בתוקף בחלון הזמן שחופפים למעגל (מרכז P, רדיוס R). topFt = הגובה המבוקש ברגל.
-  // מוחרגים (ונספרים בדף הבדיקות): רשימת נוטמים (CHECKLIST), ביטולים, ונוטמים שגבולם התחתון גבוה מהגובה המבוקש גם מעל הקרקע הגבוהה בישראל.
-  function analyzeNotams(P, R, notams, winFromMs, winToMs, topFt) {
-    const hits = [], skipped = [], excluded = [];
+  // סוג נוטם: סגירת מרחב אוויר (QR* הגבלות/אזורים, QW* אזהרות ופעילויות, QA* עם CLSD/PROHIBITED...) לעומת תדרים, GNSS, נתיבים, רשימות ועוד
+  function notamKind(raw) {
+    const up = raw.toUpperCase(), q = notamQ(raw), code = q ? q.code : "";
+    const eM = /E\)\s*([\s\S]*?)(?=\n[FG]\)|$)/.exec(up), e = eM ? eM[1] : up;
+    if (/NOTAMC\b/.test(up)) return "cancel";
+    if (code === "QKKKK") return "checklist";
+    if (/^QC/.test(code)) return "comms";
+    if (/^QG/.test(code)) return "gnss";
+    if (/\bRTE\b|\bAWY\b|\bROUTE\b/.test(e)) return "route";
+    if (/^QOB/.test(code)) return "obstacle";
+    if (/^QR/.test(code) || /^QW/.test(code)) return "closure";
+    if (/^QA/.test(code) && /CLSD|PROHIBITED|RESTRICTED|DANGER/.test(e)) return "closure";
+    return "other";
+  }
+  // סגירות אוויריות בתוקף בחלון הפעילות, במרחק עד nearM מקצה הסגירה המבוקשת (R). topFt = הגובה המבוקש ברגל.
+  // לא נכללים ונספרים: תדרים, GNSS, נתיבים, רשימות, ביטולים, נוטמים אחרים, סגירות רחוקות, וסגירות שגבולן התחתון גבוה מהגובה המבוקש.
+  function analyzeNotams(P, R, notams, winFromMs, winToMs, topFt, nearM, obstNearM) {
+    nearM = nearM || 10000; obstNearM = obstNearM || 1000;
+    const hits = [], obstacles = [], skipped = [], excluded = []; let valid = 0;
     (notams || []).forEach(n => {
       const raw = n.raw || "", w = notamWindow(raw);
       if (!w) { skipped.push(n.id); return; }
       if (!(w.from <= winToMs && w.to >= winFromMs)) return;
-      const q = notamQ(raw);
-      if (/NOTAMC\b/.test(raw)) { excluded.push({ id: n.id, reason: "cancel" }); return; }
-      if (q && q.code === "QKKKK") { excluded.push({ id: n.id, reason: "checklist" }); return; }
-      const g = notamGeometry(raw);
-      let d = 0;
+      valid++;
+      const kind = notamKind(raw);
+      if (kind !== "closure" && kind !== "obstacle") { excluded.push({ id: n.id, reason: kind }); return; }
+      const q = notamQ(raw), g = notamGeometry(raw), lim = kind === "closure" ? nearM : obstNearM;
+      let dc = null, edge = 0;
       if (g) {
-        if (g.kind === "circle") { const c = P.xy(g.c[0], g.c[1]); d = Math.max(0, Math.hypot(c[0], c[1]) - g.r); }
-        else d = polyNearest(g.pts.map(p => P.xy(p[0], p[1])), true).d;
-        if (d > R) return;
+        if (g.kind === "circle") { const c = P.xy(g.c[0], g.c[1]); dc = Math.max(0, Math.hypot(c[0], c[1]) - g.r); }
+        else dc = polyNearest(g.pts.map(p => P.xy(p[0], p[1])), true).d;
+        edge = Math.max(0, dc - R);
+        if (edge > lim) { excluded.push({ id: n.id, reason: "far" }); return; }
       }
-      let lowerFt = q ? q.lowerFt : null;
-      if (/E\)\s*ATS\s+RTE/i.test(raw)) { // נתיב ATS: הגובה שבטקסט (למשל BTN 11,000-16,000FT) מצמצם את התחולה
-        const lows = []; let mm; const rr = /(\d{1,2},?\d{3})\s*-\s*(\d{1,2},?\d{3})\s*FT/gi;
-        while ((mm = rr.exec(raw)) !== null) lows.push(parseInt(mm[1].replace(",", ""), 10));
-        if (lows.length) lowerFt = Math.max(lowerFt == null ? 0 : lowerFt, Math.min(...lows));
-      }
-      if (lowerFt != null && topFt != null && lowerFt >= topFt + TERRAIN_MAX_FT) { excluded.push({ id: n.id, reason: "above", lowerFt }); return; }
-      hits.push({ id: n.id, heb: n.heb, name: n.name, raw, window: w, geometry: g, d, q, relation: g ? "overlap" : "no-geometry" });
+      if (q && topFt != null && q.lowerFt >= topFt + TERRAIN_MAX_FT) { excluded.push({ id: n.id, reason: "above", lowerFt: q.lowerFt }); return; }
+      const rec = { id: n.id, kind, heb: n.heb, name: n.name, raw, window: w, geometry: g, d: dc, edge, inside: g ? dc <= R : false, q, relation: g ? (dc <= R ? "overlap" : "near") : "no-geometry" };
+      (kind === "closure" ? hits : obstacles).push(rec);
     });
-    return { hits, skipped, excluded };
+    const srt = (a, b) => (a.d == null ? -1 : a.d) - (b.d == null ? -1 : b.d);
+    hits.sort(srt); obstacles.sort(srt);
+    return { hits, obstacles, skipped, excluded, valid, total: (notams || []).length };
   }
 
   /* ================= קלט נקודה ================= */
@@ -578,7 +654,7 @@
   function analyze(inp, data, cfg, now) {
     const P = new Proj(inp.lat, inp.lon), R = inp.radius, th = cfg.thresholds;
     const res = { P, R, inp };
-    res.nearScan = analyzeNear(P, R, data.near, th);
+    res.nearScan = analyzeNear(P, R, { elements: ((data.near && data.near.elements) || []).concat(manualElements(inp.manualItems)) }, th);
     res.zones = analyzeZones(P, R, { zones: data.zones && data.zones.zones, inpa: data.inpa }, th.near_zone_m);
     res.agri = analyzeAgri(P, data.agri && data.agri.airstrips);
     res.airfields = analyzeAirfields(P, data.far, th.airfield_scan_m);
@@ -591,8 +667,8 @@
     res.sun = dayNightTable(inp.lat, inp.lon, inp.dateFrom, inp.dateTo, inp.timeFrom, inp.timeTo);
     res.ft = inp.heightM * M2FT;
     if (res.sun.length) {
-      res.notams = analyzeNotams(P, R, data.notams, +res.sun[0].startUtc, +res.sun[res.sun.length - 1].endUtc, res.ft);
-    } else res.notams = { hits: [], skipped: [], excluded: [] };
+      res.notams = analyzeNotams(P, R, data.notams, +res.sun[0].startUtc, +res.sun[res.sun.length - 1].endUtc, res.ft, th.notam_near_m, th.site_near_m);
+    } else res.notams = { hits: [], obstacles: [], skipped: [], excluded: [] };
     const nf = data.notamFetchedIso ? Date.parse(data.notamFetchedIso) : NaN;
     res.notamAgeH = isFinite(nf) ? (now.getTime() - nf) / 3600000 : null;
     res.todayYmd = ilToday(now);
@@ -610,7 +686,8 @@
     ["osm_near", "מכשולים ותשתיות בסביבה (OpenStreetMap)"],
     ["osm_far", "שדות תעופה, מנחתים וישובים (OpenStreetMap)"],
     ["osm_ext", "גבולות מדינה ושטחי טבע (OpenStreetMap)"],
-    ["map", "תמונת מפה עם רקע"],
+    ["map", "תמונת מפה ותצ״א עם רקע"],
+    ["review", "אישור סקירה אנושית של התצ״א והמצאי"],
     ["selftest", "בדיקה עצמית של החישובים"]
   ];
   function gate(statuses) {
@@ -621,8 +698,8 @@
   return {
     M2FT, NM, HEB_DAY, ZONE_KIND, REQUIRED_CHECKS, MIRRORS,
     Proj, polyNearest, circlePoints, dms, dmsLat, dmsLon, fmtInt, fmtDist, trimNum, esc, altText, fmtHM,
-    altRange, notamQ, buildQueries, overpass, elemGeoms, elemDist, heLabel, classify, analyzeNear, analyzeZones, analyzeAgri, analyzeAirfields,
+    altRange, notamQ, manualElements, groupOf, COVERAGE_GROUPS, buildQueries, overpass, elemGeoms, elemDist, heLabel, classify, analyzeNear, analyzeZones, analyzeAgri, analyzeAirfields,
     suggestSiteName, nearestPlaces, analyzeBorders, sunTimes, localToUtc, dayNightTable, workingDaysBefore, dayName, ddmmyyyy, parseDate, parseTime, hhmm,
-    ilToday, parseCoordInput, notamGeometry, notamWindow, analyzeNotams, validateInput, analyze, gate
+    ilToday, parseCoordInput, notamKind, notamGeometry, notamWindow, analyzeNotams, validateInput, analyze, gate
   };
 });
