@@ -1,7 +1,12 @@
 name: משיכת נתוני בדיקה אמיתיים (OpenStreetMap)
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      args:
+        description: 'ארגומנטים לסקריפט (למשל --parts=ext או --force)'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -15,7 +20,7 @@ jobs:
         with:
           node-version: '22'
       - name: משיכה
-        run: node scripts/fetch_fixtures.mjs
+        run: node scripts/fetch_fixtures.mjs ${{ inputs.args }}
       - name: שמירה בענף
         if: always()
         run: |
