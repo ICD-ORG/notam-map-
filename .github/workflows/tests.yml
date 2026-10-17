@@ -1,0 +1,69 @@
+name: בדיקות (יחידה + דפדפן + הרצה חיה)
+
+on:
+  push:
+    branches: ['claude-icd/**']
+    paths:
+      - 'request/**'
+      - 'request.html'
+      - 'tests/**.mjs'
+      - 'tests/expected.json'
+      - 'data/request-config.json'
+      - '.github/workflows/tests.yml'
+  pull_request:
+    paths:
+      - 'request/**'
+      - 'request.html'
+      - 'tests/**'
+      - 'data/**'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  mock:
+    name: יחידה + דפדפן עם נתוני אמת שמורים
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/
+      - name: התקנת Playwright
+        run: |
+          npm init -y >/dev/null
+          npm i playwright@1.49.1
+          npx playwright install --with-deps chromium
+      - name: בדיקת דפדפן מלאה (נתונים שמורים)
+        run: node tests/e2e.mjs tests/out-mock
+
+  live:
+    name: הרצה חיה (Overpass, Nominatim, תצלום אוויר אמיתי)
+    runs-on: ubuntu-latest
+    needs: mock
+    if: github.event_name != 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: התקנת Playwright
+        run: |
+          npm init -y >/dev/null
+          npm i playwright@1.49.1
+          npx playwright install --with-deps chromium
+      - name: הרצה חיה
+        run: E2E_LIVE=1 node tests/e2e.mjs tests/out-live
+      - name: שמירת התוצרים בענף
+        if: always()
+        run: |
+          git config user.name "notam-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -f tests/out-live
+          if git diff --cached --quiet; then echo "אין שינוי"; else
+            git commit -m "תוצרי הרצה חיה של הבדיקות"
+            git pull --rebase origin "${{ github.ref_name }}"
+            git push
+          fi
