@@ -232,6 +232,7 @@
   const isBalloon = t => t.attraction === "balloon_ride" || /^(tethered_balloon|balloon)$/.test(t.man_made || "") || (t.tourism === "attraction" && /בלון|balloon/i.test((t.name || "") + " " + (t["name:en"] || "")));
   const OBST_MM = /^(tower|mast|chimney|crane|water_tower|silo|storage_tank|flare|lighthouse|communications_tower|antenna|windmill)$/;
   const OBST_PW = /^(line|tower|substation|plant|generator)$/;
+  const tallBuilding = t => { const h = parseFloat(t.height), lv = parseInt(t["building:levels"], 10); return (isFinite(h) && h >= 20) || (isFinite(lv) && lv >= 6); };
   // קטגוריה: obst = מכשול (עד 2R) · air/ground = אוויר/קרקע (עד R+km) · census = מצאי רחב (בתוך/טבעת — בטופס; רחוק יותר — בדף הבדיקות)
   function classify(t) {
     if (t["icd:manual"]) return "obst";
@@ -239,7 +240,7 @@
     if (t.aeroway || t.emergency === "helipad") return "air";
     if (t.sport === "shooting" || t.leisure === "shooting_ground") return "ground";
     if (OBST_MM.test(t.man_made || "") || OBST_PW.test(t.power || "") || "aerialway" in t) return "obst";
-    if (t.building) return "obst";
+    if (t.building) return tallBuilding(t) ? "obst" : "census";
     if (/^(motorway|trunk)$/.test(t.highway || "") || /^(rail|light_rail|subway)$/.test(t.railway || "")) return "ground";
     if (/^(hospital|prison|police)$/.test(t.amenity || "") || t.leisure === "stadium" || t.military || t.landuse === "military") return "ground";
     return "census";
@@ -251,7 +252,7 @@
     if (OBST_MM.test(t.man_made || "")) return "מגדלים, תרנים, ארובות ועגורנים";
     if (t.power) return "קווי חשמל ותחנות";
     if ("aerialway" in t) return "רכבלים";
-    if (t.building) return "מבנים גבוהים";
+    if (t.building && tallBuilding(t)) return "מבנים גבוהים";
     if (t.sport === "shooting" || t.leisure === "stadium" || t.leisure === "shooting_ground" || t.tourism || t.attraction || /^(theatre|events_venue|conference_centre|exhibition_centre)$/.test(t.amenity || "") || /^(water_park|golf_course|racetrack|marina)$/.test(t.leisure || "")) return "אצטדיונים, מטווחים ואתרי המונים";
     if (t.military || t.landuse === "military") return "אזורים צבאיים";
     if (t.highway || t.railway) return "כבישים ומסילות";
@@ -272,7 +273,7 @@
     if (pw === "plant" || pw === "generator") return "תחנת כוח";
     if (mm === "tower") return { communication: "מגדל תקשורת", observation: "מגדל תצפית" }[t["tower:type"]] || "מגדל";
     if (mm === "mast" || mm === "communications_tower" || mm === "antenna") return "תורן";
-    if (mm) return { storage_tank: "מיכל אחסון", chimney: "ארובה", crane: "עגורן", water_tower: "מגדל מים", silo: "ממגורה", flare: "לפיד", lighthouse: "מגדלור", windmill: "טורבינת רוח", bridge: "גשר", pier: "מזח", works: "מפעל", wastewater_plant: "מתקן טיהור שפכים", water_works: "מתקן מים", gasometer: "גזומטר", cooling_tower: "מגדל קירור", telescope: "טלסקופ", radar: "מכ״ם", observatory: "מצפה", petroleum_well: "באר נפט", dam: "סכר", breakwater: "שובר גלים" }[mm] || "מבנה (" + mm + ")";
+    if (mm) return { storage_tank: "מיכל אחסון", chimney: "ארובה", crane: "עגורן", water_tower: "מגדל מים", silo: "ממגורה", flare: "לפיד", lighthouse: "מגדלור", windmill: "טורבינת רוח", bridge: "גשר", pier: "מזח", works: "מפעל", wastewater_plant: "מתקן טיהור שפכים", water_works: "מתקן מים", gasometer: "גזומטר", cooling_tower: "מגדל קירור", telescope: "טלסקופ", radar: "מכ״ם", observatory: "מצפה", petroleum_well: "באר נפט", dam: "סכר", breakwater: "שובר גלים", pumping_station: "תחנת שאיבה" }[mm] || "מבנה (" + mm + ")";
     if ("aerialway" in t) return "רכבל";
     if (t.aeroway === "helipad" || t.emergency === "helipad") return "מנחת מסוקים";
     if (t.aeroway === "aerodrome") return "שדה תעופה";

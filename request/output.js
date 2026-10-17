@@ -176,8 +176,9 @@
       ["גבולות מדינה (א-17 סעיף 4)", res.borders.length ? res.borders.map(b => b.name + " " + C.fmtDist(b.d)).join(" · ") : "אין גבול מצרים/סוריה/לבנון בטווח " + C.fmtDist(th.border_scan_m)],
       ["פריטים שהוזנו ידנית", String((res.inp.manualItems || []).filter(m => (m.name || "").trim()).length)]
     ];
-    const censusOnly = (res.nearScan.censusOnly || []).map(i => ({ title: i.title, grp: i.grp, d: i.d }));
-    return { groups, sources, censusOnly };
+    const co = res.nearScan.censusOnly || [], CAP = 60;
+    const censusOnly = co.slice(0, CAP).map(i => ({ title: i.title, grp: i.grp, d: i.d }));
+    return { groups, sources, censusOnly, censusMore: Math.max(0, co.length - CAP) };
   }
 
   function sourceNotes(res, data, cfg) {
@@ -215,14 +216,15 @@
       rows: buildForm(res, cfg).map(r => ({ n: r.n, label: r.label, sub: r.sub, html: r.html })),
       mailLine: "*את הבקשה יש להגיש לכתובות המייל: " + cfg.mail.to.join(", "),
       formFooter: cfg.form + " · הופק " + now.toLocaleDateString("he-IL"),
-      mapTitle: "מפה/הדמיה מצורפת לבקשה" + (o.providerName ? " — " + o.providerName : ""),
-      mapNote: "ירוק: אזור הסגירה (" + res.R + " מ׳) · כתום: עד " + 2 * res.R + " מ׳ · אדום: אזור אסור/מוגבל (פמ״ת א-17) · צהוב: מכשול · תכלת: אתר/תשתית קרקעית · סגול: תשתית/מכשול אווירי · ירוק בהיר: אתר המונים/תשתית נוספת. המספרים תואמים לרשימה בשדה 8.",
+      mapTitle: "הדמיה מצורפת לבקשה — תקריב" + (o.providerName ? " — " + o.providerName : ""),
+      overviewTitle: "הדמיה מצורפת לבקשה — מבט כללי (כל מה שמופיע בשדה 8)",
+      mapNote: "ירוק: אזור הסגירה (" + res.R + " מ׳) · כתום: עד " + 2 * res.R + " מ׳ · אדום: אזור אסור/מוגבל (פמ״ת א-17) · צהוב: מכשול · תכלת: אתר/תשתית קרקעית · סגול: תשתית/מכשול אווירי · ירוק בהיר: אתר המונים/תשתית נוספת. המספרים תואמים לרשימה בשדה 8; בתקריב מופיעים רק הפריטים שבתוך התצוגה, והשאר במבט הכללי.",
       items: res.nearScan.items.map(i => ({ n: i.n, title: i.title + (i.height ? " · גובה " + C.trimNum(i.height, 0) + " מ׳" : ""), dist: dLabel(i.d), where: whereOf(i) })),
       images: o.images || {}, aerialTitle: "תצ״א (צילום אוויר) של האזור — ללא סימון",
       includeChecks: !!o.includeChecks,
       checkPoint: C.dmsLat(inp.lat) + " " + C.dmsLon(inp.lon) + " · ירוק: " + res.R + " מ׳ · כתום: עד " + 2 * res.R + " מ׳ · גובה " + C.trimNum(inp.heightM, 2) + " מ׳ (" + res.ft.toFixed(1) + " רגל)",
       checks: buildChecks(res, data, cfg).map(r => [r[0], r[1], r[2]]),
-      coverage: (function () { const c = buildCoverage(res, data, cfg); return { sources: c.sources, groups: c.groups, censusOnly: c.censusOnly.map(i => ({ title: i.title, dist: dLabel(i.d) })) }; })(),
+      coverage: (function () { const c = buildCoverage(res, data, cfg); return { sources: c.sources, groups: c.groups, censusOnly: c.censusOnly.map(i => ({ title: i.title, dist: dLabel(i.d) })), censusMore: c.censusMore }; })(),
       dayNightHead: ["תאריך", "זריחה", "שקיעה", "שעות יום בחלון", "שעות לילה בחלון"],
       dayNight: res.sun.map(r => ["יום " + r.dayName + " " + C.ddmmyyyy(r.date), r.sunrise, r.sunset, C.fmtHM(r.dayMin), C.fmtHM(r.nightMin)]),
       submission: submissionHtml(res, cfg),

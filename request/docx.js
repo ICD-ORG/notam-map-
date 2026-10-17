@@ -98,7 +98,7 @@
     body.push(tableXml([wl, wv], m.rows.map(r => ({ cells: [
       cell(para(runsOf(r.n + ". " + r.label, { bold: true, size: 19 }), { after: r.sub ? 20 : 0 }) + (r.sub ? textPara(r.sub, { size: 14, color: "444444", after: 0 }) : ""), wl, { fill: "EFEFEF" }),
       cell(htmlPara(r.html, { size: 19, after: 0, line: 245 }), wv)] }))));
-    body.push(htmlPara("<b>חובה לצרף מפה/תצ״א</b> — מצורפות: מפה והדמיה (עמוד 2) ותצ״א נקי (עמוד 3).<br>" + esc(m.mailLine || ""), { size: 20, before: 100 }));
+    body.push(htmlPara("<b>חובה לצרף מפה/תצ״א</b> — מצורפות: הדמיה בתקריב ומבט כללי (עמודים 2–3) ותצ״א נקי (עמוד 4).<br>" + esc(m.mailLine || ""), { size: 20, before: 100 }));
     body.push(textPara(m.formFooter || "", { size: 16, color: "555555" }));
 
     // ----- עמוד 2: מפה והדמיה -----
@@ -111,6 +111,10 @@
     body.push(textPara(m.mapTitle, { bold: true, size: 26, pageBreakBefore: true, after: 80 }));
     if (m.images && m.images.map) body.push(addImg(m.images.map, "map", m.mapTitle));
     if (m.mapNote) body.push(textPara(m.mapNote, { size: 18, color: "444444" }));
+    if (m.images && m.images.overview) {
+      body.push(textPara(m.overviewTitle || "מבט כללי", { bold: true, size: 26, pageBreakBefore: true, after: 80 }));
+      body.push(addImg(m.images.overview, "overview", m.overviewTitle || "מבט כללי"));
+    }
     if (m.items && m.items.length) {
       body.push(heading("מכשולים, אתרים ותשתיות המסומנים במפה"));
       const w = [700, 4700, 1800, CONTENT_W - 7200];
@@ -140,7 +144,7 @@
           .concat(m.coverage.groups.map(g => ({ cells: [g.group, String(g.found), String(g.inside), String(g.ring), String(g.near)].map((t, i) => cell(textPara(t, { size: 19, after: 0 }), gw[i])) })))));
         if (m.coverage.censusOnly && m.coverage.censusOnly.length) {
           body.push(heading("פריטים נוספים שנמצאו בקרבה ואינם בטופס"));
-          body.push(textPara(m.coverage.censusOnly.map(i => i.title + " — " + i.dist).join("; ") + ".", { size: 19 }));
+          body.push(textPara(m.coverage.censusOnly.map(i => i.title + " — " + i.dist).join("; ") + (m.coverage.censusMore ? "; ועוד " + m.coverage.censusMore + " פריטים" : "") + ".", { size: 19 }));
         }
       }
       if (m.dayNight && m.dayNight.length) {

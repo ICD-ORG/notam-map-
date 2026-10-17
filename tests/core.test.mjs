@@ -76,6 +76,22 @@ test("הירקון: מכשולים לפי ערכי הייחוס שחושבו ב�
   assert.deepEqual(res.nearScan.items.map(i => i.n), exp.items.map((_, i) => i + 1));
 });
 
+test("הירקון: מצאי רחב — פריטים בטופס מול פריטים שבדף הבדיקות בלבד", () => {
+  const res = C.analyze(baseInput, mkData(fixture("yarkon")), cfg, now);
+  assert.equal(res.nearScan.censusOnly.length, exp.censusOnlyCount);
+  assert.ok(res.nearScan.censusOnly.every(i => i.cat === "census" && i.zone === "near" && !i.n));
+  assert.ok(res.nearScan.items.some(i => i.cat === "census" && i.zone === "ring"), "אתר המונים/תשתית בטבעת נכנס לטופס");
+  const cov = O.buildCoverage(res, mkData(fixture("yarkon")), cfg);
+  const total = cov.groups.reduce((a, g) => a + g.found, 0);
+  assert.ok(total >= res.nearScan.all.length, "כל קבוצה נספרת");
+  assert.ok(cov.groups.some(g => g.group === "אצטדיונים, מטווחים ואתרי המונים" && g.found > 20));
+  assert.ok(cov.sources.some(r => /OpenStreetMap — סביבה/.test(r[0]) && /\d+ אלמנטים/.test(r[1])));
+  assert.ok(cov.sources.length >= 7);
+  const f8 = O.buildForm(res, cfg)[7].text;
+  assert.ok(!/לונה פארק/.test(f8), "פריטי מצאי רחוקים לא בטופס");
+  assert.ok(/מגלשת מים \(×\d+/.test(f8), "מגלשות המים בטבעת");
+});
+
 test("הירקון: LLU20 בקרבה, לא בתוך הסגירה, והמרחק נכון", () => {
   const res = C.analyze(baseInput, mkData(fixture("yarkon")), cfg, now);
   assert.equal(res.zones.inside.length, 0);
@@ -362,11 +378,11 @@ function wellFormed(xml) { // בדיקת איזון תגיות מינימלית
 test("Word: קובץ docx תקין עם הטופס, תמונות, ודף בדיקות", async () => {
   const res = C.analyze(baseInput, mkData(fixture("yarkon")), cfg, now);
   const jpeg = Buffer.from("/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAP//////////////////////////////////////////////////////////////////////////////////////wgALCAABAAEBAREA/8QAFBABAAAAAAAAAAAAAAAAAAAAAP/aAAgBAQABPxA=", "base64");
-  const model = O.docxModel(res, mkData(fixture("yarkon")), cfg, { images: { map: { bytes: jpeg, w: 1280, h: 960 }, aerial: { bytes: jpeg, w: 1280, h: 960 } }, includeChecks: true, review: "אושר", providerName: "בדיקה" });
+  const model = O.docxModel(res, mkData(fixture("yarkon")), cfg, { images: { map: { bytes: jpeg, w: 1280, h: 960 }, overview: { bytes: jpeg, w: 1280, h: 960 }, aerial: { bytes: jpeg, w: 1280, h: 960 } }, includeChecks: true, review: "אושר", providerName: "בדיקה" });
   const bytes = await D.build(model);
   assert.equal(bytes[0], 0x50); assert.equal(bytes[1], 0x4b); // PK
   const z = await JSZipNode.loadAsync(bytes);
-  for (const f of ["[Content_Types].xml", "_rels/.rels", "word/document.xml", "word/_rels/document.xml.rels", "word/styles.xml", "word/media/map.jpeg", "word/media/aerial.jpeg"]) assert.ok(z.file(f), "חסר " + f);
+  for (const f of ["[Content_Types].xml", "_rels/.rels", "word/document.xml", "word/_rels/document.xml.rels", "word/styles.xml", "word/media/map.jpeg", "word/media/overview.jpeg", "word/media/aerial.jpeg"]) assert.ok(z.file(f), "חסר " + f);
   const doc = await z.file("word/document.xml").async("string");
   for (const f of ["[Content_Types].xml", "_rels/.rels", "word/document.xml", "word/_rels/document.xml.rels", "word/styles.xml"]) assert.ok(wellFormed(await z.file(f).async("string")), "XML לא תקין: " + f);
   const plain = doc.replace(/<[^>]+>/g, "").replace(/[\u202a\u202c]/g, "").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
@@ -374,7 +390,7 @@ test("Word: קובץ docx תקין עם הטופס, תמונות, ודף בדי�
   assert.ok(plain.includes("262.5") && plain.includes("ICD") && plain.includes("אצטדיון רמת גן") && plain.includes("כדור פורח תל אביב") && plain.includes("LLU20"));
   assert.ok(plain.includes("דוח כיסוי") && plain.includes("אישור סקירה אנושית"));
   assert.equal((doc.match(/<w:tbl>/g) || []).length, (doc.match(/<\/w:tbl>/g) || []).length);
-  assert.equal((doc.match(/<w:drawing>/g) || []).length, 2);
+  assert.equal((doc.match(/<w:drawing>/g) || []).length, 3);
   assert.ok(doc.includes("<w:bidi/>") && doc.includes("<w:bidiVisual/>"));
   const noChecks = await JSZipNode.loadAsync(await D.build(Object.assign({}, model, { includeChecks: false })));
   assert.ok(!(await noChecks.file("word/document.xml").async("string")).includes("דוח כיסוי"));

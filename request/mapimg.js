@@ -24,10 +24,13 @@
     });
   }
 
-  function viewFor(res, W, H) {
+  // detail: סביב הסגירה (עד פי 2 מהרדיוס) · overview: כולל כל מה שבטופס (אזורי איסור, אתרים ותשתיות)
+  function viewFor(res, W, H, mode) {
     let E = 2 * res.R;
-    [...res.zones.inside, ...res.zones.near].forEach(z => { E = Math.max(E, Math.hypot(z.p[0], z.p[1])); });
-    res.nearScan.items.forEach(it => { E = Math.max(E, Math.hypot(it.p[0], it.p[1])); });
+    if (mode !== "detail") {
+      [...res.zones.inside, ...res.zones.near].forEach(z => { E = Math.max(E, Math.hypot(z.p[0], z.p[1])); });
+      res.nearScan.items.forEach(it => { E = Math.max(E, Math.hypot(it.p[0], it.p[1])); });
+    }
     E *= 1.14;
     const lat = res.inp.lat;
     for (let z = 19; z >= 3; z--) { if ((E / mpp(lat, z)) * 2 <= Math.min(W, H) - 20) return { z, E }; }
@@ -38,7 +41,7 @@
   async function render(res, opts) {
     opts = opts || {};
     const W = opts.width || 1280, H = opts.height || 960, prov = PROVIDERS[opts.provider || "esri"];
-    const { z } = viewFor(res, W, H), inp = res.inp, P = res.P;
+    const view = opts.view === "detail" ? "detail" : "overview", { z } = viewFor(res, W, H, view), inp = res.inp, P = res.P;
     const cv = document.createElement("canvas"); cv.width = W; cv.height = H;
     const g = cv.getContext("2d");
     const [cx, cy] = worldPx(inp.lat, inp.lon, z);
@@ -93,25 +96,41 @@
         else { g.lineWidth = 5.5; g.strokeStyle = c1; g.setLineDash([]); g.stroke(); g.lineWidth = 2.2; g.strokeStyle = "#111"; g.setLineDash([9, 5]); g.stroke(); g.setLineDash([]); }
       });
     });
+    const occupied = [];
+    const inView = q => q[0] > 24 && q[0] < W - 24 && q[1] > 96 && q[1] < H - 24;
     res.nearScan.items.forEach(it => {
       const pt = it.geoms.find(gm => gm.pt), [c1] = COL[it.cat] || COL.obst;
       const q = pt ? X(pt.pt[0], pt.pt[1]) : X(it.ll[0], it.ll[1]);
+      if (!inView(q)) return;
       if (pt) { g.fillStyle = c1; g.strokeStyle = "#111"; g.lineWidth = 2; g.fillRect(q[0] - 8, q[1] - 8, 16, 16); g.strokeRect(q[0] - 8, q[1] - 8, 16, 16); }
-      labels.push({ q, n: it.n, c: c1, d: it.d });
+      labels.push({ q, n: it.n, c: c1, d: it.d, t: it.d < 1 ? "בתוך השטח" : C.fmtDist(it.d) });
     });
+    // תוויות (מספר + מרחק) עם הימנעות מחפיפה: מנסה כמה מיקומים סביב הסימון
+    const OFFS = [[16, -16], [16, 18], [-16, -16], [-16, 18], [0, -34], [0, 36], [38, -30], [38, 32], [-38, -30], [-38, 32], [60, 0], [-60, 0], [70, -50], [-70, 50]];
+    g.font = "bold 12px sans-serif";
     labels.forEach(l => {
-      g.beginPath(); g.arc(l.q[0] + 14, l.q[1] - 14, 11, 0, 2 * Math.PI); g.fillStyle = "#111"; g.fill();
-      g.fillStyle = l.c; g.font = "bold 14px sans-serif"; g.textAlign = "center"; g.textBaseline = "middle"; g.direction = "ltr"; g.fillText(String(l.n), l.q[0] + 14, l.q[1] - 13);
-    });
-    labels.forEach(l => { // מרחק מהנקודה ליד כל סימון
-      g.font = "bold 12px sans-serif"; g.textAlign = "left"; g.textBaseline = "middle"; g.direction = "rtl";
-      const t = l.d < 1 ? "בתוך השטח" : C.fmtDist(l.d);
-      g.lineWidth = 3.5; g.strokeStyle = "rgba(0,0,0,0.85)"; g.strokeText(t, l.q[0] + 28, l.q[1] - 14); g.fillStyle = "#fff"; g.fillText(t, l.q[0] + 28, l.q[1] - 14);
+      const tw = g.measureText(l.t).width, w = 24 + 5 + tw;
+      let best = null;
+      for (const [dx, dy] of OFFS) {
+        const cx = l.q[0] + dx, cy = l.q[1] + dy, left = dx < 0;
+        const rect = left ? [cx - 12 - 5 - tw, cy - 12, cx + 12, cy + 12] : [cx - 12, cy - 12, cx + 12 + 5 + tw, cy + 12];
+        const hit = occupied.some(o => rect[0] < o[2] && rect[2] > o[0] && rect[1] < o[3] && rect[3] > o[1]) || rect[0] < 4 || rect[2] > W - 4 || rect[1] < 76 || rect[3] > H - 4;
+        if (!hit) { best = { cx, cy, left, rect }; break; }
+        if (!best) best = { cx, cy, left, rect };
+      }
+      occupied.push(best.rect);
+      if (Math.abs(best.cx - l.q[0]) > 20 || Math.abs(best.cy - l.q[1]) > 20) { g.strokeStyle = "rgba(255,255,255,0.8)"; g.lineWidth = 1.5; g.beginPath(); g.moveTo(l.q[0], l.q[1]); g.lineTo(best.cx, best.cy); g.stroke(); }
+      g.beginPath(); g.arc(best.cx, best.cy, 11, 0, 2 * Math.PI); g.fillStyle = "#111"; g.fill();
+      g.fillStyle = l.c; g.font = "bold 14px sans-serif"; g.textAlign = "center"; g.textBaseline = "middle"; g.direction = "ltr"; g.fillText(String(l.n), best.cx, best.cy + 1);
+      g.font = "bold 12px sans-serif"; g.textAlign = best.left ? "right" : "left"; g.direction = "rtl";
+      const tx = best.left ? best.cx - 17 : best.cx + 17;
+      g.lineWidth = 3.5; g.strokeStyle = "rgba(0,0,0,0.85)"; g.strokeText(l.t, tx, best.cy + 1); g.fillStyle = "#fff"; g.fillText(l.t, tx, best.cy + 1);
     });
 
     // ---- קווי מרחק לאזורי איסור ----
     [...res.zones.inside, ...res.zones.near].forEach(zn => {
       const a = [W / 2, H / 2], b = X(zn.ll[0], zn.ll[1]);
+      if (!inView(b)) return;
       if (zn.d >= 1) {
         g.setLineDash([8, 6]); g.lineWidth = 2.5; g.strokeStyle = "#ff3b30"; g.beginPath(); g.moveTo(a[0], a[1]); g.lineTo(b[0], b[1]); g.stroke(); g.setLineDash([]);
         g.beginPath(); g.arc(b[0], b[1], 5, 0, 2 * Math.PI); g.fillStyle = "#ff3b30"; g.fill();
@@ -141,7 +160,7 @@
     if (!plain) {
     // ---- כותרת ----
     g.fillStyle = "rgba(11,18,32,0.88)"; g.fillRect(0, 0, W, 70);
-    text("בקשת סגירה אווירית — " + inp.siteName, W - 20, 22, { align: "right", size: 20, halo: "rgba(0,0,0,0)" });
+    text("בקשת סגירה אווירית — " + inp.siteName + (view === "detail" ? " (תקריב)" : " (מבט כללי)"), W - 20, 22, { align: "right", size: 20, halo: "rgba(0,0,0,0)" });
     text("רדיוס " + res.R + " מ׳   ·   גובה " + C.trimNum(inp.heightM, 2) + " מ׳ (" + res.ft.toFixed(1) + " רגל) מעפ״ש (AGL)", W - 20, 50, { align: "right", size: 15, bold: false, color: "#cfe3ff", halo: "rgba(0,0,0,0)" });
     text(C.dmsLat(inp.lat) + "   " + C.dmsLon(inp.lon), 20, 50, { align: "left", ltr: true, size: 15, bold: false, color: "#cfe3ff", halo: "rgba(0,0,0,0)" });
     // ---- מקרא ----
@@ -155,7 +174,7 @@
 
     let dataUrl = null, jpegUrl = null, tainted = false;
     try { dataUrl = cv.toDataURL("image/png"); jpegUrl = cv.toDataURL("image/jpeg", 0.9); } catch (e) { tainted = true; }
-    return { canvas: cv, dataUrl, jpegUrl, background: background && !tainted, tiles: tiles.length, failedTiles: failed, tainted, zoom: z, provider: opts.provider || "esri" };
+    return { canvas: cv, view, dataUrl, jpegUrl, background: background && !tainted, tiles: tiles.length, failedTiles: failed, tainted, zoom: z, provider: opts.provider || "esri" };
   }
 
   root.ReqMap = { render, PROVIDERS, worldPx, mpp, viewFor };

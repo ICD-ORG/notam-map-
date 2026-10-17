@@ -2,7 +2,7 @@
 (function () {
   "use strict";
   const C = window.ReqCore, O = window.ReqOut, M = window.ReqMap, $ = id => document.getElementById(id);
-  const S = { cfg: null, data: {}, res: null, statuses: {}, map: null, aerial: null, manual: [], manualKey: "", reviewAt: null, pick: false, scanKey: null, stale: false, running: false, center: null, autoSite: "", lf: {}, report: null };
+  const S = { cfg: null, data: {}, res: null, statuses: {}, map: null, overview: null, aerial: null, manual: [], manualKey: "", reviewAt: null, pick: false, scanKey: null, stale: false, running: false, center: null, autoSite: "", lf: {}, report: null };
   const PERSON_KEY = "icd_req_person_v1";
   const ESRI = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", OSM = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
   const esc = C.esc;
@@ -131,7 +131,7 @@
       : '<div class="banner no">✖ הבקשה אינה מוכנה לשליחה — בדיקות שלא הושלמו:<ul>' + g.failing.map(f => "<li>" + esc(f.label) + ": " + esc(f.msg) + "</li>").join("") + "</ul></div>";
     html += w.map(x => '<div class="banner warn">' + x + "</div>").join("");
     box.innerHTML = html;
-    ["btnPrint", "btnDocx", "btnKml", "btnPng", "btnAerial", "btnCopy"].forEach(id => { $(id).disabled = !S.ready; });
+    ["btnPrint", "btnDocx", "btnKml", "btnPng", "btnOverview", "btnAerial", "btnCopy"].forEach(id => { $(id).disabled = !S.ready; });
     $("btnMail").querySelector("button").disabled = !S.ready;
     $("btnMail").style.pointerEvents = S.ready ? "" : "none";
     if (S.report) renderReport();
@@ -172,7 +172,7 @@
     const upd = () => progress(steps.map(x => ({ s: x.s, t: x.t, m: x.m })));
     const st = (k, s, m) => { const x = steps.find(y => y.k === k); x.s = s; x.m = m || ""; upd(); };
     upd();
-    S.res = null; S.report = null; S.stale = false; S.map = null; S.aerial = null;
+    S.res = null; S.report = null; S.stale = false; S.map = null; S.overview = null; S.aerial = null;
     { const ck = inp0.lat + "," + inp0.lon; if (S.manualKey !== ck) { S.manual = []; S.manualKey = ck; } }
     S.reviewAt = null; $("reviewOk").checked = false; S.statuses.review = { ok: false, msg: "לא אושרה סקירה" };
     ["osm_near", "osm_far", "osm_ext", "map"].forEach(k => { S.statuses[k] = { ok: false, msg: "לא הושלם" }; });
@@ -221,12 +221,13 @@
   }
   async function buildMapImage(steps, st) {
     try {
-      const out = await M.render(S.res, { provider: $("provider").value });
-      const plain = await M.render(S.res, { provider: $("provider").value, plain: true });
-      S.map = out; S.aerial = plain;
-      if (out.background && plain.background) { st && st("map", "ok", "הרקע נטען (" + out.tiles + " אריחים)"); setStatus("map", true, ""); }
-      else { const why = (out.tainted || plain.tainted) ? "הדפדפן חסם יצוא תמונה" : (out.failedTiles || plain.failedTiles) + " מתוך " + out.tiles + " אריחי רקע לא נטענו"; st && st("map", "no", why); setStatus("map", false, why); }
-    } catch (e) { S.map = null; S.aerial = null; st && st("map", "no", e.message); setStatus("map", false, e.message); }
+      const prov = $("provider").value;
+      const [det, ovw, pl] = await Promise.all([M.render(S.res, { provider: prov, view: "detail" }), M.render(S.res, { provider: prov, view: "overview" }), M.render(S.res, { provider: prov, view: "detail", plain: true })]);
+      S.map = det; S.overview = ovw; S.aerial = pl;
+      const all = [det, ovw, pl];
+      if (all.every(x => x.background)) { st && st("map", "ok", "הרקע נטען (" + det.tiles + " אריחים לתקריב)"); setStatus("map", true, ""); }
+      else { const why = all.some(x => x.tainted) ? "הדפדפן חסם יצוא תמונה" : all.reduce((a, x) => a + x.failedTiles, 0) + " אריחי רקע לא נטענו"; st && st("map", "no", why); setStatus("map", false, why); }
+    } catch (e) { S.map = null; S.overview = null; S.aerial = null; st && st("map", "no", e.message); setStatus("map", false, e.message); }
   }
 
   /* ---------- שינויי קלט אחרי הרצה ---------- */
@@ -261,23 +262,23 @@
     const draftBanner = draft ? "<div class='draft'>טיוטה — לא מוכן לשליחה: " + (S.stale ? "הנתונים השתנו מאז הרצת הבדיקות" : "יש בדיקות שלא הושלמו") + ".</div>" : "";
     const now = new Date();
     const p1 = "<div class='paper'>" + draftBanner + "<div class='hdr'><span>פמ״ת פנים ארצי א-11 — נספח ג׳</span><span>טופס בקשה לסגירה אווירית</span></div><table class='f'>" + rowsHtml + "</table>" +
-      "<p style='margin-top:8px'><b>חובה לצרף מפה/תצ״א</b> — מצורפות: מפה והדמיה (עמוד 2) ותצ״א נקי (עמוד 3).<br>*את הבקשה יש להגיש לכתובות המייל: <span dir='ltr'>" + esc(cfg.mail.to.join(", ")) + "</span></p>" +
+      "<p style='margin-top:8px'><b>חובה לצרף מפה/תצ״א</b> — מצורפות: הדמיה בתקריב ומבט כללי (עמודים 2–3) ותצ״א נקי (עמוד 4).<br>*את הבקשה יש להגיש לכתובות המייל: <span dir='ltr'>" + esc(cfg.mail.to.join(", ")) + "</span></p>" +
       "<div class='foot'><span>" + esc(cfg.form) + "</span><span>הופק " + esc(now.toLocaleDateString("he-IL")) + "</span></div></div>";
     const items = res.nearScan.items;
     const legend = items.length ? "<h2>מכשולים, אתרים ותשתיות המסומנים במפה</h2><table class='t'><tr><th>#</th><th>מה</th><th>מרחק מהנקודה</th><th>איפה</th></tr>" +
       items.map(i => "<tr><td>" + i.n + "</td><td>" + esc(i.title) + (i.height ? " · גובה " + C.trimNum(i.height, 0) + " מ׳" : "") + "</td><td>" + esc(O.dLabel(i.d)) + "</td><td>" + esc(O.whereOf(i)) + "</td></tr>").join("") + "</table>" : "";
-    const img = S.map && S.map.dataUrl ? "<img class='mapimg' alt='מפה' src='" + (S.map.jpegUrl || S.map.dataUrl) + "'>" : "<div class='draft'>תמונת המפה לא נוצרה.</div>";
+    const imgOf = (m, alt) => m && m.dataUrl ? "<img class='mapimg' alt='" + alt + "' src='" + (m.jpegUrl || m.dataUrl) + "'>" : "<div class='draft'>התמונה לא נוצרה.</div>";
     const pname = (M.PROVIDERS[S.map ? S.map.provider : "esri"] || {}).name || "";
-    const p2 = "<div class='paper'>" + draftBanner + "<div class='hdr'><span>מפה/הדמיה מצורפת לבקשה</span><span>" + esc(pname) + "</span></div>" + img + legend + "</div>";
-    const aer = S.aerial && S.aerial.dataUrl ? "<img class='mapimg' alt='תצ״א' src='" + (S.aerial.jpegUrl || S.aerial.dataUrl) + "'>" : "<div class='draft'>התצ״א לא נוצר.</div>";
-    const p2b = "<div class='paper'>" + draftBanner + "<div class='hdr'><span>תצ״א (צילום אוויר) של האזור — ללא סימון</span><span>" + esc(pname) + "</span></div>" + aer + "</div>";
+    const p2 = "<div class='paper'>" + draftBanner + "<div class='hdr'><span>הדמיה מצורפת לבקשה — תקריב</span><span>" + esc(pname) + "</span></div>" + imgOf(S.map, "הדמיה") + "<p class='muted' style='margin-top:6px'>ירוק: אזור הסגירה · כתום: עד פי 2 מהרדיוס · אדום: אזור אסור/מוגבל (א-17) · צהוב: מכשול · תכלת: אתר/תשתית קרקעית · סגול: אווירי · ירוק בהיר: אתר המונים/תשתית. המספרים תואמים לרשימה בשדה 8.</p></div>";
+    const p2o = "<div class='paper'>" + draftBanner + "<div class='hdr'><span>הדמיה מצורפת לבקשה — מבט כללי (כל מה שמופיע בשדה 8)</span><span>" + esc(pname) + "</span></div>" + imgOf(S.overview, "מבט כללי") + legend + "</div>";
+    const p2b = "<div class='paper'>" + draftBanner + "<div class='hdr'><span>תצ״א (צילום אוויר) של האזור — ללא סימון</span><span>" + esc(pname) + "</span></div>" + imgOf(S.aerial, "תצ״א") + "</div>";
     const checks = O.buildChecks(res, data, cfg);
     const chk = checks.map(r => "<tr><td>" + esc(r[0]) + "</td><td>" + esc(r[1]) + "</td><td>" + r[2] + "</td></tr>").join("");
     const cov = O.buildCoverage(res, data, cfg);
     const covHtml = "<h2>דוח כיסוי — מה נסרק</h2><table class='t'>" + cov.sources.map(r => "<tr><td><b>" + esc(r[0]) + "</b></td><td>" + esc(r[1]) + "</td></tr>").join("") + "</table>" +
       "<h2>מצאי לפי קבוצות (כל מה שנמצא בטווח החיפוש)</h2><table class='t'><tr><th>קבוצה</th><th>נמצאו</th><th>בתוך הסגירה</th><th>בטבעת הכתומה</th><th>בקרבה</th></tr>" +
       cov.groups.map(g => "<tr><td>" + esc(g.group) + "</td><td>" + g.found + "</td><td>" + g.inside + "</td><td>" + g.ring + "</td><td>" + g.near + "</td></tr>").join("") + "</table>" +
-      (cov.censusOnly.length ? "<h2>פריטים נוספים שנמצאו בקרבה ואינם בטופס</h2><p>" + cov.censusOnly.map(i => esc(i.title + " — " + O.dLabel(i.d))).join("; ") + ".</p>" : "");
+      (cov.censusOnly.length ? "<h2>פריטים נוספים שנמצאו בקרבה ואינם בטופס</h2><p>" + cov.censusOnly.map(i => esc(i.title + " — " + O.dLabel(i.d))).join("; ") + (cov.censusMore ? "; ועוד " + cov.censusMore + " פריטים" : "") + ".</p>" : "");
     const dn = res.sun.map(r => "<tr><td>יום " + esc(r.dayName) + " " + C.ddmmyyyy(r.date) + "</td><td>" + r.sunrise + "</td><td>" + r.sunset + "</td><td>" + C.fmtHM(r.dayMin) + "</td><td>" + C.fmtHM(r.nightMin) + "</td></tr>").join("");
     const rv = reviewText();
     const p3 = "<div class='paper checks'><div class='hdr'><span>דף בדיקות</span><span>לא חלק מהטופס הרשמי</span></div>" +
@@ -290,7 +291,7 @@
       (rv ? "<h2>אישור סקירה אנושית</h2><p>" + esc(rv) + "</p>" : "") +
       "<div class='foot'><span>מקורות: " + esc((data.zones && data.zones.edition) || "") + " · פמ״ת א-11 עדכון 1/26 · OpenStreetMap · נוטמים</span><span>הופק " + esc(now.toLocaleString("he-IL")) + "</span></div></div>";
     $("report").className = $("incChecks").checked ? "" : "nochecks";
-    $("report").innerHTML = p1 + p2 + p2b + p3;
+    $("report").innerHTML = p1 + p2 + p2o + p2b + p3;
     const style = document.getElementById("nochecksStyle") || Object.assign(document.createElement("style"), { id: "nochecksStyle" });
     style.textContent = ".nochecks .paper.checks{display:none !important}"; document.head.appendChild(style);
     S.reportHtml = true;
@@ -335,7 +336,7 @@
   async function downloadDocx() {
     const pname = (M.PROVIDERS[S.map ? S.map.provider : "esri"] || {}).name || "";
     const img = m => m && m.jpegUrl ? { bytes: b64ToBytes(m.jpegUrl), w: m.canvas.width, h: m.canvas.height } : null;
-    const model = O.docxModel(S.res, reportData(), S.cfg, { images: { map: img(S.map), aerial: img(S.aerial) }, includeChecks: $("incChecks").checked, providerName: pname, review: reviewText(), draft: S.ready ? "" : "יש בדיקות שלא הושלמו" });
+    const model = O.docxModel(S.res, reportData(), S.cfg, { images: { map: img(S.map), overview: img(S.overview), aerial: img(S.aerial) }, includeChecks: $("incChecks").checked, providerName: pname, review: reviewText(), draft: S.ready ? "" : "יש בדיקות שלא הושלמו" });
     const bytes = await window.ReqDocx.build(model);
     download(baseName() + " — בקשה לסגירה אווירית.docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", new Blob([bytes], { type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document" }));
   }
@@ -395,7 +396,8 @@
     $("runBtn").onclick = run; $("qBtn").onclick = searchPlace; $("q").addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); searchPlace(); } });
     $("btnPrint").onclick = () => window.print();
     $("btnKml").onclick = () => download(baseName() + ".kml", "application/vnd.google-earth.kml+xml", O.kml(S.res, { zones: S.data.zones }, S.cfg));
-    $("btnPng").onclick = async () => { const b = await (await fetch(S.map.dataUrl)).blob(); download(baseName() + " — הדמיה.png", "image/png", b); };
+    $("btnPng").onclick = async () => { const b = await (await fetch(S.map.dataUrl)).blob(); download(baseName() + " — הדמיה תקריב.png", "image/png", b); };
+    $("btnOverview").onclick = async () => { const b = await (await fetch(S.overview.dataUrl)).blob(); download(baseName() + " — הדמיה מבט כללי.png", "image/png", b); };
     $("btnAerial").onclick = async () => { const b = await (await fetch(S.aerial.dataUrl)).blob(); download(baseName() + " — תצ״א.png", "image/png", b); };
     $("btnDocx").onclick = downloadDocx;
     $("mAdd").onclick = addManual;

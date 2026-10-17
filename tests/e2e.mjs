@@ -165,11 +165,12 @@ try {
     const kmlPath = await dl("#btnKml"); const kml = fs.readFileSync(kmlPath, "utf8");
     check("KML הורד ותקין", /<kml/.test(kml) && /קו מתח עליון/.test(kml) && /LLU20/.test(kml), kml.length + " בתים");
     const pngPath = await dl("#btnPng"); check("הדמיה (PNG) הורדה", fs.statSync(pngPath).size > 50000, fs.statSync(pngPath).size + " בתים");
+    const ovPath = await dl("#btnOverview"); check("הדמיה — מבט כללי (PNG) הורדה", fs.statSync(ovPath).size > 50000 && path.basename(ovPath).includes("מבט כללי"), path.basename(ovPath) + " " + fs.statSync(ovPath).size);
     const aerialPath = await dl("#btnAerial"); check("תצ״א נקי (PNG) הורד", fs.statSync(aerialPath).size > 30000 && path.basename(aerialPath).includes("תצ״א"), path.basename(aerialPath) + " " + fs.statSync(aerialPath).size);
     const docxPath = await dl("#btnDocx");
     { const JZ = require(path.join(ROOT, "request", "vendor", "jszip.min.js")), z = await JZ.loadAsync(fs.readFileSync(docxPath));
       const doc = await z.file("word/document.xml").async("string"), plain = doc.replace(/<[^>]+>/g, "").replace(/[\u202a\u202c]/g, "").replace(/&quot;/g, '"');
-      check("Word: קובץ docx תקין עם הטופס, שתי תמונות ודף בדיקות", (doc.match(/<w:drawing>/g) || []).length === 2 && /32°05'56.86"N/.test(plain) && /262\.5/.test(plain) && /דוח כיסוי/.test(plain) && /אישור סקירה אנושית/.test(plain), "גודל " + fs.statSync(docxPath).size);
+      check("Word: קובץ docx תקין עם הטופס, שלוש תמונות ודף בדיקות", (doc.match(/<w:drawing>/g) || []).length === 3 && /32°05'56.86"N/.test(plain) && /262\.5/.test(plain) && /דוח כיסוי/.test(plain) && /אישור סקירה אנושית/.test(plain), "גודל " + fs.statSync(docxPath).size);
       check("Word: שם הקובץ כולל מיקום ותאריך", /גני יהושע|פארק הירקון/.test(path.basename(docxPath)) && /\d{2}\.\d{2}\.\d{4}/.test(path.basename(docxPath)), path.basename(docxPath)); }
     const href = await page.getAttribute("#btnMail", "href");
     check("קישור המייל נכון", href.startsWith("mailto:notamoffice@iaa.gov.il,nofm@iaa.gov.il?subject="), href.slice(0, 90));
