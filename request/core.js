@@ -109,6 +109,11 @@
       "nwr" + b + '[railway~"^(rail|light_rail|subway)$"];' +
       "nwr" + b + '[amenity~"^(hospital|prison|police)$"];' +
       "nwr" + b + "[leisure=stadium];" +
+      "nwr" + b + "[attraction=balloon_ride];" +
+      "nwr" + b + '[man_made~"^(tethered_balloon|balloon)$"];' +
+      "nwr" + b + '[tourism=attraction][name~"בלון|balloon",i];' +
+      "nwr" + b + "[sport=shooting];" +
+      "nwr" + b + "[leisure=shooting_ground];" +
       ");out geom tags;";
     const farR = th.airfield_scan_m || 15000, placeR = th.place_scan_m || 3000;
     const box = km => { const dLa = km / 111000, dLo = km / (111000 * Math.cos((lat * Math.PI) / 180)); return [lat - dLa, lon - dLo, lat + dLa, lon + dLo].map(v => v.toFixed(5)).join(","); };
@@ -211,7 +216,10 @@
   }
 
   function nameOf(t) { return t["name:he"] || t.name || t["name:en"] || ""; }
+  const isBalloon = t => t.attraction === "balloon_ride" || /^(tethered_balloon|balloon)$/.test(t.man_made || "") || (t.tourism === "attraction" && /בלון|balloon/i.test((t.name || "") + " " + (t["name:en"] || "")));
   function classify(t) {
+    if (isBalloon(t)) return "air";
+    if (t.sport === "shooting" || t.leisure === "shooting_ground") return "ground";
     if (t.aeroway) return "air";
     if (t.emergency === "helipad") return "air";
     if (t.man_made || t.power || "aerialway" in t) return "obst";
@@ -219,6 +227,8 @@
     return "ground";
   }
   function heLabel(t) {
+    if (isBalloon(t)) return "בלון (אטרקציית בלון / בלון מעוגן)";
+    if (t.sport === "shooting" || t.leisure === "shooting_ground") return "מטווח ירי";
     const mm = t.man_made, pw = t.power;
     if (pw === "line") { const v = parseInt(String(t.voltage || "").split(";")[0], 10); return v ? "קו מתח " + (v >= 100000 ? "עליון " : v >= 33000 ? "גבוה " : "") + Math.round(v / 1000) + " ק״ו" : "קו חשמל"; }
     if (pw === "tower") return "עמוד חשמל" + (t.ref ? " " + t.ref : "");
