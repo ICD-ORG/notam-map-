@@ -37,6 +37,7 @@
   },
   "thresholds": {
     "near_zone_m": 1000,
+    "site_near_m": 1000,
     "airfield_near_m": 1000,
     "airfield_scan_m": 15000,
     "place_scan_m": 3000,

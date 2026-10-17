@@ -69,6 +69,8 @@
     if (air.length) f8 += "<br>תשתית אווירית מושפעת: " + air.map(E).join(" ");
     if (ins.length) f8 += "<br>מכשולים ותשתיות בתוך האזור (עד " + R + " מ׳): " + E(listCapped(ins, 25)) + ".";
     if (ring.length) f8 += "<br>בקרבת האזור (עד " + 2 * R + " מ׳): " + E(listCapped(ring, 25)) + ".";
+    const sites = res.nearScan.near;
+    if (sites.length) f8 += "<br>אתרים ותשתיות נוספים בקרבת האזור (עד " + C.fmtDist(R + cfg.thresholds.site_near_m) + " מהנקודה): " + E(listCapped(sites, 25)) + ".";
     const vl = inp.vlos ? "קיים קשר עין" : "ללא קשר עין";
     const rows = [
       ["מס׳ נוטאם", "(ימולא ע״י משרד נוטאם)", "<i class='muted'>(ריק – " + E(cfg.fixed.notam_notam_field) + ")</i>"],
@@ -118,13 +120,13 @@
     rows.push(["מנחתים חקלאיים", (data.agri && data.agri.edition) || "",
       ag.length ? (ag[0].d - R <= (th.agri_near_m || 3000) ? "<b>בקרבת הסגירה:</b> " : "אין בסביבה. ") + "הקרוב ביותר: " + E(ag[0].name) + " (" + E(ag[0].ops.join(" / ")) + "), " + C.fmtDist(ag[0].d) + "." : "אין נתונים."]);
     // סריקת סביבה
-    const items = res.nearScan.items, cnt = {};
-    items.forEach(i => { cnt[i.label.replace(/ \(.*\)$/, "")] = (cnt[i.label.replace(/ \(.*\)$/, "")] || 0) + 1; });
     const osmBase = data.near && data.near.osm3s && data.near.osm3s.timestamp_osm_base;
+    const siteR = R + th.site_near_m;
     rows.push(["סריקת סביבה: מכשולים, תשתיות קרקעיות, שדות תעופה ומנחתים", "OpenStreetMap" + (osmBase ? ", נתונים מ-" + osmBase.slice(0, 16).replace("T", " ") + " UTC" : ""),
       (res.nearScan.inside.length ? "<b>בתוך " + R + " מ׳:</b> " + E(res.nearScan.inside.map(itemText).join("; ")) + ". " : "בתוך " + R + " מ׳: אין. ") +
-      (res.nearScan.ring.length ? "<b>בקרבת האזור (עד " + 2 * R + " מ׳):</b> " + E(res.nearScan.ring.map(itemText).join("; ")) + "." : "בטבעת הכתומה (עד " + 2 * R + " מ׳): אין.") +
-      " <span class='muted'>(חיפוש עד " + C.fmtDist(data.nearR || Math.max(800, 2 * R + 150)) + ": מגדלים, תרנים, ארובות, עגורנים, קווי ועמודי חשמל, רכבלים, מבנים גבוהים, תשתיות שדה תעופה ומנחתים, אזורים צבאיים, כבישים מהירים/ראשיים, מסילות, בתי חולים, בתי סוהר, משטרה, אצטדיונים.)</span>"]);
+      (res.nearScan.ring.length ? "<b>בקרבת האזור (עד " + 2 * R + " מ׳):</b> " + E(res.nearScan.ring.map(itemText).join("; ")) + ". " : "בטבעת הכתומה (עד " + 2 * R + " מ׳): אין. ") +
+      (res.nearScan.near.length ? "<b>אתרים ותשתיות נוספים (עד " + C.fmtDist(siteR) + " מהנקודה):</b> " + E(res.nearScan.near.map(itemText).join("; ")) + "." : "אתרים ותשתיות נוספים (עד " + C.fmtDist(siteR) + "): אין.") +
+      " <span class='muted'>(מכשולים — עד " + C.fmtDist(2 * R) + " מהנקודה: מגדלים, תרנים, ארובות, עגורנים, קווי ועמודי חשמל, תחנות משנה, רכבלים, מבנים בגובה 20 מ׳ ומעלה או 6 קומות ומעלה. אתרים ותשתיות — עד " + C.fmtDist(siteR) + ": תשתיות שדה תעופה ומנחתים, אזורים צבאיים, כבישים מהירים/ראשיים, מסילות, בתי חולים, בתי סוהר, משטרה, אצטדיונים.)</span>"]);
     // שדות תעופה
     const af = res.airfields.filter(a => a.type === "aerodrome").slice(0, 3), hp = res.airfields.filter(a => a.type !== "aerodrome").slice(0, 2);
     rows.push(["שדות תעופה ומנחתים בסביבה (עד " + C.fmtDist(th.airfield_scan_m) + ")", "OpenStreetMap",
@@ -174,6 +176,8 @@
     out.push('<Style id="red"><LineStyle><color>ff202dd9</color><width>3</width></LineStyle><PolyStyle><color>55202dd9</color></PolyStyle></Style>');
     out.push('<Style id="dist"><LineStyle><color>ff202dd9</color><width>2</width></LineStyle></Style>');
     out.push('<Style id="powerline"><LineStyle><color>ff00d4ff</color><width>4</width></LineStyle></Style>');
+    out.push('<Style id="ground"><IconStyle><color>ffeed322</color><scale>1.1</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_square.png</href></Icon></IconStyle><LineStyle><color>ffeed322</color><width>3</width></LineStyle><PolyStyle><color>55eed322</color></PolyStyle></Style>');
+    out.push('<Style id="air"><IconStyle><color>fffb40e0</color><scale>1.1</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/airports.png</href></Icon></IconStyle><LineStyle><color>fffb40e0</color><width>3</width></LineStyle><PolyStyle><color>55fb40e0</color></PolyStyle></Style>');
     out.push('<Style id="obst"><IconStyle><color>ff00d4ff</color><scale>1.1</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/caution.png</href></Icon></IconStyle><LineStyle><color>ff00d4ff</color><width>2</width></LineStyle><PolyStyle><color>5500d4ff</color></PolyStyle></Style>');
     out.push("<Placemark><name>נקודת ההטסה (מרכז)</name><description>" + X(C.dmsLat(inp.lat) + " " + C.dmsLon(inp.lon) + " · גובה " + inp.heightM + " מ׳ (" + res.ft.toFixed(1) + " רגל)") + "</description><Point><coordinates>" + inp.lon + "," + inp.lat + ",0</coordinates></Point></Placemark>");
     out.push("<Placemark><name>" + X("אזור ההטסה — רדיוס " + R + " מ׳") + '</name><styleUrl>#green</styleUrl>' + poly(circ(R)) + "</Placemark>");
@@ -184,13 +188,14 @@
       if (z.d >= 1) out.push("<Placemark><name>" + X(Math.round(z.d) + " מ׳ עד " + z.id) + '</name><styleUrl>#dist</styleUrl><LineString><tessellate>1</tessellate><coordinates>' + inp.lon + "," + inp.lat + ",0 " + z.ll[1] + "," + z.ll[0] + ",0</coordinates></LineString></Placemark>");
     });
     if (res.nearScan.items.length) {
-      out.push("<Folder><name>מכשולים ותשתיות בתוך האזור ובקרבתו (OpenStreetMap)</name>");
+      out.push("<Folder><name>מכשולים, אתרים ותשתיות בתוך האזור ובקרבתו (OpenStreetMap)</name>");
       res.nearScan.items.forEach(it => {
         const name = X(it.n + ". " + it.title + " — " + dLabel(it.d));
+        const sty = it.tags.power === "line" ? "#powerline" : it.cat === "ground" ? "#ground" : it.cat === "air" ? "#air" : "#obst";
         it.geoms.forEach(g => {
-          if (g.pt) out.push("<Placemark><name>" + name + '</name><styleUrl>#obst</styleUrl><Point><coordinates>' + g.pt[1] + "," + g.pt[0] + ",0</coordinates></Point></Placemark>");
-          else if (g.closed) out.push("<Placemark><name>" + name + '</name><styleUrl>#obst</styleUrl>' + poly(g.pts) + "</Placemark>");
-          else out.push("<Placemark><name>" + name + '</name><styleUrl>' + (it.tags.power === "line" ? "#powerline" : "#obst") + '</styleUrl><LineString><tessellate>1</tessellate><coordinates>' + coords(g.pts) + "</coordinates></LineString></Placemark>");
+          if (g.pt) out.push("<Placemark><name>" + name + '</name><styleUrl>' + sty + '</styleUrl><Point><coordinates>' + g.pt[1] + "," + g.pt[0] + ",0</coordinates></Point></Placemark>");
+          else if (g.closed) out.push("<Placemark><name>" + name + '</name><styleUrl>' + sty + '</styleUrl>' + poly(g.pts) + "</Placemark>");
+          else out.push("<Placemark><name>" + name + '</name><styleUrl>' + sty + '</styleUrl><LineString><tessellate>1</tessellate><coordinates>' + coords(g.pts) + "</coordinates></LineString></Placemark>");
         });
       });
       out.push("</Folder>");

@@ -90,8 +90,10 @@
   /* ================= שאילתות OpenStreetMap (משותפות לאפליקציה ולבדיקות) ================= */
   function buildQueries(lat, lon, R, cfg) {
     const th = (cfg && cfg.thresholds) || {};
-    const nearR = Math.max(800, Math.ceil(2 * R + 150));
-    const c = lat + "," + lon, a = "(around:" + nearR + "," + c + ")";
+    // מכשולים (מגדלים, חשמל, מבנים גבוהים): עד פי 2 מהרדיוס; אתרים ותשתיות קרקעיות/אוויריות: עד km מקצה הסגירה
+    const siteM = th.site_near_m || 1000;
+    const A = Math.ceil(2 * R + 150), B = Math.ceil(R + siteM + 50), nearR = Math.max(A, B);
+    const c = lat + "," + lon, a = "(around:" + A + "," + c + ")", b = "(around:" + B + "," + c + ")";
     const near =
       "[out:json][timeout:120];(" +
       "nwr" + a + '[man_made~"^(tower|mast|chimney|crane|water_tower|silo|storage_tank|flare|lighthouse|communications_tower|antenna|windmill)$"];' +
@@ -99,14 +101,14 @@
       "nwr" + a + "[aerialway];" +
       "nwr" + a + '[building][height~"^([2-9][0-9]|[1-9][0-9][0-9]+)"];' +
       "nwr" + a + '[building]["building:levels"~"^([6-9]|[1-9][0-9]+)$"];' +
-      "nwr" + a + "[aeroway];" +
-      "nwr" + a + "[emergency=helipad];" +
-      "nwr" + a + "[military];" +
-      "nwr" + a + "[landuse=military];" +
-      "nwr" + a + '[highway~"^(motorway|trunk)$"];' +
-      "nwr" + a + '[railway~"^(rail|light_rail|subway)$"];' +
-      "nwr" + a + '[amenity~"^(hospital|prison|police)$"];' +
-      "nwr" + a + "[leisure=stadium];" +
+      "nwr" + b + "[aeroway];" +
+      "nwr" + b + "[emergency=helipad];" +
+      "nwr" + b + "[military];" +
+      "nwr" + b + "[landuse=military];" +
+      "nwr" + b + '[highway~"^(motorway|trunk)$"];' +
+      "nwr" + b + '[railway~"^(rail|light_rail|subway)$"];' +
+      "nwr" + b + '[amenity~"^(hospital|prison|police)$"];' +
+      "nwr" + b + "[leisure=stadium];" +
       ");out geom tags;";
     const farR = th.airfield_scan_m || 15000, placeR = th.place_scan_m || 3000;
     const box = km => { const dLa = km / 111000, dLo = km / (111000 * Math.cos((lat * Math.PI) / 180)); return [lat - dLa, lon - dLo, lat + dLa, lon + dLo].map(v => v.toFixed(5)).join(","); };
@@ -249,15 +251,17 @@
     return e.type + "/" + e.id;
   }
 
-  // near: תשובת Overpass של שאילתת הקרוב. מחזיר פריטים עד 2R, ממוינים לפי מרחק, ממוספרים.
-  function analyzeNear(P, R, near) {
+  // near: תשובת Overpass של שאילתת הקרוב. מכשולים עד 2R; אתרים ותשתיות (קרקע/אוויר) עד R+site_near_m. ממוספרים לפי מרחק.
+  function analyzeNear(P, R, near, th) {
+    const siteM = (th && th.site_near_m) || 1000;
     const groups = new Map();
     (near.elements || []).forEach(e => {
       const r = elemDist(P, e); if (!r) return;
-      if (r.d > 2 * R) return;
-      const t = e.tags || {}, label = heLabel(t), key = groupKey(e, t, label);
+      const t = e.tags || {}, cat = classify(t);
+      if (r.d > (cat === "obst" ? 2 * R : R + siteM)) return;
+      const label = heLabel(t), key = groupKey(e, t, label);
       let g = groups.get(key);
-      if (!g) { g = { key, label, name: nameOf(t), cat: classify(t), d: r.d, p: r.p, tags: t, ids: [], geoms: [] }; groups.set(key, g); }
+      if (!g) { g = { key, label, name: nameOf(t), cat, d: r.d, p: r.p, tags: t, ids: [], geoms: [] }; groups.set(key, g); }
       if (r.d < g.d) { g.d = r.d; g.p = r.p; }
       g.ids.push(e.type + "/" + e.id);
       elemGeoms(e).forEach(gm => g.geoms.push(gm));
@@ -265,13 +269,13 @@
     const items = [...groups.values()].sort((a, b) => a.d - b.d);
     items.forEach((it, i) => {
       it.n = i + 1;
-      it.zone = it.d <= R ? "in" : "ring";
+      it.zone = it.d <= R ? "in" : it.d <= 2 * R ? "ring" : "near";
       it.title = it.label + (it.name && it.label.indexOf(it.name) < 0 ? " ״" + it.name + "״" : "");
       const ht = parseFloat(it.tags.height);
       if (isFinite(ht) && it.label.indexOf("מ׳") < 0) it.height = ht;
       it.ll = P.ll(it.p[0], it.p[1]);
     });
-    return { items, inside: items.filter(i => i.zone === "in"), ring: items.filter(i => i.zone === "ring") };
+    return { items, inside: items.filter(i => i.zone === "in"), ring: items.filter(i => i.zone === "ring"), near: items.filter(i => i.zone === "near") };
   }
 
   /* ================= אזורי א-17 ורט״ג ================= */
@@ -562,7 +566,7 @@
   function analyze(inp, data, cfg, now) {
     const P = new Proj(inp.lat, inp.lon), R = inp.radius, th = cfg.thresholds;
     const res = { P, R, inp };
-    res.nearScan = analyzeNear(P, R, data.near);
+    res.nearScan = analyzeNear(P, R, data.near, th);
     res.zones = analyzeZones(P, R, { zones: data.zones && data.zones.zones, inpa: data.inpa }, th.near_zone_m);
     res.agri = analyzeAgri(P, data.agri && data.agri.airstrips);
     res.airfields = analyzeAirfields(P, data.far, th.airfield_scan_m);

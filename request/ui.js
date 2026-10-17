@@ -253,8 +253,8 @@
       "<p style='margin-top:8px'><b>חובה לצרף מפה/תצ״א</b> — מצורפת: מפה בעמוד 2.<br>*את הבקשה יש להגיש לכתובות המייל: <span dir='ltr'>" + esc(cfg.mail.to.join(", ")) + "</span></p>" +
       "<div class='foot'><span>" + esc(cfg.form) + "</span><span>הופק " + esc(now.toLocaleDateString("he-IL")) + "</span></div></div>";
     const items = res.nearScan.items;
-    const legend = items.length ? "<h2>מכשולים ותשתיות המסומנים במפה</h2><table class='t'><tr><th>#</th><th>מה</th><th>מרחק מהנקודה</th><th>איפה</th></tr>" +
-      items.map(i => "<tr><td>" + i.n + "</td><td>" + esc(i.title) + (i.height ? " · גובה " + C.trimNum(i.height, 0) + " מ׳" : "") + "</td><td>" + esc(O.dLabel(i.d)) + "</td><td>" + (i.zone === "in" ? "בתוך האזור" : "בטבעת הכתומה") + "</td></tr>").join("") + "</table>" : "";
+    const legend = items.length ? "<h2>מכשולים, אתרים ותשתיות המסומנים במפה</h2><table class='t'><tr><th>#</th><th>מה</th><th>מרחק מהנקודה</th><th>איפה</th></tr>" +
+      items.map(i => "<tr><td>" + i.n + "</td><td>" + esc(i.title) + (i.height ? " · גובה " + C.trimNum(i.height, 0) + " מ׳" : "") + "</td><td>" + esc(O.dLabel(i.d)) + "</td><td>" + (i.zone === "in" ? "בתוך האזור" : i.zone === "ring" ? "בטבעת הכתומה" : "בקרבת האזור") + "</td></tr>").join("") + "</table>" : "";
     const img = S.map && S.map.dataUrl ? "<img class='mapimg' alt='מפה' src='" + (S.map.jpegUrl || S.map.dataUrl) + "'>" : "<div class='draft'>תמונת המפה לא נוצרה.</div>";
     const p2 = "<div class='paper'>" + draftBanner + "<div class='hdr'><span>מפה/תצ״א מצורפת לבקשה</span><span>" + esc((M.PROVIDERS[S.map ? S.map.provider : "esri"] || {}).name || "") + "</span></div>" + img + legend + "</div>";
     const checks = O.buildChecks(res, data, cfg);

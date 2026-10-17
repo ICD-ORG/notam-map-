@@ -27,6 +27,7 @@
   function viewFor(res, W, H) {
     let E = 2 * res.R;
     [...res.zones.inside, ...res.zones.near].forEach(z => { E = Math.max(E, Math.hypot(z.p[0], z.p[1])); });
+    res.nearScan.items.forEach(it => { E = Math.max(E, Math.hypot(it.p[0], it.p[1])); });
     E *= 1.14;
     const lat = res.inp.lat;
     for (let z = 19; z >= 3; z--) { if ((E / mpp(lat, z)) * 2 <= Math.min(W, H) - 20) return { z, E }; }
@@ -77,24 +78,25 @@
 
     // ---- מכשולים ותשתיות ----
     const labels = [];
+    const COL = { obst: ["#ffd400", "rgba(255,212,0,0.40)"], ground: ["#22d3ee", "rgba(34,211,238,0.30)"], air: ["#e040fb", "rgba(224,64,251,0.32)"] };
     res.nearScan.items.forEach(it => {
+      const [c1, c2] = COL[it.cat] || COL.obst;
       it.geoms.forEach(gm => {
         if (gm.pt) return;
-        const isLine = !gm.closed;
         path(gm.pts, gm.closed);
-        if (gm.closed) { g.fillStyle = "rgba(255,212,0,0.40)"; g.fill(); g.lineWidth = 2.5; g.strokeStyle = "#111"; g.stroke(); }
-        else { g.lineWidth = 5.5; g.strokeStyle = "#ffd400"; g.setLineDash([]); g.stroke(); g.lineWidth = 2.2; g.strokeStyle = "#111"; g.setLineDash([9, 5]); g.stroke(); g.setLineDash([]); }
+        if (gm.closed) { g.fillStyle = c2; g.fill(); g.lineWidth = 3; g.strokeStyle = it.cat === "obst" ? "#111" : c1; g.stroke(); }
+        else { g.lineWidth = 5.5; g.strokeStyle = c1; g.setLineDash([]); g.stroke(); g.lineWidth = 2.2; g.strokeStyle = "#111"; g.setLineDash([9, 5]); g.stroke(); g.setLineDash([]); }
       });
     });
     res.nearScan.items.forEach(it => {
-      const pt = it.geoms.find(gm => gm.pt);
+      const pt = it.geoms.find(gm => gm.pt), [c1] = COL[it.cat] || COL.obst;
       const q = pt ? X(pt.pt[0], pt.pt[1]) : X(it.ll[0], it.ll[1]);
-      if (pt) { g.fillStyle = "#ffd400"; g.strokeStyle = "#111"; g.lineWidth = 2; g.fillRect(q[0] - 8, q[1] - 8, 16, 16); g.strokeRect(q[0] - 8, q[1] - 8, 16, 16); }
-      labels.push({ q, n: it.n });
+      if (pt) { g.fillStyle = c1; g.strokeStyle = "#111"; g.lineWidth = 2; g.fillRect(q[0] - 8, q[1] - 8, 16, 16); g.strokeRect(q[0] - 8, q[1] - 8, 16, 16); }
+      labels.push({ q, n: it.n, c: c1 });
     });
     labels.forEach(l => {
       g.beginPath(); g.arc(l.q[0] + 14, l.q[1] - 14, 11, 0, 2 * Math.PI); g.fillStyle = "#111"; g.fill();
-      g.fillStyle = "#ffd400"; g.font = "bold 14px sans-serif"; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(String(l.n), l.q[0] + 14, l.q[1] - 13);
+      g.fillStyle = l.c; g.font = "bold 14px sans-serif"; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(String(l.n), l.q[0] + 14, l.q[1] - 13);
     });
 
     // ---- קווי מרחק לאזורי איסור ----
@@ -135,10 +137,10 @@
     text("רדיוס " + res.R + " מ׳   ·   גובה " + C.trimNum(inp.heightM, 2) + " מ׳ (" + res.ft.toFixed(1) + " רגל) מעפ״ש (AGL)", W - 20, 50, { align: "right", size: 15, bold: false, color: "#cfe3ff", halo: "rgba(0,0,0,0)" });
     text(C.dmsLat(inp.lat) + "   " + C.dmsLon(inp.lon), 20, 50, { align: "left", ltr: true, size: 15, bold: false, color: "#cfe3ff", halo: "rgba(0,0,0,0)" });
     // ---- מקרא ----
-    const items = [["#22c55e", "ירוק: אזור הסגירה (0–" + res.R + " מ׳)"], ["#ff9500", "כתום: עד " + 2 * res.R + " מ׳"], ["#ff3b30", "אדום: אזור אסור/מוגבל (פמ״ת א-17)"], ["#ffd400", "צהוב: מכשול/תשתית (מספר = ברשימה בטופס)"]];
-    const lx0 = W - 20 - 330, ly0 = H - 20 - items.length * 26 - 12;
-    g.fillStyle = "rgba(0,0,0,0.62)"; g.fillRect(lx0 - 12, ly0 - 8, 342, items.length * 26 + 20);
-    items.forEach((it, i) => { g.fillStyle = it[0]; g.fillRect(lx0 + 310, ly0 + 5 + i * 26, 16, 16); text(it[1], lx0 + 300, ly0 + 13 + i * 26, { align: "right", size: 14, bold: false, halo: "rgba(0,0,0,0)" }); });
+    const items = [["#22c55e", "ירוק: אזור הסגירה (0–" + res.R + " מ׳)"], ["#ff9500", "כתום: עד " + 2 * res.R + " מ׳"], ["#ff3b30", "אדום: אזור אסור/מוגבל (פמ״ת א-17)"], ["#ffd400", "צהוב: מכשול (מספר = ברשימה בטופס)"], ["#22d3ee", "תכלת: אתר/תשתית קרקעית (אצטדיון, כביש, מסילה...)"], ["#e040fb", "סגול: תשתית אוויר (שדה/מנחת)"]];
+    const lx0 = W - 20 - 420, ly0 = H - 20 - items.length * 26 - 12;
+    g.fillStyle = "rgba(0,0,0,0.62)"; g.fillRect(lx0 - 12, ly0 - 8, 432, items.length * 26 + 20);
+    items.forEach((it, i) => { g.fillStyle = it[0]; g.fillRect(lx0 + 400, ly0 + 5 + i * 26, 16, 16); text(it[1], lx0 + 390, ly0 + 13 + i * 26, { align: "right", size: 14, bold: false, halo: "rgba(0,0,0,0)" }); });
     // ---- זכויות יוצרים ----
     text(prov.attribution + " · " + new Date().toISOString().slice(0, 10), 6, H - 6, { align: "left", ltr: true, size: 11, bold: false, halo: "rgba(0,0,0,0.9)" });
 
