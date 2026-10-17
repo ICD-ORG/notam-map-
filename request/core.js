@@ -177,13 +177,19 @@
   /* ================= ניתוח אלמנטים של OSM ================= */
   function elemGeoms(e) { // רשימת {pts:[[lat,lon]...], closed} או {pt:[lat,lon]}
     const out = [];
-    const ring = g => g.map(p => [p.lat, p.lon]);
-    const same = g => g.length > 3 && g[0].lat === g[g.length - 1].lat && g[0].lon === g[g.length - 1].lon;
+    // out geom(bbox) מחזיר null לצמתים שמחוץ לתיבה — מפצלים לרצפים רציפים כדי לא ליצור קטעים מדומים
+    const addLine = g => {
+      let run = [];
+      const flush = () => { if (run.length) { out.push({ pts: run, closed: false }); run = []; } };
+      if (g.some(p => !p)) { g.forEach(p => { if (p) run.push([p.lat, p.lon]); else flush(); }); flush(); return; }
+      const pts = g.map(p => [p.lat, p.lon]);
+      out.push({ pts, closed: pts.length > 3 && pts[0][0] === pts[pts.length - 1][0] && pts[0][1] === pts[pts.length - 1][1] });
+    };
     if (e.type === "node") { if (e.lat != null) out.push({ pt: [e.lat, e.lon] }); }
-    else if (e.type === "way" && e.geometry) out.push({ pts: ring(e.geometry), closed: same(e.geometry) });
+    else if (e.type === "way" && e.geometry) addLine(e.geometry);
     else if (e.type === "relation") {
       (e.members || []).forEach(m => {
-        if (m.geometry) out.push({ pts: ring(m.geometry), closed: same(m.geometry) });
+        if (m.geometry) addLine(m.geometry);
         else if (m.lat != null) out.push({ pt: [m.lat, m.lon] });
       });
     }
