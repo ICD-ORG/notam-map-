@@ -130,13 +130,13 @@
     return { near, far, ext, nearR };
   }
 
-  const MIRRORS = ["https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter", "https://overpass.openstreetmap.fr/api/interpreter", "https://overpass.private.coffee/api/interpreter"];
+  const MIRRORS = ["https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter", "https://overpass.openstreetmap.fr/api/interpreter", "https://lz4.overpass-api.de/api/interpreter", "https://z.overpass-api.de/api/interpreter", "https://overpass.private.coffee/api/interpreter"];
   // שולח את השאילתה לשרת הראשון, ואם לא ענה תוך staggerMs (או נכשל) מוסיף עוד שרת במקביל; התשובה התקינה הראשונה מנצחת.
   // fetchFn: fetch או מימוש תואם. מחזיר {data, mirror}; זורק שגיאה אם כל השרתים נכשלו בכל הסבבים.
   async function overpass(query, opts) {
     opts = opts || {};
-    const f = opts.fetch || fetch, mirrors = opts.mirrors || MIRRORS, rounds = opts.rounds || 3;
-    const stagger = opts.staggerMs == null ? 8000 : opts.staggerMs, timeoutMs = opts.timeoutMs || 60000;
+    const f = opts.fetch || fetch, mirrors = opts.mirrors || MIRRORS, rounds = opts.rounds || 2;
+    const stagger = opts.staggerMs == null ? 6000 : opts.staggerMs, timeoutMs = opts.timeoutMs || 55000;
     const wait = opts.wait || (ms => new Promise(r => setTimeout(r, ms)));
     const log = opts.log || (() => {});
     let lastErr = "";

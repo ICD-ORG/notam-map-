@@ -1,2 +1,8 @@
 __pycache__/
 *.pyc
+tests/out/
+tests/out-live/
+tests/out-mock/
+node_modules/
+package.json
+package-lock.json
