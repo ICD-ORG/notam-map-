@@ -255,3 +255,23 @@ test("גבולות מדינה: רצועת האיסור לפי מדינה (נתו
   assert.equal(byName[0].iso, "EG", "גיבוי לפי שם הקטע כשאין שיוך ליחס");
 });
 
+
+test("גבולות מדינה על נתוני אמת (מטולה/ניצנה/גולן) מול מרחק גיאודזי עצמאי", () => {
+  for (const b of exp.borders) {
+    const ext = J(`tests/fixtures/${b.fixture}/ext.json`), P = new C.Proj(b.lat, b.lon);
+    const r = C.analyzeBorders(P, ext, cfg, b.R), x = r.find(y => y.iso === b.iso);
+    assert.ok(x, b.fixture + ": לא זוהה גבול " + b.iso);
+    assert.ok(Math.abs(x.d - b.d) <= b.tol, `${b.fixture}: ${x.d} מול ${b.d}`);
+    assert.equal(x.violates, b.violates, b.fixture);
+  }
+  const y = C.analyzeBorders(new C.Proj(32.099128, 34.816617), J("tests/fixtures/yarkon/ext.json"), cfg, 200);
+  assert.equal(y.length, 0, "בירקון אין גבול בטווח");
+});
+
+test("שמורת טבע ואזורי א-17 על נתוני אמת (מטולה: התנור; החולה: חפיפה)", () => {
+  const m = J("tests/fixtures/metula/meta.json"), P = new C.Proj(m.lat, m.lon);
+  const r = C.analyzeZones(P, m.R, { zones: zones.zones, inpa }, cfg.thresholds.near_zone_m);
+  assert.ok([...r.inside, ...r.near].some(z => z.id === "LLP2219"), "התנור");
+  const h = J("tests/fixtures/hula/meta.json"), r2 = C.analyzeZones(new C.Proj(h.lat, h.lon), h.R, { zones: zones.zones, inpa }, 1000);
+  assert.ok(r2.inside.some(z => z.id === "LLP01"), "שמורת החולה — חפיפה");
+});

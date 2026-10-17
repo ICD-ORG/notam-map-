@@ -290,6 +290,7 @@
     $("btnCopy").textContent = "הועתק ✔"; setTimeout(() => { $("btnCopy").textContent = "העתק טקסט מייל"; }, 2000);
   }
 
+  const r_name = (cfg, iso) => (cfg.borders[iso] || {}).name || iso;
   /* ---------- בדיקה עצמית ---------- */
   async function selfTest() {
     const out = [], add = (name, ok, detail) => out.push({ name, ok, detail: detail || "" });
@@ -310,6 +311,11 @@
       const rows = O.buildForm(res, cfg);
       add("בטופס 17 שדות", rows.length === 17, String(rows.length));
       add("אין מילות 'טרם נבדק' בטופס", !/טרם נבדק|לא נבדק/.test(rows.map(r => r.text).join(" ")), "");
+      for (const b of exp.borders || []) {
+        const bx = await getJson("tests/fixtures/" + b.fixture + "/ext.json");
+        const r = C.analyzeBorders(new C.Proj(b.lat, b.lon), bx, cfg, b.R).find(y => y.iso === b.iso);
+        add("גבול " + r_name(cfg, b.iso) + " — " + b.d + " מ׳ (" + b.fixture + ")", !!r && near1(r.d, b.d, b.tol) && r.violates === b.violates, r ? "חושב " + r.d.toFixed(1) : "לא זוהה");
+      }
       const kml = O.kml(res, data, cfg);
       add("KML תקין (XML)", new DOMParser().parseFromString(kml, "application/xml").getElementsByTagName("parsererror").length === 0, kml.length + " תווים");
     } catch (e) { add("טעינת נתוני הבדיקה", false, e.message); }
