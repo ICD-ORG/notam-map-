@@ -109,11 +109,13 @@
       "nwr" + a + "[leisure=stadium];" +
       ");out geom tags;";
     const farR = th.airfield_scan_m || 15000, placeR = th.place_scan_m || 3000;
+    const box = km => { const dLa = km / 111000, dLo = km / (111000 * Math.cos((lat * Math.PI) / 180)); return [lat - dLa, lon - dLo, lat + dLa, lon + dLo].map(v => v.toFixed(5)).join(","); };
+    // תיבה במקום around: מהיר בהרבה בשרתים העמוסים; המרחק המדויק מחושב בדפדפן
     const far =
       "[out:json][timeout:90];" +
-      "nwr(around:" + farR + "," + c + ')[aeroway~"^(aerodrome|heliport|helipad)$"];out center tags;' +
+      'nwr[aeroway~"^(aerodrome|heliport|helipad)$"](' + box(farR) + ");out center tags;" +
       "is_in(" + c + ");out tags;" +
-      "node(around:" + placeR + "," + c + ")[place];out body;";
+      "node[place](" + box(placeR) + ");out body;";
     const bR = th.border_scan_m || 7000, pR = Math.ceil(2 * R + (th.near_zone_m || 1000));
     const dLat = bR / 111000, dLon = bR / (111000 * Math.cos((lat * Math.PI) / 180));
     const bbox = [lat - dLat, lon - dLon, lat + dLat, lon + dLon].map(v => v.toFixed(5)).join(",");
@@ -136,7 +138,7 @@
   async function overpass(query, opts) {
     opts = opts || {};
     const f = opts.fetch || fetch, mirrors = opts.mirrors || MIRRORS, rounds = opts.rounds || 2;
-    const stagger = opts.staggerMs == null ? 6000 : opts.staggerMs, timeoutMs = opts.timeoutMs || 55000;
+    const stagger = opts.staggerMs == null ? 8000 : opts.staggerMs, timeoutMs = opts.timeoutMs || 95000;
     const wait = opts.wait || (ms => new Promise(r => setTimeout(r, ms)));
     const log = opts.log || (() => {});
     let lastErr = "";

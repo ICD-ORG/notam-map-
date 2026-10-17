@@ -220,7 +220,8 @@ test("הזרקת HTML בשדות חופשיים מנוטרלת", () => {
 test("שאילתות OSM: מכילות את כל הקטגוריות ומחזירות מיקום ליישובים (out body)", () => {
   const q = C.buildQueries(32.099128, 34.816617, 200, cfg);
   assert.ok(q.near.includes("out geom tags") && q.near.includes("man_made") && q.near.includes("[power") && q.near.includes("[aeroway]") && q.near.includes("[emergency=helipad]"));
-  assert.ok(q.far.includes("node(around:3000") && /\[place\];out body;/.test(q.far), "יישובים חייבים out body");
+  assert.ok(/node\[place\]\([\d.,-]+\);out body;/.test(q.far), "יישובים חייבים out body");
+  assert.ok(/nwr\[aeroway~"\^\(aerodrome\|heliport\|helipad\)\$"\]\([\d.,-]+\);out center tags;/.test(q.far), "שדות תעופה בתיבה");
   assert.ok(q.ext.includes("nature_reserve") && q.ext.includes("admin_level"));
   assert.equal(C.buildQueries(32, 34.8, 1000, cfg).nearR, 2150, "רדיוס חיפוש גדל עם הסגירה");
   assert.equal(q.nearR, 800);
