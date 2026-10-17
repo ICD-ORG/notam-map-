@@ -12,7 +12,7 @@
  },
  "near": {
   "mirror": "https://overpass.openstreetmap.fr/api/interpreter",
-  "elements": 3,
-  "osm_base": "2026-10-17T05:20:03Z"
+  "elements": 5,
+  "osm_base": "2026-10-17T05:40:35Z"
  }
 }
