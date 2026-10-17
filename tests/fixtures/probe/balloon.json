@@ -1,0 +1,3390 @@
+{
+ "by_name": {
+  "error": "כל שרתי Overpass נכשלו. אחרון: https://overpass.openstreetmap.fr/api/interpreter: Overpass: runtime error: Query timed out in \"query\" at line 1 after 88 seconds."
+ },
+ "attractions": {
+  "mirror": "https://overpass.openstreetmap.fr/api/interpreter",
+  "count": 122,
+  "items": [
+   {
+    "type": "node",
+    "id": 358533497,
+    "lat": 32.0985848,
+    "lon": 34.8057304,
+    "tags": {
+     "addr:housenumber": "73",
+     "addr:street": "קוסובסקי",
+     "alt_name:en": "Bird's Head;Rosh Tsipor",
+     "description": "פארק ראש ציפור הוא פארק עם ציפורים בתוך פארק הירקון.",
+     "description:en": "Rosh Tzipor (Bird’s Head) is a part of Yarkon Park (Ganei Yehoshua) in Tel Aviv-Yafo, at the junction of the Ayalon and Yarkon rivers. An aerial view of the area resembles the shape of a Bird’s Head, hence the name.",
+     "leisure": "park",
+     "name": "ראש ציפור",
+     "name:en": "Rosh Tzipor",
+     "name:he": "ראש ציפור",
+     "tourism": "attraction",
+     "website": "https://park.co.il/domain/פארק-הצפרות",
+     "wikidata": "Q41808451"
+    }
+   },
+   {
+    "type": "node",
+    "id": 1034196959,
+    "lat": 32.0772482,
+    "lon": 34.8212692,
+    "tags": {
+     "man_made": "tower",
+     "name": "תצפית יד לבנים",
+     "name:en": "Yad LeBanim Observation",
+     "name:he": "תצפית יד לבנים",
+     "tower:type": "observation"
+    }
+   },
+   {
+    "type": "node",
+    "id": 1152624340,
+    "lat": 32.1125755,
+    "lon": 34.8149217,
+    "tags": {
+     "historic": "memorial",
+     "tourism": "attraction"
+    }
+   },
+   {
+    "type": "node",
+    "id": 1207755694,
+    "lat": 32.0821002,
+    "lon": 34.8115067,
+    "tags": {
+     "man_made": "water_tower"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3449088244,
+    "lat": 32.0968513,
+    "lon": 34.8106956,
+    "tags": {
+     "amenity": "public_bookcase",
+     "description": "ספריית שביל ישראל - גני יהושע. ספריה חופשית המאפשרת שאילת ספרים והחזרתם במספר נקודות לאורכו של שביל ישראל. הספריה הבאה לצפון: חוטם הכרמל. הספריה הבאה לדרום: תל אפק, מבצר אנטיפטרוס.",
+     "description:he": "ספריית שביל ישראל - גני יהושע. ספריה חופשית המאפשרת שאילת ספרים והחזרתם במספר נקודות לאורכו של שביל ישראל. הספריה הבאה לצפון: חוטם הכרמל. הספריה הבאה לדרום: תל אפק, מבצר אנטיפטרוס.",
+     "name": "ספריית שביל ישראל",
+     "name:en": "Israel Trail Library",
+     "name:he": "ספריית שביל ישראל",
+     "tourism": "attraction",
+     "website": "https://shalem.ac.il/content-channel/shvil-yisrael-library/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 5802239924,
+    "lat": 32.0773973,
+    "lon": 34.8331494,
+    "tags": {
+     "man_made": "water_tower",
+     "operator": "מי ברק"
+    }
+   },
+   {
+    "type": "node",
+    "id": 8280657361,
+    "lat": 32.0721473,
+    "lon": 34.8158236,
+    "tags": {
+     "man_made": "tower",
+     "tower:type": "communication"
+    }
+   },
+   {
+    "type": "node",
+    "id": 10794927073,
+    "lat": 32.117602,
+    "lon": 34.8008358,
+    "tags": {
+     "attraction": "maze"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11009249990,
+    "lat": 32.1009546,
+    "lon": 34.8232485,
+    "tags": {
+     "direction": "120",
+     "man_made": "mast",
+     "tower:type": "lighting"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11009250020,
+    "lat": 32.0993797,
+    "lon": 34.8236931,
+    "tags": {
+     "direction": "40",
+     "man_made": "mast",
+     "tower:type": "lighting"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11009250021,
+    "lat": 32.0997932,
+    "lon": 34.8255196,
+    "tags": {
+     "direction": "280",
+     "man_made": "mast",
+     "tower:type": "lighting"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11009250022,
+    "lat": 32.0991207,
+    "lon": 34.8247043,
+    "tags": {
+     "direction": "345",
+     "man_made": "mast",
+     "tower:type": "lighting"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11009250023,
+    "lat": 32.1012258,
+    "lon": 34.8251441,
+    "tags": {
+     "direction": "235",
+     "man_made": "mast",
+     "tower:type": "lighting"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11009250024,
+    "lat": 32.1016053,
+    "lon": 34.8236582,
+    "tags": {
+     "communication:mobile_phone": "yes",
+     "man_made": "mast",
+     "tower:type": "communication"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11009374306,
+    "lat": 32.0994194,
+    "lon": 34.8253298,
+    "tags": {
+     "direction": "305",
+     "man_made": "mast",
+     "tower:type": "lighting"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11013200537,
+    "lat": 32.0971614,
+    "lon": 34.8164669,
+    "tags": {
+     "man_made": "tower",
+     "tower:type": "communication"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11824889487,
+    "lat": 32.1176326,
+    "lon": 34.8031906,
+    "tags": {
+     "direction": "240",
+     "man_made": "mast",
+     "tower:type": "lighting"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11824889525,
+    "lat": 32.1165398,
+    "lon": 34.803165,
+    "tags": {
+     "direction": "300",
+     "man_made": "mast",
+     "tower:type": "lighting"
+    }
+   },
+   {
+    "type": "node",
+    "id": 12087570175,
+    "lat": 32.1248192,
+    "lon": 34.8182157,
+    "tags": {
+     "historic": "tower",
+     "man_made": "water_tower",
+     "name": "מגדל המים נוה גן"
+    }
+   },
+   {
+    "type": "node",
+    "id": 12978049891,
+    "lat": 32.0858666,
+    "lon": 34.8183681,
+    "tags": {
+     "man_made": "water_tower"
+    }
+   },
+   {
+    "type": "node",
+    "id": 14222382471,
+    "lat": 32.0833018,
+    "lon": 34.8037355,
+    "tags": {
+     "aeroway": "helipad"
+    }
+   },
+   {
+    "type": "way",
+    "id": 35208625,
+    "lat": 32.1065868,
+    "lon": 34.8120811,
+    "tags": {
+     "addr:housenumber": "101",
+     "addr:street": "שדרות רוקח תל אביב",
+     "area": "yes",
+     "barrier": "fence",
+     "description": "הלונה פארק בתל אביב, פארק השעשועים המוכר ביותר במדינה, משתרע על פני כ-50 דונם של מדשאות רחבות ידיים, עצי תמר ואקליפטוס, דרכי גישה מרוצפות ונוחות ושפע של אטרקציות והרפתקאות. ברחבי הפארק ממוקמים מזנונים שונים, המציעים מגוון ארוחות, חטיפים ומשקאות.",
+     "leisure": "park",
+     "name": "לונה פארק",
+     "name:en": "Luna Park",
+     "name:he": "לונה פארק",
+     "name:ru": "Луна-парк",
+     "opening_hours": "Mo-Th, Su 10:00-21:00; Sa 10:00-21:00",
+     "phone": "03-642-7080",
+     "tourism": "theme_park",
+     "website": "https://www.lunapark.co.il/",
+     "wikidata": "Q4519503"
+    }
+   },
+   {
+    "type": "way",
+    "id": 81848379,
+    "lat": 32.1014195,
+    "lon": 34.7942218,
+    "tags": {
+     "alt_name:en": "Beit Ha'Bad",
+     "building": "yes",
+     "building:levels": "1",
+     "name": "בית הבד",
+     "name:en": "Olive Oil Plant",
+     "name:he": "בית הבד",
+     "tourism": "attraction"
+    }
+   },
+   {
+    "type": "way",
+    "id": 81848412,
+    "lat": 32.1019525,
+    "lon": 34.7952746,
+    "tags": {
+     "area": "yes",
+     "historic": "archaeological_site",
+     "name": "תל קסילה",
+     "name:en": "Tell Qasile",
+     "name:fr": "Tel Qasile",
+     "name:he": "תל קסילה",
+     "natural": "scrub",
+     "tourism": "attraction",
+     "wikidata": "Q2690025"
+    }
+   },
+   {
+    "type": "way",
+    "id": 96637622,
+    "lat": 32.0800137,
+    "lon": 34.7896415,
+    "tags": {
+     "aeroway": "helipad",
+     "building:part": "yes",
+     "height": "60",
+     "layer": "3",
+     "name": "מנחת איכילוב",
+     "name:en": "Ichilov helipad",
+     "name:he": "מנחת איכילוב"
+    }
+   },
+   {
+    "type": "way",
+    "id": 98259532,
+    "lat": 32.1120189,
+    "lon": 34.8085793,
+    "tags": {
+     "alt_name": "הגן הזואולוגי אוניברסיטת תל-אביב",
+     "alt_name:en": "Tel-Aviv University Zoological Garden",
+     "alt_name:he": "הגן הזואולוגי אוניברסיטת תל-אביב",
+     "barrier": "fence",
+     "landuse": "meadow",
+     "name": "הגן למחקר זואולוגי ע\"ש א׳ מאיר סיגלס",
+     "name:en": "I. Meier Segals Garden for Zoological Research",
+     "name:he": "הגן למחקר זואולוגי ע\"ש א׳ מאיר סיגלס",
+     "tourism": "zoo",
+     "zoo": "enclosure"
+    }
+   },
+   {
+    "type": "way",
+    "id": 98284690,
+    "lat": 32.1008115,
+    "lon": 34.795315,
+    "tags": {
+     "building": "yes",
+     "building:levels": "1",
+     "man_made": "watermill",
+     "name": "טחנת קמח",
+     "name:en": "Flour Mill",
+     "name:he": "טחנת קמח",
+     "tourism": "attraction"
+    }
+   },
+   {
+    "type": "way",
+    "id": 98284694,
+    "lat": 32.1023938,
+    "lon": 34.7939174,
+    "tags": {
+     "amenity": "planetarium",
+     "building": "yes",
+     "building:levels": "1",
+     "name": "פלנטריום ע״ש לסקי",
+     "name:en": "Laski Planetarium",
+     "name:he": "פלנטריום ע״ש לסקי",
+     "tourism": "attraction"
+    }
+   },
+   {
+    "type": "way",
+    "id": 98288087,
+    "lat": 32.1031089,
+    "lon": 34.7965909,
+    "tags": {
+     "building": "yes",
+     "building:levels": "1",
+     "description": "כבאית",
+     "description:en": "Firefighters' Vehicle",
+     "description:he": "כבאית",
+     "tourism": "attraction"
+    }
+   },
+   {
+    "type": "way",
+    "id": 98603837,
+    "lat": 32.0980955,
+    "lon": 34.7970705,
+    "tags": {
+     "barrier": "fence",
+     "tourism": "zoo"
+    }
+   },
+   {
+    "type": "way",
+    "id": 98693387,
+    "lat": 32.091684,
+    "lon": 34.8078885,
+    "tags": {
+     "alt_name": "תל גריסה",
+     "alt_name:en": "Napoleon's Hill;Tel Napoleon;Givat Napoleon",
+     "alt_name:he": "תל גריסה;תל נפוליאון",
+     "description": "גבעה נישאת, עם שרידי ישובים קדומים ונוף לפארק ולעיר. במקום נראים סברסים ושרידי בוסתנים מהכפר ג'ריסה ששכן בצמוד עד 48. כיום התל מאוכלס בלהקת תנים ומהווה מוקד ביקור לתושבי השכונה הסמוכה ומבקרים רבים. זהו אתר טבע עירוני.",
+     "description:he": "גבעה נישאת, עם שרידי ישובים קדומים ונוף לפארק ולעיר. במקום נראים סברסים ושרידי בוסתנים מהכפר ג'ריסה ששכן בצמוד עד 48. כיום התל מאוכלס בלהקת תנים ומהווה מוקד ביקור לתושבי השכונה הסמוכה ומבקרים רבים. זהו אתר טבע עירוני.",
+     "historic": "archaeological_site",
+     "name": "גבעת נפוליאון (תל גריסה)",
+     "name:en": "Tel Gerisa",
+     "name:he": "גבעת נפוליאון (תל גריסה)",
+     "natural": "scrub",
+     "surface": "scrub",
+     "tourism": "attraction",
+     "wikidata": "Q7695568",
+     "wikipedia": "he:תל נפוליאון",
+     "wikipedia:he": "תל נפוליאון"
+    }
+   },
+   {
+    "type": "way",
+    "id": 684085759,
+    "lat": 32.1066524,
+    "lon": 34.8119949,
+    "tags": {
+     "attraction": "train",
+     "electrified": "no",
+     "gauge": "600",
+     "railway": "narrow_gauge",
+     "usage": "tourism",
+     "website": "https://www.lunapark.co.il/?categoryId=72521&itemId=149629"
+    }
+   },
+   {
+    "type": "way",
+    "id": 698563294,
+    "lat": 32.1068565,
+    "lon": 34.8119232,
+    "tags": {
+     "attraction": "train",
+     "electrified": "no",
+     "gauge": "600",
+     "railway": "narrow_gauge",
+     "usage": "tourism",
+     "website": "https://www.lunapark.co.il/?categoryId=72521&itemId=149629"
+    }
+   },
+   {
+    "type": "way",
+    "id": 739766101,
+    "lat": 32.0779944,
+    "lon": 34.8175959,
+    "tags": {
+     "man_made": "water_tower",
+     "operator": "לא פעיל"
+    }
+   },
+   {
+    "type": "way",
+    "id": 888844042,
+    "lat": 32.101962,
+    "lon": 34.8093025,
+    "tags": {
+     "attraction": "maze"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1167792294,
+    "lat": 32.1000104,
+    "lon": 34.8198633,
+    "tags": {
+     "attraction": "amusement_ride",
+     "building": "yes",
+     "height": "11"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1167804434,
+    "lat": 32.1026482,
+    "lon": 34.8202049,
+    "tags": {
+     "attraction": "water_slide"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1167804435,
+    "lat": 32.1024187,
+    "lon": 34.8201198,
+    "tags": {
+     "attraction": "water_slide"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1167804436,
+    "lat": 32.1026448,
+    "lon": 34.8201546,
+    "tags": {
+     "attraction": "water_slide"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1167804437,
+    "lat": 32.1023886,
+    "lon": 34.8201191,
+    "tags": {
+     "attraction": "water_slide"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1167804439,
+    "lat": 32.1025245,
+    "lon": 34.8201188,
+    "tags": {
+     "attraction": "water_slide"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1167804440,
+    "lat": 32.1025497,
+    "lon": 34.8208271,
+    "tags": {
+     "attraction": "water_slide"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1167804441,
+    "lat": 32.1025526,
+    "lon": 34.8208341,
+    "tags": {
+     "attraction": "water_slide"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1167804442,
+    "lat": 32.1025558,
+    "lon": 34.8208419,
+    "tags": {
+     "attraction": "water_slide"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1167804443,
+    "lat": 32.1025589,
+    "lon": 34.8208492,
+    "tags": {
+     "attraction": "water_slide"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1167804444,
+    "lat": 32.1028138,
+    "lon": 34.8207096,
+    "tags": {
+     "building": "yes",
+     "building:levels": "3",
+     "man_made": "tower",
+     "tower:type": "observation"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1167804445,
+    "lat": 32.1028213,
+    "lon": 34.8206129,
+    "tags": {
+     "building": "yes",
+     "man_made": "tower",
+     "tower:type": "observation"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1167804447,
+    "lat": 32.1026725,
+    "lon": 34.820628,
+    "tags": {
+     "attraction": "water_slide",
+     "layer": "2"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1167804448,
+    "lat": 32.1027179,
+    "lon": 34.8206027,
+    "tags": {
+     "attraction": "water_slide",
+     "layer": "3"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1167804449,
+    "lat": 32.1023718,
+    "lon": 34.8205463,
+    "tags": {
+     "attraction": "water_slide",
+     "layer": "0"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1167804450,
+    "lat": 32.1025689,
+    "lon": 34.8206684,
+    "tags": {
+     "attraction": "water_slide",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1167804451,
+    "lat": 32.1023791,
+    "lon": 34.8205971,
+    "tags": {
+     "attraction": "water_slide",
+     "layer": "0"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1167804452,
+    "lat": 32.1026148,
+    "lon": 34.8206074,
+    "tags": {
+     "attraction": "water_slide",
+     "layer": "3"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1167804453,
+    "lat": 32.1026027,
+    "lon": 34.8205727,
+    "tags": {
+     "attraction": "water_slide",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1167804454,
+    "lat": 32.1024464,
+    "lon": 34.8205715,
+    "tags": {
+     "attraction": "water_slide",
+     "layer": "2"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1167804455,
+    "lat": 32.1023413,
+    "lon": 34.8204724,
+    "tags": {
+     "attraction": "water_slide",
+     "layer": "0"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1167804456,
+    "lat": 32.1024374,
+    "lon": 34.8205107,
+    "tags": {
+     "attraction": "water_slide",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1167804457,
+    "lat": 32.1026304,
+    "lon": 34.8205966,
+    "tags": {
+     "attraction": "water_slide",
+     "layer": "2"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1167804458,
+    "lat": 32.1027337,
+    "lon": 34.8205931,
+    "tags": {
+     "attraction": "water_slide",
+     "layer": "3"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420508,
+    "lat": 32.1076654,
+    "lon": 34.8111588,
+    "tags": {
+     "building": "yes",
+     "man_made": "tower",
+     "tower:type": "observation"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420509,
+    "lat": 32.1076575,
+    "lon": 34.8112554,
+    "tags": {
+     "building": "yes",
+     "man_made": "tower",
+     "tower:type": "observation"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420510,
+    "lat": 32.1074457,
+    "lon": 34.8112352,
+    "tags": {
+     "attraction": "water_slide"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420511,
+    "lat": 32.1074457,
+    "lon": 34.8112741,
+    "tags": {
+     "attraction": "water_slide"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420512,
+    "lat": 32.1073558,
+    "lon": 34.8116208,
+    "tags": {
+     "attraction": "amusement_ride",
+     "building": "yes",
+     "building:levels": "1",
+     "leisure": "playground",
+     "name": "עולם הקטנטנים",
+     "name:he": "עולם הקטנטנים",
+     "website": "https://www.lunapark.co.il/?categoryId=72521&itemId=149617"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420514,
+    "lat": 32.1065214,
+    "lon": 34.8120739,
+    "tags": {
+     "attraction": "carousel",
+     "building": "yes",
+     "building:levels": "1",
+     "name": "קרוסלת סוסים",
+     "name:en": "Horse Riding Carousel",
+     "name:he": "קרוסלת סוסים",
+     "tourism": "attraction",
+     "website": "https://www.lunapark.co.il/?categoryId=72521&itemId=149622"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420516,
+    "lat": 32.106343,
+    "lon": 34.8121065,
+    "tags": {
+     "attraction": "carousel",
+     "building": "yes",
+     "building:levels": "1",
+     "name": "קרוסלת מטוסים",
+     "name:en": "Aircraft Carousel",
+     "name:he": "קרוסלת מטוסים",
+     "tourism": "attraction",
+     "website": "https://www.lunapark.co.il/?categoryId=72521&itemId=149620"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420517,
+    "lat": 32.1064334,
+    "lon": 34.8121673,
+    "tags": {
+     "attraction": "carousel",
+     "building": "yes",
+     "building:levels": "1",
+     "name": "קרוסלת מיני סירות",
+     "name:en": "Mini Boats Carousel",
+     "name:he": "קרוסלת מיני סירות",
+     "tourism": "attraction",
+     "website": "https://www.lunapark.co.il/?categoryId=72521&itemId=149621"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420518,
+    "lat": 32.1066486,
+    "lon": 34.8118527,
+    "tags": {
+     "attraction": "amusement_ride",
+     "barrier": "fence",
+     "maximum_height_requirement": "200cm",
+     "minimum_height_requirement": "140cm",
+     "name": "דה קינג",
+     "name:en": "The King",
+     "name:he": "המלך",
+     "website": "https://www.lunapark.co.il/?categoryId=72522&itemId=279610"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420520,
+    "lat": 32.1063395,
+    "lon": 34.8122635,
+    "tags": {
+     "attraction": "amusement_ride",
+     "barrier": "fence",
+     "minimum_height_requirement": "120cm",
+     "name": "מגדלי הכוח",
+     "name:en": "Power Towers",
+     "name:he": "מגדלי הכוח",
+     "website": "https://www.lunapark.co.il/?categoryId=72521&itemId=149616"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420521,
+    "lat": 32.1061484,
+    "lon": 34.8121948,
+    "tags": {
+     "attraction": "swing_carousel",
+     "barrier": "fence",
+     "minimum_height_requirement": "120cm",
+     "name": "הכוכב",
+     "name:en": "Star Flyer",
+     "name:he": "הכוכב",
+     "website": "https://www.lunapark.co.il/?categoryId=72522&itemId=284706"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420523,
+    "lat": 32.1061484,
+    "lon": 34.8121948,
+    "tags": {
+     "attraction": "swing_carousel",
+     "building": "yes"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420524,
+    "lat": 32.1063292,
+    "lon": 34.8114724,
+    "tags": {
+     "area": "yes",
+     "attraction": "carousel",
+     "barrier": "fence",
+     "maximum_height_requirement": "120cm",
+     "minimum_height_requirement": "95cm",
+     "name": "קרוסלת פילים",
+     "name:en": "Elephant Carousel",
+     "name:he": "קרוסלת פילים",
+     "website": "https://www.lunapark.co.il/?categoryId=72521&itemId=149623"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420525,
+    "lat": 32.1062105,
+    "lon": 34.8116719,
+    "tags": {
+     "attraction": "bumper_car",
+     "building": "yes",
+     "building:levels": "1",
+     "name": "מכוניות מתנגשות",
+     "name:en": "Bumper Cars",
+     "name:he": "מכוניות מתנגשות",
+     "website": "https://www.lunapark.co.il/?categoryId=72522&itemId=149639"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420526,
+    "lat": 32.1060836,
+    "lon": 34.8118255,
+    "tags": {
+     "attraction": "amusement_ride",
+     "barrier": "fence",
+     "maximum_height_requirement": "195cm",
+     "minimum_height_requirement": "140cm",
+     "name": "טופ ספין",
+     "name:en": "Top Spin",
+     "name:he": "טופ ספין",
+     "website": "https://www.lunapark.co.il/?categoryId=72522&itemId=149636"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420527,
+    "lat": 32.1059314,
+    "lon": 34.8114713,
+    "tags": {
+     "attraction": "pirate_ship",
+     "barrier": "fence",
+     "minimum_height_requirement": "120cm",
+     "name": "ספינת פיראטים",
+     "name:en": "Pirate Ship",
+     "name:he": "ספינת פיראטים",
+     "website": "https://www.lunapark.co.il/?categoryId=72522&itemId=149640"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420529,
+    "lat": 32.1057931,
+    "lon": 34.811093,
+    "tags": {
+     "attraction": "amusement_ride",
+     "barrier": "fence",
+     "maximum_height_requirement": "200cm",
+     "minimum_height_requirement": "95cm",
+     "name": "האופנועים המעופפים",
+     "name:he": "האופנועים המעופפים",
+     "website": "https://www.lunapark.co.il/?categoryId=72521&itemId=310670"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420532,
+    "lat": 32.1056857,
+    "lon": 34.811364,
+    "tags": {
+     "attraction": "amusement_ride",
+     "building": "yes",
+     "building:levels": "1",
+     "maximum_height_requirement": "130cm",
+     "minimum_height_requirement": "90cm",
+     "name": "מונו רייל",
+     "name:he": "מונו רייל",
+     "website": "https://lunapark.co.il/attractions/מונו-רייל/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420562,
+    "lat": 32.1065537,
+    "lon": 34.812453,
+    "tags": {
+     "attraction": "drop_tower",
+     "building": "yes",
+     "height": "65",
+     "name": "בלאק ממבה",
+     "name:en": "Black Mamba",
+     "name:he": "בלאק ממבה",
+     "tourism": "attraction",
+     "website": "https://www.lunapark.co.il/?categoryId=72522&itemId=149632"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420563,
+    "lat": 32.10624,
+    "lon": 34.8119847,
+    "tags": {
+     "attraction": "carousel",
+     "building": "yes",
+     "building:levels": "1",
+     "name": "קרוסלת ברבורים",
+     "name:en": "Swans Carousel",
+     "name:he": "קרוסלת ברבורים",
+     "tourism": "attraction",
+     "website": "https://www.lunapark.co.il/?categoryId=72521&itemId=149618"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420565,
+    "lat": 32.106355,
+    "lon": 34.8122425,
+    "tags": {
+     "building": "yes",
+     "man_made": "tower",
+     "tower:type": "climbing"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420566,
+    "lat": 32.1063229,
+    "lon": 34.8122849,
+    "tags": {
+     "building": "yes",
+     "man_made": "tower",
+     "tower:type": "climbing"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420567,
+    "lat": 32.1063775,
+    "lon": 34.8118471,
+    "tags": {
+     "attraction": "roller_coaster",
+     "barrier": "fence",
+     "name": "קרייזי טוויסטר",
+     "name:en": "Crazy Twister",
+     "name:he": "קרייזי טוויסטר",
+     "website": "https://www.lunapark.co.il/?categoryId=72522&itemId=149645"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420568,
+    "lat": 32.1063281,
+    "lon": 34.8114729,
+    "tags": {
+     "attraction": "carousel",
+     "building": "yes",
+     "building:levels": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420570,
+    "lat": 32.1066599,
+    "lon": 34.8122561,
+    "tags": {
+     "attraction": "dark_ride",
+     "building": "yes",
+     "building:levels": "1",
+     "name": "רכבת השדים",
+     "name:en": "Demon Train",
+     "name:he": "רכבת השדים"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420574,
+    "lat": 32.1058023,
+    "lon": 34.8123288,
+    "tags": {
+     "amenity": "cinema",
+     "building": "yes",
+     "building:levels": "1",
+     "name": "סינמה לונה",
+     "name:en": "Cinema Luna",
+     "name:he": "סינמה לונה",
+     "tourism": "attraction",
+     "website": "https://www.lunapark.co.il/?categoryId=72521&itemId=310672"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420576,
+    "lat": 32.1059728,
+    "lon": 34.8124598,
+    "tags": {
+     "attraction": "big_wheel",
+     "name": "גלגל ענק",
+     "name:he": "גלגל ענק"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420579,
+    "lat": 32.1067581,
+    "lon": 34.810943,
+    "tags": {
+     "attraction": "amusement_ride",
+     "barrier": "fence",
+     "minimum_height_requirement": "130cm",
+     "name": "ברייקדאנסר",
+     "name:en": "Breakdancer",
+     "name:he": "ברייקדאנסר",
+     "website": "https://www.lunapark.co.il/?categoryId=72522&itemId=149633"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420581,
+    "lat": 32.1069279,
+    "lon": 34.8123532,
+    "tags": {
+     "attraction": "amusement_ride",
+     "barrier": "fence",
+     "minimum_height_requirement": "90cm",
+     "name": "קרוסלת ראלי ספארי",
+     "name:he": "קרוסלת ראלי ספארי",
+     "website": "https://www.lunapark.co.il/?categoryId=72521&itemId=149624"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420587,
+    "lat": 32.1063807,
+    "lon": 34.8111574,
+    "tags": {
+     "attraction": "amusement_ride",
+     "barrier": "fence",
+     "name": "סחרחרת טא גא דה",
+     "name:en": "TA GA DA",
+     "name:he": "סחרחרת טא גא דה"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420590,
+    "lat": 32.1066966,
+    "lon": 34.8127637,
+    "tags": {
+     "attraction": "amusement_ride",
+     "barrier": "fence",
+     "minimum_height_requirement": "95cm",
+     "name": "השטיח המעופף",
+     "name:he": "השטיח המעופף",
+     "website": "https://www.lunapark.co.il/?categoryId=72521&itemId=283134"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168442151,
+    "lat": 32.1075045,
+    "lon": 34.8111781,
+    "tags": {
+     "attraction": "water_slide"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168442152,
+    "lat": 32.1075044,
+    "lon": 34.8111359,
+    "tags": {
+     "attraction": "water_slide"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168577462,
+    "lat": 32.0995181,
+    "lon": 34.8155208,
+    "tags": {
+     "attraction": "formal_garden",
+     "garden:style": "french",
+     "leisure": "garden"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168586361,
+    "lat": 32.1069188,
+    "lon": 34.8127124,
+    "tags": {
+     "amenity": "driver_training",
+     "attraction": "amusement_ride",
+     "barrier": "fence",
+     "name": "בית הספר לנהיגה",
+     "name:en": "Driving School",
+     "name:he": "בית הספר לנהיגה",
+     "tourism": "attraction",
+     "website": "https://www.lunapark.co.il/?categoryId=72521&itemId=149611"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168596924,
+    "lat": 32.10634,
+    "lon": 34.8128441,
+    "tags": {
+     "area": "yes",
+     "attraction": "roller_coaster",
+     "barrier": "fence",
+     "minimum_height_requirement": "100cm",
+     "name": "רכבת הרים",
+     "name:en": "Roller Coaster",
+     "name:he": "רכבת הרים",
+     "website": "https://www.lunapark.co.il/?categoryId=72522&itemId=149615"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168806749,
+    "lat": 32.1000104,
+    "lon": 34.8197579,
+    "tags": {
+     "attraction": "water_slide"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168806751,
+    "lat": 32.1000268,
+    "lon": 34.8197081,
+    "tags": {
+     "building": "yes",
+     "building:levels": "1",
+     "man_made": "tower",
+     "tower:type": "observation"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168806752,
+    "lat": 32.1000247,
+    "lon": 34.8198065,
+    "tags": {
+     "attraction": "amusement_ride",
+     "name": "סייד ווינדר",
+     "name:en": "Side Winder",
+     "name:he": "סייד ווינדר"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168806757,
+    "lat": 32.1002127,
+    "lon": 34.8203459,
+    "tags": {
+     "attraction": "water_slide"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168806758,
+    "lat": 32.100201,
+    "lon": 34.8203899,
+    "tags": {
+     "attraction": "water_slide"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168806759,
+    "lat": 32.1002218,
+    "lon": 34.8204171,
+    "tags": {
+     "attraction": "water_slide"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168806760,
+    "lat": 32.1002943,
+    "lon": 34.8202966,
+    "tags": {
+     "attraction": "water_slide"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168806761,
+    "lat": 32.100296,
+    "lon": 34.8202883,
+    "tags": {
+     "attraction": "water_slide"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168806762,
+    "lat": 32.1002404,
+    "lon": 34.8202458,
+    "tags": {
+     "attraction": "water_slide"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168806763,
+    "lat": 32.1025702,
+    "lon": 34.8208439,
+    "tags": {
+     "attraction": "amusement_ride",
+     "name:en": "Meteor Slide",
+     "name:he": "מגלשת מטאור"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168806764,
+    "lat": 32.1025103,
+    "lon": 34.820577,
+    "tags": {
+     "attraction": "amusement_ride",
+     "name:en": "Slalom Slide",
+     "name:he": "מגלשת סללום"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1169028889,
+    "lat": 32.1068607,
+    "lon": 34.8130874,
+    "tags": {
+     "attraction": "roller_coaster",
+     "name": "אנקונדה",
+     "name:en": "Anaconda",
+     "name:he": "אנקונדה",
+     "website": "https://www.lunapark.co.il/?categoryId=72522&itemId=149631"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1169052318,
+    "lat": 32.1074715,
+    "lon": 34.8112101,
+    "tags": {
+     "attraction": "water_slide"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1182542251,
+    "lat": 32.1045388,
+    "lon": 34.7804811,
+    "tags": {
+     "man_made": "tower",
+     "tower:type": "watchtower"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1184538623,
+    "lat": 32.0997546,
+    "lon": 34.8101849,
+    "tags": {
+     "area": "yes",
+     "attraction": "balloon_ride",
+     "barrier": "fence",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/d/d2/IHM_TLV_Balloon.jpeg",
+     "image1": "https://upload.wikimedia.org/wikipedia/commons/3/3a/IHM_TLV_Balloon_1.jpeg",
+     "name": "TLV Balloon",
+     "name:en": "TLV Balloon",
+     "name:he": "כדור פורח תל אביב",
+     "phone": "+972-3-5589722",
+     "website": "https://tlv-balloon.co.il/",
+     "wikipedia": "he:הכדור הפורח של תל אביב",
+     "wikipedia:he": "הכדור הפורח של תל אביב"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1185191322,
+    "lat": 32.0985506,
+    "lon": 34.8143059,
+    "tags": {
+     "attraction": "maze",
+     "leisure": "garden"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1197962918,
+    "lat": 32.0917145,
+    "lon": 34.8041307,
+    "tags": {
+     "addr:city": "רמת גן",
+     "addr:housenumber": "4",
+     "addr:street": "חרוזים",
+     "description": "גן גדול ויפה שממוקם ברחוב חרוזים ברמת גן ליד הכניסה לפארק הירקון עם מתקנים לילדים ומתקני כושר למבוגרים.",
+     "leisure": "park",
+     "name": "גן החרוזים",
+     "name:en": "Haruzim Park",
+     "name:he": "גן החרוזים",
+     "opening_hours": "24/7",
+     "tourism": "attraction"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1238149833,
+    "lat": 32.1127278,
+    "lon": 34.8087852,
+    "tags": {
+     "attraction": "animal",
+     "barrier": "fence"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1238149835,
+    "lat": 32.1127721,
+    "lon": 34.8077847,
+    "tags": {
+     "attraction": "animal",
+     "barrier": "fence"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1238149836,
+    "lat": 32.1128782,
+    "lon": 34.8077417,
+    "tags": {
+     "attraction": "animal",
+     "barrier": "fence"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1238149837,
+    "lat": 32.1124406,
+    "lon": 34.8077793,
+    "tags": {
+     "attraction": "animal",
+     "barrier": "fence"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1238149838,
+    "lat": 32.1125507,
+    "lon": 34.8077366,
+    "tags": {
+     "attraction": "animal",
+     "barrier": "fence"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1238149839,
+    "lat": 32.112608,
+    "lon": 34.8077375,
+    "tags": {
+     "attraction": "animal",
+     "barrier": "fence"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1238149840,
+    "lat": 32.1126631,
+    "lon": 34.8077385,
+    "tags": {
+     "attraction": "animal",
+     "barrier": "fence"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1551652694,
+    "lat": 32.0746904,
+    "lon": 34.8005344,
+    "tags": {
+     "man_made": "water_tower"
+    }
+   },
+   {
+    "type": "relation",
+    "id": 15795458,
+    "lat": 32.1006933,
+    "lon": 34.8199245,
+    "tags": {
+     "leisure": "swimming_pool",
+     "length": "300",
+     "location": "outdoor",
+     "name:en": "Lazy Tubes",
+     "name:he": "אבובים איטי",
+     "swimming_pool": "lazy_river",
+     "tourism": "attraction",
+     "type": "multipolygon",
+     "website": "https://www.meymadion.co.il/?categoryId=120350&itemId=268093"
+    }
+   },
+   {
+    "type": "relation",
+    "id": 15795721,
+    "lat": 32.1026308,
+    "lon": 34.8201864,
+    "tags": {
+     "attraction": "amusement_ride",
+     "leisure": "swimming_pool",
+     "location": "outdoor",
+     "name": "אבובים מהיר",
+     "name:en": "Inner Tubes",
+     "name:he": "אבובים מהיר",
+     "tourism": "attraction",
+     "type": "multipolygon"
+    }
+   }
+  ]
+ },
+ "structures": {
+  "mirror": "https://overpass.openstreetmap.fr/api/interpreter",
+  "count": 150,
+  "items": [
+   {
+    "type": "node",
+    "id": 358533497,
+    "lat": 32.0985848,
+    "lon": 34.8057304,
+    "tags": {
+     "addr:housenumber": "73",
+     "addr:street": "קוסובסקי",
+     "alt_name:en": "Bird's Head;Rosh Tsipor",
+     "description": "פארק ראש ציפור הוא פארק עם ציפורים בתוך פארק הירקון.",
+     "description:en": "Rosh Tzipor (Bird’s Head) is a part of Yarkon Park (Ganei Yehoshua) in Tel Aviv-Yafo, at the junction of the Ayalon and Yarkon rivers. An aerial view of the area resembles the shape of a Bird’s Head, hence the name.",
+     "leisure": "park",
+     "name": "ראש ציפור",
+     "name:en": "Rosh Tzipor",
+     "name:he": "ראש ציפור",
+     "tourism": "attraction",
+     "website": "https://park.co.il/domain/פארק-הצפרות",
+     "wikidata": "Q41808451"
+    }
+   },
+   {
+    "type": "node",
+    "id": 715207467,
+    "lat": 32.0844171,
+    "lon": 34.8022994,
+    "tags": {
+     "amenity": "theatre",
+     "name": "יהלום",
+     "name:en": "Yahalom Theatre",
+     "name:he": "יהלום"
+    }
+   },
+   {
+    "type": "node",
+    "id": 1698149592,
+    "lat": 32.0791732,
+    "lon": 34.8217761,
+    "tags": {
+     "amenity": "theatre",
+     "name": "תאטרון רמת גן",
+     "name:en": "Ramat Gan",
+     "name:he": "תאטרון רמת גן",
+     "wikidata": "Q6649344"
+    }
+   },
+   {
+    "type": "node",
+    "id": 4209345592,
+    "lat": 32.1052494,
+    "lon": 34.8202189,
+    "tags": {
+     "leisure": "sports_centre",
+     "name": "Go Active",
+     "name:en": "Go Active"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11408563609,
+    "lat": 32.102678,
+    "lon": 34.7956342,
+    "tags": {
+     "amenity": "conference_centre",
+     "name": "אולם נופים",
+     "name:en": "Nofim Hall",
+     "name:he": "אולם נופים",
+     "room": "lecture_hall"
+    }
+   },
+   {
+    "type": "node",
+    "id": 13265239781,
+    "lat": 32.0918962,
+    "lon": 34.8258181,
+    "tags": {
+     "amenity": "events_venue",
+     "name": "אולמי קינג דיויד",
+     "name:he": "אולמי קינג דיויד"
+    }
+   },
+   {
+    "type": "node",
+    "id": 13265239782,
+    "lat": 32.091953,
+    "lon": 34.8259629,
+    "tags": {
+     "amenity": "events_venue",
+     "name": "אולמי קינג דוד",
+     "name:he": "אולמי קינג דוד"
+    }
+   },
+   {
+    "type": "node",
+    "id": 13265239783,
+    "lat": 32.0937471,
+    "lon": 34.8219279,
+    "tags": {
+     "amenity": "events_venue",
+     "name": "אולמי מודיעין",
+     "name:he": "אולמי מודיעין+"
+    }
+   },
+   {
+    "type": "node",
+    "id": 13265255757,
+    "lat": 32.0872855,
+    "lon": 34.8348223,
+    "tags": {
+     "addr:housenumber": "31",
+     "addr:street": "שלמה המלך",
+     "amenity": "events_venue",
+     "name": "אולמי דונולו",
+     "name:he": "אולמי דונולו",
+     "website": "https://donolo.co.il/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 13265269073,
+    "lat": 32.0899533,
+    "lon": 34.8384808,
+    "tags": {
+     "amenity": "events_venue",
+     "name": "אולמי גפן מוריה",
+     "name:he": "אולמי גפן מוריה"
+    }
+   },
+   {
+    "type": "node",
+    "id": 13265269074,
+    "lat": 32.0907418,
+    "lon": 34.8388161,
+    "tags": {
+     "amenity": "events_venue",
+     "name": "אולמי כתר הרימון",
+     "name:he": "אולמי כתר הרימון"
+    }
+   },
+   {
+    "type": "way",
+    "id": 30826885,
+    "lat": 32.0943397,
+    "lon": 34.796569,
+    "tags": {
+     "leisure": "park",
+     "name": "גן אברמוביץ'",
+     "name:en": "Abramovich",
+     "name:he": "גן אברמוביץ'"
+    }
+   },
+   {
+    "type": "way",
+    "id": 30909378,
+    "lat": 32.0975859,
+    "lon": 34.8033417,
+    "tags": {
+     "leisure": "sports_centre",
+     "name": "קאנטרי דקל",
+     "name:en": "Dekel Country Club",
+     "name:he": "קאנטרי דקל",
+     "sport": "multi"
+    }
+   },
+   {
+    "type": "way",
+    "id": 33493227,
+    "lat": 32.1158583,
+    "lon": 34.8361297,
+    "tags": {
+     "leisure": "park",
+     "name": "גן סעדיה שושני",
+     "name:en": "Seadya Shoshani",
+     "name:he": "גן סעדיה שושני"
+    }
+   },
+   {
+    "type": "way",
+    "id": 34333834,
+    "lat": 32.0980457,
+    "lon": 34.7886259,
+    "tags": {
+     "landuse": "recreation_ground",
+     "leisure": "park",
+     "name": "ספורטק צפון",
+     "name:en": "Sportek North",
+     "name:he": "ספורטק צפון",
+     "surface": "grass",
+     "website": "https://park.co.il/park/גני-יהושע/?sportech"
+    }
+   },
+   {
+    "type": "way",
+    "id": 34748041,
+    "lat": 32.0954583,
+    "lon": 34.7936737,
+    "tags": {
+     "leisure": "park",
+     "name": "גן זינגר",
+     "name:en": "Zinger",
+     "name:he": "גן זינגר"
+    }
+   },
+   {
+    "type": "way",
+    "id": 35208371,
+    "lat": 32.1179931,
+    "lon": 34.812657,
+    "tags": {
+     "leisure": "park",
+     "name": "גינת חיים מבורך",
+     "name:en": "Haim Mevorach",
+     "name:he": "גינת חיים מבורך"
+    }
+   },
+   {
+    "type": "way",
+    "id": 35208625,
+    "lat": 32.1065868,
+    "lon": 34.8120811,
+    "tags": {
+     "addr:housenumber": "101",
+     "addr:street": "שדרות רוקח תל אביב",
+     "area": "yes",
+     "barrier": "fence",
+     "description": "הלונה פארק בתל אביב, פארק השעשועים המוכר ביותר במדינה, משתרע על פני כ-50 דונם של מדשאות רחבות ידיים, עצי תמר ואקליפטוס, דרכי גישה מרוצפות ונוחות ושפע של אטרקציות והרפתקאות. ברחבי הפארק ממוקמים מזנונים שונים, המציעים מגוון ארוחות, חטיפים ומשקאות.",
+     "leisure": "park",
+     "name": "לונה פארק",
+     "name:en": "Luna Park",
+     "name:he": "לונה פארק",
+     "name:ru": "Луна-парк",
+     "opening_hours": "Mo-Th, Su 10:00-21:00; Sa 10:00-21:00",
+     "phone": "03-642-7080",
+     "tourism": "theme_park",
+     "website": "https://www.lunapark.co.il/",
+     "wikidata": "Q4519503"
+    }
+   },
+   {
+    "type": "way",
+    "id": 35418556,
+    "lat": 32.1207031,
+    "lon": 34.8131557,
+    "tags": {
+     "leisure": "park",
+     "name": "חורשת רוזאניס",
+     "name:en": "Rozanis Grove",
+     "name:he": "חורשת רוזאניס"
+    }
+   },
+   {
+    "type": "way",
+    "id": 48118173,
+    "lat": 32.1116581,
+    "lon": 34.802685,
+    "tags": {
+     "amenity": "conference_centre",
+     "building": "yes",
+     "layer": "1",
+     "name": "אולם בר שירה",
+     "name:en": "Bar Shira Auditorium",
+     "name:he": "אולם בר שירה"
+    }
+   },
+   {
+    "type": "way",
+    "id": 48163192,
+    "lat": 32.1164579,
+    "lon": 34.802825,
+    "tags": {
+     "leisure": "sports_centre",
+     "name": "מרכז הספורט עלית",
+     "name:en": "Elite Sports Center",
+     "name:he": "מרכז הספורט עלית",
+     "wikidata": "Q6584365"
+    }
+   },
+   {
+    "type": "way",
+    "id": 66985424,
+    "lat": 32.08952,
+    "lon": 34.8313211,
+    "tags": {
+     "leisure": "park",
+     "name": "הר הבנים"
+    }
+   },
+   {
+    "type": "way",
+    "id": 74851526,
+    "lat": 32.0997737,
+    "lon": 34.8368294,
+    "tags": {
+     "leisure": "park",
+     "name": "פארק הזית"
+    }
+   },
+   {
+    "type": "way",
+    "id": 81652302,
+    "lat": 32.1027887,
+    "lon": 34.7955134,
+    "tags": {
+     "amenity": "conference_centre",
+     "building": "yes",
+     "name": "אודיטוריום קלצ'קין",
+     "name:en": "Klatchkin Auditorium",
+     "name:he": "אודיטוריום קלצ'קין",
+     "room": "auditorium"
+    }
+   },
+   {
+    "type": "way",
+    "id": 81848361,
+    "lat": 32.101323,
+    "lon": 34.7971466,
+    "tags": {
+     "leisure": "sports_centre",
+     "name": "טניס תל אביב",
+     "name:en": "Tel Aviv Tennis",
+     "name:he": "טניס תל אביב",
+     "sport": "tennis"
+    }
+   },
+   {
+    "type": "way",
+    "id": 84915181,
+    "lat": 32.0838934,
+    "lon": 34.8281491,
+    "tags": {
+     "leisure": "park",
+     "name": "גן עקיבא גור",
+     "name:en": "Akiva Gur Garden",
+     "name:he": "גן עקיבא גור"
+    }
+   },
+   {
+    "type": "way",
+    "id": 89155389,
+    "lat": 32.0767312,
+    "lon": 34.8219227,
+    "tags": {
+     "leisure": "park",
+     "name": "הר הבנים",
+     "name:he": "הר הבנים",
+     "wikidata": "Q26769306"
+    }
+   },
+   {
+    "type": "way",
+    "id": 91609721,
+    "lat": 32.1048624,
+    "lon": 34.8222291,
+    "tags": {
+     "leisure": "stadium",
+     "name": "אצטדיון האתלטיקה הדר יוסף",
+     "name:en": "Hadar Yosef Stadium",
+     "name:he": "אצטדיון האתלטיקה הדר יוסף",
+     "sport": "athletics",
+     "wikidata": "Q863824"
+    }
+   },
+   {
+    "type": "way",
+    "id": 91610421,
+    "lat": 32.0977837,
+    "lon": 34.7906689,
+    "tags": {
+     "barrier": "fence",
+     "fixme": "name, name:en mismatch. Flagged by SafwatHalaby_bot-nameCopy",
+     "leisure": "sports_centre",
+     "name": "IClimb TLV",
+     "name:en": "IClimb TLV",
+     "name:he": "אייקליימב תל-אביב",
+     "sport": "climbing"
+    }
+   },
+   {
+    "type": "way",
+    "id": 91873006,
+    "lat": 32.1014911,
+    "lon": 34.8201393,
+    "tags": {
+     "barrier": "fence",
+     "leisure": "water_park",
+     "name": "מימדיון",
+     "name:en": "Meimadyon",
+     "name:he": "מימדיון",
+     "phone": "+972  03–6422777",
+     "website": "https://www.meymadion.co.il",
+     "wikidata": "Q26769281"
+    }
+   },
+   {
+    "type": "way",
+    "id": 94704930,
+    "lat": 32.121218,
+    "lon": 34.8201514,
+    "tags": {
+     "leisure": "park",
+     "name": "גן ריזפלד",
+     "name:en": "Reisfeld garden",
+     "name:he": "גן ריזפלד"
+    }
+   },
+   {
+    "type": "way",
+    "id": 95218727,
+    "lat": 32.1117206,
+    "lon": 34.797154,
+    "tags": {
+     "building": "roof",
+     "building:levels": "1",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 98095059,
+    "lat": 32.107342,
+    "lon": 34.7966508,
+    "tags": {
+     "building": "yes",
+     "leisure": "sports_centre",
+     "name": "מרכז ספורט עירוני אביב - אליאנס",
+     "name:en": "Aviv-Aliance Municipal Sports Center",
+     "name:he": "מרכז ספורט עירוני אביב - אליאנס"
+    }
+   },
+   {
+    "type": "way",
+    "id": 98096935,
+    "lat": 32.1101019,
+    "lon": 34.7974302,
+    "tags": {
+     "leisure": "park",
+     "name": "גינת גולדה",
+     "name:en": "Golda garden",
+     "name:he": "גינת גולדה"
+    }
+   },
+   {
+    "type": "way",
+    "id": 98132850,
+    "lat": 32.1025784,
+    "lon": 34.8265045,
+    "tags": {
+     "leisure": "sports_centre",
+     "name": "מטווח רמת גן",
+     "name:en": "Rammat Gun Shooting Range",
+     "name:he": "מטווח רמת גן",
+     "sport": "shooting"
+    }
+   },
+   {
+    "type": "way",
+    "id": 98284692,
+    "lat": 32.1025127,
+    "lon": 34.7965899,
+    "tags": {
+     "amenity": "theatre",
+     "landuse": "village_green",
+     "name": "תיאטרון פתוח",
+     "name:en": "Open-Air Theater",
+     "name:he": "תיאטרון פתוח",
+     "theatre:type": "amphi"
+    }
+   },
+   {
+    "type": "way",
+    "id": 98989832,
+    "lat": 32.1156281,
+    "lon": 34.8021752,
+    "tags": {
+     "building": "roof",
+     "layer": "1",
+     "roof:orientation": "across",
+     "roof:shape": "gabled_row"
+    }
+   },
+   {
+    "type": "way",
+    "id": 98989833,
+    "lat": 32.1150819,
+    "lon": 34.8027011,
+    "tags": {
+     "building": "yes",
+     "leisure": "sports_centre",
+     "name": "אולם ספורט עלית",
+     "name:en": "Elite Sports Hall",
+     "name:he": "אולם ספורט עלית"
+    }
+   },
+   {
+    "type": "way",
+    "id": 98989839,
+    "lat": 32.1154949,
+    "lon": 34.8021684,
+    "tags": {
+     "building": "roof",
+     "layer": "1",
+     "roof:orientation": "across",
+     "roof:shape": "gabled_row"
+    }
+   },
+   {
+    "type": "way",
+    "id": 100716124,
+    "lat": 32.1190692,
+    "lon": 34.8211292,
+    "tags": {
+     "leisure": "park",
+     "name": "גן וייץ",
+     "name:en": "Weitz Garden",
+     "name:he": "גן וייץ"
+    }
+   },
+   {
+    "type": "way",
+    "id": 100763990,
+    "lat": 32.1139822,
+    "lon": 34.8215762,
+    "tags": {
+     "leisure": "park",
+     "name": "פארק ברלין",
+     "name:en": "Berlin Park",
+     "name:he": "פארק ברלין"
+    }
+   },
+   {
+    "type": "way",
+    "id": 100948744,
+    "lat": 32.1085333,
+    "lon": 34.8216455,
+    "tags": {
+     "area": "yes",
+     "leisure": "park",
+     "name": "גן פרנקפורט",
+     "name:en": "Frankfurt Garden",
+     "name:he": "גן פרנקפורט"
+    }
+   },
+   {
+    "type": "way",
+    "id": 101365344,
+    "lat": 32.113261,
+    "lon": 34.8354432,
+    "tags": {
+     "leisure": "park",
+     "name": "גן סעדיה שושני",
+     "name:he": "גן סעדיה שושני"
+    }
+   },
+   {
+    "type": "way",
+    "id": 102519372,
+    "lat": 32.1161322,
+    "lon": 34.8059572,
+    "tags": {
+     "amenity": "conference_centre",
+     "building": "yes",
+     "building:levels": "1",
+     "name": "אולמות דולפי ולולה אבנר",
+     "name:en": "Dolfi and Lola Ebner Auditoriums",
+     "name:he": "אולמות דולפי ולולה אבנר"
+    }
+   },
+   {
+    "type": "way",
+    "id": 103632854,
+    "lat": 32.1088213,
+    "lon": 34.8043227,
+    "tags": {
+     "leisure": "park",
+     "name": "social workers park",
+     "name:en": "social workers park"
+    }
+   },
+   {
+    "type": "way",
+    "id": 103632860,
+    "lat": 32.1104309,
+    "lon": 34.8042841,
+    "tags": {
+     "amenity": "conference_centre",
+     "building": "yes",
+     "name": "אולם סמולרש",
+     "name:en": "Smolarz Auditorium",
+     "name:he": "אולם סמולרש",
+     "wikidata": "Q6606413"
+    }
+   },
+   {
+    "type": "way",
+    "id": 103632871,
+    "lat": 32.1094711,
+    "lon": 34.8050452,
+    "tags": {
+     "leisure": "park",
+     "name": "פארק הנדסת חשמל",
+     "name:he": "פארק הנדסת חשמל"
+    }
+   },
+   {
+    "type": "way",
+    "id": 104708769,
+    "lat": 32.0821778,
+    "lon": 34.8123468,
+    "tags": {
+     "leisure": "park",
+     "name": "גן המעגל",
+     "name:en": "HaMaagal Garden",
+     "name:he": "גן המעגל"
+    }
+   },
+   {
+    "type": "way",
+    "id": 104708772,
+    "lat": 32.0871917,
+    "lon": 34.8184965,
+    "tags": {
+     "alt_name:en": "Abraham's Garden",
+     "leisure": "park",
+     "name": "גן אברהם",
+     "name:en": "Gan Avraham",
+     "name:he": "גן אברהם",
+     "wikidata": "Q7034132"
+    }
+   },
+   {
+    "type": "way",
+    "id": 104708802,
+    "lat": 32.082281,
+    "lon": 34.8113639,
+    "tags": {
+     "alt_name:he": "גן ע\"ש שאול טשרניחובסקי",
+     "leisure": "park",
+     "name": "גן שאול",
+     "name:en": "Shaul Garden",
+     "name:he": "גן שאול",
+     "wikidata": "Q12404978"
+    }
+   },
+   {
+    "type": "way",
+    "id": 104708828,
+    "lat": 32.0850183,
+    "lon": 34.8167071,
+    "tags": {
+     "leisure": "park",
+     "name": "גינת אבטליון",
+     "name:en": "Avtalyon Garden",
+     "name:he": "גינת אבטליון"
+    }
+   },
+   {
+    "type": "way",
+    "id": 108596875,
+    "lat": 32.0802438,
+    "lon": 34.8294414,
+    "tags": {
+     "leisure": "park",
+     "name": "גינת החרציות",
+     "name:he": "גינת החרציות"
+    }
+   },
+   {
+    "type": "way",
+    "id": 124656922,
+    "lat": 32.0894841,
+    "lon": 34.8065081,
+    "tags": {
+     "fixme": "name, name:he mismatch. Flagged by SafwatHalaby_bot-nameCopy",
+     "leisure": "park",
+     "name": "גינת יואב",
+     "name:he": "גן ילין"
+    }
+   },
+   {
+    "type": "way",
+    "id": 145542211,
+    "lat": 32.0948376,
+    "lon": 34.8318535,
+    "tags": {
+     "leisure": "park",
+     "name": "גן קדושי בבל"
+    }
+   },
+   {
+    "type": "way",
+    "id": 145542249,
+    "lat": 32.0986255,
+    "lon": 34.8405962,
+    "tags": {
+     "leisure": "park",
+     "name": "גן חזני"
+    }
+   },
+   {
+    "type": "way",
+    "id": 145542263,
+    "lat": 32.0974779,
+    "lon": 34.8403426,
+    "tags": {
+     "leisure": "park",
+     "name": "גן שפירא",
+     "name:en": "Gan Shapira"
+    }
+   },
+   {
+    "type": "way",
+    "id": 157447936,
+    "lat": 32.0882608,
+    "lon": 34.812081,
+    "tags": {
+     "leisure": "park",
+     "name": "גן שקדיה",
+     "name:he": "גן שקדיה"
+    }
+   },
+   {
+    "type": "way",
+    "id": 157467403,
+    "lat": 32.0778107,
+    "lon": 34.8125323,
+    "tags": {
+     "leisure": "park",
+     "name": "גינת יניב וייסר",
+     "name:en": "Yaniv Vaiser Park",
+     "name:he": "גינת יניב וייסר"
+    }
+   },
+   {
+    "type": "way",
+    "id": 164668892,
+    "lat": 32.0930419,
+    "lon": 34.8188222,
+    "tags": {
+     "addr:housenumber": "12",
+     "addr:street": "העמל",
+     "building": "hangar"
+    }
+   },
+   {
+    "type": "way",
+    "id": 175067126,
+    "lat": 32.0784754,
+    "lon": 34.8085588,
+    "tags": {
+     "leisure": "park",
+     "name": "גן יפה",
+     "name:en": "Yafa Garden",
+     "name:he": "גן יפה"
+    }
+   },
+   {
+    "type": "way",
+    "id": 220313572,
+    "lat": 32.0859051,
+    "lon": 34.83206,
+    "tags": {
+     "leisure": "park",
+     "name": "גן קדושי ורשה",
+     "name:en": "Kdoshe Varsha Garden",
+     "name:he": "גן קדושי ורשה"
+    }
+   },
+   {
+    "type": "way",
+    "id": 222858637,
+    "lat": 32.092559,
+    "lon": 34.8206057,
+    "tags": {
+     "leisure": "park",
+     "name": "גן חיה ציפמן",
+     "name:he": "גן חיה ציפמן"
+    }
+   },
+   {
+    "type": "way",
+    "id": 243412507,
+    "lat": 32.0846066,
+    "lon": 34.8227895,
+    "tags": {
+     "alt_name:en": "Beit Shamai Garden",
+     "leisure": "park",
+     "name": "גינת בית שמאי",
+     "name:en": "Gan Beit Shamai",
+     "name:he": "גינת בית שמאי"
+    }
+   },
+   {
+    "type": "way",
+    "id": 247105460,
+    "lat": 32.0919772,
+    "lon": 34.8207726,
+    "tags": {
+     "leisure": "park",
+     "name": "גן סביון",
+     "name:he": "גן סביון"
+    }
+   },
+   {
+    "type": "way",
+    "id": 294628634,
+    "lat": 32.1003504,
+    "lon": 34.8243717,
+    "tags": {
+     "barrier": "wall",
+     "leisure": "stadium",
+     "name": "אצטדיון רמת גן",
+     "name:en": "Ramat Gan Stadium",
+     "name:he": "אצטדיון רמת גן",
+     "wikidata": "Q261666"
+    }
+   },
+   {
+    "type": "way",
+    "id": 298646242,
+    "lat": 32.1036208,
+    "lon": 34.7955448,
+    "tags": {
+     "building": "roof",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 299846648,
+    "lat": 32.1091608,
+    "lon": 34.810891,
+    "tags": {
+     "building": "yes",
+     "capacity": "3504",
+     "leisure": "stadium",
+     "name": "היכל קבוצת שלמה",
+     "name:en": "Drive in Arena",
+     "name:he": "היכל קבוצת שלמה",
+     "source": "survey;gps",
+     "sport": "multi",
+     "wikidata": "Q18191321",
+     "wikipedia": "en:Drive in Arena",
+     "wikipedia:en": "Drive in Arena"
+    }
+   },
+   {
+    "type": "way",
+    "id": 334908850,
+    "lat": 32.0815299,
+    "lon": 34.8241177,
+    "tags": {
+     "leisure": "park",
+     "name": "הר הארנבות",
+     "name:he": "הר הארנבות"
+    }
+   },
+   {
+    "type": "way",
+    "id": 351675141,
+    "lat": 32.0973757,
+    "lon": 34.8180121,
+    "tags": {
+     "building": "yes",
+     "leisure": "sports_centre",
+     "name": "בריכת שחיה ספיבק",
+     "name:en": "Spivack Swimming Pool",
+     "name:he": "בריכת שחיה ספיבק",
+     "sport": "swimming"
+    }
+   },
+   {
+    "type": "way",
+    "id": 355090046,
+    "lat": 32.1054379,
+    "lon": 34.8085889,
+    "tags": {
+     "addr:city": "תל אביב-יפו",
+     "addr:postcode": "61210",
+     "addr:street": "שדרות רוקח",
+     "alt_name:he": "גני התערוכה",
+     "amenity": "conference_centre",
+     "barrier": "fence",
+     "landuse": "commercial",
+     "name": "אקספו תל אביב",
+     "name:en": "Expo Tel Aviv",
+     "name:he": "אקספו תל אביב",
+     "old_name": "מרכז הירידים תל אביב",
+     "old_name:en": "Tel Aviv Convention Center",
+     "phone": "+972-3-6404444",
+     "website": "http://www.fairs.co.il",
+     "wikidata": "Q855110",
+     "wikipedia": "he:אקספו תל אביב",
+     "wikipedia:he": "אקספו תל אביב"
+    }
+   },
+   {
+    "type": "way",
+    "id": 358440373,
+    "lat": 32.0850889,
+    "lon": 34.820591,
+    "tags": {
+     "alt_name:en": "Amiram Garden",
+     "leisure": "park",
+     "name": "גן עמירם",
+     "name:en": "Gan Amiram",
+     "name:he": "גן עמירם"
+    }
+   },
+   {
+    "type": "way",
+    "id": 367017455,
+    "lat": 32.0824578,
+    "lon": 34.8033441,
+    "tags": {
+     "building": "roof",
+     "building:levels": "2",
+     "layer": "2"
+    }
+   },
+   {
+    "type": "way",
+    "id": 416509341,
+    "lat": 32.1072489,
+    "lon": 34.7943585,
+    "tags": {
+     "leisure": "park",
+     "name": "גינת החבלים",
+     "name:he": "גינת החבלים"
+    }
+   },
+   {
+    "type": "way",
+    "id": 470773720,
+    "lat": 32.0945101,
+    "lon": 34.8049063,
+    "tags": {
+     "alt_name:en": "The Rosh Tzippor Birdwatching Centre",
+     "leisure": "park",
+     "name": "מרכז צפרות ראש ציפור",
+     "name:en": "Rosh Tzippor Bird Observatory",
+     "name:he": "מרכז צפרות ראש ציפור",
+     "website": "https://park.co.il/park/rosh-tzipor/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 508942605,
+    "lat": 32.0862692,
+    "lon": 34.8138323,
+    "tags": {
+     "leisure": "park",
+     "name": "גן המלך דוד",
+     "name:en": "Gan Hamelech David",
+     "name:he": "גן המלך דוד",
+     "wikidata": "Q26769341"
+    }
+   },
+   {
+    "type": "way",
+    "id": 510755304,
+    "lat": 32.0848262,
+    "lon": 34.8035096,
+    "tags": {
+     "building": "roof",
+     "building:levels": "1",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 539903993,
+    "lat": 32.0787925,
+    "lon": 34.8106182,
+    "tags": {
+     "leisure": "park",
+     "name": "פארק המכתש",
+     "name:en": "Hamachtesh Park"
+    }
+   },
+   {
+    "type": "way",
+    "id": 543959533,
+    "lat": 32.0771114,
+    "lon": 34.8174633,
+    "tags": {
+     "leisure": "park",
+     "name": "Guzman Park",
+     "name:en": "Guzman Park"
+    }
+   },
+   {
+    "type": "way",
+    "id": 564618573,
+    "lat": 32.0838056,
+    "lon": 34.7982465,
+    "tags": {
+     "building": "roof",
+     "building:levels": "2",
+     "building:min_level": "1",
+     "building:part": "yes",
+     "layer": "1",
+     "roof:shape": "round"
+    }
+   },
+   {
+    "type": "way",
+    "id": 626824863,
+    "lat": 32.0774158,
+    "lon": 34.8142155,
+    "tags": {
+     "alt_name:he": "כיכר נוח",
+     "leisure": "park",
+     "name": "כיכר נח",
+     "name:en": "Kikar Noah",
+     "name:he": "כיכר נח",
+     "place": "square"
+    }
+   },
+   {
+    "type": "way",
+    "id": 669929407,
+    "lat": 32.0971001,
+    "lon": 34.817534,
+    "tags": {
+     "building": "yes",
+     "building:levels": "1",
+     "leisure": "sports_centre",
+     "name": "בריכה טיפולית",
+     "name:en": "Therapeutic Pool",
+     "name:he": "בריכה טיפולית",
+     "sport": "swimming"
+    }
+   },
+   {
+    "type": "way",
+    "id": 669934868,
+    "lat": 32.0955724,
+    "lon": 34.8105894,
+    "tags": {
+     "addr:city": "רמת גן",
+     "addr:housenumber": "85",
+     "addr:postcode": "5253527",
+     "addr:street": "רוקח",
+     "leisure": "sports_centre",
+     "name": "מועדון המרגנית",
+     "name:en": "HaMarganit Club",
+     "name:he": "מועדון המרגנית",
+     "opening_hours": "Mo-Th 05:30-22:00; Fr 05:30-19:00; Sa 07:00-19:00; Su 14:00-22:00",
+     "phone": "037511659",
+     "sport": "multi",
+     "website": "https://www.hamarganitclub.co.il/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 675318172,
+    "lat": 32.092969,
+    "lon": 34.8215959,
+    "tags": {
+     "leisure": "park",
+     "name": "חורשת מבוא הפודים",
+     "name:en": "HaPodim Alley Groove",
+     "name:he": "חורשת מבוא הפודים"
+    }
+   },
+   {
+    "type": "way",
+    "id": 762251565,
+    "lat": 32.1189953,
+    "lon": 34.8056138,
+    "tags": {
+     "leisure": "dog_park",
+     "name": "גינת כלבים",
+     "name:he": "גינת כלבים"
+    }
+   },
+   {
+    "type": "way",
+    "id": 762251571,
+    "lat": 32.1192006,
+    "lon": 34.8057218,
+    "tags": {
+     "leisure": "dog_park",
+     "name": "כניסה לגינת הכלבים",
+     "name:he": "כניסה לגינת הכלבים"
+    }
+   },
+   {
+    "type": "way",
+    "id": 862566143,
+    "lat": 32.0798556,
+    "lon": 34.8230031,
+    "tags": {
+     "leisure": "park",
+     "name": "גינת הגלגל",
+     "name:he": "גינת הלל",
+     "surface": "artificial_turf"
+    }
+   },
+   {
+    "type": "way",
+    "id": 881631534,
+    "lat": 32.1003433,
+    "lon": 34.8247834,
+    "tags": {
+     "building": "stadium"
+    }
+   },
+   {
+    "type": "way",
+    "id": 888844043,
+    "lat": 32.1019399,
+    "lon": 34.8089632,
+    "tags": {
+     "barrier": "fence",
+     "fee": "yes",
+     "leisure": "sports_centre",
+     "name": "Sky Town Tel Aviv",
+     "name:en": "Sky Town Tel Aviv",
+     "sport": "climbing_adventure",
+     "website": "https://www.skytown.co.il/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 966017905,
+    "lat": 32.0892239,
+    "lon": 34.8149069,
+    "tags": {
+     "leisure": "park",
+     "name": "גן מעלה השואבה",
+     "name:en": "Maale HaShoeva Garden",
+     "name:he": "גן מעלה השואבה"
+    }
+   },
+   {
+    "type": "way",
+    "id": 966017907,
+    "lat": 32.0890288,
+    "lon": 34.8153436,
+    "tags": {
+     "leisure": "park",
+     "name": "גינת ז'בוטינסקי 101",
+     "name:he": "גינת ז'בוטינסקי 101"
+    }
+   },
+   {
+    "type": "way",
+    "id": 966018443,
+    "lat": 32.0928765,
+    "lon": 34.8180313,
+    "tags": {
+     "leisure": "park",
+     "name": "גן התותחן",
+     "name:he": "גן התותחן"
+    }
+   },
+   {
+    "type": "way",
+    "id": 984058737,
+    "lat": 32.1053795,
+    "lon": 34.824049,
+    "tags": {
+     "building": "yes",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/b/b5/IHM_ולודרום.jpeg",
+     "leisure": "stadium",
+     "name": "ולודרום",
+     "name:en": "Velodrome",
+     "name:he": "ולודרום",
+     "sport": "cycling",
+     "wikidata": "Q55650802"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1005857653,
+    "lat": 32.1011496,
+    "lon": 34.796683,
+    "tags": {
+     "building": "public",
+     "layer": "1",
+     "leisure": "sports_centre",
+     "name": "טניס תל אביב",
+     "name:he": "טניס תל אביב",
+     "sport": "tennis"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1069660724,
+    "lat": 32.1049385,
+    "lon": 34.8217334,
+    "tags": {
+     "building": "stadium"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168361544,
+    "lat": 32.1053556,
+    "lon": 34.8109597,
+    "tags": {
+     "addr:city": "תל אביב-יפו",
+     "addr:housenumber": "101",
+     "addr:street": "שדרות רוקח",
+     "amenity": "events_venue",
+     "building": "commercial",
+     "building:levels": "1",
+     "name": "Rokach",
+     "name:en": "Rokach",
+     "name:he": "רוקח",
+     "website": "https://www.rokach-events.co.il/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420513,
+    "lat": 32.1073289,
+    "lon": 34.8118405,
+    "tags": {
+     "amenity": "shelter",
+     "building": "roof",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420519,
+    "lat": 32.1066178,
+    "lon": 34.8117709,
+    "tags": {
+     "amenity": "shelter",
+     "building": "roof",
+     "building:levels": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420522,
+    "lat": 32.106212,
+    "lon": 34.8122739,
+    "tags": {
+     "building": "roof",
+     "building:levels": "1",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1168420578,
+    "lat": 32.1067928,
+    "lon": 34.8115973,
+    "tags": {
+     "amenity": "theatre",
+     "leisure": "bandstand"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1182738897,
+    "lat": 32.0990373,
+    "lon": 34.8081711,
+    "tags": {
+     "amenity": "theatre",
+     "name": "אמפי וואהל",
+     "name:en": "Wohl Amphitheater",
+     "name:he": "אמפי וואהל",
+     "theatre:type": "open_air",
+     "website": "https://www.tel-aviv.gov.il/Visitors/ArtCulture/Pages/WohlAmphitheatre.aspx",
+     "wheelchair": "yes"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1184545553,
+    "lat": 32.0965093,
+    "lon": 34.8054789,
+    "tags": {
+     "building": "roof",
+     "tourism": "viewpoint"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1185122451,
+    "lat": 32.104693,
+    "lon": 34.8304908,
+    "tags": {
+     "building": "roof",
+     "building:levels": "1",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1185123160,
+    "lat": 32.1021617,
+    "lon": 34.827599,
+    "tags": {
+     "building": "roof",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1185123161,
+    "lat": 32.1022082,
+    "lon": 34.8273559,
+    "tags": {
+     "building": "roof",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1185165537,
+    "lat": 32.1012857,
+    "lon": 34.8229882,
+    "tags": {
+     "addr:city": "רמת גן",
+     "leisure": "park",
+     "name": "גינת האצטדיון",
+     "name:en": "Stadium Garden",
+     "name:he": "גינת האצטדיון"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1185165538,
+    "lat": 32.0981591,
+    "lon": 34.8220856,
+    "tags": {
+     "leisure": "park",
+     "name": "גן האימפולס",
+     "name:en": "Impulse Garden",
+     "name:he": "גן האימפולס"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1185165552,
+    "lat": 32.0962137,
+    "lon": 34.8200387,
+    "tags": {
+     "description": "Named after General John Hill (Indian Army officer)",
+     "leisure": "park",
+     "name": "גן היל",
+     "name:en": "Hill Garden",
+     "name:he": "גן היל"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1185165555,
+    "lat": 32.0968528,
+    "lon": 34.8155218,
+    "tags": {
+     "addr:city": "רמת גן",
+     "addr:housenumber": "119",
+     "addr:street": "רוקח",
+     "barrier": "fence",
+     "landuse": "grass",
+     "leisure": "sports_centre",
+     "name": "מועדון כדורת דשא",
+     "name:en": "Lawn Bowls Club",
+     "name:he": "מועדון כדורת דשא",
+     "sport": "bowls"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1185165556,
+    "lat": 32.0959141,
+    "lon": 34.8125142,
+    "tags": {
+     "addr:city": "רמת גן",
+     "leisure": "park",
+     "name": "גן תל אביב",
+     "name:en": "Tel Aviv Garden",
+     "name:he": "גן תל אביב"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1185173931,
+    "lat": 32.1002077,
+    "lon": 34.8236895,
+    "tags": {
+     "building": "stadium"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1185173993,
+    "lat": 32.1001728,
+    "lon": 34.8234956,
+    "tags": {
+     "building": "stadium",
+     "building:levels": "4",
+     "layer": "2"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1185613153,
+    "lat": 32.09738,
+    "lon": 34.8171441,
+    "tags": {
+     "addr:city": "רמת גן",
+     "addr:housenumber": "121ב",
+     "addr:street": "רוקח",
+     "leisure": "sports_centre",
+     "name": "מועדון טניס רמת גן",
+     "name:en": "Ramat-Gan Tennis Club",
+     "name:he": "מועדון טניס רמת גן",
+     "sport": "tennis",
+     "surface": "concrete",
+     "website": "https://www.tennisramatgan.co.il/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1185613166,
+    "lat": 32.0970527,
+    "lon": 34.818062,
+    "tags": {
+     "building": "yes",
+     "building:levels": "1",
+     "leisure": "sports_centre",
+     "name": "אולם טניס שולחן",
+     "name:en": "Table Tennis Hall",
+     "name:he": "אולם טניס שולחן",
+     "roof:shape": "gabled",
+     "sport": "table_tennis"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1185616670,
+    "lat": 32.0969252,
+    "lon": 34.8179805,
+    "tags": {
+     "addr:city": "רמת גן",
+     "addr:housenumber": "123",
+     "addr:street": "רוקח",
+     "alt_name:en": "Israel Parasport Center;Spivack Sport Club",
+     "alt_name:he": "מרכז הספורט לנכים",
+     "leisure": "sports_centre",
+     "name": "מועדון הספורט ספיבק",
+     "name:en": "Spewak Sport Club",
+     "name:he": "מועדון הספורט ספיבק",
+     "operator": "איל״ן",
+     "operator:type": "private_non_profit",
+     "sport": "tennis;swimming;athletics;fitness;table_tennis;basketball",
+     "website": "https://iscd.com",
+     "wikidata": "Q6087225",
+     "wikipedia": "he:מרכז הספורט לנכים",
+     "wikipedia:he": "מרכז הספורט לנכים"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1185820724,
+    "lat": 32.0970326,
+    "lon": 34.8165901,
+    "tags": {
+     "building": "roof",
+     "building:levels": "1",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1186021403,
+    "lat": 32.0959245,
+    "lon": 34.8185083,
+    "tags": {
+     "building": "roof",
+     "building:levels": "1",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1186078069,
+    "lat": 32.0928876,
+    "lon": 34.7970283,
+    "tags": {
+     "building": "roof",
+     "building:levels": "1.1",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1186078072,
+    "lat": 32.0928874,
+    "lon": 34.7971719,
+    "tags": {
+     "building": "roof",
+     "building:levels": "0.8",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1197962918,
+    "lat": 32.0917145,
+    "lon": 34.8041307,
+    "tags": {
+     "addr:city": "רמת גן",
+     "addr:housenumber": "4",
+     "addr:street": "חרוזים",
+     "description": "גן גדול ויפה שממוקם ברחוב חרוזים ברמת גן ליד הכניסה לפארק הירקון עם מתקנים לילדים ומתקני כושר למבוגרים.",
+     "leisure": "park",
+     "name": "גן החרוזים",
+     "name:en": "Haruzim Park",
+     "name:he": "גן החרוזים",
+     "opening_hours": "24/7",
+     "tourism": "attraction"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1197962920,
+    "lat": 32.0923723,
+    "lon": 34.8021622,
+    "tags": {
+     "leisure": "park",
+     "name": "גן ספריית חרוזים",
+     "name:en": "Haruzim Library Garden",
+     "name:he": "גן ספריית חרוזים"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1230119608,
+    "lat": 32.1024077,
+    "lon": 34.7938359,
+    "tags": {
+     "building": "roof",
+     "layer": "1",
+     "roof:levels": "1.3",
+     "roof:shape": "dome"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1230453021,
+    "lat": 32.1025832,
+    "lon": 34.7978884,
+    "tags": {
+     "building": "roof",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1256321136,
+    "lat": 32.0785313,
+    "lon": 34.8102817,
+    "tags": {
+     "access": "yes",
+     "dog": "yes",
+     "leisure": "dog_park",
+     "name": "גינת כלבים",
+     "name:en": "Dog Playground",
+     "surface": "artificial_turf",
+     "wheelchair": "no"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1271301616,
+    "lat": 32.0967205,
+    "lon": 34.7942645,
+    "tags": {
+     "amenity": "fuel",
+     "brand": "פז",
+     "brand:en": "Paz",
+     "brand:he": "פז",
+     "brand:wikidata": "Q2211731",
+     "brand:wikipedia": "en:Paz Oil Company",
+     "building": "roof",
+     "compressed_air": "yes",
+     "layer": "1",
+     "name": "פז",
+     "name:ar": "باز",
+     "name:en": "Paz",
+     "name:he": "פז",
+     "name:ru": "Паз",
+     "website": "https://www.paz.co.il"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1271301618,
+    "lat": 32.0963934,
+    "lon": 34.7944765,
+    "tags": {
+     "amenity": "car_wash",
+     "building": "roof",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1271477391,
+    "lat": 32.1164519,
+    "lon": 34.805731,
+    "tags": {
+     "building": "roof",
+     "building:levels": "1",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1279117680,
+    "lat": 32.1021427,
+    "lon": 34.8117692,
+    "tags": {
+     "amenity": "theatre",
+     "name": "זאפה בפארק - גני יהושע",
+     "name:en": "Zappa in the park",
+     "name:he": "זאפה בפארק - גני יהושע",
+     "theatre:type": "amphi"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1488988034,
+    "lat": 32.0824464,
+    "lon": 34.8019443,
+    "tags": {
+     "building": "roof",
+     "building:levels": "1",
+     "layer": "1",
+     "roof:orientation": "north",
+     "roof:shape": "skillion"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1488988035,
+    "lat": 32.0825556,
+    "lon": 34.8018521,
+    "tags": {
+     "building": "roof",
+     "building:levels": "1",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1489683781,
+    "lat": 32.0804329,
+    "lon": 34.8062479,
+    "tags": {
+     "building": "roof",
+     "building:levels": "1",
+     "roof:colour": "white"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1489683782,
+    "lat": 32.0804249,
+    "lon": 34.8062889,
+    "tags": {
+     "building": "roof",
+     "building:levels": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1489683803,
+    "lat": 32.0812571,
+    "lon": 34.8032781,
+    "tags": {
+     "building": "roof",
+     "building:levels": "1",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1490017308,
+    "lat": 32.081866,
+    "lon": 34.803754,
+    "tags": {
+     "building": "roof",
+     "building:levels": "1",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1490017323,
+    "lat": 32.0822136,
+    "lon": 34.8038078,
+    "tags": {
+     "building": "roof",
+     "building:levels": "1",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1490017324,
+    "lat": 32.0821139,
+    "lon": 34.8037647,
+    "tags": {
+     "building": "roof",
+     "building:levels": "1",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1496292111,
+    "lat": 32.0825578,
+    "lon": 34.8019339,
+    "tags": {
+     "building": "roof",
+     "building:levels": "1",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1496292115,
+    "lat": 32.0826826,
+    "lon": 34.8022677,
+    "tags": {
+     "building": "roof",
+     "building:levels": "2",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1504287110,
+    "lat": 32.0827416,
+    "lon": 34.8026791,
+    "tags": {
+     "building": "roof",
+     "building:colour": "white",
+     "building:levels": "1",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1507376370,
+    "lat": 32.0826631,
+    "lon": 34.803696,
+    "tags": {
+     "building": "roof",
+     "building:levels": "1",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1507376372,
+    "lat": 32.082733,
+    "lon": 34.8038124,
+    "tags": {
+     "building": "roof",
+     "building:levels": "1",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1552543826,
+    "lat": 32.1036002,
+    "lon": 34.8045541,
+    "tags": {
+     "building": "roof",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1559869575,
+    "lat": 32.0823736,
+    "lon": 34.8036498,
+    "tags": {
+     "building": "roof",
+     "building:levels": "1",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1559881348,
+    "lat": 32.0832301,
+    "lon": 34.8037391,
+    "tags": {
+     "building": "roof",
+     "building:levels": "1",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1559881349,
+    "lat": 32.0834196,
+    "lon": 34.8035385,
+    "tags": {
+     "building": "roof",
+     "building:levels": "1",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1559886361,
+    "lat": 32.0831086,
+    "lon": 34.8027923,
+    "tags": {
+     "building": "roof",
+     "building:levels": "1",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1561985607,
+    "lat": 32.0820979,
+    "lon": 34.8025474,
+    "tags": {
+     "building": "roof",
+     "building:levels": "1",
+     "building:material": "tarpaulin",
+     "layer": "1"
+    }
+   },
+   {
+    "type": "relation",
+    "id": 10567085,
+    "lat": 32.1187955,
+    "lon": 34.8054942,
+    "tags": {
+     "leisure": "dog_park",
+     "name": "כניסה",
+     "name:he": "כניסה",
+     "type": "multipolygon"
+    }
+   },
+   {
+    "type": "relation",
+    "id": 16022802,
+    "lat": 32.1000831,
+    "lon": 34.8105423,
+    "tags": {
+     "alt_name:en": "Yarkon Park",
+     "description": "פארק הירקון, ובשמו הרשמי גני יהושע, הוא פארק רחב ידיים המשתרע לאורך נחל הירקון בצפון תל אביב.",
+     "description:he": "פארק הירקון, ובשמו הרשמי גני יהושע, הוא פארק רחב ידיים המשתרע לאורך נחל הירקון בצפון תל אביב.",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Hayarkon_IMG_8516.JPG",
+     "leisure": "park",
+     "name": "גני יהושע",
+     "name:en": "Yehushua Gardens",
+     "name:he": "גני יהושע",
+     "old_name:en": "HaYarkon Park",
+     "old_name:he": "פארק הירקון",
+     "type": "multipolygon",
+     "wikidata": "Q1683522",
+     "wikipedia": "he:פארק הירקון",
+     "wikipedia:he": "פארק הירקון"
+    }
+   },
+   {
+    "type": "relation",
+    "id": 20325496,
+    "lat": 32.0825922,
+    "lon": 34.8020897,
+    "tags": {
+     "addr:city": "רמת גן",
+     "addr:housenumber": "4",
+     "addr:street": "זאב ז'בוטינסקי",
+     "building": "yes;roof",
+     "building:levels": "2",
+     "layer": "1",
+     "type": "multipolygon"
+    }
+   },
+   {
+    "type": "relation",
+    "id": 20325497,
+    "lat": 32.082629,
+    "lon": 34.8023817,
+    "tags": {
+     "building": "commercial;roof",
+     "building:levels": "2",
+     "layer": "1",
+     "type": "multipolygon"
+    }
+   }
+  ]
+ }
+}
