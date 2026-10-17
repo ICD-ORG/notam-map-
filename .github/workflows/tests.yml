@@ -16,7 +16,20 @@ on:
       - 'request.html'
       - 'tests/**'
       - 'data/**'
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      from:
+        description: 'תאריך התחלה לדוגמה (YYYY-MM-DD)'
+        required: false
+        default: ''
+      to:
+        description: 'תאריך סיום לדוגמה (YYYY-MM-DD)'
+        required: false
+        default: ''
+      site:
+        description: 'שם אתר לדוגמה'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -59,7 +72,7 @@ jobs:
           npm i playwright@1.49.1
           npx playwright install --with-deps chromium
       - name: הרצה חיה
-        run: E2E_LIVE=1 node tests/e2e.mjs tests/out-live
+        run: E2E_LIVE=1 E2E_FROM='${{ inputs.from }}' E2E_TO='${{ inputs.to }}' E2E_SITE='${{ inputs.site }}' node tests/e2e.mjs tests/out-live
       - name: שמירת התוצרים בענף (בהרצה ידנית בלבד)
         if: always() && github.event_name == 'workflow_dispatch'
         run: |

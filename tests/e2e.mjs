@@ -93,9 +93,10 @@ async function fillExample(page, over) {
   await page.fill("#coord", over.coord || "32.099128, 34.816617"); await page.dispatchEvent("#coord", "change");
   await page.fill("#radius", String(over.radius || 200)); await page.fill("#height", String(over.height || 80));
   const ymd = n => new Date(Date.now() + n * 86400000).toISOString().slice(0, 10);
-  await page.fill("#dateFrom", over.dateFrom || ymd(10)); await page.fill("#dateTo", over.dateTo || ymd(13));
+  await page.fill("#dateFrom", over.dateFrom || process.env.E2E_FROM || ymd(10)); await page.fill("#dateTo", over.dateTo || process.env.E2E_TO || ymd(13));
   await page.fill("#timeFrom", "17:00"); await page.fill("#timeTo", "20:00");
   await page.selectOption("#purpose", { index: 1 });
+  if (process.env.E2E_SITE) await page.fill("#siteName", process.env.E2E_SITE);
   await page.fill("#reqName", "בודק ראשון"); await page.fill("#reqPhone", "050-0000001");
   await page.fill("#contactNames", "בודק שני; בודק שלישי"); await page.fill("#contactPhone", "050-0000002");
 }
