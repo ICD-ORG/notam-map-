@@ -43,6 +43,7 @@
     "place_scan_m": 3000,
     "border_scan_m": 7000,
     "notam_max_age_h": 72,
+    "osm_max_age_h": 72,
     "notam_warn_age_h": 24,
     "min_working_days": 7,
     "agri_near_m": 3000

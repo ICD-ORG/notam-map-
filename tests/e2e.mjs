@@ -43,7 +43,8 @@ function tilePng(seed) {
   return Buffer.concat([Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]), chunk("IHDR", ihdr), chunk("IDAT", zlib.deflateSync(raw)), chunk("IEND", Buffer.alloc(0))]);
 }
 
-const fx = n => fs.readFileSync(path.join(FX_OVERRIDE || path.join(ROOT, "tests", "fixtures", "yarkon"), n + ".json"), "utf8");
+// נתוני אמת שמורים; חותמת הזמן של OSM מוחלפת ב"עכשיו" כדי שבדיקת הגיל (שרת עם נתונים ישנים נפסל) לא תכשיל את הבדיקה
+const fx = n => { const d = JSON.parse(fs.readFileSync(path.join(FX_OVERRIDE || path.join(ROOT, "tests", "fixtures", "yarkon"), n + ".json"), "utf8")); if (d.osm3s) d.osm3s.timestamp_osm_base = new Date().toISOString(); return JSON.stringify(d); };
 const CORS = { "access-control-allow-origin": "*" };
 const LEAFLET_DIR = process.env.LEAFLET_DIR || "";
 
@@ -138,6 +139,7 @@ try {
     const f8 = form[7];
     check("שדה 8: קו מתח 109 מ׳ ועמוד 117 מ׳", /קו מתח עליון 161 ק״ו — 109 מ׳/.test(f8) && /עמוד חשמל 1491 — 117 מ׳/.test(f8), f8.slice(0, 400), true);
     check("שדה 8: LLU20 בקרבה", /LLU20/.test(f8) && /526 מ׳/.test(f8), "");
+    check("שדה 8: האצטדיון והבלון מופיעים", /אצטדיון רמת גן/.test(f8) && /כדור פורח תל אביב/.test(f8), f8.slice(-420), true);
     check("תמונת הרקע אמיתית (לא אריחים מדומים)", !LIVE || (await page.evaluate(() => window.__REQ.S.map && window.__REQ.S.map.background)), "");
     check("שדה 10: 262.5 רגל", /262\.5 רגל/.test(form[9]), form[9]);
     check("שדה 14: ICD", /ICD/.test(form[13]), form[13]);

@@ -73,7 +73,7 @@ test("הירקון: מכשולים לפי ערכי הייחוס שחושבו ב�
     assert.ok(Math.abs(it.d - e.d) <= (e.tol || 1.5), `${e.title}: ${it.d} מול ${e.d}`);
     assert.equal(it.zone, e.zone, e.title);
   });
-  assert.deepEqual(res.nearScan.items.map(i => i.n), [1, 2, 3, 4, 5, 6]);
+  assert.deepEqual(res.nearScan.items.map(i => i.n), exp.items.map((_, i) => i + 1));
 });
 
 test("הירקון: LLU20 בקרבה, לא בתוך הסגירה, והמרחק נכון", () => {
@@ -217,6 +217,44 @@ test("הזרקת HTML בשדות חופשיים מנוטרלת", () => {
   assert.ok(!/<img|<b>x/.test(rows[5].html + rows[10].html));
 });
 
+test("הירקון: האצטדיון והבלון מופיעים בטופס ובדף הבדיקות", () => {
+  const res = C.analyze(baseInput, mkData(fixture("yarkon")), cfg, now);
+  const f8 = O.buildForm(res, cfg)[7].text;
+  assert.ok(/אצטדיון ״אצטדיון רמת גן״ — 621 מ׳/.test(f8), f8);
+  assert.ok(/״כדור פורח תל אביב״ — 581 מ׳/.test(f8), f8);
+  assert.ok(/אתרים ותשתיות נוספים בקרבת האזור \(עד 1.2 ק״מ מהנקודה\)/.test(f8), f8);
+  const chk = O.buildChecks(res, mkData(fixture("yarkon")), cfg).map(r => O.toText(r[2])).join("\n");
+  assert.ok(/אצטדיון רמת גן/.test(chk) && /כדור פורח תל אביב/.test(chk));
+  assert.ok(res.nearScan.near.every(i => i.zone === "near" && i.d > 2 * 200 && i.d <= 200 + cfg.thresholds.site_near_m));
+  const k = O.kml(res, mkData(fixture("yarkon")), cfg);
+  assert.ok(k.includes("כדור פורח תל אביב") && k.includes("אצטדיון רמת גן") && k.includes("#ground") && k.includes("#air"));
+});
+
+test("סיווג: בלון, מטווח, אצטדיון; מכשולים לא נכנסים מעבר ל-2R", () => {
+  assert.equal(C.classify({ attraction: "balloon_ride" }), "air");
+  assert.equal(C.classify({ tourism: "attraction", name: "Hot Air Balloon" }), "air");
+  assert.equal(C.classify({ sport: "shooting" }), "ground");
+  assert.equal(C.classify({ leisure: "stadium" }), "ground");
+  assert.equal(C.classify({ power: "tower" }), "obst");
+  const P = new C.Proj(32, 34.8), at = d => ({ lat: 32 + d / P.ky, lon: 34.8 });
+  const near = { elements: [
+    { type: "node", id: 1, ...at(500), tags: { power: "tower" } },                 // מכשול ב-500 (> 2R=400) — לא נכנס
+    { type: "node", id: 2, ...at(700), tags: { leisure: "stadium", name: "א" } },   // אתר ב-700 (≤ R+1000) — נכנס
+    { type: "node", id: 3, ...at(1300), tags: { leisure: "stadium", name: "ב" } }  // אתר ב-1300 (> R+1000) — לא נכנס
+  ] };
+  const r = C.analyzeNear(P, 200, near, cfg.thresholds);
+  assert.deepEqual(r.items.map(i => i.ids[0]), ["node/2"]);
+  assert.equal(r.items[0].zone, "near");
+});
+
+test("Overpass: שרת עם נתונים ישנים נפסל והבא אחריו נבחר", async () => {
+  const old = new Date(Date.now() - 100 * 3600000).toISOString(), fresh = new Date(Date.now() - 3600000).toISOString();
+  const mk = async (url) => ({ ok: true, status: 200, json: async () => ({ elements: [{ id: 1 }], osm3s: { timestamp_osm_base: url === C.MIRRORS[0] ? old : fresh } }) });
+  const r = await C.overpass("q", { fetch: mk, wait: () => Promise.resolve(), staggerMs: 1, timeoutMs: 500, maxAgeH: 72, mirrors: [C.MIRRORS[0], C.MIRRORS[1]] });
+  assert.equal(r.mirror, C.MIRRORS[1]);
+  await assert.rejects(C.overpass("q", { fetch: async () => ({ ok: true, status: 200, json: async () => ({ elements: [], osm3s: { timestamp_osm_base: old } }) }), wait: () => Promise.resolve(), staggerMs: 1, timeoutMs: 500, maxAgeH: 72, mirrors: [C.MIRRORS[0]], rounds: 1 }), /נכשלו/);
+});
+
 test("שאילתות OSM: מכילות את כל הקטגוריות ומחזירות מיקום ליישובים (out body)", () => {
   const q = C.buildQueries(32.099128, 34.816617, 200, cfg);
   assert.ok(q.near.includes("out geom tags") && q.near.includes("man_made") && q.near.includes("[power") && q.near.includes("[aeroway]") && q.near.includes("[emergency=helipad]"));
@@ -224,7 +262,7 @@ test("שאילתות OSM: מכילות את כל הקטגוריות ומחזיר
   assert.ok(/nwr\[aeroway~"\^\(aerodrome\|heliport\|helipad\)\$"\]\([\d.,-]+\);out center tags;/.test(q.far), "שדות תעופה בתיבה");
   assert.ok(q.ext.includes("nature_reserve") && q.ext.includes("admin_level"));
   assert.equal(C.buildQueries(32, 34.8, 1000, cfg).nearR, 2150, "רדיוס חיפוש גדל עם הסגירה");
-  assert.equal(q.nearR, 800);
+  assert.equal(q.nearR, 1250, "חיפוש אתרים עד קילומטר מקצה הסגירה");
 });
 
 test("Overpass: מעבר לשרת הבא כשהראשון נכשל, ושגיאה כשכולם נכשלו", async () => {

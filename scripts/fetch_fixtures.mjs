@@ -32,7 +32,7 @@ for (const p of POINTS) {
   const q = C.buildQueries(p.lat, p.lon, p.R, cfg);
   for (const k of ["near", "far", "ext"].filter(x => parts.includes(x))) {
     try {
-      const { data, mirror } = await C.overpass(q[k], { fetch: f, log: s => console.log(p.name, k, s), wait });
+      const { data, mirror } = await C.overpass(q[k], { fetch: f, log: s => console.log(p.name, k, s), wait, maxAgeH: cfg.thresholds.osm_max_age_h });
       fs.writeFileSync(`${dir}/${k}.json`, JSON.stringify(data));
       meta[k] = { mirror, elements: data.elements.length, osm_base: data.osm3s && data.osm3s.timestamp_osm_base };
       console.log(p.name, k, data.elements.length, "elements via", mirror);

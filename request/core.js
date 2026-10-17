@@ -160,6 +160,8 @@
           const d = await r.json();
           if (!d || !Array.isArray(d.elements)) throw new Error("תשובה בלי elements");
           if (d.remark && /error|timed out|out of memory/i.test(d.remark)) throw new Error("Overpass: " + d.remark);
+          const ts = d.osm3s && d.osm3s.timestamp_osm_base; // שרת מראה שהנתונים בו ישנים — לא משתמשים בו
+          if (opts.maxAgeH && ts && Date.now() - Date.parse(ts) > opts.maxAgeH * 3600000) throw new Error("נתוני OSM בשרת ישנים (" + ts + ")");
           return { data: d, mirror: m };
         } catch (e) {
           lastErr = m + ": " + (e && e.message ? e.message : e); log("נכשל — " + lastErr);

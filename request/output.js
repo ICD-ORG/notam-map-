@@ -126,6 +126,7 @@
       (res.nearScan.inside.length ? "<b>בתוך " + R + " מ׳:</b> " + E(res.nearScan.inside.map(itemText).join("; ")) + ". " : "בתוך " + R + " מ׳: אין. ") +
       (res.nearScan.ring.length ? "<b>בקרבת האזור (עד " + 2 * R + " מ׳):</b> " + E(res.nearScan.ring.map(itemText).join("; ")) + ". " : "בטבעת הכתומה (עד " + 2 * R + " מ׳): אין. ") +
       (res.nearScan.near.length ? "<b>אתרים ותשתיות נוספים (עד " + C.fmtDist(siteR) + " מהנקודה):</b> " + E(res.nearScan.near.map(itemText).join("; ")) + "." : "אתרים ותשתיות נוספים (עד " + C.fmtDist(siteR) + "): אין.") +
+      (res.nearScan.items.some(i => /^בלון/.test(i.label)) ? "<br><b>בלון:</b> " + E(res.nearScan.items.filter(i => /^בלון/.test(i.label)).map(i => i.title + " — " + dLabel(i.d)).join("; ")) + ". גובה העלאה, שעות הפעלה ואופן העיגון אינם מופיעים ב-OpenStreetMap — יש לוודא מול מפעיל הבלון." : "") +
       " <span class='muted'>(מכשולים — עד " + C.fmtDist(2 * R) + " מהנקודה: מגדלים, תרנים, ארובות, עגורנים, קווי ועמודי חשמל, תחנות משנה, רכבלים, מבנים בגובה 20 מ׳ ומעלה או 6 קומות ומעלה. אתרים ותשתיות — עד " + C.fmtDist(siteR) + ": תשתיות שדה תעופה ומנחתים, אזורים צבאיים, כבישים מהירים/ראשיים, מסילות, בתי חולים, בתי סוהר, משטרה, אצטדיונים.)</span>"]);
     // שדות תעופה
     const af = res.airfields.filter(a => a.type === "aerodrome").slice(0, 3), hp = res.airfields.filter(a => a.type !== "aerodrome").slice(0, 2);

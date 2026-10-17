@@ -137,6 +137,9 @@
     const out = [], r = S.res; if (!r) return out;
     const th = S.cfg.thresholds;
     if (r.nearScan.inside.length) out.push("<b>נמצאו מכשולים או תשתיות בתוך האזור המיועד לטיסה (" + r.nearScan.inside.length + "):</b> " + esc(r.nearScan.inside.map(O.itemText).join("; ")) + ".");
+    const bl = r.nearScan.items.filter(i => /^בלון/.test(i.label));
+    if (bl.length) out.push("<b>נמצא בלון (אטרקציה/מעוגן) בקרבת האזור:</b> " + esc(bl.map(O.itemText).join("; ")) + ". גובה ההעלאה ושעות ההפעלה אינם ידועים — יש לוודא מול מפעיל הבלון.");
+    const sites = r.nearScan.near; if (sites.length) out.push("<b>אתרים ותשתיות בקרבת האזור (" + sites.length + "):</b> " + esc(sites.map(O.itemText).join("; ")) + ".");
     if (r.zones.inside.length) out.push("<b>הסגירה המבוקשת חופפת לאזור איסור/הגבלה:</b> " + esc(r.zones.inside.map(z => z.id + " " + z.name).join("; ")) + ".");
     const bv = r.borders.filter(b => b.violates); if (bv.length) out.push("<b>הסגירה נכנסת לרצועת הגבול:</b> " + esc(bv.map(b => b.name + " (" + b.km + " ק״מ)").join("; ")) + ".");
     if (r.workingDays != null && r.workingDays < th.min_working_days) out.push("הבקשה מוגשת " + r.workingDays + " ימי עבודה לפני מועד הפעילות; הנוהל (א-11 סעיף 6.ב) דורש לפחות " + th.min_working_days + " ימי עבודה (ספירה א׳–ה׳, בלי חגים).");
@@ -170,7 +173,7 @@
     ["osm_near", "osm_far", "osm_ext", "map"].forEach(k => { S.statuses[k] = { ok: false, msg: "לא הושלם" }; });
     const data = { zones: S.data.zones, inpa: S.data.inpa, agri: S.data.agri, notams: S.data.notams, notamFetchedIso: S.data.notamFetchedIso };
     const q = C.buildQueries(inp0.lat, inp0.lon, inp0.radius, S.cfg);
-    const fetchOpts = { log: () => {} };
+    const fetchOpts = { log: () => {}, maxAgeH: S.cfg.thresholds.osm_max_age_h };
     try {
       // שלוש השאילתות במקביל (מסונכרנות בהפרש קטן כדי לא להציף שרת אחד); כשל באחת מהן עוצר את ההכנה
       const qs = [["near", "near", "osm_near"], ["far", "far", "osm_far"], ["ext", "ext", "osm_ext"]];
