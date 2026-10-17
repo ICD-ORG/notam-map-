@@ -101,7 +101,8 @@
   function buildChecks(res, data, cfg) {
     const R = res.R, th = cfg.thresholds, inp = res.inp, rows = [];
     const z17 = x => x.src === "a17", zin = res.zones.inside, znear = res.zones.near;
-    const zl = z => z.id + " ״" + z.name + "״ (" + z.kind + "; " + z.alt + ") — " + C.fmtDist(z.d) + " מהנקודה" + (z.note ? " · " + z.note.split("\n")[0].slice(0, 500) : "");
+    const seenNotes = new Set(); // הערת הפמ״ת (למשל הגדרת LLU) מוצגת פעם אחת בלבד
+    const zl = z => { const n = z.note ? z.note.split("\n")[0].slice(0, 500) : "", first = n && !seenNotes.has(n); if (n) seenNotes.add(n); return z.id + " ״" + z.name + "״ (" + z.kind + "; " + z.alt + ") — " + C.fmtDist(z.d) + " מהנקודה" + (first ? " · " + n : ""); };
     const a17edition = (data.zones && data.zones.edition) || "";
     // א-17
     const a_in = zin.filter(z17), a_near = znear.filter(z17);
