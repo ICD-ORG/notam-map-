@@ -21,6 +21,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   mock:
     name: יחידה + דפדפן עם נתוני אמת שמורים
@@ -56,14 +60,14 @@ jobs:
           npx playwright install --with-deps chromium
       - name: הרצה חיה
         run: E2E_LIVE=1 node tests/e2e.mjs tests/out-live
-      - name: שמירת התוצרים בענף
-        if: always()
+      - name: שמירת התוצרים בענף (בהרצה ידנית בלבד)
+        if: always() && github.event_name == 'workflow_dispatch'
         run: |
           git config user.name "notam-bot"
           git config user.email "bot@users.noreply.github.com"
           git add -f tests/out-live
           if git diff --cached --quiet; then echo "אין שינוי"; else
             git commit -m "תוצרי הרצה חיה של הבדיקות"
-            git pull --rebase origin "${{ github.ref_name }}"
+            git pull --rebase -X theirs origin "${{ github.ref_name }}"
             git push
           fi

@@ -255,7 +255,7 @@
     const items = res.nearScan.items;
     const legend = items.length ? "<h2>מכשולים ותשתיות המסומנים במפה</h2><table class='t'><tr><th>#</th><th>מה</th><th>מרחק מהנקודה</th><th>איפה</th></tr>" +
       items.map(i => "<tr><td>" + i.n + "</td><td>" + esc(i.title) + (i.height ? " · גובה " + C.trimNum(i.height, 0) + " מ׳" : "") + "</td><td>" + esc(O.dLabel(i.d)) + "</td><td>" + (i.zone === "in" ? "בתוך האזור" : "בטבעת הכתומה") + "</td></tr>").join("") + "</table>" : "";
-    const img = S.map && S.map.dataUrl ? "<img class='mapimg' alt='מפה' src='" + S.map.dataUrl + "'>" : "<div class='draft'>תמונת המפה לא נוצרה.</div>";
+    const img = S.map && S.map.dataUrl ? "<img class='mapimg' alt='מפה' src='" + (S.map.jpegUrl || S.map.dataUrl) + "'>" : "<div class='draft'>תמונת המפה לא נוצרה.</div>";
     const p2 = "<div class='paper'>" + draftBanner + "<div class='hdr'><span>מפה/תצ״א מצורפת לבקשה</span><span>" + esc((M.PROVIDERS[S.map ? S.map.provider : "esri"] || {}).name || "") + "</span></div>" + img + legend + "</div>";
     const checks = O.buildChecks(res, data, cfg);
     const chk = checks.map(r => "<tr><td>" + esc(r[0]) + "</td><td>" + esc(r[1]) + "</td><td>" + r[2] + "</td></tr>").join("");

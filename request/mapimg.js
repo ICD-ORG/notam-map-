@@ -109,7 +109,7 @@
         g.beginPath(); g.arc(b[0], b[1], 5, 0, 2 * Math.PI); g.fillStyle = "#ff3b30"; g.fill();
       }
       const lx = Math.min(Math.max(b[0], 150), W - 150), ly = Math.min(Math.max(b[1] - 20, 120), H - 40);
-      text(zn.name + " " + zn.id + (zn.d >= 1 ? " — " + C.fmtDist(zn.d) : ""), lx, ly, { color: "#ffd1cc" });
+      text(zn.id + " · " + zn.name + (zn.d >= 1 ? " · " + C.fmtDist(zn.d) : ""), lx, ly, { color: "#ffd1cc", ltr: true });
     });
 
     // ---- מרכז ----
@@ -142,9 +142,9 @@
     // ---- זכויות יוצרים ----
     text(prov.attribution + " · " + new Date().toISOString().slice(0, 10), 6, H - 6, { align: "left", ltr: true, size: 11, bold: false, halo: "rgba(0,0,0,0.9)" });
 
-    let dataUrl = null, tainted = false;
-    try { dataUrl = cv.toDataURL("image/png"); } catch (e) { tainted = true; }
-    return { canvas: cv, dataUrl, background: background && !tainted, tiles: tiles.length, failedTiles: failed, tainted, zoom: z, provider: opts.provider || "esri" };
+    let dataUrl = null, jpegUrl = null, tainted = false;
+    try { dataUrl = cv.toDataURL("image/png"); jpegUrl = cv.toDataURL("image/jpeg", 0.9); } catch (e) { tainted = true; }
+    return { canvas: cv, dataUrl, jpegUrl, background: background && !tainted, tiles: tiles.length, failedTiles: failed, tainted, zoom: z, provider: opts.provider || "esri" };
   }
 
   root.ReqMap = { render, PROVIDERS, worldPx, mpp, viewFor };

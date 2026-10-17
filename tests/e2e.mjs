@@ -136,8 +136,9 @@ try {
     check("שדה 14: ICD", /ICD/.test(form[13]), form[13]);
     check("אזהרה על מכשולים בתוך האזור מוצגת", /מכשולים או תשתיות בתוך האזור/.test(gate), "");
     const mapTxt = await page.getAttribute("#report img.mapimg", "src");
-    check("תמונת המפה נוצרה (PNG)", mapTxt && mapTxt.startsWith("data:image/png;base64,") && mapTxt.length > 50000, "אורך " + (mapTxt || "").length);
-    fs.writeFileSync(path.join(OUT, "map.png"), Buffer.from(mapTxt.split(",")[1], "base64"));
+    check("תמונת המפה בדוח נוצרה (JPEG)", mapTxt && mapTxt.startsWith("data:image/jpeg;base64,") && mapTxt.length > 30000, "אורך " + (mapTxt || "").length);
+    const pngTxt = await page.evaluate(() => window.__REQ.S.map.dataUrl);
+    fs.writeFileSync(path.join(OUT, "map.png"), Buffer.from(pngTxt.split(",")[1], "base64"));
     const dl = async sel => { const [d] = await Promise.all([page.waitForEvent("download"), page.click(sel)]); const p = path.join(OUT, d.suggestedFilename()); await d.saveAs(p); return p; };
     const kmlPath = await dl("#btnKml"); const kml = fs.readFileSync(kmlPath, "utf8");
     check("KML הורד ותקין", /<kml/.test(kml) && /קו מתח עליון/.test(kml) && /LLU20/.test(kml), kml.length + " בתים");
