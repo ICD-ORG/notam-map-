@@ -238,17 +238,20 @@ test("Overpass: מעבר לשרת הבא כשהראשון נכשל, ושגיאה
 test("גבולות מדינה: רצועת האיסור לפי מדינה (נתונים סינתטיים בגיאומטריה ידועה)", () => {
   const lat = 33.0, lon = 35.5, P = new C.Proj(lat, lon);
   const dLat = d => lat + d / P.ky; // מעלות צפונה במרחק d מטר
-  const way = (id, d) => ({ type: "way", id, tags: { boundary: "administrative", admin_level: "2" }, geometry: [{ lat: dLat(d), lon: lon - 0.02 }, { lat: dLat(d), lon: lon + 0.02 }] });
-  const rel = (id, iso, wid) => ({ type: "relation", id, tags: { boundary: "administrative", admin_level: "2", "ISO3166-1": iso }, members: [{ type: "way", ref: wid, role: "outer" }] });
-  const ext = { elements: [way(1, 2500), rel(10, "LB", 1), rel(11, "IL", 1), way(2, 5000), rel(12, "SY", 2)] };
+  const way = (id, d, tags) => ({ type: "way", id, tags: tags || { boundary: "administrative" }, geometry: [{ lat: dLat(d), lon: lon - 0.02 }, { lat: dLat(d), lon: lon + 0.02 }] });
+  const rel = (id, iso, wids) => ({ type: "relation", id, tags: { boundary: "administrative", admin_level: "2", "ISO3166-1": iso }, members: wids.map(w => ({ type: "way", ref: w, role: "outer" })) });
+  // 1: לבנון–ישראל ב-2.5 ק״מ; 2: סוריה–ישראל ב-5 ק״מ; 3: לבנון–סוריה (לא גבול ישראל) ב-1 ק״מ
+  const ext = { elements: [way(1, 2500), way(2, 5000), way(3, 1000), rel(10, "LB", [1, 3]), rel(11, "IL", [1, 2]), rel(12, "SY", [2, 3])] };
   const b = C.analyzeBorders(P, ext, cfg, 100);
   const lb = b.find(x => x.iso === "LB"), sy = b.find(x => x.iso === "SY");
-  assert.ok(lb && Math.abs(lb.d - 2500) < 1 && lb.violates, "לבנון 2.5 ק״מ < 3 ק״מ");
+  assert.ok(lb && Math.abs(lb.d - 2500) < 1 && lb.violates, "לבנון 2.5 ק״מ < 3 ק״מ (ולא 1 ק״מ של גבול לבנון–סוריה)");
   assert.ok(sy && Math.abs(sy.d - 5000) < 1 && sy.violates, "סוריה 5 ק״מ < 6 ק״מ");
   assert.ok(!b.find(x => x.iso === "IL"), "ישראל אינה גבול מוגבל");
-  const far = C.analyzeBorders(P, { elements: [way(1, 3200), rel(10, "LB", 1)] }, cfg, 100);
-  assert.equal(far[0].violates, false, "3.2 ק״מ − רדיוס 100 = 3.1 ק״מ > 3 ק״מ");
-  const edge = C.analyzeBorders(P, { elements: [way(1, 3200), rel(10, "LB", 1)] }, cfg, 300);
-  assert.equal(edge[0].violates, true, "קצה סגירה 300 מ׳ נכנס לרצועה");
+  const mk = d => ({ elements: [way(1, d), rel(10, "LB", [1]), rel(11, "IL", [1])] });
+  assert.equal(C.analyzeBorders(P, mk(3200), cfg, 100)[0].violates, false, "3.2 ק״מ − רדיוס 100 = 3.1 ק״מ > 3 ק״מ");
+  assert.equal(C.analyzeBorders(P, mk(3200), cfg, 300)[0].violates, true, "קצה סגירה 300 מ׳ נכנס לרצועה");
   assert.equal(C.analyzeBorders(P, { elements: [] }, cfg, 100).length, 0);
+  const byName = C.analyzeBorders(P, { elements: [way(7, 2000, { boundary: "administrative", "name:en": "Egypt - Israel" })] }, cfg, 100);
+  assert.equal(byName[0].iso, "EG", "גיבוי לפי שם הקטע כשאין שיוך ליחס");
 });
+

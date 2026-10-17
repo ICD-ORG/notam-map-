@@ -123,9 +123,10 @@
       "nwr(around:" + pR + "," + c + ")[boundary=national_park];" +
       "nwr(around:" + pR + "," + c + ")[boundary=protected_area];" +
       ");out center tags;" +
-      "way(around:" + bR + "," + c + ')["boundary"="administrative"]["admin_level"="2"]->.bw;' +
+      "rel(around:" + bR + "," + c + ')["boundary"="administrative"]["admin_level"="2"]["ISO3166-1"~"^(IL|EG|SY|LB)$"]->.cr;' +
+      "way(r.cr)(around:" + bR + "," + c + ")->.bw;" +
       ".bw out geom(" + bbox + ") tags;" +
-      'rel(bw.bw)["boundary"="administrative"]["admin_level"="2"];out body;';
+      ".cr out body;";
     return { near, far, ext, nearR };
   }
 
@@ -345,21 +346,25 @@
   }
 
   /* ================= גבולות מדינה ================= */
+  // ext: תשובת Overpass עם יחסי המדינות (IL/EG/SY/LB, כולל רשימת חברים) והקטעים הקרובים של הגבולות (עם גיאומטריה).
+  // גבול ישראל–X = קטע ששייך ליחס של X וגם ליחס של ישראל (או ששמו מכיל Israel/ישראל כשאין שיוך ליחס).
+  const NAME_ISO = [[/Lebanon|לבנון|لبنان/i, "LB"], [/Syria|סוריה|سوريا/i, "SY"], [/Egypt|מצרים|مصر/i, "EG"]];
   function analyzeBorders(P, ext, cfg, R) {
-    const rels = (ext.elements || []).filter(e => e.type === "relation");
-    const wayCountry = new Map();
-    rels.forEach(r => {
-      const iso = (r.tags && (r.tags["ISO3166-1"] || r.tags["ISO3166-1:alpha2"])) || "";
+    const els = ext.elements || [], wayCountry = new Map();
+    els.filter(e => e.type === "relation" && e.tags && (e.tags["ISO3166-1"] || e.tags["ISO3166-1:alpha2"])).forEach(r => {
+      const iso = r.tags["ISO3166-1"] || r.tags["ISO3166-1:alpha2"];
       (r.members || []).forEach(m => { if (m.type === "way") { const s = wayCountry.get(m.ref) || new Set(); s.add(iso); wayCountry.set(m.ref, s); } });
     });
-    const res = [];
-    (ext.elements || []).filter(e => e.type === "way" && e.geometry && !(e.tags && e.tags.maritime === "yes")).forEach(w => {
-      const set = wayCountry.get(w.id); if (!set) return;
-      const d = elemDist(P, w); if (!d) return;
-      set.forEach(iso => { const rule = cfg.borders && cfg.borders[iso]; if (rule) res.push({ iso, name: rule.name, km: rule.km, d: d.d }); });
-    });
     const byIso = {};
-    res.forEach(r => { if (!byIso[r.iso] || r.d < byIso[r.iso].d) byIso[r.iso] = r; });
+    els.filter(e => e.type === "way" && e.geometry && !(e.tags && e.tags.maritime === "yes")).forEach(w => {
+      const t = w.tags || {}, nm = (t["name:en"] || "") + " " + (t.name || "");
+      const set = new Set(wayCountry.get(w.id) || []);
+      NAME_ISO.forEach(([rx, iso]) => { if (!set.size && rx.test(nm)) set.add(iso); });
+      const israel = set.has("IL") || /Israel|ישראל/.test(nm);
+      if (!israel) return;
+      const d = elemDist(P, w); if (!d) return;
+      set.forEach(iso => { const rule = cfg.borders && cfg.borders[iso]; if (rule && (!byIso[iso] || d.d < byIso[iso].d)) byIso[iso] = { iso, name: rule.name, km: rule.km, d: d.d }; });
+    });
     const list = Object.values(byIso).sort((a, b) => a.d - b.d);
     // בתוך רצועת האיסור: קצה הסגירה המבוקשת (R) חודר לרצועה של km ק״מ מהגבול
     list.forEach(b => { b.violates = b.d - R < b.km * 1000; });
