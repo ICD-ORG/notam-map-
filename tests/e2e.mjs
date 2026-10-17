@@ -102,7 +102,7 @@ async function fillExample(page, over) {
   await page.fill("#contactNames", "בודק שני; בודק שלישי"); await page.fill("#contactPhone", "050-0000002");
 }
 
-const browser = await pw.chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined, args: ["--no-sandbox"] });
+const browser = await pw.chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined, args: ["--no-sandbox"], env: { ...process.env, LANG: "C.UTF-8", LC_ALL: "C.UTF-8" } });
 try {
   /* ===== תרחיש 1: זרימה מלאה ===== */
   {
@@ -131,6 +131,19 @@ try {
       fs.writeFileSync(path.join(OUT, "e2e-results.json"), JSON.stringify({ live: LIVE, at: new Date().toISOString(), results }, null, 1));
       process.exit(1);
     }
+    const gate0 = await page.textContent("#gate");
+    check("לפני אישור הסקירה: לא מוכן לשליחה וההפקות חסומות", /אינה מוכנה/.test(gate0) && /אישור סקירה אנושית/.test(gate0) && (await page.isDisabled("#btnDocx")) && (await page.isDisabled("#btnPrint")), gate0.replace(/\s+/g, " ").slice(0, 200));
+    { // הוספה ידנית: נכנסת לטופס, מאפסת את האישור, וניתנת להסרה
+      await page.fill("#mName", "עגורן בנייה (בדיקה)"); await page.fill("#mCoord", "32.0995, 34.8168"); await page.fill("#mHeight", "60"); await page.click("#mAdd");
+      await page.waitForFunction(() => /הוזן ידנית/.test(document.querySelector("#report").innerText), null, { timeout: 90000 });
+      const f8m = await page.$$eval("#report .paper:first-child table.f tr", trs => trs[7].innerText.replace(/\s+/g, " "));
+      check("הוספה ידנית נכנסת לשדה 8", /עגורן בנייה \(בדיקה\)/.test(f8m) && /בתוך האזור/.test(f8m), f8m.slice(0, 300));
+      await page.click('[data-del="0"]');
+      await page.waitForFunction(() => !/הוזן ידנית/.test(document.querySelector("#report").innerText), null, { timeout: 90000 });
+      check("הסרת ההוספה מחזירה את הרשימה", true, "");
+      await page.check("#reviewOk");
+      await page.waitForFunction(() => /הבקשה מוכנה לשליחה/.test(document.querySelector("#gate").textContent), null, { timeout: 20000 });
+    }
     const gate = await page.textContent("#gate");
     check("שער: מוכן לשליחה", /הבקשה מוכנה לשליחה/.test(gate) && !/אינה מוכנה/.test(gate), gate.replace(/\s+/g, " ").slice(0, 300));
     check("הוצג שם המקום האוטומטי", (await page.inputValue("#siteName")).length > 3, await page.inputValue("#siteName"));
@@ -151,7 +164,13 @@ try {
     const dl = async sel => { const [d] = await Promise.all([page.waitForEvent("download"), page.click(sel)]); const p = path.join(OUT, d.suggestedFilename()); await d.saveAs(p); return p; };
     const kmlPath = await dl("#btnKml"); const kml = fs.readFileSync(kmlPath, "utf8");
     check("KML הורד ותקין", /<kml/.test(kml) && /קו מתח עליון/.test(kml) && /LLU20/.test(kml), kml.length + " בתים");
-    const pngPath = await dl("#btnPng"); check("PNG הורד", fs.statSync(pngPath).size > 50000, fs.statSync(pngPath).size + " בתים");
+    const pngPath = await dl("#btnPng"); check("הדמיה (PNG) הורדה", fs.statSync(pngPath).size > 50000, fs.statSync(pngPath).size + " בתים");
+    const aerialPath = await dl("#btnAerial"); check("תצ״א נקי (PNG) הורד", fs.statSync(aerialPath).size > 30000 && path.basename(aerialPath).includes("תצ״א"), path.basename(aerialPath) + " " + fs.statSync(aerialPath).size);
+    const docxPath = await dl("#btnDocx");
+    { const JZ = require(path.join(ROOT, "request", "vendor", "jszip.min.js")), z = await JZ.loadAsync(fs.readFileSync(docxPath));
+      const doc = await z.file("word/document.xml").async("string"), plain = doc.replace(/<[^>]+>/g, "").replace(/[\u202a\u202c]/g, "").replace(/&quot;/g, '"');
+      check("Word: קובץ docx תקין עם הטופס, שתי תמונות ודף בדיקות", (doc.match(/<w:drawing>/g) || []).length === 2 && /32°05'56.86"N/.test(plain) && /262\.5/.test(plain) && /דוח כיסוי/.test(plain) && /אישור סקירה אנושית/.test(plain), "גודל " + fs.statSync(docxPath).size);
+      check("Word: שם הקובץ כולל מיקום ותאריך", /גני יהושע|פארק הירקון/.test(path.basename(docxPath)) && /\d{2}\.\d{2}\.\d{4}/.test(path.basename(docxPath)), path.basename(docxPath)); }
     const href = await page.getAttribute("#btnMail", "href");
     check("קישור המייל נכון", href.startsWith("mailto:notamoffice@iaa.gov.il,nofm@iaa.gov.il?subject="), href.slice(0, 90));
     await page.screenshot({ path: path.join(OUT, "page-full.png"), fullPage: true });

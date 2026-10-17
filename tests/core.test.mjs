@@ -135,7 +135,7 @@ test("נקודה בתוך שמורת טבע של רט״ג: חפיפה מזוהה
   assert.ok(r.inside.length + r.near.length >= 1);
 });
 
-test("נוטמים: סינון CHECKLIST, ביטול וגובה, והתאמה גיאוגרפית", () => {
+test("נוטמים: רק סגירות אוויריות עד 10 ק״מ ומכשולים שפורסמו; תדרים/GNSS/נתיבים/רשימות מוחרגים", () => {
   const P = new C.Proj(32.099128, 34.816617), w0 = Date.UTC(2026, 9, 20, 14), w1 = Date.UTC(2026, 9, 23, 17);
   const n = (id, q, e, extra) => ({ id, raw: `${id} NOTAMN\nQ) LLLL/${q}\nA) LLLL B) 2610010000 C) 2612312359\nE) ${e}`, heb: e, ...(extra || {}) });
   const list = [
@@ -143,14 +143,46 @@ test("נוטמים: סינון CHECKLIST, ביטול וגובה, והתאמה ג
     n("X2/26", "QANLT/I /NBO/E /050/600/3156N03501E027", "ATS RTE L53 CLSD BTN A-B. BTN 11,000-16,000FT"),
     n("X3/26", "QWULW/IV/BO /AW /000/005/3206N03449E002", "UAS ACT WI 2NM RADIUS CENTERED ON PSN 320606N0344900E"),
     n("X4/26", "QWULW/IV/BO /AW /000/005/3300N03600E002", "UAS ACT 2NM RADIUS CENTERED ON PSN 330000N0360000E"),
-    n("X5/26", "QGWAU/IV/NBO/E /000/999/3125N03521E117", "POSS INTRP TO AIRBORNE GNSS EQPT")
+    n("X5/26", "QGWAU/IV/NBO/E /000/999/3125N03521E117", "POSS INTRP TO AIRBORNE GNSS EQPT"),
+    n("X7/26", "QCAAS/IV/BO /E /000/999/3232N03453E060", "TEL AVIV CTL FLW FREQ TEMPO NOT AVBL"),
+    n("X8/26", "QOBCE/IV/M  /AE /000/002/3206N03449E001", "CRANE ERECTED. AN AREA WI 0.1NM RADIUS CENTERED ON PSN 320606N0344900E. CTN ADZ"),
+    n("X9/26", "QRPCA/IV/NBO/W /000/030/3206N03448E001", "AN AREA WI 0.5NM RADIUS CENTERED ON PSN 320600N0344800E CLSD FM GND UP TO 3000FT AMSL"),
+    n("XA/26", "QMRLC/IV/NBO/A /000/999/3206N03449E005", "RWY 12/30 CLSD")
   ];
-  list.push({ id: "X6/26", raw: "X6/26 NOTAMC X5/26\nQ) LLLL/QGWAU/IV/NBO/E /000/999/3125N03521E117\nA) LLLL B) 2610010000 C) 2612312359\nE) CNL", heb: "" });
-  const r = C.analyzeNotams(P, 200, list, w0, w1, 262.5);
-  const ids = r.hits.map(h => h.id);
-  assert.ok(ids.includes("X3/26") && ids.includes("X5/26"), ids.join());
-  assert.ok(!ids.includes("X4/26"), "רחוק");
-  assert.deepEqual(r.excluded.map(e => e.id + ":" + e.reason).sort(), ["X1/26:checklist", "X2/26:above", "X6/26:cancel"]);
+  list.push({ id: "X6/26", raw: "X6/26 NOTAMC X5/26\nQ) LLLL/QWULW/IV/NBO/E /000/999/3125N03521E117\nA) LLLL B) 2610010000 C) 2612312359\nE) CNL", heb: "" });
+  const r = C.analyzeNotams(P, 200, list, w0, w1, 262.5, 10000, 1000);
+  assert.deepEqual(r.hits.map(h => h.id).sort(), ["X3/26", "X9/26"], r.hits.map(h => h.id).join());
+  assert.deepEqual(r.obstacles.map(h => h.id), ["X8/26"]);
+  assert.deepEqual(r.excluded.map(e => e.id + ":" + e.reason).sort(), ["X1/26:checklist", "X2/26:route", "X4/26:far", "X5/26:gnss", "X6/26:cancel", "X7/26:comms", "XA/26:other"]);
+  assert.equal(r.valid, 10);
+  const x3 = r.hits.find(h => h.id === "X3/26"); assert.ok(x3.relation === "overlap" || x3.relation === "near");
+});
+
+test("סוג נוטם על הנתונים האמיתיים: סגירה / תדרים / GNSS / נתיב / רשימה / מכשול", () => {
+  const kind = id => C.notamKind(snap.notams.find(n => n.id === id).raw);
+  assert.equal(kind("C2137/26"), "closure");   // בלון מעוגן בחולה
+  assert.equal(kind("C0431/26"), "closure");   // איסור כטב"ם ברדיוס 500 מ'
+  assert.equal(kind("A0710/26"), "comms");
+  assert.equal(kind("A0688/26"), "gnss");
+  assert.equal(kind("A0764/26"), "route");
+  assert.equal(kind("A0805/26"), "checklist");
+  assert.equal(kind("A0785/26"), "obstacle");  // עגורן בנתב"ג
+  assert.equal(kind("C1829/26"), "other");     // דרישת מקמ"ד — לא סגירה
+});
+
+test("הירקון: נוטמים — רק סגירה אווירית אחת בטווח 10 ק״מ, ללא תדרים", () => {
+  const res = C.analyze(baseInput, mkData(fixture("yarkon")), cfg, now);
+  assert.deepEqual(res.notams.hits.map(h => h.id), exp.notamHits);
+  const chk = O.buildChecks(res, mkData(fixture("yarkon")), cfg).map(r => O.toText(r[2])).join("\n");
+  assert.ok(/C0431\/26/.test(chk) && !/TEL AVIV CTL/.test(chk) && !/A0688/.test(chk) && !/A0710/.test(chk));
+});
+
+test("הוספה ידנית: מכשול שהוזן נכנס לטופס, לרשימה ולמפה", () => {
+  const res = C.analyze(Object.assign({}, baseInput, { manualItems: [{ name: "עגורן בנייה", lat: 32.0995, lon: 34.8168, heightM: 60 }] }), mkData(fixture("yarkon")), cfg, now);
+  const it = res.nearScan.items.find(i => i.manual);
+  assert.ok(it && it.zone === "in" && it.d < 100 && it.height === 60);
+  const f8 = O.buildForm(res, cfg)[7].text;
+  assert.ok(/הוזן ידנית/.test(f8) && /עגורן בנייה/.test(f8), f8);
 });
 
 test("נוטם שפג תוקפו או טרם החל — לא נכלל", () => {
@@ -313,4 +345,43 @@ test("שמורת טבע ואזורי א-17 על נתוני אמת (מטולה: �
   assert.ok([...r.inside, ...r.near].some(z => z.id === "LLP2219"), "התנור");
   const h = J("tests/fixtures/hula/meta.json"), r2 = C.analyzeZones(new C.Proj(h.lat, h.lon), h.R, { zones: zones.zones, inpa }, 1000);
   assert.ok(r2.inside.some(z => z.id === "LLP01"), "שמורת החולה — חפיפה");
+});
+
+/* ---------- Word ---------- */
+const D = require(path.join(ROOT, "request/docx.js"));
+const JSZipNode = require(path.join(ROOT, "request/vendor/jszip.min.js"));
+function wellFormed(xml) { // בדיקת איזון תגיות מינימלית
+  const stack = [];
+  for (const m of xml.matchAll(/<(\/?)([A-Za-z0-9:_.-]+)([^>]*?)(\/?)>/g)) {
+    if (m[0].startsWith("<?") || m[0].startsWith("<!")) continue;
+    if (m[4] === "/") continue;
+    if (m[1] === "/") { if (stack.pop() !== m[2]) return false; } else stack.push(m[2]);
+  }
+  return stack.length === 0;
+}
+test("Word: קובץ docx תקין עם הטופס, תמונות, ודף בדיקות", async () => {
+  const res = C.analyze(baseInput, mkData(fixture("yarkon")), cfg, now);
+  const jpeg = Buffer.from("/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAP//////////////////////////////////////////////////////////////////////////////////////wgALCAABAAEBAREA/8QAFBABAAAAAAAAAAAAAAAAAAAAAP/aAAgBAQABPxA=", "base64");
+  const model = O.docxModel(res, mkData(fixture("yarkon")), cfg, { images: { map: { bytes: jpeg, w: 1280, h: 960 }, aerial: { bytes: jpeg, w: 1280, h: 960 } }, includeChecks: true, review: "אושר", providerName: "בדיקה" });
+  const bytes = await D.build(model);
+  assert.equal(bytes[0], 0x50); assert.equal(bytes[1], 0x4b); // PK
+  const z = await JSZipNode.loadAsync(bytes);
+  for (const f of ["[Content_Types].xml", "_rels/.rels", "word/document.xml", "word/_rels/document.xml.rels", "word/styles.xml", "word/media/map.jpeg", "word/media/aerial.jpeg"]) assert.ok(z.file(f), "חסר " + f);
+  const doc = await z.file("word/document.xml").async("string");
+  for (const f of ["[Content_Types].xml", "_rels/.rels", "word/document.xml", "word/_rels/document.xml.rels", "word/styles.xml"]) assert.ok(wellFormed(await z.file(f).async("string")), "XML לא תקין: " + f);
+  const plain = doc.replace(/<[^>]+>/g, "").replace(/[\u202a\u202c]/g, "").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
+  assert.ok(plain.includes(exp.dmsLat) && plain.includes(exp.dmsLon), "קואורדינטות DMS");
+  assert.ok(plain.includes("262.5") && plain.includes("ICD") && plain.includes("אצטדיון רמת גן") && plain.includes("כדור פורח תל אביב") && plain.includes("LLU20"));
+  assert.ok(plain.includes("דוח כיסוי") && plain.includes("אישור סקירה אנושית"));
+  assert.equal((doc.match(/<w:tbl>/g) || []).length, (doc.match(/<\/w:tbl>/g) || []).length);
+  assert.equal((doc.match(/<w:drawing>/g) || []).length, 2);
+  assert.ok(doc.includes("<w:bidi/>") && doc.includes("<w:bidiVisual/>"));
+  const noChecks = await JSZipNode.loadAsync(await D.build(Object.assign({}, model, { includeChecks: false })));
+  assert.ok(!(await noChecks.file("word/document.xml").async("string")).includes("דוח כיסוי"));
+});
+
+test("שם קובץ/תיקייה: מיקום + תאריך, בלי תווים אסורים", () => {
+  const res = C.analyze(Object.assign({}, baseInput, { siteName: 'פארק/הירקון: "גבעה" <1>' }), mkData(fixture("yarkon")), cfg, now);
+  const f = O.fileBase(res);
+  assert.ok(f.startsWith("פארק הירקון גבעה 1") && f.includes("20.10.2026") && !/[\\/:*?"<>|]/.test(f), f);
 });
