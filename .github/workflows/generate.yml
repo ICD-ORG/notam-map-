@@ -16,7 +16,7 @@ on:
       time_from: { description: 'משעה HH:MM', required: true }
       time_to: { description: 'עד שעה HH:MM', required: true }
       site: { description: 'שם ישוב/אתר', required: false, default: '' }
-      purpose_idx: { description: 'מהות (0-2)', required: false, default: '1' }
+      purpose_idx: { description: 'מהות (0-2)', required: false, default: '0' }
       aircraft_idx: { description: 'כלי טיס (אינדקסים, למשל 0 או 0,1)', required: false, default: '0' }
       vlos: { description: 'yes/no', required: false, default: 'yes' }
       branch: { description: 'שם ענף זמני לפלט', required: true }

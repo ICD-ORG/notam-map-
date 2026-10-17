@@ -15,7 +15,7 @@ let pw;
 for (const p of [ROOT, process.cwd(), "/opt/node22/lib/node_modules"]) { try { pw = require(require.resolve("playwright", { paths: [p] })); break; } catch (e) { /* next */ } }
 if (!pw) { console.error("playwright לא נמצא"); process.exit(2); }
 const E = process.env, need = k => { if (!E[k]) { console.error("חסר משתנה " + k); process.exit(2); } return E[k]; };
-const inp = { lat: need("LAT"), lon: need("LON"), radius: E.RADIUS || "100", height: need("HEIGHT"), dateFrom: need("DATE_FROM"), dateTo: E.DATE_TO || need("DATE_FROM"), timeFrom: need("TIME_FROM"), timeTo: need("TIME_TO"), site: E.SITE || "", purposeIdx: +(E.PURPOSE_IDX || 1), aircraftIdx: (E.AIRCRAFT_IDX || "0").split(",").map(Number), vlos: E.VLOS !== "no", provider: E.PROVIDER || "esri" };
+const inp = { lat: need("LAT"), lon: need("LON"), radius: E.RADIUS || "100", height: need("HEIGHT"), dateFrom: need("DATE_FROM"), dateTo: E.DATE_TO || need("DATE_FROM"), timeFrom: need("TIME_FROM"), timeTo: need("TIME_TO"), site: E.SITE || "", purposeIdx: +(E.PURPOSE_IDX || 0), aircraftIdx: (E.AIRCRAFT_IDX || "0").split(",").map(Number), vlos: E.VLOS !== "no", provider: E.PROVIDER || "esri" };
 
 const MIME = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".json": "application/json; charset=utf-8", ".css": "text/css", ".png": "image/png" };
 const server = http.createServer((req, res) => {
@@ -37,7 +37,7 @@ try {
   await page.fill("#radius", inp.radius); await page.fill("#height", inp.height);
   await page.fill("#dateFrom", inp.dateFrom); await page.fill("#dateTo", inp.dateTo);
   await page.fill("#timeFrom", inp.timeFrom); await page.fill("#timeTo", inp.timeTo);
-  await page.selectOption("#purpose", { index: inp.purposeIdx });
+  await page.selectOption("#purpose", { index: inp.purposeIdx + 1 }); // אינדקס 0 = המהות הראשונה ברשימה (האפשרות 0 בתפריט היא "בחרו…")
   await page.selectOption("#provider", inp.provider);
   await page.selectOption("#vlos", inp.vlos ? "yes" : "no");
   const boxes = await page.$$('input[name="ac"]');
