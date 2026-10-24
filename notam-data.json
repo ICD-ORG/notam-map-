@@ -1,7 +1,7 @@
 {
- "fetched_at": "24/10/2026 08:29 UTC",
- "fetched_iso": "2026-10-24T08:29:46Z",
- "count": 130,
+ "fetched_at": "24/10/2026 16:33 UTC",
+ "fetched_iso": "2026-10-24T16:33:47Z",
+ "count": 129,
  "notams": [
   {
    "id": "A0848/26",
@@ -20,15 +20,6 @@
    "heb": "מסלול 21 סגור ל-נחיתה, עקב עגורן ON FINAL 21. במקרה חירום יונמך בתוך 30 דקות.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-25/10/2026 09:00 UTC עד 25/10/2026 11:00 UTC",
    "raw": "A0847/26 NOTAMN\nQ) LLLL/QMRLC/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2610250900 C) 2610251100\nE) RWY 21 CLSD FOR LDG, DUE CRANE ON FINAL 21.\nIN CASE OF EMERG LOWERED WI 30MIN.)",
    "first_seen": "2026-10-24T08:29:46Z"
-  },
-  {
-   "id": "C2257/26",
-   "loc": "LLLL",
-   "name": "ULTRALIGHT WEEKEND נתיב סגור TYONA-SHEFC-SOREK",
-   "cat": "act",
-   "heb": "ULTRALIGHT WEEKEND נתיב סגור TYONA-SHEFC-SOREK.\nבתוקף: מ-24/10/2026 04:00 UTC עד 24/10/2026 11:00 UTC",
-   "raw": "C2257/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /000/004/3158N03444E004\nA) LLLL B) 2610240400 C) 2610241100\nE) ULTRALIGHT WEEKEND RTE CLSD\nTYONA-SHEFC-SOREK.)",
-   "first_seen": "2026-10-23T17:51:49Z"
   },
   {
    "id": "C2256/26",
@@ -1176,6 +1167,13 @@
  ],
  "removed": [
   {
+   "id": "C2257/26",
+   "name": "ULTRALIGHT WEEKEND נתיב סגור TYONA-SHEFC-SOREK",
+   "cat": "act",
+   "heb": "ULTRALIGHT WEEKEND נתיב סגור TYONA-SHEFC-SOREK.\nבתוקף: מ-24/10/2026 04:00 UTC עד 24/10/2026 11:00 UTC",
+   "removed_at": "2026-10-24T16:33:47Z"
+  },
+  {
    "id": "C2240/26",
    "name": "מרחב פעילות צניחה חופשית METZADA ACT מ-8",
    "cat": "pje",
@@ -2231,13 +2229,6 @@
    "cat": "ad",
    "heb": "VOR ZFR/ZOFAR 115.600MHZ CH103X מושבת לצורך תחזוקה.\nבתוקף: מ-03/10/2026 05:44 UTC עד 04/10/2026 08:00 UTC",
    "removed_at": "2026-10-03T17:05:07Z"
-  },
-  {
-   "id": "A0793/26",
-   "name": "VOR ZFR/ZOFAR 115",
-   "cat": "ad",
-   "heb": "VOR ZFR/ZOFAR 115.600MHZ CH103X מושבת לצורך תחזוקה.\nבתוקף: מ-02/10/2026 08:26 UTC עד 03/10/2026 08:00 UTC",
-   "removed_at": "2026-10-03T09:27:40Z"
   }
  ]
 }
