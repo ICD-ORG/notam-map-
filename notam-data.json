@@ -1,8 +1,26 @@
 {
- "fetched_at": "23/10/2026 17:51 UTC",
- "fetched_iso": "2026-10-23T17:51:49Z",
- "count": 128,
+ "fetched_at": "24/10/2026 08:29 UTC",
+ "fetched_iso": "2026-10-24T08:29:46Z",
+ "count": 130,
  "notams": [
+  {
+   "id": "A0848/26",
+   "loc": "LLBG",
+   "name": "Q APRON",
+   "cat": "obst",
+   "heb": "עגורן הוקם בתוך LLBG אזור בקרה, ב-Q APRON. ON נ.צ. 32°01'15\"N 34°53'52\"E מהקרקע ועד 81M 265 רגל מעל הקרקע. מומלצת זהירות.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-25/10/2026 09:00 UTC עד 25/10/2026 11:00 UTC",
+   "raw": "A0848/26 NOTAMN\nQ) LLLL/QOBCE/IV/M  /AE/000/003/3201N03454E001\nA) LLBG B) 2610250900 C) 2610251100\nE) CRANE ERECTED WI LLBG CTR, AT Q APRON.\nON PSN 320114.84N0345352.36E\nFM GND UP TO 81M 265FT AGL.\nCTN ADZ.)",
+   "first_seen": "2026-10-24T08:29:46Z"
+  },
+  {
+   "id": "A0847/26",
+   "loc": "LLBG",
+   "name": "מסלול 21 סגור ל-נחיתה",
+   "cat": "obst",
+   "heb": "מסלול 21 סגור ל-נחיתה, עקב עגורן ON FINAL 21. במקרה חירום יונמך בתוך 30 דקות.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-25/10/2026 09:00 UTC עד 25/10/2026 11:00 UTC",
+   "raw": "A0847/26 NOTAMN\nQ) LLLL/QMRLC/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2610250900 C) 2610251100\nE) RWY 21 CLSD FOR LDG, DUE CRANE ON FINAL 21.\nIN CASE OF EMERG LOWERED WI 30MIN.)",
+   "first_seen": "2026-10-24T08:29:46Z"
+  },
   {
    "id": "C2257/26",
    "loc": "LLLL",
@@ -2220,55 +2238,6 @@
    "cat": "ad",
    "heb": "VOR ZFR/ZOFAR 115.600MHZ CH103X מושבת לצורך תחזוקה.\nבתוקף: מ-02/10/2026 08:26 UTC עד 03/10/2026 08:00 UTC",
    "removed_at": "2026-10-03T09:27:40Z"
-  },
-  {
-   "id": "C2035/26",
-   "name": "בועת זעירים זמינה לטיסה",
-   "cat": "act",
-   "heb": "בועת זעירים זמינה לטיסה, על הטייס לתאם ולקבל אישור לטיסה בתוך שטח אש מול הפיקוד הרלוונטי: SHIVTA (BSVTA).\nבתוקף: מ-25/09/2026 03:00 UTC עד 02/10/2026 15:50 UTC\nלו\"ז: SEP 25 0300-1550, OCT 02 0300-1550",
-   "removed_at": "2026-10-02T18:17:57Z"
-  },
-  {
-   "id": "C2030/26",
-   "name": "בועת זעירים זמינה לטיסה",
-   "cat": "act",
-   "heb": "בועת זעירים זמינה לטיסה, על הטייס לתאם ולקבל אישור לטיסה בתוך שטח אש מול הפיקוד הרלוונטי: SHALEM (BSHLM), YAM-HAMELCH (BYMLH), EIN-GEDI (BNGDI), GOVRIN-TZAFON (BGOVN), GOVRIN-DAROM (BGOVS), NITZANIM (BNZNI), SHDROT-TZAFON (BDRTN), SHDROT-DAROM (BDRTS), LEHAVIM (BLHAV), BEER-SHEVA (BSHEV), MEYTAR (BMTAR), ZOHAR (BZHAR), YERUHAM (BYERU), FARAN (BFRAN), CHARIF (BHARF), TZNIFIM (BZNIF), SHITIM (BSTIM), KTZIOTH (BKZOT).\nבתוקף: מ-25/09/2026 03:00 UTC עד 02/10/2026 15:50 UTC\nלו\"ז: SEP 25-26 30 DAILY 0300-1550, 29 0300-1330, OCT 01-02 DAILY",
-   "removed_at": "2026-10-02T18:17:57Z"
-  },
-  {
-   "id": "C2029/26",
-   "name": "בועת זעירים זמינה לטיסה",
-   "cat": "act",
-   "heb": "בועת זעירים זמינה לטיסה, על הטייס לתאם ולקבל אישור לטיסה בתוך שטח אש מול הפיקוד הרלוונטי: RAMAT HAGOLAN (BRGOL) SOUTH OF כביש מס' 91, NETOFA (BNTOF), KINNERET (BKNRT), BET-OREN (BOORN), HASHARON-TZAFON (BSARN), ARRA (BARRA), HARROD (BHROD), MEGIDO A-EAST (BMGEA), MEGIDO B-EAST (BMGEB), NAAMA (BNAMM), ALMOG (BLMOG).\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-25/09/2026 03:00 UTC עד 02/10/2026 15:50 UTC\nלו\"ז: SEP 25-28 30 DAILY 0300-1550, 29 0300-1330, OCT 01-02 DAILY",
-   "removed_at": "2026-10-02T18:17:57Z"
-  },
-  {
-   "id": "C2028/26",
-   "name": "נתיב CVFR סגור עקב עקב דאון טיסות בסביבת EIRON-Z…",
-   "cat": "act",
-   "heb": "נתיב CVFR סגור עקב עקב דאון טיסות בסביבת EIRON-ZMGID-AFULA-TAVOR. AFULA-EITAN. ULTRALIGHT ו- מסוקים נתיב סגור EIRON-ARRAA-ZMGID-NIRYA-MRHVA-TAVOR. התנועה תוסט דרך FRDIS-HASID. טיסות ל-/FM LLMG יהיה תיאום ו- APPROVED ע\"י AIRSTRIP מפעיל.\nבתוקף: מ-25/09/2026 05:00 UTC עד 02/10/2026 11:00 UTC\nלו\"ז: SEP 25 0500-1100, 27-30 DAILY 0500-1550, OCT 01 0500-1550,  02",
-   "removed_at": "2026-10-02T18:17:57Z"
-  },
-  {
-   "id": "C2027/26",
-   "name": "LLMG AND VCY",
-   "cat": "other",
-   "heb": "דאון COMPETITION טיסות תתקיים ב-LLMG ו- סביבת, מהקרקע ועד 10,000 רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-25/09/2026 05:00 UTC עד 02/10/2026 11:00 UTC\nלו\"ז: SEP 25 0500-1100, 27-30 DAILY 0500-1550, OCT 01 0500-1550, 02",
-   "removed_at": "2026-10-02T18:17:57Z"
-  },
-  {
-   "id": "C2005/26",
-   "name": "מרחב פעילות צניחה חופשית TEIMAN ACT מ-11",
-   "cat": "pje",
-   "heb": "מרחב פעילות צניחה חופשית TEIMAN ACT מ-11,000 רגל מעל פני הים. במקרה של חירום CLEAR THE AIRSPACE בתוך 5 דקות. מומלצת זהירות.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-02/10/2026 05:00 UTC עד 02/10/2026 11:00 UTC",
-   "removed_at": "2026-10-02T18:17:57Z"
-  },
-  {
-   "id": "C1998/26",
-   "name": "מרחב פעילות צניחה חופשית METZADA ACT מ-8",
-   "cat": "pje",
-   "heb": "מרחב פעילות צניחה חופשית METZADA ACT מ-8,000 רגל מעל פני הים. הפעלה באישור מוקדם מבקרת התעופה בלבד.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-02/10/2026 06:00 UTC עד 02/10/2026 11:00 UTC",
-   "removed_at": "2026-10-02T18:17:57Z"
   }
  ]
 }
