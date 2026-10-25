@@ -1,7 +1,7 @@
 {
- "fetched_at": "24/10/2026 16:33 UTC",
- "fetched_iso": "2026-10-24T16:33:47Z",
- "count": 129,
+ "fetched_at": "25/10/2026 08:47 UTC",
+ "fetched_iso": "2026-10-25T08:47:20Z",
+ "count": 125,
  "notams": [
   {
    "id": "A0848/26",
@@ -82,24 +82,6 @@
    "cat": "other",
    "heb": "נתיב CVFR סגור RUHOT-MESAR.\nבתוקף: מ-26/10/2026 04:00 UTC עד 26/10/2026 06:30 UTC",
    "raw": "C2248/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /035/045/3035N03453E007\nA) LLLL B) 2610260400 C) 2610260630\nE) CVFR RTE CLSD  RUHOT-MESAR.)",
-   "first_seen": "2026-10-22T17:59:09Z"
-  },
-  {
-   "id": "C2247/26",
-   "loc": "LLLL",
-   "name": "נתיב CVFR סגור בין BGN-MRISN-NTAIM-BOVED-NAGID",
-   "cat": "other",
-   "heb": "נתיב CVFR סגור בין BGN-MRISN-NTAIM-BOVED-NAGID. RIDNG-CLORE-TYONA-SUPER-MEHOL-NTAIM.\nבתוקף: מ-24/10/2026 23:30 UTC עד 25/10/2026 02:00 UTC",
-   "raw": "C2247/26 NOTAMN\nQ) LLLL/QARLC/IV/NBO/E /008/040/3200N03446E007\nA) LLLL B) 2610242330 C) 2610250200\nE) CVFR RTE CLSD BTN\nBGN-MRISN-NTAIM-BOVED-NAGID.\nRIDNG-CLORE-TYONA-SUPER-MEHOL-NTAIM.)",
-   "first_seen": "2026-10-22T17:59:09Z"
-  },
-  {
-   "id": "C2246/26",
-   "loc": "LLLL",
-   "name": "MAKHTESH-RAMON",
-   "cat": "act",
-   "heb": "HOT-AIR BALLOON תתקיים ב-MAKHTESH-RAMON. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 5,000 רגל מעל פני הים 30°35'45\"N 34°52'33\"E 30°36'48\"N 34°47'23\"E 30°37'59\"N 34°49'56\"E. מומלצת זהירות.\nבתוקף: מ-26/10/2026 04:00 UTC עד 26/10/2026 06:30 UTC",
-   "raw": "C2246/26 NOTAMN\nQ) LLLL/QWLLW/IV/NBO/W /000/050/3036N03450E003\nA) LLLL B) 2610260400 C) 2610260630\nE) HOT-AIR BALLOON WILL TAKE PLACE AT MAKHTESH-RAMON.\nAN AREA BTN THE FLW PSN CLSD FM GND UP TO 5,000FT AMSL\n303545N0345233E 303648N0344723E 303759N0344956E.\nCTN ADZ.\nF) GND G) 5000FT AMSL)",
    "first_seen": "2026-10-22T17:59:09Z"
   },
   {
@@ -191,15 +173,6 @@
    "heb": "אזור בין נקודות הציון הבאות סגור לכל הטיסות, כולל טיסות ריסוס חקלאיות, למעט חירום, MEDEVAC או FIREFIGHTING טיסות מהקרקע ועד 5000 רגל מעל פני הים 33°19'04\"N 35°45'58\"E 33°13'57\"N 35°34'32\"E 33°04'12\"N 35°34'02\"E 33°03'38\"N 35°39'20\"E 32°52'37\"N 35°38'41\"E 32°40'02\"N 35°26'15\"E 32°38'33\"N 35°27'08\"E 32°31'18\"N 35°21'41\"E 32°29'01\"N 35°34'30\"E 32°38'56\"N 35°34'11\"E 32°45'01\"N 35°45'47\"E 32°56'18\"N 35°53'31\"E מומלצת זהירות.\nבתוקף: מ-25/10/2026 10:00 UTC עד 26/10/2026 19:00 UTC\nלו\"ז: 25 1000-1400 1500-1900, 26 0500-0900 1000-1400 1500-1900",
    "raw": "C2224/26 NOTAMN\nQ) LLLL/QAELC/IV/NBO/E /000/050/3255N03534E027\nA) LLLL B) 2610251000 C) 2610261900\nD) 25 1000-1400 1500-1900, 26 0500-0900 1000-1400 1500-1900\nE) AN AREA BTN FLW PSN CLSD TO ALL FLT,\nINCLUDING AGRICULTURE FLT, EXC EMERG, MEDEVAC OR FIREFIGHTING\nFLT FM GND UP TO 5000FT AMSL\n331904N0354558E 331357N0353432E 330412N0353402E\n330338N0353920E 325237N0353841E 324002N0352615E\n323833N0352708E 323118N0352141E 322901N0353430E\n323856N0353411E 324501N0354547E 325618N0355331E\nCTN ADZ.)",
    "first_seen": "2026-10-22T17:59:09Z"
-  },
-  {
-   "id": "C2223/26",
-   "loc": "LLLL",
-   "name": "GEZER POWER PLANT",
-   "cat": "other",
-   "heb": "אזור בתוך ברדיוס 1 ק\"מ שמרכזו בנ.צ. 31°54'55\"N 34°55'00\"E ב-GEZER POWER PLANT סגור מהקרקע ועד 800 רגל מעל פני הים, עקב GAS EMISSION. מומלצת זהירות.\nבתוקף: מ-24/10/2026 16:00 UTC עד 24/10/2026 19:00 UTC",
-   "raw": "C2223/26 NOTAMN\nQ) LLLL/QWSLW/IV/M  /W /000/008/3155N03455E001\nA) LLLL B) 2610241600 C) 2610241900\nE) AN AREA WI 1KM RADIUS CENTERED ON PSN 315455N0345500E\nAT GEZER POWER PLANT CLSD FM GND UP TO 800FT AMSL,\nDUE TO GAS EMISSION.\nCTN ADZ.\nF) GND G) 800FT AMSL)",
-   "first_seen": "2026-10-22T08:59:05Z"
   },
   {
    "id": "A0845/26",
@@ -587,15 +560,6 @@
    "heb": "TRIGGER NOTAM - אין AIRAC AIP AMDT בתוקף מ-29 OCT 2026.\nבתוקף: מ-29/10/2026 00:01 UTC עד 11/11/2026 21:59 UTC",
    "raw": "A0798/26 NOTAMN\nQ) LLLL/QOATT/IV/BO /E /000/999/3123N03515E999\nA) LLLL B) 2610290001 C) 2611112159\nE) TRIGGER NOTAM - NIL AIRAC AIP AMDT WEF 29 OCT 2026.)",
    "first_seen": "2026-10-04T17:24:51Z"
-  },
-  {
-   "id": "A0787/26",
-   "loc": "LLBG",
-   "name": "נתב\"ג (LLBG)",
-   "cat": "ad",
-   "heb": "הגבלות נחיתה כלי טיס בעלי 4 מנועים בתוך LLBG הוסר זמנית.\nבתוקף: מ-24/09/2026 14:28 UTC עד 24/10/2026 23:59 UTC",
-   "raw": "A0787/26 NOTAMR A0670/26\nQ) LLLL/QFALT/IV/NBO/A /000/999/3201N03453E005\nA) LLBG B) 2609241428 C) 2610242359\nE) RESTRICTIONS OF LDG 4 ENGINE ACFT WI LLBG TEMPO WITHDRAWN.)",
-   "first_seen": "2026-09-24T17:53:21Z"
   },
   {
    "id": "C2024/26",
@@ -1166,6 +1130,34 @@
   }
  ],
  "removed": [
+  {
+   "id": "C2247/26",
+   "name": "נתיב CVFR סגור בין BGN-MRISN-NTAIM-BOVED-NAGID",
+   "cat": "other",
+   "heb": "נתיב CVFR סגור בין BGN-MRISN-NTAIM-BOVED-NAGID. RIDNG-CLORE-TYONA-SUPER-MEHOL-NTAIM.\nבתוקף: מ-24/10/2026 23:30 UTC עד 25/10/2026 02:00 UTC",
+   "removed_at": "2026-10-25T08:47:20Z"
+  },
+  {
+   "id": "C2246/26",
+   "name": "MAKHTESH-RAMON",
+   "cat": "act",
+   "heb": "HOT-AIR BALLOON תתקיים ב-MAKHTESH-RAMON. אזור בין נקודות הציון הבאות סגור מהקרקע ועד 5,000 רגל מעל פני הים 30°35'45\"N 34°52'33\"E 30°36'48\"N 34°47'23\"E 30°37'59\"N 34°49'56\"E. מומלצת זהירות.\nבתוקף: מ-26/10/2026 04:00 UTC עד 26/10/2026 06:30 UTC",
+   "removed_at": "2026-10-25T08:47:20Z"
+  },
+  {
+   "id": "C2223/26",
+   "name": "GEZER POWER PLANT",
+   "cat": "other",
+   "heb": "אזור בתוך ברדיוס 1 ק\"מ שמרכזו בנ.צ. 31°54'55\"N 34°55'00\"E ב-GEZER POWER PLANT סגור מהקרקע ועד 800 רגל מעל פני הים, עקב GAS EMISSION. מומלצת זהירות.\nבתוקף: מ-24/10/2026 16:00 UTC עד 24/10/2026 19:00 UTC",
+   "removed_at": "2026-10-25T08:47:20Z"
+  },
+  {
+   "id": "A0787/26",
+   "name": "נתב\"ג (LLBG)",
+   "cat": "ad",
+   "heb": "הגבלות נחיתה כלי טיס בעלי 4 מנועים בתוך LLBG הוסר זמנית.\nבתוקף: מ-24/09/2026 14:28 UTC עד 24/10/2026 23:59 UTC",
+   "removed_at": "2026-10-25T08:47:20Z"
+  },
   {
    "id": "C2257/26",
    "name": "ULTRALIGHT WEEKEND נתיב סגור TYONA-SHEFC-SOREK",
@@ -2222,13 +2214,6 @@
    "cat": "ad",
    "heb": "DME BTM/BET-MEIR תדר 112.000MHZ מושבת לצורך תחזוקה.\nבתוקף: מ-04/10/2026 04:00 UTC עד 04/10/2026 14:00 UTC",
    "removed_at": "2026-10-04T17:24:51Z"
-  },
-  {
-   "id": "A0794/26",
-   "name": "VOR ZFR/ZOFAR 115",
-   "cat": "ad",
-   "heb": "VOR ZFR/ZOFAR 115.600MHZ CH103X מושבת לצורך תחזוקה.\nבתוקף: מ-03/10/2026 05:44 UTC עד 04/10/2026 08:00 UTC",
-   "removed_at": "2026-10-03T17:05:07Z"
   }
  ]
 }
