@@ -1,6 +1,6 @@
 {
- "fetched_at": "09/11/2026 12:05 UTC",
- "fetched_iso": "2026-11-09T12:05:54Z",
+ "fetched_at": "09/11/2026 22:58 UTC",
+ "fetched_iso": "2026-11-09T22:58:23Z",
  "count": 117,
  "notams": [
   {
@@ -2037,48 +2037,6 @@
    "cat": "ad",
    "heb": "מסלול 03/21 סגור עקב עבודות.\nבתוקף: מ-20/10/2026 06:00 UTC עד 20/10/2026 10:00 UTC",
    "removed_at": "2026-10-20T17:54:27Z"
-  },
-  {
-   "id": "A0839/26",
-   "name": "ATS נתיב J14 LIMITED ל-MIN 6",
-   "cat": "other",
-   "heb": "ATS נתיב J14 LIMITED ל-MIN 6,000 רגל בין ZACCI-GIMIK.\nבתוקף: מ-19/10/2026 10:00 UTC עד 19/10/2026 17:00 UTC",
-   "removed_at": "2026-10-19T19:10:47Z"
-  },
-  {
-   "id": "C2191/26",
-   "name": "ULTRALIGHT ו- מסוקים נתיב סגור EIRON-ARRAA-ZMGID…",
-   "cat": "act",
-   "heb": "ULTRALIGHT ו- מסוקים נתיב סגור EIRON-ARRAA-ZMGID-NIRYA-MRHVA-TAVOR. התנועה תוסט דרך FRDIS-HASID.\nבתוקף: מ-19/10/2026 10:00 UTC עד 19/10/2026 17:00 UTC",
-   "removed_at": "2026-10-19T19:10:47Z"
-  },
-  {
-   "id": "C2190/26",
-   "name": "נתיב CVFR סגור עקב ILS ACT בתוך LLRD EIRON-ZMGID…",
-   "cat": "ad",
-   "heb": "נתיב CVFR סגור עקב ILS ACT בתוך LLRD EIRON-ZMGID-AFULA-TAVOR. AFULA-EITAN.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-19/10/2026 10:00 UTC עד 19/10/2026 17:00 UTC",
-   "removed_at": "2026-10-19T19:10:47Z"
-  },
-  {
-   "id": "C2189/26",
-   "name": "מגידו (LLMG)",
-   "cat": "ad",
-   "heb": "AIRSTRIP LTD ל-מקסימום 400 רגל מעל פני הים עקב ILS ACT בתוך LLRD מומלצת זהירות.\n⚠ תרגום אוטומטי חלקי — יש לקרוא גם את הנוטמ המקורי.\nבתוקף: מ-19/10/2026 10:00 UTC עד 19/10/2026 17:00 UTC",
-   "removed_at": "2026-10-19T19:10:47Z"
-  },
-  {
-   "id": "C2188/26",
-   "name": "LLMG אזור אימונים ו- בועת זעירים NR B-WEST (BMGW…",
-   "cat": "act",
-   "heb": "LLMG אזור אימונים ו- בועת זעירים NR B-WEST (BMGWB) LTD ל-מקסימום 1,600 רגל מעל פני הים. מומלצת זהירות.\nבתוקף: מ-19/10/2026 10:00 UTC עד 19/10/2026 17:00 UTC",
-   "removed_at": "2026-10-19T19:10:47Z"
-  },
-  {
-   "id": "C2168/26",
-   "name": "CVFR ו- מסוקים נתיב סגור ב-1",
-   "cat": "other",
-   "heb": "CVFR ו- מסוקים נתיב סגור ב-1,200 רגל, זמין BIDIRECTIONAL ב-800 רגל מעל פני הים בלבד TYONA-SUPER-NTAIM-BOVED-NAGID-YAVNE-ZASHD.\nבתוקף: מ-19/10/2026 18:00 UTC עד 19/10/2026 19:00 UTC",
-   "removed_at": "2026-10-19T19:10:47Z"
   }
  ]
 }
