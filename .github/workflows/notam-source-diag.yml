@@ -1,0 +1,56 @@
+name: אבחון מקור הנוטמים (חד-פעמי)
+
+# בדיקה חד-פעמית: מה אתר רש"ת מחזיר לשרת של GitHub. רק קריאה — לא כותב שום קובץ ולא משנה נתונים.
+on:
+  push:
+    branches: [claude-icd/adoring-goodall-fg84sg]
+    paths: ['.github/workflows/notam-source-diag.yml']
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: כתובת היציאה של השרת
+        run: curl -sS -m 20 https://api.ipify.org || true
+
+      - name: curl (אותן כותרות כמו המושך)
+        run: |
+          URL='https://brin.iaa.gov.il/aeroinfo/AeroInfo.aspx?msgType=Notam'
+          curl -sS -m 60 -D /tmp/h1.txt -o /tmp/b1.html -w 'code=%{http_code} size=%{size_download} time=%{time_total}s redirect=%{redirect_url} remote_ip=%{remote_ip}\n' \
+            -A 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' -e "$URL" "$URL" || echo "curl failed rc=$?"
+          echo '--- כותרות תשובה'; cat /tmp/h1.txt | head -40
+          echo "--- NotamID מופיע: $(grep -c 'NotamID' /tmp/b1.html || true) | hidMsgNum: $(grep -c 'hidMsgNum' /tmp/b1.html || true) | MsgText: $(grep -c 'MsgText' /tmp/b1.html || true)"
+          echo '--- תחילת הגוף (2500 תווים)'; head -c 2500 /tmp/b1.html
+
+      - name: Python urllib (כמו המושך)
+        run: |
+          python3 - <<'PY'
+          import urllib.request, re
+          URL='https://brin.iaa.gov.il/aeroinfo/AeroInfo.aspx?msgType=Notam'
+          req=urllib.request.Request(URL,headers={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64)','Referer':URL})
+          try:
+              r=urllib.request.urlopen(req,timeout=60); body=r.read().decode('utf-8','ignore')
+              print('status',r.status,'final_url',r.geturl(),'len',len(body)); print(dict(r.headers))
+              print('NotamID' in body, 'hidMsgNum' in body)
+              print(body[:1500])
+          except Exception as e:
+              print('ERR',type(e).__name__,e)
+          PY
+
+      - name: curl עם דפדפן מודרני
+        run: |
+          URL='https://brin.iaa.gov.il/aeroinfo/AeroInfo.aspx?msgType=Notam'
+          curl -sS -m 60 -o /tmp/b2.html -w 'code=%{http_code} size=%{size_download}\n' \
+            -A 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36' \
+            -H 'Accept: text/html,application/xhtml+xml' -H 'Accept-Language: he-IL,he;q=0.9,en;q=0.8' "$URL" || echo "curl failed rc=$?"
+          echo "NotamID: $(grep -c 'NotamID' /tmp/b2.html || true)"; head -c 800 /tmp/b2.html
+
+      - name: שורש האתר ו-TLS
+        run: |
+          curl -sS -m 40 -o /dev/null -w 'root code=%{http_code} size=%{size_download}\n' https://brin.iaa.gov.il/ || echo "root failed rc=$?"
+          echo | openssl s_client -connect brin.iaa.gov.il:443 -servername brin.iaa.gov.il 2>/dev/null | grep -E 'subject=|issuer=|Verify return code|Verification' | head -6
